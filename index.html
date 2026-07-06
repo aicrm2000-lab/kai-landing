@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kai — Настройка amoCRM без программистов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&family=JetBrains+Mono:wght@400;500&family=Nunito:wght@800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --void:      #0d0d0f;
+  --carbon:    #131315;
+  --obsidian:  #18181c;
+  --graphite:  #222228;
+  --smoke:     #2e2e38;
+  --ash:       #62627a;
+  --fog:       #8f8faa;
+  --mist:      #c0c0d4;
+  --paper:     #f4f4fc;
+  --accent:    #9333ea;
+  --accent-2:  #db2777;
+  --accent-dim: rgba(147,51,234,.13);
+  --accent-glow: rgba(147,51,234,.28);
+  --accent-gradient: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
+  --green:     #22c55e;
+  --orange:    #f59e0b;
+  --font: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--void);
+  color: var(--paper);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  background: rgba(13,13,15,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  height: 60px;
+  display: flex; align-items: center; gap: 0;
+  transition: height .3s ease;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 17px; font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--paper);
+  margin-right: auto;
+  flex-shrink: 0;
+}
+.nav-links {
+  display: flex; align-items: center; gap: 2px;
+  list-style: none;
+}
+.nav-links a {
+  padding: 6px 13px;
+  font-size: 13px; font-weight: 400;
+  color: var(--mist);
+  transition: color 150ms;
+  border-radius: 6px;
+}
+.nav-links a:hover { color: var(--paper); background: rgba(255,255,255,.04); }
+
+/* ─── LANG TOGGLE ─── */
+.lang-toggle {
+  display: flex; align-items: center;
+  margin-left: 12px;
+  border: 1px solid var(--smoke);
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.lang-btn {
+  padding: 4px 10px;
+  font-size: 11px; font-weight: 500;
+  color: var(--ash);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 150ms;
+  font-family: var(--font);
+  letter-spacing: .02em;
+}
+.lang-btn.active {
+  color: var(--paper);
+  background: var(--smoke);
+}
+.lang-btn:hover:not(.active) { color: var(--mist); }
+
+.nav-cta {
+  margin-left: 12px;
+  padding: 7px 16px;
+  background: var(--accent-gradient);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 13px; font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: opacity 150ms;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.nav-cta:hover { opacity: 0.85; }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 120px 24px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  overflow: hidden;
+}
+.hero-bg-img {
+  position: absolute; inset: 0;
+  background: url('hero-bg.png') center center / cover no-repeat;
+  opacity: 0.55;
+}
+.hero-bg-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13,13,15,0.35) 0%,
+    rgba(13,13,15,0.55) 50%,
+    rgba(13,13,15,0.92) 100%
+  );
+}
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: drift 8s ease-in-out infinite alternate;
+  will-change: transform;
+}
+.orb-1 {
+  width: 350px; height: 350px;
+  top: -80px; left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(147,51,234,.12) 0%, transparent 70%);
+}
+.orb-2 {
+  width: 200px; height: 200px;
+  bottom: 0; right: -80px;
+  background: radial-gradient(circle, rgba(219,39,119,.10) 0%, transparent 70%);
+  animation-delay: -3s;
+}
+@keyframes drift {
+  from { transform: translateX(-50%) translateY(0); }
+  to   { transform: translateX(-50%) translateY(-20px); }
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(147,51,234,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(147,51,234,.08) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent);
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 5px 14px;
+  border: 1px solid var(--graphite);
+  border-radius: 9999px;
+  font-size: 12px; font-weight: 400;
+  color: var(--fog);
+  margin-bottom: 28px;
+  background: rgba(20,20,24,.6);
+  backdrop-filter: blur(8px);
+  animation: fadeUp .6s ease both;
+}
+.badge-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50% { opacity:.6; transform:scale(.85); }
+}
+.hero h1 {
+  font-size: clamp(42px,7vw,80px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--paper);
+  max-width: 780px;
+  animation: fadeUp .7s .1s ease both;
+}
+.hero h1 em {
+  font-style: normal;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  margin-top: 24px;
+  font-size: 18px; font-weight: 400;
+  line-height: 1.55;
+  color: var(--fog);
+  max-width: 560px;
+  animation: fadeUp .7s .2s ease both;
+}
+.hero-actions {
+  margin-top: 40px;
+  display: flex; align-items: center; gap: 12px;
+  flex-wrap: wrap; justify-content: center;
+  animation: fadeUp .7s .3s ease both;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px;
+  background: var(--accent-gradient);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 15px; font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: opacity 150ms, transform 150ms;
+  box-shadow: 0 0 24px rgba(147,51,234,.35);
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.15), transparent);
+  transform: translateX(-100%);
+  transition: none;
+}
+.btn-primary:hover { opacity:.88; transform:translateY(-1px); }
+.btn-primary:hover::after { transform: translateX(100%); transition: transform .5s ease; }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px;
+  border: 1px solid var(--smoke);
+  color: var(--mist);
+  border-radius: 6px;
+  font-size: 15px; font-weight: 400;
+  transition: border-color 150ms, color 150ms, background 150ms;
+}
+.btn-ghost:hover { border-color: var(--ash); color: var(--paper); background: rgba(255,255,255,.03); }
+.hero-scroll-hint {
+  margin-top: 56px;
+  color: var(--ash);
+  font-size: 12px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  animation: fadeUp .7s .5s ease both;
+}
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, var(--ash), transparent);
+  animation: scrollAnim 2s ease-in-out infinite;
+}
+@keyframes scrollAnim { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+/* ─── CHAT MOCKUP ─── */
+.hero-mockup {
+  position: relative; z-index: 1;
+  margin-top: 72px;
+  width: 100%;
+  max-width: 480px;
+  animation: floatUp .8s .4s ease both;
+}
+@keyframes floatUp {
+  from { opacity:0; transform:translateY(40px) scale(.97); }
+  to   { opacity:1; transform:translateY(0) scale(1); }
+}
+.tg-window {
+  background: var(--carbon);
+  border-radius: 16px;
+  border: 1px solid var(--graphite);
+  box-shadow:
+    rgba(147,51,234,.08) 0 0 80px 0,
+    rgba(255,255,255,.04) 0 1px 0 inset,
+    rgba(0,0,0,.6) 0 24px 60px;
+  overflow: hidden;
+  text-align: left;
+  transition: box-shadow .3s;
+}
+.tg-window:hover {
+  box-shadow:
+    rgba(147,51,234,.14) 0 0 80px 0,
+    rgba(255,255,255,.04) 0 1px 0 inset,
+    rgba(0,0,0,.6) 0 24px 60px;
+}
+.tg-header {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--graphite);
+  display: flex; align-items: center; gap: 10px;
+  background: var(--obsidian);
+}
+.tg-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--accent-gradient);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 500; color: #fff;
+  flex-shrink: 0;
+}
+.tg-header-info { flex: 1; }
+.tg-header-name { font-size: 14px; font-weight: 500; color: var(--paper); }
+.tg-header-status { font-size: 12px; color: var(--accent); }
+.tg-body { padding: 16px; display: flex; flex-direction: column; gap: 10px; min-height: 280px; }
+.msg { display: flex; flex-direction: column; max-width: 88%; }
+.msg-bot { align-self: flex-start; }
+.msg-user { align-self: flex-end; }
+.msg-bubble {
+  padding: 9px 13px;
+  border-radius: 12px;
+  font-size: 13.5px; line-height: 1.45;
+}
+.msg-bot .msg-bubble {
+  background: var(--graphite);
+  color: var(--mist);
+  border-bottom-left-radius: 4px;
+}
+.msg-user .msg-bubble {
+  background: rgba(147,51,234,.18);
+  border: 1px solid rgba(147,51,234,.28);
+  color: var(--paper);
+  border-bottom-right-radius: 4px;
+}
+.msg-choices {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px;
+}
+.choice-btn {
+  padding: 5px 11px;
+  border: 1px solid var(--smoke);
+  border-radius: 9999px;
+  font-size: 12px; color: var(--mist);
+  background: rgba(255,255,255,.03);
+  cursor: default;
+}
+.choice-btn.selected {
+  border-color: var(--accent);
+  color: #c084fc;
+  background: var(--accent-dim);
+}
+.msg-status {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 10px 14px;
+  background: rgba(147,51,234,.08);
+  border: 1px solid rgba(147,51,234,.18);
+  border-radius: 10px;
+}
+.status-row {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12.5px; color: var(--mist);
+}
+.status-check { color: #c084fc; font-weight: 500; }
+.typing-indicator { display: flex; align-items: center; gap: 4px; padding: 9px 13px; }
+.typing-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--ash);
+  animation: typingBounce 1.2s ease-in-out infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: .2s; }
+.typing-dot:nth-child(3) { animation-delay: .4s; }
+@keyframes typingBounce {
+  0%,80%,100% { transform:translateY(0); opacity:.4; }
+  40% { transform:translateY(-5px); opacity:1; }
+}
+.msg.hidden { display:none; }
+.msg.fade-in { animation: msgIn .35s ease; }
+@keyframes msgIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+/* ─── SECTION BASE ─── */
+section { padding: 96px 24px; }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-label {
+  font-family: var(--mono);
+  font-size: 11px; font-weight: 400;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  margin-bottom: 16px;
+}
+.section-heading {
+  font-size: clamp(32px,4vw,48px);
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: var(--paper);
+  max-width: 600px;
+}
+.section-heading em {
+  font-style:normal;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.section-sub {
+  margin-top: 16px;
+  font-size: 17px; color: var(--fog);
+  max-width: 520px; line-height: 1.6;
+}
+hr.sep {
+  border: none;
+  border-top: 1px solid var(--graphite);
+  margin: 0;
+}
+
+/* ─── FEATURES ─── */
+.features { background: var(--carbon); }
+.features-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1px;
+  background: var(--graphite);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.feat-card {
+  background: var(--carbon);
+  padding: 36px 32px;
+  position: relative;
+  transition: background 200ms;
+}
+.feat-card:hover { background: var(--obsidian); }
+.feat-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: rgba(147,51,234,.1);
+  border: 1px solid rgba(147,51,234,.25);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.feat-card:hover .feat-icon {
+  border-color: rgba(147,51,234,.5);
+  box-shadow: 0 0 16px rgba(147,51,234,.2);
+}
+.feat-title {
+  font-size: 17px; font-weight: 500;
+  color: var(--paper); margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.feat-desc { font-size: 14px; color: var(--fog); line-height: 1.6; }
+
+/* ─── HOW IT WORKS ─── */
+.how { background: var(--void); }
+.steps-row {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  position: relative;
+}
+.step {
+  position: relative;
+  padding: 32px 28px;
+  background: var(--carbon);
+  border: 1px solid var(--graphite);
+  border-radius: 12px;
+  box-shadow: rgba(255,255,255,.03) 0 1px 0 inset;
+  transition: border-color 200ms, transform 200ms, box-shadow 200ms;
+}
+.step:hover {
+  border-color: rgba(147,51,234,.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(147,51,234,.08), rgba(255,255,255,.03) 0 1px 0 inset;
+}
+.step-num {
+  font-family: var(--mono);
+  font-size: 32px; font-weight: 600;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+.step-title {
+  font-size: 20px; font-weight: 500;
+  color: var(--paper); margin-bottom: 12px;
+  letter-spacing: -0.015em;
+}
+.step-desc { font-size: 14px; color: var(--fog); line-height: 1.65; }
+
+/* ─── CRM CAPABILITIES ─── */
+.crm { background: var(--carbon); }
+.crm-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.crm-card {
+  background: var(--obsidian);
+  border: 1px solid var(--graphite);
+  border-radius: 10px;
+  padding: 24px 24px 20px;
+  transition: border-color 200ms, transform 200ms;
+}
+.crm-card:hover { border-color: var(--smoke); transform: translateY(-2px); }
+.crm-card-num {
+  font-family: var(--mono);
+  font-size: 11px; color: var(--accent);
+  margin-bottom: 12px;
+}
+.crm-card-title {
+  font-size: 16px; font-weight: 500;
+  color: var(--paper); margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.crm-card-desc { font-size: 13px; color: var(--fog); line-height: 1.6; }
+
+/* ─── API ACTIONS ─── */
+.api { background: var(--void); }
+.api-grid {
+  margin-top: 48px;
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.api-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px;
+  background: var(--carbon);
+  border: 1px solid var(--graphite);
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 12px; color: var(--mist);
+  transition: border-color 150ms, color 150ms, transform 150ms;
+}
+.api-badge:hover { border-color: var(--green); color: var(--paper); transform: translateY(-1px); }
+.api-badge .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px rgba(34,197,94,.4);
+  flex-shrink: 0;
+}
+.api-badge.soon {
+  opacity: .65;
+  border-style: dashed;
+}
+.api-badge.soon:hover { border-color: var(--orange); color: var(--mist); transform: none; }
+.api-badge.soon .dot {
+  background: var(--orange);
+  box-shadow: 0 0 6px rgba(245,158,11,.4);
+}
+.api-count {
+  margin-top: 28px;
+  font-size: 13px; color: var(--ash);
+  display: flex; align-items: center; gap: 20px;
+}
+.api-count strong { color: var(--paper); font-weight: 500; }
+.api-legend {
+  display: flex; align-items: center; gap: 16px;
+}
+.api-legend-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--ash);
+}
+.api-legend-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+}
+
+/* ─── COMPARE SECTION ─── */
+.compare { background: var(--carbon); }
+.compare-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.compare-card {
+  border-radius: 12px;
+  padding: 36px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.compare-card.old {
+  background: var(--obsidian);
+  border: 1px solid var(--graphite);
+}
+.compare-card.kai {
+  background: var(--obsidian);
+  border: 1px solid rgba(147,51,234,.3);
+  box-shadow: 0 0 40px rgba(147,51,234,.06);
+}
+.compare-card.kai::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--accent-gradient);
+}
+.compare-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px; font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: 20px;
+}
+.compare-card.old .compare-badge {
+  background: rgba(255,255,255,.05);
+  color: var(--ash);
+}
+.compare-card.kai .compare-badge {
+  background: var(--accent-dim);
+  color: #c084fc;
+}
+.compare-card h3 {
+  font-size: 22px; font-weight: 500;
+  color: var(--paper); margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+.compare-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.compare-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; line-height: 1.5;
+}
+.compare-list .icon {
+  flex-shrink: 0;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 600;
+  margin-top: 1px;
+}
+.compare-card.old .icon {
+  background: rgba(255,255,255,.06);
+  color: var(--ash);
+}
+.compare-card.old .compare-list li { color: var(--fog); }
+.compare-card.kai .icon {
+  background: var(--accent-dim);
+  color: #c084fc;
+}
+.compare-card.kai .compare-list li { color: var(--mist); }
+.compare-bottom {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--graphite);
+  display: flex; align-items: center; gap: 8px;
+}
+.compare-price {
+  font-size: 28px; font-weight: 300;
+  letter-spacing: -0.02em;
+}
+.compare-card.old .compare-price { color: var(--fog); }
+.compare-card.kai .compare-price { color: var(--paper); }
+.compare-card.kai .compare-price span {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.compare-period { font-size: 13px; color: var(--ash); }
+
+/* ─── CTA BAND ─── */
+.cta-band {
+  background: var(--void);
+  padding: 96px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: '';
+  position: absolute;
+  width: 300px; height: 300px;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(147,51,234,.1) 0%, transparent 70%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+.cta-inner {
+  max-width: 720px; margin: 0 auto; text-align: center;
+  position: relative; z-index: 1;
+}
+.cta-inner h2 {
+  font-size: clamp(32px,4vw,52px);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--paper);
+}
+.cta-inner h2 em {
+  font-style:normal;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-inner p {
+  margin-top: 20px;
+  font-size: 17px; color: var(--fog);
+  line-height: 1.55;
+}
+.cta-inner .hero-actions { margin-top: 40px; }
+.cta-tg-hint {
+  margin-top: 16px;
+  font-size: 13px; color: var(--ash);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--carbon);
+  border-top: 1px solid var(--graphite);
+  padding: 48px 24px 36px;
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; gap: 40px;
+  justify-content: space-between;
+}
+.footer-brand { max-width: 280px; }
+.footer-brand .logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; color:var(--paper); margin-bottom: 14px; }
+.footer-desc { font-size: 13px; color: var(--ash); line-height: 1.65; }
+.footer-links h4 { font-size: 12px; font-weight: 500; color: var(--fog); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 14px; }
+.footer-links ul { list-style:none; display:flex; flex-direction:column; gap:8px; }
+.footer-links a { font-size: 13px; color: var(--ash); transition: color 150ms; }
+.footer-links a:hover { color: var(--paper); }
+.footer-bottom {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--graphite);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+  font-size: 12px; color: var(--ash);
+}
+.footer-bottom a { color: var(--ash); transition: color 150ms; }
+.footer-bottom a:hover { color: var(--fog); }
+
+/* ─── SCROLL ANIMATIONS ─── */
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+
+/* ─── COUNTER ANIMATION ─── */
+.counter { display: inline; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .lang-toggle { display: none; }
+  .hero h1 { font-size: 38px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; gap: 32px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+/* ─── INTEGRATIONS / PARTNERS ─── */
+.integrations {
+  background: var(--void);
+  padding: 64px 24px;
+}
+.integrations-inner {
+  max-width: 600px; margin: 0 auto;
+  text-align: center;
+}
+.integrations-label {
+  font-family: var(--mono);
+  font-size: 11px; font-weight: 400;
+  color: var(--ash);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  margin-bottom: 32px;
+}
+.integrations-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+  flex-wrap: wrap;
+}
+.int-logo {
+  display: flex; align-items: center; gap: 12px;
+  opacity: .5;
+  transition: opacity .4s ease, transform .3s ease;
+  cursor: default;
+}
+.int-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+.int-logo-icon {
+  display: flex; align-items: center;
+}
+.int-logo-text {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--paper);
+  letter-spacing: -0.02em;
+}
+.kommo-wordmark {
+  font-family: 'Nunito', 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  color: var(--paper);
+  letter-spacing: -0.03em;
+}
+
+/* ─── MAGNETIC GLOW ─── */
+.glow-card {
+  position: relative;
+  overflow: hidden;
+}
+.glow-card::after {
+  content: '';
+  position: absolute;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(147,51,234,.12) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .3s;
+  left: var(--glow-x, 50%);
+  top: var(--glow-y, 50%);
+  transform: translate(-50%, -50%);
+}
+.glow-card:hover::after { opacity: 1; }
+
+/* ─── GRADIENT BORDER ANIMATION ─── */
+@keyframes borderGlow {
+  0%   { border-color: rgba(147,51,234,.2); }
+  50%  { border-color: rgba(219,39,119,.3); }
+  100% { border-color: rgba(147,51,234,.2); }
+}
+
+/* ─── STAGGER CHILDREN ─── */
+.stagger-in > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+.stagger-in.visible > * {
+  opacity: 1;
+  transform: none;
+}
+.stagger-in.visible > *:nth-child(1) { transition-delay: .05s; }
+.stagger-in.visible > *:nth-child(2) { transition-delay: .1s; }
+.stagger-in.visible > *:nth-child(3) { transition-delay: .15s; }
+.stagger-in.visible > *:nth-child(4) { transition-delay: .2s; }
+.stagger-in.visible > *:nth-child(5) { transition-delay: .25s; }
+
+/* ─── NUMBER COUNT-UP ─── */
+.count-up {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── TILT CARDS ─── */
+.tilt-card {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.tilt-card:hover {
+  box-shadow: 0 12px 40px rgba(147,51,234,.1), rgba(255,255,255,.03) 0 1px 0 inset;
+}
+
+/* ─── TYPING CURSOR BLINK ─── */
+.cursor-blink::after {
+  content: '|';
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* ─── SMOOTH GRADIENT TEXT SHIFT ─── */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.gradient-animate {
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+/* ─── FLOAT SUBTLE ─── */
+@keyframes floatSubtle {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ─── SHIMMER ON BADGES ─── */
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+/* ─── FEATURE CARD HOVER ANIMATIONS ─── */
+.feat-svg { transition: transform .3s ease; }
+.feat-card:hover .feat-svg { transform: scale(1.1); }
+
+/* Chat: typing dots bounce */
+.feat-card[data-feat="chat"]:hover .chat-dot-1 { animation: typingBounce 1s ease-in-out infinite; }
+.feat-card[data-feat="chat"]:hover .chat-dot-2 { animation: typingBounce 1s .15s ease-in-out infinite; }
+.feat-card[data-feat="chat"]:hover .chat-dot-3 { animation: typingBounce 1s .3s ease-in-out infinite; }
+
+/* Auto: gear spins, bolt flashes */
+.feat-card[data-feat="auto"]:hover .gear-outer { animation: spinGear 3s linear infinite; transform-origin: 12px 12px; }
+.feat-card[data-feat="auto"]:hover .bolt { animation: flashBolt 1.5s ease infinite; }
+@keyframes spinGear { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+@keyframes flashBolt { 0%,100%{opacity:0} 30%,70%{opacity:1} }
+
+/* PDF: lines write in */
+.feat-card[data-feat="pdf"]:hover .doc-line-1 { animation: lineWrite .5s ease both; }
+.feat-card[data-feat="pdf"]:hover .doc-line-2 { animation: lineWrite .5s .15s ease both; }
+.feat-card[data-feat="pdf"]:hover .doc-line-3 { animation: lineWrite .5s .3s ease both; }
+@keyframes lineWrite {
+  from { stroke-dasharray: 20; stroke-dashoffset: 20; opacity: .3; }
+  to   { stroke-dasharray: 20; stroke-dashoffset: 0; opacity: 1; }
+}
+
+/* Voice: sound waves pulse */
+.feat-card[data-feat="voice"]:hover .wave { animation: waveAnim 1s ease-in-out infinite; }
+.feat-card[data-feat="voice"]:hover .wave-1 { animation-delay: 0s; }
+.feat-card[data-feat="voice"]:hover .wave-2 { animation-delay: .15s; }
+.feat-card[data-feat="voice"]:hover .wave-3 { animation-delay: .15s; }
+.feat-card[data-feat="voice"]:hover .wave-4 { animation-delay: 0s; }
+@keyframes waveAnim {
+  0%,100% { opacity: 0; transform: scaleY(.5); }
+  50% { opacity: .7; transform: scaleY(1); }
+}
+.wave { transform-origin: center; }
+
+.api-badge { position: relative; overflow: hidden; }
+.api-badge::before {
+  content: '';
+  position: absolute; top: 0; bottom: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.04), transparent);
+  left: -100%;
+  animation: shimmer 6s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * .3s);
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Kai</a>
+    <ul class="nav-links">
+      <li><a href="#features" data-ru="Возможности" data-en="Features">Возможности</a></li>
+      <li><a href="#how" data-ru="Как работает" data-en="How it works">Как работает</a></li>
+      <li><a href="#api" data-ru="API" data-en="API">API</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="ru">RU</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="nav-cta" data-ru="Попробовать в Telegram →" data-en="Try in Telegram →">Попробовать в Telegram →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <div class="hero-bg-img"></div>
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+  </div>
+
+  <div class="hero-badge">
+    <span class="badge-dot"></span>
+    <span data-ru="Работает в Telegram — без установки" data-en="Works in Telegram — no install needed">Работает в Telegram — без установки</span>
+  </div>
+
+  <h1 data-ru="Настройка <em>amoCRM</em><br>без программистов" data-en="Set up <em>amoCRM</em><br>without developers">
+    Настройка <em>amoCRM</em><br>без программистов
+  </h1>
+  <p class="hero-sub" data-ru="Kai задаёт правильные вопросы, строит план под ваш бизнес и настраивает CRM автоматически — через обычный чат в Telegram." data-en="Kai asks the right questions, builds a plan for your business and configures CRM automatically — via a regular Telegram chat.">
+    Kai задаёт правильные вопросы, строит план под ваш бизнес и настраивает CRM автоматически — через обычный чат в Telegram.
+  </p>
+
+  <div class="hero-actions">
+    <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="btn-primary">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.4 2L1.6 6.5c-.6.2-.5 1 .1 1.2l3.3 1.1 1.1 3.7c.2.6 1 .7 1.2.1L11.9 3.4c.3-.7-.4-1.4-1.1-1.1z" fill="currentColor"/></svg>
+      <span data-ru="Попробовать бесплатно" data-en="Try for free">Попробовать бесплатно</span>
+    </a>
+    <a href="#how" class="btn-ghost">
+      <span data-ru="Как это работает ↓" data-en="How it works ↓">Как это работает ↓</span>
+    </a>
+  </div>
+
+  <div class="hero-mockup">
+    <div class="tg-window">
+      <div class="tg-header">
+        <div class="tg-avatar">K</div>
+        <div class="tg-header-info">
+          <div class="tg-header-name">Kai</div>
+          <div class="tg-header-status">● онлайн</div>
+        </div>
+      </div>
+      <div class="tg-body" id="chatBody">
+        <div class="msg msg-bot msg-0" style="display:none">
+          <div class="msg-bubble">Привет! Расскажите про ваш бизнес. Что продаёте или какую услугу оказываете?</div>
+          <div class="msg-choices">
+            <div class="choice-btn">Услуги</div>
+            <div class="choice-btn">Товары</div>
+            <div class="choice-btn">B2B продажи</div>
+          </div>
+        </div>
+        <div class="msg msg-user msg-1" style="display:none">
+          <div class="msg-bubble">Консультации по финансам</div>
+        </div>
+        <div class="msg msg-bot msg-2" style="display:none">
+          <div class="msg-bubble">Как обычно клиенты попадают к вам?</div>
+          <div class="msg-choices">
+            <div class="choice-btn selected">Звонки</div>
+            <div class="choice-btn selected">Заявки с сайта</div>
+            <div class="choice-btn">Рекомендации</div>
+          </div>
+        </div>
+        <div class="msg msg-bot msg-3" style="display:none">
+          <div class="msg-bubble">Отлично. Создаю вашу CRM...</div>
+          <div class="msg-status">
+            <div class="status-row"><span class="status-check">✓</span> Воронка «Входящие заявки» создана</div>
+            <div class="status-row"><span class="status-check">✓</span> 6 этапов продаж добавлено</div>
+            <div class="status-row"><span class="status-check">✓</span> 14 кастомных полей настроено</div>
+            <div class="status-row"><span class="status-check">✓</span> Задачи на каждый этап созданы</div>
+          </div>
+        </div>
+        <div class="msg msg-bot msg-4" style="display:none">
+          <div class="msg-bubble">Готово! Всё настроено в вашем аккаунте amoCRM.</div>
+        </div>
+        <div class="typing-msg" style="display:none">
+          <div class="msg-bubble typing-indicator">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- INTEGRATIONS -->
+<section class="integrations">
+  <div class="integrations-inner reveal">
+    <p class="integrations-label" data-ru="Работаем с" data-en="We integrate with">Работаем с</p>
+    <div class="integrations-logos">
+      <a href="https://www.amocrm.ru/" target="_blank" rel="noopener" class="int-logo">
+        <div class="int-logo-icon">
+          <svg width="83" height="25" viewBox="0 0 83 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M50.5351 9.20771C50.5351 8.1584 49.9313 7.63374 48.7236 7.63374C47.8972 7.63374 46.9756 8.42073 45.9586 9.99469C44.9469 11.5707 44.2059 13.3019 43.7657 15.118V15.2124C43.7734 16.3321 43.9419 17.445 44.2662 18.5177C44.5271 19.2822 44.6951 20.0748 44.7668 20.8787C44.7668 21.928 43.4161 22.9773 40.7146 24.0266C40.3665 24.1701 39.995 24.2501 39.6182 24.2627C39.2442 24.2727 38.8779 24.1566 38.5792 23.9336C38.2804 23.7106 38.0669 23.3938 37.9735 23.035C37.6333 21.9588 37.4801 20.8331 37.5206 19.7061C37.5206 18.3052 37.5603 16.9936 37.6398 15.7712C37.7192 14.5487 37.7987 13.3997 37.8781 12.3242C37.9576 11.2749 38.037 10.3462 38.1165 9.53824C38.196 8.73027 38.2357 8.07708 38.2357 7.57865C38.2357 6.52934 37.7431 6.00469 36.7578 6.00469C35.7726 6.00469 34.6285 7.15106 33.3254 9.44381C32.0224 11.7261 31.3709 13.5361 31.3709 14.874C31.3592 16.1268 31.5277 17.3749 31.8714 18.5807C32.1323 19.3452 32.3003 20.1378 32.372 20.9416C32.372 21.991 31.0213 23.0403 28.3199 24.0896C27.9717 24.233 27.6003 24.313 27.2234 24.3257C26.8498 24.3342 26.4842 24.2176 26.1857 23.9949C25.8873 23.7721 25.6734 23.4561 25.5787 23.098C25.4444 22.6353 25.339 22.1656 25.2628 21.6917C24.6146 22.1211 23.9322 22.4993 23.2216 22.8223C22.0319 23.394 20.7301 23.7002 19.4079 23.7194C17.7234 23.7194 16.5952 22.2557 16.0231 19.3281C15.2113 20.6667 14.1028 21.8051 12.7814 22.657C11.1593 23.5973 9.29548 24.0486 7.41831 23.9555C6.42034 23.9991 5.42411 23.837 4.49271 23.4793C3.56131 23.1217 2.71504 22.5764 2.00751 21.8779C1.339 21.2155 0.816027 20.4233 0.471458 19.5511C0.126889 18.679 -0.0318269 17.7456 0.00528284 16.8097C0.00528284 11.4582 1.80094 7.24 5.39224 4.15503C6.62717 3.02233 8.07764 2.14479 9.6589 1.57372C11.0097 1.15987 12.4163 0.952862 13.8302 0.959871C15.0699 0.92016 16.2996 1.19084 17.4056 1.74685C17.8506 0.833953 18.3591 0.377502 18.9311 0.377502C19.5308 0.397074 20.1205 0.534467 20.6661 0.7817C21.2117 1.02893 21.7023 1.38108 22.1093 1.81768C22.5278 2.14934 22.8754 2.56024 23.1319 3.0264C23.3883 3.49256 23.5485 4.00465 23.603 4.53278C23.0308 5.81542 22.378 7.0613 21.6485 8.26308C21.3549 10.2799 21.2274 12.317 21.2671 14.3543C21.2671 16.9776 21.6008 18.2893 22.2682 18.2893C22.7761 18.2893 23.7282 17.6709 25.1246 16.4341C25.1761 14.1625 25.3515 11.8947 25.6502 9.64055C26.1391 6.67571 27.2428 3.84337 28.8919 1.32213C29.065 0.964945 29.3259 0.656626 29.6509 0.425576C29.9758 0.194525 30.3541 0.0481729 30.7512 0C31.8105 0 32.7799 0.849942 33.6592 2.54983C33.8894 2.9398 34.081 3.35096 34.2312 3.77752C34.8414 2.91938 35.647 2.21568 36.583 1.72346C37.5189 1.23124 38.5587 0.964334 39.6182 0.944381C40.966 0.937594 42.2704 1.41581 43.2889 2.29012C43.7966 2.69523 44.2038 3.21018 44.4793 3.79543C44.7547 4.38069 44.8911 5.02068 44.878 5.66628V6.18569C45.6969 5.07222 46.7704 4.16659 48.0105 3.54285C49.2506 2.91912 50.6221 2.59502 52.0129 2.59705C52.7218 2.5491 53.4332 2.64284 54.1047 2.87267C54.7763 3.10251 55.3943 3.46375 55.9221 3.93492C56.3572 4.35903 56.7002 4.86688 56.9297 5.42721C57.1593 5.98754 57.2706 6.58848 57.2569 7.19303C57.267 8.36389 57.1713 9.53329 56.9708 10.6872C56.7802 11.7366 56.5656 12.7124 56.3273 13.6148C56.0889 14.5172 55.8744 15.3278 55.6837 16.0466C55.5211 16.584 55.425 17.1389 55.3977 17.6993C55.3977 18.0928 55.5248 18.2895 55.779 18.2895C56.4528 18.1975 57.0748 17.8811 57.5429 17.3923C57.9913 17.0088 58.4397 16.6026 58.8881 16.1737C58.8512 15.7794 58.8407 15.3821 58.8569 14.9846C58.756 11.424 60.0354 7.96027 62.4323 5.30473C63.6129 3.97775 65.0764 2.92718 66.7171 2.22897C68.3578 1.53076 70.1346 1.20236 71.919 1.2675C73.3797 1.2198 74.8361 1.44954 76.2095 1.94431C78.0846 2.69981 79.0222 3.4081 79.0222 4.06916C79.0222 4.59382 77.7112 4.85615 75.0892 4.85615C73.865 4.83408 72.6492 5.06163 71.5174 5.52464C70.3857 5.98766 69.3622 6.67625 68.5105 7.54763C67.6345 8.43474 66.9485 9.48807 66.4938 10.6444C66.0392 11.8007 65.8252 13.0361 65.8647 14.2763C65.8237 15.5789 66.2741 16.8499 67.128 17.8414C67.5828 18.3291 68.1422 18.7095 68.7651 18.9547C69.388 19.1999 70.0585 19.3035 70.7272 19.258C72.0706 19.3067 73.4007 18.9794 74.5648 18.3136C73.473 17.6057 72.5864 16.628 71.9928 15.4769C71.3992 14.3258 71.1191 13.0413 71.1801 11.7501C71.1584 10.2123 71.7493 8.72784 72.8248 7.61846C73.3663 7.01083 74.0348 6.52716 74.784 6.20101C75.5331 5.87486 76.3448 5.71404 77.163 5.7297C78.9268 5.7297 80.1902 6.20976 80.9529 7.16988C81.7912 8.35739 82.1948 9.79285 82.097 11.2386C81.8738 14.4673 80.8665 17.6757 78.6663 20.0682C75.8298 23.2162 72.793 24.3104 69.3209 24.3104C65.8488 24.3104 63.1791 23.4211 61.4312 21.6189C61.0344 21.217 60.6777 20.7802 60.3651 20.3145C60.2713 20.4056 60.1755 20.4966 60.0775 20.5875C58.2 22.5209 55.6337 23.6507 52.9267 23.7354C50.6384 23.7354 49.4943 21.6735 49.4943 17.5497C49.5411 16.1049 49.7165 14.667 50.0187 13.2528C50.3053 11.9212 50.478 10.5681 50.5351 9.20771ZM7.01309 15.2515C7.01309 17.6754 7.91887 18.8874 9.73041 18.8874C11.6691 18.8559 13.274 17.8328 14.5453 15.8181C15.0341 15.0255 15.4034 14.1665 15.6418 13.2683C15.5894 10.2193 15.9096 7.17514 16.5952 4.20224C14.0236 4.70127 11.6736 5.98342 9.87343 7.86959C8.92312 8.84848 8.18041 10.006 7.68915 11.2739C7.19788 12.5417 6.96801 13.8942 7.01309 15.2515ZM78.7203 11.1048C78.7065 12.2513 78.4351 13.3805 77.9257 14.4101V14.4416C77.5124 14.0348 77.1877 13.5484 76.9717 13.0123C76.7558 12.4763 76.6532 11.902 76.6704 11.3252C76.678 10.9157 76.7756 10.5129 76.9564 10.1447C77.1471 9.73545 77.3854 9.53083 77.6715 9.53083C78.3707 9.53083 78.7203 10.0555 78.7203 11.1048Z" fill="white"/>
+          </svg>
+        </div>
+      </a>
+      <a href="https://www.kommo.com/" target="_blank" rel="noopener" class="int-logo">
+        <div class="int-logo-icon">
+          <svg fill="none" style="width: 8.25rem; height: 1.75rem;" viewBox="0 0 132 28" xmlns="http://www.w3.org/2000/svg"><path d="M25.5006 27.9949H20.2462C19.2734 27.9948 18.3152 27.759 17.4534 27.3077C16.5916 26.8563 15.8521 26.2029 15.298 25.4033L11.9992 20.6378L9.41945 16.9118C9.30209 16.7414 9.13326 16.6131 8.93769 16.5457C8.74211 16.4783 8.53008 16.4752 8.33265 16.5371C8.13523 16.5989 7.96279 16.7223 7.84062 16.8893C7.71845 17.0562 7.65296 17.2579 7.65375 17.4648V26.4452C7.65375 26.8562 7.49047 27.2504 7.19984 27.541C6.90921 27.8316 6.51503 27.9949 6.10402 27.9949H1.54974C1.13892 27.9943 0.745099 27.8308 0.454603 27.5403C0.164108 27.2498 0.00062769 26.856 0 26.4452V19.7597C0 18.9694 0.155676 18.1867 0.458138 17.4565C0.760599 16.7263 1.20393 16.0628 1.7628 15.5039C2.32168 14.9451 2.98516 14.5017 3.71537 14.1993C4.44557 13.8968 5.2282 13.7411 6.01857 13.7411H7.2052C7.28172 13.741 7.35708 13.7224 7.42485 13.6869C7.49262 13.6513 7.5508 13.5999 7.59441 13.537L11.9897 7.19808L15.177 2.59397C15.7301 1.79322 16.4694 1.13879 17.3313 0.686947C18.1932 0.235102 19.152 -0.000636831 20.1252 1.29206e-06H25.3748C25.4613 9.14672e-06 25.546 0.0236023 25.62 0.0682411C25.694 0.11288 25.7544 0.176873 25.7947 0.253311C25.835 0.329749 25.8536 0.415735 25.8487 0.502C25.8437 0.588266 25.8152 0.671536 25.7664 0.742831L18.0747 11.852C17.654 12.4584 17.4285 13.1788 17.4285 13.9168C17.4285 14.6548 17.654 15.3752 18.0747 15.9815L25.9017 27.2497C25.9517 27.3217 25.9807 27.4061 25.9857 27.4936C25.9906 27.5811 25.9713 27.6682 25.9298 27.7453C25.8882 27.8225 25.8262 27.8867 25.7504 27.9307C25.6747 27.9748 25.5882 27.997 25.5006 27.9949Z" fill="white"></path><path d="M76.4482 27.4712H69.9313V15.5527C69.9313 15.0007 69.712 14.4713 69.3216 14.081C68.9313 13.6906 68.4019 13.4714 67.8499 13.4714C67.2979 13.4714 66.7685 13.6906 66.3782 14.081C65.9879 14.4713 65.7686 15.0007 65.7686 15.5527V27.4617H59.2635V27.0606C59.2635 25.0528 59.2635 19.8696 59.2635 16.642C59.2622 16.2822 59.1901 15.9261 59.0511 15.5941C58.9122 15.2622 58.7092 14.9608 58.4538 14.7074C58.1983 14.4539 57.8954 14.2533 57.5624 14.1169C57.2294 13.9806 56.8727 13.9112 56.5129 13.9128H55.0889V27.4712H48.5957V7.61179H48.9398C51.4033 7.61179 53.8667 7.63552 56.3301 7.61179C58.7034 7.58331 60.818 8.18611 62.5006 9.95894C62.7735 9.70262 63.0322 9.43682 63.3146 9.1995C64.4229 8.26444 65.6452 7.53822 67.0952 7.26767C70.8663 6.54145 75.0836 9.00963 76.1444 12.6051C76.3416 13.2774 76.443 13.974 76.4458 14.6746C76.4482 18.861 76.4482 27.3834 76.4482 27.4712Z" fill="white"></path><path d="M108.206 27.4712H101.689V15.5527C101.699 15.2736 101.652 14.9955 101.552 14.7349C101.451 14.4743 101.3 14.2365 101.105 14.0358C100.911 13.835 100.679 13.6753 100.422 13.5663C100.165 13.4573 99.8883 13.4011 99.609 13.4011C99.3298 13.4011 99.0534 13.4573 98.7963 13.5663C98.5393 13.6753 98.3068 13.835 98.1127 14.0358C97.9186 14.2365 97.7669 14.4743 97.6666 14.7349C97.5663 14.9955 97.5195 15.2736 97.5289 15.5527V27.4617H91.0143V27.0606C91.0143 25.0528 91.0143 19.8696 91.0143 16.642C91.0143 15.9157 90.7258 15.2191 90.2122 14.7054C89.6985 14.1918 89.0019 13.9033 88.2756 13.9033H86.8516V27.4617H80.3418V7.61179H80.6859C83.1493 7.61179 85.6128 7.63552 88.0762 7.61179C90.4495 7.58331 92.564 8.18611 94.2467 9.95894C94.5196 9.70262 94.7783 9.43682 95.0607 9.1995C96.169 8.26444 97.3912 7.53822 98.8413 7.26767C102.612 6.54145 106.83 9.00963 107.891 12.6051C108.087 13.2775 108.188 13.9741 108.19 14.6746L108.206 27.4712Z" fill="white"></path><path d="M25.0939 17.5837C25.0939 12.6331 28.7677 8.16427 33.6519 7.336C37.5013 6.68335 40.6743 8.04798 43.1449 11.0027C44.0408 12.0377 44.7138 13.2462 45.1222 14.5528C45.5305 15.8594 45.6653 17.2361 45.5182 18.5971C45.2571 21.2931 44.0396 23.5335 42.0532 25.3443C40.1546 27.0839 37.8858 28.0284 35.2871 27.9928C31.853 27.9406 29.1593 26.4099 27.1302 23.6877C25.7934 21.9351 25.077 19.7879 25.0939 17.5837ZM31.3688 17.5837C31.3699 18.2784 31.5324 18.9633 31.8435 19.5844C32.0996 20.1558 32.492 20.6557 32.9864 21.04C33.4808 21.4244 34.062 21.6815 34.6789 21.7888C35.2959 21.8961 35.9297 21.8503 36.5249 21.6555C37.12 21.4607 37.6582 21.1227 38.0922 20.6713C38.7581 19.9467 39.1694 19.0246 39.2636 18.0451C39.3579 17.0655 39.1299 16.0819 38.6144 15.2437C38.1154 14.3776 37.2939 13.7441 36.3294 13.4818C35.3649 13.2194 34.3357 13.3494 33.4668 13.8435C32.0428 14.6575 31.459 15.9889 31.3593 17.5742L31.3688 17.5837Z" fill="white"></path><path d="M131.72 17.1733C131.732 22.6982 127.79 27.2762 122.737 27.9123C119.235 28.3537 116.313 27.1125 113.956 24.5304C112.464 22.9349 111.534 20.8957 111.308 18.723C110.997 15.7469 111.866 13.1221 113.778 10.8462C115.318 8.94289 117.511 7.68001 119.93 7.30291C123.051 6.80927 125.804 7.68975 128.137 9.78059C130.47 11.8714 131.666 14.4583 131.72 17.1733ZM125.441 17.5862C125.438 16.9157 125.287 16.2542 124.997 15.6497C123.677 12.8231 120.431 12.8445 118.926 14.3301C118.331 14.8777 117.9 15.5796 117.681 16.3577C117.461 17.1358 117.462 17.9595 117.682 18.7372C118.278 21.0891 120.53 22.3588 122.73 21.6279C124.304 21.1081 125.441 19.4113 125.441 17.5862Z" fill="white"></path></svg>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="container">
+    <p class="section-label reveal" data-ru="Возможности" data-en="Features">Возможности</p>
+    <h2 class="section-heading reveal reveal-delay-1" data-ru="Kai — это <em>аналитик</em>,<br>который думает с вами" data-en="Kai is an <em>analyst</em><br>who thinks with you">Kai — это <em>аналитик</em>,<br>который думает с вами</h2>
+    <p class="section-sub reveal reveal-delay-2" data-ru="Не шаблонный бот с анкетой. Живой диалог с экспертом, который потом всё реализует сам." data-en="Not a template bot with a survey. A real dialog with an expert who then implements everything.">Не шаблонный бот с анкетой. Живой диалог с экспертом, который потом всё реализует сам.</p>
+    <div class="features-grid reveal reveal-delay-1 stagger-in" style="margin-top:56px">
+
+      <div class="feat-card glow-card" data-feat="chat">
+        <div class="feat-icon">
+          <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path class="chat-box" d="M4 4h16a2 2 0 012 2v10a2 2 0 01-2 2H8l-4 4V6a2 2 0 012-2z" stroke="#c084fc" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+            <circle class="chat-dot chat-dot-1" cx="8" cy="11" r="1.3" fill="#c084fc"/>
+            <circle class="chat-dot chat-dot-2" cx="12" cy="11" r="1.3" fill="#c084fc"/>
+            <circle class="chat-dot chat-dot-3" cx="16" cy="11" r="1.3" fill="#c084fc"/>
+          </svg>
+        </div>
+        <h3 class="feat-title" data-ru="Консультирует как эксперт" data-en="Consults like an expert">Консультирует как эксперт</h3>
+        <p class="feat-desc" data-ru="Задаёт правильные вопросы, предлагает варианты, корректирует план. Живой диалог с вариантами ответов — отвечайте нажатием кнопки." data-en="Asks the right questions, suggests options, adjusts the plan. Interactive dialog with answer variants — respond with a button click.">Задаёт правильные вопросы, предлагает варианты, корректирует план. Живой диалог с вариантами ответов — отвечайте нажатием кнопки.</p>
+      </div>
+
+      <div class="feat-card glow-card" data-feat="auto">
+        <div class="feat-icon">
+          <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path class="gear-outer" d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="#c084fc" stroke-width="1.5" stroke-linecap="round"/>
+            <circle class="gear-center" cx="12" cy="12" r="5" stroke="#c084fc" stroke-width="1.5" fill="none"/>
+            <circle cx="12" cy="12" r="2" fill="#c084fc"/>
+            <path class="bolt" d="M11 7h2.5L11.5 12H14L10.5 18l1-4H9z" fill="#c084fc" opacity="0"/>
+          </svg>
+        </div>
+        <h3 class="feat-title" data-ru="Настраивает CRM автоматически" data-en="Configures CRM automatically">Настраивает CRM автоматически</h3>
+        <p class="feat-desc" data-ru="Создаёт воронки, поля, этапы, задачи, контакты через официальный API. Нажимаешь «Реализовать» — Kai всё делает за секунды." data-en="Creates pipelines, fields, stages, tasks, contacts via official API. Click 'Implement' — Kai does everything in seconds.">Создаёт воронки, поля, этапы, задачи, контакты через официальный API. Нажимаешь «Реализовать» — Kai всё делает за секунды.</p>
+      </div>
+
+      <div class="feat-card glow-card" data-feat="pdf">
+        <div class="feat-icon">
+          <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path class="doc-page" d="M6 2h8l6 6v14a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2z" stroke="#c084fc" stroke-width="1.3" fill="none"/>
+            <path class="doc-fold" d="M14 2v6h6" stroke="#c084fc" stroke-width="1.3" fill="none"/>
+            <line class="doc-line doc-line-1" x1="8" y1="13" x2="16" y2="13" stroke="#c084fc" stroke-width="1.3" opacity=".5"/>
+            <line class="doc-line doc-line-2" x1="8" y1="16" x2="14" y2="16" stroke="#c084fc" stroke-width="1.3" opacity=".5"/>
+            <line class="doc-line doc-line-3" x1="8" y1="19" x2="12" y2="19" stroke="#c084fc" stroke-width="1.3" opacity=".5"/>
+          </svg>
+        </div>
+        <h3 class="feat-title" data-ru="Генерирует ТЗ в PDF" data-en="Generates specs in PDF">Генерирует ТЗ в PDF</h3>
+        <p class="feat-desc" data-ru="Согласованный план превращается в профессиональный документ — техническое задание для вашей команды или интегратора." data-en="The agreed plan becomes a professional document — technical specifications for your team or integrator.">Согласованный план превращается в профессиональный документ — техническое задание для вашей команды или интегратора.</p>
+      </div>
+
+      <div class="feat-card glow-card" data-feat="voice">
+        <div class="feat-icon">
+          <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <rect class="mic-body" x="9" y="2" width="6" height="12" rx="3" stroke="#c084fc" stroke-width="1.3" fill="none"/>
+            <path class="mic-arc" d="M5 12a7 7 0 0014 0" stroke="#c084fc" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            <line class="mic-stand" x1="12" y1="19" x2="12" y2="22" stroke="#c084fc" stroke-width="1.3"/>
+            <line class="wave wave-1" x1="2" y1="8" x2="2" y2="16" stroke="#c084fc" stroke-width="1.5" stroke-linecap="round" opacity="0"/>
+            <line class="wave wave-2" x1="5" y1="6" x2="5" y2="18" stroke="#c084fc" stroke-width="1.5" stroke-linecap="round" opacity="0"/>
+            <line class="wave wave-3" x1="19" y1="6" x2="19" y2="18" stroke="#c084fc" stroke-width="1.5" stroke-linecap="round" opacity="0"/>
+            <line class="wave wave-4" x1="22" y1="8" x2="22" y2="16" stroke="#c084fc" stroke-width="1.5" stroke-linecap="round" opacity="0"/>
+          </svg>
+        </div>
+        <h3 class="feat-title" data-ru="Понимает голосовые" data-en="Understands voice messages">Понимает голосовые</h3>
+        <p class="feat-desc" data-ru="Отправьте голосовое — Kai распознает речь через Whisper и ответит. Диктуйте задачи, не набирая текст." data-en="Send a voice message — Kai recognizes speech via Whisper and responds. Dictate tasks without typing.">Отправьте голосовое — Kai распознает речь через Whisper и ответит. Диктуйте задачи, не набирая текст.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="container">
+    <p class="section-label reveal" data-ru="Как работает" data-en="How it works">Как работает</p>
+    <h2 class="section-heading reveal reveal-delay-1" data-ru="Три шага<br>до <em>готовой CRM</em>" data-en="Three steps<br>to a <em>ready CRM</em>">Три шага<br>до <em>готовой CRM</em></h2>
+    <p class="section-sub reveal reveal-delay-2" data-ru="Больше не нужно разбираться в настройках или нанимать интегратора." data-en="No need to figure out settings or hire an integrator anymore.">Больше не нужно разбираться в настройках или нанимать интегратора.</p>
+
+    <div class="steps-row" style="margin-top:56px">
+      <div class="step reveal tilt-card">
+        <div class="step-num">01</div>
+        <h3 class="step-title" data-ru="Расскажи про бизнес" data-en="Describe your business">Расскажи про бизнес</h3>
+        <p class="step-desc" data-ru="Kai задаёт уточняющие вопросы с вариантами ответов. Отвечай нажатием кнопки или голосом — не нужно ничего придумывать." data-en="Kai asks clarifying questions with answer options. Respond by pressing a button or voice — no need to think.">Kai задаёт уточняющие вопросы с вариантами ответов. Отвечай нажатием кнопки или голосом — не нужно ничего придумывать.</p>
+      </div>
+      <div class="step reveal reveal-delay-1 tilt-card">
+        <div class="step-num">02</div>
+        <h3 class="step-title" data-ru="Согласуй план" data-en="Approve the plan">Согласуй план</h3>
+        <p class="step-desc" data-ru="Получаешь детальный план: воронки, поля, этапы, автозадачи. Правишь если нужно — затем подтверждаешь одной кнопкой." data-en="Get a detailed plan: pipelines, fields, stages, auto-tasks. Edit if needed — then confirm with one button.">Получаешь детальный план: воронки, поля, этапы, автозадачи. Правишь если нужно — затем подтверждаешь одной кнопкой.</p>
+      </div>
+      <div class="step reveal reveal-delay-2 tilt-card">
+        <div class="step-num">03</div>
+        <h3 class="step-title" data-ru="Готово — CRM настроена" data-en="Done — CRM is configured">Готово — CRM настроена</h3>
+        <p class="step-desc" data-ru="Нажимаешь «Реализовать» — Kai создаёт всё в твоём аккаунте amoCRM или Kommo за секунды через официальный API." data-en="Press 'Implement' — Kai creates everything in your amoCRM or Kommo account in seconds via official API.">Нажимаешь «Реализовать» — Kai создаёт всё в твоём аккаунте amoCRM или Kommo за секунды через официальный API.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- CRM CAPABILITIES -->
+<section class="crm" id="crm">
+  <div class="container">
+    <p class="section-label reveal" data-ru="Полный контроль" data-en="Full control">Полный контроль</p>
+    <h2 class="section-heading reveal reveal-delay-1" data-ru="Полное управление <em>CRM</em><br>через чат" data-en="Full <em>CRM</em> management<br>via chat">Полное управление <em>CRM</em><br>через чат</h2>
+    <p class="section-sub reveal reveal-delay-2" data-ru="28 действий через официальный API amoCRM / Kommo. Всё через обычный чат в Telegram." data-en="28 actions via official amoCRM / Kommo API. Everything through a regular Telegram chat.">28 действий через официальный API amoCRM / Kommo. Всё через обычный чат в Telegram.</p>
+
+    <div class="crm-grid reveal reveal-delay-1" style="margin-top:56px">
+      <div class="crm-card">
+        <div class="crm-card-num">01</div>
+        <h3 class="crm-card-title" data-ru="Воронки и этапы" data-en="Pipelines and stages">Воронки и этапы</h3>
+        <p class="crm-card-desc" data-ru="Создаёт, редактирует, удаляет воронки и этапы продаж. Назначает цвета из официальной палитры." data-en="Creates, edits, deletes pipelines and sales stages. Assigns colors from the official palette.">Создаёт, редактирует, удаляет воронки и этапы продаж. Назначает цвета из официальной палитры.</p>
+      </div>
+      <div class="crm-card">
+        <div class="crm-card-num">02</div>
+        <h3 class="crm-card-title" data-ru="Кастомные поля" data-en="Custom fields">Кастомные поля</h3>
+        <p class="crm-card-desc" data-ru="Добавляет поля в сделки, контакты и компании. Все типы: текст, число, список, дата, цена." data-en="Adds fields to deals, contacts and companies. All types: text, number, list, date, price.">Добавляет поля в сделки, контакты и компании. Все типы: текст, число, список, дата, цена.</p>
+      </div>
+      <div class="crm-card">
+        <div class="crm-card-num">03</div>
+        <h3 class="crm-card-title" data-ru="Сделки и контакты" data-en="Deals and contacts">Сделки и контакты</h3>
+        <p class="crm-card-desc" data-ru="Создаёт сделки, контакты, компании. Устанавливает значения полей, привязывает сущности." data-en="Creates deals, contacts, companies. Sets field values, links entities.">Создаёт сделки, контакты, компании. Устанавливает значения полей, привязывает сущности.</p>
+      </div>
+      <div class="crm-card">
+        <div class="crm-card-num">04</div>
+        <h3 class="crm-card-title" data-ru="Задачи и примечания" data-en="Tasks and notes">Задачи и примечания</h3>
+        <p class="crm-card-desc" data-ru="Создаёт задачи (звонок/встреча/письмо) с дедлайном. Добавляет примечания к сделкам." data-en="Creates tasks (call/meeting/email) with deadlines. Adds notes to deals.">Создаёт задачи (звонок/встреча/письмо) с дедлайном. Добавляет примечания к сделкам.</p>
+      </div>
+      <div class="crm-card">
+        <div class="crm-card-num">05</div>
+        <h3 class="crm-card-title" data-ru="Теги и вебхуки" data-en="Tags and webhooks">Теги и вебхуки</h3>
+        <p class="crm-card-desc" data-ru="Создаёт и применяет теги. Настраивает вебхуки для интеграции с внешними сервисами." data-en="Creates and applies tags. Sets up webhooks for integration with external services.">Создаёт и применяет теги. Настраивает вебхуки для интеграции с внешними сервисами.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- API ACTIONS -->
+<section class="api" id="api">
+  <div class="container">
+    <p class="section-label reveal" data-ru="API-действия" data-en="API actions">API-действия</p>
+    <h2 class="section-heading reveal reveal-delay-1" data-ru="Доступные<br><em>API-действия</em>" data-en="Available<br><em>API actions</em>">Доступные<br><em>API-действия</em></h2>
+    <p class="section-sub reveal reveal-delay-2" data-ru="Kai использует официальный API amoCRM. Все операции выполняются безопасно и без ваших паролей." data-en="Kai uses the official amoCRM API. All operations are performed securely without your passwords.">Kai использует официальный API amoCRM. Все операции выполняются безопасно и без ваших паролей.</p>
+
+    <div class="api-grid reveal">
+      <div class="api-badge"><span class="dot"></span>создать_воронку</div>
+      <div class="api-badge"><span class="dot"></span>добавить_этап</div>
+      <div class="api-badge"><span class="dot"></span>создать_поле</div>
+      <div class="api-badge"><span class="dot"></span>обновить_поле</div>
+      <div class="api-badge"><span class="dot"></span>создать_сделку</div>
+      <div class="api-badge"><span class="dot"></span>обновить_сделку</div>
+      <div class="api-badge"><span class="dot"></span>удалить_сделку</div>
+      <div class="api-badge"><span class="dot"></span>создать_контакт</div>
+      <div class="api-badge"><span class="dot"></span>создать_компанию</div>
+      <div class="api-badge"><span class="dot"></span>привязать_сущности</div>
+      <div class="api-badge"><span class="dot"></span>создать_задачу</div>
+      <div class="api-badge"><span class="dot"></span>закрыть_задачу</div>
+      <div class="api-badge"><span class="dot"></span>добавить_примечание</div>
+      <div class="api-badge"><span class="dot"></span>добавить_тег</div>
+      <div class="api-badge"><span class="dot"></span>создать_вебхук</div>
+      <div class="api-badge"><span class="dot"></span>удалить_этап</div>
+      <div class="api-badge"><span class="dot"></span>установить_поле</div>
+      <div class="api-badge"><span class="dot"></span>обновить_воронку</div>
+      <div class="api-badge soon"><span class="dot"></span>выгрузка_в_excel</div>
+      <div class="api-badge soon"><span class="dot"></span>приватная_интеграция</div>
+      <div class="api-badge soon"><span class="dot"></span>внешняя_интеграция</div>
+      <div class="api-badge soon"><span class="dot"></span>kai_внутри_crm</div>
+    </div>
+    <div class="api-count reveal">
+      <span><strong class="count-up" data-count="18">0</strong> <span data-ru="доступно сейчас" data-en="available now">доступно сейчас</span></span>
+      <div class="api-legend">
+        <div class="api-legend-item"><span class="api-legend-dot" style="background:var(--green);box-shadow:0 0 6px rgba(34,197,94,.4)"></span> <span data-ru="Доступно" data-en="Available">Доступно</span></div>
+        <div class="api-legend-item"><span class="api-legend-dot" style="background:var(--orange);box-shadow:0 0 6px rgba(245,158,11,.4)"></span> <span data-ru="В разработке" data-en="In progress">В разработке</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- COMPARE: Kai vs Integrator -->
+<section class="compare">
+  <div class="container">
+    <p class="section-label reveal" data-ru="Почему Kai" data-en="Why Kai">Почему Kai</p>
+    <h2 class="section-heading reveal reveal-delay-1" data-ru="Kai <em>vs</em> интегратор" data-en="Kai <em>vs</em> integrator">Kai <em>vs</em> интегратор</h2>
+
+    <div class="compare-grid" style="margin-top:56px">
+      <div class="compare-card old reveal">
+        <div class="compare-badge" data-ru="Классический путь" data-en="Traditional way">Классический путь</div>
+        <h3 data-ru="Нанять интегратора" data-en="Hire an integrator">Нанять интегратора</h3>
+        <ul class="compare-list">
+          <li><span class="icon">→</span> <span data-ru="Согласование ТЗ: 3–5 дней" data-en="Specs approval: 3–5 days">Согласование ТЗ: 3–5 дней</span></li>
+          <li><span class="icon">→</span> <span data-ru="Настройка CRM: 1–3 недели" data-en="CRM setup: 1–3 weeks">Настройка CRM: 1–3 недели</span></li>
+          <li><span class="icon">→</span> <span data-ru="Правки после запуска: ещё неделя" data-en="Post-launch fixes: another week">Правки после запуска: ещё неделя</span></li>
+          <li><span class="icon">→</span> <span data-ru="Общение через менеджера" data-en="Communication through a manager">Общение через менеджера</span></li>
+          <li><span class="icon">→</span> <span data-ru="Каждое изменение — новый запрос" data-en="Every change — a new request">Каждое изменение — новый запрос</span></li>
+        </ul>
+        <div class="compare-bottom">
+          <div class="compare-price" data-ru="30 000 — 80 000 ₽" data-en="$400 — $1,000">30 000 — 80 000 ₽</div>
+        </div>
+      </div>
+
+      <div class="compare-card kai reveal reveal-delay-1">
+        <div class="compare-badge">Kai</div>
+        <h3 data-ru="Настроить самому через чат" data-en="Set up yourself via chat">Настроить самому через чат</h3>
+        <ul class="compare-list">
+          <li><span class="icon">✓</span> <span data-ru="Консультация + план: 5 минут" data-en="Consultation + plan: 5 minutes">Консультация + план: 5 минут</span></li>
+          <li><span class="icon">✓</span> <span data-ru="Настройка CRM: мгновенно" data-en="CRM setup: instantly">Настройка CRM: мгновенно</span></li>
+          <li><span class="icon">✓</span> <span data-ru="Правки: скажи Kai что изменить" data-en="Fixes: tell Kai what to change">Правки: скажи Kai что изменить</span></li>
+          <li><span class="icon">✓</span> <span data-ru="Прямой диалог в Telegram" data-en="Direct dialog in Telegram">Прямой диалог в Telegram</span></li>
+          <li><span class="icon">✓</span> <span data-ru="28+ действий через API" data-en="28+ actions via API">28+ действий через API</span></li>
+        </ul>
+        <div class="compare-bottom">
+          <div class="compare-price"><span data-ru="Бесплатно" data-en="Free">Бесплатно</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- CTA BAND -->
+<section class="cta-band" id="cta">
+  <div class="cta-inner">
+    <p class="section-label" style="justify-content:center;display:flex" data-ru="Начать сейчас" data-en="Start now">Начать сейчас</p>
+    <h2 class="reveal" data-ru="Консультация. Настройка.<br><em>Готово.</em>" data-en="Consultation. Setup.<br><em>Done.</em>">
+      Консультация. Настройка.<br><em>Готово.</em>
+    </h2>
+    <p class="reveal reveal-delay-1" data-ru="Kai начнёт работу сразу — задаст пару вопросов и предложит готовый план. Без регистрации, без оплаты." data-en="Kai starts immediately — asks a few questions and offers a ready plan. No signup, no payment.">Kai начнёт работу сразу — задаст пару вопросов и предложит готовый план. Без регистрации, без оплаты.</p>
+    <div class="hero-actions reveal reveal-delay-2">
+      <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="btn-primary" style="font-size:16px;padding:14px 28px;">
+        <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M13.4 2L1.6 6.5c-.6.2-.5 1 .1 1.2l3.3 1.1 1.1 3.7c.2.6 1 .7 1.2.1L11.9 3.4c.3-.7-.4-1.4-1.1-1.1z" fill="currentColor"/></svg>
+        <span data-ru="Открыть Kai в Telegram" data-en="Open Kai in Telegram">Открыть Kai в Telegram</span>
+      </a>
+    </div>
+    <p class="cta-tg-hint reveal reveal-delay-3" data-ru="Работает в любом Telegram — на телефоне и компьютере" data-en="Works in any Telegram — on phone and desktop">Работает в любом Telegram — на телефоне и компьютере</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">Kai</div>
+      <p class="footer-desc" data-ru="AI-ассистент для настройки amoCRM и Kommo. Консультирует как эксперт, реализует как программист — через Telegram." data-en="AI assistant for amoCRM and Kommo setup. Consults like an expert, implements like a developer — via Telegram.">AI-ассистент для настройки amoCRM и Kommo. Консультирует как эксперт, реализует как программист — через Telegram.</p>
+    </div>
+    <div class="footer-links">
+      <h4 data-ru="Продукт" data-en="Product">Продукт</h4>
+      <ul>
+        <li><a href="#features" data-ru="Возможности" data-en="Features">Возможности</a></li>
+        <li><a href="#how" data-ru="Как работает" data-en="How it works">Как работает</a></li>
+        <li><a href="#api" data-ru="API-действия" data-en="API actions">API-действия</a></li>
+        <li><a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" data-ru="Попробовать" data-en="Try it">Попробовать</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4 data-ru="Ресурсы" data-en="Resources">Ресурсы</h4>
+      <ul>
+        <li><a href="#" data-ru="Документация" data-en="Documentation">Документация</a></li>
+        <li><a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Telegram</a></li>
+        <li><a href="#" data-ru="Поддержка" data-en="Support">Поддержка</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <span data-ru="© 2025 Kai. Настройка CRM без программистов." data-en="© 2025 Kai. CRM setup without developers.">© 2025 Kai. Настройка CRM без программистов.</span>
+      <div style="display:flex;gap:20px;">
+        <a href="#" data-ru="Политика конфиденциальности" data-en="Privacy policy">Политика конфиденциальности</a>
+        <a href="#" data-ru="Условия использования" data-en="Terms of service">Условия использования</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ─── CHAT ANIMATION ─── */
+const messages = [
+  { id: 0, delay: 600 },
+  { id: 1, delay: 2800 },
+  { id: 2, delay: 4200 },
+  { id: 3, delay: 6000 },
+  { id: 4, delay: 8800 },
+];
+
+const chatBody = document.getElementById('chatBody');
+const typingEl = chatBody.querySelector('.typing-msg');
+
+function showMsg(id) {
+  const el = chatBody.querySelector('.msg-' + id);
+  if (!el) return;
+  typingEl.style.display = 'none';
+  el.style.display = 'flex';
+  el.classList.add('fade-in');
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function showTyping() {
+  typingEl.style.display = 'block';
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function runChat() {
+  messages.forEach(({ id, delay }, i) => {
+    const isBot = id !== 1;
+    if (isBot && i > 0) {
+      setTimeout(() => showTyping(), delay - 700);
+    }
+    setTimeout(() => showMsg(id), delay);
+  });
+  setTimeout(() => {
+    setTimeout(resetChat, 2000);
+  }, 11000);
+}
+
+function resetChat() {
+  document.querySelectorAll('.msg').forEach(m => {
+    m.style.display = 'none';
+    m.classList.remove('fade-in');
+  });
+  typingEl.style.display = 'none';
+  setTimeout(runChat, 800);
+}
+
+runChat();
+
+/* ─── SCROLL REVEAL ─── */
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+reveals.forEach(r => observer.observe(r));
+
+/* ─── SMOOTH NAV ─── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if (el) {
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+/* ─── LANGUAGE TOGGLE ─── */
+let currentLang = 'ru';
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const lang = btn.dataset.lang;
+    if (lang === currentLang) return;
+    currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+      const val = el.getAttribute('data-' + lang);
+      if (val != null) el.innerHTML = val;
+    });
+  });
+});
+
+/* ─── PARALLAX HERO ─── */
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  const bgImg = document.querySelector('.hero-bg-img');
+  if (bgImg && y < window.innerHeight) {
+    bgImg.style.transform = 'translateY(' + (y * 0.3) + 'px) scale(1.05)';
+  }
+}, { passive: true });
+
+/* ─── SHIMMER INDEX FOR API BADGES ─── */
+document.querySelectorAll('.api-badge').forEach((b, i) => {
+  b.style.setProperty('--i', i);
+});
+
+/* ─── COUNT-UP ANIMATION ─── */
+function animateCountUp(el) {
+  if (el.dataset.counted) return;
+  el.dataset.counted = '1';
+  const target = parseInt(el.dataset.count, 10);
+  if (isNaN(target)) return;
+  let current = 0;
+  const step = Math.max(1, Math.floor(target / 30));
+  const interval = setInterval(() => {
+    current += step;
+    if (current >= target) { current = target; clearInterval(interval); }
+    el.textContent = current;
+  }, 35);
+}
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) animateCountUp(entry.target);
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.count-up').forEach(el => countObserver.observe(el));
+
+/* ─── MAGNETIC GLOW ON CARDS ─── */
+document.querySelectorAll('.glow-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty('--glow-x', x + 'px');
+    card.style.setProperty('--glow-y', y + 'px');
+    const after = card.querySelector(':scope');
+    if (after) {
+      card.style.cssText += ';--glow-x:' + x + 'px;--glow-y:' + y + 'px';
+    }
+  });
+});
+
+/* ─── TILT EFFECT ON STEP CARDS ─── */
+document.querySelectorAll('.tilt-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = 'perspective(600px) rotateY(' + (x * 5) + 'deg) rotateX(' + (-y * 5) + 'deg) translateY(-3px)';
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+
+/* ─── NAV SHRINK ON SCROLL ─── */
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    nav.style.padding = '0 24px';
+    nav.querySelector('.nav-inner').style.height = '48px';
+  } else {
+    nav.style.padding = '0 24px';
+    nav.querySelector('.nav-inner').style.height = '60px';
+  }
+}, { passive: true });
+</script>
+</body>
+</html>
