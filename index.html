@@ -322,7 +322,7 @@ nav {
 .tg-header-info { flex: 1; }
 .tg-header-name { font-size: 14px; font-weight: 500; color: var(--paper); }
 .tg-header-status { font-size: 12px; color: var(--accent); }
-.tg-body { padding: 16px; display: flex; flex-direction: column; gap: 10px; min-height: 280px; }
+.tg-body { padding: 16px; display: flex; flex-direction: column; gap: 10px; height: 340px; overflow-y: auto; }
 .msg { display: flex; flex-direction: column; max-width: 88%; }
 .msg-bot { align-self: flex-start; }
 .msg-user { align-self: flex-end; }
@@ -1092,6 +1092,35 @@ footer {
 
 <hr class="sep">
 
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="container">
+    <p class="section-label reveal" data-ru="Как работает" data-en="How it works">Как работает</p>
+    <h2 class="section-heading reveal reveal-delay-1" data-ru="Три шага<br>до <em>готовой CRM</em>" data-en="Three steps<br>to a <em>ready CRM</em>">Три шага<br>до <em>готовой CRM</em></h2>
+    <p class="section-sub reveal reveal-delay-2" data-ru="Больше не нужно разбираться в настройках или нанимать интегратора." data-en="No need to figure out settings or hire an integrator anymore.">Больше не нужно разбираться в настройках или нанимать интегратора.</p>
+
+    <div class="steps-row" style="margin-top:56px">
+      <div class="step reveal tilt-card">
+        <div class="step-num">01</div>
+        <h3 class="step-title" data-ru="Расскажи про бизнес" data-en="Describe your business">Расскажи про бизнес</h3>
+        <p class="step-desc" data-ru="Kai задаёт уточняющие вопросы с вариантами ответов. Отвечай нажатием кнопки или голосом — не нужно ничего придумывать." data-en="Kai asks clarifying questions with answer options. Respond by pressing a button or voice — no need to think.">Kai задаёт уточняющие вопросы с вариантами ответов. Отвечай нажатием кнопки или голосом — не нужно ничего придумывать.</p>
+      </div>
+      <div class="step reveal reveal-delay-1 tilt-card">
+        <div class="step-num">02</div>
+        <h3 class="step-title" data-ru="Согласуй план" data-en="Approve the plan">Согласуй план</h3>
+        <p class="step-desc" data-ru="Получаешь детальный план: воронки, поля, этапы, автозадачи. Правишь если нужно — затем подтверждаешь одной кнопкой." data-en="Get a detailed plan: pipelines, fields, stages, auto-tasks. Edit if needed — then confirm with one button.">Получаешь детальный план: воронки, поля, этапы, автозадачи. Правишь если нужно — затем подтверждаешь одной кнопкой.</p>
+      </div>
+      <div class="step reveal reveal-delay-2 tilt-card">
+        <div class="step-num">03</div>
+        <h3 class="step-title" data-ru="Готово — CRM настроена" data-en="Done — CRM is configured">Готово — CRM настроена</h3>
+        <p class="step-desc" data-ru="Нажимаешь «Реализовать» — Kai создаёт всё в твоём аккаунте amoCRM или Kommo за секунды через официальный API." data-en="Press 'Implement' — Kai creates everything in your amoCRM or Kommo account in seconds via official API.">Нажимаешь «Реализовать» — Kai создаёт всё в твоём аккаунте amoCRM или Kommo за секунды через официальный API.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
 <!-- FEATURES -->
 <section class="features" id="features">
   <div class="container">
@@ -1156,35 +1185,6 @@ footer {
         <p class="feat-desc" data-ru="Отправьте голосовое — Kai распознает речь через Whisper и ответит. Диктуйте задачи, не набирая текст." data-en="Send a voice message — Kai recognizes speech via Whisper and responds. Dictate tasks without typing.">Отправьте голосовое — Kai распознает речь через Whisper и ответит. Диктуйте задачи, не набирая текст.</p>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<hr class="sep">
-
-<!-- HOW IT WORKS -->
-<section class="how" id="how">
-  <div class="container">
-    <p class="section-label reveal" data-ru="Как работает" data-en="How it works">Как работает</p>
-    <h2 class="section-heading reveal reveal-delay-1" data-ru="Три шага<br>до <em>готовой CRM</em>" data-en="Three steps<br>to a <em>ready CRM</em>">Три шага<br>до <em>готовой CRM</em></h2>
-    <p class="section-sub reveal reveal-delay-2" data-ru="Больше не нужно разбираться в настройках или нанимать интегратора." data-en="No need to figure out settings or hire an integrator anymore.">Больше не нужно разбираться в настройках или нанимать интегратора.</p>
-
-    <div class="steps-row" style="margin-top:56px">
-      <div class="step reveal tilt-card">
-        <div class="step-num">01</div>
-        <h3 class="step-title" data-ru="Расскажи про бизнес" data-en="Describe your business">Расскажи про бизнес</h3>
-        <p class="step-desc" data-ru="Kai задаёт уточняющие вопросы с вариантами ответов. Отвечай нажатием кнопки или голосом — не нужно ничего придумывать." data-en="Kai asks clarifying questions with answer options. Respond by pressing a button or voice — no need to think.">Kai задаёт уточняющие вопросы с вариантами ответов. Отвечай нажатием кнопки или голосом — не нужно ничего придумывать.</p>
-      </div>
-      <div class="step reveal reveal-delay-1 tilt-card">
-        <div class="step-num">02</div>
-        <h3 class="step-title" data-ru="Согласуй план" data-en="Approve the plan">Согласуй план</h3>
-        <p class="step-desc" data-ru="Получаешь детальный план: воронки, поля, этапы, автозадачи. Правишь если нужно — затем подтверждаешь одной кнопкой." data-en="Get a detailed plan: pipelines, fields, stages, auto-tasks. Edit if needed — then confirm with one button.">Получаешь детальный план: воронки, поля, этапы, автозадачи. Правишь если нужно — затем подтверждаешь одной кнопкой.</p>
-      </div>
-      <div class="step reveal reveal-delay-2 tilt-card">
-        <div class="step-num">03</div>
-        <h3 class="step-title" data-ru="Готово — CRM настроена" data-en="Done — CRM is configured">Готово — CRM настроена</h3>
-        <p class="step-desc" data-ru="Нажимаешь «Реализовать» — Kai создаёт всё в твоём аккаунте amoCRM или Kommo за секунды через официальный API." data-en="Press 'Implement' — Kai creates everything in your amoCRM or Kommo account in seconds via official API.">Нажимаешь «Реализовать» — Kai создаёт всё в твоём аккаунте amoCRM или Kommo за секунды через официальный API.</p>
-      </div>
     </div>
   </div>
 </section>
