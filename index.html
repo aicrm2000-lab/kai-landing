@@ -296,10 +296,11 @@ nav {
     rgba(147,51,234,.08) 0 0 80px 0,
     rgba(255,255,255,.04) 0 1px 0 inset,
     rgba(0,0,0,.6) 0 24px 60px;
-  overflow: hidden;
+  overflow: clip;
   text-align: left;
   transition: box-shadow .3s;
 }
+.tg-body { overflow-y: auto !important; }
 .tg-window:hover {
   box-shadow:
     rgba(147,51,234,.14) 0 0 80px 0,
@@ -322,7 +323,8 @@ nav {
 .tg-header-info { flex: 1; }
 .tg-header-name { font-size: 14px; font-weight: 500; color: var(--paper); }
 .tg-header-status { font-size: 12px; color: var(--accent); }
-.tg-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; height: 320px; overflow: hidden; }
+.tg-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; height: 320px; overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; }
+.tg-body::-webkit-scrollbar { display: none; }
 .msg { display: flex; flex-direction: column; max-width: 88%; }
 .msg-bot { align-self: flex-start; }
 .msg-user { align-self: flex-end; }
@@ -1392,118 +1394,108 @@ const scenarios = [
   },
 ];
 
-function getTime() {
-  const d = new Date();
-  return d.getHours().toString().padStart(2,'0') + ':' + d.getMinutes().toString().padStart(2,'0');
+function scroll() { chatBody.scrollTop = chatBody.scrollHeight; }
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+function addBot(html) {
+  const el = document.createElement('div');
+  el.className = 'msg msg-bot fade-in';
+  el.innerHTML = html;
+  chatBody.appendChild(el);
+  scroll();
+  return el;
 }
 
-function createMsg(type, content) {
-  const wrap = document.createElement('div');
-  wrap.className = 'msg ' + (type === 'user' ? 'msg-user' : 'msg-bot') + ' fade-in';
-  wrap.innerHTML = content;
-  return wrap;
+function addUser(text) {
+  const el = document.createElement('div');
+  el.className = 'msg msg-user fade-in';
+  el.innerHTML = '<div class="msg-bubble">' + text + '</div>';
+  chatBody.appendChild(el);
+  scroll();
 }
 
-function addTyping() {
+async function showTyping(ms) {
   const el = document.createElement('div');
   el.className = 'msg msg-bot fade-in';
   el.id = 'typing-ind';
   el.innerHTML = '<div class="msg-bubble typing-indicator"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>';
   chatBody.appendChild(el);
+  scroll();
+  await sleep(ms || 700);
+  el.remove();
 }
 
-function removeTyping() {
-  const el = document.getElementById('typing-ind');
-  if (el) el.remove();
+function addButtons(labels, picks, interactive) {
+  return new Promise(resolve => {
+    const el = document.createElement('div');
+    el.className = 'msg msg-bot fade-in';
+    const btns = labels.map((l,i) => '<div class="choice-btn" data-idx="' + i + '">' + l + '</div>').join('');
+    el.innerHTML = '<div class="msg-choices">' + btns + '</div>';
+    chatBody.appendChild(el);
+    scroll();
+
+    const finish = (chosen) => {
+      el.querySelectorAll('.choice-btn').forEach(b => {
+        const idx = parseInt(b.dataset.idx);
+        if (chosen.includes(idx)) b.classList.add('selected');
+        b.classList.add('disabled');
+      });
+      resolve(labels[chosen[0]]);
+    };
+
+    if (interactive) {
+      const timer = setTimeout(() => finish(picks), 4000);
+      el.querySelectorAll('.choice-btn').forEach(b => {
+        b.addEventListener('click', () => {
+          clearTimeout(timer);
+          finish([parseInt(b.dataset.idx)]);
+        }, { once: true });
+      });
+    } else {
+      setTimeout(() => finish(picks), 800 + Math.random() * 400);
+    }
+  });
 }
 
-function trimChat() {
-  while (chatBody.children.length > 6) chatBody.removeChild(chatBody.firstChild);
+function addStatus(lines) {
+  const rows = lines.map(l => '<div class="status-row"><span class="status-check">✓</span> ' + l + '</div>').join('');
+  addBot('<div class="msg-status">' + rows + '</div>');
 }
-
-function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 async function playScenario(sc, interactive) {
   chatLocked = true;
   chatBody.innerHTML = '';
-  const t = getTime;
 
-  for (let i = 0; i < sc.steps.length; i++) {
-    const step = sc.steps[i];
-
+  for (const step of sc.steps) {
     if (step.type === 'bot') {
-      addTyping();
-      await sleep(600 + Math.random() * 400);
-      removeTyping();
-      trimChat();
-      chatBody.appendChild(createMsg('bot',
-        '<div class="msg-bubble">' + step.text + '</div><div class="msg-time">' + t() + '</div>'
-      ));
+      await showTyping(500 + Math.random() * 500);
+      addBot('<div class="msg-bubble">' + step.text + '</div>');
+      await sleep(400);
     }
-
-    else if (step.type === 'user') {
-      await sleep(800 + Math.random() * 500);
-      trimChat();
-      chatBody.appendChild(createMsg('user',
-        '<div class="msg-bubble">' + step.text + '</div><div class="msg-time" style="text-align:right">' + t() + '</div>'
-      ));
-    }
-
     else if (step.type === 'buttons') {
-      await sleep(200);
       const picks = Array.isArray(step.pick) ? step.pick : [step.pick];
-      const btnsHtml = step.labels.map((l,j) => '<div class="choice-btn' + (interactive ? '' : '') + '" data-idx="' + j + '">' + l + '</div>').join('');
-      const wrap = document.createElement('div');
-      wrap.className = 'msg msg-bot fade-in';
-      wrap.innerHTML = '<div class="msg-choices">' + btnsHtml + '</div>';
-      chatBody.appendChild(wrap);
-
-      if (interactive && i < 3) {
-        const chosen = await waitForClick(wrap, picks);
-        wrap.querySelectorAll('.choice-btn').forEach(b => {
-          if (chosen.includes(parseInt(b.dataset.idx))) b.classList.add('selected');
-          b.classList.add('disabled');
-        });
-      } else {
-        await sleep(600 + Math.random() * 600);
-        wrap.querySelectorAll('.choice-btn').forEach(b => {
-          if (picks.includes(parseInt(b.dataset.idx))) b.classList.add('selected');
-          b.classList.add('disabled');
-        });
-      }
-    }
-
-    else if (step.type === 'status') {
+      await addButtons(step.labels, picks, interactive);
+      interactive = false;
       await sleep(300);
-      const rows = step.lines.map(l => '<div class="status-row"><span class="status-check">✓</span> ' + l + '</div>').join('');
-      trimChat();
-      chatBody.appendChild(createMsg('bot',
-        '<div class="msg-status">' + rows + '</div>'
-      ));
     }
-
-    await sleep(300);
+    else if (step.type === 'user') {
+      await sleep(600 + Math.random() * 400);
+      addUser(step.text);
+      await sleep(400);
+    }
+    else if (step.type === 'status') {
+      await showTyping(800);
+      addStatus(step.lines);
+      await sleep(600);
+    }
   }
 
   chatLocked = false;
-  await sleep(4000);
+  await sleep(5000);
   if (!chatLocked) {
     const next = scenarios[Math.floor(Math.random() * scenarios.length)];
     playScenario(next, false);
   }
-}
-
-function waitForClick(wrap, defaults) {
-  return new Promise(resolve => {
-    const btns = wrap.querySelectorAll('.choice-btn');
-    const timer = setTimeout(() => resolve(defaults), 5000);
-    btns.forEach(b => {
-      b.addEventListener('click', () => {
-        clearTimeout(timer);
-        resolve([parseInt(b.dataset.idx)]);
-      }, { once: true });
-    });
-  });
 }
 
 const firstScenario = scenarios[Math.floor(Math.random() * scenarios.length)];
