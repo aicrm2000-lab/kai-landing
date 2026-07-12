@@ -135,11 +135,11 @@ th {
 <div class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Kai</a>
-    <a href="index.html" class="nav-back">← Вернуться на главную</a>
+    <a href="index.html" class="nav-back" id="navBack">← Вернуться на главную</a>
   </div>
 </div>
 
-<div class="container">
+<div class="container" id="content-ru">
 
 <h1>Политика конфиденциальности</h1>
 <p class="subtitle">Последнее обновление: 11 июля 2025 г.</p>
@@ -251,9 +251,136 @@ th {
 
 </div>
 
-<div class="footer">
-  <a href="index.html" style="color:var(--fog)">← Вернуться на главную</a>
+<!-- ENGLISH VERSION -->
+<div class="container" id="content-en" style="display:none">
+
+<h1>Privacy Policy</h1>
+<p class="subtitle">Last updated: July 11, 2025</p>
+
+<p>This Privacy Policy (hereinafter — the "Policy") defines the procedure for collecting, processing, storing, and protecting personal data of users of the Kai service (hereinafter — the "Service", the "Bot"), available via the Telegram platform (@aiicrm_bot).</p>
+
+<p>By using the Service, you confirm that you have read this Policy and consent to the processing of data as described below.</p>
+
+<h2>1. Data Controller</h2>
+<p>The data controller is the individual entrepreneur / natural person operating under the name <strong>Kai</strong>.</p>
+<p>Contact address for data processing inquiries: <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a></p>
+
+<h2>2. What Data We Collect</h2>
+
+<h3>2.1. Data Received from Telegram</h3>
+<table>
+  <tr><th>Category</th><th>Data</th><th>Legal Basis</th></tr>
+  <tr><td>Identification</td><td>Telegram ID, name, username</td><td>Performance of Service functions</td></tr>
+  <tr><td>Messages</td><td>Text and voice messages sent to the Bot</td><td>Performance of Service functions</td></tr>
+  <tr><td>Metadata</td><td>Date and time of interactions, interface language</td><td>Service quality improvement</td></tr>
+</table>
+
+<h3>2.2. Data Received When Connecting CRM</h3>
+<table>
+  <tr><th>Category</th><th>Data</th><th>Legal Basis</th></tr>
+  <tr><td>OAuth tokens</td><td>amoCRM / Kommo access and refresh tokens</td><td>Authorization for API requests</td></tr>
+  <tr><td>CRM data</td><td>Pipelines, fields, stages, tasks, contacts — only those created or modified by the Bot at your request</td><td>Performance of Service functions</td></tr>
+</table>
+
+<div class="highlight">
+  <strong>Important:</strong> Kai does not request or store your amoCRM / Kommo login and password. Access is provided exclusively through the OAuth 2.0 mechanism provided by amoCRM / Kommo.
 </div>
+
+<h3>2.3. Data We Do NOT Collect</h3>
+<ul>
+  <li>Passport data, tax identification numbers, or other identity documents</li>
+  <li>Payment data (card numbers, bank details)</li>
+  <li>Geolocation data</li>
+  <li>Cookies and browser data (the landing page does not use cookies)</li>
+</ul>
+
+<h2>3. Purposes of Data Processing</h2>
+<ol>
+  <li>Providing Service functions: consulting, generating a CRM configuration plan, executing API requests to amoCRM / Kommo on your behalf.</li>
+  <li>Voice message recognition (via OpenAI Whisper API) for speech-to-text conversion.</li>
+  <li>Generating technical specifications (PDF) based on the approved plan.</li>
+  <li>Technical support and troubleshooting.</li>
+  <li>Improving the quality of responses and Service logic based on anonymized analytics.</li>
+</ol>
+
+<h2>4. Data Sharing with Third Parties</h2>
+<p>We share data only with third-party services that are directly necessary for the Bot to function:</p>
+
+<table>
+  <tr><th>Service</th><th>Data Shared</th><th>Purpose</th></tr>
+  <tr><td>Telegram Bot API</td><td>Messages, Telegram ID</td><td>User communication</td></tr>
+  <tr><td>amoCRM / Kommo API</td><td>OAuth tokens, CRM data</td><td>Creating and configuring CRM objects</td></tr>
+  <tr><td>OpenAI API (Whisper)</td><td>Voice message audio files</td><td>Speech recognition</td></tr>
+  <tr><td>OpenAI API (GPT)</td><td>Conversation text (without personal identifiers)</td><td>Response and plan generation</td></tr>
+</table>
+
+<p>We do not sell, rent, or share your data with third parties for marketing purposes.</p>
+
+<h2>5. Data Storage and Protection</h2>
+
+<h3>5.1. Retention Periods</h3>
+<ul>
+  <li><strong>Messages and conversation history</strong> — stored during the session and up to 90 days to provide context for repeat interactions. Automatically deleted after that period.</li>
+  <li><strong>OAuth tokens</strong> — stored until access is revoked by the user or the token expires.</li>
+  <li><strong>Telegram ID and metadata</strong> — stored for the duration of Service usage. Deleted within 30 days upon account deletion.</li>
+</ul>
+
+<h3>5.2. Security Measures</h3>
+<ul>
+  <li>Data is stored on secure servers with storage-level encryption.</li>
+  <li>OAuth tokens are stored in encrypted form, separately from other data.</li>
+  <li>Data is transmitted exclusively via HTTPS/TLS protocol.</li>
+  <li>Access to server infrastructure is restricted and monitored.</li>
+</ul>
+
+<h2>6. User Rights</h2>
+<p>You have the right to:</p>
+<ol>
+  <li><strong>Request information</strong> about what personal data is being processed.</li>
+  <li><strong>Request deletion</strong> of all your data by sending a request to <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> or by using the <code>/delete</code> command in the Bot.</li>
+  <li><strong>Revoke CRM access</strong> at any time through amoCRM / Kommo integration settings — tokens will be invalidated immediately.</li>
+  <li><strong>Stop using</strong> the Service by blocking the Bot in Telegram — data processing will cease.</li>
+</ol>
+
+<div class="highlight">
+  When you request data deletion, we remove: conversation history, OAuth tokens, saved plans, and the link to your CRM account. Data already created in your amoCRM / Kommo account (pipelines, fields, contacts) remains in the CRM — it is managed directly through the amoCRM / Kommo interface.
+</div>
+
+<h2>7. Voice Messages</h2>
+<p>Voice messages sent to the Bot are transmitted to the OpenAI Whisper API exclusively for speech recognition purposes. Audio files are not stored on our servers after the text transcription is received. OpenAI processes data in accordance with its <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+
+<h2>8. Minors' Data</h2>
+<p>The Service is not intended for individuals under the age of 16. We do not knowingly collect data from minors. If you believe a minor has used the Service, please contact us to have the data deleted.</p>
+
+<h2>9. Changes to the Policy</h2>
+<p>We reserve the right to amend this Policy. In case of significant changes, we will notify users through the Bot. Continued use of the Service after the publication of changes constitutes your acceptance of the updated Policy.</p>
+
+<h2>10. Contact</h2>
+<p>For any questions regarding personal data processing, please contact us:</p>
+<ul>
+  <li>Email: <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a></li>
+  <li>Telegram: <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a></li>
+</ul>
+
+</div>
+
+<div class="footer">
+  <a href="index.html" id="footerBack" style="color:var(--fog)">← Вернуться на главную</a>
+</div>
+
+<script>
+(function() {
+  var isEn = window.location.search.indexOf('lang=en') !== -1;
+  if (isEn) {
+    document.documentElement.lang = 'en';
+    document.title = 'Privacy Policy — Kai';
+    document.getElementById('content-ru').style.display = 'none';
+    document.getElementById('content-en').style.display = 'block';
+    document.getElementById('navBack').textContent = '← Back to home';
+    document.getElementById('footerBack').textContent = '← Back to home';
+  }
+})();
+</script>
 
 </body>
 </html>

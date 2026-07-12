@@ -1291,8 +1291,7 @@ footer {
     <h2 class="reveal" data-ru="Консультация. Настройка.<br><em>Готово.</em>" data-en="Consultation. Setup.<br><em>Done.</em>">
       Консультация. Настройка.<br><em>Готово.</em>
     </h2>
-    <p class="reveal reveal-delay-1" data-ru="Kai начнёт работу сразу&nbsp;— задаст пару вопросов и&nbsp;предложит готовый план. Без&nbsp;регистрации, без&nbsp;оплаты." data-en="Kai starts immediately&nbsp;— asks a&nbsp;few questions and offers a&nbsp;ready plan. No&nbsp;signup, no&nbsp;payment.">Kai начнёт работу сразу&nbsp;— задаст пару вопросов и&nbsp;предложит готовый план. Без&nbsp;регистрации, без&nbsp;оплаты.</p>
-    <div class="hero-actions reveal reveal-delay-2">
+    <div class="hero-actions reveal reveal-delay-1">
       <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="btn-primary" style="font-size:16px;padding:14px 28px;">
         <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M13.4 2L1.6 6.5c-.6.2-.5 1 .1 1.2l3.3 1.1 1.1 3.7c.2.6 1 .7 1.2.1L11.9 3.4c.3-.7-.4-1.4-1.1-1.1z" fill="currentColor"/></svg>
         <span data-ru="Открыть Kai в Telegram" data-en="Open Kai in Telegram">Открыть Kai в Telegram</span>
@@ -1330,7 +1329,7 @@ footer {
     <div class="footer-bottom">
       <span data-ru="© 2025 Kai. Настройка CRM без программистов." data-en="© 2025 Kai. CRM setup without developers.">© 2025 Kai. Настройка CRM без программистов.</span>
       <div style="display:flex;gap:20px;">
-        <a href="privacy.html" data-ru="Политика конфиденциальности" data-en="Privacy policy">Политика конфиденциальности</a>
+        <a href="privacy.html" class="privacy-link" data-ru="Политика конфиденциальности" data-en="Privacy policy">Политика конфиденциальности</a>
         <a href="#" data-ru="Условия использования" data-en="Terms of service">Условия использования</a>
       </div>
     </div>
@@ -1538,6 +1537,8 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
       const val = el.getAttribute('data-' + lang);
       if (val != null) el.innerHTML = val;
     });
+    var pl = document.querySelector('.privacy-link');
+    if (pl) pl.href = lang === 'en' ? 'privacy.html?lang=en' : 'privacy.html';
   });
 });
 
