@@ -289,13 +289,11 @@ nav {
   to   { opacity:1; transform:translateY(0) scale(1); }
 }
 .tg-window {
-  background: var(--carbon);
+  background: #eee;
   border-radius: 16px;
-  border: 1px solid var(--graphite);
   box-shadow:
     rgba(147,51,234,.08) 0 0 80px 0,
-    rgba(255,255,255,.04) 0 1px 0 inset,
-    rgba(0,0,0,.6) 0 24px 60px;
+    rgba(0,0,0,.35) 0 24px 60px;
   overflow: clip;
   text-align: left;
   transition: box-shadow .3s;
@@ -304,44 +302,43 @@ nav {
 .tg-window:hover {
   box-shadow:
     rgba(147,51,234,.14) 0 0 80px 0,
-    rgba(255,255,255,.04) 0 1px 0 inset,
-    rgba(0,0,0,.6) 0 24px 60px;
+    rgba(0,0,0,.4) 0 24px 60px;
 }
 .tg-header {
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--graphite);
+  padding: 12px 16px;
   display: flex; align-items: center; gap: 10px;
-  background: var(--obsidian);
+  background: #7b68ee;
+  color: #fff;
 }
 .tg-avatar {
   width: 36px; height: 36px; border-radius: 50%;
-  background: var(--accent-gradient);
+  background: rgba(255,255,255,.25);
   display: flex; align-items: center; justify-content: center;
-  font-size: 14px; font-weight: 500; color: #fff;
+  font-size: 14px; font-weight: 600; color: #fff;
   flex-shrink: 0;
 }
 .tg-header-info { flex: 1; }
-.tg-header-name { font-size: 14px; font-weight: 500; color: var(--paper); }
-.tg-header-status { font-size: 12px; color: var(--accent); }
-.tg-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; height: 320px; overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; }
+.tg-header-name { font-size: 14px; font-weight: 600; color: #fff; }
+.tg-header-status { font-size: 11px; color: rgba(255,255,255,.75); }
+.tg-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; height: 320px; overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; background: #e7e3dc url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 10c2 0 3 1 3 3s-1 3-3 3-3-1-3-3 1-3 3-3zm40 30c1.5 0 2.5 1 2.5 2.5S61.5 48 60 48s-2.5-1-2.5-2.5S58.5 40 60 40zM10 55c1 0 2 .8 2 2s-1 2-2 2-2-.8-2-2 1-2 2-2zm55 10c1 0 1.5.5 1.5 1.5S66 68 65 68s-1.5-.5-1.5-1.5S64 65 65 65z' fill='%23d5d0c8' fill-opacity='.3'/%3E%3C/svg%3E"); }
 .tg-body::-webkit-scrollbar { display: none; }
 .msg { display: flex; flex-direction: column; max-width: 88%; }
 .msg-bot { align-self: flex-start; }
 .msg-user { align-self: flex-end; }
 .msg-bubble {
-  padding: 9px 13px;
+  padding: 8px 12px;
   border-radius: 12px;
   font-size: 13.5px; line-height: 1.45;
+  box-shadow: 0 1px 2px rgba(0,0,0,.08);
 }
 .msg-bot .msg-bubble {
-  background: var(--graphite);
-  color: var(--mist);
+  background: #fff;
+  color: #1a1a1a;
   border-bottom-left-radius: 4px;
 }
 .msg-user .msg-bubble {
-  background: rgba(147,51,234,.18);
-  border: 1px solid rgba(147,51,234,.28);
-  color: var(--paper);
+  background: #d9f2d0;
+  color: #1a1a1a;
   border-bottom-right-radius: 4px;
 }
 .msg-choices {
@@ -349,39 +346,39 @@ nav {
 }
 .choice-btn {
   padding: 5px 11px;
-  border: 1px solid var(--smoke);
+  border: 1.5px solid #7b68ee;
   border-radius: 9999px;
-  font-size: 12px; color: var(--mist);
-  background: rgba(255,255,255,.03);
+  font-size: 12px; color: #7b68ee;
+  background: #fff;
   cursor: pointer;
   transition: all .2s;
   user-select: none;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
 }
-.choice-btn:hover { border-color: var(--accent); color: #c084fc; background: var(--accent-dim); }
+.choice-btn:hover { background: #7b68ee; color: #fff; }
 .choice-btn.selected {
-  border-color: var(--accent);
-  color: #c084fc;
-  background: var(--accent-dim);
+  background: #7b68ee;
+  color: #fff;
   pointer-events: none;
 }
-.choice-btn.disabled { pointer-events: none; opacity: .5; }
-.msg-time { font-size: 10px; color: var(--ash); margin-top: 2px; padding: 0 4px; }
+.choice-btn.disabled { pointer-events: none; opacity: .45; }
+.msg-time { font-size: 10px; color: #999; margin-top: 2px; padding: 0 4px; }
 .msg-status {
   display: flex; flex-direction: column; gap: 4px;
   padding: 10px 14px;
-  background: rgba(147,51,234,.08);
-  border: 1px solid rgba(147,51,234,.18);
+  background: rgba(123,104,238,.08);
+  border: 1px solid rgba(123,104,238,.2);
   border-radius: 10px;
 }
 .status-row {
   display: flex; align-items: center; gap: 8px;
-  font-size: 12.5px; color: var(--mist);
+  font-size: 12.5px; color: #333;
 }
-.status-check { color: #c084fc; font-weight: 500; }
+.status-check { color: #7b68ee; font-weight: 600; }
 .typing-indicator { display: flex; align-items: center; gap: 4px; padding: 9px 13px; }
 .typing-dot {
   width: 6px; height: 6px; border-radius: 50%;
-  background: var(--ash);
+  background: #aaa;
   animation: typingBounce 1.2s ease-in-out infinite;
 }
 .typing-dot:nth-child(2) { animation-delay: .2s; }
@@ -394,6 +391,36 @@ nav {
 .msg.fade-in { animation: msgIn .35s ease; }
 @keyframes msgIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
 @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.tg-input {
+  padding: 8px 14px;
+  background: #f5f5f5;
+  display: flex; align-items: center; gap: 8px;
+  border-top: 1px solid #ddd;
+}
+.tg-input-field {
+  flex: 1;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 18px;
+  background: #fff;
+  font-size: 13px;
+  color: #333;
+  outline: none;
+  font-family: var(--font);
+}
+.tg-input-field::placeholder { color: #aaa; }
+.tg-input-send {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: #7b68ee;
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .15s;
+  flex-shrink: 0;
+}
+.tg-input-send:hover { transform: scale(1.1); }
+.tg-input-send svg { fill: #fff; }
 
 /* ─── SECTION BASE ─── */
 section { padding: 96px 24px; }
@@ -1052,6 +1079,10 @@ footer {
         </div>
       </div>
       <div class="tg-body" id="chatBody"></div>
+      <div class="tg-input">
+        <input class="tg-input-field" placeholder="Сообщение..." readonly>
+        <button class="tg-input-send"><svg width="14" height="14" viewBox="0 0 16 16"><path d="M15.32.68a1 1 0 0 1 .12 1.2l-6.5 11a1 1 0 0 1-1.78-.08L5.18 8.82 1.2 6.84a1 1 0 0 1-.08-1.78l11-6.5a1 1 0 0 1 1.2.12z"/></svg></button>
+      </div>
     </div>
   </div>
 
@@ -1403,50 +1434,74 @@ let chatLocked = false;
 const scenarios = [
   {
     steps: [
-      { type:'bot', text:'Привет! Чем занимается ваш бизнес?' },
-      { type:'buttons', labels:['Услуги','Товары','B2B'], pick:0 },
-      { type:'user', text:'Консультации по финансам' },
-      { type:'bot', text:'Как клиенты вас находят?' },
-      { type:'buttons', labels:['Звонки','Сайт','Сарафан'], pick:[0,1] },
-      { type:'bot', text:'Понял, создаю CRM...' },
-      { type:'status', lines:['Воронка «Заявки» создана','5 этапов добавлено','12 полей настроено'] },
-      { type:'bot', text:'Готово! Всё в вашем amoCRM ✨' },
-    ]
-  },
-  {
-    steps: [
-      { type:'bot', text:'Привет! Расскажите, что продаёте?' },
-      { type:'buttons', labels:['Курсы','Товары','SaaS'], pick:2 },
-      { type:'user', text:'CRM для клиник' },
-      { type:'bot', text:'Сколько менеджеров работает?' },
+      { type:'bot', text:'Привет! Что хотите настроить?' },
+      { type:'buttons', labels:['Новую CRM','Автоматизацию','Карту аккаунта'], pick:0 },
+      { type:'user', text:'Онлайн-школа, продаём курсы' },
+      { type:'bot', text:'Сколько менеджеров в отделе продаж?' },
       { type:'buttons', labels:['1–3','4–10','10+'], pick:1 },
-      { type:'bot', text:'Отлично, настраиваю под команду...' },
-      { type:'status', lines:['Воронка «Демо → Оплата»','Поля: тариф, MRR, дата','Задачи на follow-up'] },
-      { type:'bot', text:'Ваша CRM готова 🚀' },
+      { type:'bot', text:'Отлично! Собираю структуру под команду из 4–10 человек...' },
+      { type:'status', lines:['создать_воронку → «Продажа курсов»','добавить_этап × 5','создать_поле → тариф, LTV, источник','создать_задачу → follow-up на 2-й день'] },
+      { type:'bot', text:'CRM настроена — 4 действия за 8 секунд ✨' },
     ]
   },
   {
     steps: [
-      { type:'bot', text:'Привет! Какая у вас сфера?' },
-      { type:'buttons', labels:['Услуги','Обучение','Медицина'], pick:2 },
-      { type:'user', text:'Стоматология, 3 филиала' },
-      { type:'bot', text:'Какие каналы записи пациентов?' },
-      { type:'buttons', labels:['Телефон','Сайт','Агрегаторы'], pick:[0,1] },
-      { type:'bot', text:'Запускаю настройку...' },
-      { type:'status', lines:['Воронка «Запись на приём»','Поля: врач, услуга, филиал','Автозадачи подтверждения'] },
-      { type:'bot', text:'Клиника подключена! 🦷' },
+      { type:'bot', text:'Привет! Чем могу помочь?' },
+      { type:'buttons', labels:['Воронку','Виджет','Автоматизацию'], pick:2 },
+      { type:'user', text:'Хочу автозадачу при смене этапа' },
+      { type:'bot', text:'В какой воронке настроить?' },
+      { type:'buttons', labels:['Продажи','Повторные','HR'], pick:0 },
+      { type:'bot', text:'Запускаю создание автоматизации...' },
+      { type:'status', lines:['создать_автоматизацию','Триггер: смена этапа → «Переговоры»','создать_задачу → «Позвонить клиенту»','Дедлайн: +1 рабочий день'] },
+      { type:'bot', text:'Автоматизация работает! Теперь при переходе в «Переговоры» задача создастся сама 🤖' },
+    ]
+  },
+  {
+    steps: [
+      { type:'bot', text:'Привет! Что нужно сделать?' },
+      { type:'buttons', labels:['Разобраться','Импорт данных','Виджеты'], pick:0 },
+      { type:'user', text:'Покажи что есть в моей CRM' },
+      { type:'bot', text:'Сканирую ваш аккаунт...' },
+      { type:'status', lines:['карта_аккаунта → генерация PDF','3 воронки, 47 полей, 2 виджета','12 пользователей, 4 роли','показать_автоматизации → 8 правил'] },
+      { type:'bot', text:'Готово! PDF-карта отправлена 📊' },
+      { type:'bot', text:'Нашёл 14 неиспользуемых полей. Удалить?' },
+      { type:'buttons', labels:['Да, почисти','Нет, оставь'], pick:0 },
     ]
   },
   {
     steps: [
       { type:'bot', text:'Привет! С чем помочь?' },
-      { type:'buttons', labels:['Новая CRM','Доработать','Разобраться'], pick:0 },
-      { type:'user', text:'Хочу воронку для интернет-магазина' },
-      { type:'bot', text:'Какой средний чек?' },
-      { type:'buttons', labels:['до 5к','5–30к','30к+'], pick:1 },
-      { type:'bot', text:'Собираю структуру...' },
-      { type:'status', lines:['Воронка «Заказы»','Поля: товар, сумма, доставка','Вебхук на оплату'] },
-      { type:'bot', text:'Магазин в CRM — done ✅' },
+      { type:'buttons', labels:['Новый виджет','Контакты','Вебхук'], pick:0 },
+      { type:'user', text:'Подключи виджет для телефонии' },
+      { type:'bot', text:'Какого провайдера используете?' },
+      { type:'buttons', labels:['Sipuni','Mango','UIS'], pick:1 },
+      { type:'bot', text:'Устанавливаю из amoМаркет...' },
+      { type:'status', lines:['установить_виджет → MangoOffice','настроить_виджет → API-ключ','создать_вебхук → входящий звонок','создать_поле → длительность звонка'] },
+      { type:'bot', text:'Телефония подключена! Звонки пойдут в CRM 📞' },
+    ]
+  },
+  {
+    steps: [
+      { type:'bot', text:'Привет! Что настроим сегодня?' },
+      { type:'buttons', labels:['Импорт базы','Поля','Роли'], pick:0 },
+      { type:'user', text:'Надо залить 500 контактов из Excel' },
+      { type:'bot', text:'Отправьте файл — поддерживаю Excel, CSV, PDF' },
+      { type:'user', text:'📎 клиенты_июль.xlsx' },
+      { type:'bot', text:'Читаю файл... Нашёл 487 строк, 6 колонок' },
+      { type:'status', lines:['чтение_файлов → Excel parsed','создать_контакт × 487','создать_компанию × 52','добавить_тег → «Импорт июль»'] },
+      { type:'bot', text:'Импортировано! 487 контактов + 52 компании 🎉' },
+    ]
+  },
+  {
+    steps: [
+      { type:'bot', text:'Привет! Чем могу помочь?' },
+      { type:'buttons', labels:['Пользователи','Сделки','ТЗ в PDF'], pick:2 },
+      { type:'user', text:'Сгенерируй ТЗ по нашему плану' },
+      { type:'bot', text:'На основе чего строить?' },
+      { type:'buttons', labels:['Текущий план','С нуля','Голосом'], pick:0 },
+      { type:'bot', text:'Генерирую техническое задание...' },
+      { type:'status', lines:['генерация_ТЗ_PDF','3 воронки, 28 полей, 5 автоматизаций','Экспорт: kai_tz_v2.pdf (12 страниц)','Привязка: согласованный план от 15.07'] },
+      { type:'bot', text:'ТЗ готово — 12 страниц, отправлено файлом 📝' },
     ]
   },
 ];
