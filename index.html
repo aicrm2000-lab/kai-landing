@@ -30,6 +30,81 @@
   --mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
+[data-theme="light"] {
+  --void:      #f8f8fc;
+  --carbon:    #ffffff;
+  --obsidian:  #f2f2f6;
+  --graphite:  #e2e2ea;
+  --smoke:     #d0d0dc;
+  --ash:       #8888a0;
+  --fog:       #6e6e88;
+  --mist:      #444460;
+  --paper:     #111118;
+  --accent-dim: rgba(147,51,234,.08);
+  --accent-glow: rgba(147,51,234,.15);
+  --green:     #16a34a;
+  --orange:    #d97706;
+  --tg-bg: #fff;
+  --tg-border: #e2e2ea;
+  --tg-header: #7b68ee;
+  --tg-head-text: #fff;
+  --tg-bot-bg: #fff;
+  --tg-bot-text: #1a1a1a;
+  --tg-user-bg: #d9f2d0;
+  --tg-user-border: #c0e6b4;
+  --tg-user-text: #1a1a1a;
+  --tg-btn-border: #7b68ee;
+  --tg-btn-text: #7b68ee;
+  --tg-btn-bg: #fff;
+  --tg-status-bg: rgba(123,104,238,.06);
+  --tg-status-border: rgba(123,104,238,.15);
+  --tg-input-bg: #f5f5f8;
+  --tg-field-bg: #fff;
+}
+[data-theme="light"] nav {
+  border-bottom-color: rgba(0,0,0,.08);
+  background: rgba(255,255,255,.88);
+}
+[data-theme="light"] .nav-links a:hover { background: rgba(0,0,0,.04); }
+[data-theme="light"] .hero-bg-img { opacity: .06; }
+[data-theme="light"] .tg-body { background: #e7e3dc; }
+[data-theme="light"] .tg-avatar { background: rgba(255,255,255,.3); }
+[data-theme="light"] .tg-header-status { color: rgba(255,255,255,.75); }
+[data-theme="light"] .msg-bubble { box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+[data-theme="light"] .choice-btn:hover { color: #fff; background: #7b68ee; border-color: #7b68ee; }
+[data-theme="light"] .choice-btn.selected { color: #fff; background: #7b68ee; border-color: #7b68ee; }
+[data-theme="light"] .status-check { color: #7b68ee; }
+[data-theme="light"] .glow-card::after { opacity: .3; }
+[data-theme="light"] .sep { border-color: var(--graphite); }
+[data-theme="light"] .int-logo { opacity: .35; }
+[data-theme="light"] .api-badge { border-color: rgba(0,0,0,.1); }
+[data-theme="light"] .api-badge:hover { border-color: var(--green); }
+[data-theme="light"] .api-badge.soon { border-color: rgba(0,0,0,.06); }
+[data-theme="light"] .compare-card { border-color: var(--graphite); }
+[data-theme="light"] footer { background: var(--obsidian); }
+[data-theme="light"] .partner-badge { border-color: rgba(147,51,234,.2); background: rgba(147,51,234,.04); }
+[data-theme="light"] .cta-band::before { background: radial-gradient(circle, rgba(147,51,234,.06) 0%, transparent 70%); }
+
+.theme-toggle {
+  margin-left: 8px;
+  padding: 5px;
+  background: transparent;
+  border: 1px solid var(--smoke);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ash);
+  transition: all 150ms;
+  flex-shrink: 0;
+}
+.theme-toggle:hover { color: var(--paper); border-color: var(--fog); }
+.theme-toggle svg { width: 16px; height: 16px; }
+.theme-icon-sun, .theme-icon-moon { display: none; }
+[data-theme="light"] .theme-icon-moon { display: block; }
+[data-theme="light"] .theme-icon-sun { display: none; }
+:root .theme-icon-sun { display: block; }
+:root .theme-icon-moon { display: none; }
+
 *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body {
@@ -289,56 +364,59 @@ nav {
   to   { opacity:1; transform:translateY(0) scale(1); }
 }
 .tg-window {
-  background: #eee;
+  background: var(--tg-bg, var(--carbon));
   border-radius: 16px;
+  border: 1px solid var(--tg-border, var(--graphite));
   box-shadow:
     rgba(147,51,234,.08) 0 0 80px 0,
-    rgba(0,0,0,.35) 0 24px 60px;
+    rgba(255,255,255,.04) 0 1px 0 inset,
+    rgba(0,0,0,.6) 0 24px 60px;
   overflow: clip;
   text-align: left;
-  transition: box-shadow .3s;
+  transition: box-shadow .3s, background .3s;
 }
 .tg-body { overflow-y: auto !important; }
 .tg-window:hover {
   box-shadow:
     rgba(147,51,234,.14) 0 0 80px 0,
-    rgba(0,0,0,.4) 0 24px 60px;
+    rgba(255,255,255,.04) 0 1px 0 inset,
+    rgba(0,0,0,.6) 0 24px 60px;
 }
 .tg-header {
-  padding: 12px 16px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--tg-border, var(--graphite));
   display: flex; align-items: center; gap: 10px;
-  background: #7b68ee;
-  color: #fff;
+  background: var(--tg-header, var(--obsidian));
 }
 .tg-avatar {
   width: 36px; height: 36px; border-radius: 50%;
-  background: rgba(255,255,255,.25);
+  background: var(--accent-gradient);
   display: flex; align-items: center; justify-content: center;
-  font-size: 14px; font-weight: 600; color: #fff;
+  font-size: 14px; font-weight: 500; color: #fff;
   flex-shrink: 0;
 }
 .tg-header-info { flex: 1; }
-.tg-header-name { font-size: 14px; font-weight: 600; color: #fff; }
-.tg-header-status { font-size: 11px; color: rgba(255,255,255,.75); }
-.tg-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; height: 320px; overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; background: #e7e3dc url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 10c2 0 3 1 3 3s-1 3-3 3-3-1-3-3 1-3 3-3zm40 30c1.5 0 2.5 1 2.5 2.5S61.5 48 60 48s-2.5-1-2.5-2.5S58.5 40 60 40zM10 55c1 0 2 .8 2 2s-1 2-2 2-2-.8-2-2 1-2 2-2zm55 10c1 0 1.5.5 1.5 1.5S66 68 65 68s-1.5-.5-1.5-1.5S64 65 65 65z' fill='%23d5d0c8' fill-opacity='.3'/%3E%3C/svg%3E"); }
+.tg-header-name { font-size: 14px; font-weight: 500; color: var(--tg-head-text, var(--paper)); }
+.tg-header-status { font-size: 12px; color: var(--accent); }
+.tg-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; height: 320px; overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; }
 .tg-body::-webkit-scrollbar { display: none; }
 .msg { display: flex; flex-direction: column; max-width: 88%; }
 .msg-bot { align-self: flex-start; }
 .msg-user { align-self: flex-end; }
 .msg-bubble {
-  padding: 8px 12px;
+  padding: 9px 13px;
   border-radius: 12px;
   font-size: 13.5px; line-height: 1.45;
-  box-shadow: 0 1px 2px rgba(0,0,0,.08);
 }
 .msg-bot .msg-bubble {
-  background: #fff;
-  color: #1a1a1a;
+  background: var(--tg-bot-bg, var(--graphite));
+  color: var(--tg-bot-text, var(--mist));
   border-bottom-left-radius: 4px;
 }
 .msg-user .msg-bubble {
-  background: #d9f2d0;
-  color: #1a1a1a;
+  background: var(--tg-user-bg, rgba(147,51,234,.18));
+  border: 1px solid var(--tg-user-border, rgba(147,51,234,.28));
+  color: var(--tg-user-text, var(--paper));
   border-bottom-right-radius: 4px;
 }
 .msg-choices {
@@ -346,39 +424,39 @@ nav {
 }
 .choice-btn {
   padding: 5px 11px;
-  border: 1.5px solid #7b68ee;
+  border: 1px solid var(--tg-btn-border, var(--smoke));
   border-radius: 9999px;
-  font-size: 12px; color: #7b68ee;
-  background: #fff;
+  font-size: 12px; color: var(--tg-btn-text, var(--mist));
+  background: var(--tg-btn-bg, rgba(255,255,255,.03));
   cursor: pointer;
   transition: all .2s;
   user-select: none;
-  box-shadow: 0 1px 2px rgba(0,0,0,.06);
 }
-.choice-btn:hover { background: #7b68ee; color: #fff; }
+.choice-btn:hover { border-color: var(--accent); color: #c084fc; background: var(--accent-dim); }
 .choice-btn.selected {
-  background: #7b68ee;
-  color: #fff;
+  border-color: var(--accent);
+  color: #c084fc;
+  background: var(--accent-dim);
   pointer-events: none;
 }
-.choice-btn.disabled { pointer-events: none; opacity: .45; }
-.msg-time { font-size: 10px; color: #999; margin-top: 2px; padding: 0 4px; }
+.choice-btn.disabled { pointer-events: none; opacity: .5; }
+.msg-time { font-size: 10px; color: var(--ash); margin-top: 2px; padding: 0 4px; }
 .msg-status {
   display: flex; flex-direction: column; gap: 4px;
   padding: 10px 14px;
-  background: rgba(123,104,238,.08);
-  border: 1px solid rgba(123,104,238,.2);
+  background: var(--tg-status-bg, rgba(147,51,234,.08));
+  border: 1px solid var(--tg-status-border, rgba(147,51,234,.18));
   border-radius: 10px;
 }
 .status-row {
   display: flex; align-items: center; gap: 8px;
-  font-size: 12.5px; color: #333;
+  font-size: 12.5px; color: var(--tg-bot-text, var(--mist));
 }
-.status-check { color: #7b68ee; font-weight: 600; }
+.status-check { color: #c084fc; font-weight: 500; }
 .typing-indicator { display: flex; align-items: center; gap: 4px; padding: 9px 13px; }
 .typing-dot {
   width: 6px; height: 6px; border-radius: 50%;
-  background: #aaa;
+  background: var(--ash);
   animation: typingBounce 1.2s ease-in-out infinite;
 }
 .typing-dot:nth-child(2) { animation-delay: .2s; }
@@ -393,26 +471,26 @@ nav {
 @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 .tg-input {
   padding: 8px 14px;
-  background: #f5f5f5;
+  background: var(--tg-input-bg, var(--obsidian));
   display: flex; align-items: center; gap: 8px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--tg-border, var(--graphite));
 }
 .tg-input-field {
   flex: 1;
   padding: 7px 12px;
   border: none;
   border-radius: 18px;
-  background: #fff;
+  background: var(--tg-field-bg, var(--graphite));
   font-size: 13px;
-  color: #333;
+  color: var(--tg-bot-text, var(--mist));
   outline: none;
   font-family: var(--font);
 }
-.tg-input-field::placeholder { color: #aaa; }
+.tg-input-field::placeholder { color: var(--ash); }
 .tg-input-send {
   width: 30px; height: 30px;
   border-radius: 50%;
-  background: #7b68ee;
+  background: var(--accent);
   border: none;
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
@@ -1033,6 +1111,10 @@ footer {
       <button class="lang-btn active" data-lang="ru">RU</button>
       <button class="lang-btn" data-lang="en">EN</button>
     </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </button>
     <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="nav-cta" data-ru="Попробовать в Telegram →" data-en="Try in Telegram →">Попробовать в Telegram →</a>
   </div>
 </nav>
@@ -1610,8 +1692,66 @@ async function playScenario(sc, interactive) {
   }
 }
 
-const firstScenario = scenarios[Math.floor(Math.random() * scenarios.length)];
-playScenario(firstScenario, true);
+const greeting = [
+  { type:'bot', text:'Привет! 👋' },
+  { type:'bot', text:'Я Kai — AI-аналитик по amoCRM и&nbsp;Kommo.' },
+  { type:'bot', text:'Помогу спроектировать CRM под твой бизнес или настрою что нужно&nbsp;— просто пиши обычными словами.' },
+];
+
+async function startChat() {
+  chatLocked = true;
+  chatBody.innerHTML = '';
+  for (const g of greeting) {
+    await showTyping(500 + Math.random() * 400);
+    addBot('<div class="msg-bubble">' + g.text + '</div>');
+    await sleep(400);
+  }
+  await sleep(1500);
+  const sc = scenarios[Math.floor(Math.random() * scenarios.length)];
+  for (const step of sc.steps) {
+    if (step.type === 'bot') {
+      await showTyping(500 + Math.random() * 500);
+      addBot('<div class="msg-bubble">' + step.text + '</div>');
+      await sleep(400);
+    } else if (step.type === 'buttons') {
+      const picks = Array.isArray(step.pick) ? step.pick : [step.pick];
+      await addButtons(step.labels, picks, true);
+      await sleep(300);
+    } else if (step.type === 'user') {
+      await sleep(600 + Math.random() * 400);
+      addUser(step.text);
+      await sleep(400);
+    } else if (step.type === 'status') {
+      await showTyping(800);
+      addStatus(step.lines);
+      await sleep(600);
+    }
+  }
+  chatLocked = false;
+  await sleep(6000);
+  if (!chatLocked) {
+    const next = scenarios[Math.floor(Math.random() * scenarios.length)];
+    playScenario(next, false);
+  }
+}
+startChat();
+
+/* ─── THEME TOGGLE ─── */
+(function() {
+  var saved = localStorage.getItem('kai-theme');
+  if (saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  var btn = document.getElementById('themeToggle');
+  if (btn) btn.addEventListener('click', function() {
+    var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    if (isLight) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('kai-theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('kai-theme', 'light');
+    }
+  });
+})();
 
 /* ─── SCROLL REVEAL ─── */
 const reveals = document.querySelectorAll('.reveal');
