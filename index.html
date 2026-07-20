@@ -808,15 +808,47 @@ footer {
 /* ─── COUNTER ANIMATION ─── */
 .counter { display: inline; }
 
-/* ─── RESPONSIVE ─── */
-@media (max-width: 640px) {
-  .nav-links { display: none; }
-  .lang-toggle { display: none; }
-  .hero h1 { font-size: 38px; }
-  .compare-grid { grid-template-columns: 1fr; }
-  .footer-inner { flex-direction: column; gap: 32px; }
-  .footer-bottom { flex-direction: column; text-align: center; }
+/* ─── BURGER MENU ─── */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px; height: 32px;
+  background: none; border: none;
+  cursor: pointer;
+  padding: 4px;
 }
+.burger span {
+  display: block;
+  width: 20px; height: 2px;
+  background: var(--fog);
+  border-radius: 1px;
+  transition: all .25s ease;
+}
+.burger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.burger.active span:nth-child(2) { opacity: 0; }
+.burger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 60px; left: 0; right: 0;
+  background: var(--carbon);
+  border-bottom: 1px solid var(--graphite);
+  padding: 16px 24px;
+  z-index: 99;
+  flex-direction: column;
+  gap: 12px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 15px;
+  color: var(--fog);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--graphite);
+}
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--paper); }
 
 /* ─── INTEGRATIONS / PARTNERS ─── */
 .integrations {
@@ -1020,6 +1052,47 @@ footer {
   animation: shimmer 6s ease-in-out infinite;
   animation-delay: calc(var(--i, 0) * .3s);
 }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  section { padding: 64px 16px; }
+  .container { padding: 0; }
+  .cta-band { padding: 64px 16px; }
+  .cta-inner h2 { font-size: clamp(24px,6vw,32px); }
+  .cta-inner p { font-size: 15px; }
+  .integrations { padding: 48px 16px; }
+  .integrations-logos { gap: 32px; }
+  footer { padding: 40px 16px 28px; }
+}
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .burger { display: flex; }
+  .lang-toggle { margin-left: auto; }
+  .nav-cta { font-size: 12px; padding: 6px 12px; margin-left: 8px; }
+  .hero { padding: 100px 16px 48px; }
+  .hero h1 { font-size: clamp(28px,8vw,38px); }
+  .hero-sub { font-size: 16px; }
+  .hero-actions { flex-direction: column; align-items: stretch; gap: 10px; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost { justify-content: center; width: 100%; text-align: center; }
+  .hero-mockup { margin-top: 40px; }
+  .tg-window { max-width: 100%; }
+  .steps-grid { gap: 16px; }
+  .step { padding: 24px 20px; }
+  .step-num { font-size: 40px; }
+  .crm-grid { gap: 16px; }
+  .crm-card { padding: 24px 20px; }
+  .crm-card-num { font-size: 28px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .section-heading { font-size: clamp(24px,6vw,36px); }
+  .section-sub { font-size: 15px; }
+  .footer-inner { flex-direction: column; gap: 32px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .partner-badge { font-size: 12px; }
+  .hero-scroll-hint { margin-top: 32px; }
+  .integrations { padding: 40px 16px; }
+  .integrations-logos { gap: 24px; }
+}
 </style>
 </head>
 <body>
@@ -1037,9 +1110,17 @@ footer {
       <button class="lang-btn active" data-lang="ru">RU</button>
       <button class="lang-btn" data-lang="en">EN</button>
     </div>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
 <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="nav-cta" data-ru="Попробовать в Telegram →" data-en="Try in Telegram →">Попробовать в Telegram →</a>
   </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#features" data-ru="Возможности" data-en="Features">Возможности</a>
+  <a href="#how" data-ru="Как работает" data-en="How it works">Как работает</a>
+  <a href="#api" data-ru="API" data-en="API">API</a>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="top">
@@ -1226,7 +1307,7 @@ footer {
   <div class="container">
     <p class="section-label reveal" data-ru="Полный контроль" data-en="Full control">Полный контроль</p>
     <h2 class="section-heading reveal reveal-delay-1" data-ru="Полное управление <em>CRM</em><br>через чат" data-en="Full <em>CRM</em> management<br>via chat">Полное управление <em>CRM</em><br>через чат</h2>
-    <p class="section-sub reveal reveal-delay-2" data-ru="42+ действия через официальный API amoCRM / Kommo. Всё через обычный чат&nbsp;в&nbsp;Telegram." data-en="42+ actions via official amoCRM / Kommo API. Everything through a&nbsp;regular Telegram chat.">42+ действия через официальный API amoCRM / Kommo. Всё через обычный чат&nbsp;в&nbsp;Telegram.</p>
+    <p class="section-sub reveal reveal-delay-2" data-ru="43+ действия через официальный API amoCRM / Kommo. Всё через обычный чат&nbsp;в&nbsp;Telegram." data-en="43+ actions via official amoCRM / Kommo API. Everything through a&nbsp;regular Telegram chat.">43+ действия через официальный API amoCRM / Kommo. Всё через обычный чат&nbsp;в&nbsp;Telegram.</p>
 
     <div class="crm-grid reveal reveal-delay-1" style="margin-top:56px">
       <div class="crm-card">
@@ -1298,6 +1379,7 @@ footer {
       <div class="api-badge" data-ru="<span class='dot'></span>создать_вебхук" data-en="<span class='dot'></span>create_webhook"><span class="dot"></span>создать_вебхук</div>
       <div class="api-badge" data-ru="<span class='dot'></span>удалить_вебхук" data-en="<span class='dot'></span>delete_webhook"><span class="dot"></span>удалить_вебхук</div>
       <div class="api-badge" data-ru="<span class='dot'></span>создать_автоматизацию" data-en="<span class='dot'></span>create_automation"><span class="dot"></span>создать_автоматизацию</div>
+      <div class="api-badge" data-ru="<span class='dot'></span>удалить_автоматизацию" data-en="<span class='dot'></span>delete_automation"><span class="dot"></span>удалить_автоматизацию</div>
       <div class="api-badge" data-ru="<span class='dot'></span>карта_аккаунта" data-en="<span class='dot'></span>account_map"><span class="dot"></span>карта_аккаунта</div>
       <div class="api-badge" data-ru="<span class='dot'></span>создать_пользователя" data-en="<span class='dot'></span>create_user"><span class="dot"></span>создать_пользователя</div>
       <div class="api-badge" data-ru="<span class='dot'></span>создать_роль" data-en="<span class='dot'></span>create_role"><span class="dot"></span>создать_роль</div>
@@ -1325,7 +1407,7 @@ footer {
     </div>
 
     <div class="api-count reveal">
-      <span><strong class="count-up" data-count="42">0</strong> <span data-ru="действий доступно" data-en="actions available">действий доступно</span></span>
+      <span><strong class="count-up" data-count="43">0</strong> <span data-ru="действий доступно" data-en="actions available">действий доступно</span></span>
       <div class="api-legend">
         <div class="api-legend-item"><span class="api-legend-dot" style="background:var(--green);box-shadow:0 0 6px rgba(34,197,94,.4)"></span> <span data-ru="Доступно" data-en="Available">Доступно</span></div>
         <div class="api-legend-item"><span class="api-legend-dot" style="background:var(--orange);box-shadow:0 0 6px rgba(245,158,11,.4)"></span> <span data-ru="В разработке" data-en="In progress">В разработке</span></div>
@@ -1366,7 +1448,7 @@ footer {
           <li><span class="icon">✓</span> <span data-ru="Настройка CRM: мгновенно" data-en="CRM setup: instantly">Настройка CRM: мгновенно</span></li>
           <li><span class="icon">✓</span> <span data-ru="Правки: скажи Kai что изменить" data-en="Fixes: tell Kai what to change">Правки: скажи Kai что изменить</span></li>
           <li><span class="icon">✓</span> <span data-ru="Прямой диалог в Telegram" data-en="Direct dialog in Telegram">Прямой диалог в Telegram</span></li>
-          <li><span class="icon">✓</span> <span data-ru="42+ действий через API" data-en="42+ actions via API">42+ действий через API</span></li>
+          <li><span class="icon">✓</span> <span data-ru="43+ действий через API" data-en="43+ actions via API">43+ действий через API</span></li>
         </ul>
         <div class="compare-bottom">
           <div class="compare-price"><span data-ru="Бесплатно" data-en="Free">Бесплатно</span></div>
@@ -1657,6 +1739,24 @@ async function startChat() {
   }
 }
 startChat();
+
+/* ─── BURGER MENU ─── */
+(function() {
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('mobileMenu');
+  if (burger && menu) {
+    burger.addEventListener('click', function() {
+      burger.classList.toggle('active');
+      menu.classList.toggle('open');
+    });
+    menu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        burger.classList.remove('active');
+        menu.classList.remove('open');
+      });
+    });
+  }
+})();
 
 /* ─── SCROLL REVEAL ─── */
 const reveals = document.querySelectorAll('.reveal');
