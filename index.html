@@ -1232,6 +1232,74 @@ footer {
   margin-bottom: 16px;
   letter-spacing: .02em;
 }
+.plan-includes {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  padding: 8px 12px;
+  background: rgba(147,51,234,.08);
+  border-radius: 8px;
+  margin-bottom: 14px;
+  letter-spacing: .01em;
+}
+
+/* ─── FAQ ─── */
+.faq-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.faq-item {
+  background: var(--carbon);
+  border: 1px solid var(--graphite);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color .2s ease;
+}
+.faq-item:hover { border-color: var(--smoke); }
+.faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--paper);
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+.faq-q::after {
+  content: '+';
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--ash);
+  flex-shrink: 0;
+  transition: transform .25s ease;
+}
+.faq-item.open .faq-q::after {
+  transform: rotate(45deg);
+  color: var(--accent);
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease, padding .3s ease;
+}
+.faq-item.open .faq-a {
+  max-height: 200px;
+}
+.faq-a-inner {
+  padding: 0 20px 18px;
+  font-size: 14px;
+  color: var(--fog);
+  line-height: 1.6;
+}
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
@@ -1267,6 +1335,7 @@ footer {
   .compare-grid { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
   .plan-price { font-size: 36px; }
+  .faq-grid { grid-template-columns: 1fr; }
   .section-heading { font-size: clamp(24px,6vw,36px); }
   .section-sub { font-size: 15px; }
   .footer-inner { flex-direction: column; gap: 32px; }
@@ -1664,14 +1733,15 @@ footer {
           <li data-ru="Воронки, этапы, кастомные поля" data-en="Pipelines, stages, custom fields">Воронки, этапы, кастомные поля</li>
           <li data-ru="Сделки, контакты, компании" data-en="Leads, contacts, companies">Сделки, контакты, компании</li>
           <li data-ru="Задачи, теги, примечания" data-en="Tasks, tags, notes">Задачи, теги, примечания</li>
-          <li data-ru="Импорт базы из Excel" data-en="Import contacts from Excel">Импорт базы из Excel</li>
+          <li data-ru="Причины отказа и источники" data-en="Loss reasons & lead sources">Причины отказа и источники</li>
+          <li data-ru="Импорт базы из Excel/CSV" data-en="Import from Excel/CSV">Импорт базы из Excel/CSV</li>
           <li data-ru="Голосовые и скриншоты" data-en="Voice messages & screenshots">Голосовые и скриншоты</li>
           <li data-ru="~100 запросов/мес" data-en="~100 requests/mo">~100 запросов/мес</li>
           <li data-ru="1 CRM-аккаунт" data-en="1 CRM account">1 CRM-аккаунт</li>
           <li class="disabled" data-ru="Автоматизации" data-en="Automations">Автоматизации</li>
           <li class="disabled" data-ru="Кастомные доработки" data-en="Custom integrations">Кастомные доработки</li>
         </ul>
-        <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="plan-cta plan-cta-ghost" data-ru="Оформить" data-en="Choose">Оформить</a>
+        <a href="https://t.me/aiicrm_bot?start=pay_basic" target="_blank" rel="noopener" class="plan-cta plan-cta-ghost" data-ru="Оформить" data-en="Choose">Оформить</a>
       </div>
 
       <div class="plan-card featured">
@@ -1680,18 +1750,18 @@ footer {
         <div class="plan-price">€59 <span data-ru="/мес" data-en="/mo">/мес</span></div>
         <p class="plan-pitch" data-ru="+ автоматизации и управление" data-en="+ automation & management">+ автоматизации и управление</p>
         <div class="plan-trial" data-ru="3 дня бесплатно" data-en="3 days free">3 дня бесплатно</div>
+        <div class="plan-includes" data-ru="Всё из Start, плюс:" data-en="Everything in Start, plus:">Всё из Start, плюс:</div>
         <ul class="plan-features">
-          <li data-ru="Всё из Start" data-en="Everything in Start">Всё из Start</li>
           <li data-ru="Автоматизации (Digital Pipeline)" data-en="Automations (Digital Pipeline)">Автоматизации (Digital Pipeline)</li>
           <li data-ru="Пользователи и роли" data-en="Users & roles">Пользователи и роли</li>
           <li data-ru="Виджеты из amoМаркета" data-en="Widgets from marketplace">Виджеты из amoМаркета</li>
           <li data-ru="Карта аккаунта в PDF" data-en="Account map (PDF)">Карта аккаунта в PDF</li>
-          <li data-ru="Стандартные интеграции" data-en="Standard integrations">Стандартные интеграции</li>
+          <li data-ru="Стандартные интеграции (Telegram, Sheets)" data-en="Standard integrations (Telegram, Sheets)">Стандартные интеграции (Telegram, Sheets)</li>
           <li data-ru="~400 запросов/мес" data-en="~400 requests/mo">~400 запросов/мес</li>
           <li data-ru="До 3 CRM-аккаунтов" data-en="Up to 3 CRM accounts">До 3 CRM-аккаунтов</li>
           <li class="disabled" data-ru="Кастомные доработки" data-en="Custom integrations">Кастомные доработки</li>
         </ul>
-        <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="plan-cta plan-cta-primary" data-ru="Оформить" data-en="Choose">Оформить</a>
+        <a href="https://t.me/aiicrm_bot?start=pay_mid" target="_blank" rel="noopener" class="plan-cta plan-cta-primary" data-ru="Оформить" data-en="Choose">Оформить</a>
       </div>
 
       <div class="plan-card">
@@ -1699,16 +1769,16 @@ footer {
         <div class="plan-price">€119 <span data-ru="/мес" data-en="/mo">/мес</span></div>
         <p class="plan-pitch" data-ru="+ приоритет и доработки" data-en="+ priority & custom work">+ приоритет и доработки</p>
         <div class="plan-trial" data-ru="3 дня бесплатно" data-en="3 days free">3 дня бесплатно</div>
+        <div class="plan-includes" data-ru="Всё из Pro, плюс:" data-en="Everything in Pro, plus:">Всё из Pro, плюс:</div>
         <ul class="plan-features">
-          <li data-ru="Всё из Pro" data-en="Everything in Pro">Всё из Pro</li>
           <li data-ru="Приоритетная поддержка" data-en="Priority support">Приоритетная поддержка</li>
           <li data-ru="Память и опыт бота" data-en="Bot memory & experience">Память и опыт бота</li>
-          <li data-ru="Кастомные интеграции" data-en="Custom integrations">Кастомные интеграции</li>
-          <li data-ru="+€30 за доработку" data-en="+€30 per build">+€30 за доработку</li>
+          <li data-ru="Кастомные интеграции / доработки" data-en="Custom integrations / builds">Кастомные интеграции / доработки</li>
+          <li data-ru="+€30 за доработку (фикс)" data-en="+€30 per build (flat)">+€30 за доработку (фикс)</li>
           <li data-ru="Fair-use запросов" data-en="Fair-use requests">Fair-use запросов</li>
           <li data-ru="Много CRM-аккаунтов" data-en="Many CRM accounts">Много CRM-аккаунтов</li>
         </ul>
-        <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="plan-cta plan-cta-ghost" data-ru="Оформить" data-en="Choose">Оформить</a>
+        <a href="https://t.me/aiicrm_bot?start=pay_extra" target="_blank" rel="noopener" class="plan-cta plan-cta-ghost" data-ru="Оформить" data-en="Choose">Оформить</a>
       </div>
 
     </div>
@@ -1717,6 +1787,39 @@ footer {
       <strong data-ru="Кастомные интеграции — доработки под твой процесс" data-en="Custom integrations — tailored to your process">Кастомные интеграции — доработки под твой процесс</strong>
       <span class="note-tag" data-ru="только Max" data-en="Max only">только Max</span>
       <p data-ru="Нестандартная интеграция или доработка (свой вебхук, связка с внешним сервисом, особый сценарий) доступна только на тарифе Max. Каждая доработка — фиксированно €30, без «сколько попросят»." data-en="A non-standard integration or custom build (your own webhook, a link to an external service, a special scenario) is available on the Max plan only. Each build is a flat €30, no guesswork.">Нестандартная интеграция или доработка (свой вебхук, связка с внешним сервисом, особый сценарий) доступна только на тарифе Max. Каждая доработка — фиксированно €30, без «сколько попросят».</p>
+    </div>
+
+    <h3 class="section-heading reveal" style="font-size:clamp(22px,3vw,30px);margin-top:56px" data-ru="Частые <em>вопросы</em>" data-en="Frequently asked <em>questions</em>">Частые <em>вопросы</em></h3>
+
+    <div class="faq-grid reveal reveal-delay-1">
+      <div class="faq-item">
+        <button class="faq-q" data-ru="Что если кончатся запросы?" data-en="What if I run out of requests?">Что если кончатся запросы?</button>
+        <div class="faq-a"><div class="faq-a-inner" data-ru="Докупишь пакет или поднимешь тариф прямо в боте (/plan). На пробном периоде — дневной лимит, просто вернись завтра." data-en="Top up or upgrade right in the bot (/plan). On trial there's a daily cap — just come back tomorrow.">Докупишь пакет или поднимешь тариф прямо в боте (/plan). На пробном периоде — дневной лимит, просто вернись завтра.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-ru="Можно сменить тариф?" data-en="Can I change my plan?">Можно сменить тариф?</button>
+        <div class="faq-a"><div class="faq-a-inner" data-ru="Да, в любой момент — выше или ниже." data-en="Yes, anytime — up or down.">Да, в любой момент — выше или ниже.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-ru="Нужна лицензия amoCRM/Kommo?" data-en="Do I need an amoCRM/Kommo licence?">Нужна лицензия amoCRM/Kommo?</button>
+        <div class="faq-a"><div class="faq-a-inner" data-ru="Да — Kai настраивает твою CRM, лицензия самой CRM оплачивается отдельно по её тарифам (у CRM свой пробный период)." data-en="Yes — Kai configures your CRM; the CRM licence is billed separately at their rates (the CRM has its own trial).">Да — Kai настраивает твою CRM, лицензия самой CRM оплачивается отдельно по её тарифам (у CRM свой пробный период).</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-ru="Как оплатить?" data-en="How do I pay?">Как оплатить?</button>
+        <div class="faq-a"><div class="faq-a-inner" data-ru="Карта · Apple Pay · Google Pay · Telegram Stars · крипта (USDT). Для РФ/СНГ — Stars или крипта." data-en="Card · Apple Pay · Google Pay · Telegram Stars · crypto (USDT).">Карта · Apple Pay · Google Pay · Telegram Stars · крипта (USDT). Для РФ/СНГ — Stars или крипта.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-ru="Спишете сами при продлении?" data-en="Will you auto-charge me?">Спишете сами при продлении?</button>
+        <div class="faq-a"><div class="faq-a-inner" data-ru="Нет — за 7 дней предупредим, тихого списания не будет." data-en="No silent charges — we remind you 7 days before renewal.">Нет — за 7 дней предупредим, тихого списания не будет.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-ru="Что такое «запрос»?" data-en="What is a 'request'?">Что такое «запрос»?</button>
+        <div class="faq-a"><div class="faq-a-inner" data-ru="Одно обращение к боту — «создай воронку», «добавь поле», «импортируй базу»." data-en="One message to the bot — 'create pipeline', 'add field', 'import contacts'.">Одно обращение к боту — «создай воронку», «добавь поле», «импортируй базу».</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-ru="А если не подойдёт?" data-en="What if it's not for me?">А если не подойдёт?</button>
+        <div class="faq-a"><div class="faq-a-inner" data-ru="Первые 3 дня — бесплатно. Попробуй без риска." data-en="First 3 days free. Try risk-free.">Первые 3 дня — бесплатно. Попробуй без риска.</div></div>
+      </div>
     </div>
 
     <p class="pricing-footer reveal" data-ru="Оплата картой (мир), Telegram Stars или криптой (USDT). Цены указаны за пользователя-владельца бота; лицензии самой CRM (amoCRM/Kommo) оплачиваются отдельно." data-en="Pay by card, Telegram Stars, or crypto (USDT). Prices are per bot owner; the CRM licence itself (amoCRM/Kommo) is billed separately.">Оплата картой (мир), Telegram Stars или криптой (USDT). Цены указаны за пользователя-владельца бота; лицензии самой CRM (amoCRM/Kommo) оплачиваются отдельно.</p>
@@ -2022,6 +2125,15 @@ startChat();
     });
   }
 })();
+
+/* ─── FAQ ACCORDION ─── */
+document.querySelectorAll('.faq-q').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = btn.closest('.faq-item');
+    var wasOpen = item.classList.contains('open');
+    item.classList.toggle('open');
+  });
+});
 
 /* ─── SCROLL REVEAL ─── */
 const reveals = document.querySelectorAll('.reveal');
