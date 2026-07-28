@@ -1895,80 +1895,75 @@ footer {
 const chatBody = document.getElementById('chatBody');
 let chatLocked = false;
 
-const scenarios = [
-  {
-    steps: [
-      { type:'bot', text:'Привет! Что хотите настроить?' },
-      { type:'buttons', labels:['Новую CRM','Автоматизацию','Карту аккаунта'], pick:0 },
-      { type:'user', text:'Онлайн-школа, продаём курсы' },
-      { type:'bot', text:'Сколько менеджеров в отделе продаж?' },
+function getLang() {
+  return document.querySelector('.lang-btn.active')?.dataset.lang || 'ru';
+}
+function t(ru, en) { return getLang() === 'en' ? en : ru; }
+
+function getScenarios() {
+  return [
+    { steps: [
+      { type:'bot', text: t('Привет! Что хотите настроить?','Hi! What would you like to set up?') },
+      { type:'buttons', labels: t(['Новую CRM','Автоматизацию','Карту аккаунта'],['New CRM','Automation','Account map']), pick:0 },
+      { type:'user', text: t('Онлайн-школа, продаём курсы','Online school, we sell courses') },
+      { type:'bot', text: t('Сколько менеджеров в отделе продаж?','How many sales reps on the team?') },
       { type:'buttons', labels:['1–3','4–10','10+'], pick:1 },
-      { type:'bot', text:'Отлично! Собираю структуру под команду из 4–10 человек...' },
-      { type:'status', lines:['создать_воронку → «Продажа курсов»','добавить_этап × 5','создать_поле → тариф, LTV, источник','создать_задачу → follow-up на 2-й день'] },
-      { type:'bot', text:'CRM настроена — 4 действия за 8 секунд ✨' },
-    ]
-  },
-  {
-    steps: [
-      { type:'bot', text:'Привет! Чем могу помочь?' },
-      { type:'buttons', labels:['Воронку','Виджет','Автоматизацию'], pick:2 },
-      { type:'user', text:'Хочу автозадачу при смене этапа' },
-      { type:'bot', text:'В какой воронке настроить?' },
-      { type:'buttons', labels:['Продажи','Повторные','HR'], pick:0 },
-      { type:'bot', text:'Запускаю создание автоматизации...' },
-      { type:'status', lines:['создать_автоматизацию','Триггер: смена этапа → «Переговоры»','создать_задачу → «Позвонить клиенту»','Дедлайн: +1 рабочий день'] },
-      { type:'bot', text:'Автоматизация работает! Теперь при переходе в «Переговоры» задача создастся сама 🤖' },
-    ]
-  },
-  {
-    steps: [
-      { type:'bot', text:'Привет! Что нужно сделать?' },
-      { type:'buttons', labels:['Разобраться','Импорт данных','Виджеты'], pick:0 },
-      { type:'user', text:'Покажи что есть в моей CRM' },
-      { type:'bot', text:'Сканирую ваш аккаунт...' },
-      { type:'status', lines:['карта_аккаунта → генерация PDF','3 воронки, 47 полей, 2 виджета','12 пользователей, 4 роли','показать_автоматизации → 8 правил'] },
-      { type:'bot', text:'Готово! PDF-карта отправлена 📊' },
-      { type:'bot', text:'Нашёл 14 неиспользуемых полей. Удалить?' },
-      { type:'buttons', labels:['Да, почисти','Нет, оставь'], pick:0 },
-    ]
-  },
-  {
-    steps: [
-      { type:'bot', text:'Привет! С чем помочь?' },
-      { type:'buttons', labels:['Новый виджет','Контакты','Вебхук'], pick:0 },
-      { type:'user', text:'Подключи виджет для телефонии' },
-      { type:'bot', text:'Какого провайдера используете?' },
+      { type:'bot', text: t('Отлично! Собираю структуру под команду из 4–10 человек...','Great! Building a structure for a 4–10 person team...') },
+      { type:'status', lines:[t('создать_воронку → «Продажа курсов»','create_pipeline → "Course Sales"'),t('добавить_этап × 5','add_stage × 5'),t('создать_поле → тариф, LTV, источник','create_field → plan, LTV, source'),t('создать_задачу → follow-up на 2-й день','create_task → follow-up on day 2')] },
+      { type:'bot', text: t('CRM настроена — 4 действия за 8 секунд ✨','CRM configured — 4 actions in 8 seconds ✨') },
+    ]},
+    { steps: [
+      { type:'bot', text: t('Привет! Чем могу помочь?','Hi! How can I help?') },
+      { type:'buttons', labels: t(['Воронку','Виджет','Автоматизацию'],['Pipeline','Widget','Automation']), pick:2 },
+      { type:'user', text: t('Хочу автозадачу при смене этапа','I want an auto-task on stage change') },
+      { type:'bot', text: t('В какой воронке настроить?','Which pipeline to set up?') },
+      { type:'buttons', labels: t(['Продажи','Повторные','HR'],['Sales','Repeat','HR']), pick:0 },
+      { type:'bot', text: t('Запускаю создание автоматизации...','Creating automation...') },
+      { type:'status', lines:[t('создать_автоматизацию','create_automation'),t('Триггер: смена этапа → «Переговоры»','Trigger: stage change → "Negotiation"'),t('создать_задачу → «Позвонить клиенту»','create_task → "Call the client"'),t('Дедлайн: +1 рабочий день','Deadline: +1 business day')] },
+      { type:'bot', text: t('Автоматизация работает! Задача создастся сама 🤖','Automation is live! Task will be created automatically 🤖') },
+    ]},
+    { steps: [
+      { type:'bot', text: t('Привет! Что нужно сделать?','Hi! What do you need?') },
+      { type:'buttons', labels: t(['Разобраться','Импорт данных','Виджеты'],['Explore','Import data','Widgets']), pick:0 },
+      { type:'user', text: t('Покажи что есть в моей CRM','Show me what\'s in my CRM') },
+      { type:'bot', text: t('Сканирую ваш аккаунт...','Scanning your account...') },
+      { type:'status', lines:[t('карта_аккаунта → генерация PDF','account_map → generating PDF'),t('3 воронки, 47 полей, 2 виджета','3 pipelines, 47 fields, 2 widgets'),t('12 пользователей, 4 роли','12 users, 4 roles'),t('показать_автоматизации → 8 правил','list_automations → 8 rules')] },
+      { type:'bot', text: t('Готово! PDF-карта отправлена 📊','Done! PDF map sent 📊') },
+      { type:'bot', text: t('Нашёл 14 неиспользуемых полей. Удалить?','Found 14 unused fields. Delete them?') },
+      { type:'buttons', labels: t(['Да, почисти','Нет, оставь'],['Yes, clean up','No, keep them']), pick:0 },
+    ]},
+    { steps: [
+      { type:'bot', text: t('Привет! С чем помочь?','Hi! What can I help with?') },
+      { type:'buttons', labels: t(['Новый виджет','Контакты','Вебхук'],['New widget','Contacts','Webhook']), pick:0 },
+      { type:'user', text: t('Подключи виджет для телефонии','Connect a telephony widget') },
+      { type:'bot', text: t('Какого провайдера используете?','Which provider do you use?') },
       { type:'buttons', labels:['Sipuni','Mango','UIS'], pick:1 },
-      { type:'bot', text:'Устанавливаю из amoМаркет...' },
-      { type:'status', lines:['установить_виджет → MangoOffice','настроить_виджет → API-ключ','создать_вебхук → входящий звонок','создать_поле → длительность звонка'] },
-      { type:'bot', text:'Телефония подключена! Звонки пойдут в CRM 📞' },
-    ]
-  },
-  {
-    steps: [
-      { type:'bot', text:'Привет! Что настроим сегодня?' },
-      { type:'buttons', labels:['Импорт базы','Поля','Роли'], pick:0 },
-      { type:'user', text:'Надо залить 500 контактов из Excel' },
-      { type:'bot', text:'Отправьте файл — поддерживаю Excel, CSV, PDF' },
-      { type:'user', text:'📎 клиенты_июль.xlsx' },
-      { type:'bot', text:'Читаю файл... Нашёл 487 строк, 6 колонок' },
-      { type:'status', lines:['чтение_файлов → Excel parsed','создать_контакт × 487','создать_компанию × 52','добавить_тег → «Импорт июль»'] },
-      { type:'bot', text:'Импортировано! 487 контактов + 52 компании 🎉' },
-    ]
-  },
-  {
-    steps: [
-      { type:'bot', text:'Привет! Чем могу помочь?' },
-      { type:'buttons', labels:['Пользователи','Сделки','ТЗ в PDF'], pick:2 },
-      { type:'user', text:'Сгенерируй ТЗ по нашему плану' },
-      { type:'bot', text:'На основе чего строить?' },
-      { type:'buttons', labels:['Текущий план','С нуля','Голосом'], pick:0 },
-      { type:'bot', text:'Генерирую техническое задание...' },
-      { type:'status', lines:['генерация_ТЗ_PDF','3 воронки, 28 полей, 5 автоматизаций','Экспорт: kai_tz_v2.pdf (12 страниц)','Привязка: согласованный план от 15.07'] },
-      { type:'bot', text:'ТЗ готово — 12 страниц, отправлено файлом 📝' },
-    ]
-  },
-];
+      { type:'bot', text: t('Устанавливаю из amoМаркет...','Installing from the marketplace...') },
+      { type:'status', lines:[t('установить_виджет → MangoOffice','install_widget → MangoOffice'),t('настроить_виджет → API-ключ','configure_widget → API key'),t('создать_вебхук → входящий звонок','create_webhook → incoming call'),t('создать_поле → длительность звонка','create_field → call duration')] },
+      { type:'bot', text: t('Телефония подключена! Звонки пойдут в CRM 📞','Telephony connected! Calls will go to CRM 📞') },
+    ]},
+    { steps: [
+      { type:'bot', text: t('Привет! Что настроим сегодня?','Hi! What shall we set up today?') },
+      { type:'buttons', labels: t(['Импорт базы','Поля','Роли'],['Import data','Fields','Roles']), pick:0 },
+      { type:'user', text: t('Надо залить 500 контактов из Excel','Need to import 500 contacts from Excel') },
+      { type:'bot', text: t('Отправьте файл — поддерживаю Excel, CSV, PDF','Send the file — I support Excel, CSV, PDF') },
+      { type:'user', text:'📎 clients_july.xlsx' },
+      { type:'bot', text: t('Читаю файл... Нашёл 487 строк, 6 колонок','Reading file... Found 487 rows, 6 columns') },
+      { type:'status', lines:[t('чтение_файлов → Excel parsed','read_files → Excel parsed'),t('создать_контакт × 487','create_contact × 487'),t('создать_компанию × 52','create_company × 52'),t('добавить_тег → «Импорт июль»','add_tag → "July import"')] },
+      { type:'bot', text: t('Импортировано! 487 контактов + 52 компании 🎉','Imported! 487 contacts + 52 companies 🎉') },
+    ]},
+    { steps: [
+      { type:'bot', text: t('Привет! Чем могу помочь?','Hi! How can I help?') },
+      { type:'buttons', labels: t(['Пользователи','Сделки','ТЗ в PDF'],['Users','Deals','Spec (PDF)']), pick:2 },
+      { type:'user', text: t('Сгенерируй ТЗ по нашему плану','Generate a spec from our plan') },
+      { type:'bot', text: t('На основе чего строить?','Based on what?') },
+      { type:'buttons', labels: t(['Текущий план','С нуля','Голосом'],['Current plan','From scratch','By voice']), pick:0 },
+      { type:'bot', text: t('Генерирую техническое задание...','Generating technical spec...') },
+      { type:'status', lines:[t('генерация_ТЗ_PDF','generate_spec_PDF'),t('3 воронки, 28 полей, 5 автоматизаций','3 pipelines, 28 fields, 5 automations'),t('Экспорт: kai_tz_v2.pdf (12 страниц)','Export: kai_spec_v2.pdf (12 pages)'),t('Привязка: согласованный план от 15.07','Linked: approved plan from Jul 15')] },
+      { type:'bot', text: t('ТЗ готово — 12 страниц, отправлено файлом 📝','Spec ready — 12 pages, sent as file 📝') },
+    ]},
+  ];
+}
 
 function scroll() { chatBody.scrollTop = chatBody.scrollHeight; }
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
@@ -2069,27 +2064,29 @@ async function playScenario(sc, interactive) {
   chatLocked = false;
   await sleep(5000);
   if (!chatLocked) {
-    const next = scenarios[Math.floor(Math.random() * scenarios.length)];
+    const next = getScenarios()[Math.floor(Math.random() * getScenarios().length)];
     playScenario(next, false);
   }
 }
 
-const greeting = [
-  { type:'bot', text:'Привет! 👋' },
-  { type:'bot', text:'Я Kai — AI-аналитик по amoCRM и&nbsp;Kommo.' },
-  { type:'bot', text:'Помогу спроектировать CRM под твой бизнес или настрою что нужно&nbsp;— просто пиши обычными словами.' },
-];
+function getGreeting() {
+  return [
+    { type:'bot', text: t('Привет! 👋','Hi! 👋') },
+    { type:'bot', text: t('Я Kai — AI-аналитик по amoCRM и&nbsp;Kommo.','I\'m Kai — an AI analyst for amoCRM &amp;&nbsp;Kommo.') },
+    { type:'bot', text: t('Помогу спроектировать CRM под твой бизнес или настрою что нужно&nbsp;— просто пиши обычными словами.','I\'ll help design a CRM for your business or set up whatever you need&nbsp;— just write in plain words.') },
+  ];
+}
 
 async function startChat() {
   chatLocked = true;
   chatBody.innerHTML = '';
-  for (const g of greeting) {
+  for (const g of getGreeting()) {
     await showTyping(500 + Math.random() * 400);
     addBot('<div class="msg-bubble">' + g.text + '</div>');
     await sleep(400);
   }
   await sleep(1500);
-  const sc = scenarios[Math.floor(Math.random() * scenarios.length)];
+  const sc = getScenarios()[Math.floor(Math.random() * getScenarios().length)];
   for (const step of sc.steps) {
     if (step.type === 'bot') {
       await showTyping(500 + Math.random() * 500);
@@ -2112,7 +2109,7 @@ async function startChat() {
   chatLocked = false;
   await sleep(6000);
   if (!chatLocked) {
-    const next = scenarios[Math.floor(Math.random() * scenarios.length)];
+    const next = getScenarios()[Math.floor(Math.random() * getScenarios().length)];
     playScenario(next, false);
   }
 }
@@ -2185,6 +2182,7 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     });
     var pl = document.querySelector('.privacy-link');
     if (pl) pl.href = lang === 'en' ? 'privacy.html?lang=en' : 'privacy.html';
+    startChat();
   });
 });
 
