@@ -1310,6 +1310,102 @@ footer {
   line-height: 1.6;
 }
 
+/* ─── SCROLL TO TOP ─── */
+.scroll-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 90;
+  opacity: 0;
+  transform: translateY(20px) scale(.8);
+  pointer-events: none;
+  transition: opacity .3s ease, transform .3s ease;
+  box-shadow: 0 4px 20px rgba(147,51,234,.3);
+}
+.scroll-top.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.scroll-top:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 6px 28px rgba(147,51,234,.45);
+}
+.scroll-top:active { transform: translateY(0) scale(.95); }
+.scroll-top svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform .2s ease;
+}
+.scroll-top:hover svg { transform: translateY(-2px); }
+
+/* ─── INSTALL WIDGET BANNER ─── */
+.install-banner {
+  background: linear-gradient(135deg, rgba(147,51,234,.08) 0%, rgba(219,39,119,.06) 100%);
+  border: 1px solid rgba(147,51,234,.2);
+  border-radius: 16px;
+  padding: 32px;
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  transition: border-color .3s ease;
+}
+.install-banner:hover { border-color: rgba(147,51,234,.4); }
+.install-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--accent-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.install-icon svg { width: 28px; height: 28px; fill: #fff; }
+.install-body { flex: 1; }
+.install-body h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--paper);
+  margin: 0 0 6px;
+}
+.install-body p {
+  font-size: 14px;
+  color: var(--fog);
+  margin: 0;
+  line-height: 1.5;
+}
+.install-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: var(--accent-gradient);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity .2s, transform .2s;
+}
+.install-cta:hover { opacity: .85; transform: translateY(-1px); }
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
   section { padding: 64px 16px; }
@@ -1345,6 +1441,9 @@ footer {
   .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
   .plan-price { font-size: 36px; }
   .faq-grid { grid-template-columns: 1fr; }
+  .install-banner { flex-direction: column; text-align: center; gap: 16px; padding: 24px 20px; }
+  .scroll-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+  .scroll-top svg { width: 18px; height: 18px; }
   .section-heading { font-size: clamp(24px,6vw,36px); }
   .section-sub { font-size: 15px; }
   .footer-inner { flex-direction: column; gap: 32px; }
@@ -1786,7 +1885,7 @@ footer {
           <li data-ru="Кастомные интеграции / доработки" data-en="Custom integrations / builds">Кастомные интеграции / доработки</li>
           <li data-ru="+€30 за доработку (фикс)" data-en="+€30 per build (flat)">+€30 за доработку (фикс)</li>
           <li data-ru="Fair-use запросов" data-en="Fair-use requests">Fair-use запросов</li>
-          <li data-ru="Много CRM-аккаунтов" data-en="Many CRM accounts">Много CRM-аккаунтов</li>
+          <li data-ru="До 10 CRM-аккаунтов" data-en="Up to 10 CRM accounts">До 10 CRM-аккаунтов</li>
         </ul>
         <a href="https://t.me/aiicrm_bot?start=pay_extra" target="_blank" rel="noopener" class="plan-cta plan-cta-ghost" data-ru="Оформить" data-en="Choose">Оформить</a>
       </div>
@@ -1830,6 +1929,20 @@ footer {
         <button class="faq-q" data-ru="А если не подойдёт?" data-en="What if it's not for me?">А если не подойдёт?</button>
         <div class="faq-a"><div class="faq-a-inner" data-ru="Первые 3 дня — бесплатно. Попробуй без риска." data-en="First 3 days free. Try risk-free.">Первые 3 дня — бесплатно. Попробуй без риска.</div></div>
       </div>
+    </div>
+
+    <div class="install-banner reveal">
+      <div class="install-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+      </div>
+      <div class="install-body">
+        <h4 data-ru="Установи Kai из amoМаркета" data-en="Install Kai from the marketplace">Установи Kai из amoМаркета</h4>
+        <p data-ru="Виджет доступен в каталоге amoCRM. Установи в один клик — подключение через OAuth, без API-ключей." data-en="The widget is available in the amoCRM catalog. Install in one click — OAuth connection, no API keys needed.">Виджет доступен в каталоге amoCRM. Установи в один клик — подключение через OAuth, без API-ключей.</p>
+      </div>
+      <a href="https://www.amocrm.ru/marketplace" target="_blank" rel="noopener" class="install-cta" data-ru="Открыть amoМаркет" data-en="Open marketplace">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        <span data-ru="Открыть amoМаркет" data-en="Open marketplace">Открыть amoМаркет</span>
+      </a>
     </div>
 
     <p class="pricing-footer reveal" data-ru="Оплата картой (мир), Telegram Stars или криптой (USDT). Цены указаны за пользователя-владельца бота; лицензии самой CRM (amoCRM/Kommo) оплачиваются отдельно." data-en="Pay by card, Telegram Stars, or crypto (USDT). Prices are per bot owner; the CRM licence itself (amoCRM/Kommo) is billed separately.">Оплата картой (мир), Telegram Stars или криптой (USDT). Цены указаны за пользователя-владельца бота; лицензии самой CRM (amoCRM/Kommo) оплачиваются отдельно.</p>
@@ -2261,5 +2374,24 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 </script>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+(function() {
+  var btn = document.getElementById('scrollTop');
+  if (!btn) return;
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 600) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  }, { passive: true });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+
 </body>
 </html>
