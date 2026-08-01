@@ -1353,6 +1353,65 @@ footer {
 }
 .scroll-top:hover svg { transform: translateY(-2px); }
 
+/* ─── CONNECT STRIP ─── */
+.connect-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, rgba(147,51,234,.1) 0%, rgba(219,39,119,.07) 100%);
+  border: 1px solid rgba(147,51,234,.2);
+  border-radius: 60px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fog);
+  text-decoration: none;
+  transition: border-color .3s, background .3s, transform .2s;
+  position: relative;
+  overflow: hidden;
+}
+.connect-strip:hover {
+  border-color: rgba(147,51,234,.5);
+  background: linear-gradient(135deg, rgba(147,51,234,.15) 0%, rgba(219,39,119,.1) 100%);
+  color: var(--paper);
+  transform: translateY(-1px);
+}
+.connect-strip svg { color: var(--accent); flex-shrink: 0; }
+.connect-strip-arrow { transition: transform .2s; }
+.connect-strip:hover .connect-strip-arrow { transform: translateX(3px); }
+.connect-strip-pulse {
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent, rgba(147,51,234,.08), transparent);
+  animation: strip-shimmer 3s ease-in-out infinite;
+}
+@keyframes strip-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ─── FOOTER CTA ─── */
+.footer-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 10px 20px;
+  background: var(--accent-gradient);
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity .2s, transform .2s;
+}
+.footer-cta:hover { opacity: .85; transform: translateY(-1px); }
+.footer-cta svg { flex-shrink: 0; }
+
 /* ─── INSTALL WIDGET BANNER ─── */
 .install-banner {
   background: linear-gradient(135deg, rgba(147,51,234,.08) 0%, rgba(219,39,119,.06) 100%);
@@ -1419,6 +1478,7 @@ footer {
   footer { padding: 40px 16px 28px; }
 }
 @media (max-width: 640px) {
+  .connect-strip { font-size: 12px; padding: 10px 16px; gap: 8px; margin: 0 16px; }
   .nav-links { display: none; }
   .burger { display: flex; }
   .lang-toggle { margin-left: auto; }
@@ -1538,22 +1598,13 @@ footer {
   </div>
 </section>
 
-<!-- CONNECT BANNER -->
-<div class="container" style="padding-top:32px">
-    <div class="install-banner reveal">
-      <div class="install-icon">
-        <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-      </div>
-      <div class="install-body">
-        <h4 data-ru="Подключи CRM за 1 клик" data-en="Connect your CRM in 1 click">Подключи CRM за 1 клик</h4>
-        <p data-ru="Нажми кнопку — откроется бот, выбери amoCRM или Kommo, авторизуйся через OAuth. Без ключей, без ZIP-файлов." data-en="Click the button — the bot opens, pick amoCRM or Kommo, authorize via OAuth. No keys, no ZIP files.">Нажми кнопку — откроется бот, выбери amoCRM или Kommo, авторизуйся через OAuth. Без ключей, без ZIP-файлов.</p>
-      </div>
-      <a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" class="install-cta">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        <span data-ru="Подключить за 1 клик" data-en="Connect in 1 click">Подключить за 1 клик</span>
-      </a>
-    </div>
-</div>
+<!-- CONNECT STRIP -->
+<a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" class="connect-strip reveal">
+  <span class="connect-strip-pulse"></span>
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+  <span data-ru="Подключи CRM за 1 клик — OAuth без ключей" data-en="Connect your CRM in 1 click — OAuth, no keys">Подключи CRM за 1 клик — OAuth без ключей</span>
+  <svg class="connect-strip-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+</a>
 
 <!-- INTEGRATIONS -->
 <section class="integrations">
@@ -1990,6 +2041,10 @@ footer {
     <div class="footer-brand">
       <div class="logo">Kai</div>
       <p class="footer-desc" data-ru="AI-ассистент для настройки amoCRM и Kommo. Консультирует как эксперт, реализует как программист — через Telegram." data-en="AI assistant for amoCRM and Kommo setup. Consults like an expert, implements like a developer — via Telegram.">AI-ассистент для настройки amoCRM и Kommo. Консультирует как эксперт, реализует как программист — через Telegram.</p>
+      <a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" class="footer-cta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <span data-ru="Подключить CRM" data-en="Connect CRM">Подключить CRM</span>
+      </a>
     </div>
     <div class="footer-links">
       <h4 data-ru="Продукт" data-en="Product">Продукт</h4>
