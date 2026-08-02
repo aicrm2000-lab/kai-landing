@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kai — Настройка amoCRM без программистов</title>
+<title>Kai — Настройка CRM без программистов</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%239333ea'/><stop offset='100%25' stop-color='%23db2777'/></linearGradient></defs><rect width='32' height='32' rx='8' fill='%230d0d0f'/><text x='16' y='23' text-anchor='middle' font-family='Inter,system-ui,sans-serif' font-weight='700' font-size='22' fill='url(%23g)'>K</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -858,6 +858,28 @@ footer {
 }
 .mobile-menu a:last-child { border-bottom: none; }
 .mobile-menu a:hover { color: var(--paper); }
+.mobile-menu .mobile-menu-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  margin-top: 4px;
+  border-top: 1px solid var(--graphite);
+}
+.mobile-menu .mobile-menu-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--accent-gradient);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: none;
+}
+.mobile-menu .mobile-menu-cta:hover { color: #fff; opacity: .85; }
 
 /* ─── INTEGRATIONS / PARTNERS ─── */
 .integrations {
@@ -1527,8 +1549,8 @@ footer {
 @media (max-width: 640px) {
   .connect-strip { font-size: 12px; padding: 10px 16px; gap: 8px; margin: 0 16px; }
   .nav-links { display: none; }
-  .burger { display: flex; }
-  .lang-toggle { margin-left: auto; }
+  .burger { display: flex; margin-left: auto; }
+  .nav-inner .lang-toggle { display: none; }
   .nav-cta { display: none; }
   .hero { padding: 100px 16px 48px; }
   .hero h1 { font-size: clamp(28px,8vw,38px); }
@@ -1589,6 +1611,13 @@ footer {
   <a href="#how" data-ru="Как работает" data-en="How it works">Как работает</a>
   <a href="#api" data-ru="API" data-en="API">API</a>
   <a href="#pricing" data-ru="Тарифы" data-en="Plans">Тарифы</a>
+  <div class="mobile-menu-footer">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="ru">RU</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="mobile-menu-cta" data-ru="Попробовать →" data-en="Try it →">Попробовать →</a>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -1606,8 +1635,8 @@ footer {
     <span data-ru="Работает в Telegram — без установки" data-en="Works in Telegram — no install needed">Работает в Telegram — без установки</span>
   </div>
 
-  <h1 data-ru="Настройка <em>amoCRM</em><br>без программистов" data-en="Set up <em>amoCRM</em><br>without developers">
-    Настройка <em>amoCRM</em><br>без программистов
+  <h1 data-ru="Настройка <em>CRM</em><br>без программистов" data-en="Set up your <em>CRM</em><br>without developers">
+    Настройка <em>CRM</em><br>без программистов
   </h1>
   <p class="hero-sub" data-ru="Kai задаёт правильные вопросы, строит план под&nbsp;ваш бизнес и&nbsp;настраивает CRM автоматически&nbsp;— через обычный чат&nbsp;в&nbsp;Telegram." data-en="Kai asks the right questions, builds a&nbsp;plan for your business and configures CRM automatically&nbsp;— via a&nbsp;regular Telegram&nbsp;chat.">
     Kai задаёт правильные вопросы, строит план под&nbsp;ваш бизнес и&nbsp;настраивает CRM автоматически&nbsp;— через обычный чат&nbsp;в&nbsp;Telegram.
@@ -2428,8 +2457,9 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     const lang = btn.dataset.lang;
     if (lang === currentLang) return;
     currentLang = lang;
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-' + lang + ']').forEach(el => {
       const val = el.getAttribute('data-' + lang);
