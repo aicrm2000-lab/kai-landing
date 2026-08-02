@@ -1360,6 +1360,46 @@ footer {
 }
 .scroll-top:hover svg { transform: translateY(-2px); }
 
+/* ─── COOKIE BANNER ─── */
+.cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: var(--carbon);
+  border-top: 1px solid var(--graphite);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--fog);
+  transform: translateY(100%);
+  transition: transform .4s ease;
+}
+.cookie-banner.visible { transform: translateY(0); }
+.cookie-banner a { color: var(--accent); }
+.cookie-btns { display: flex; gap: 8px; flex-shrink: 0; }
+.cookie-btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity .2s;
+}
+.cookie-btn:hover { opacity: .85; }
+.cookie-btn-accept {
+  background: var(--accent-gradient);
+  color: #fff;
+}
+.cookie-btn-decline {
+  background: var(--graphite);
+  color: var(--fog);
+}
+
 /* ─── CONNECT STRIP ─── */
 .connect-strip {
   display: flex;
@@ -2084,7 +2124,28 @@ footer {
   </div>
 </footer>
 
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <span data-ru="Мы используем cookie для аналитики и улучшения сервиса. Подробнее в <a href='privacy.html'>Политике конфиденциальности</a>." data-en="We use cookies for analytics and to improve the service. See our <a href='privacy.html?lang=en'>Privacy Policy</a>.">Мы используем cookie для аналитики и улучшения сервиса. Подробнее в <a href='privacy.html'>Политике конфиденциальности</a>.</span>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-btn-accept" id="cookieAccept" data-ru="Принять" data-en="Accept">Принять</button>
+    <button class="cookie-btn cookie-btn-decline" id="cookieDecline" data-ru="Отклонить" data-en="Decline">Отклонить</button>
+  </div>
+</div>
+
 <script>
+/* ─── RESTORE SCROLL POSITION ─── */
+(function() {
+  var saved = sessionStorage.getItem('kai_scroll');
+  if (saved) {
+    sessionStorage.removeItem('kai_scroll');
+    requestAnimationFrame(function() { window.scrollTo(0, parseInt(saved, 10)); });
+  }
+  window.addEventListener('beforeunload', function() {
+    sessionStorage.setItem('kai_scroll', window.scrollY);
+  });
+})();
+
 /* ─── CHAT ANIMATION ─── */
 const chatBody = document.getElementById('chatBody');
 let chatLocked = false;
@@ -2376,6 +2437,8 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     });
     var pl = document.querySelector('.privacy-link');
     if (pl) pl.href = lang === 'en' ? 'privacy.html?lang=en' : 'privacy.html';
+    var tl = document.querySelector('a[href*="terms.html"]');
+    if (tl) tl.href = lang === 'en' ? 'terms.html?lang=en' : 'terms.html';
     startChat();
   });
 });
@@ -2470,6 +2533,24 @@ window.addEventListener('scroll', () => {
   }, { passive: true });
   btn.addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+
+<script>
+/* ─── COOKIE BANNER ─── */
+(function() {
+  var consent = localStorage.getItem('kai_cookie_consent');
+  if (consent) return;
+  var banner = document.getElementById('cookieBanner');
+  setTimeout(function() { banner.classList.add('visible'); }, 1000);
+  document.getElementById('cookieAccept').addEventListener('click', function() {
+    localStorage.setItem('kai_cookie_consent', 'accepted');
+    banner.classList.remove('visible');
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function() {
+    localStorage.setItem('kai_cookie_consent', 'declined');
+    banner.classList.remove('visible');
   });
 })();
 </script>
