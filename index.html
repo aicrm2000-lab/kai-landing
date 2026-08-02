@@ -2163,15 +2163,23 @@ footer {
 </div>
 
 <script>
-/* ─── RESTORE SCROLL POSITION ─── */
+/* ─── SCROLL POSITION PERSISTENCE ─── */
 (function() {
   var saved = sessionStorage.getItem('kai_scroll');
   if (saved) {
     sessionStorage.removeItem('kai_scroll');
-    requestAnimationFrame(function() { window.scrollTo(0, parseInt(saved, 10)); });
+    var pos = parseInt(saved, 10);
+    if (pos > 0) {
+      history.scrollRestoration = 'manual';
+      window.scrollTo(0, pos);
+      requestAnimationFrame(function() { window.scrollTo(0, pos); });
+      setTimeout(function() { window.scrollTo(0, pos); }, 100);
+      setTimeout(function() { window.scrollTo(0, pos); }, 300);
+    }
   }
-  window.addEventListener('beforeunload', function() {
-    sessionStorage.setItem('kai_scroll', window.scrollY);
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a[href*="privacy.html"], a[href*="terms.html"]');
+    if (a) sessionStorage.setItem('kai_scroll', window.scrollY);
   });
 })();
 
@@ -2451,24 +2459,32 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 /* ─── LANGUAGE TOGGLE ─── */
-let currentLang = 'ru';
+let currentLang = localStorage.getItem('kai_lang') || 'ru';
+
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('kai_lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+    const val = el.getAttribute('data-' + lang);
+    if (val != null) el.innerHTML = val;
+  });
+  var pl = document.querySelector('.privacy-link');
+  if (pl) pl.href = lang === 'en' ? 'privacy.html?lang=en' : 'privacy.html';
+  var tl = document.querySelector('a[href*="terms.html"]');
+  if (tl) tl.href = lang === 'en' ? 'terms.html?lang=en' : 'terms.html';
+}
+
+if (currentLang !== 'ru') applyLang(currentLang);
+
 document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const lang = btn.dataset.lang;
     if (lang === currentLang) return;
-    currentLang = lang;
-    document.querySelectorAll('.lang-btn').forEach(b => {
-      b.classList.toggle('active', b.dataset.lang === lang);
-    });
-    document.documentElement.lang = lang;
-    document.querySelectorAll('[data-' + lang + ']').forEach(el => {
-      const val = el.getAttribute('data-' + lang);
-      if (val != null) el.innerHTML = val;
-    });
-    var pl = document.querySelector('.privacy-link');
-    if (pl) pl.href = lang === 'en' ? 'privacy.html?lang=en' : 'privacy.html';
-    var tl = document.querySelector('a[href*="terms.html"]');
-    if (tl) tl.href = lang === 'en' ? 'terms.html?lang=en' : 'terms.html';
+    applyLang(lang);
     startChat();
   });
 });

@@ -403,7 +403,7 @@ th {
   var navBack = document.getElementById('navBack');
   var footerBack = document.getElementById('footerBack');
 
-  function setLang(lang) {
+  function setLang(lang, save) {
     btns.forEach(function(b) { b.classList.toggle('active', b.dataset.lang === lang); });
     ruBlock.style.display = lang === 'ru' ? 'block' : 'none';
     enBlock.style.display = lang === 'en' ? 'block' : 'none';
@@ -411,13 +411,22 @@ th {
     document.title = lang === 'en' ? 'Privacy Policy — Kai' : 'Политика конфиденциальности — Kai';
     navBack.textContent = lang === 'en' ? '← Back to home' : '← Вернуться на главную';
     footerBack.textContent = lang === 'en' ? '← Back to home' : '← Вернуться на главную';
+    if (save !== false) localStorage.setItem('kai_lang', lang);
   }
 
   btns.forEach(function(btn) {
     btn.addEventListener('click', function() { setLang(btn.dataset.lang); });
   });
 
-  if (window.location.search.indexOf('lang=en') !== -1) setLang('en');
+  var urlEn = window.location.search.indexOf('lang=en') !== -1;
+  var savedLang = localStorage.getItem('kai_lang');
+  if (urlEn || savedLang === 'en') setLang('en');
+
+  document.querySelectorAll('a[href*="index.html"]').forEach(function(a) {
+    a.addEventListener('click', function() {
+      sessionStorage.setItem('kai_scroll', '0');
+    });
+  });
 })();
 </script>
 
