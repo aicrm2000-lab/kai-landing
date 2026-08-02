@@ -128,6 +128,27 @@ th {
   font-size: 13px;
   color: var(--ash);
 }
+.lang-toggle {
+  display: flex;
+  background: var(--graphite);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.lang-btn {
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ash);
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: background .2s, color .2s;
+}
+.lang-btn.active {
+  background: var(--smoke);
+  color: var(--paper);
+}
+.lang-btn:hover:not(.active) { color: var(--fog); }
 </style>
 </head>
 <body>
@@ -135,7 +156,13 @@ th {
 <div class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Kai</a>
-    <a href="index.html" class="nav-back" id="navBack">← Вернуться на главную</a>
+    <div style="display:flex;align-items:center;gap:16px">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="index.html" class="nav-back" id="navBack">← Вернуться на главную</a>
+    </div>
   </div>
 </div>
 
@@ -552,15 +579,27 @@ th {
 
 <script>
 (function() {
-  var isEn = window.location.search.indexOf('lang=en') !== -1;
-  if (isEn) {
-    document.documentElement.lang = 'en';
-    document.title = 'Terms of Service — Kai';
-    document.getElementById('content-ru').style.display = 'none';
-    document.getElementById('content-en').style.display = 'block';
-    document.getElementById('navBack').textContent = '← Back to home';
-    document.getElementById('footerBack').textContent = '← Back to home';
+  var btns = document.querySelectorAll('.lang-btn');
+  var ruBlock = document.getElementById('content-ru');
+  var enBlock = document.getElementById('content-en');
+  var navBack = document.getElementById('navBack');
+  var footerBack = document.getElementById('footerBack');
+
+  function setLang(lang) {
+    btns.forEach(function(b) { b.classList.toggle('active', b.dataset.lang === lang); });
+    ruBlock.style.display = lang === 'ru' ? 'block' : 'none';
+    enBlock.style.display = lang === 'en' ? 'block' : 'none';
+    document.documentElement.lang = lang;
+    document.title = lang === 'en' ? 'Terms of Service — Kai' : 'Условия использования — Kai';
+    navBack.textContent = lang === 'en' ? '← Back to home' : '← Вернуться на главную';
+    footerBack.textContent = lang === 'en' ? '← Back to home' : '← Вернуться на главную';
   }
+
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() { setLang(btn.dataset.lang); });
+  });
+
+  if (window.location.search.indexOf('lang=en') !== -1) setLang('en');
 })();
 </script>
 
