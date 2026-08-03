@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow:
+
+Sitemap: https://aicrm2000-lab.github.io/sitemap.xml

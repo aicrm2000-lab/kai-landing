@@ -1,0 +1,41 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d0d0f"/>
+      <stop offset="100%" stop-color="#18181c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9333ea"/>
+      <stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+    <linearGradient id="orb1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9333ea" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#9333ea" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="orb2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#db2777" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#db2777" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <circle cx="200" cy="500" r="300" fill="url(#orb1)"/>
+  <circle cx="1000" cy="150" r="250" fill="url(#orb2)"/>
+
+  <rect x="80" y="260" width="80" height="80" rx="16" fill="url(#accent)"/>
+  <text x="120" y="318" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="700" font-size="48" fill="white">K</text>
+
+  <text x="190" y="310" font-family="Inter,system-ui,sans-serif" font-weight="600" font-size="64" fill="#f4f4fc">Kai</text>
+
+  <text x="80" y="400" font-family="Inter,system-ui,sans-serif" font-weight="600" font-size="40" fill="#f4f4fc">Настройка CRM без программистов</text>
+
+  <text x="80" y="460" font-family="Inter,system-ui,sans-serif" font-weight="400" font-size="24" fill="#8f8faa">AI-ассистент для amoCRM и Kommo · 50+ действий через Telegram</text>
+
+  <rect x="80" y="510" width="220" height="48" rx="10" fill="url(#accent)"/>
+  <text x="190" y="541" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="600" font-size="18" fill="white">Попробовать бесплатно</text>
+
+  <text x="340" y="541" font-family="Inter,system-ui,sans-serif" font-weight="400" font-size="18" fill="#62627a">3 дня · без карты</text>
+
+  <line x1="0" y1="628" x2="1200" y2="628" stroke="url(#accent)" stroke-width="4"/>
+</svg>
