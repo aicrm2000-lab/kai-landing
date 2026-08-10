@@ -2255,6 +2255,7 @@ footer {
       <div style="display:flex;gap:20px;">
         <a href="privacy.html" class="privacy-link" data-ru="Политика конфиденциальности" data-en="Privacy policy">Политика конфиденциальности</a>
         <a href="terms.html" data-ru="Условия использования" data-en="Terms of service">Условия использования</a>
+        <a href="refund.html" class="refund-link" data-ru="Политика возврата" data-en="Refund policy">Политика возврата</a>
       </div>
     </div>
   </div>
@@ -2583,6 +2584,8 @@ function applyLang(lang) {
   if (pl) pl.href = lang === 'en' ? 'privacy.html?lang=en' : 'privacy.html';
   var tl = document.querySelector('a[href*="terms.html"]');
   if (tl) tl.href = lang === 'en' ? 'terms.html?lang=en' : 'terms.html';
+  var rl = document.querySelector('.refund-link');
+  if (rl) rl.href = lang === 'en' ? 'refund.html?lang=en' : 'refund.html';
 }
 
 if (currentLang !== 'ru') applyLang(currentLang);
