@@ -251,6 +251,7 @@ nav {
   text-align: center;
   position: relative;
   overflow: hidden;
+  padding: clamp(72px,10vh,110px) 20px clamp(40px,7vh,80px);
 }
 .hero-bg {
   position: absolute; inset: 0; z-index: 0; pointer-events: none;
@@ -279,25 +280,31 @@ nav {
 .hero-frame .tr { top: 0; right: 0; border-left: 0; border-bottom: 0; }
 .hero-frame .bl { bottom: 0; left: 0; border-right: 0; border-top: 0; }
 .hero-frame .br { bottom: 0; right: 0; border-left: 0; border-top: 0; }
-.hero-logo-space { flex: 1 1 auto; min-height: 46vh; }
+.hero-logo-space {
+  position: relative; z-index: 2;
+  width: 100%; height: clamp(300px,50vh,600px);
+  flex: 0 0 auto;
+}
+.hero-tag {
+  position: relative; z-index: 3;
+  font-family: var(--mono);
+  font-size: clamp(13px,1.8vw,16px);
+  color: var(--muted); min-height: 1.6em;
+  text-align: center; margin-top: -8px;
+  animation: fadeUp .9s .35s cubic-bezier(.16,1,.3,1) both;
+}
+.hero-tag .br { color: var(--accent); }
+.hero-tag .cur { color: var(--accent-2); }
 .hero-plate {
   position: relative; z-index: 3;
   display: flex; flex-direction: column; align-items: center;
-  text-align: center; gap: 18px;
-  padding: 0 20px clamp(48px,9vh,96px);
+  text-align: center; gap: 16px;
+  margin-top: clamp(20px,4vh,40px);
   width: 100%;
 }
 .hero-plate .hero-badge { margin: 0; }
 .hero-plate .hero-sub { margin: 0; max-width: 56ch; }
 .hero-plate .hero-actions { margin: 0; }
-.hero-tag {
-  font-family: var(--mono);
-  font-size: clamp(12.5px,1.7vw,15px);
-  color: var(--muted); min-height: 1.6em;
-  animation: fadeUp .9s .5s cubic-bezier(.16,1,.3,1) both;
-}
-.hero-tag .br { color: var(--accent); }
-.hero-tag .cur { color: var(--accent-2); }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 5px 14px;
@@ -491,41 +498,9 @@ hr.sep {
 }
 .feat-desc { font-size: 16px; color: var(--fog); line-height: 1.6; }
 
-/* ─── NEW FEATURES BLOCK ─── */
-.feat-new-head {
-  margin-top: 72px;
-  display: flex; align-items: center; gap: 14px;
-  flex-wrap: wrap;
-}
-.feat-new-badge {
-  font-family: var(--mono);
-  font-size: 12px; font-weight: 500;
-  text-transform: uppercase; letter-spacing: .1em;
-  color: var(--paper);
-  background: var(--accent-gradient);
-  padding: 5px 12px; border-radius: 999px;
-  display: inline-flex; align-items: center; gap: 6px;
-  box-shadow: 0 0 20px var(--accent-glow);
-}
-.feat-new-badge::before {
-  content: ''; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--paper);
-  animation: newPulse 2s ease-in-out infinite;
-}
-@keyframes newPulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
-.feat-new-title {
-  font-family: var(--font-heading);
-  font-size: clamp(20px, 3vw, 26px); font-weight: 500;
-  color: var(--paper); letter-spacing: -0.01em;
-}
-.feat-card .feat-icon.emoji { font-size: 22px; line-height: 1; }
-.feat-card[data-feat^="new"] { position: relative; }
-.feat-card[data-feat^="new"]::after {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: var(--accent-gradient);
-  opacity: 0; transition: opacity .25s;
-}
-.feat-card[data-feat^="new"]:hover::after { opacity: .7; }
+/* emoji icons (analytics cards) — same box behaviour as the SVG ones */
+.feat-card .feat-icon.emoji { font-size: 22px; line-height: 1; transition: transform .2s; }
+.feat-card:hover .feat-icon.emoji { transform: scale(1.08); }
 
 /* ─── HOW IT WORKS ─── */
 .how { background: var(--void); }
@@ -1752,7 +1727,8 @@ footer {
   <canvas id="kai" aria-hidden="true"></canvas>
   <div class="hero-frame"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
 
-  <div class="hero-logo-space" aria-hidden="true"></div>
+  <div class="hero-logo-space" id="heroLogoSpace" aria-hidden="true"></div>
+  <div class="hero-tag" id="heroTag" aria-hidden="true"></div>
 
   <div class="hero-plate">
     <div class="hero-badge">
@@ -1763,8 +1739,6 @@ footer {
     <h1 data-ru="Настройка <span class='a'>CRM</span><br>без программистов" data-en="Set up your <span class='a'>CRM</span><br>without developers">Настройка <span class="a">CRM</span><br>без программистов</h1>
 
     <p class="hero-sub" data-ru="Kai задаёт правильные вопросы, строит план под&nbsp;ваш бизнес и&nbsp;настраивает CRM автоматически&nbsp;— через обычный чат&nbsp;в&nbsp;Telegram." data-en="Kai asks the right questions, builds a&nbsp;plan for your business and configures CRM automatically&nbsp;— via a&nbsp;regular Telegram&nbsp;chat.">Kai задаёт правильные вопросы, строит план под&nbsp;ваш бизнес и&nbsp;настраивает CRM автоматически&nbsp;— через обычный чат&nbsp;в&nbsp;Telegram.</p>
-
-    <div class="hero-tag" id="heroTag" aria-hidden="true"></div>
 
     <div class="hero-actions">
       <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="btn-primary">
@@ -2069,8 +2043,6 @@ footer {
       <div class="api-badge soon" data-ru="<span class='dot'></span>дашборд_в_рабочем_столе_crm" data-en="<span class='dot'></span>crm_desktop_dashboard"><span class="dot"></span>дашборд_в_рабочем_столе_crm</div>
       <div class="api-badge soon" data-ru="<span class='dot'></span>автоскор_digital_pipeline" data-en="<span class='dot'></span>auto_score_digital_pipeline"><span class="dot"></span>автоскор_digital_pipeline</div>
       <div class="api-badge soon" data-ru="<span class='dot'></span>интерактивный_маппинг_полей" data-en="<span class='dot'></span>interactive_field_mapping"><span class="dot"></span>интерактивный_маппинг_полей</div>
-      <div class="api-badge soon" data-ru="<span class='dot'></span>smm_автопостинг" data-en="<span class='dot'></span>smm_autoposting"><span class="dot"></span>smm_автопостинг</div>
-      <div class="api-badge soon" data-ru="<span class='dot'></span>партнёрские_кабинеты" data-en="<span class='dot'></span>partner_accounts"><span class="dot"></span>партнёрские_кабинеты</div>
     </div>
 
     <p class="section-label reveal" style="margin-top:48px" data-ru="Возможности ввода" data-en="Input features">Возможности ввода</p>
@@ -2615,16 +2587,20 @@ window.addEventListener('scroll', () => {
     const g=o.getContext('2d');g.font=MONO.replace('%',pxH);g.fillStyle='#fff';g.textAlign='center';g.textBaseline='middle';g.fillText(str,w/2,h/2);
     const d=g.getImageData(0,0,w,h).data,p=[];st=st||2;for(let y=0;y<h;y+=st)for(let x=0;x<w;x+=st)if(d[(y*w+x)*4+3]>128)p.push({x:x-w/2,y:y-h/2});return p;}
 
+  var LS=document.getElementById('heroLogoSpace');
   function resize(){const r=cv.getBoundingClientRect();W=r.width||window.innerWidth;H=r.height||window.innerHeight;DPR=Math.min(devicePixelRatio||1,2);
     cv.width=Math.max(1,W*DPR);cv.height=Math.max(1,H*DPR);ctx.setTransform(DPR,0,0,DPR,0,0);
-    cx=W*0.5;cy=H*0.34;baseCell=Math.min(W*0.72,H*0.42,440)/M.R;
+    var ls=LS?LS.getBoundingClientRect():{left:r.left,top:r.top,width:W,height:H*0.5};
+    cx=(ls.left-r.left)+ls.width/2; cy=(ls.top-r.top)+ls.height/2;
+    baseCell=Math.min(ls.width*0.9,ls.height*0.92,620)/M.R;
     particles.forEach(p=>{if(!p.init){p.init=1;if(reduce){p.x=cx+p.gx*baseCell;p.y=cy+p.gy*baseCell;}
       else{const a=Math.random()*6.28,rr=Math.max(W,H)*(0.4+Math.random()*0.5);p.x=cx+Math.cos(a)*rr;p.y=cy+Math.sin(a)*rr;}}});}
 
   let wState='idle',wT=0,wNext=5+Math.random()*4,wPhase='in',wScale=1;
   function startWord(){const words=getWords();const w=words[(Math.random()*words.length)|0];const pts=textPoints(w,60,2);if(!pts.length)return;
     let mx=1,mh=1;for(const q of pts){mx=Math.max(mx,Math.abs(q.x));mh=Math.max(mh,Math.abs(q.y));}
-    wScale=Math.min(W*0.34/mx,H*0.24/mh);const N=particles.length;
+    var ls=LS?LS.getBoundingClientRect():{width:W,height:H*0.5};
+    wScale=Math.min(ls.width*0.42/mx,ls.height*0.34/mh);const N=particles.length;
     particles.forEach((p,i)=>{const q=pts[Math.floor(i*pts.length/N)];p.wx=q.x;p.wy=q.y;});wState='word';wPhase='in';wT=0;}
 
   function frame(){
