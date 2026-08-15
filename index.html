@@ -114,7 +114,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%239333ea'/><stop offset='100%25' stop-color='%23db2777'/></linearGradient></defs><rect width='32' height='32' rx='8' fill='%230d0d0f'/><text x='16' y='23' text-anchor='middle' font-family='Inter,system-ui,sans-serif' font-weight='700' font-size='22' fill='url(%23g)'>K</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&family=JetBrains+Mono:wght@400;500&family=Nunito:wght@800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   --void:      #0d0d0f;
@@ -133,8 +133,8 @@
   --accent-gradient: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
   --green:     #22c55e;
   --orange:    #f59e0b;
-  --font: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-heading: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font: 'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
@@ -310,13 +310,19 @@ nav {
   0%,100% { opacity:1; transform:scale(1); }
   50% { opacity:.6; transform:scale(.85); }
 }
+.hero-logo-space {
+  width: 100%;
+  height: clamp(220px, 36vh, 340px);
+  flex-shrink: 0;
+  pointer-events: none;
+}
 .hero h1 {
   font-family: var(--font-heading);
-  font-size: clamp(42px,7vw,80px);
+  font-size: clamp(26px,4.4vw,46px);
   font-weight: 500;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  max-width: 780px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  max-width: 720px;
   animation: fadeUp .9s .15s cubic-bezier(.16,1,.3,1) both;
 }
 .hero h1 .text-sheen {
@@ -617,6 +623,42 @@ hr.sep {
   letter-spacing: -0.01em;
 }
 .feat-desc { font-size: 16px; color: var(--fog); line-height: 1.6; }
+
+/* ─── NEW FEATURES BLOCK ─── */
+.feat-new-head {
+  margin-top: 72px;
+  display: flex; align-items: center; gap: 14px;
+  flex-wrap: wrap;
+}
+.feat-new-badge {
+  font-family: var(--mono);
+  font-size: 12px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: var(--paper);
+  background: var(--accent-gradient);
+  padding: 5px 12px; border-radius: 999px;
+  display: inline-flex; align-items: center; gap: 6px;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+.feat-new-badge::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--paper);
+  animation: newPulse 2s ease-in-out infinite;
+}
+@keyframes newPulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
+.feat-new-title {
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 3vw, 26px); font-weight: 500;
+  color: var(--paper); letter-spacing: -0.01em;
+}
+.feat-card .feat-icon.emoji { font-size: 22px; line-height: 1; }
+.feat-card[data-feat^="new"] { position: relative; }
+.feat-card[data-feat^="new"]::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--accent-gradient);
+  opacity: 0; transition: opacity .25s;
+}
+.feat-card[data-feat^="new"]:hover::after { opacity: .7; }
 
 /* ─── HOW IT WORKS ─── */
 .how { background: var(--void); }
@@ -1787,6 +1829,13 @@ footer {
   .reveal { opacity: 1 !important; transform: none !important; }
   .intro-overlay { display: none !important; }
 }
+/* ─── HERO PIXEL FX CANVAS ─── */
+#kaiFx {
+  position: fixed; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 45;
+}
 </style>
 </head>
 <body>
@@ -1795,6 +1844,9 @@ footer {
 <div class="intro-overlay" id="introOverlay">
   <span class="intro-logo">Kai</span>
 </div>
+
+<!-- HERO PIXEL FX -->
+<canvas id="kaiFx" aria-hidden="true"></canvas>
 
 <!-- NAV -->
 <nav>
@@ -1839,6 +1891,8 @@ footer {
     <div class="hero-orb orb-1 parallax-slow"></div>
     <div class="hero-orb orb-2 parallax-fast"></div>
   </div>
+
+  <div class="hero-logo-space" aria-hidden="true"></div>
 
   <div class="hero-badge">
     <span class="badge-dot"></span>
@@ -2011,6 +2065,63 @@ footer {
         </div>
         <h3 class="feat-title" data-ru="Понимает голосовые" data-en="Understands voice messages">Понимает голосовые</h3>
         <p class="feat-desc" data-ru="Отправьте голосовое — Kai распознает речь через Whisper и ответит. Диктуйте задачи, не набирая текст." data-en="Send a voice message — Kai recognizes speech via Whisper and responds. Dictate tasks without typing.">Отправьте голосовое — Kai распознает речь через Whisper и ответит. Диктуйте задачи, не набирая текст.</p>
+      </div>
+
+    </div>
+
+    <div class="feat-new-head reveal">
+      <span class="feat-new-badge" data-ru="Новое" data-en="New">Новое</span>
+      <span class="feat-new-title" data-ru="Аналитика воронки и авто-лечение" data-en="Funnel analytics &amp; auto-healing">Аналитика воронки и авто-лечение</span>
+    </div>
+
+    <div class="features-grid reveal reveal-delay-1 stagger-in" style="margin-top:28px">
+
+      <div class="feat-card glow-card depth-card" data-feat="new-audit">
+        <div class="feat-icon emoji">🩺</div>
+        <h3 class="feat-title" data-ru="Аудит воронки + авто-лечение" data-en="Funnel audit + auto-healing">Аудит воронки + авто-лечение</h3>
+        <p class="feat-desc" data-ru="Находит проблемы — нет причин отказа, источников, автоматизаций, узкие места, низкая конверсия — и чинит их одной кнопкой." data-en="Finds problems — missing loss reasons, sources, automations, bottlenecks, low conversion — and fixes them with one button.">Находит проблемы — нет причин отказа, источников, автоматизаций, узкие места, низкая конверсия — и чинит их одной кнопкой.</p>
+      </div>
+
+      <div class="feat-card glow-card depth-card" data-feat="new-dropoff">
+        <div class="feat-icon emoji">📉</div>
+        <h3 class="feat-title" data-ru="Аналитика drop-off" data-en="Drop-off analytics">Аналитика drop-off</h3>
+        <p class="feat-desc" data-ru="Показывает, где теряются сделки по этапам воронки и по каким причинам отказа. Видно, что чинить в первую очередь." data-en="Shows where deals leak across pipeline stages and for which loss reasons. Clear what to fix first.">Показывает, где теряются сделки по этапам воронки и по каким причинам отказа. Видно, что чинить в первую очередь.</p>
+      </div>
+
+      <div class="feat-card glow-card depth-card" data-feat="new-scoring">
+        <div class="feat-icon emoji">🔥</div>
+        <h3 class="feat-title" data-ru="Лид-скоринг" data-en="Lead scoring">Лид-скоринг</h3>
+        <p class="feat-desc" data-ru="«Кому звонить первым»: оценивает сделки, даёт прямые ссылки и записывает оценку в поле CRM автоматически." data-en="&laquo;Who to call first&raquo;: scores deals, gives direct links and writes the score into a CRM field automatically.">«Кому звонить первым»: оценивает сделки, даёт прямые ссылки и записывает оценку в поле CRM автоматически.</p>
+      </div>
+
+      <div class="feat-card glow-card depth-card" data-feat="new-checkup">
+        <div class="feat-icon emoji">📊</div>
+        <h3 class="feat-title" data-ru="Чек-ап воронки" data-en="Funnel check-up">Чек-ап воронки</h3>
+        <p class="feat-desc" data-ru="Сводка здоровья воронки с оценкой A–D и еженедельной авто-доставкой прямо в чат. Держите руку на пульсе." data-en="Funnel health summary with an A–D grade and weekly auto-delivery right to the chat. Stay on the pulse.">Сводка здоровья воронки с оценкой A–D и еженедельной авто-доставкой прямо в чат. Держите руку на пульсе.</p>
+      </div>
+
+      <div class="feat-card glow-card depth-card" data-feat="new-sop">
+        <div class="feat-icon emoji">🗒️</div>
+        <h3 class="feat-title" data-ru="SOP — авто-регламент" data-en="SOP — auto playbook">SOP — авто-регламент</h3>
+        <p class="feat-desc" data-ru="Автоматически формирует регламент поддержки воронки — как её вести, чтобы не деградировала. Готовый SOP для команды." data-en="Automatically builds a funnel-maintenance playbook — how to run it so it doesn't degrade. A ready SOP for the team.">Автоматически формирует регламент поддержки воронки — как её вести, чтобы не деградировала. Готовый SOP для команды.</p>
+      </div>
+
+      <div class="feat-card glow-card depth-card" data-feat="new-import">
+        <div class="feat-icon emoji">📇</div>
+        <h3 class="feat-title" data-ru="Умный импорт базы из Excel" data-en="Smart Excel import">Умный импорт базы из Excel</h3>
+        <p class="feat-desc" data-ru="Распознаёт колонки (бюджет → цена сделки), дедуплицирует и прозрачно сопоставляет поля — вы видите весь маппинг перед импортом." data-en="Recognizes columns (budget → deal value), deduplicates and maps fields transparently — you see the full mapping before import.">Распознаёт колонки (бюджет → цена сделки), дедуплицирует и прозрачно сопоставляет поля — вы видите весь маппинг перед импортом.</p>
+      </div>
+
+      <div class="feat-card glow-card depth-card" data-feat="new-discovery">
+        <div class="feat-icon emoji">🧭</div>
+        <h3 class="feat-title" data-ru="Discovery-консультация глубже" data-en="Deeper discovery">Discovery-консультация глубже</h3>
+        <p class="feat-desc" data-ru="Копает узкие места и жизненный цикл клиента, превращая его в правильные этапы воронки. Не анкета — настоящая диагностика." data-en="Digs into bottlenecks and the customer lifecycle, turning it into the right pipeline stages. Not a survey — real diagnostics.">Копает узкие места и жизненный цикл клиента, превращая его в правильные этапы воронки. Не анкета — настоящая диагностика.</p>
+      </div>
+
+      <div class="feat-card glow-card depth-card" data-feat="new-multi">
+        <div class="feat-icon emoji">👥</div>
+        <h3 class="feat-title" data-ru="Мультиаккаунт и мульти-админ" data-en="Multi-account &amp; multi-admin">Мультиаккаунт и мульти-админ</h3>
+        <p class="feat-desc" data-ru="Несколько аккаунтов и админов на одну CRM — без задвоения автоматизаций. Работайте командой над одной воронкой." data-en="Multiple accounts and admins on one CRM — without duplicating automations. Work as a team on one funnel.">Несколько аккаунтов и админов на одну CRM — без задвоения автоматизаций. Работайте командой над одной воронкой.</p>
       </div>
 
     </div>
@@ -2824,6 +2935,281 @@ window.addEventListener('scroll', () => {
     localStorage.setItem('kai_cookie_consent', 'declined');
     banner.classList.remove('visible');
   });
+})();
+</script>
+
+<!-- ─── HERO PIXEL FX (canvas) ─── -->
+<script>
+(function(){
+  var cvs = document.getElementById('kaiFx');
+  if (!cvs) return;
+  var ctx = cvs.getContext('2d');
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var ACC = '124,92,255', HI = '178,150,255';
+  var GRID = 48;
+  var DPR = Math.min(2, window.devicePixelRatio || 1);
+  var W = 0, H = 0, baseCell = 10;
+  var LOGO_Y = 0.27;
+
+  /* mouse (chase pattern) */
+  var mx = -9999, my = -9999, pmx = -9999, pmy = -9999, moved = false;
+
+  /* ── rasterize the KAI sign into grid cells ── */
+  function rasterizeSign(){
+    var off = document.createElement('canvas');
+    off.width = GRID; off.height = GRID;
+    var o = off.getContext('2d');
+    o.clearRect(0,0,GRID,GRID);
+    var cx = GRID/2, cy = GRID/2, r = GRID*0.33;
+    o.strokeStyle = '#fff';
+    o.lineWidth = GRID*0.14;
+    o.lineCap = 'round';
+    /* open ring with a gap at top-right */
+    o.beginPath();
+    o.arc(cx, cy, r, -Math.PI*0.12, Math.PI*1.32, false);
+    o.stroke();
+    /* focus dot inside the gap */
+    o.fillStyle = '#fff';
+    var da = -Math.PI*0.40;
+    o.beginPath();
+    o.arc(cx + Math.cos(da)*r*0.66, cy + Math.sin(da)*r*0.66, GRID*0.07, 0, Math.PI*2);
+    o.fill();
+    var data = o.getImageData(0,0,GRID,GRID).data;
+    var cells = [];
+    for (var y=0; y<GRID; y++){
+      for (var x=0; x<GRID; x++){
+        if (data[(y*GRID+x)*4+3] > 120){
+          var dd = Math.hypot(x - (cx + Math.cos(da)*r*0.66), y - (cy + Math.sin(da)*r*0.66));
+          cells.push({ gx: x - cx, gy: y - cy, dot: dd < GRID*0.12 });
+        }
+      }
+    }
+    return cells;
+  }
+
+  /* ── sign particles ── */
+  var cells = rasterizeSign();
+  var sign = cells.map(function(c){
+    var ang = Math.random()*Math.PI*2, rad = Math.max(W,H)*(0.7 + Math.random()*0.7) || 1200;
+    return {
+      cx: c.gx, cy: c.gy, dot: c.dot,
+      x: (W/2) + Math.cos(ang)*rad, y: (H/2) + Math.sin(ang)*rad,
+      vx: 0, vy: 0, ox: c.gx*baseCell, oy: c.gy*baseCell,
+      wx: 0, wy: 0, phase: Math.random()*Math.PI*2,
+      hi: c.dot || Math.random() < 0.14
+    };
+  });
+
+  /* ── smoke pool ── */
+  var SMOKE_MAX = 1300;
+  var smoke = new Array(SMOKE_MAX);
+  for (var i=0; i<SMOKE_MAX; i++) smoke[i] = { life: 0 };
+  var smokeHead = 0;
+  function spawnSmoke(){
+    var p = smoke[smokeHead];
+    smokeHead = (smokeHead + 1) % SMOKE_MAX;
+    return p;
+  }
+
+  /* ── words / morph ── */
+  var WORDS_RU = ['KAI','CRM','Продажи','Воронка','Процесс','Рост'];
+  var WORDS_EN = ['KAI','CRM','Sales','Flow','Growth','Focus'];
+  var wordIdx = 0;
+  function curWords(){ return (document.documentElement.lang === 'en') ? WORDS_EN : WORDS_RU; }
+
+  function rasterWord(word){
+    var fs = 180;
+    var m = document.createElement('canvas').getContext('2d');
+    m.font = '800 ' + fs + 'px system-ui, -apple-system, Segoe UI, sans-serif';
+    var wpx = Math.ceil(m.measureText(word).width) + 20;
+    var hpx = Math.ceil(fs * 1.4);
+    var off = document.createElement('canvas');
+    off.width = wpx; off.height = hpx;
+    var o = off.getContext('2d');
+    o.font = '800 ' + fs + 'px system-ui, -apple-system, Segoe UI, sans-serif';
+    o.fillStyle = '#fff'; o.textBaseline = 'middle'; o.textAlign = 'center';
+    o.fillText(word, wpx/2, hpx/2);
+    var data = o.getImageData(0,0,wpx,hpx).data;
+    var pts = [], step = 4;
+    for (var y=0; y<hpx; y+=step){
+      for (var x=0; x<wpx; x+=step){
+        if (data[(y*wpx+x)*4+3] > 120) pts.push([x - wpx/2, y - hpx/2]);
+      }
+    }
+    var scale = Math.min(W*0.42/wpx, H*0.30/hpx);
+    return pts.map(function(p){ return [p[0]*scale, p[1]*scale]; });
+  }
+
+  var mode = 'sign';                 /* 'sign' | 'word' */
+  var nextMorph = 16 + Math.random()*4;
+  var morphEnd = 0;
+
+  function enterWord(){
+    var words = curWords();
+    wordIdx = (wordIdx + 1) % words.length;
+    var pts = rasterWord(words[wordIdx]);
+    if (!pts.length){ nextMorph += 16; return; }
+    for (var k=0; k<sign.length; k++){
+      var p = pts[k % pts.length];
+      sign[k].wx = p[0]; sign[k].wy = p[1];
+      sign[k].hi = (k % 7 === 0);
+    }
+    mode = 'word';
+  }
+  function enterSign(){
+    mode = 'sign';
+    for (var k=0; k<sign.length; k++) sign[k].hi = sign[k].dot || (k % 8 === 0);
+  }
+
+  /* ── sizing ── */
+  function resize(){
+    W = window.innerWidth; H = window.innerHeight;
+    cvs.width = Math.round(W*DPR); cvs.height = Math.round(H*DPR);
+    cvs.style.width = W+'px'; cvs.style.height = H+'px';
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+    baseCell = Math.min(W*0.82, H*0.5, 480) / GRID;
+    for (var k=0; k<sign.length; k++){
+      sign[k].ox = sign[k].cx * baseCell;
+      sign[k].oy = sign[k].cy * baseCell;
+    }
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  function clamp(v,a,b){ return v<a?a:(v>b?b:v); }
+  function smoothstep(x){ x = clamp(x,0,1); return x*x*(3-2*x); }
+
+  /* ── reduced motion: static assembled sign ── */
+  if (reduce){
+    function drawStatic(){
+      ctx.clearRect(0,0,W,H);
+      ctx.globalCompositeOperation = 'lighter';
+      var sy = window.scrollY;
+      var ps = smoothstep(sy/(H*0.55));
+      var la = clamp(1 - (ps-0.12)/0.35, 0, 1);
+      var scx = W/2, scy = H*LOGO_Y - sy;
+      var size = baseCell*0.62;
+      for (var k=0; k<sign.length; k++){
+        var p = sign[k];
+        ctx.globalAlpha = la;
+        ctx.fillStyle = 'rgb(' + (p.hi?HI:ACC) + ')';
+        ctx.fillRect(scx + p.ox - size/2, scy + p.oy - size/2, size, size);
+      }
+      ctx.globalAlpha = 1;
+    }
+    drawStatic();
+    window.addEventListener('scroll', drawStatic, { passive: true });
+    window.addEventListener('resize', function(){ resize(); drawStatic(); });
+    return;
+  }
+
+  /* ── pointer ── */
+  window.addEventListener('pointermove', function(e){
+    mx = e.clientX; my = e.clientY; moved = true;
+  }, { passive: true });
+  window.addEventListener('pointerdown', function(e){
+    mx = e.clientX; my = e.clientY; moved = true;
+  }, { passive: true });
+
+  var last = performance.now();
+
+  function frame(now){
+    var dt = Math.min(0.05, (now - last)/1000); last = now;
+    var t = now/1000;
+    var sy = window.scrollY;
+    var ps = smoothstep(sy/(H*0.55));
+    var logoAlpha = clamp(1 - (ps-0.12)/0.35, 0, 1);
+
+    /* scroll cancels morph, keeps logo scrolling away with page */
+    if (sy > H*0.15 && mode === 'word'){ enterSign(); nextMorph = t + 16 + Math.random()*4; }
+    if (mode === 'sign' && sy < H*0.10 && t > nextMorph){ enterWord(); morphEnd = t + 3; }
+    if (mode === 'word' && t > morphEnd){ enterSign(); nextMorph = t + 16 + Math.random()*4; }
+
+    ctx.clearRect(0,0,W,H);
+    ctx.globalCompositeOperation = 'lighter';
+
+    /* ── sign / word particles ── */
+    var bob = Math.sin(t*1.5) * baseCell * 0.14;
+    var scx = W/2;
+    var scy = (mode === 'sign') ? (H*LOGO_Y - sy + bob) : (H*LOGO_Y);
+    var k = (mode === 'sign') ? 0.06 : 0.036;
+    var repel = logoAlpha > 0.05 && mode === 'sign';
+    var R = 160, size = baseCell*0.62;
+    for (var s=0; s<sign.length; s++){
+      var p = sign[s];
+      p.tx = (mode === 'sign') ? (scx + p.ox) : (scx + p.wx);
+      p.ty = (mode === 'sign') ? (scy + p.oy) : (scy + p.wy);
+      p.vx += (p.tx - p.x) * k;
+      p.vy += (p.ty - p.y) * k;
+      if (repel){
+        var rx = p.x - mx, ry = p.y - my, rd = Math.hypot(rx, ry);
+        if (rd < R && rd > 0.01){
+          var fr = 1 - rd/R, f = fr*fr*7.5;
+          p.vx += (rx/rd)*f; p.vy += (ry/rd)*f;
+        }
+      }
+      p.vx *= 0.82; p.vy *= 0.82;
+      p.x += p.vx; p.y += p.vy;
+      if (logoAlpha > 0.01){
+        var shimmer = 0.7 + 0.3*Math.sin(t*2.2 + p.phase);
+        ctx.globalAlpha = logoAlpha * shimmer;
+        ctx.fillStyle = 'rgb(' + (p.hi?HI:ACC) + ')';
+        ctx.fillRect(p.x - size/2, p.y - size/2, size, size);
+      }
+    }
+
+    /* ── smoke trail: spawn along last→current cursor segment ── */
+    var dx = mx - pmx, dy = my - pmy;
+    var dist = Math.hypot(dx, dy);
+    if (moved && pmx > -9998 && dist > 0.5 && dist < 400){
+      var steps = Math.min(16, Math.ceil(dist/5));
+      var nx = -dy/dist, ny = dx/dist;
+      var wide = Math.min(1.8, 0.5 + dist*0.05);
+      for (var st=0; st<steps; st++){
+        var fr2 = st/steps;
+        var ox = pmx + dx*fr2, oy = pmy + dy*fr2;
+        for (var c=0; c<2; c++){
+          var side = (c === 0 ? 1 : -1) * (0.4 + Math.random()*0.7);
+          var sp = spawnSmoke();
+          sp.x = ox + (Math.random()-0.5)*2;
+          sp.y = oy + (Math.random()-0.5)*2;
+          sp.vx = nx*side*wide + dx*0.3 + (Math.random()-0.5)*0.6;
+          sp.vy = ny*side*wide + dy*0.3 + (Math.random()-0.5)*0.6;
+          sp.life = 1;
+          sp.maxLife = 0.8 + Math.random()*0.8;
+          sp.rot = Math.random()*Math.PI*2;
+          sp.hi = Math.random() < 0.5;
+        }
+      }
+    }
+    pmx = mx; pmy = my;
+
+    /* ── update + draw smoke ── */
+    for (var j=0; j<SMOKE_MAX; j++){
+      var q = smoke[j];
+      if (q.life <= 0) continue;
+      q.life -= dt / q.maxLife;
+      if (q.life <= 0) continue;
+      q.vx *= 0.935; q.vy *= 0.935;
+      q.vx += Math.sin(q.y*0.02 + t + q.rot)*0.04 + Math.cos(q.x*0.02)*0.02;
+      q.vy += -0.045 + Math.cos(q.x*0.02 + t)*0.03;
+      q.x += q.vx; q.y += q.vy;
+      var ln = q.life;
+      var a = ln*ln;
+      var sz = baseCell*0.55*(1.5 - ln*0.7);
+      ctx.globalAlpha = a*0.8;
+      ctx.fillStyle = 'rgb(' + (ln > 0.55 && q.hi ? HI : ACC) + ')';
+      ctx.fillRect(q.x - sz/2, q.y - sz/2, sz, sz);
+    }
+
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  /* expose lang hook (morph words follow site language) */
+  window.kaiFxRelang = function(){ /* words read documentElement.lang live */ };
 })();
 </script>
 
