@@ -1695,14 +1695,21 @@ footer {
 }
 /* ─── HERO PIXEL FX CANVAS ─── */
 #kaiFx {
-  position: absolute; inset: 0;
+  position: fixed; inset: 0;
   width: 100%; height: 100%;
   pointer-events: none;
-  z-index: 1;
+  z-index: 45;
 }
-.hero-badge, .hero h1, .hero-sub, .hero-actions, .hero-scroll-hint {
+.hero-badge, .hero h1, .hero-sub, .hero-actions, .hero-scroll-hint, .hero-logo {
   position: relative; z-index: 2;
 }
+.hero-logo {
+  width: clamp(150px, 22vw, 200px);
+  height: clamp(150px, 22vw, 200px);
+  margin: 0 auto 32px;
+  pointer-events: none;
+}
+#kaiLogo { display: block; width: 100%; height: 100%; }
 </style>
 </head>
 <body>
@@ -1712,7 +1719,9 @@ footer {
   <span class="intro-logo">Kai</span>
 </div>
 
-<!-- HERO PIXEL FX -->
+<!-- SMOKE TRAIL (fullscreen) -->
+<canvas id="kaiFx" aria-hidden="true"></canvas>
+
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
@@ -1757,7 +1766,7 @@ footer {
     <div class="hero-orb orb-2 parallax-fast"></div>
   </div>
 
-  <canvas id="kaiFx" aria-hidden="true"></canvas>
+  <div class="hero-logo" aria-hidden="true"><canvas id="kaiLogo"></canvas></div>
 
   <div class="hero-badge">
     <span class="badge-dot"></span>
@@ -1915,14 +1924,6 @@ footer {
         <p class="feat-desc" data-ru="Отправьте голосовое — Kai распознает речь через Whisper и ответит. Диктуйте задачи, не набирая текст." data-en="Send a voice message — Kai recognizes speech via Whisper and responds. Dictate tasks without typing.">Отправьте голосовое — Kai распознает речь через Whisper и ответит. Диктуйте задачи, не набирая текст.</p>
       </div>
 
-    </div>
-
-    <div class="feat-new-head reveal">
-      <span class="feat-new-badge" data-ru="Новое" data-en="New">Новое</span>
-      <span class="feat-new-title" data-ru="Аналитика воронки и авто-лечение" data-en="Funnel analytics &amp; auto-healing">Аналитика воронки и авто-лечение</span>
-    </div>
-
-    <div class="features-grid reveal reveal-delay-1 stagger-in" style="margin-top:28px">
 
       <div class="feat-card glow-card depth-card" data-feat="new-audit">
         <div class="feat-icon emoji">🩺</div>
@@ -2575,279 +2576,161 @@ window.addEventListener('scroll', () => {
 })();
 </script>
 
-<!-- ─── HERO PIXEL FX (canvas) ─── -->
+<!-- ─── HERO PIXEL FX: logo mark + smoke trail ─── -->
 <script>
 (function(){
-  var cvs = document.getElementById('kaiFx');
-  if (!cvs) return;
-  var hero = cvs.closest('.hero') || cvs.parentElement;
-  var ctx = cvs.getContext('2d');
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  var ACC = '124,92,255', HI = '178,150,255';
-  var GRID = 48;
+  var ACC = '124,92,255', HI = '178,150,255', GRID = 48;
   var DPR = Math.min(2, window.devicePixelRatio || 1);
-  var W = 0, H = 0, baseCell = 10;
-  var LOGO_Y = 0.46;
+  function clamp(v,a,b){ return v<a?a:(v>b?b:v); }
 
-  /* mouse (chase pattern) */
-  var mx = -9999, my = -9999, pmx = -9999, pmy = -9999, moved = false;
-
-  /* ── rasterize the KAI sign into grid cells ── */
+  /* rasterize KAI sign (open ring + focus dot) into grid cells */
   function rasterizeSign(){
-    var off = document.createElement('canvas');
-    off.width = GRID; off.height = GRID;
-    var o = off.getContext('2d');
-    o.clearRect(0,0,GRID,GRID);
+    var off = document.createElement('canvas'); off.width = GRID; off.height = GRID;
+    var o = off.getContext('2d'); o.clearRect(0,0,GRID,GRID);
     var cx = GRID/2, cy = GRID/2, r = GRID*0.33;
-    o.strokeStyle = '#fff';
-    o.lineWidth = GRID*0.14;
-    o.lineCap = 'round';
-    /* open ring with a gap at top-right */
-    o.beginPath();
-    o.arc(cx, cy, r, -Math.PI*0.12, Math.PI*1.32, false);
-    o.stroke();
-    /* focus dot inside the gap */
+    o.strokeStyle = '#fff'; o.lineWidth = GRID*0.14; o.lineCap = 'round';
+    o.beginPath(); o.arc(cx, cy, r, -Math.PI*0.12, Math.PI*1.32, false); o.stroke();
     o.fillStyle = '#fff';
-    var da = -Math.PI*0.40;
-    o.beginPath();
-    o.arc(cx + Math.cos(da)*r*0.66, cy + Math.sin(da)*r*0.66, GRID*0.07, 0, Math.PI*2);
-    o.fill();
-    var data = o.getImageData(0,0,GRID,GRID).data;
-    var cells = [];
-    for (var y=0; y<GRID; y++){
-      for (var x=0; x<GRID; x++){
-        if (data[(y*GRID+x)*4+3] > 120){
-          var dd = Math.hypot(x - (cx + Math.cos(da)*r*0.66), y - (cy + Math.sin(da)*r*0.66));
-          cells.push({ gx: x - cx, gy: y - cy, dot: dd < GRID*0.12 });
-        }
+    var da = -Math.PI*0.40, dx = cx + Math.cos(da)*r*0.66, dy = cy + Math.sin(da)*r*0.66;
+    o.beginPath(); o.arc(dx, dy, GRID*0.07, 0, Math.PI*2); o.fill();
+    var data = o.getImageData(0,0,GRID,GRID).data, cells = [];
+    for (var y=0; y<GRID; y++) for (var x=0; x<GRID; x++){
+      if (data[(y*GRID+x)*4+3] > 120){
+        cells.push({ gx: x - cx, gy: y - cy, dot: Math.hypot(x-dx, y-dy) < GRID*0.12 });
       }
     }
     return cells;
   }
+  var CELLS = rasterizeSign();
 
-  /* ── sign particles ── */
-  var cells = rasterizeSign();
-  var sign = cells.map(function(c){
-    var ang = Math.random()*Math.PI*2, rad = Math.max(W,H)*(0.7 + Math.random()*0.7) || 1200;
-    return {
-      cx: c.gx, cy: c.gy, dot: c.dot,
-      x: (W/2) + Math.cos(ang)*rad, y: (H/2) + Math.sin(ang)*rad,
-      vx: 0, vy: 0, ox: c.gx*baseCell, oy: c.gy*baseCell,
-      wx: 0, wy: 0, phase: Math.random()*Math.PI*2,
-      hi: c.dot || Math.random() < 0.14
-    };
-  });
-
-  /* ── smoke pool ── */
-  var SMOKE_MAX = 1300;
-  var smoke = new Array(SMOKE_MAX);
-  for (var i=0; i<SMOKE_MAX; i++) smoke[i] = { life: 0 };
-  var smokeHead = 0;
-  function spawnSmoke(){
-    var p = smoke[smokeHead];
-    smokeHead = (smokeHead + 1) % SMOKE_MAX;
-    return p;
-  }
-
-  /* ── words / morph ── */
-  var WORDS_RU = ['KAI','CRM','Продажи','Воронка','Процесс','Рост'];
-  var WORDS_EN = ['KAI','CRM','Sales','Flow','Growth','Focus'];
-  var wordIdx = 0;
-  function curWords(){ return (document.documentElement.lang === 'en') ? WORDS_EN : WORDS_RU; }
-
-  function rasterWord(word){
-    var fs = 180;
-    var m = document.createElement('canvas').getContext('2d');
-    m.font = '800 ' + fs + 'px system-ui, -apple-system, Segoe UI, sans-serif';
-    var wpx = Math.ceil(m.measureText(word).width) + 20;
-    var hpx = Math.ceil(fs * 1.4);
-    var off = document.createElement('canvas');
-    off.width = wpx; off.height = hpx;
-    var o = off.getContext('2d');
-    o.font = '800 ' + fs + 'px system-ui, -apple-system, Segoe UI, sans-serif';
-    o.fillStyle = '#fff'; o.textBaseline = 'middle'; o.textAlign = 'center';
-    o.fillText(word, wpx/2, hpx/2);
-    var data = o.getImageData(0,0,wpx,hpx).data;
-    var pts = [], step = 4;
-    for (var y=0; y<hpx; y+=step){
-      for (var x=0; x<wpx; x+=step){
-        if (data[(y*wpx+x)*4+3] > 120) pts.push([x - wpx/2, y - hpx/2]);
+  /* ============ LOGO MARK (pixel sign above the headline) ============ */
+  (function(){
+    var lc = document.getElementById('kaiLogo'); if (!lc) return;
+    var ctx = lc.getContext('2d');
+    var W = 0, H = 0, cell = 4, placed = false;
+    var parts = CELLS.map(function(c){
+      return { cx: c.gx, cy: c.gy, dot: c.dot, x: 0, y: 0, vx: 0, vy: 0,
+        ox: 0, oy: 0, phase: Math.random()*Math.PI*2, hi: c.dot || Math.random() < 0.14 };
+    });
+    function resize(){
+      var r = lc.getBoundingClientRect();
+      W = r.width || 200; H = r.height || 200;
+      lc.width = Math.max(1, Math.round(W*DPR));
+      lc.height = Math.max(1, Math.round(H*DPR));
+      ctx.setTransform(DPR,0,0,DPR,0,0);
+      cell = Math.min(W,H) / GRID * 0.92;
+      for (var k=0; k<parts.length; k++){ parts[k].ox = parts[k].cx*cell; parts[k].oy = parts[k].cy*cell; }
+      if (!placed){
+        for (var j=0; j<parts.length; j++){
+          var ang = Math.random()*Math.PI*2, rad = Math.max(W,H)*(0.7 + Math.random()*0.8);
+          parts[j].x = W/2 + Math.cos(ang)*rad; parts[j].y = H/2 + Math.sin(ang)*rad;
+        }
+        placed = true;
       }
     }
-    var scale = Math.min(W*0.42/wpx, H*0.30/hpx);
-    return pts.map(function(p){ return [p[0]*scale, p[1]*scale]; });
-  }
+    var lmx = -9999, lmy = -9999;
+    window.addEventListener('pointermove', function(e){
+      var r = lc.getBoundingClientRect(); lmx = e.clientX - r.left; lmy = e.clientY - r.top;
+    }, { passive: true });
 
-  var mode = 'sign';                 /* 'sign' | 'word' */
-  var nextMorph = 16 + Math.random()*4;
-  var morphEnd = 0;
-
-  function enterWord(){
-    var words = curWords();
-    wordIdx = (wordIdx + 1) % words.length;
-    var pts = rasterWord(words[wordIdx]);
-    if (!pts.length){ nextMorph += 16; return; }
-    for (var k=0; k<sign.length; k++){
-      var p = pts[k % pts.length];
-      sign[k].wx = p[0]; sign[k].wy = p[1];
-      sign[k].hi = (k % 7 === 0);
+    if (reduce){
+      resize();
+      var drawS = function(){
+        ctx.clearRect(0,0,W,H); ctx.globalCompositeOperation = 'lighter';
+        var sz = cell*0.62;
+        for (var k=0; k<parts.length; k++){ var p = parts[k];
+          ctx.globalAlpha = 1; ctx.fillStyle = 'rgb(' + (p.hi?HI:ACC) + ')';
+          ctx.fillRect(W/2 + p.ox - sz/2, H/2 + p.oy - sz/2, sz, sz);
+        }
+        ctx.globalAlpha = 1;
+      };
+      drawS(); window.addEventListener('resize', function(){ resize(); drawS(); });
+      return;
     }
-    mode = 'word';
-  }
-  function enterSign(){
-    mode = 'sign';
-    for (var k=0; k<sign.length; k++) sign[k].hi = sign[k].dot || (k % 8 === 0);
-  }
 
-  /* ── sizing ── */
-  function resize(){
-    W = hero.clientWidth; H = hero.clientHeight;
-    cvs.width = Math.round(W*DPR); cvs.height = Math.round(H*DPR);
-    cvs.style.width = W+'px'; cvs.style.height = H+'px';
-    ctx.setTransform(DPR,0,0,DPR,0,0);
-    baseCell = Math.min(W*0.6, H*0.6, 460) / GRID;
-    for (var k=0; k<sign.length; k++){
-      sign[k].ox = sign[k].cx * baseCell;
-      sign[k].oy = sign[k].cy * baseCell;
-    }
-  }
-  window.addEventListener('resize', resize);
-  resize();
-
-  function clamp(v,a,b){ return v<a?a:(v>b?b:v); }
-  function smoothstep(x){ x = clamp(x,0,1); return x*x*(3-2*x); }
-
-  /* ── reduced motion: static assembled sign ── */
-  if (reduce){
-    function drawStatic(){
-      ctx.clearRect(0,0,W,H);
-      ctx.globalCompositeOperation = 'lighter';
-      var sy = window.scrollY;
-      var ps = smoothstep(sy/(H*0.55));
-      var la = clamp(1 - (ps-0.12)/0.35, 0, 1);
-      var scx = W/2, scy = H*LOGO_Y;
-      var size = baseCell*0.62;
-      for (var k=0; k<sign.length; k++){
-        var p = sign[k];
-        ctx.globalAlpha = la;
-        ctx.fillStyle = 'rgb(' + (p.hi?HI:ACC) + ')';
-        ctx.fillRect(scx + p.ox - size/2, scy + p.oy - size/2, size, size);
+    function frame(now){
+      var t = now/1000;
+      ctx.clearRect(0,0,W,H); ctx.globalCompositeOperation = 'lighter';
+      var bob = Math.sin(t*1.5) * cell * 0.14;
+      var cxp = W/2, cyp = H/2 + bob, sz = cell*0.62, R = Math.min(W,H)*0.5;
+      for (var k=0; k<parts.length; k++){ var p = parts[k];
+        p.vx += (cxp + p.ox - p.x) * 0.06;
+        p.vy += (cyp + p.oy - p.y) * 0.06;
+        var rx = p.x - lmx, ry = p.y - lmy, rd = Math.hypot(rx, ry);
+        if (rd < R && rd > 0.01){ var fr = 1 - rd/R, f = fr*fr*6.5; p.vx += (rx/rd)*f; p.vy += (ry/rd)*f; }
+        p.vx *= 0.82; p.vy *= 0.82; p.x += p.vx; p.y += p.vy;
+        var sh = 0.7 + 0.3*Math.sin(t*2.2 + p.phase);
+        ctx.globalAlpha = sh; ctx.fillStyle = 'rgb(' + (p.hi?HI:ACC) + ')';
+        ctx.fillRect(p.x - sz/2, p.y - sz/2, sz, sz);
       }
       ctx.globalAlpha = 1;
+      requestAnimationFrame(frame);
     }
-    drawStatic();
-    window.addEventListener('scroll', drawStatic, { passive: true });
-    window.addEventListener('resize', function(){ resize(); drawStatic(); });
-    return;
-  }
-
-  /* ── pointer (hero-local coords) ── */
-  function setMouse(e){
-    var r = hero.getBoundingClientRect();
-    mx = e.clientX - r.left; my = e.clientY - r.top; moved = true;
-  }
-  window.addEventListener('pointermove', setMouse, { passive: true });
-  window.addEventListener('pointerdown', setMouse, { passive: true });
-
-  var last = performance.now();
-
-  function frame(now){
-    var dt = Math.min(0.05, (now - last)/1000); last = now;
-    var t = now/1000;
-    var sy = window.scrollY;
-    var ps = smoothstep(sy/(H*0.55));
-    var logoAlpha = clamp(1 - (ps-0.12)/0.35, 0, 1);
-
-    /* scroll cancels morph, keeps logo scrolling away with page */
-    if (sy > H*0.15 && mode === 'word'){ enterSign(); nextMorph = t + 16 + Math.random()*4; }
-    if (mode === 'sign' && sy < H*0.10 && t > nextMorph){ enterWord(); morphEnd = t + 3; }
-    if (mode === 'word' && t > morphEnd){ enterSign(); nextMorph = t + 16 + Math.random()*4; }
-
-    ctx.clearRect(0,0,W,H);
-    ctx.globalCompositeOperation = 'lighter';
-
-    /* ── sign / word particles ── */
-    var bob = Math.sin(t*1.5) * baseCell * 0.14;
-    var scx = W/2;
-    var scy = (mode === 'sign') ? (H*LOGO_Y + bob) : (H*LOGO_Y);
-    var k = (mode === 'sign') ? 0.06 : 0.036;
-    var repel = logoAlpha > 0.05 && mode === 'sign';
-    var R = 160, size = baseCell*0.62;
-    for (var s=0; s<sign.length; s++){
-      var p = sign[s];
-      p.tx = (mode === 'sign') ? (scx + p.ox) : (scx + p.wx);
-      p.ty = (mode === 'sign') ? (scy + p.oy) : (scy + p.wy);
-      p.vx += (p.tx - p.x) * k;
-      p.vy += (p.ty - p.y) * k;
-      if (repel){
-        var rx = p.x - mx, ry = p.y - my, rd = Math.hypot(rx, ry);
-        if (rd < R && rd > 0.01){
-          var fr = 1 - rd/R, f = fr*fr*7.5;
-          p.vx += (rx/rd)*f; p.vy += (ry/rd)*f;
-        }
-      }
-      p.vx *= 0.82; p.vy *= 0.82;
-      p.x += p.vx; p.y += p.vy;
-      if (logoAlpha > 0.01){
-        var shimmer = 0.7 + 0.3*Math.sin(t*2.2 + p.phase);
-        ctx.globalAlpha = logoAlpha * shimmer;
-        ctx.fillStyle = 'rgb(' + (p.hi?HI:ACC) + ')';
-        ctx.fillRect(p.x - size/2, p.y - size/2, size, size);
-      }
-    }
-
-    /* ── smoke trail: spawn along last→current cursor segment ── */
-    var dx = mx - pmx, dy = my - pmy;
-    var dist = Math.hypot(dx, dy);
-    if (moved && pmx > -9998 && dist > 0.5 && dist < 400){
-      var steps = Math.min(16, Math.ceil(dist/5));
-      var nx = -dy/dist, ny = dx/dist;
-      var wide = Math.min(1.8, 0.5 + dist*0.05);
-      for (var st=0; st<steps; st++){
-        var fr2 = st/steps;
-        var ox = pmx + dx*fr2, oy = pmy + dy*fr2;
-        for (var c=0; c<2; c++){
-          var side = (c === 0 ? 1 : -1) * (0.4 + Math.random()*0.7);
-          var sp = spawnSmoke();
-          sp.x = ox + (Math.random()-0.5)*2;
-          sp.y = oy + (Math.random()-0.5)*2;
-          sp.vx = nx*side*wide + dx*0.3 + (Math.random()-0.5)*0.6;
-          sp.vy = ny*side*wide + dy*0.3 + (Math.random()-0.5)*0.6;
-          sp.life = 1;
-          sp.maxLife = 0.8 + Math.random()*0.8;
-          sp.rot = Math.random()*Math.PI*2;
-          sp.hi = Math.random() < 0.5;
-        }
-      }
-    }
-    pmx = mx; pmy = my;
-
-    /* ── update + draw smoke ── */
-    for (var j=0; j<SMOKE_MAX; j++){
-      var q = smoke[j];
-      if (q.life <= 0) continue;
-      q.life -= dt / q.maxLife;
-      if (q.life <= 0) continue;
-      q.vx *= 0.935; q.vy *= 0.935;
-      q.vx += Math.sin(q.y*0.02 + t + q.rot)*0.04 + Math.cos(q.x*0.02)*0.02;
-      q.vy += -0.045 + Math.cos(q.x*0.02 + t)*0.03;
-      q.x += q.vx; q.y += q.vy;
-      var ln = q.life;
-      var a = ln*ln;
-      var sz = baseCell*0.55*(1.5 - ln*0.7);
-      ctx.globalAlpha = a*0.8;
-      ctx.fillStyle = 'rgb(' + (ln > 0.55 && q.hi ? HI : ACC) + ')';
-      ctx.fillRect(q.x - sz/2, q.y - sz/2, sz, sz);
-    }
-
-    ctx.globalAlpha = 1;
+    window.addEventListener('resize', resize);
+    resize();
+    requestAnimationFrame(resize);
+    window.addEventListener('load', resize);
     requestAnimationFrame(frame);
-  }
-  requestAnimationFrame(frame);
+  })();
 
-  /* expose lang hook (morph words follow site language) */
-  window.kaiFxRelang = function(){ /* words read documentElement.lang live */ };
+  /* ============ SMOKE TRAIL (fullscreen, follows cursor) ============ */
+  (function(){
+    var fc = document.getElementById('kaiFx'); if (!fc) return;
+    var ctx = fc.getContext('2d');
+    var W = 0, H = 0, baseCell = 6;
+    function resize(){
+      W = window.innerWidth; H = window.innerHeight;
+      fc.width = Math.round(W*DPR); fc.height = Math.round(H*DPR);
+      ctx.setTransform(DPR,0,0,DPR,0,0);
+      baseCell = clamp(Math.min(W,H)/90, 5, 11);
+    }
+    window.addEventListener('resize', resize); resize();
+    if (reduce) return;
+
+    var MAX = 1300, pool = new Array(MAX), head = 0;
+    for (var i=0; i<MAX; i++) pool[i] = { life: 0 };
+    function spawn(){ var p = pool[head]; head = (head+1)%MAX; return p; }
+
+    var mx = -9999, my = -9999, pmx = -9999, pmy = -9999, moved = false;
+    function setM(e){ mx = e.clientX; my = e.clientY; moved = true; }
+    window.addEventListener('pointermove', setM, { passive: true });
+    window.addEventListener('pointerdown', setM, { passive: true });
+
+    var last = performance.now();
+    function frame(now){
+      var dt = Math.min(0.05, (now - last)/1000); last = now; var t = now/1000;
+      ctx.clearRect(0,0,W,H); ctx.globalCompositeOperation = 'lighter';
+      var dx = mx - pmx, dy = my - pmy, dist = Math.hypot(dx, dy);
+      if (moved && pmx > -9998 && dist > 0.5 && dist < 400){
+        var steps = Math.min(16, Math.ceil(dist/5));
+        var nx = -dy/dist, ny = dx/dist, wide = Math.min(1.8, 0.5 + dist*0.05);
+        for (var s=0; s<steps; s++){ var f = s/steps, ox = pmx + dx*f, oy = pmy + dy*f;
+          for (var c=0; c<2; c++){ var side = (c===0?1:-1)*(0.4 + Math.random()*0.7);
+            var p = spawn();
+            p.x = ox + (Math.random()-0.5)*2; p.y = oy + (Math.random()-0.5)*2;
+            p.vx = nx*side*wide + dx*0.3 + (Math.random()-0.5)*0.6;
+            p.vy = ny*side*wide + dy*0.3 + (Math.random()-0.5)*0.6;
+            p.life = 1; p.maxLife = 0.8 + Math.random()*0.8; p.rot = Math.random()*6.28; p.hi = Math.random() < 0.5;
+          }
+        }
+      }
+      pmx = mx; pmy = my;
+      for (var j=0; j<MAX; j++){ var q = pool[j]; if (q.life <= 0) continue;
+        q.life -= dt / q.maxLife; if (q.life <= 0) continue;
+        q.vx *= 0.935; q.vy *= 0.935;
+        q.vx += Math.sin(q.y*0.02 + t + q.rot)*0.04 + Math.cos(q.x*0.02)*0.02;
+        q.vy += -0.045 + Math.cos(q.x*0.02 + t)*0.03;
+        q.x += q.vx; q.y += q.vy;
+        var ln = q.life, a = ln*ln, sz = baseCell*0.55*(1.5 - ln*0.7);
+        ctx.globalAlpha = a*0.8; ctx.fillStyle = 'rgb(' + (ln > 0.55 && q.hi ? HI : ACC) + ')';
+        ctx.fillRect(q.x - sz/2, q.y - sz/2, sz, sz);
+      }
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
 })();
 </script>
 
