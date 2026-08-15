@@ -2417,6 +2417,7 @@ function applyLang(lang) {
   if (tl) tl.href = lang === 'en' ? 'terms.html?lang=en' : 'terms.html';
   var rl = document.querySelector('.refund-link');
   if (rl) rl.href = lang === 'en' ? 'refund.html?lang=en' : 'refund.html';
+  if (window.kaiHeroRelang) window.kaiHeroRelang();
 }
 
 if (currentLang !== 'ru') applyLang(currentLang);
@@ -2594,14 +2595,17 @@ window.addEventListener('scroll', () => {
     cx=(ls.left-r.left)+ls.width/2; cy=(ls.top-r.top)+ls.height/2;
     baseCell=Math.min(ls.width*0.9,ls.height*0.92,620)/M.R;
     particles.forEach(p=>{if(!p.init){p.init=1;if(reduce){p.x=cx+p.gx*baseCell;p.y=cy+p.gy*baseCell;}
-      else{const a=Math.random()*6.28,rr=Math.max(W,H)*(0.4+Math.random()*0.5);p.x=cx+Math.cos(a)*rr;p.y=cy+Math.sin(a)*rr;}}});}
+      else{const a=Math.random()*6.28,rr=Math.max(W,H)*(0.4+Math.random()*0.5);p.x=cx+Math.cos(a)*rr;p.y=cy+Math.sin(a)*rr;}}});
+    if(wState==='word')buildWord(getWords()[wIdx]);}
 
-  let wState='idle',wT=0,wNext=5+Math.random()*4,wPhase='in',wScale=1;
-  function startWord(){const words=getWords();const w=words[(Math.random()*words.length)|0];const pts=textPoints(w,60,2);if(!pts.length)return;
+  let wState='idle',wT=0,wNext=5+Math.random()*4,wPhase='in',wScale=1,wIdx=0;
+  function buildWord(w){const pts=textPoints(w,60,2);if(!pts.length)return false;
     let mx=1,mh=1;for(const q of pts){mx=Math.max(mx,Math.abs(q.x));mh=Math.max(mh,Math.abs(q.y));}
-    var ls=LS?LS.getBoundingClientRect():{width:W,height:H*0.5};
+    const ls=LS?LS.getBoundingClientRect():{width:W,height:H*0.5};
     wScale=Math.min(ls.width*0.42/mx,ls.height*0.34/mh);const N=particles.length;
-    particles.forEach((p,i)=>{const q=pts[Math.floor(i*pts.length/N)];p.wx=q.x;p.wy=q.y;});wState='word';wPhase='in';wT=0;}
+    particles.forEach((p,i)=>{const q=pts[Math.floor(i*pts.length/N)];p.wx=q.x;p.wy=q.y;});return true;}
+  function startWord(){const words=getWords();wIdx=(Math.random()*words.length)|0;
+    if(!buildWord(words[wIdx]))return;wState='word';wPhase='in';wT=0;}
 
   function frame(){
     t+=0.016;ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='lighter';
@@ -2646,9 +2650,19 @@ window.addEventListener('scroll', () => {
     typing=setInterval(()=>{f++;let o='';for(let i=0;i<txt.length;i++){if(i<f-3)o+=txt[i];else if(i<f)o+=NOISE[(Math.random()*NOISE.length)|0];}
       rndr(o,true);if(f>=steps){clearInterval(typing);rndr(txt,true);setTimeout(typePhrase,4200);}},52);}
 
+  /* language switch: instant tagline restart + retarget active morph to the translation */
+  function relang(){
+    clearInterval(typing); pi=0; typePhrase();
+    if(wState==='word') buildWord(getWords()[wIdx]);   // recompute wScale, keep phase
+  }
+  window.kaiHeroRelang=relang;
+
   addEventListener('resize',resize,{passive:true});
   addEventListener('load',resize);
-  resize();requestAnimationFrame(resize);
+  if(window.ResizeObserver){ new ResizeObserver(resize).observe(cv); }   // re-measure once canvas gets real size (fixes width:1 flash)
+  resize();
+  requestAnimationFrame(resize);
+  requestAnimationFrame(()=>requestAnimationFrame(resize));
   if(reduce){ctx.globalCompositeOperation='lighter';const s=Math.max(2,baseCell*0.62);
     particles.forEach(p=>{ctx.fillStyle=rgba(p.dot?HI:ACC,p.dot?1:0.8);ctx.fillRect(Math.round(cx+p.gx*baseCell-s/2),Math.round(cy+p.gy*baseCell-s/2),Math.ceil(s),Math.ceil(s));});
     rndr(getJokes()[0],false);
