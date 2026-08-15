@@ -122,6 +122,7 @@
   --bg-1:      #100E20;
   --bg-2:      #171332;
   --border:    #241D45;
+  --border-soft: rgba(124,92,255,.14);
   --ink:       #F4F2FF;
   --text:      #CBC5E4;
   --muted:     #8B83AC;
@@ -242,65 +243,61 @@ nav {
 }
 .nav-cta:hover { opacity: 0.85; }
 
-/* ─── HERO ─── */
+/* ─── HERO (pixel-sign reference) ─── */
 .hero {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 120px 24px 80px;
   position: relative;
   overflow: hidden;
 }
 .hero-bg {
-  position: absolute; inset: 0; pointer-events: none;
-  overflow: hidden;
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 50% 30%, rgba(124,92,255,.10), transparent 70%),
+    radial-gradient(40% 40% at 85% 15%, rgba(167,139,250,.08), transparent 70%),
+    linear-gradient(180deg, var(--bg), #08070F);
 }
-.hero-bg-img {
-  position: absolute; inset: 0;
-  background: url('hero-bg.png') center center / cover no-repeat;
-  opacity: 0.55;
-}
-.hero-bg-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(13,13,15,0.35) 0%,
-    rgba(13,13,15,0.55) 50%,
-    rgba(13,13,15,0.92) 100%
-  );
-}
-.hero-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  animation: drift 8s ease-in-out infinite alternate;
-  will-change: transform;
-}
-.orb-1 {
-  width: 350px; height: 350px;
-  top: -80px; left: 50%;
-  transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(124,92,255,.12) 0%, transparent 70%);
-}
-.orb-2 {
-  width: 200px; height: 200px;
-  bottom: 0; right: -80px;
-  background: radial-gradient(circle, rgba(167,139,250,.10) 0%, transparent 70%);
-  animation-delay: -3s;
-}
-@keyframes drift {
-  from { transform: translateX(-50%) translateY(0); }
-  to   { transform: translateX(-50%) translateY(-20px); }
-}
-.hero-grid {
-  position: absolute; inset: 0;
+.hero-gridlines {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
   background-image:
-    linear-gradient(rgba(124,92,255,.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124,92,255,.08) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent);
+    linear-gradient(var(--border-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);
+  background-size: 34px 34px;
+  -webkit-mask-image: radial-gradient(120% 80% at 50% 35%, #000 55%, transparent 100%);
+  mask-image: radial-gradient(120% 80% at 50% 35%, #000 55%, transparent 100%);
 }
+#kai {
+  position: absolute; inset: 0; z-index: 1;
+  display: block; width: 100%; height: 100%;
+  pointer-events: none;
+}
+.hero-frame { position: absolute; inset: 76px 18px 18px; z-index: 2; pointer-events: none; }
+.hero-frame span { position: absolute; width: 22px; height: 22px; border: 1.5px solid var(--accent); opacity: .45; }
+.hero-frame .tl { top: 0; left: 0; border-right: 0; border-bottom: 0; }
+.hero-frame .tr { top: 0; right: 0; border-left: 0; border-bottom: 0; }
+.hero-frame .bl { bottom: 0; left: 0; border-right: 0; border-top: 0; }
+.hero-frame .br { bottom: 0; right: 0; border-left: 0; border-top: 0; }
+.hero-logo-space { flex: 1 1 auto; min-height: 46vh; }
+.hero-plate {
+  position: relative; z-index: 3;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: 18px;
+  padding: 0 20px clamp(48px,9vh,96px);
+  width: 100%;
+}
+.hero-plate .hero-badge { margin: 0; }
+.hero-plate .hero-sub { margin: 0; max-width: 56ch; }
+.hero-plate .hero-actions { margin: 0; }
+.hero-tag {
+  font-family: var(--mono);
+  font-size: clamp(12.5px,1.7vw,15px);
+  color: var(--muted); min-height: 1.6em;
+  animation: fadeUp .9s .5s cubic-bezier(.16,1,.3,1) both;
+}
+.hero-tag .br { color: var(--accent); }
+.hero-tag .cur { color: var(--accent-2); }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 5px 14px;
@@ -325,13 +322,15 @@ nav {
 }
 .hero h1 {
   font-family: var(--font-heading);
-  font-size: clamp(42px,7vw,80px);
-  font-weight: 500;
-  line-height: 1.05;
+  font-size: clamp(34px,6vw,64px);
+  font-weight: 700;
+  line-height: 1.04;
   letter-spacing: -0.03em;
   max-width: 780px;
+  color: var(--ink);
   animation: fadeUp .9s .15s cubic-bezier(.16,1,.3,1) both;
 }
+.hero h1 .a { color: var(--accent); }
 .hero h1 .text-sheen {
   background: linear-gradient(180deg, #fff 30%, rgba(192,192,212,.7));
   -webkit-background-clip: text;
@@ -460,9 +459,16 @@ hr.sep {
   background: var(--carbon);
   padding: 36px 32px;
   position: relative;
-  transition: background 200ms;
+  transition: background 200ms, box-shadow .25s ease, transform .25s ease;
 }
-.feat-card:hover { background: var(--obsidian); }
+.feat-card:hover {
+  background: var(--obsidian);
+  box-shadow: 0 0 0 1px var(--accent), 0 10px 30px rgba(124,92,255,.15);
+  z-index: 1;
+}
+/* scroll-reveal (staggered by JS) */
+.feat-card.card-reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.feat-card.card-reveal.in { opacity: 1; transform: none; }
 .feat-icon {
   width: 44px; height: 44px; border-radius: 10px;
   background: rgba(124,92,255,.1);
@@ -470,11 +476,12 @@ hr.sep {
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 20px;
   font-size: 20px;
-  transition: border-color .2s, box-shadow .2s;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
 }
 .feat-card:hover .feat-icon {
-  border-color: rgba(124,92,255,.5);
-  box-shadow: 0 0 16px rgba(124,92,255,.2);
+  border-color: var(--accent);
+  box-shadow: 0 0 22px rgba(124,92,255,.4);
+  transform: translateY(-2px) scale(1.07);
 }
 .feat-title {
   font-family: var(--font-heading);
@@ -1583,8 +1590,9 @@ footer {
   .burger { display: flex; margin-left: auto; }
   .nav-inner .lang-toggle { display: none; }
   .nav-cta { display: none; }
-  .hero { padding: 100px 16px 48px; }
-  .hero h1 { font-size: clamp(28px,8vw,38px); }
+  .hero { padding: 0; }
+  .hero-logo-space { min-height: 38vh; }
+  .hero h1 { font-size: clamp(28px,8vw,40px); }
   .hero-sub { font-size: 16px; }
   .hero-actions { flex-direction: column; align-items: stretch; gap: 10px; }
   .hero-actions .btn-primary,
@@ -1691,25 +1699,9 @@ footer {
     transition-duration: .01ms !important;
   }
   .reveal { opacity: 1 !important; transform: none !important; }
+  .feat-card.card-reveal { opacity: 1 !important; transform: none !important; }
   .intro-overlay { display: none !important; }
 }
-/* ─── HERO PIXEL FX CANVAS ─── */
-#kaiFx {
-  position: fixed; inset: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-  z-index: 45;
-}
-.hero-badge, .hero h1, .hero-sub, .hero-actions, .hero-scroll-hint, .hero-logo {
-  position: relative; z-index: 2;
-}
-.hero-logo {
-  width: clamp(150px, 22vw, 200px);
-  height: clamp(150px, 22vw, 200px);
-  margin: 0 auto 32px;
-  pointer-events: none;
-}
-#kaiLogo { display: block; width: 100%; height: 100%; }
 </style>
 </head>
 <body>
@@ -1718,9 +1710,6 @@ footer {
 <div class="intro-overlay" id="introOverlay">
   <span class="intro-logo">Kai</span>
 </div>
-
-<!-- SMOKE TRAIL (fullscreen) -->
-<canvas id="kaiFx" aria-hidden="true"></canvas>
 
 <!-- NAV -->
 <nav>
@@ -1758,40 +1747,34 @@ footer {
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-bg">
-    <div class="hero-bg-img"></div>
-    <div class="hero-bg-overlay"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-orb orb-1 parallax-slow"></div>
-    <div class="hero-orb orb-2 parallax-fast"></div>
-  </div>
+  <div class="hero-bg"></div>
+  <div class="hero-gridlines"></div>
+  <canvas id="kai" aria-hidden="true"></canvas>
+  <div class="hero-frame"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
 
-  <div class="hero-logo" aria-hidden="true"><canvas id="kaiLogo"></canvas></div>
+  <div class="hero-logo-space" aria-hidden="true"></div>
 
-  <div class="hero-badge">
-    <span class="badge-dot"></span>
-    <span data-ru="Работает в Telegram — без установки" data-en="Works in Telegram — no install needed">Работает в Telegram — без установки</span>
-  </div>
+  <div class="hero-plate">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      <span data-ru="Работает в Telegram — без установки" data-en="Works in Telegram — no install needed">Работает в Telegram — без установки</span>
+    </div>
 
-  <h1 data-ru="<span class='text-sheen'>Настройка</span> <em>CRM</em><br><span class='text-sheen'>без программистов</span>" data-en="<span class='text-sheen'>Set up your</span> <em>CRM</em><br><span class='text-sheen'>without developers</span>">
-    <span class="text-sheen">Настройка</span> <em>CRM</em><br><span class="text-sheen">без программистов</span>
-  </h1>
-  <p class="hero-sub" data-ru="Kai задаёт правильные вопросы, строит план под&nbsp;ваш бизнес и&nbsp;настраивает CRM автоматически&nbsp;— через обычный чат&nbsp;в&nbsp;Telegram." data-en="Kai asks the right questions, builds a&nbsp;plan for your business and configures CRM automatically&nbsp;— via a&nbsp;regular Telegram&nbsp;chat.">
-    Kai задаёт правильные вопросы, строит план под&nbsp;ваш бизнес и&nbsp;настраивает CRM автоматически&nbsp;— через обычный чат&nbsp;в&nbsp;Telegram.
-  </p>
+    <h1 data-ru="Настройка <span class='a'>CRM</span><br>без программистов" data-en="Set up your <span class='a'>CRM</span><br>without developers">Настройка <span class="a">CRM</span><br>без программистов</h1>
 
-  <div class="hero-actions">
-    <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="btn-primary">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.4 2L1.6 6.5c-.6.2-.5 1 .1 1.2l3.3 1.1 1.1 3.7c.2.6 1 .7 1.2.1L11.9 3.4c.3-.7-.4-1.4-1.1-1.1z" fill="currentColor"/></svg>
-      <span data-ru="Попробовать бесплатно" data-en="Try for free">Попробовать бесплатно</span>
-    </a>
-    <a href="#how" class="btn-ghost">
-      <span data-ru="Как это работает ↓" data-en="How it works ↓">Как это работает ↓</span>
-    </a>
-  </div>
+    <p class="hero-sub" data-ru="Kai задаёт правильные вопросы, строит план под&nbsp;ваш бизнес и&nbsp;настраивает CRM автоматически&nbsp;— через обычный чат&nbsp;в&nbsp;Telegram." data-en="Kai asks the right questions, builds a&nbsp;plan for your business and configures CRM automatically&nbsp;— via a&nbsp;regular Telegram&nbsp;chat.">Kai задаёт правильные вопросы, строит план под&nbsp;ваш бизнес и&nbsp;настраивает CRM автоматически&nbsp;— через обычный чат&nbsp;в&nbsp;Telegram.</p>
 
-  <div class="hero-scroll-hint">
-    <div class="scroll-line"></div>
+    <div class="hero-tag" id="heroTag" aria-hidden="true"></div>
+
+    <div class="hero-actions">
+      <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.4 2L1.6 6.5c-.6.2-.5 1 .1 1.2l3.3 1.1 1.1 3.7c.2.6 1 .7 1.2.1L11.9 3.4c.3-.7-.4-1.4-1.1-1.1z" fill="currentColor"/></svg>
+        <span data-ru="Попробовать бесплатно" data-en="Try for free">Попробовать бесплатно</span>
+      </a>
+      <a href="#how" class="btn-ghost">
+        <span data-ru="Как это работает ↓" data-en="How it works ↓">Как это работает ↓</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1865,7 +1848,7 @@ footer {
     <p class="section-label reveal" data-ru="Возможности" data-en="Features">Возможности</p>
     <h2 class="section-heading reveal reveal-delay-1" data-ru="Kai — это <em>аналитик</em>,<br>который думает с вами" data-en="Kai is an <em>analyst</em><br>who thinks with you">Kai — это <em>аналитик</em>,<br>который думает с вами</h2>
     <p class="section-sub reveal reveal-delay-2" data-ru="Не&nbsp;шаблонный бот с&nbsp;анкетой. Живой диалог с&nbsp;экспертом, который потом всё реализует сам." data-en="Not a&nbsp;template bot with a&nbsp;survey. A&nbsp;real dialog with an&nbsp;expert who then implements everything.">Не&nbsp;шаблонный бот с&nbsp;анкетой. Живой диалог с&nbsp;экспертом, который потом всё реализует сам.</p>
-    <div class="features-grid reveal reveal-delay-1 stagger-in" style="margin-top:56px">
+    <div class="features-grid" style="margin-top:56px">
 
       <div class="feat-card glow-card depth-card" data-feat="chat">
         <div class="feat-icon">
@@ -2082,7 +2065,12 @@ footer {
       <div class="api-badge" data-ru="<span class='dot'></span>показать_причины_отказа" data-en="<span class='dot'></span>list_loss_reasons"><span class="dot"></span>показать_причины_отказа</div>
       <div class="api-badge" data-ru="<span class='dot'></span>показать_источники" data-en="<span class='dot'></span>list_sources"><span class="dot"></span>показать_источники</div>
       <div class="api-badge" data-ru="<span class='dot'></span>маппинг_полей_excel" data-en="<span class='dot'></span>map_excel_fields"><span class="dot"></span>маппинг_полей_excel</div>
-      <div class="api-badge soon" data-ru="<span class='dot'></span>выгрузка_в_excel" data-en="<span class='dot'></span>export_to_excel"><span class="dot"></span>выгрузка_в_excel</div>
+      <div class="api-badge" data-ru="<span class='dot'></span>выгрузка_в_excel" data-en="<span class='dot'></span>export_to_excel"><span class="dot"></span>выгрузка_в_excel</div>
+      <div class="api-badge soon" data-ru="<span class='dot'></span>дашборд_в_рабочем_столе_crm" data-en="<span class='dot'></span>crm_desktop_dashboard"><span class="dot"></span>дашборд_в_рабочем_столе_crm</div>
+      <div class="api-badge soon" data-ru="<span class='dot'></span>автоскор_digital_pipeline" data-en="<span class='dot'></span>auto_score_digital_pipeline"><span class="dot"></span>автоскор_digital_pipeline</div>
+      <div class="api-badge soon" data-ru="<span class='dot'></span>интерактивный_маппинг_полей" data-en="<span class='dot'></span>interactive_field_mapping"><span class="dot"></span>интерактивный_маппинг_полей</div>
+      <div class="api-badge soon" data-ru="<span class='dot'></span>smm_автопостинг" data-en="<span class='dot'></span>smm_autoposting"><span class="dot"></span>smm_автопостинг</div>
+      <div class="api-badge soon" data-ru="<span class='dot'></span>партнёрские_кабинеты" data-en="<span class='dot'></span>partner_accounts"><span class="dot"></span>партнёрские_кабинеты</div>
     </div>
 
     <p class="section-label reveal" style="margin-top:48px" data-ru="Возможности ввода" data-en="Input features">Возможности ввода</p>
@@ -2096,7 +2084,7 @@ footer {
     </div>
 
     <div class="api-count reveal">
-      <span><strong class="count-up" data-count="62">62</strong> <span data-ru="действий доступно" data-en="actions available">действий доступно</span></span>
+      <span><strong class="count-up" data-count="63">63</strong> <span data-ru="действий доступно" data-en="actions available">действий доступно</span></span>
       <div class="api-legend">
         <div class="api-legend-item"><span class="api-legend-dot" style="background:var(--good);box-shadow:0 0 6px rgba(67,224,160,.4)"></span> <span data-ru="Доступно" data-en="Available">Доступно</span></div>
         <div class="api-legend-item"><span class="api-legend-dot" style="background:var(--warn);box-shadow:0 0 6px rgba(245,196,81,.4)"></span> <span data-ru="В разработке" data-en="In progress">В разработке</span></div>
@@ -2405,6 +2393,25 @@ const observer = new IntersectionObserver((entries) => {
 
 reveals.forEach(r => observer.observe(r));
 
+/* ─── FEATURE CARDS: staggered scroll-reveal ─── */
+(function(){
+  var cards = document.querySelectorAll('#features .feat-card');
+  if (!cards.length) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  cards.forEach(function(c, i){ c.classList.add('card-reveal'); c.dataset.ci = i; });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        var i = +e.target.dataset.ci || 0;
+        e.target.style.transitionDelay = ((i % 4) * 0.055) + 's';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  cards.forEach(function(c){ io.observe(c); });
+})();
+
 /* ─── SMOOTH NAV ─── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
@@ -2576,161 +2583,100 @@ window.addEventListener('scroll', () => {
 })();
 </script>
 
-<!-- ─── HERO PIXEL FX: logo mark + smoke trail ─── -->
+<!-- ─── HERO PIXEL SIGN (canvas) ─── -->
 <script>
-(function(){
-  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var ACC = '124,92,255', HI = '178,150,255', GRID = 48;
-  var DPR = Math.min(2, window.devicePixelRatio || 1);
-  function clamp(v,a,b){ return v<a?a:(v>b?b:v); }
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cv = document.getElementById('kai'); if (!cv) return;
+  const ctx = cv.getContext('2d', { alpha: true });
+  const ACC = [124,92,255], HI = [178,150,255];
+  const MONO = '800 %px ui-monospace,"SF Mono",Menlo,Consolas,monospace';
+  const rgba = (c,a) => 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + a + ')';
+  const lang = () => (document.documentElement.lang === 'en' ? 'en' : 'ru');
+  const getWords = () => lang() === 'en'
+    ? ['KAI','CRM','Sales','Flow','Growth','Focus']
+    : ['KAI','CRM','Продажи','Воронка','Процесс','Рост'];
+  let W=0,H=0,DPR=1,t=0,cx=0,cy=0,baseCell=8;
+  const P = { x:-999, y:-999, active:false };
 
-  /* rasterize KAI sign (open ring + focus dot) into grid cells */
-  function rasterizeSign(){
-    var off = document.createElement('canvas'); off.width = GRID; off.height = GRID;
-    var o = off.getContext('2d'); o.clearRect(0,0,GRID,GRID);
-    var cx = GRID/2, cy = GRID/2, r = GRID*0.33;
-    o.strokeStyle = '#fff'; o.lineWidth = GRID*0.14; o.lineCap = 'round';
-    o.beginPath(); o.arc(cx, cy, r, -Math.PI*0.12, Math.PI*1.32, false); o.stroke();
-    o.fillStyle = '#fff';
-    var da = -Math.PI*0.40, dx = cx + Math.cos(da)*r*0.66, dy = cy + Math.sin(da)*r*0.66;
-    o.beginPath(); o.arc(dx, dy, GRID*0.07, 0, Math.PI*2); o.fill();
-    var data = o.getImageData(0,0,GRID,GRID).data, cells = [];
-    for (var y=0; y<GRID; y++) for (var x=0; x<GRID; x++){
-      if (data[(y*GRID+x)*4+3] > 120){
-        cells.push({ gx: x - cx, gy: y - cy, dot: Math.hypot(x-dx, y-dy) < GRID*0.12 });
-      }
+  function readCells(g,R,c){const d=g.getImageData(0,0,R,R).data,o=[];for(let y=0;y<R;y++)for(let x=0;x<R;x++)if(d[(y*R+x)*4+3]>120)o.push({gx:x-c,gy:y-c});return o;}
+  function markCells(){const R=48,o=document.createElement('canvas');o.width=o.height=R;const g=o.getContext('2d');
+    const c=R/2,rad=R*0.33,lw=R*0.14;g.lineCap='round';g.lineWidth=lw;g.strokeStyle='#fff';g.fillStyle='#fff';
+    const gc=-Math.PI*0.30,gh=Math.PI*0.21;g.beginPath();g.arc(c,c,rad,gc+gh,gc-gh+Math.PI*2,false);g.stroke();
+    const ring=readCells(g,R,c);g.clearRect(0,0,R,R);
+    const dr=rad*0.98,dRad=lw*0.5;g.beginPath();g.arc(c+Math.cos(gc)*dr,c+Math.sin(gc)*dr,dRad,0,Math.PI*2);g.fill();
+    return {ring,dot:readCells(g,R,c),R};}
+  const M=markCells();
+  const particles=M.ring.map(c=>({dot:0,gx:c.gx,gy:c.gy,x:0,y:0,vx:0,vy:0,ph:Math.random()*6.28,wx:0,wy:0,init:0}))
+    .concat(M.dot.map(c=>({dot:1,gx:c.gx,gy:c.gy,x:0,y:0,vx:0,vy:0,ph:Math.random()*6.28,wx:0,wy:0,init:0})));
+
+  function textPoints(str,pxH,st){const m=document.createElement('canvas').getContext('2d');m.font=MONO.replace('%',pxH);
+    const w=Math.ceil(m.measureText(str).width)+10,h=Math.ceil(pxH*1.35);const o=document.createElement('canvas');o.width=w;o.height=h;
+    const g=o.getContext('2d');g.font=MONO.replace('%',pxH);g.fillStyle='#fff';g.textAlign='center';g.textBaseline='middle';g.fillText(str,w/2,h/2);
+    const d=g.getImageData(0,0,w,h).data,p=[];st=st||2;for(let y=0;y<h;y+=st)for(let x=0;x<w;x+=st)if(d[(y*w+x)*4+3]>128)p.push({x:x-w/2,y:y-h/2});return p;}
+
+  function resize(){const r=cv.getBoundingClientRect();W=r.width||window.innerWidth;H=r.height||window.innerHeight;DPR=Math.min(devicePixelRatio||1,2);
+    cv.width=Math.max(1,W*DPR);cv.height=Math.max(1,H*DPR);ctx.setTransform(DPR,0,0,DPR,0,0);
+    cx=W*0.5;cy=H*0.34;baseCell=Math.min(W*0.72,H*0.42,440)/M.R;
+    particles.forEach(p=>{if(!p.init){p.init=1;if(reduce){p.x=cx+p.gx*baseCell;p.y=cy+p.gy*baseCell;}
+      else{const a=Math.random()*6.28,rr=Math.max(W,H)*(0.4+Math.random()*0.5);p.x=cx+Math.cos(a)*rr;p.y=cy+Math.sin(a)*rr;}}});}
+
+  let wState='idle',wT=0,wNext=5+Math.random()*4,wPhase='in',wScale=1;
+  function startWord(){const words=getWords();const w=words[(Math.random()*words.length)|0];const pts=textPoints(w,60,2);if(!pts.length)return;
+    let mx=1,mh=1;for(const q of pts){mx=Math.max(mx,Math.abs(q.x));mh=Math.max(mh,Math.abs(q.y));}
+    wScale=Math.min(W*0.34/mx,H*0.24/mh);const N=particles.length;
+    particles.forEach((p,i)=>{const q=pts[Math.floor(i*pts.length/N)];p.wx=q.x;p.wy=q.y;});wState='word';wPhase='in';wT=0;}
+
+  function frame(){
+    t+=0.016;ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='lighter';
+    if(wState==='idle'){wT+=0.016;if(!reduce&&wT>wNext)startWord();}
+    const wordActive=wState==='word'&&wPhase!=='out';
+    if(wState==='word'){wT+=0.016;
+      if(wPhase==='in'&&wT>2.4){wPhase='hold';wT=0;}
+      else if(wPhase==='hold'&&wT>3.2){wPhase='out';wT=0;}
+      else if(wPhase==='out'&&wT>1.6){wState='idle';wT=0;wNext=16+Math.random()*8;}}
+    const bob=Math.sin(t*0.9)*baseCell*0.5,bob2=Math.cos(t*0.9)*baseCell*0.5;
+    for(const p of particles){
+      let TX,TY,sz=Math.max(2,baseCell*0.62);
+      if(wordActive){TX=cx+p.wx*wScale;TY=cy+p.wy*wScale;sz*=1.25;}
+      else{TX=cx+p.gx*baseCell+(p.dot?bob2:0);TY=cy+p.gy*baseCell+(p.dot?bob:0);}
+      const spk=wordActive?0.036:0.06;p.vx+=(TX-p.x)*spk;p.vy+=(TY-p.y)*spk;
+      if(P.active&&!wordActive){const dx=p.x-P.x,dy=p.y-P.y,d2=dx*dx+dy*dy,R=150;
+        if(d2<R*R){const d=Math.sqrt(d2)||1,fr=1-d/R;p.vx+=dx/d*fr*fr*7;p.vy+=dy/d*fr*fr*7;}}
+      p.vx*=0.82;p.vy*=0.82;p.x+=p.vx;p.y+=p.vy;
+      const shim=reduce?0.9:(0.6+0.4*Math.sin(t*2.2+p.ph));
+      const col=wordActive?HI:(p.dot?HI:ACC);
+      const al=wordActive?Math.min(1,0.95*shim):(p.dot?1:0.8)*shim;
+      ctx.fillStyle=rgba(col,al);ctx.fillRect(Math.round(p.x-sz/2),Math.round(p.y-sz/2),Math.ceil(sz),Math.ceil(sz));
     }
-    return cells;
+    ctx.globalCompositeOperation='source-over';
+    if(!reduce)requestAnimationFrame(frame);
   }
-  var CELLS = rasterizeSign();
 
-  /* ============ LOGO MARK (pixel sign above the headline) ============ */
-  (function(){
-    var lc = document.getElementById('kaiLogo'); if (!lc) return;
-    var ctx = lc.getContext('2d');
-    var W = 0, H = 0, cell = 4, placed = false;
-    var parts = CELLS.map(function(c){
-      return { cx: c.gx, cy: c.gy, dot: c.dot, x: 0, y: 0, vx: 0, vy: 0,
-        ox: 0, oy: 0, phase: Math.random()*Math.PI*2, hi: c.dot || Math.random() < 0.14 };
-    });
-    function resize(){
-      var r = lc.getBoundingClientRect();
-      W = r.width || 200; H = r.height || 200;
-      lc.width = Math.max(1, Math.round(W*DPR));
-      lc.height = Math.max(1, Math.round(H*DPR));
-      ctx.setTransform(DPR,0,0,DPR,0,0);
-      cell = Math.min(W,H) / GRID * 0.92;
-      for (var k=0; k<parts.length; k++){ parts[k].ox = parts[k].cx*cell; parts[k].oy = parts[k].cy*cell; }
-      if (!placed){
-        for (var j=0; j<parts.length; j++){
-          var ang = Math.random()*Math.PI*2, rad = Math.max(W,H)*(0.7 + Math.random()*0.8);
-          parts[j].x = W/2 + Math.cos(ang)*rad; parts[j].y = H/2 + Math.sin(ang)*rad;
-        }
-        placed = true;
-      }
-    }
-    var lmx = -9999, lmy = -9999;
-    window.addEventListener('pointermove', function(e){
-      var r = lc.getBoundingClientRect(); lmx = e.clientX - r.left; lmy = e.clientY - r.top;
-    }, { passive: true });
+  addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();P.x=e.clientX-r.left;P.y=e.clientY-r.top;P.active=true;},{passive:true});
+  addEventListener('pointerleave',()=>P.active=false);
 
-    if (reduce){
-      resize();
-      var drawS = function(){
-        ctx.clearRect(0,0,W,H); ctx.globalCompositeOperation = 'lighter';
-        var sz = cell*0.62;
-        for (var k=0; k<parts.length; k++){ var p = parts[k];
-          ctx.globalAlpha = 1; ctx.fillStyle = 'rgb(' + (p.hi?HI:ACC) + ')';
-          ctx.fillRect(W/2 + p.ox - sz/2, H/2 + p.oy - sz/2, sz, sz);
-        }
-        ctx.globalAlpha = 1;
-      };
-      drawS(); window.addEventListener('resize', function(){ resize(); drawS(); });
-      return;
-    }
+  const tagEl=document.getElementById('heroTag'),NOISE='▚▞░▓█/|<>_=+*';
+  const getJokes=()=>lang()==='en'
+    ? ['"I\'ll call back" — loss reason #1','"I\'ll log it later" = never','a spreadsheet is not a CRM, sorry',
+       'a lead with no source — a receipt with no total','a deal with no task — a deal with no future','the rep quit — the data stayed']
+    : ['«я перезвоню» — причина отказа №1','«потом занесу в CRM» = никогда','экселька — это не CRM, прости',
+       'лид без источника — как чек без суммы','сделка без задачи — сделка без будущего','менеджер ушёл — база осталась'];
+  function rndr(txt,cur){if(!tagEl)return;tagEl.innerHTML='<span class="br">[</span>&nbsp;'+txt.replace(/</g,'&lt;')+(cur?'<span class="cur">▍</span>':'')+'&nbsp;<span class="br">]</span>';}
+  let pi=0,typing=null;
+  function typePhrase(){const jokes=getJokes();const txt=jokes[pi%jokes.length];pi++;
+    if(reduce){rndr(txt,false);return;}
+    let f=0;const steps=txt.length+6;clearInterval(typing);
+    typing=setInterval(()=>{f++;let o='';for(let i=0;i<txt.length;i++){if(i<f-3)o+=txt[i];else if(i<f)o+=NOISE[(Math.random()*NOISE.length)|0];}
+      rndr(o,true);if(f>=steps){clearInterval(typing);rndr(txt,true);setTimeout(typePhrase,4200);}},52);}
 
-    function frame(now){
-      var t = now/1000;
-      ctx.clearRect(0,0,W,H); ctx.globalCompositeOperation = 'lighter';
-      var bob = Math.sin(t*1.5) * cell * 0.14;
-      var cxp = W/2, cyp = H/2 + bob, sz = cell*0.62, R = Math.min(W,H)*0.5;
-      for (var k=0; k<parts.length; k++){ var p = parts[k];
-        p.vx += (cxp + p.ox - p.x) * 0.06;
-        p.vy += (cyp + p.oy - p.y) * 0.06;
-        var rx = p.x - lmx, ry = p.y - lmy, rd = Math.hypot(rx, ry);
-        if (rd < R && rd > 0.01){ var fr = 1 - rd/R, f = fr*fr*6.5; p.vx += (rx/rd)*f; p.vy += (ry/rd)*f; }
-        p.vx *= 0.82; p.vy *= 0.82; p.x += p.vx; p.y += p.vy;
-        var sh = 0.7 + 0.3*Math.sin(t*2.2 + p.phase);
-        ctx.globalAlpha = sh; ctx.fillStyle = 'rgb(' + (p.hi?HI:ACC) + ')';
-        ctx.fillRect(p.x - sz/2, p.y - sz/2, sz, sz);
-      }
-      ctx.globalAlpha = 1;
-      requestAnimationFrame(frame);
-    }
-    window.addEventListener('resize', resize);
-    resize();
-    requestAnimationFrame(resize);
-    window.addEventListener('load', resize);
-    requestAnimationFrame(frame);
-  })();
-
-  /* ============ SMOKE TRAIL (fullscreen, follows cursor) ============ */
-  (function(){
-    var fc = document.getElementById('kaiFx'); if (!fc) return;
-    var ctx = fc.getContext('2d');
-    var W = 0, H = 0, baseCell = 6;
-    function resize(){
-      W = window.innerWidth; H = window.innerHeight;
-      fc.width = Math.round(W*DPR); fc.height = Math.round(H*DPR);
-      ctx.setTransform(DPR,0,0,DPR,0,0);
-      baseCell = clamp(Math.min(W,H)/90, 5, 11);
-    }
-    window.addEventListener('resize', resize); resize();
-    if (reduce) return;
-
-    var MAX = 1300, pool = new Array(MAX), head = 0;
-    for (var i=0; i<MAX; i++) pool[i] = { life: 0 };
-    function spawn(){ var p = pool[head]; head = (head+1)%MAX; return p; }
-
-    var mx = -9999, my = -9999, pmx = -9999, pmy = -9999, moved = false;
-    function setM(e){ mx = e.clientX; my = e.clientY; moved = true; }
-    window.addEventListener('pointermove', setM, { passive: true });
-    window.addEventListener('pointerdown', setM, { passive: true });
-
-    var last = performance.now();
-    function frame(now){
-      var dt = Math.min(0.05, (now - last)/1000); last = now; var t = now/1000;
-      ctx.clearRect(0,0,W,H); ctx.globalCompositeOperation = 'lighter';
-      var dx = mx - pmx, dy = my - pmy, dist = Math.hypot(dx, dy);
-      if (moved && pmx > -9998 && dist > 0.5 && dist < 400){
-        var steps = Math.min(16, Math.ceil(dist/5));
-        var nx = -dy/dist, ny = dx/dist, wide = Math.min(1.8, 0.5 + dist*0.05);
-        for (var s=0; s<steps; s++){ var f = s/steps, ox = pmx + dx*f, oy = pmy + dy*f;
-          for (var c=0; c<2; c++){ var side = (c===0?1:-1)*(0.4 + Math.random()*0.7);
-            var p = spawn();
-            p.x = ox + (Math.random()-0.5)*2; p.y = oy + (Math.random()-0.5)*2;
-            p.vx = nx*side*wide + dx*0.3 + (Math.random()-0.5)*0.6;
-            p.vy = ny*side*wide + dy*0.3 + (Math.random()-0.5)*0.6;
-            p.life = 1; p.maxLife = 0.8 + Math.random()*0.8; p.rot = Math.random()*6.28; p.hi = Math.random() < 0.5;
-          }
-        }
-      }
-      pmx = mx; pmy = my;
-      for (var j=0; j<MAX; j++){ var q = pool[j]; if (q.life <= 0) continue;
-        q.life -= dt / q.maxLife; if (q.life <= 0) continue;
-        q.vx *= 0.935; q.vy *= 0.935;
-        q.vx += Math.sin(q.y*0.02 + t + q.rot)*0.04 + Math.cos(q.x*0.02)*0.02;
-        q.vy += -0.045 + Math.cos(q.x*0.02 + t)*0.03;
-        q.x += q.vx; q.y += q.vy;
-        var ln = q.life, a = ln*ln, sz = baseCell*0.55*(1.5 - ln*0.7);
-        ctx.globalAlpha = a*0.8; ctx.fillStyle = 'rgb(' + (ln > 0.55 && q.hi ? HI : ACC) + ')';
-        ctx.fillRect(q.x - sz/2, q.y - sz/2, sz, sz);
-      }
-      ctx.globalAlpha = 1;
-      requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  })();
+  addEventListener('resize',resize,{passive:true});
+  addEventListener('load',resize);
+  resize();requestAnimationFrame(resize);
+  if(reduce){ctx.globalCompositeOperation='lighter';const s=Math.max(2,baseCell*0.62);
+    particles.forEach(p=>{ctx.fillStyle=rgba(p.dot?HI:ACC,p.dot?1:0.8);ctx.fillRect(Math.round(cx+p.gx*baseCell-s/2),Math.round(cy+p.gy*baseCell-s/2),Math.ceil(s),Math.ceil(s));});
+    rndr(getJokes()[0],false);
+  }else{requestAnimationFrame(frame);typePhrase();}
 })();
 </script>
 
