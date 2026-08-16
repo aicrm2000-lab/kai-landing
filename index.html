@@ -498,10 +498,6 @@ hr.sep {
 }
 .feat-desc { font-size: 16px; color: var(--fog); line-height: 1.6; }
 
-/* emoji icons (analytics cards) — same box behaviour as the SVG ones */
-.feat-card .feat-icon.emoji { font-size: 22px; line-height: 1; transition: transform .2s; }
-.feat-card:hover .feat-icon.emoji { transform: scale(1.08); }
-
 /* ─── HOW IT WORKS ─── */
 .how { background: var(--void); }
 .steps-row {
@@ -1085,6 +1081,49 @@ footer {
   50% { opacity: .7; transform: scaleY(1); }
 }
 .wave { transform-origin: center; }
+
+/* Audit: check draws in + badge pulses */
+.au-check { transition: stroke-dashoffset .5s ease .1s; }
+.feat-card[data-feat="new-audit"]:hover .au-check { stroke-dashoffset: 0; }
+.feat-card[data-feat="new-audit"]:hover .au-badge { animation: chatPulse 1.6s ease-in-out infinite; }
+
+/* Drop-off: line visible at rest, redraws downward on hover */
+.do-line { stroke-dashoffset: 0; }
+.feat-card[data-feat="new-dropoff"]:hover .do-line { animation: drawLine .6s ease; }
+@keyframes drawLine { from{stroke-dashoffset:28} to{stroke-dashoffset:0} }
+.do-arrow { transition: opacity .3s ease; }
+.feat-card[data-feat="new-dropoff"]:hover .do-arrow { animation: arrowIn .5s ease; }
+@keyframes arrowIn { 0%,55%{opacity:0} 100%{opacity:1} }
+
+/* Lead scoring: needle sweeps up the gauge */
+.sc-needle { transform-origin: 12px 17px; transition: transform .7s cubic-bezier(.16,1,.3,1); }
+.feat-card[data-feat="new-scoring"]:hover .sc-needle { transform: rotate(78deg); }
+
+/* Check-up: bars full at rest, re-grow from the baseline on hover, staggered */
+.cu-bar { transform-origin: center 20px; }
+.feat-card[data-feat="new-checkup"]:hover .cu-bar-1 { animation: barGrow .5s cubic-bezier(.16,1,.3,1) both; }
+.feat-card[data-feat="new-checkup"]:hover .cu-bar-2 { animation: barGrow .5s .1s cubic-bezier(.16,1,.3,1) both; }
+.feat-card[data-feat="new-checkup"]:hover .cu-bar-3 { animation: barGrow .5s .2s cubic-bezier(.16,1,.3,1) both; }
+@keyframes barGrow { from{transform:scaleY(.3)} to{transform:scaleY(1)} }
+
+/* SOP: checkmarks draw in, staggered */
+.sop-c { transition: stroke-dashoffset .4s ease; }
+.feat-card[data-feat="new-sop"]:hover .sop-c-1 { stroke-dashoffset: 0; transition-delay: 0s; }
+.feat-card[data-feat="new-sop"]:hover .sop-c-2 { stroke-dashoffset: 0; transition-delay: .12s; }
+.feat-card[data-feat="new-sop"]:hover .sop-c-3 { stroke-dashoffset: 0; transition-delay: .24s; }
+
+/* Import: arrow drops into the table */
+.feat-card[data-feat="new-import"]:hover .im-arrow { animation: imDrop 1.1s ease-in-out infinite; }
+@keyframes imDrop { 0%,100%{transform:translateY(0);opacity:1} 50%{transform:translateY(3px);opacity:.55} }
+
+/* Discovery: magnifier scans */
+.dc-lens { transform-origin: center; }
+.feat-card[data-feat="new-discovery"]:hover .dc-lens { animation: dcScan 1.7s ease-in-out infinite; }
+@keyframes dcScan { 0%,100%{transform:translate(0,0)} 30%{transform:translate(-2px,-1.5px)} 65%{transform:translate(2px,1.5px)} }
+
+/* Multi: second user fades and slides in */
+.mu-user2 { opacity: .35; transform: translateX(3px); transition: opacity .4s ease, transform .4s cubic-bezier(.16,1,.3,1); }
+.feat-card[data-feat="new-multi"]:hover .mu-user2 { opacity: 1; transform: translateX(0); }
 
 .api-badge { position: relative; overflow: hidden; }
 .api-badge::before {
@@ -1883,49 +1922,107 @@ footer {
 
 
       <div class="feat-card glow-card depth-card" data-feat="new-audit">
-        <div class="feat-icon emoji">🩺</div>
+        <div class="feat-icon">
+          <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path class="au-funnel" d="M3 4h13l-5 6v6l-3 1.5V10L3 4z" stroke="#A78BFA" stroke-width="1.3" stroke-linejoin="round"/>
+            <circle class="au-badge" cx="17.5" cy="15.5" r="4.5" stroke="#A78BFA" stroke-width="1.3"/>
+            <path class="au-check" d="M15.3 15.6l1.5 1.5 2.6-2.9" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="9" stroke-dashoffset="9"/>
+          </svg>
+        </div>
         <h3 class="feat-title" data-ru="Аудит воронки + авто-лечение" data-en="Funnel audit + auto-healing">Аудит воронки + авто-лечение</h3>
         <p class="feat-desc" data-ru="Находит проблемы — нет причин отказа, источников, автоматизаций, узкие места, низкая конверсия — и чинит их одной кнопкой." data-en="Finds problems — missing loss reasons, sources, automations, bottlenecks, low conversion — and fixes them with one button.">Находит проблемы — нет причин отказа, источников, автоматизаций, узкие места, низкая конверсия — и чинит их одной кнопкой.</p>
       </div>
 
       <div class="feat-card glow-card depth-card" data-feat="new-dropoff">
-        <div class="feat-icon emoji">📉</div>
+        <div class="feat-icon">
+          <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M4 3v17h17" stroke="#A78BFA" stroke-width="1.3" stroke-linecap="round"/>
+            <path class="do-line" d="M6.5 7l3.5 4.5 3-1.5 5.5 7" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="28" stroke-dashoffset="28"/>
+            <path class="do-arrow" d="M18.5 17v-3.2M18.5 17h-3.2" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <h3 class="feat-title" data-ru="Аналитика drop-off" data-en="Drop-off analytics">Аналитика drop-off</h3>
         <p class="feat-desc" data-ru="Показывает, где теряются сделки по этапам воронки и по каким причинам отказа. Видно, что чинить в первую очередь." data-en="Shows where deals leak across pipeline stages and for which loss reasons. Clear what to fix first.">Показывает, где теряются сделки по этапам воронки и по каким причинам отказа. Видно, что чинить в первую очередь.</p>
       </div>
 
       <div class="feat-card glow-card depth-card" data-feat="new-scoring">
-        <div class="feat-icon emoji">🔥</div>
+        <div class="feat-icon">
+          <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M4 17a8 8 0 0116 0" stroke="#A78BFA" stroke-width="1.3" stroke-linecap="round"/>
+            <line class="sc-needle" x1="12" y1="17" x2="8" y2="12.5" stroke="#A78BFA" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="12" cy="17" r="1.5" fill="#A78BFA"/>
+          </svg>
+        </div>
         <h3 class="feat-title" data-ru="Лид-скоринг" data-en="Lead scoring">Лид-скоринг</h3>
         <p class="feat-desc" data-ru="«Кому звонить первым»: оценивает сделки, даёт прямые ссылки и записывает оценку в поле CRM автоматически." data-en="&laquo;Who to call first&raquo;: scores deals, gives direct links and writes the score into a CRM field automatically.">«Кому звонить первым»: оценивает сделки, даёт прямые ссылки и записывает оценку в поле CRM автоматически.</p>
       </div>
 
       <div class="feat-card glow-card depth-card" data-feat="new-checkup">
-        <div class="feat-icon emoji">📊</div>
+        <div class="feat-icon">
+          <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M4 20h16" stroke="#A78BFA" stroke-width="1.3" stroke-linecap="round"/>
+            <rect class="cu-bar cu-bar-1" x="6" y="12" width="3" height="8" rx="1" stroke="#A78BFA" stroke-width="1.3"/>
+            <rect class="cu-bar cu-bar-2" x="10.5" y="8" width="3" height="12" rx="1" stroke="#A78BFA" stroke-width="1.3"/>
+            <rect class="cu-bar cu-bar-3" x="15" y="4.5" width="3" height="15.5" rx="1" stroke="#A78BFA" stroke-width="1.3"/>
+          </svg>
+        </div>
         <h3 class="feat-title" data-ru="Чек-ап воронки" data-en="Funnel check-up">Чек-ап воронки</h3>
         <p class="feat-desc" data-ru="Сводка здоровья воронки с оценкой A–D и еженедельной авто-доставкой прямо в чат. Держите руку на пульсе." data-en="Funnel health summary with an A–D grade and weekly auto-delivery right to the chat. Stay on the pulse.">Сводка здоровья воронки с оценкой A–D и еженедельной авто-доставкой прямо в чат. Держите руку на пульсе.</p>
       </div>
 
       <div class="feat-card glow-card depth-card" data-feat="new-sop">
-        <div class="feat-icon emoji">🗒️</div>
+        <div class="feat-icon">
+          <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M6 3h9l4 4v13a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#A78BFA" stroke-width="1.3" stroke-linejoin="round"/>
+            <path d="M15 3v4h4" stroke="#A78BFA" stroke-width="1.3" stroke-linejoin="round"/>
+            <path class="sop-c sop-c-1" d="M7.5 11l1.2 1.2 2.3-2.4" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7" stroke-dashoffset="7"/>
+            <path class="sop-c sop-c-2" d="M7.5 15l1.2 1.2 2.3-2.4" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7" stroke-dashoffset="7"/>
+            <path class="sop-c sop-c-3" d="M7.5 19l1.2 1.2 2.3-2.4" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7" stroke-dashoffset="7"/>
+            <line x1="13.5" y1="11" x2="16.5" y2="11" stroke="#A78BFA" stroke-width="1.2" opacity=".5"/>
+            <line x1="13.5" y1="15" x2="16.5" y2="15" stroke="#A78BFA" stroke-width="1.2" opacity=".5"/>
+            <line x1="13.5" y1="19" x2="16.5" y2="19" stroke="#A78BFA" stroke-width="1.2" opacity=".5"/>
+          </svg>
+        </div>
         <h3 class="feat-title" data-ru="SOP — авто-регламент" data-en="SOP — auto playbook">SOP — авто-регламент</h3>
         <p class="feat-desc" data-ru="Автоматически формирует регламент поддержки воронки — как её вести, чтобы не деградировала. Готовый SOP для команды." data-en="Automatically builds a funnel-maintenance playbook — how to run it so it doesn't degrade. A ready SOP for the team.">Автоматически формирует регламент поддержки воронки — как её вести, чтобы не деградировала. Готовый SOP для команды.</p>
       </div>
 
       <div class="feat-card glow-card depth-card" data-feat="new-import">
-        <div class="feat-icon emoji">📇</div>
+        <div class="feat-icon">
+          <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <rect x="4" y="10" width="16" height="11" rx="1.5" stroke="#A78BFA" stroke-width="1.3"/>
+            <path d="M4 14h16M10 10v11M15 10v11" stroke="#A78BFA" stroke-width="1.1" opacity=".5"/>
+            <path class="im-arrow" d="M12 2.5v5.5m0 0l-2.2-2.2M12 8l2.2-2.2" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <h3 class="feat-title" data-ru="Умный импорт базы из Excel" data-en="Smart Excel import">Умный импорт базы из Excel</h3>
         <p class="feat-desc" data-ru="Распознаёт колонки (бюджет → цена сделки), дедуплицирует и прозрачно сопоставляет поля — вы видите весь маппинг перед импортом." data-en="Recognizes columns (budget → deal value), deduplicates and maps fields transparently — you see the full mapping before import.">Распознаёт колонки (бюджет → цена сделки), дедуплицирует и прозрачно сопоставляет поля — вы видите весь маппинг перед импортом.</p>
       </div>
 
       <div class="feat-card glow-card depth-card" data-feat="new-discovery">
-        <div class="feat-icon emoji">🧭</div>
+        <div class="feat-icon">
+          <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <g class="dc-lens">
+              <circle cx="10.5" cy="10.5" r="6" stroke="#A78BFA" stroke-width="1.3"/>
+              <line x1="15" y1="15" x2="20" y2="20" stroke="#A78BFA" stroke-width="1.6" stroke-linecap="round"/>
+            </g>
+          </svg>
+        </div>
         <h3 class="feat-title" data-ru="Discovery-консультация глубже" data-en="Deeper discovery">Discovery-консультация глубже</h3>
         <p class="feat-desc" data-ru="Копает узкие места и жизненный цикл клиента, превращая его в правильные этапы воронки. Не анкета — настоящая диагностика." data-en="Digs into bottlenecks and the customer lifecycle, turning it into the right pipeline stages. Not a survey — real diagnostics.">Копает узкие места и жизненный цикл клиента, превращая его в правильные этапы воронки. Не анкета — настоящая диагностика.</p>
       </div>
 
       <div class="feat-card glow-card depth-card" data-feat="new-multi">
-        <div class="feat-icon emoji">👥</div>
+        <div class="feat-icon">
+          <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <circle cx="9" cy="8" r="3.2" stroke="#A78BFA" stroke-width="1.3"/>
+            <path d="M3.3 20a5.7 5.7 0 0111.4 0" stroke="#A78BFA" stroke-width="1.3" stroke-linecap="round"/>
+            <g class="mu-user2">
+              <circle cx="16.8" cy="9" r="2.6" stroke="#A78BFA" stroke-width="1.3"/>
+              <path d="M13.8 20a4 4 0 017.5-1.9" stroke="#A78BFA" stroke-width="1.3" stroke-linecap="round"/>
+            </g>
+          </svg>
+        </div>
         <h3 class="feat-title" data-ru="Мультиаккаунт и мульти-админ" data-en="Multi-account &amp; multi-admin">Мультиаккаунт и мульти-админ</h3>
         <p class="feat-desc" data-ru="Несколько аккаунтов и админов на одну CRM — без задвоения автоматизаций. Работайте командой над одной воронкой." data-en="Multiple accounts and admins on one CRM — without duplicating automations. Work as a team on one funnel.">Несколько аккаунтов и админов на одну CRM — без задвоения автоматизаций. Работайте командой над одной воронкой.</p>
       </div>
