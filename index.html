@@ -2570,7 +2570,7 @@ window.addEventListener('scroll', () => {
     ? ['KAI','CRM','Sales','Flow','Growth','Focus']
     : ['KAI','CRM','Продажи','Воронка','Процесс','Рост'];
   let W=0,H=0,DPR=1,t=0,cx=0,cy=0,baseCell=8;
-  const P = { x:-999, y:-999, active:false };
+  const P = { x:-999, y:-999, active:false, lastT:0 };
 
   function readCells(g,R,c){const d=g.getImageData(0,0,R,R).data,o=[];for(let y=0;y<R;y++)for(let x=0;x<R;x++)if(d[(y*R+x)*4+3]>120)o.push({gx:x-c,gy:y-c});return o;}
   function markCells(){const R=48,o=document.createElement('canvas');o.width=o.height=R;const g=o.getContext('2d');
@@ -2609,6 +2609,7 @@ window.addEventListener('scroll', () => {
 
   function frame(){
     t+=0.016;ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='lighter';
+    if(P.active&&performance.now()-P.lastT>140)P.active=false;   // release if pointer went idle (touch tap has no leave/up move)
     if(wState==='idle'){wT+=0.016;if(!reduce&&wT>wNext)startWord();}
     const wordActive=wState==='word'&&wPhase!=='out';
     if(wState==='word'){wT+=0.016;
@@ -2633,8 +2634,14 @@ window.addEventListener('scroll', () => {
     if(!reduce)requestAnimationFrame(frame);
   }
 
-  addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();P.x=e.clientX-r.left;P.y=e.clientY-r.top;P.active=true;},{passive:true});
-  addEventListener('pointerleave',()=>P.active=false);
+  function pAt(e){const r=cv.getBoundingClientRect();P.x=e.clientX-r.left;P.y=e.clientY-r.top;P.active=true;P.lastT=performance.now();}
+  function pOff(){P.active=false;}
+  addEventListener('pointermove',pAt,{passive:true});
+  addEventListener('pointerdown',pAt,{passive:true});
+  addEventListener('pointerup',pOff,{passive:true});
+  addEventListener('pointercancel',pOff,{passive:true});
+  addEventListener('pointerleave',pOff);
+  addEventListener('blur',pOff);
 
   const tagEl=document.getElementById('heroTag'),NOISE='▚▞░▓█/|<>_=+*';
   const getJokes=()=>lang()==='en'
