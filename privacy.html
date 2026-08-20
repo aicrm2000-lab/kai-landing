@@ -5,40 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>if(location.search.indexOf('lang=en')!==-1){location.replace('privacy-en.html');}</script>
 <title>Политика конфиденциальности — Kai</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%239333ea'/><stop offset='100%25' stop-color='%23db2777'/></linearGradient></defs><rect width='32' height='32' rx='8' fill='%230d0d0f'/><text x='16' y='23' text-anchor='middle' font-family='Inter,system-ui,sans-serif' font-weight='700' font-size='22' fill='url(%23g)'>K</text></svg>">
+<meta name="description" content="Политика конфиденциальности Kai — AI-ассистента, настраивающего CRM-аккаунт пользователя через Telegram-бота. Какие данные обрабатываются, зачем, сколько хранятся и как их удалить.">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%237C5CFF'/><stop offset='100%25' stop-color='%23A78BFA'/></linearGradient></defs><rect width='32' height='32' rx='8' fill='%230B0A14'/><text x='16' y='23' text-anchor='middle' font-family='Inter,system-ui,sans-serif' font-weight='700' font-size='22' fill='url(%23g)'>K</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --void: #0d0d0f;
-  --carbon: #131315;
-  --graphite: #222228;
-  --smoke: #2e2e38;
-  --ash: #62627a;
-  --fog: #8f8faa;
-  --mist: #c0c0d4;
-  --paper: #f4f4fc;
-  --accent: #9333ea;
+  --bg:      #0B0A14;
+  --bg-1:    #100E20;
+  --bg-2:    #171332;
+  --border:  #241D45;
+  --accent:  #7C5CFF;
+  --accent-2:#A78BFA;
+  --ink:     #F4F2FF;
+  --text:    #CBC5E4;
+  --muted:   #8B83AC;
+  --dim:     #615A82;
 }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--void);
-  color: var(--mist);
-  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   font-size: 15px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
-a { color: var(--accent); text-decoration: none; }
+a { color: var(--accent-2); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 0 24px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  background: rgba(13,13,15,0.9);
+  border-bottom: 1px solid var(--border);
+  background: rgba(11,10,20,0.9);
   backdrop-filter: blur(20px);
 }
 .nav-inner {
@@ -46,63 +49,55 @@ a:hover { text-decoration: underline; }
   height: 56px;
   display: flex; align-items: center; justify-content: space-between;
 }
-.nav-logo { font-size: 17px; font-weight: 500; color: var(--paper); }
-.nav-back { font-size: 13px; color: var(--fog); }
+.nav-logo { font-size: 17px; font-weight: 600; color: var(--ink); }
+.nav-right { display: flex; gap: 18px; align-items: center; }
+.nav-back, .nav-lang { font-size: 13px; color: var(--muted); }
+.nav-lang { border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px; }
+.nav-lang:hover { border-color: var(--accent); color: var(--ink); text-decoration: none; }
 
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 100px 24px 80px;
 }
-
 h1 {
   font-size: clamp(28px, 5vw, 40px);
-  font-weight: 600;
-  color: var(--paper);
+  font-weight: 700;
+  color: var(--ink);
   margin-bottom: 8px;
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
-.subtitle {
-  font-size: 14px;
-  color: var(--ash);
-  margin-bottom: 48px;
-}
-
+.subtitle { font-size: 14px; color: var(--dim); margin-bottom: 48px; }
 h2 {
   font-size: 20px;
   font-weight: 600;
-  color: var(--paper);
+  color: var(--ink);
   margin-top: 48px;
   margin-bottom: 16px;
   letter-spacing: -0.01em;
 }
-h3 {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--paper);
-  margin-top: 28px;
-  margin-bottom: 10px;
-}
-
 p { margin-bottom: 14px; }
-
-ul, ol {
-  margin-bottom: 14px;
-  padding-left: 24px;
-}
+ul, ol { margin-bottom: 14px; padding-left: 24px; }
 li { margin-bottom: 6px; }
-li::marker { color: var(--ash); }
-
+li::marker { color: var(--dim); }
+strong { color: var(--ink); font-weight: 600; }
+code {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 13px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
 .highlight {
-  background: rgba(147,51,234,0.08);
+  background: rgba(124,92,255,0.08);
   border-left: 3px solid var(--accent);
   padding: 16px 20px;
   border-radius: 0 8px 8px 0;
   margin: 20px 0;
   font-size: 14px;
 }
-
 table {
   width: 100%;
   border-collapse: collapse;
@@ -112,283 +107,157 @@ table {
 th, td {
   text-align: left;
   padding: 10px 14px;
-  border-bottom: 1px solid var(--graphite);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
 }
 th {
-  font-weight: 500;
-  color: var(--paper);
+  font-weight: 600;
+  color: var(--ink);
   font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: .04em;
 }
-
+.table-wrap { overflow-x: auto; }
 .footer {
-  border-top: 1px solid var(--graphite);
-  padding: 32px 24px;
-  text-align: center;
+  max-width: 800px; margin: 0 auto;
+  padding: 0 24px 60px;
   font-size: 13px;
-  color: var(--ash);
 }
-.lang-toggle {
-  display: flex;
-  background: var(--graphite);
-  border-radius: 8px;
-  overflow: hidden;
+@media (max-width: 640px) {
+  .container { padding: 90px 18px 60px; }
+  th, td { padding: 8px 10px; }
 }
-.lang-btn {
-  padding: 5px 12px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--ash);
-  cursor: pointer;
-  border: none;
-  background: none;
-  transition: background .2s, color .2s;
-}
-.lang-btn.active {
-  background: var(--smoke);
-  color: var(--paper);
-}
-.lang-btn:hover:not(.active) { color: var(--fog); }
 </style>
 </head>
 <body>
 
-<div class="nav">
+<nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Kai</a>
-    <div style="display:flex;align-items:center;gap:16px">
-      <div class="lang-toggle">
-        <button class="lang-btn active" data-lang="ru">RU</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-      </div>
-      <a href="index.html" class="nav-back" id="navBack">← Вернуться на главную</a>
+    <div class="nav-right">
+      <a href="privacy-en.html" class="nav-lang">EN</a>
+      <a href="index.html" class="nav-back">← Вернуться на главную</a>
     </div>
   </div>
-</div>
+</nav>
 
-<div class="container" id="content-ru">
+<div class="container">
 
 <h1>Политика конфиденциальности</h1>
-<p class="subtitle">Последнее обновление: 9 августа 2026 г.</p>
+<p class="subtitle">Дата обновления: 20 августа 2026 · Версия 3.0 · <a href="privacy-en.html">English version</a></p>
 
-<p>Настоящая Политика конфиденциальности (далее — «Политика») определяет порядок сбора, обработки, хранения и защиты персональных данных пользователей сервиса Kai (далее — «Сервис», «Бот»), доступного через платформу Telegram (@aiicrm_bot).</p>
+<h2>1. Кто мы</h2>
+<p>Kai — AI-ассистент, который настраивает CRM-аккаунт пользователя и управляет им по его поручению через Telegram-бота <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a> («Сервис»). Оператором обработки персональных данных, описанной в настоящей Политике, является <strong>Tsikhan Varabyou</strong> — лицо, эксплуатирующее Сервис («мы»).</p>
+<p>По любым вопросам, связанным с настоящей Политикой, пишите на <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> или в Telegram: <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a>. Запросы, касающиеся персональных данных, мы принимаем по тем же каналам, через которые работает сам Сервис, — отдельный портал или форма не требуются.</p>
 
-<p>Используя Сервис, вы подтверждаете, что ознакомились с настоящей Политикой и даёте своё согласие на обработку данных в описанном ниже порядке.</p>
+<h2>2. Сфера действия и применимое право</h2>
+<p>Политика распространяется на персональные данные, обрабатываемые при взаимодействии с ботом, подключении вашего CRM-аккаунта и оплате подписки. Она не регулирует работу подключаемой вами CRM-платформы, самого Telegram или иных сервисов, которые вы используете наряду с Kai, — у каждого из них собственные условия обработки данных.</p>
+<p>Политика построена на каркасе Общего регламента ЕС по защите данных (GDPR). Если вы пользуетесь Сервисом за пределами Европейского союза, вам принадлежат аналогичные права в объёме, предусмотренном применимым законодательством о персональных данных вашей юрисдикции; ничто в настоящей Политике не ограничивает права, предоставленные вам такими законами, а ссылки на статьи GDPR следует читать вместе с их местными аналогами.</p>
 
-<h2>1. Оператор данных</h2>
-<p>Оператором (контролёром) персональных данных является <strong>Tsikhan Varabyou (Польша)</strong>, физическое лицо, осуществляющее деятельность под наименованием <strong>Kai</strong>. По любым вопросам обработки данных и для реализации ваших прав пишите на <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> — мы отвечаем в течение 30 дней.</p>
-
-<h2>2. Какие данные мы собираем</h2>
-
-<h3>2.1. Данные, получаемые из Telegram</h3>
+<h2>3. Какие данные мы обрабатываем и откуда они поступают</h2>
+<p>Мы сознательно держим объём данных минимальным: Сервис обрабатывает только то, что необходимо для выполнения ваших поручений в вашем CRM-аккаунте. А именно:</p>
+<div class="table-wrap">
 <table>
-  <tr><th>Категория</th><th>Состав</th><th>Основание</th></tr>
-  <tr><td>Идентификация</td><td>Telegram ID, имя, username</td><td>Исполнение функций Сервиса</td></tr>
-  <tr><td>Сообщения</td><td>Текстовые и голосовые сообщения, направленные Боту</td><td>Исполнение функций Сервиса</td></tr>
-  <tr><td>Метаданные</td><td>Дата и время обращений, язык интерфейса</td><td>Улучшение качества Сервиса</td></tr>
+  <tr><th>Категория</th><th>Состав</th><th>Источник</th></tr>
+  <tr>
+    <td>Данные подключения CRM</td>
+    <td>Токены доступа и обновления OAuth 2.0 (хранятся в зашифрованном виде) и адрес вашего аккаунта (поддомен) на подключаемой вами CRM-платформе</td>
+    <td>CRM-платформа — при авторизации подключения</td>
+  </tr>
+  <tr>
+    <td>Идентификация в Telegram</td>
+    <td>Ваш Telegram ID и имя пользователя (username)</td>
+    <td>Telegram — при запуске бота</td>
+  </tr>
+  <tr>
+    <td>Содержимое, отправляемое боту</td>
+    <td>Текстовые сообщения, голосовые сообщения, скриншоты и иные изображения, а также файлы Excel/CSV, загружаемые для импорта</td>
+    <td>Вы</td>
+  </tr>
+  <tr>
+    <td>Рабочие данные CRM</td>
+    <td>Объекты, которые Сервис читает или создаёт в вашем CRM-аккаунте по вашему запросу (воронки, этапы, поля, контакты, задачи, автоматизации), и планы, формируемые на основе ваших ответов</td>
+    <td>Вы; ваш CRM-аккаунт</td>
+  </tr>
+  <tr>
+    <td>Данные об оплате</td>
+    <td>Статус подписки и подтверждения платежей. Полные номера карт мы не получаем и не храним — карточные данные обрабатывает исключительно платёжный провайдер</td>
+    <td>Платёжные провайдеры</td>
+  </tr>
 </table>
-
-<h3>2.2. Данные, получаемые при подключении CRM</h3>
-<table>
-  <tr><th>Категория</th><th>Состав</th><th>Основание</th></tr>
-  <tr><td>OAuth-токены</td><td>Токены доступа и обновления amoCRM / Kommo</td><td>Авторизация для выполнения API-запросов</td></tr>
-  <tr><td>CRM-данные</td><td>Воронки, поля, этапы, задачи, контакты — только те, которые создаёт или изменяет Бот по вашему запросу</td><td>Исполнение функций Сервиса</td></tr>
-</table>
-
+</div>
 <div class="highlight">
-  <strong>Важно:</strong> Kai не запрашивает и не хранит ваш логин и пароль от amoCRM / Kommo. Доступ осуществляется исключительно через механизм OAuth 2.0, предоставляемый amoCRM / Kommo.
+  Мы никогда не запрашиваем, не получаем и не храним логин и пароль от вашей CRM. Доступ к CRM-аккаунту осуществляется исключительно по протоколу OAuth 2.0 через официальный API платформы; вы можете отозвать его в любой момент в настройках интеграций своей CRM-платформы — токен аннулируется немедленно.
 </div>
 
-<h3>2.3. Данные, которые мы НЕ собираем</h3>
+<h2>4. Цели обработки и правовые основания</h2>
+<p>В соответствии со ст. 6 GDPR (и корреспондирующими нормами иного применимого законодательства о персональных данных) каждая операция обработки опирается на одно из следующих оснований:</p>
 <ul>
-  <li>Паспортные данные, ИНН, СНИЛС и иные документы, удостоверяющие личность</li>
-  <li>Платёжные данные (номера карт, банковские реквизиты)</li>
-  <li>Данные геолокации</li>
-  <li>Cookie-файлы и данные браузера (лендинг не использует cookie)</li>
+  <li><strong>Исполнение договора</strong> (ст. 6(1)(b)) — подключение вашего CRM-аккаунта, интерпретация ваших сообщений, выполнение запрошенных вами действий в CRM, импорт загруженных файлов и обслуживание подписки. Это ядро Сервиса: без такой обработки Kai не сможет выполнить то, о чём вы его просите.</li>
+  <li><strong>Законный интерес</strong> (ст. 6(1)(f)) — ведение технических журналов, необходимых для диагностики сбоев, предотвращения злоупотреблений ботом и обеспечения безопасности Сервиса. Мы записываем минимум, необходимый для этих целей, и не используем журналы для профилирования.</li>
+  <li><strong>Согласие</strong> (ст. 6(1)(a)) — обработка, являющаяся действительно необязательной, например продуктовые уведомления через бота. Согласие можно отозвать в любой момент без последствий для работы Сервиса.</li>
 </ul>
+<p>Мы не продаём персональные данные, не передаём их рекламодателям и не используем для обучения собственных или чужих моделей.</p>
 
-<h2>3. Цели обработки данных</h2>
-<ol>
-  <li>Предоставление функций Сервиса: консультирование, генерация плана настройки CRM, выполнение API-запросов к amoCRM / Kommo от вашего имени.</li>
-  <li>Распознавание голосовых сообщений (через OpenAI Whisper API) для преобразования речи в текст.</li>
-  <li>Генерация технического задания (PDF) на основании согласованного плана.</li>
-  <li>Техническая поддержка и устранение неполадок.</li>
-  <li>Улучшение качества ответов и логики Сервиса на основе обезличенной аналитики.</li>
-</ol>
-<p><strong>Правовые основания (для пользователей ЕС, ст. 6 GDPR):</strong> обработка осуществляется на основании исполнения договора с вами — предоставление функций Сервиса (ст. 6(1)(b)); нашего законного интереса в обеспечении безопасности, поддержке и улучшении Сервиса на обезличенных данных (ст. 6(1)(f)); а также вашего согласия там, где оно требуется (ст. 6(1)(a)). Согласие можно отозвать в любой момент.</p>
-
-<h2>4. Передача данных третьим лицам</h2>
-<p>Мы передаём данные только тем сторонним сервисам, которые непосредственно необходимы для работы Бота:</p>
-
+<h2>5. Получатели данных и трансграничная передача</h2>
+<p>Kai использует ограниченный круг обработчиков — по категориям, и каждый получает только то, что необходимо для его функции:</p>
+<div class="table-wrap">
 <table>
-  <tr><th>Сервис</th><th>Какие данные</th><th>Цель</th></tr>
-  <tr><td>Telegram Bot API</td><td>Сообщения, Telegram ID</td><td>Обмен сообщениями с пользователем</td></tr>
-  <tr><td>amoCRM / Kommo API</td><td>OAuth-токены, CRM-данные</td><td>Создание и настройка объектов CRM</td></tr>
-  <tr><td>OpenAI API (Whisper)</td><td>Аудиофайлы голосовых сообщений</td><td>Распознавание речи</td></tr>
-  <tr><td>OpenAI API (GPT)</td><td>Текст переписки (без персональных идентификаторов)</td><td>Генерация ответов и планов</td></tr>
+  <tr><th>Категория</th><th>Что получает</th><th>Назначение</th></tr>
+  <tr>
+    <td>Подключаемая вами CRM-платформа</td>
+    <td>API-запросы, необходимые для выполнения ваших поручений в вашем аккаунте, — через официальный API платформы</td>
+    <td>Чтение и создание запрошенных вами объектов CRM</td>
+  </tr>
+  <tr>
+    <td>AI-провайдеры (OpenAI, Anthropic)</td>
+    <td>Текст ваших запросов, а для голосовых сообщений — аудио для расшифровки. Ваши OAuth-токены и учётные данные в эти запросы никогда не включаются</td>
+    <td>Понимание ваших сообщений, формирование ответов и планов</td>
+  </tr>
+  <tr>
+    <td>Платёжные провайдеры (карточный процессинг, Telegram Stars, криптоплатежи USDT)</td>
+    <td>Данные, необходимые соответствующему провайдеру для проведения платежа</td>
+    <td>Оплата подписки. Карточные данные остаются у процессинга; мы видим только подтверждение</td>
+  </tr>
 </table>
+</div>
+<p>Некоторые из этих провайдеров находятся за пределами Европейской экономической зоны. Передача персональных данных за пределы ЕЭЗ защищается Стандартными договорными условиями Европейской комиссии либо эквивалентным правовым механизмом, поддерживаемым провайдером. Для пользователей за пределами ЕС передача осуществляется с соблюдением применимого законодательства о персональных данных вашей юрисдикции.</p>
 
-<p>Мы не продаём, не сдаём в аренду и не передаём ваши данные третьим лицам в маркетинговых целях.</p>
-
-<p><strong>Международная передача данных:</strong> некоторые поставщики услуг (в частности, OpenAI и наш хостинг-провайдер) могут обрабатывать данные за пределами Европейской экономической зоны, в том числе в США. В таких случаях передача осуществляется с применением надлежащих гарантий защиты — стандартных договорных положений ЕС (SCC) — либо на иных законных основаниях, предусмотренных GDPR.</p>
-
-<h2>5. Хранение и защита данных</h2>
-
-<h3>5.1. Сроки хранения</h3>
+<h2>6. Сроки хранения</h2>
 <ul>
-  <li><strong>Сообщения и история переписки</strong> — хранятся в течение сессии и до 90 дней для обеспечения контекста повторных обращений. После этого автоматически удаляются.</li>
-  <li><strong>OAuth-токены</strong> — хранятся до момента отзыва доступа пользователем или истечения срока действия токена.</li>
-  <li><strong>Telegram ID и метаданные</strong> — хранятся в течение срока использования Сервиса. При удалении аккаунта — удаляются в течение 30 дней.</li>
+  <li><strong>OAuth-токены</strong> — до отключения интеграции или удаления ваших данных; отозванные токены аннулируются немедленно и уничтожаются.</li>
+  <li><strong>История диалога и сформированные планы</strong> — пока ваш аккаунт в боте активен, чтобы сохранялся контекст между сессиями; удаляются по запросу.</li>
+  <li><strong>Загруженные файлы (Excel/CSV, изображения)</strong> — только на время выполнения запрошенной вами операции (например, импорта), после чего удаляются.</li>
+  <li><strong>Голосовые сообщения</strong> — передаются на расшифровку и не сохраняются после получения текстовой транскрипции.</li>
+  <li><strong>Платёжные записи</strong> — в течение срока, требуемого применимым к нам бухгалтерским и налоговым законодательством.</li>
+  <li><strong>Технические журналы</strong> — в течение короткого скользящего периода, достаточного для целей безопасности и отладки, после чего перезаписываются.</li>
 </ul>
 
-<h3>5.2. Меры безопасности</h3>
-<ul>
-  <li>Данные хранятся на защищённых серверах с шифрованием на уровне хранилища.</li>
-  <li>OAuth-токены хранятся в зашифрованном виде, отдельно от прочих данных.</li>
-  <li>Передача данных осуществляется исключительно по протоколу HTTPS/TLS.</li>
-  <li>Доступ к серверной инфраструктуре ограничен и контролируется.</li>
-</ul>
-
-<h2>6. Права пользователя</h2>
-<p>Вы имеете право:</p>
+<h2>7. Ваши права</h2>
+<p>В соответствии с GDPR — а для пользователей других юрисдикций в объёме применимого законодательства о персональных данных — вы вправе в любой момент:</p>
 <ol>
-  <li><strong>Запросить информацию</strong> о том, какие ваши данные обрабатываются.</li>
-  <li><strong>Потребовать удаление</strong> всех ваших данных, направив запрос на <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> или командой <code>/delete</code> в Боте.</li>
-  <li><strong>Отозвать доступ к CRM</strong> в любой момент через настройки интеграций amoCRM / Kommo — токены станут недействительными немедленно.</li>
-  <li><strong>Прекратить использование</strong> Сервиса, заблокировав Бота в Telegram — обработка данных будет прекращена.</li>
+  <li><strong>Получить доступ</strong> к вашим персональным данным и их копию;</li>
+  <li><strong>Исправить</strong> неточные данные;</li>
+  <li><strong>Удалить</strong> ваши данные — напишите на <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> или используйте команду <code>/delete</code> в боте;</li>
+  <li><strong>Получить</strong> данные в переносимом машиночитаемом формате;</li>
+  <li><strong>Возразить</strong> против обработки, основанной на законном интересе;</li>
+  <li><strong>Подать жалобу</strong> в надзорный орган — для резидентов ЕЭЗ это орган по защите данных вашего государства; в иных юрисдикциях — орган, определённый местным законом.</li>
 </ol>
-
 <div class="highlight">
-  При удалении данных по вашему запросу мы удаляем: историю переписки, OAuth-токены, сохранённые планы и привязку к CRM-аккаунту. Данные, уже созданные в вашем аккаунте amoCRM / Kommo (воронки, поля, контакты), остаются в CRM — управление ими осуществляется напрямую в интерфейсе amoCRM / Kommo.
+  При запросе на удаление мы уничтожаем историю диалога, OAuth-токены, сформированные планы и связь между вашим Telegram-аккаунтом и CRM-аккаунтом. Объекты, уже созданные в вашем CRM-аккаунте (воронки, поля, контакты и т.&nbsp;д.), принадлежат этому аккаунту и остаются в нём — вы управляете ими непосредственно через свою CRM-платформу.
 </div>
+<p>Для отзыва доступа к CRM обращаться к нам не нужно: отключите соединение в настройках своей CRM-платформы — и Сервис мгновенно теряет доступ.</p>
 
-<h2>7. Голосовые сообщения</h2>
-<p>Голосовые сообщения, отправленные Боту, передаются в OpenAI Whisper API исключительно для целей распознавания речи. Аудиофайлы не сохраняются на наших серверах после получения текстовой расшифровки. OpenAI обрабатывает данные в соответствии со своей <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">Политикой конфиденциальности</a>.</p>
+<h2>8. Безопасность</h2>
+<p>OAuth-токены хранятся в зашифрованном виде. Передача данных между ботом, нашими серверами, CRM-платформой и каждым обработчиком идёт по TLS. Доступ к производственным данным ограничен оператором и не предоставляется третьим лицам, кроме перечисленных выше обработчиков. Мы следуем принципу минимизации: Сервис не запрашивает у CRM права, которыми не пользуется, и не копирует вашу CRM-базу на наши серверы — он работает с данными внутри вашего аккаунта и только по вашему поручению.</p>
 
-<h2>8. Данные несовершеннолетних</h2>
-<p>Сервис не предназначен для лиц младше 16 лет. Мы сознательно не собираем данные несовершеннолетних. Если вы считаете, что несовершеннолетний воспользовался Сервисом, свяжитесь с нами для удаления данных.</p>
+<h2>9. Несовершеннолетние</h2>
+<p>Сервис — деловой инструмент и не предназначен для лиц младше 16 лет. Мы сознательно не обрабатываем данные несовершеннолетних; если вы полагаете, что Сервисом воспользовался несовершеннолетний, свяжитесь с нами — соответствующие данные будут удалены.</p>
 
-<h2>9. Изменения в Политике</h2>
-<p>Мы оставляем за собой право вносить изменения в настоящую Политику. При существенных изменениях мы уведомим пользователей через Бот. Продолжение использования Сервиса после публикации изменений означает ваше согласие с обновлённой Политикой.</p>
+<h2>10. Изменения Политики</h2>
+<p>О существенных изменениях настоящей Политики мы уведомим активных пользователей через бота и обновим версию и дату в начале этой страницы. Актуальная редакция всегда доступна по этому адресу. Продолжение использования Сервиса после вступления изменений в силу означает принятие обновлённой Политики.</p>
 
-<h2>10. Контакты</h2>
-<p>По любым вопросам, связанным с обработкой персональных данных, обращайтесь:</p>
-<ul>
-  <li>Email: <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a></li>
-  <li>Telegram: <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a></li>
-</ul>
-
-</div>
-
-<!-- ENGLISH VERSION -->
-<div class="container" id="content-en" style="display:none">
-
-<h1>Privacy Policy</h1>
-<p class="subtitle">Last updated: 9 August 2026</p>
-
-<p>This Privacy Policy (hereinafter — the "Policy") defines the procedure for collecting, processing, storing, and protecting personal data of users of the Kai service (hereinafter — the "Service", the "Bot"), available via the Telegram platform (@aiicrm_bot).</p>
-
-<p>By using the Service, you confirm that you have read this Policy and consent to the processing of data as described below.</p>
-
-<h2>1. Data Controller</h2>
-<p>The data controller is <strong>Tsikhan Varabyou (Poland)</strong>, a natural person operating under the name <strong>Kai</strong>. For any data processing questions and to exercise your rights, contact <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> — we respond within 30 days.</p>
-
-<h2>2. What Data We Collect</h2>
-
-<h3>2.1. Data Received from Telegram</h3>
-<table>
-  <tr><th>Category</th><th>Data</th><th>Legal Basis</th></tr>
-  <tr><td>Identification</td><td>Telegram ID, name, username</td><td>Performance of Service functions</td></tr>
-  <tr><td>Messages</td><td>Text and voice messages sent to the Bot</td><td>Performance of Service functions</td></tr>
-  <tr><td>Metadata</td><td>Date and time of interactions, interface language</td><td>Service quality improvement</td></tr>
-</table>
-
-<h3>2.2. Data Received When Connecting CRM</h3>
-<table>
-  <tr><th>Category</th><th>Data</th><th>Legal Basis</th></tr>
-  <tr><td>OAuth tokens</td><td>amoCRM / Kommo access and refresh tokens</td><td>Authorization for API requests</td></tr>
-  <tr><td>CRM data</td><td>Pipelines, fields, stages, tasks, contacts — only those created or modified by the Bot at your request</td><td>Performance of Service functions</td></tr>
-</table>
-
-<div class="highlight">
-  <strong>Important:</strong> Kai does not request or store your amoCRM / Kommo login and password. Access is provided exclusively through the OAuth 2.0 mechanism provided by amoCRM / Kommo.
-</div>
-
-<h3>2.3. Data We Do NOT Collect</h3>
-<ul>
-  <li>Passport data, tax identification numbers, or other identity documents</li>
-  <li>Payment data (card numbers, bank details)</li>
-  <li>Geolocation data</li>
-  <li>Cookies and browser data (the landing page does not use cookies)</li>
-</ul>
-
-<h2>3. Purposes of Data Processing</h2>
-<ol>
-  <li>Providing Service functions: consulting, generating a CRM configuration plan, executing API requests to amoCRM / Kommo on your behalf.</li>
-  <li>Voice message recognition (via OpenAI Whisper API) for speech-to-text conversion.</li>
-  <li>Generating technical specifications (PDF) based on the approved plan.</li>
-  <li>Technical support and troubleshooting.</li>
-  <li>Improving the quality of responses and Service logic based on anonymized analytics.</li>
-</ol>
-<p><strong>Legal bases (for EU users, GDPR Art. 6):</strong> processing is carried out on the basis of performance of our contract with you — providing the Service functions (Art. 6(1)(b)); our legitimate interest in securing, supporting and improving the Service using anonymized data (Art. 6(1)(f)); and your consent where required (Art. 6(1)(a)). You may withdraw consent at any time.</p>
-
-<h2>4. Data Sharing with Third Parties</h2>
-<p>We share data only with third-party services that are directly necessary for the Bot to function:</p>
-
-<table>
-  <tr><th>Service</th><th>Data Shared</th><th>Purpose</th></tr>
-  <tr><td>Telegram Bot API</td><td>Messages, Telegram ID</td><td>User communication</td></tr>
-  <tr><td>amoCRM / Kommo API</td><td>OAuth tokens, CRM data</td><td>Creating and configuring CRM objects</td></tr>
-  <tr><td>OpenAI API (Whisper)</td><td>Voice message audio files</td><td>Speech recognition</td></tr>
-  <tr><td>OpenAI API (GPT)</td><td>Conversation text (without personal identifiers)</td><td>Response and plan generation</td></tr>
-</table>
-
-<p>We do not sell, rent, or share your data with third parties for marketing purposes.</p>
-
-<p><strong>International data transfers:</strong> some service providers (in particular OpenAI and our hosting provider) may process data outside the European Economic Area, including in the United States. In such cases the transfer is carried out with appropriate safeguards — the EU Standard Contractual Clauses (SCCs) — or on another lawful basis provided by the GDPR.</p>
-
-<h2>5. Data Storage and Protection</h2>
-
-<h3>5.1. Retention Periods</h3>
-<ul>
-  <li><strong>Messages and conversation history</strong> — stored during the session and up to 90 days to provide context for repeat interactions. Automatically deleted after that period.</li>
-  <li><strong>OAuth tokens</strong> — stored until access is revoked by the user or the token expires.</li>
-  <li><strong>Telegram ID and metadata</strong> — stored for the duration of Service usage. Deleted within 30 days upon account deletion.</li>
-</ul>
-
-<h3>5.2. Security Measures</h3>
-<ul>
-  <li>Data is stored on secure servers with storage-level encryption.</li>
-  <li>OAuth tokens are stored in encrypted form, separately from other data.</li>
-  <li>Data is transmitted exclusively via HTTPS/TLS protocol.</li>
-  <li>Access to server infrastructure is restricted and monitored.</li>
-</ul>
-
-<h2>6. User Rights</h2>
-<p>You have the right to:</p>
-<ol>
-  <li><strong>Request information</strong> about what personal data is being processed.</li>
-  <li><strong>Request deletion</strong> of all your data by sending a request to <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> or by using the <code>/delete</code> command in the Bot.</li>
-  <li><strong>Revoke CRM access</strong> at any time through amoCRM / Kommo integration settings — tokens will be invalidated immediately.</li>
-  <li><strong>Stop using</strong> the Service by blocking the Bot in Telegram — data processing will cease.</li>
-</ol>
-
-<div class="highlight">
-  When you request data deletion, we remove: conversation history, OAuth tokens, saved plans, and the link to your CRM account. Data already created in your amoCRM / Kommo account (pipelines, fields, contacts) remains in the CRM — it is managed directly through the amoCRM / Kommo interface.
-</div>
-
-<h2>7. Voice Messages</h2>
-<p>Voice messages sent to the Bot are transmitted to the OpenAI Whisper API exclusively for speech recognition purposes. Audio files are not stored on our servers after the text transcription is received. OpenAI processes data in accordance with its <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.</p>
-
-<h2>8. Minors' Data</h2>
-<p>The Service is not intended for individuals under the age of 16. We do not knowingly collect data from minors. If you believe a minor has used the Service, please contact us to have the data deleted.</p>
-
-<h2>9. Changes to the Policy</h2>
-<p>We reserve the right to amend this Policy. In case of significant changes, we will notify users through the Bot. Continued use of the Service after the publication of changes constitutes your acceptance of the updated Policy.</p>
-
-<h2>10. Contact</h2>
-<p>For any questions regarding personal data processing, please contact us:</p>
+<h2>11. Контакты</h2>
 <ul>
   <li>Email: <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a></li>
   <li>Telegram: <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a></li>
@@ -397,43 +266,8 @@ th {
 </div>
 
 <div class="footer">
-  <a href="index.html" id="footerBack" style="color:var(--fog)">← Вернуться на главную</a>
+  <a href="index.html" style="color:var(--muted)">← Вернуться на главную</a> · <a href="privacy-en.html" style="color:var(--muted)">English version</a>
 </div>
-
-<script>
-(function() {
-  var btns = document.querySelectorAll('.lang-btn');
-  var ruBlock = document.getElementById('content-ru');
-  var enBlock = document.getElementById('content-en');
-  var navBack = document.getElementById('navBack');
-  var footerBack = document.getElementById('footerBack');
-
-  function setLang(lang, save) {
-    btns.forEach(function(b) { b.classList.toggle('active', b.dataset.lang === lang); });
-    ruBlock.style.display = lang === 'ru' ? 'block' : 'none';
-    enBlock.style.display = lang === 'en' ? 'block' : 'none';
-    document.documentElement.lang = lang;
-    document.title = lang === 'en' ? 'Privacy Policy — Kai' : 'Политика конфиденциальности — Kai';
-    navBack.textContent = lang === 'en' ? '← Back to home' : '← Вернуться на главную';
-    footerBack.textContent = lang === 'en' ? '← Back to home' : '← Вернуться на главную';
-    if (save !== false) localStorage.setItem('kai_lang', lang);
-  }
-
-  btns.forEach(function(btn) {
-    btn.addEventListener('click', function() { setLang(btn.dataset.lang); });
-  });
-
-  var urlEn = window.location.search.indexOf('lang=en') !== -1;
-  var savedLang = localStorage.getItem('kai_lang');
-  if (urlEn || savedLang === 'en') setLang('en');
-
-  document.querySelectorAll('a[href*="index.html"]').forEach(function(a) {
-    a.addEventListener('click', function() {
-      sessionStorage.setItem('kai_scroll', '0');
-    });
-  });
-})();
-</script>
 
 </body>
 </html>

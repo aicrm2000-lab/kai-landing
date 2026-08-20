@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Kai</title>
-<meta name="description" content="Privacy Policy for Kai, an AI assistant that configures Kommo CRM through a Telegram bot. How we collect, use, protect and delete your data.">
+<meta name="description" content="Privacy Policy for Kai, an AI assistant that configures your CRM account through a Telegram bot. What we collect, why, how long we keep it, and how to delete it.">
 <meta name="robots" content="index,follow">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%237C5CFF'/><stop offset='100%25' stop-color='%23A78BFA'/></linearGradient></defs><rect width='32' height='32' rx='8' fill='%230B0A14'/><text x='16' y='23' text-anchor='middle' font-family='Inter,system-ui,sans-serif' font-weight='700' font-size='22' fill='url(%23g)'>K</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,7 +49,10 @@ a:hover { text-decoration: underline; }
   display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo { font-size: 17px; font-weight: 600; color: var(--ink); }
-.nav-back { font-size: 13px; color: var(--muted); }
+.nav-right { display: flex; gap: 18px; align-items: center; }
+.nav-back, .nav-lang { font-size: 13px; color: var(--muted); }
+.nav-lang { border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px; }
+.nav-lang:hover { border-color: var(--accent); color: var(--ink); text-decoration: none; }
 
 .container {
   max-width: 800px;
@@ -73,7 +76,6 @@ h2 {
   margin-bottom: 16px;
   letter-spacing: -0.01em;
 }
-h3 { font-size: 16px; font-weight: 600; color: var(--ink); margin-top: 28px; margin-bottom: 10px; }
 p { margin-bottom: 14px; }
 ul, ol { margin-bottom: 14px; padding-left: 24px; }
 li { margin-bottom: 6px; }
@@ -131,31 +133,35 @@ th {
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Kai</a>
-    <a href="index.html" class="nav-back">← Back to home</a>
+    <div class="nav-right">
+      <a href="privacy.html" class="nav-lang">RU</a>
+      <a href="index.html" class="nav-back">← Back to home</a>
+    </div>
   </div>
 </nav>
 
 <div class="container">
 
 <h1>Privacy Policy</h1>
-<p class="subtitle">Last updated: 20 August 2026 · Version 2.0</p>
+<p class="subtitle">Last updated: 20 August 2026 · Version 3.0 · <a href="privacy.html">Russian version</a></p>
 
 <h2>1. Who we are</h2>
-<p>Kai is an AI assistant that configures and manages <strong>Kommo</strong> CRM accounts on the user's instructions, delivered through the Telegram bot <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a> (the "Service"). The data controller for the processing described in this Policy is <strong>Tsikhan Varabyou</strong>, the operator of the Service ("we", "us").</p>
-<p>You can reach us about anything in this Policy at <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> or via Telegram at <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a>. We answer data-protection requests from the same channels we operate the Service on, so no separate portal or form is required.</p>
+<p>Kai is an AI assistant that configures and manages the user's CRM account on the user's instructions, delivered through the Telegram bot <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a> (the "Service"). The data controller for the processing described in this Policy is <strong>Tsikhan Varabyou</strong>, the operator of the Service ("we", "us").</p>
+<p>You can reach us about anything in this Policy at <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> or via Telegram at <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a>. We handle data-protection requests through the same channels we operate the Service on — no separate portal or form is required.</p>
 
-<h2>2. What this Policy covers</h2>
-<p>This Policy applies to personal data processed when you interact with the bot, connect your Kommo account to it, or pay for a subscription. It does not govern Kommo itself, Telegram itself, or any other service you use alongside Kai — each of those has its own privacy terms.</p>
+<h2>2. Scope and applicability</h2>
+<p>This Policy applies to personal data processed when you interact with the bot, connect your CRM account to it, or pay for a subscription. It does not govern the CRM platform you choose to connect, Telegram itself, or any other service you use alongside Kai — each has its own privacy terms.</p>
+<p>The Policy is drafted on the framework of the EU General Data Protection Regulation (GDPR). If you use the Service from outside the European Union, you are entitled to equivalent protections to the extent provided by the applicable data protection laws of your jurisdiction; nothing in this Policy limits rights those laws grant you, and references to GDPR articles should be read alongside their local counterparts.</p>
 
 <h2>3. Data we process, and where it comes from</h2>
-<p>We deliberately keep the data footprint narrow: the Service only handles what is needed to act on your instructions inside your CRM. Specifically:</p>
+<p>We deliberately keep the data footprint narrow: the Service handles only what is needed to act on your instructions inside your CRM account. Specifically:</p>
 <div class="table-wrap">
 <table>
   <tr><th>Category</th><th>Details</th><th>Source</th></tr>
   <tr>
-    <td>Kommo connection data</td>
-    <td>OAuth 2.0 access and refresh tokens (stored encrypted) and your Kommo account address (subdomain)</td>
-    <td>Kommo, when you authorize the integration</td>
+    <td>CRM connection data</td>
+    <td>OAuth 2.0 access and refresh tokens (stored encrypted) and your account address (subdomain) on the CRM platform you choose to connect</td>
+    <td>The CRM platform, when you authorize the connection</td>
   </tr>
   <tr>
     <td>Telegram identity</td>
@@ -169,8 +175,8 @@ th {
   </tr>
   <tr>
     <td>CRM working data</td>
-    <td>Objects the Service reads or creates in your Kommo account on your request (pipelines, stages, fields, contacts, tasks, automations) and the plans generated from your answers</td>
-    <td>You; your Kommo account</td>
+    <td>Objects the Service reads or creates in your CRM account on your request (pipelines, stages, fields, contacts, tasks, automations) and the plans generated from your answers</td>
+    <td>You; your CRM account</td>
   </tr>
   <tr>
     <td>Billing data</td>
@@ -180,27 +186,27 @@ th {
 </table>
 </div>
 <div class="highlight">
-  We never ask for, receive, or store your Kommo login or password. Access to your CRM works exclusively through OAuth 2.0, and you can revoke it at any moment in your Kommo integration settings — the token is invalidated immediately.
+  We never ask for, receive, or store your CRM login or password. Access to your CRM account works exclusively through OAuth 2.0 via the platform's official API, and you can revoke it at any moment in your CRM platform's integration settings — the token is invalidated immediately.
 </div>
 
 <h2>4. Why we process it, and on what legal basis</h2>
-<p>Under Article 6 of the GDPR, each processing operation rests on one of the following bases:</p>
+<p>Under Article 6 GDPR (and the corresponding provisions of other applicable data protection laws), each processing operation rests on one of the following bases:</p>
 <ul>
-  <li><strong>Performance of a contract</strong> (Art. 6(1)(b)) — connecting your Kommo account, interpreting your messages, executing the CRM actions you request, importing the files you upload, and managing your subscription. This is the core of the Service: without this processing, Kai cannot do what you ask it to do.</li>
+  <li><strong>Performance of a contract</strong> (Art. 6(1)(b)) — connecting your CRM account, interpreting your messages, executing the CRM actions you request, importing the files you upload, and managing your subscription. This is the core of the Service: without this processing, Kai cannot do what you ask it to do.</li>
   <li><strong>Legitimate interest</strong> (Art. 6(1)(f)) — keeping technical logs needed to diagnose failures, prevent abuse of the bot, and secure the Service. We log the minimum required for these purposes and do not use logs for profiling.</li>
   <li><strong>Consent</strong> (Art. 6(1)(a)) — any processing that is genuinely optional, such as product announcements sent through the bot. You can withdraw consent at any time without affecting the Service.</li>
 </ul>
 <p>We do not sell personal data, do not share it with advertisers, and do not use it to train our own or anyone else's models.</p>
 
-<h2>5. Subprocessors and international transfers</h2>
-<p>Kai relies on a small set of processors, each receiving only what its function requires:</p>
+<h2>5. Recipients and international transfers</h2>
+<p>Kai relies on a small set of processors, grouped by category, each receiving only what its function requires:</p>
 <div class="table-wrap">
 <table>
-  <tr><th>Processor</th><th>What it receives</th><th>Purpose</th></tr>
+  <tr><th>Category</th><th>What it receives</th><th>Purpose</th></tr>
   <tr>
-    <td>Kommo API</td>
-    <td>The API calls needed to execute your instructions in your account</td>
-    <td>Reading and writing CRM objects you asked for</td>
+    <td>The CRM platform you connect</td>
+    <td>The API calls needed to execute your instructions in your account, made through the platform's official API</td>
+    <td>Reading and writing the CRM objects you asked for</td>
   </tr>
   <tr>
     <td>AI providers (OpenAI, Anthropic)</td>
@@ -214,7 +220,7 @@ th {
   </tr>
 </table>
 </div>
-<p>Some of these providers are located outside the European Economic Area. Where personal data leaves the EEA, the transfer is safeguarded by the European Commission's Standard Contractual Clauses or an equivalent lawful transfer mechanism maintained by the provider.</p>
+<p>Some of these providers operate outside the European Economic Area. Where personal data leaves the EEA, the transfer is safeguarded by the European Commission's Standard Contractual Clauses or an equivalent lawful transfer mechanism maintained by the provider. For users outside the EU, transfers are carried out in accordance with the applicable data protection laws of your jurisdiction.</p>
 
 <h2>6. How long we keep data</h2>
 <ul>
@@ -227,22 +233,22 @@ th {
 </ul>
 
 <h2>7. Your rights</h2>
-<p>Under the GDPR you may, at any time:</p>
+<p>Under the GDPR — and, for users elsewhere, under the applicable data protection laws of your jurisdiction — you may at any time:</p>
 <ol>
   <li><strong>Access</strong> the personal data we hold about you and receive a copy;</li>
   <li><strong>Rectify</strong> inaccurate data;</li>
   <li><strong>Erase</strong> your data — write to <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> or use the <code>/delete</code> command in the bot;</li>
   <li><strong>Receive</strong> your data in a portable, machine-readable format;</li>
   <li><strong>Object</strong> to processing based on legitimate interest;</li>
-  <li><strong>Lodge a complaint</strong> with your supervisory authority — for EEA residents, the data protection authority of your member state.</li>
+  <li><strong>Lodge a complaint</strong> with a supervisory authority — for EEA residents, the data protection authority of your member state; elsewhere, the body designated by your local law.</li>
 </ol>
 <div class="highlight">
-  When you request deletion, we remove your conversation history, OAuth tokens, generated plans, and the link between your Telegram account and your Kommo account. Objects already created inside your Kommo account (pipelines, fields, contacts and so on) belong to that account and remain there — you manage them through Kommo directly.
+  When you request deletion, we remove your conversation history, OAuth tokens, generated plans, and the link between your Telegram account and your CRM account. Objects already created inside your CRM account (pipelines, fields, contacts and so on) belong to that account and remain there — you manage them through your CRM platform directly.
 </div>
-<p>Revoking CRM access does not require contacting us at all: disable the integration in your Kommo settings and the Service loses access instantly.</p>
+<p>Revoking CRM access does not require contacting us at all: disable the connection in your CRM platform's settings and the Service loses access instantly.</p>
 
 <h2>8. Security</h2>
-<p>OAuth tokens are stored encrypted at rest. Transport between the bot, our servers, Kommo, and every subprocessor uses TLS. Access to production data is restricted to the operator and is not shared with third parties outside the subprocessors listed above. We follow a data-minimisation approach: the Service does not request Kommo permissions it does not use, and does not copy your CRM database to our servers — it operates on your data inside your account, on your instruction.</p>
+<p>OAuth tokens are stored encrypted at rest. Transport between the bot, our servers, the CRM platform, and every processor uses TLS. Access to production data is restricted to the operator and is not shared with third parties outside the processors listed above. We follow a data-minimisation approach: the Service does not request CRM permissions it does not use, and does not copy your CRM database to our servers — it operates on your data inside your account, on your instruction.</p>
 
 <h2>9. Children</h2>
 <p>The Service is a business tool and is not directed at anyone under 16. We do not knowingly process minors' data; if you believe a minor has used the Service, contact us and we will delete the associated data.</p>
@@ -259,7 +265,7 @@ th {
 </div>
 
 <div class="footer">
-  <a href="index.html" style="color:var(--muted)">← Back to home</a>
+  <a href="index.html" style="color:var(--muted)">← Back to home</a> · <a href="privacy.html" style="color:var(--muted)">Russian version</a>
 </div>
 
 </body>
