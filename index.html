@@ -2394,7 +2394,7 @@ footer {
 
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner">
-  <span data-ru="Мы используем cookie для аналитики и улучшения сервиса. Подробнее в <a href='privacy.html'>Политике конфиденциальности</a>." data-en="We use cookies for analytics and to improve the service. See our <a href='privacy.html?lang=en'>Privacy Policy</a>.">Мы используем cookie для аналитики и улучшения сервиса. Подробнее в <a href='privacy.html'>Политике конфиденциальности</a>.</span>
+  <span data-ru="Мы используем cookie для аналитики и улучшения сервиса. Подробнее в <a href='privacy.html'>Политике конфиденциальности</a>." data-en="We use cookies for analytics and to improve the service. See our <a href='privacy-en.html'>Privacy Policy</a>.">Мы используем cookie для аналитики и улучшения сервиса. Подробнее в <a href='privacy.html'>Политике конфиденциальности</a>.</span>
   <div class="cookie-btns">
     <button class="cookie-btn cookie-btn-accept" id="cookieAccept" data-ru="Принять" data-en="Accept">Принять</button>
     <button class="cookie-btn cookie-btn-decline" id="cookieDecline" data-ru="Отклонить" data-en="Decline">Отклонить</button>
@@ -2509,7 +2509,7 @@ function applyLang(lang) {
     if (val != null) el.innerHTML = val;
   });
   var pl = document.querySelector('.privacy-link');
-  if (pl) pl.href = lang === 'en' ? 'privacy.html?lang=en' : 'privacy.html';
+  if (pl) pl.href = lang === 'en' ? 'privacy-en.html' : 'privacy.html';
   var tl = document.querySelector('a[href*="terms.html"]');
   if (tl) tl.href = lang === 'en' ? 'terms.html?lang=en' : 'terms.html';
   var rl = document.querySelector('.refund-link');
