@@ -2418,7 +2418,7 @@ footer {
     }
   }
   document.addEventListener('click', function(e) {
-    var a = e.target.closest('a[href*="privacy.html"], a[href*="terms.html"]');
+    var a = e.target.closest('a[href*="privacy"], a[href*="terms"], a[href*="refund"]');
     if (a) { try { sessionStorage.setItem('kai_scroll', window.scrollY); } catch (e) {} }
   });
 })();
@@ -2510,10 +2510,10 @@ function applyLang(lang) {
   });
   var pl = document.querySelector('.privacy-link');
   if (pl) pl.href = lang === 'en' ? 'privacy-en.html' : 'privacy.html';
-  var tl = document.querySelector('a[href*="terms.html"]');
-  if (tl) tl.href = lang === 'en' ? 'terms.html?lang=en' : 'terms.html';
+  var tl = document.querySelector('a[href*="terms"]');
+  if (tl) tl.href = lang === 'en' ? 'terms-en.html' : 'terms.html';
   var rl = document.querySelector('.refund-link');
-  if (rl) rl.href = lang === 'en' ? 'refund.html?lang=en' : 'refund.html';
+  if (rl) rl.href = lang === 'en' ? 'refund-en.html' : 'refund.html';
   if (window.kaiHeroRelang) window.kaiHeroRelang();
 }
 

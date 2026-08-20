@@ -3,41 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Политика возврата — Kai</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%239333ea'/><stop offset='100%25' stop-color='%23db2777'/></linearGradient></defs><rect width='32' height='32' rx='8' fill='%230d0d0f'/><text x='16' y='23' text-anchor='middle' font-family='Inter,system-ui,sans-serif' font-weight='700' font-size='22' fill='url(%23g)'>K</text></svg>">
+<script>if(location.search.indexOf('lang=en')!==-1){location.replace('refund-en.html');}</script>
+<title>Политика возврата и отмены — Kai</title>
+<meta name="description" content="Политика возврата и отмены Kai: модель оплаты, продление, отмена подписки, условия возврата средств, права потребителей ЕС и порядок обращения.">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%237C5CFF'/><stop offset='100%25' stop-color='%23A78BFA'/></linearGradient></defs><rect width='32' height='32' rx='8' fill='%230B0A14'/><text x='16' y='23' text-anchor='middle' font-family='Inter,system-ui,sans-serif' font-weight='700' font-size='22' fill='url(%23g)'>K</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --void: #0d0d0f;
-  --carbon: #131315;
-  --graphite: #222228;
-  --smoke: #2e2e38;
-  --ash: #62627a;
-  --fog: #8f8faa;
-  --mist: #c0c0d4;
-  --paper: #f4f4fc;
-  --accent: #9333ea;
+  --bg:      #0B0A14;
+  --bg-1:    #100E20;
+  --bg-2:    #171332;
+  --border:  #241D45;
+  --accent:  #7C5CFF;
+  --accent-2:#A78BFA;
+  --ink:     #F4F2FF;
+  --text:    #CBC5E4;
+  --muted:   #8B83AC;
+  --dim:     #615A82;
 }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--void);
-  color: var(--mist);
-  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   font-size: 15px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
-a { color: var(--accent); text-decoration: none; }
+a { color: var(--accent-2); text-decoration: none; }
 a:hover { text-decoration: underline; }
-
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 0 24px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  background: rgba(13,13,15,0.9);
+  border-bottom: 1px solid var(--border);
+  background: rgba(11,10,20,0.9);
   backdrop-filter: blur(20px);
 }
 .nav-inner {
@@ -45,131 +48,61 @@ a:hover { text-decoration: underline; }
   height: 56px;
   display: flex; align-items: center; justify-content: space-between;
 }
-.nav-logo { font-size: 17px; font-weight: 500; color: var(--paper); }
-.nav-back { font-size: 13px; color: var(--fog); }
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 100px 24px 80px;
-}
-
+.nav-logo { font-size: 17px; font-weight: 600; color: var(--ink); }
+.nav-right { display: flex; gap: 18px; align-items: center; }
+.nav-back, .nav-lang { font-size: 13px; color: var(--muted); }
+.nav-lang { border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px; }
+.nav-lang:hover { border-color: var(--accent); color: var(--ink); text-decoration: none; }
+.container { max-width: 800px; margin: 0 auto; padding: 100px 24px 80px; }
 h1 {
   font-size: clamp(28px, 5vw, 40px);
-  font-weight: 600;
-  color: var(--paper);
+  font-weight: 700;
+  color: var(--ink);
   margin-bottom: 8px;
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
-.subtitle {
-  font-size: 14px;
-  color: var(--ash);
-  margin-bottom: 48px;
-}
-
+.subtitle { font-size: 14px; color: var(--dim); margin-bottom: 48px; }
 h2 {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--paper);
-  margin-top: 48px;
-  margin-bottom: 16px;
-  letter-spacing: -0.01em;
+  font-size: 20px; font-weight: 600; color: var(--ink);
+  margin-top: 48px; margin-bottom: 16px; letter-spacing: -0.01em;
 }
-h3 {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--paper);
-  margin-top: 28px;
-  margin-bottom: 10px;
-}
-
+h3 { font-size: 16px; font-weight: 600; color: var(--ink); margin-top: 28px; margin-bottom: 10px; }
 p { margin-bottom: 14px; }
-
-ul, ol {
-  margin-bottom: 14px;
-  padding-left: 24px;
-}
+ul, ol { margin-bottom: 14px; padding-left: 24px; }
 li { margin-bottom: 6px; }
-li::marker { color: var(--ash); }
-
+li::marker { color: var(--dim); }
+strong { color: var(--ink); font-weight: 600; }
 .highlight {
-  background: rgba(147,51,234,0.08);
+  background: rgba(124,92,255,0.08);
   border-left: 3px solid var(--accent);
   padding: 16px 20px;
   border-radius: 0 8px 8px 0;
   margin: 20px 0;
   font-size: 14px;
 }
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 16px 0 24px;
-  font-size: 14px;
+.footer { max-width: 800px; margin: 0 auto; padding: 0 24px 60px; font-size: 13px; }
+@media (max-width: 640px) {
+  .container { padding: 90px 18px 60px; }
 }
-th, td {
-  text-align: left;
-  padding: 10px 14px;
-  border-bottom: 1px solid var(--graphite);
-}
-th {
-  font-weight: 500;
-  color: var(--paper);
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.footer {
-  border-top: 1px solid var(--graphite);
-  padding: 32px 24px;
-  text-align: center;
-  font-size: 13px;
-  color: var(--ash);
-}
-.lang-toggle {
-  display: flex;
-  background: var(--graphite);
-  border-radius: 8px;
-  overflow: hidden;
-}
-.lang-btn {
-  padding: 5px 12px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--ash);
-  cursor: pointer;
-  border: none;
-  background: none;
-  transition: background .2s, color .2s;
-}
-.lang-btn.active {
-  background: var(--smoke);
-  color: var(--paper);
-}
-.lang-btn:hover:not(.active) { color: var(--fog); }
 </style>
 </head>
 <body>
 
-<div class="nav">
+<nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Kai</a>
-    <div style="display:flex;align-items:center;gap:16px">
-      <div class="lang-toggle">
-        <button class="lang-btn active" data-lang="ru">RU</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-      </div>
-      <a href="index.html" class="nav-back" id="navBack">← Вернуться на главную</a>
+    <div class="nav-right">
+      <a href="refund-en.html" class="nav-lang">EN</a>
+      <a href="index.html" class="nav-back">← Вернуться на главную</a>
     </div>
   </div>
-</div>
+</nav>
 
-<div class="container" id="content-ru">
+<div class="container">
 
 <h1>Политика возврата и отмены</h1>
-<p class="subtitle">Последнее обновление: 9 августа 2026 г.</p>
+<p class="subtitle">Дата обновления: 20 августа 2026 · <a href="refund-en.html">English version</a></p>
 
 <p>Настоящая Политика возврата и отмены (далее — «Политика») описывает условия оплаты, продления, отмены подписки и возврата средств за использование AI-сервиса Kai (далее — «Сервис»), доступного через Telegram-бот <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a>. Политика является неотъемлемой частью <a href="terms.html">Условий использования</a>.</p>
 
@@ -180,6 +113,7 @@ th {
 <h2>1. Модель оплаты</h2>
 <p>Сервис предоставляется по подписке на выбранный период (30 дней), на условиях предоплаты. Стоимость указывается в евро (EUR) на <a href="index.html#pricing">странице тарифов</a>. Каждый тариф включает определённый объём действий (запросов) и набор возможностей.</p>
 <p>Новым пользователям предоставляется бесплатный пробный период — 3 (три) календарных дня. В течение пробного периода списания не производятся; отменив использование до его окончания, вы не платите ничего.</p>
+<p>Лицензия (подписка) подключаемой вами CRM-платформы оплачивается вами отдельно по её тарифам и не входит ни в услуги Сервиса, ни в суммы, взимаемые в рамках настоящей Политики.</p>
 
 <h2>2. Продление и отмена</h2>
 <h3>2.1. Продление</h3>
@@ -206,7 +140,7 @@ th {
 <ul>
   <li>использовано 30% или более оплаченного объёма действий за период;</li>
   <li>прошло более 7 дней с момента оплаты (кроме случаев существенного нарушения с нашей стороны или ошибочного списания);</li>
-  <li>доступ был прекращён из-за нарушения вами <a href="terms.html">Условий использования</a> (мошенничество, несанкционированный доступ, злоупотребление и т. п.);</li>
+  <li>доступ был прекращён из-за нарушения вами <a href="terms.html">Условий использования</a> (мошенничество, несанкционированный доступ, злоупотребление и т.&nbsp;п.);</li>
   <li>оплата уже была возвращена ранее по этому же периоду.</li>
 </ul>
 
@@ -233,111 +167,9 @@ th {
 
 </div>
 
-<div class="container" id="content-en" style="display:none">
-
-<h1>Refund &amp; Cancellation Policy</h1>
-<p class="subtitle">Last updated: 9 August 2026</p>
-
-<p>This Refund &amp; Cancellation Policy (the “Policy”) describes billing, renewal, cancellation and refund terms for the Kai AI service (the “Service”), available through the Telegram bot <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a>. It forms an integral part of our <a href="terms.html?lang=en">Terms of Service</a>.</p>
-
-<div class="highlight">
-  <strong>In short:</strong> the first 3 days are free with no charge. You can cancel anytime. If something goes wrong, email <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> within 7 days and we will refund you if less than 30% of the paid allowance was used.
-</div>
-
-<h2>1. Billing model</h2>
-<p>The Service is provided on a subscription basis for the selected period (30 days), paid in advance. Prices are shown in euros (EUR) on the <a href="index.html#pricing">pricing page</a>. Each plan includes a defined allowance of actions (requests) and set of features.</p>
-<p>New users get a free trial of 3 (three) calendar days. No charge is made during the trial; if you stop using the Service before it ends, you pay nothing.</p>
-
-<h2>2. Renewal and cancellation</h2>
-<h3>2.1. Renewal</h3>
-<p>When paying via auto-renewing methods, the subscription renews automatically for the next period at the current price until you cancel. When paying via one-off methods (Telegram Stars, USDT cryptocurrency), access is granted for the paid period and does not auto-renew — to continue, you pay again.</p>
-<h3>2.2. How to cancel</h3>
-<p>You may cancel at any time by:</p>
-<ul>
-  <li>emailing <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a>;</li>
-  <li>managing the subscription in your payment provider (for auto-renewing methods);</li>
-  <li>simply stopping use of the Service (one-off methods do not renew on their own).</li>
-</ul>
-<h3>2.3. Effect of cancellation</h3>
-<p>After cancellation, access to paid features remains until the end of the already-paid period; it then does not renew and no further charges are made. Cancellation is not an automatic refund for the current period — refund terms are set out below.</p>
-
-<h2>3. Refunds</h2>
-<h3>3.1. When a refund is available</h3>
-<p>We will refund your payment if at least one of the following applies:</p>
-<ul>
-  <li>you contact us within 7 (seven) calendar days of payment <strong>and</strong> have used less than 30% of the paid action allowance for the period;</li>
-  <li>the Service materially failed to match its described functionality and we did not resolve it within a reasonable time after your report;</li>
-  <li>a payment was charged in error or duplicated.</li>
-</ul>
-<h3>3.2. When a refund is not available</h3>
-<ul>
-  <li>30% or more of the paid allowance for the period has been used;</li>
-  <li>more than 7 days have passed since payment (except for a material breach by us or an erroneous charge);</li>
-  <li>access was terminated for your breach of the <a href="terms.html?lang=en">Terms of Service</a> (fraud, unauthorized access, abuse, etc.);</li>
-  <li>the payment for the same period was already refunded.</li>
-</ul>
-
-<h2>4. EU consumer rights</h2>
-<p>If you are a consumer in the European Union, you have a 14-day right of withdrawal. Because the Service is a digital service available immediately upon payment, by starting to use the paid features you expressly consent to the immediate performance of the service and acknowledge that you lose the 14-day withdrawal right for the part already performed (Art. 16(m) of EU Directive 2011/83/EU). This does not limit your rights where the service is materially non-conforming.</p>
-
-<h2>5. How to request a refund</h2>
-<p>Email <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> with the subject “Refund” and include: your Telegram username or ID, the date and method of payment, the plan, and the reason. We review requests within 5 (five) business days.</p>
-
-<h2>6. How refunds are processed</h2>
-<p>An approved refund is issued via the original payment method, typically within 5–10 business days (crediting time depends on your bank/provider). For cryptocurrency payments, refunds are made in USDT to the wallet you specify; exchange-rate differences and network fees are not compensated.</p>
-
-<h2>7. Chargebacks</h2>
-<p>Before opening a dispute with your bank, please contact us — most issues are resolved faster directly. Disputing a legitimate charge for a service already rendered may result in access restrictions.</p>
-
-<h2>8. Changes to this Policy</h2>
-<p>We may update this Policy. The current version is always published on this page with its update date. Payments already made are governed by the version in force at the time of payment.</p>
-
-<h2>9. Contact</h2>
-<ul>
-  <li>Email: <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a></li>
-  <li>Telegram: <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a></li>
-</ul>
-
-</div>
-
 <div class="footer">
-  <a href="index.html" id="footerBack" style="color:var(--fog)">← Вернуться на главную</a>
+  <a href="index.html" style="color:var(--muted)">← Вернуться на главную</a> · <a href="refund-en.html" style="color:var(--muted)">English version</a>
 </div>
-
-<script>
-(function() {
-  var btns = document.querySelectorAll('.lang-btn');
-  var ruBlock = document.getElementById('content-ru');
-  var enBlock = document.getElementById('content-en');
-  var navBack = document.getElementById('navBack');
-  var footerBack = document.getElementById('footerBack');
-
-  function setLang(lang, save) {
-    btns.forEach(function(b) { b.classList.toggle('active', b.dataset.lang === lang); });
-    ruBlock.style.display = lang === 'ru' ? 'block' : 'none';
-    enBlock.style.display = lang === 'en' ? 'block' : 'none';
-    document.documentElement.lang = lang;
-    document.title = lang === 'en' ? 'Refund & Cancellation Policy — Kai' : 'Политика возврата — Kai';
-    navBack.textContent = lang === 'en' ? '← Back to home' : '← Вернуться на главную';
-    footerBack.textContent = lang === 'en' ? '← Back to home' : '← Вернуться на главную';
-    if (save !== false) localStorage.setItem('kai_lang', lang);
-  }
-
-  btns.forEach(function(btn) {
-    btn.addEventListener('click', function() { setLang(btn.dataset.lang); });
-  });
-
-  var urlEn = window.location.search.indexOf('lang=en') !== -1;
-  var savedLang = localStorage.getItem('kai_lang');
-  if (urlEn || savedLang === 'en') setLang('en');
-
-  document.querySelectorAll('a[href*="index.html"]').forEach(function(a) {
-    a.addEventListener('click', function() {
-      sessionStorage.setItem('kai_scroll', '0');
-    });
-  });
-})();
-</script>
 
 </body>
 </html>
