@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://ai-crm-bot-production.up.railway.app; connect-src 'self' https://ai-crm-bot-production.up.railway.app; base-uri 'self'; form-action 'self'">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Terms of Service — Kai</title>
 <meta name="description" content="Terms of Service for Kai, an AI assistant that configures and manages the user's account on the CRM platform they choose to connect, via the platform's official API.">
 <meta name="robots" content="index,follow">
@@ -98,6 +101,10 @@ th { font-weight: 600; color: var(--ink); font-size: 13px; text-transform: upper
   th, td { padding: 8px 10px; }
 }
 </style>
+<script>(function(){var q=location.search;
+if(q.indexOf('lang=en')!==-1)return;
+var saved=null;try{saved=localStorage.getItem('kai_lang');}catch(e){}
+if(saved==='ru')location.replace('terms.html');})();</script>
 </head>
 <body>
 

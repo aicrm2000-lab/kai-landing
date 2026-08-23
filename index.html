@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://ai-crm-bot-production.up.railway.app; connect-src 'self' https://ai-crm-bot-production.up.railway.app; base-uri 'self'; form-action 'self'">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Kai — Настройка CRM без программистов | AI-ассистент для amoCRM и Kommo</title>
 <meta name="description" content="Kai — AI-ассистент, который настраивает amoCRM и Kommo через Telegram. 60+ API-действий: воронки, поля, сделки, автоматизации. Без программистов, за секунды.">
 <meta name="keywords" content="amoCRM, Kommo, настройка CRM, AI ассистент, автоматизация CRM, Telegram бот CRM, воронки продаж, API amoCRM, CRM без программиста, настройка воронок, кастомные поля amoCRM, интеграция CRM, Kai CRM, AI CRM bot">
@@ -2786,8 +2789,25 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 /* ─── LANGUAGE TOGGLE ─── */
+/* No saved choice → follow the browser UI language. Russian is the default
+   only for locales where it is actually a working language; everyone else
+   lands on English. An explicit pick via the RU/EN switch always wins. */
+function detectLang() {
+  var RU = ['ru', 'be', 'kk', 'ky', 'uz', 'tg'];
+  try {
+    var list = navigator.languages && navigator.languages.length
+      ? navigator.languages : [navigator.language || ''];
+    for (var i = 0; i < list.length; i++) {
+      var code = String(list[i]).toLowerCase().split('-')[0];
+      if (RU.indexOf(code) !== -1) return 'ru';
+      if (code === 'en') return 'en';
+    }
+    var first = String(list[0] || '').toLowerCase().split('-')[0];
+    return RU.indexOf(first) !== -1 ? 'ru' : 'en';
+  } catch (e) { return 'ru'; }
+}
 let currentLang = 'ru';
-try { currentLang = localStorage.getItem('kai_lang') || 'ru'; } catch (e) {}
+try { currentLang = localStorage.getItem('kai_lang') || detectLang(); } catch (e) { currentLang = detectLang(); }
 
 function applyLang(lang) {
   currentLang = lang;

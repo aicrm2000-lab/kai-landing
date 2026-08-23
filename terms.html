@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>if(location.search.indexOf('lang=en')!==-1){location.replace('terms-en.html');}</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://ai-crm-bot-production.up.railway.app; connect-src 'self' https://ai-crm-bot-production.up.railway.app; base-uri 'self'; form-action 'self'">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<script>(function(){var q=location.search;
+if(q.indexOf('lang=ru')!==-1)return;
+var saved=null;try{saved=localStorage.getItem('kai_lang');}catch(e){}
+if(q.indexOf('lang=en')!==-1||saved==='en'){location.replace('terms-en.html');return;}
+if(!saved){var RU=['ru','be','kk','ky','uz','tg'];
+var l=String((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase().split('-')[0];
+if(RU.indexOf(l)===-1)location.replace('terms-en.html');}})();</script>
 <title>Условия использования — Kai</title>
 <meta name="description" content="Условия использования Kai — AI-ассистента для настройки и управления CRM-аккаунтом пользователя на подключаемой им CRM-платформе через официальный API платформы.">
 <meta name="robots" content="index,follow">
