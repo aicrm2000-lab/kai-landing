@@ -1097,6 +1097,31 @@ footer {
 }
 .wave { transform-origin: center; }
 
+/* NEW ribbon on a feature card */
+.feat-card { position: relative; }
+.feat-new {
+  position: absolute; top: 16px; right: 16px;
+  font-family: var(--mono);
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--paper);
+  background: var(--accent-gradient);
+  padding: 3px 8px; border-radius: 999px;
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+/* Watch 24/7: radar sweep + blip */
+.wa-sweep { transform-origin: 12px 12px; }
+.feat-card[data-feat="new-watch"]:hover .wa-sweep { animation: waSweep 2.4s linear infinite; }
+@keyframes waSweep { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+.feat-card[data-feat="new-watch"]:hover .wa-blip { animation: chatPulse 1.2s ease-in-out infinite; }
+
+/* Browser chat: cursor blinks, window lifts */
+.feat-card[data-feat="new-browser"]:hover .br-cursor { animation: chatPulse 1s steps(1) infinite; }
+.br-dot { transition: opacity .25s; }
+.feat-card[data-feat="new-browser"]:hover .br-dot-2 { opacity: 1; transition-delay: .1s; }
+.feat-card[data-feat="new-browser"]:hover .br-dot-3 { opacity: 1; transition-delay: .2s; }
+
 /* Audit: check draws in + badge pulses */
 .au-check { transition: stroke-dashoffset .5s ease .1s; }
 .feat-card[data-feat="new-audit"]:hover .au-check { stroke-dashoffset: 0; }
@@ -1321,6 +1346,42 @@ footer {
   font-size: 14px;
   color: var(--fog);
   line-height: 1.55;
+}
+.note-points {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.note-points li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 13.5px;
+  color: var(--fog);
+  line-height: 1.55;
+}
+.note-points li::before {
+  content: '';
+  position: absolute;
+  left: 4px; top: 8px;
+  width: 5px; height: 5px;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+.note-points b { color: var(--mist); font-weight: 500; }
+.note-targets {
+  margin-top: 14px;
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.note-targets span {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--fog);
+  background: var(--obsidian);
+  border: 1px solid var(--graphite);
+  border-radius: 7px;
+  padding: 3px 9px;
 }
 .pricing-footer {
   margin-top: 20px;
@@ -2088,6 +2149,36 @@ footer {
       </div>
 
 
+      <div class="feat-card glow-card depth-card" data-feat="new-watch">
+        <span class="feat-new">NEW</span>
+        <div class="feat-icon">
+          <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9" stroke="#A78BFA" stroke-width="1.3"/>
+            <circle cx="12" cy="12" r="4.5" stroke="#A78BFA" stroke-width="1.1" opacity=".45"/>
+            <line class="wa-sweep" x1="12" y1="12" x2="12" y2="3.4" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round"/>
+            <circle class="wa-blip" cx="15.6" cy="8.6" r="1.6" fill="#A78BFA"/>
+          </svg>
+        </div>
+        <h3 class="feat-title" data-ru="Следит за CRM 24/7" data-en="Watches your CRM 24/7">Следит за CRM 24/7</h3>
+        <p class="feat-desc" data-ru="Kai каждый день сам проверяет воронку: упала конверсия, копятся сделки, появились проблемы — пришлёт сигнал, совет и кнопки починки. А после починки покажет рост цифрами." data-en="Kai checks your funnel daily: conversion drop, piling deals, new issues — you get an alert, advice and one-tap fix buttons. After the fix, it shows the improvement in numbers.">Kai каждый день сам проверяет воронку: упала конверсия, копятся сделки, появились проблемы — пришлёт сигнал, совет и кнопки починки. А после починки покажет рост цифрами.</p>
+      </div>
+
+      <div class="feat-card glow-card depth-card" data-feat="new-browser">
+        <div class="feat-icon">
+          <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <rect x="2.5" y="4" width="19" height="15" rx="2" stroke="#A78BFA" stroke-width="1.3"/>
+            <line x1="2.5" y1="8" x2="21.5" y2="8" stroke="#A78BFA" stroke-width="1.2"/>
+            <circle class="br-dot br-dot-1" cx="5.4" cy="6" r=".8" fill="#A78BFA"/>
+            <circle class="br-dot br-dot-2" cx="8" cy="6" r=".8" fill="#A78BFA" opacity=".4"/>
+            <circle class="br-dot br-dot-3" cx="10.6" cy="6" r=".8" fill="#A78BFA" opacity=".4"/>
+            <line x1="6" y1="12" x2="14" y2="12" stroke="#A78BFA" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
+            <line class="br-cursor" x1="6" y1="15.5" x2="10" y2="15.5" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="feat-title" data-ru="Работает и без Telegram" data-en="Works without Telegram">Работает и без Telegram</h3>
+        <p class="feat-desc" data-ru="Полноценный чат в браузере: подключение CRM по OAuth, оплата картой, уведомления — всё без Telegram. А если Telegram есть — свяжи в один клик, аккаунт общий в обоих каналах." data-en="Full-featured browser chat: OAuth CRM connect, card payment, notifications — no Telegram needed. Have Telegram? Link it in one click — one account across both.">Полноценный чат в браузере: подключение CRM по OAuth, оплата картой, уведомления — всё без Telegram. А если Telegram есть — свяжи в один клик, аккаунт общий в обоих каналах.</p>
+      </div>
+
       <div class="feat-card glow-card depth-card" data-feat="new-audit">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -2304,6 +2395,8 @@ footer {
       <div class="api-badge" data-ru="<span class='dot'></span>показать_источники" data-en="<span class='dot'></span>list_sources"><span class="dot"></span>показать_источники</div>
       <div class="api-badge" data-ru="<span class='dot'></span>маппинг_полей_excel" data-en="<span class='dot'></span>map_excel_fields"><span class="dot"></span>маппинг_полей_excel</div>
       <div class="api-badge" data-ru="<span class='dot'></span>выгрузка_в_excel" data-en="<span class='dot'></span>export_to_excel"><span class="dot"></span>выгрузка_в_excel</div>
+      <div class="api-badge" data-ru="<span class='dot'></span>ежедневный_контроль_crm" data-en="<span class='dot'></span>crm_daily_watch"><span class="dot"></span>ежедневный_контроль_crm</div>
+      <div class="api-badge" data-ru="<span class='dot'></span>дашборд_здоровья" data-en="<span class='dot'></span>health_dashboard"><span class="dot"></span>дашборд_здоровья</div>
       <div class="api-badge soon" data-ru="<span class='dot'></span>дашборд_в_рабочем_столе_crm" data-en="<span class='dot'></span>crm_desktop_dashboard"><span class="dot"></span>дашборд_в_рабочем_столе_crm</div>
       <div class="api-badge soon" data-ru="<span class='dot'></span>автоскор_digital_pipeline" data-en="<span class='dot'></span>auto_score_digital_pipeline"><span class="dot"></span>автоскор_digital_pipeline</div>
       <div class="api-badge soon" data-ru="<span class='dot'></span>интерактивный_маппинг_полей" data-en="<span class='dot'></span>interactive_field_mapping"><span class="dot"></span>интерактивный_маппинг_полей</div>
@@ -2320,7 +2413,7 @@ footer {
     </div>
 
     <div class="api-count reveal">
-      <span><strong class="count-up" data-count="63">63</strong> <span data-ru="действий доступно" data-en="actions available">действий доступно</span></span>
+      <span><strong class="count-up" data-count="65">65</strong> <span data-ru="действий доступно" data-en="actions available">действий доступно</span></span>
       <div class="api-legend">
         <div class="api-legend-item"><span class="api-legend-dot" style="background:var(--good);box-shadow:0 0 6px rgba(67,224,160,.4)"></span> <span data-ru="Доступно" data-en="Available">Доступно</span></div>
         <div class="api-legend-item"><span class="api-legend-dot" style="background:var(--warn);box-shadow:0 0 6px rgba(245,196,81,.4)"></span> <span data-ru="В разработке" data-en="In progress">В разработке</span></div>
@@ -2347,6 +2440,7 @@ footer {
           <li><span class="icon">→</span> <span data-ru="Правки после запуска: ещё неделя" data-en="Post-launch fixes: another week">Правки после запуска: ещё неделя</span></li>
           <li><span class="icon">→</span> <span data-ru="Общение через менеджера" data-en="Communication through a manager">Общение через менеджера</span></li>
           <li><span class="icon">→</span> <span data-ru="Каждое изменение — новый запрос" data-en="Every change — a new request">Каждое изменение — новый запрос</span></li>
+          <li><span class="icon">→</span> <span data-ru="После запуска — тишина до нового счёта" data-en="After launch — silence until the next invoice">После запуска — тишина до нового счёта</span></li>
         </ul>
         <div class="compare-bottom">
           <div class="compare-price" data-ru="150 000 — 400 000 ₽" data-en="€1,500 — €4,000">150 000 — 400 000 ₽</div>
@@ -2362,6 +2456,7 @@ footer {
           <li><span class="icon">✓</span> <span data-ru="Правки: скажи Kai что изменить" data-en="Fixes: tell Kai what to change">Правки: скажи Kai что изменить</span></li>
           <li><span class="icon">✓</span> <span data-ru="Прямой диалог в Telegram" data-en="Direct dialog in Telegram">Прямой диалог в Telegram</span></li>
           <li><span class="icon">✓</span> <span data-ru="60+ действий через API" data-en="60+ actions via API">60+ действий через API</span></li>
+          <li><span class="icon">✓</span> <span data-ru="Ежедневный мониторинг воронки и починка в один тап" data-en="Daily funnel monitoring and one-tap fixes">Ежедневный мониторинг воронки и починка в один тап</span></li>
         </ul>
         <div class="compare-bottom">
           <div class="compare-price"><span data-ru="от €29/мес" data-en="from €29/mo">от €29/мес</span></div>
@@ -2416,7 +2511,7 @@ footer {
           <li data-ru="Пользователи и роли" data-en="Users & roles">Пользователи и роли</li>
           <li data-ru="Виджеты из amoМаркета" data-en="Widgets from marketplace">Виджеты из amoМаркета</li>
           <li data-ru="Карта аккаунта в PDF" data-en="Account map (PDF)">Карта аккаунта в PDF</li>
-          <li data-ru="Стандартные интеграции (Telegram, Sheets)" data-en="Standard integrations (Telegram, Sheets)">Стандартные интеграции (Telegram, Sheets)</li>
+          <li data-ru="Стандартные интеграции (Telegram, Slack, Discord, Sheets)" data-en="Standard integrations (Telegram, Slack, Discord, Sheets)">Стандартные интеграции (Telegram, Slack, Discord, Sheets)</li>
           <li data-ru="~400 запросов/мес" data-en="~400 requests/mo">~400 запросов/мес</li>
           <li data-ru="До 3 CRM-аккаунтов" data-en="Up to 3 CRM accounts">До 3 CRM-аккаунтов</li>
           <li class="disabled" data-ru="Кастомные доработки" data-en="Custom integrations">Кастомные доработки</li>
@@ -2447,11 +2542,29 @@ footer {
       <strong data-ru="Кастомные интеграции — доработки под твой процесс" data-en="Custom integrations — tailored to your process">Кастомные интеграции — доработки под твой процесс</strong>
       <span class="note-tag" data-ru="только Max" data-en="Max only">только Max</span>
       <p data-ru="Нестандартная интеграция или доработка (свой вебхук, связка с внешним сервисом, особый сценарий) доступна только на тарифе Max. Каждая доработка — фиксированно €30, без «сколько попросят»." data-en="A non-standard integration or custom build (your own webhook, a link to an external service, a special scenario) is available on the Max plan only. Each build is a flat €30, no guesswork.">Нестандартная интеграция или доработка (свой вебхук, связка с внешним сервисом, особый сценарий) доступна только на тарифе Max. Каждая доработка — фиксированно €30, без «сколько попросят».</p>
+      <ul class="note-points">
+        <li data-ru="<b>Цепочки шагов.</b> «Создай запись в моём сервисе → пришли её id в Telegram» — до 3 запросов подряд, данные передаются между шагами." data-en="<b>Multi-step chains.</b> &laquo;Create a record in my service → send its id to Telegram&raquo; — up to 3 chained requests, with data passed between steps."><b>Цепочки шагов.</b> «Создай запись в моём сервисе → пришли её id в Telegram» — до 3 запросов подряд, данные передаются между шагами.</li>
+        <li data-ru="<b>Прозрачность.</b> Перед включением Kai показывает, что реально улетит — на тестовой сделке, с закрытыми секретами. Кнопка «📤 Отправить тест» шлёт пробный запрос сразу." data-en="<b>Full transparency.</b> Before switching it on, Kai shows exactly what will be sent — on a test deal, with secrets masked. The &laquo;📤 Send test&raquo; button fires a trial request right away."><b>Прозрачность.</b> Перед включением Kai показывает, что реально улетит — на тестовой сделке, с закрытыми секретами. Кнопка «📤 Отправить тест» шлёт пробный запрос сразу.</li>
+        <li data-ru="<b>Оплата в один тап.</b> €30 за доработку — кнопкой прямо в чате, картой." data-en="<b>One-tap payment.</b> €30 per build — pay by card with a button right in the chat."><b>Оплата в один тап.</b> €30 за доработку — кнопкой прямо в чате, картой.</li>
+      </ul>
+      <div class="note-targets">
+        <span data-ru="свой вебхук" data-en="your webhook">свой вебхук</span>
+        <span>Discord</span>
+        <span data-ru="Email" data-en="Email">Email</span>
+        <span>Notion</span>
+        <span>Slack</span>
+        <span>Google Sheets</span>
+        <span data-ru="любой HTTP-API" data-en="any HTTP API">любой HTTP-API</span>
+      </div>
     </div>
 
     <h3 class="section-heading reveal" style="font-size:clamp(22px,3vw,30px);margin-top:56px" data-ru="Частые <em>вопросы</em>" data-en="Frequently asked <em>questions</em>">Частые <em>вопросы</em></h3>
 
     <div class="faq-grid reveal reveal-delay-1">
+      <div class="faq-item">
+        <button class="faq-q" data-ru="Kai что-то делает сам, без моих запросов?" data-en="Does Kai do anything on its own?">Kai что-то делает сам, без моих запросов?</button>
+        <div class="faq-a"><div class="faq-a-inner" data-ru="Да — раз в день проверяет здоровье воронки. Если всё хорошо, молчит. Если что-то просело — пришлёт сигнал, совет и кнопки починки. Это бесплатно и не тратит ваши запросы." data-en="Yes — it checks your funnel health daily. All good — it stays quiet. Something dropped — you get an alert, advice and fix buttons. Free, doesn't spend your requests.">Да — раз в день проверяет здоровье воронки. Если всё хорошо, молчит. Если что-то просело — пришлёт сигнал, совет и кнопки починки. Это бесплатно и не тратит ваши запросы.</div></div>
+      </div>
       <div class="faq-item">
         <button class="faq-q" data-ru="Что если кончатся запросы?" data-en="What if I run out of requests?">Что если кончатся запросы?</button>
         <div class="faq-a"><div class="faq-a-inner" data-ru="Докупишь пакет или поднимешь тариф прямо в боте (/plan). На пробном периоде — дневной лимит, просто вернись завтра." data-en="Top up or upgrade right in the bot (/plan). On trial there's a daily cap — just come back tomorrow.">Докупишь пакет или поднимешь тариф прямо в боте (/plan). На пробном периоде — дневной лимит, просто вернись завтра.</div></div>
