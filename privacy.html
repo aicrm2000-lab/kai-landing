@@ -184,6 +184,11 @@ th {
     <td>Статус подписки и подтверждения платежей. Полные номера карт мы не получаем и не храним — карточные данные обрабатывает исключительно платёжный провайдер</td>
     <td>Платёжные провайдеры</td>
   </tr>
+  <tr>
+    <td>Аналитика сайта</td>
+    <td>Первичный cookie <code>kai_vid</code> — обезличенный идентификатор посещения (срок 1 год), просмотренные страницы, источник перехода и язык. Используется только для собственной статистики сайта; сторонние аналитические системы не подключены, данные третьим лицам не передаются</td>
+    <td>Ваш браузер при посещении сайта</td>
+  </tr>
 </table>
 </div>
 <div class="highlight">
@@ -268,6 +273,36 @@ th {
 <div class="footer">
   <a href="index.html" style="color:var(--muted)">← Вернуться на главную</a> · <a href="privacy-en.html" style="color:var(--muted)">English version</a>
 </div>
+
+<!-- ─── FIRST-PARTY ANALYTICS ─── -->
+<script>
+(function(){
+  function vid(){
+    try{
+      var m=document.cookie.match(/(?:^|; )kai_vid=([a-f0-9-]+)/);
+      var v=m?m[1]:(localStorage.getItem('kai_vid')||'');
+      if(!v){v=(crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random().toString(16).slice(2));}
+      localStorage.setItem('kai_vid',v);
+      document.cookie='kai_vid='+v+'; max-age=31536000; path=/; SameSite=Lax';
+      return v;
+    }catch(e){return '';}
+  }
+  var V=vid(), LANG=document.documentElement.lang||'ru';
+  window.kaiTrack=function(ev){
+    try{navigator.sendBeacon('https://ai-crm-bot-production.up.railway.app/track',
+      JSON.stringify({vid:V,event:ev,path:location.pathname+location.hash,
+                      ref:document.referrer,lang:LANG}));}catch(e){}
+  };
+  kaiTrack('pageview');
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('t.me/aiicrm_bot') !== -1) kaiTrack('tg_click');
+    else if (href.indexOf('/chat') !== -1 && href.indexOf('railway.app') !== -1) kaiTrack('webchat_open');
+  }, true);
+})();
+</script>
 
 </body>
 </html>
