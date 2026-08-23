@@ -2943,6 +2943,14 @@ window.addEventListener('scroll', () => {
     if (tip) tip.classList.remove('show');
     if (badge) badge.classList.remove('show');
   }
+  /* the bubble sits after the language script in the DOM, so it misses the
+     initial applyLang pass — localize it ourselves right before showing */
+  function localizeTip() {
+    var el = document.getElementById('chatTipText');
+    if (!el) return;
+    var val = el.getAttribute('data-' + (document.documentElement.lang === 'en' ? 'en' : 'ru'));
+    if (val != null) el.innerHTML = val;
+  }
   function openPanel() {
     hideTip();
     markNudged();
@@ -2983,6 +2991,7 @@ window.addEventListener('scroll', () => {
   if (lastNudge !== today() && tip) {
     setTimeout(function(){
       if (isOpen) return;
+      localizeTip();
       tip.classList.add('show');
       if (badge) badge.classList.add('show');
       markNudged();
