@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow:
 
-Sitemap: https://aicrm2000-lab.github.io/sitemap.xml
+Sitemap: https://aicrm2000-lab.github.io/kai-landing/sitemap.xml
