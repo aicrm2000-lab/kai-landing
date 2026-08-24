@@ -913,12 +913,20 @@ footer {
 }
 .integrations-label {
   font-family: var(--mono);
-  font-size: 11px; font-weight: 400;
-  color: var(--ash);
+  font-size: 13px; font-weight: 500;
+  color: var(--accent-2);
   text-transform: uppercase;
   letter-spacing: .14em;
   margin-bottom: 32px;
+  display: flex; align-items: center; justify-content: center; gap: 14px;
 }
+.integrations-label::before,
+.integrations-label::after {
+  content: '';
+  height: 1px; width: clamp(24px, 8vw, 64px);
+  background: linear-gradient(90deg, transparent, var(--border));
+}
+.integrations-label::after { background: linear-gradient(90deg, var(--border), transparent); }
 .integrations-logos {
   display: flex;
   align-items: center;
