@@ -2890,6 +2890,7 @@ function applyLang(lang) {
   document.querySelectorAll('.chat-link').forEach(function(cl) {
     cl.href = 'https://ai-crm-bot-production.up.railway.app/chat?lang=' + (lang === 'en' ? 'en' : 'ru');
   });
+  if (window.kaiChatRelang) window.kaiChatRelang(lang);
   if (window.kaiHeroRelang) window.kaiHeroRelang();
 }
 
@@ -3059,6 +3060,16 @@ window.addEventListener('scroll', () => {
     launcher.setAttribute('aria-expanded', 'false');
     isOpen = false;
   }
+  /* language switch: reload the chat so it speaks the page language
+     (the iframe was built with a fixed ?lang= and keeps sending it) */
+  window.kaiChatRelang = function(lang) {
+    var f = panel.querySelector('iframe');
+    if (!f) return;                       // not loaded yet — next open picks the new lang
+    var want = CHAT_URL + '?lang=' + (lang === 'en' ? 'en' : 'ru');
+    if (f.getAttribute('src') === want) return;
+    f.setAttribute('src', want);
+  };
+
   launcher.addEventListener('click', function(){ isOpen ? closePanel() : openPanel(); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && isOpen) closePanel(); });
 
