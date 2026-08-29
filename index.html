@@ -222,7 +222,7 @@ nav {
 /* ─── LANG TOGGLE ─── */
 .lang-toggle {
   display: flex; align-items: center;
-  margin-left: 12px;
+  margin-left: 22px;
   border: 1px solid var(--smoke);
   border-radius: 6px;
   overflow: hidden;
@@ -246,7 +246,7 @@ nav {
 .lang-btn:hover:not(.active) { color: var(--mist); }
 
 .nav-cta {
-  margin-left: 12px;
+  margin-left: 10px;
   padding: 7px 16px;
   background: var(--accent-gradient);
   color: #fff;
@@ -260,6 +260,7 @@ nav {
 .nav-cta:hover { opacity: 0.85; }
 .nav-connect {
   display: inline-flex; align-items: center; gap: 7px;
+  margin-left: 18px;
   padding: 7px 15px;
   border: 1px solid var(--accent);
   border-radius: 6px;
@@ -271,6 +272,19 @@ nav {
 .nav-connect:hover { background: rgba(124,92,255,.12); color: var(--ink); box-shadow: 0 0 18px rgba(124,92,255,.3); }
 .nav-connect svg { flex-shrink: 0; }
 @media (max-width: 1100px) { .nav-connect { display: none; } }
+@media (max-width: 860px) {
+  .nav-links { display: none; }
+  .nav-inner .lang-toggle { display: none; }
+  .nav-cta { display: none; }
+  .nav-inner .burger { display: flex; margin-left: 10px; }
+  .nav-connect {
+    display: inline-flex;
+    margin-left: 0;
+    padding: 6px 11px;
+    font-size: 12px;
+    gap: 5px;
+  }
+}
 
 /* ─── HERO (pixel-sign reference) ─── */
 .hero {
@@ -1929,10 +1943,6 @@ footer {
 }
 @media (max-width: 640px) {
   .connect-strip { font-size: 12px; padding: 10px 16px; gap: 8px; margin: 0 16px; }
-  .nav-links { display: none; }
-  .burger { display: flex; margin-left: auto; }
-  .nav-inner .lang-toggle { display: none; }
-  .nav-cta { display: none; }
   .hero { padding: 0; }
   .hero-logo-space { min-height: 38vh; }
   .hero h1 { font-size: clamp(28px,8vw,40px); }
@@ -2066,6 +2076,8 @@ footer {
       <li><a href="https://ai-crm-bot-production.up.railway.app/chat?lang=ru" target="_blank" rel="noopener" class="chat-link" data-ru="Веб-чат" data-en="Web chat">Веб-чат</a></li>
       <li><a href="https://t.me/aiicrm_support_bot" target="_blank" rel="noopener" data-ru="Поддержка" data-en="Support">Поддержка</a></li>
     </ul>
+<a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" class="nav-connect" data-ru="Подключить CRM" data-en="Connect CRM"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>Подключить CRM</a>
+<a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="nav-cta" data-ru="Попробовать в Telegram →" data-en="Try in Telegram →">Попробовать в Telegram →</a>
     <div class="lang-toggle">
       <button class="lang-btn active" data-lang="ru">RU</button>
       <button class="lang-btn" data-lang="en">EN</button>
@@ -2073,8 +2085,6 @@ footer {
     <button class="burger" id="burger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
-<a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" class="nav-connect" data-ru="Подключить CRM" data-en="Connect CRM"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>Подключить CRM</a>
-<a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="nav-cta" data-ru="Попробовать в Telegram →" data-en="Try in Telegram →">Попробовать в Telegram →</a>
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
