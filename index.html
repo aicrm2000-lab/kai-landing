@@ -258,6 +258,19 @@ nav {
   flex-shrink: 0;
 }
 .nav-cta:hover { opacity: 0.85; }
+.nav-connect {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 7px 15px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  font-size: 13px; font-weight: 500;
+  color: var(--accent-2);
+  white-space: nowrap; flex-shrink: 0;
+  transition: background .2s, color .2s, box-shadow .2s;
+}
+.nav-connect:hover { background: rgba(124,92,255,.12); color: var(--ink); box-shadow: 0 0 18px rgba(124,92,255,.3); }
+.nav-connect svg { flex-shrink: 0; }
+@media (max-width: 1100px) { .nav-connect { display: none; } }
 
 /* ─── HERO (pixel-sign reference) ─── */
 .hero {
@@ -1749,23 +1762,6 @@ footer {
 }
 
 /* ─── CONNECT STRIP ─── */
-.trust-strip {
-  max-width: 760px;
-  margin: 18px auto 0;
-  padding: 12px 22px;
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: rgba(124,92,255,.05);
-  font-size: 14px; line-height: 1.5;
-  color: var(--mist);
-  text-align: center;
-}
-.trust-strip svg { flex-shrink: 0; color: var(--accent-2); }
-.trust-strip b { color: var(--ink); font-weight: 600; }
-@media (max-width: 640px) {
-  .trust-strip { margin: 14px 16px 0; font-size: 13px; padding: 11px 16px; }
-}
 .support-note { margin-top: 28px; }
 .support-note .note-tag { background: rgba(67,224,160,.10); border-color: var(--good); color: var(--good); }
 .support-bot {
@@ -1787,18 +1783,26 @@ footer {
   gap: 10px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 14px 28px;
-  background: linear-gradient(135deg, rgba(124,92,255,.1) 0%, rgba(167,139,250,.07) 100%);
-  border: 1px solid rgba(124,92,255,.2);
+  padding: 17px 32px;
+  background: linear-gradient(135deg, rgba(124,92,255,.22) 0%, rgba(167,139,250,.14) 100%);
+  border: 1px solid var(--accent);
   border-radius: 60px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--fog);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  box-shadow: 0 0 34px rgba(124,92,255,.28);
+  animation: connectGlow 3.2s ease-in-out infinite;
   text-decoration: none;
   transition: border-color .3s, background .3s, transform .2s;
   position: relative;
   overflow: hidden;
 }
+@keyframes connectGlow {
+  0%,100% { box-shadow: 0 0 30px rgba(124,92,255,.24); }
+  50%     { box-shadow: 0 0 46px rgba(124,92,255,.42); }
+}
+@media (prefers-reduced-motion: reduce) { .connect-strip { animation: none; } }
+
 .connect-strip:hover {
   border-color: rgba(124,92,255,.5);
   background: linear-gradient(135deg, rgba(124,92,255,.15) 0%, rgba(167,139,250,.1) 100%);
@@ -2059,6 +2063,8 @@ footer {
       <li><a href="#how" data-ru="Как работает" data-en="How it works">Как работает</a></li>
       <li><a href="#api" data-ru="API" data-en="API">API</a></li>
       <li><a href="#pricing" data-ru="Тарифы" data-en="Plans">Тарифы</a></li>
+      <li><a href="https://ai-crm-bot-production.up.railway.app/chat?lang=ru" target="_blank" rel="noopener" class="chat-link" data-ru="Веб-чат" data-en="Web chat">Веб-чат</a></li>
+      <li><a href="https://t.me/aiicrm_support_bot" target="_blank" rel="noopener" data-ru="Поддержка" data-en="Support">Поддержка</a></li>
     </ul>
     <div class="lang-toggle">
       <button class="lang-btn active" data-lang="ru">RU</button>
@@ -2067,6 +2073,7 @@ footer {
     <button class="burger" id="burger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
+<a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" class="nav-connect" data-ru="Подключить CRM" data-en="Connect CRM"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>Подключить CRM</a>
 <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="nav-cta" data-ru="Попробовать в Telegram →" data-en="Try in Telegram →">Попробовать в Telegram →</a>
   </div>
 </nav>
@@ -2075,6 +2082,9 @@ footer {
   <a href="#how" data-ru="Как работает" data-en="How it works">Как работает</a>
   <a href="#api" data-ru="API" data-en="API">API</a>
   <a href="#pricing" data-ru="Тарифы" data-en="Plans">Тарифы</a>
+  <a href="https://ai-crm-bot-production.up.railway.app/chat?lang=ru" target="_blank" rel="noopener" class="chat-link" data-ru="Веб-чат" data-en="Web chat">Веб-чат</a>
+  <a href="https://t.me/aiicrm_support_bot" target="_blank" rel="noopener" data-ru="Поддержка" data-en="Support">Поддержка</a>
+  <a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" data-ru="⚡ Подключить CRM" data-en="⚡ Connect CRM">⚡ Подключить CRM</a>
   <div class="mobile-menu-footer">
     <div class="lang-toggle">
       <button class="lang-btn active" data-lang="ru">RU</button>
@@ -2127,12 +2137,6 @@ footer {
   <span data-ru="Подключи CRM за 1 клик — OAuth без ключей" data-en="Connect your CRM in 1 click — OAuth, no keys">Подключи CRM за 1 клик — OAuth без ключей</span>
   <svg class="connect-strip-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
 </a>
-
-<div class="trust-strip reveal">
-  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.6 6.3L21 9l-4.8 4.2L17.7 20 12 16.6 6.3 20l1.5-6.8L3 9l6.4-.7z"/></svg>
-  <span data-ru="Salesforce и Anthropic только анонсировали AI-скиллы для продаж в энтерпрайзе — у&nbsp;Kai они <b>уже работают</b> для малого бизнеса" data-en="Salesforce just announced AI sales skills for enterprise — Kai <b>already ships</b> them for SMBs">Salesforce и Anthropic только анонсировали AI-скиллы для продаж в энтерпрайзе — у&nbsp;Kai они <b>уже работают</b> для малого бизнеса</span>
-</div>
-
 <!-- INTEGRATIONS -->
 <section class="integrations">
   <div class="integrations-inner reveal">
