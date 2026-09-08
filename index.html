@@ -2990,9 +2990,9 @@ function detectLang() {
     }
     var first = String(list[0] || '').toLowerCase().split('-')[0];
     return RU.indexOf(first) !== -1 ? 'ru' : 'en';
-  } catch (e) { return 'ru'; }
+  } catch (e) { return 'en'; }
 }
-let currentLang = 'ru';
+let currentLang = 'en';
 try { currentLang = localStorage.getItem('kai_lang') || detectLang(); } catch (e) { currentLang = detectLang(); }
 
 function applyLang(lang) {
