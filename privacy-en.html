@@ -129,6 +129,40 @@ th {
   .container { padding: 90px 18px 60px; }
   th, td { padding: 8px 10px; }
 }
+
+/* ─── COOKIE BANNER ─── */
+.cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: var(--bg-1);
+  border-top: 1px solid var(--border);
+  padding: 16px 24px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; flex-wrap: wrap;
+  font-size: 13px; color: var(--text);
+  transform: translateY(100%);
+  transition: transform .4s ease;
+}
+.cookie-banner.visible { transform: translateY(0); }
+.cookie-banner a { color: var(--accent-2); }
+.cookie-btns { display: flex; gap: 8px; flex-shrink: 0; }
+.cookie-btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 12px; font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.cookie-btn:hover { opacity: .85; }
+.cookie-btn-accept { background: var(--accent); color: #fff; border: 1px solid transparent; }
+.cookie-btn-decline { background: var(--bg-2); border: 1px solid var(--border); color: var(--ink); }
+@media (max-width: 640px) {
+  .cookie-banner { font-size: 12px; padding: 14px 16px; gap: 12px; }
+  .cookie-btns { width: 100%; }
+  .cookie-btn { flex: 1; }
+}
 </style>
 <script>(function(){var q=location.search;
 if(q.indexOf('lang=en')!==-1)return;
@@ -192,8 +226,13 @@ if(saved==='ru')location.replace('privacy.html');})();</script>
   </tr>
   <tr>
     <td>Site analytics</td>
-    <td>A first-party cookie <code>kai_vid</code> — a pseudonymous visit identifier (one-year lifetime) — together with the pages viewed, the referring source and the language. Used solely for our own site statistics; no third-party analytics services are integrated and the data is not shared with anyone</td>
-    <td>Your browser when you visit the site</td>
+    <td>A first-party cookie <code>kai_vid</code> — a pseudonymous visit identifier (one-year lifetime) — together with the pages viewed, the referring source and the language. <strong>Set only after you consent</strong> via the cookie banner; if you chose "Only necessary" or have not chosen yet, analytics never starts and nothing is sent. Used solely for our own site statistics; no third-party analytics services are integrated and the data is not shared with anyone. The legal basis is consent (Art. 6(1)(a) GDPR), which you can withdraw at any time through the "Cookie settings" link in the site footer</td>
+    <td>Your browser — after you consent to analytics</td>
+  </tr>
+  <tr>
+    <td>Strictly necessary storage</td>
+    <td>Your cookie choice (<code>kai_cookie_consent</code>) and your selected site language (<code>kai_lang</code>) are kept in browser localStorage. These are strictly necessary entries: they hold your own preferences, are never used for tracking and are never transmitted, so they do not require consent</td>
+    <td>Your browser</td>
   </tr>
 </table>
 </div>
@@ -277,12 +316,45 @@ if(saved==='ru')location.replace('privacy.html');})();</script>
 </div>
 
 <div class="footer">
-  <a href="index.html" style="color:var(--muted)">← Back to home</a> · <a href="privacy.html" style="color:var(--muted)">Russian version</a>
+  <a href="#" id="cookieSettings" style="color:var(--muted)">Cookie settings</a> · <a href="index.html" style="color:var(--muted)">← Back to home</a> · <a href="privacy.html" style="color:var(--muted)">Russian version</a>
 </div>
+
+<div class="cookie-banner" id="cookieBanner">
+  <span>We use cookies for site analytics. Nothing is stored without your consent — the site works fine without them. See our <a href="privacy-en.html">Privacy Policy</a>.</span>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button>
+    <button class="cookie-btn cookie-btn-decline" id="cookieDecline">Only necessary</button>
+  </div>
+</div>
+
+<script>
+/* ─── COOKIE CONSENT ─── */
+(function() {
+  var KEY = 'kai_cookie_consent';
+  var banner = document.getElementById('cookieBanner');
+  function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function write(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+  function show() { banner.classList.add('visible'); }
+  function hide() { banner.classList.remove('visible'); }
+  window.kaiConsent = read();
+  document.getElementById('cookieAccept').addEventListener('click', function() {
+    write('accepted'); window.kaiConsent = 'accepted'; hide();
+    if (window.kaiAnalyticsStart) window.kaiAnalyticsStart();
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function() {
+    write('declined'); window.kaiConsent = 'declined'; hide();
+    if (window.kaiAnalyticsStop) window.kaiAnalyticsStop();
+  });
+  var settings = document.getElementById('cookieSettings');
+  if (settings) settings.addEventListener('click', function(e) { e.preventDefault(); show(); });
+  if (!window.kaiConsent) setTimeout(show, 1000);
+})();
+</script>
 
 <!-- ─── FIRST-PARTY ANALYTICS ─── -->
 <script>
 (function(){
+  var V='', on=false;
   function vid(){
     try{
       var m=document.cookie.match(/(?:^|; )kai_vid=([a-f0-9-]+)/);
@@ -293,13 +365,22 @@ if(saved==='ru')location.replace('privacy.html');})();</script>
       return v;
     }catch(e){return '';}
   }
-  var V=vid(), LANG=document.documentElement.lang||'ru';
+  function forget(){
+    try{localStorage.removeItem('kai_vid');}catch(e){}
+    try{document.cookie='kai_vid=; max-age=0; path=/; SameSite=Lax';}catch(e){}
+  }
+  var LANG=document.documentElement.lang||'ru';
   window.kaiTrack=function(ev){
+    if(!on) return;
     try{navigator.sendBeacon('https://ai-crm-bot-production.up.railway.app/track',
       JSON.stringify({vid:V,event:ev,path:location.pathname+location.hash,
                       ref:document.referrer,lang:LANG}));}catch(e){}
   };
-  kaiTrack('pageview');
+  window.kaiAnalyticsStart=function(){ if(on) return; V=vid(); on=true; kaiTrack('pageview'); };
+  window.kaiAnalyticsStop=function(){ on=false; V=''; forget(); };
+
+  if(window.kaiConsent==='accepted') window.kaiAnalyticsStart();
+  else if(window.kaiConsent==='declined') forget();
   document.addEventListener('click', function(e){
     var a = e.target.closest && e.target.closest('a');
     if (!a) return;

@@ -94,6 +94,40 @@ strong { color: var(--ink); font-weight: 600; }
 @media (max-width: 640px) {
   .container { padding: 90px 18px 60px; }
 }
+
+/* ─── COOKIE BANNER ─── */
+.cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: var(--bg-1);
+  border-top: 1px solid var(--border);
+  padding: 16px 24px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; flex-wrap: wrap;
+  font-size: 13px; color: var(--text);
+  transform: translateY(100%);
+  transition: transform .4s ease;
+}
+.cookie-banner.visible { transform: translateY(0); }
+.cookie-banner a { color: var(--accent-2); }
+.cookie-btns { display: flex; gap: 8px; flex-shrink: 0; }
+.cookie-btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 12px; font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.cookie-btn:hover { opacity: .85; }
+.cookie-btn-accept { background: var(--accent); color: #fff; border: 1px solid transparent; }
+.cookie-btn-decline { background: var(--bg-2); border: 1px solid var(--border); color: var(--ink); }
+@media (max-width: 640px) {
+  .cookie-banner { font-size: 12px; padding: 14px 16px; gap: 12px; }
+  .cookie-btns { width: 100%; }
+  .cookie-btn { flex: 1; }
+}
 </style>
 </head>
 <body>
@@ -177,12 +211,45 @@ strong { color: var(--ink); font-weight: 600; }
 </div>
 
 <div class="footer">
-  <a href="index.html" style="color:var(--muted)">← Вернуться на главную</a> · <a href="refund-en.html" style="color:var(--muted)">English version</a>
+  <a href="#" id="cookieSettings" style="color:var(--muted)">Настройки cookie</a> · <a href="index.html" style="color:var(--muted)">← Вернуться на главную</a> · <a href="refund-en.html" style="color:var(--muted)">English version</a>
 </div>
+
+<div class="cookie-banner" id="cookieBanner">
+  <span>Мы используем cookie для аналитики посещаемости. Без вашего согласия они не ставятся — сайт работает и без них. Подробнее в <a href="privacy.html">Политике конфиденциальности</a>.</span>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Принять</button>
+    <button class="cookie-btn cookie-btn-decline" id="cookieDecline">Только необходимые</button>
+  </div>
+</div>
+
+<script>
+/* ─── COOKIE CONSENT ─── */
+(function() {
+  var KEY = 'kai_cookie_consent';
+  var banner = document.getElementById('cookieBanner');
+  function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function write(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+  function show() { banner.classList.add('visible'); }
+  function hide() { banner.classList.remove('visible'); }
+  window.kaiConsent = read();
+  document.getElementById('cookieAccept').addEventListener('click', function() {
+    write('accepted'); window.kaiConsent = 'accepted'; hide();
+    if (window.kaiAnalyticsStart) window.kaiAnalyticsStart();
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function() {
+    write('declined'); window.kaiConsent = 'declined'; hide();
+    if (window.kaiAnalyticsStop) window.kaiAnalyticsStop();
+  });
+  var settings = document.getElementById('cookieSettings');
+  if (settings) settings.addEventListener('click', function(e) { e.preventDefault(); show(); });
+  if (!window.kaiConsent) setTimeout(show, 1000);
+})();
+</script>
 
 <!-- ─── FIRST-PARTY ANALYTICS ─── -->
 <script>
 (function(){
+  var V='', on=false;
   function vid(){
     try{
       var m=document.cookie.match(/(?:^|; )kai_vid=([a-f0-9-]+)/);
@@ -193,13 +260,22 @@ strong { color: var(--ink); font-weight: 600; }
       return v;
     }catch(e){return '';}
   }
-  var V=vid(), LANG=document.documentElement.lang||'ru';
+  function forget(){
+    try{localStorage.removeItem('kai_vid');}catch(e){}
+    try{document.cookie='kai_vid=; max-age=0; path=/; SameSite=Lax';}catch(e){}
+  }
+  var LANG=document.documentElement.lang||'ru';
   window.kaiTrack=function(ev){
+    if(!on) return;
     try{navigator.sendBeacon('https://ai-crm-bot-production.up.railway.app/track',
       JSON.stringify({vid:V,event:ev,path:location.pathname+location.hash,
                       ref:document.referrer,lang:LANG}));}catch(e){}
   };
-  kaiTrack('pageview');
+  window.kaiAnalyticsStart=function(){ if(on) return; V=vid(); on=true; kaiTrack('pageview'); };
+  window.kaiAnalyticsStop=function(){ on=false; V=''; forget(); };
+
+  if(window.kaiConsent==='accepted') window.kaiAnalyticsStart();
+  else if(window.kaiConsent==='declined') forget();
   document.addEventListener('click', function(e){
     var a = e.target.closest && e.target.closest('a');
     if (!a) return;

@@ -1771,9 +1771,12 @@ footer {
   color: #fff;
 }
 .cookie-btn-decline {
-  background: var(--graphite);
-  color: var(--fog);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  color: var(--ink);
 }
+/* accept and decline must be equally easy to find and press (EDPB dark-pattern guidance) */
+.cookie-btn-accept { border: 1px solid transparent; }
 
 /* ─── CONNECT STRIP ─── */
 .support-note { margin-top: 28px; }
@@ -2868,6 +2871,7 @@ footer {
         <a href="privacy.html" class="privacy-link" data-ru="Политика конфиденциальности" data-en="Privacy policy">Политика конфиденциальности</a>
         <a href="terms.html" data-ru="Условия использования" data-en="Terms of service">Условия использования</a>
         <a href="refund.html" class="refund-link" data-ru="Политика возврата" data-en="Refund policy">Политика возврата</a>
+        <a href="#" id="cookieSettings" data-ru="Настройки cookie" data-en="Cookie settings">Настройки cookie</a>
       </div>
     </div>
   </div>
@@ -2875,10 +2879,10 @@ footer {
 
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner">
-  <span data-ru="Мы используем cookie для аналитики и улучшения сервиса. Подробнее в <a href='privacy.html'>Политике конфиденциальности</a>." data-en="We use cookies for analytics and to improve the service. See our <a href='privacy-en.html'>Privacy Policy</a>.">Мы используем cookie для аналитики и улучшения сервиса. Подробнее в <a href='privacy.html'>Политике конфиденциальности</a>.</span>
+  <span data-ru="Мы используем cookie для аналитики посещаемости. Без вашего согласия они не ставятся — сайт работает и без них. Подробнее в <a href='privacy.html'>Политике конфиденциальности</a>." data-en="We use cookies for site analytics. Nothing is stored without your consent — the site works fine without them. See our <a href='privacy-en.html'>Privacy Policy</a>.">Мы используем cookie для аналитики посещаемости. Без вашего согласия они не ставятся — сайт работает и без них. Подробнее в <a href='privacy.html'>Политике конфиденциальности</a>.</span>
   <div class="cookie-btns">
     <button class="cookie-btn cookie-btn-accept" id="cookieAccept" data-ru="Принять" data-en="Accept">Принять</button>
-    <button class="cookie-btn cookie-btn-decline" id="cookieDecline" data-ru="Отклонить" data-en="Decline">Отклонить</button>
+    <button class="cookie-btn cookie-btn-decline" id="cookieDecline" data-ru="Только необходимые" data-en="Only necessary">Только необходимые</button>
   </div>
 </div>
 
@@ -3246,21 +3250,32 @@ window.addEventListener('scroll', () => {
 </script>
 
 <script>
-/* ─── COOKIE BANNER ─── */
+/* ─── COOKIE CONSENT ─── */
 (function() {
-  var consent = null;
-  try { consent = localStorage.getItem('kai_cookie_consent'); } catch (e) {}
-  if (consent) return;
+  var KEY = 'kai_cookie_consent';
   var banner = document.getElementById('cookieBanner');
-  setTimeout(function() { banner.classList.add('visible'); }, 1000);
+  function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function write(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+  function show() { banner.classList.add('visible'); }
+  function hide() { banner.classList.remove('visible'); }
+
+  /* analytics reads this before deciding whether to start */
+  window.kaiConsent = read();
+
   document.getElementById('cookieAccept').addEventListener('click', function() {
-    try { localStorage.setItem('kai_cookie_consent', 'accepted'); } catch (e) {}
-    banner.classList.remove('visible');
+    write('accepted'); window.kaiConsent = 'accepted'; hide();
+    if (window.kaiAnalyticsStart) window.kaiAnalyticsStart();
   });
   document.getElementById('cookieDecline').addEventListener('click', function() {
-    try { localStorage.setItem('kai_cookie_consent', 'declined'); } catch (e) {}
-    banner.classList.remove('visible');
+    write('declined'); window.kaiConsent = 'declined'; hide();
+    if (window.kaiAnalyticsStop) window.kaiAnalyticsStop();
   });
+
+  /* withdrawal must be as easy as consent */
+  var settings = document.getElementById('cookieSettings');
+  if (settings) settings.addEventListener('click', function(e) { e.preventDefault(); show(); });
+
+  if (!window.kaiConsent) setTimeout(show, 1000);
 })();
 </script>
 
@@ -3394,6 +3409,7 @@ window.addEventListener('scroll', () => {
 <!-- ─── FIRST-PARTY ANALYTICS ─── -->
 <script>
 (function(){
+  var V='', on=false;
   function vid(){
     try{
       var m=document.cookie.match(/(?:^|; )kai_vid=([a-f0-9-]+)/);
@@ -3404,13 +3420,22 @@ window.addEventListener('scroll', () => {
       return v;
     }catch(e){return '';}
   }
-  var V=vid(), LANG=document.documentElement.lang||'ru';
+  function forget(){
+    try{localStorage.removeItem('kai_vid');}catch(e){}
+    try{document.cookie='kai_vid=; max-age=0; path=/; SameSite=Lax';}catch(e){}
+  }
+  var LANG=document.documentElement.lang||'ru';
   window.kaiTrack=function(ev){
+    if(!on) return;
     try{navigator.sendBeacon('https://ai-crm-bot-production.up.railway.app/track',
       JSON.stringify({vid:V,event:ev,path:location.pathname+location.hash,
                       ref:document.referrer,lang:LANG}));}catch(e){}
   };
-  kaiTrack('pageview');
+  window.kaiAnalyticsStart=function(){ if(on) return; V=vid(); on=true; kaiTrack('pageview'); };
+  window.kaiAnalyticsStop=function(){ on=false; V=''; forget(); };
+
+  if(window.kaiConsent==='accepted') window.kaiAnalyticsStart();
+  else if(window.kaiConsent==='declined') forget();
 
   /* click events — delegated, so dynamically added nodes are covered too */
   document.addEventListener('click', function(e){
