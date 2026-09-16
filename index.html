@@ -2998,6 +2998,8 @@ function detectLang() {
 }
 let currentLang = 'en';
 try { currentLang = localStorage.getItem('kai_lang') || detectLang(); } catch (e) { currentLang = detectLang(); }
+/* ?lang= в адресе главнее: так приходят ссылки из чата и бота (тарифы, документация) */
+try { var _qpLang = new URLSearchParams(location.search).get('lang'); if (_qpLang === 'en' || _qpLang === 'ru') currentLang = _qpLang; } catch (e) {}
 
 function applyLang(lang) {
   currentLang = lang;
@@ -3149,6 +3151,7 @@ window.addEventListener('scroll', () => {
 <script>
 (function() {
   var CHAT_URL = 'https://ai-crm-bot-production.up.railway.app/chat';
+  var chatSaidLang = null;   // язык, который только что переключили ВНУТРИ чата — фрейм не перезагружаем
   var launcher = document.getElementById('chatLauncher');
   var panel = document.getElementById('chatPanel');
   var tip = document.getElementById('chatTip');
@@ -3199,7 +3202,14 @@ window.addEventListener('scroll', () => {
   }
   /* language switch: reload the chat so it speaks the page language
      (the iframe was built with a fixed ?lang= and keeps sending it) */
+  /* чат во фрейме переключил язык → лендинг переключается следом (одна пара языков на переходах) */
+  window.addEventListener('message', function(e) {
+    if (e.origin !== 'https://ai-crm-bot-production.up.railway.app') return;
+    var l = e.data && e.data.kaiLang;
+    if ((l === 'en' || l === 'ru') && l !== currentLang) { chatSaidLang = l; try { applyLang(l); } finally { chatSaidLang = null; } }
+  });
   window.kaiChatRelang = function(lang) {
+    if (lang === chatSaidLang) return;   // чат сам уже на этом языке
     var f = panel.querySelector('iframe');
     if (!f) return;                       // not loaded yet — next open picks the new lang
     var want = CHAT_URL + '?lang=' + (lang === 'en' ? 'en' : 'ru');
