@@ -3160,6 +3160,11 @@ window.addEventListener('scroll', () => {
   if (!launcher || !panel) return;
   var loaded = false, isOpen = false;
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var CHAT_ORIGIN = 'https://ai-crm-bot-production.up.railway.app';
+  /* пришли из большого чата с кодом переноса сессии (?h=): отдаём его фрейму и открываем панель */
+  var handoffCode = null;
+  try { var _hq = new URLSearchParams(location.search); handoffCode = _hq.get('h');
+    if (handoffCode) { _hq.delete('h'); history.replaceState(null, '', location.pathname + (_hq.toString() ? '?' + _hq.toString() : '') + location.hash); } } catch (e) {}
 
   function hideTip() {
     if (tip) tip.classList.remove('show');
@@ -3178,7 +3183,8 @@ window.addEventListener('scroll', () => {
     markNudged();
     if (!loaded) {
       var f = document.createElement('iframe');
-      f.src = CHAT_URL + (document.documentElement.lang === 'en' ? '?lang=en' : '?lang=ru');
+      f.src = CHAT_URL + (document.documentElement.lang === 'en' ? '?lang=en' : '?lang=ru') + (handoffCode ? '&h=' + encodeURIComponent(handoffCode) : '');
+      handoffCode = null;
       f.title = 'Kai chat';
       f.setAttribute('allow', 'clipboard-write');
       panel.appendChild(f);
@@ -3218,6 +3224,24 @@ window.addEventListener('scroll', () => {
   };
 
   launcher.addEventListener('click', function(){ isOpen ? closePanel() : openPanel(); });
+  if (handoffCode) setTimeout(openPanel, 400);
+  /* ссылки «Веб-чат» открывают большой чат с той же сессией, что и маленький (если он уже открыт) */
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest && e.target.closest('a.chat-link');
+    if (!a) return;
+    var f = panel.querySelector('iframe');
+    if (!f || !f.contentWindow) return;                 // чат ещё не открывали — переносить нечего
+    e.preventDefault();
+    var href = a.getAttribute('href'), req = String(Date.now()), w = window.open('about:blank', '_blank');
+    if (w) { try { w.opener = null; } catch (x) {} }
+    var done = false;
+    function go(u) { if (done) return; done = true; if (w) w.location.href = u; else location.href = u; }
+    function onMsg(ev) { if (ev.origin !== CHAT_ORIGIN) return;
+      if (ev.data && ev.data.kaiHandoffUrl && ev.data.req === req) { window.removeEventListener('message', onMsg); go(ev.data.kaiHandoffUrl); } }
+    window.addEventListener('message', onMsg);
+    f.contentWindow.postMessage({kaiHandoff: href, req: req}, CHAT_ORIGIN);
+    setTimeout(function() { window.removeEventListener('message', onMsg); go(href); }, 1500);
+  }, true);
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && isOpen) closePanel(); });
 
   /* proactive nudge: 12s after load, at most once per day */
