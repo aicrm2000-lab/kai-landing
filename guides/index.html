@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Гайды: настройка amoCRM и Kommo без программиста | Kai</title>
+<meta name="description" content="Пошаговые гайды по воронкам, полям, автоматизациям и ИИ-инструментам для amoCRM и Kommo — руками, через интегратора и через Kai.">
+<link rel="canonical" href="https://aicrm2000-lab.github.io/kai-landing/guides/">
+<link rel="alternate" hreflang="ru" href="https://aicrm2000-lab.github.io/kai-landing/guides/"><link rel="alternate" hreflang="en" href="https://aicrm2000-lab.github.io/kai-landing/guides/en/"><link rel="alternate" hreflang="x-default" href="https://aicrm2000-lab.github.io/kai-landing/guides/">
+<meta property="og:title" content="Гайды: настройка amoCRM и Kommo без программиста"><meta property="og:description" content="Пошаговые гайды по воронкам, полям, автоматизациям и ИИ-инструментам для amoCRM и Kommo — руками, через интегратора и через Kai."><meta property="og:image" content="https://aicrm2000-lab.github.io/kai-landing/og-image.png"><meta property="og:url" content="https://aicrm2000-lab.github.io/kai-landing/guides/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B0A14'/><path d='M16 6.5a9.5 9.5 0 1 0 9.5 9.5' stroke='%237C5CFF' stroke-width='4' stroke-linecap='round' fill='none'/><circle cx='23.4' cy='8.6' r='2.6' fill='%23A78BFA'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 'Plus Jakarta Sans',Inter,system-ui,sans-serif;padding:0 16px 64px}
+.wrap{max-width:760px;margin:0 auto}header{display:flex;align-items:center;gap:12px;padding:22px 0;border-bottom:1px solid var(--border)}
+header a{color:var(--ink);text-decoration:none;font-weight:700}header nav{margin-left:auto;display:flex;gap:18px;font-size:14px}header nav a{color:var(--muted);font-weight:500}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin:40px 0 12px}
+.lead{color:var(--text);max-width:62ch}.card{display:block;border:1px solid var(--border);background:var(--bg-1);border-radius:16px;padding:20px 22px;margin-top:14px;text-decoration:none;color:inherit;transition:border-color .15s}
+.card:hover{border-color:var(--accent)}.card b{display:block;color:var(--ink);font-size:19px;margin-bottom:6px}.card span{color:var(--muted);font-size:15px}
+.cta{margin-top:36px;padding:22px;border-radius:16px;background:var(--bg-2);border:1px solid var(--border)}.cta a{display:inline-block;margin:10px 10px 0 0;padding:12px 18px;border-radius:999px;background:linear-gradient(135deg,#7C5CFF,#A78BFA);color:#fff;text-decoration:none;font-weight:700}
+.cta a.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}footer{margin-top:40px;color:var(--muted);font-size:13px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Гайды: настройка amoCRM и Kommo без программиста", "description": "Пошаговые гайды по воронкам, полям, автоматизациям и ИИ-инструментам для amoCRM и Kommo — руками, через интегратора и через Kai.", "url": "https://aicrm2000-lab.github.io/kai-landing/guides/", "inLanguage": "ru", "isPartOf": {"@type": "WebSite", "name": "Kai", "url": "https://aicrm2000-lab.github.io/kai-landing/"}, "hasPart": [{"@type": "Article", "headline": "Воронка продаж в amoCRM без программиста: гайд 2026", "url": "https://aicrm2000-lab.github.io/kai-landing/guides/amocrm-pipeline-setup.html"}, {"@type": "Article", "headline": "Автоматизации в Kommo без разработчика: гид 2026", "url": "https://aicrm2000-lab.github.io/kai-landing/guides/kommo-automation-no-developer.html"}, {"@type": "Article", "headline": "ИИ-ассистент для amoCRM: что умеет и как выбрать (2026)", "url": "https://aicrm2000-lab.github.io/kai-landing/guides/ai-assistant-for-amocrm.html"}, {"@type": "Article", "headline": "Kommo AI agent, Copilot, Salesbot или Kai: что выбрать в 2026", "url": "https://aicrm2000-lab.github.io/kai-landing/guides/kommo-ai-tools-compared.html"}]}</script>
+</head>
+<body><div class="wrap">
+<header><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path d="M35.5 13.5 A15 15 0 1 0 39 24" fill="none" stroke="#7C5CFF" stroke-width="5.5" stroke-linecap="round"/><circle cx="38.5" cy="12.5" r="3.6" fill="#A78BFA"/></svg><a href="../">Kai</a><nav><a href="../#pricing">Тарифы</a><a href="https://aicrm2000-lab.github.io/kai-landing/guides/en/">EN</a></nav></header>
+<h1>Гайды: настройка amoCRM и Kommo без программиста</h1>
+<p class="lead">Пошаговые гайды по воронкам, полям, автоматизациям и ИИ-инструментам для amoCRM и Kommo — руками, через интегратора и через Kai.</p>
+<a class="card" href="amocrm-pipeline-setup.html"><b>Воронка продаж в amoCRM без программиста: гайд 2026</b><span>Пошагово: этапы воронки, поля и обязательные поля в amoCRM через «Сделки → Настроить», типичные ошибки, и как сделать то же самое одним сообщением Kai.</span></a><a class="card" href="kommo-automation-no-developer.html"><b>Автоматизации в Kommo без разработчика: гид 2026</b><span>Digital Pipeline и Salesbot в Kommo: что настроить самому, 3 сценария по шагам (задача, молчание клиента, Telegram при выигрыше), лимиты и как это делает Kai.</span></a><a class="card" href="ai-assistant-for-amocrm.html"><b>ИИ-ассистент для amoCRM: что умеет и как выбрать (2026)</b><span>Четыре класса ИИ для amoCRM: amoAI, чат-боты, no-code коннекторы и ассистенты-настройщики вроде Kai. Критерии выбора, сравнение, цены и честные ограничения.</span></a><a class="card" href="kommo-ai-tools-compared.html"><b>Kommo AI agent, Copilot, Salesbot или Kai: что выбрать в 2026</b><span>Kommo AI agent и Copilot, Salesbot, Albato/Make/n8n, Wazzup/Umnico или ассистент Kai: кому что подходит в 2026. Таблица по задачам, UI-пути, цены и сроки.</span></a>
+<div class="cta"><b style="color:var(--ink)">Хотите, чтобы это сделал Kai?</b><br>
+<a href="https://t.me/aiicrm_bot">Попробовать в Telegram</a><a class="alt" href="https://ai-crm-bot-production.up.railway.app/chat?lang=ru">Открыть веб-чат</a></div>
+<footer>© 2026 Kai · <a href="../privacy.html" style="color:var(--muted)">Конфиденциальность</a></footer>
+</div></body></html>

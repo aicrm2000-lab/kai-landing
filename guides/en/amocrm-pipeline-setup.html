@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>amoCRM Sales Pipeline Setup Without a Developer (2026) | Kai</title>
+<meta name="description" content="Step by step: pipeline stages, custom fields and required fields in amoCRM via Leads → Setup, common mistakes, and how to do the same with one message to Kai.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aicrm2000-lab.github.io/kai-landing/guides/en/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="ru" href="https://aicrm2000-lab.github.io/kai-landing/guides/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="en" href="https://aicrm2000-lab.github.io/kai-landing/guides/en/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="x-default" href="https://aicrm2000-lab.github.io/kai-landing/guides/amocrm-pipeline-setup.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aicrm2000-lab.github.io/kai-landing/guides/en/amocrm-pipeline-setup.html">
+<meta property="og:title" content="How to Set Up a Sales Pipeline in amoCRM Without a Developer (2026)">
+<meta property="og:description" content="Stages, fields, required fields, common mistakes. The manual route through the amoCRM interface and the one-message route with Kai.">
+<meta property="og:image" content="https://aicrm2000-lab.github.io/kai-landing/og-image.png">
+<meta property="article:published_time" content="2026-09-24">
+<meta property="article:modified_time" content="2026-09-24">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Set Up a Sales Pipeline in amoCRM Without a Developer (2026)">
+<meta name="twitter:description" content="Stages, fields, required fields, common mistakes. Manually in the amoCRM interface or with one message to Kai.">
+<meta name="twitter:image" content="https://aicrm2000-lab.github.io/kai-landing/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aicrm2000-lab.github.io/kai-landing/" aria-label="Kai — home">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M35.5 13.5 A15 15 0 1 0 39 24" fill="none" stroke="#7C5CFF" stroke-width="5.5" stroke-linecap="round"/><circle cx="38.5" cy="12.5" r="3.6" fill="#A78BFA"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Navigation">
+      <a href="https://aicrm2000-lab.github.io/kai-landing/">Website</a>
+      <a href="https://t.me/aiicrm_bot">Telegram bot</a>
+      <a href="https://aicrm2000-lab.github.io/kai-landing/guides/amocrm-pipeline-setup.html" hreflang="ru">RU</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Breadcrumbs">
+  <a href="https://aicrm2000-lab.github.io/kai-landing/">Kai</a> › <a href="https://aicrm2000-lab.github.io/kai-landing/guides/">Guides</a> › amoCRM pipeline
+</nav>
+
+<h1>How to Set Up a Sales Pipeline in amoCRM Without a Developer</h1>
+<p class="meta">Updated September 24, 2026 · Kai Team · 6 min read</p>
+
+<p class="lead">You can build a sales pipeline in amoCRM yourself in 1–2 hours: stages are edited under <kbd>Leads → Setup</kbd> (<kbd>Сделки → Настроить</kbd> in the Russian interface), fields are added from a lead card via <kbd>Setup → Add field</kbd>, and the same settings make a field required at chosen stages. No developer needed: admin rights and a thought-through stage map. Or send the same map in one message to an AI assistant such as Kai, which builds it through the official API.</p>
+
+<section class="tldr" aria-label="TL;DR">
+  <h2>TL;DR</h2>
+  <ul>
+    <li>5–7 working stages is usually enough. Each stage is one verifiable action by the salesperson, not a customer state.</li>
+    <li>The system stages "Won" and "Lost" cannot be deleted, only renamed.</li>
+    <li>A field's type cannot be changed later, and deleting a field erases its data. Plan fields before real deals arrive.</li>
+    <li>Required fields per stage are available from amoCRM's "Advanced" plan upwards; only an administrator can edit fields.</li>
+    <li>Manual: 1–2 hours. Integrator: typically 3–5 weeks and roughly €1,500–4,000. Kai: one chat conversation, from €29/month, 3 days free.</li>
+  </ul>
+</section>
+
+<h2>Step 0. Sketch the pipeline before you open amoCRM</h2>
+<p>Most "broken" CRMs have stages invented on the fly. Write down the customer's path from enquiry to money and keep only the points where a salesperson does something checkable. Example for a made-to-order kitchen studio:</p>
+<pre>New enquiry → Qualified → Site visit booked → Quote sent → Contract and deposit → In production → Installed</pre>
+<p>Next to each stage, note what the salesperson must know to move the deal on. Those notes are your fields: "Source" at the start, "Budget" before the quote, "Loss reason" at close.</p>
+
+<h2>Step 1. Create the pipeline and stages in the amoCRM interface</h2>
+<ol>
+  <li>Open <kbd>Leads</kbd> (<kbd>Сделки</kbd>) and click <kbd>Setup</kbd> (<kbd>Настроить</kbd>) in the top-right corner.</li>
+  <li>Add a stage with <kbd>+</kbd>. Click a stage to rename or recolour it; drag to reorder.</li>
+  <li>To remove a stage, move its deals out and drag it to the bin in the bottom-right corner.</li>
+  <li>The system stages "Won" and "Lost" cannot be deleted, only renamed, say to "Paid" and "Declined".</li>
+  <li>For a second pipeline (repeat orders, partners), click the current pipeline's name in the top-left corner and add one. Mixing first-time and repeat sales makes stage conversion meaningless.</li>
+</ol>
+<div class="note warn">A pipeline can be deleted only after every deal in it, including closed ones, is moved or deleted, and it cannot be restored.</div>
+
+<h2>Step 2. Add fields to the lead card</h2>
+<ol>
+  <li>Open any lead. Contacts and companies have their own fields, set up from their cards the same way.</li>
+  <li>Click <kbd>Setup</kbd>, then <kbd>Add field</kbd>; pick a type and a name.</li>
+  <li>Core types: list, multi-select, text, text area, number, date, checkbox, birthday. Use lists for "Source" and "Loss reason": free text can't be reported on.</li>
+  <li>Group fields into tabs with the <kbd>+</kbd> next to "Files".</li>
+</ol>
+<p>A minimal set: "Source" (list), "Budget" (number), "Next touch date" (date), "Loss reason" (list). Don't duplicate what amoCRM has: deal amount, responsible user, contact details.</p>
+<div class="note warn">A field's type cannot be changed once created, and deleting a field wipes its data with no way back.</div>
+
+<h2>Step 3. Make key fields required at specific stages</h2>
+<p>In a field's settings, pick the stages of one or several pipelines where it is required; the deal cannot move on until it is filled. From the step 0 map:</p>
+<ul>
+  <li>"Source" to leave "New enquiry";</li>
+  <li>"Budget" before "Quote sent";</li>
+  <li>"Loss reason" when moving to "Lost".</li>
+</ul>
+<p>Stop at one or two required fields per stage; beyond that people type dashes. Available from the "Advanced" plan upwards, administrators only.</p>
+
+<h2>Step 4. Run three test deals through it</h2>
+<p>Create three deals — "bought", "declined", "stuck at the site visit" — and walk each through the stages. Check that required fields block the move, analytics shows stage conversion, and the stuck deal has a task. Then delete them.</p>
+
+<h2>The Kai route: the same map in one message</h2>
+<p>Kai is an AI assistant that configures amoCRM and Kommo from a chat message. Connect the CRM with one-click OAuth from the amoCRM marketplace widget, then write to the Telegram bot <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> or the <a href="https://ai-crm-bot-production.up.railway.app/chat?lang=en">web chat</a> (one account, one history). The step 0 map as a message:</p>
+<pre>Set up a pipeline for a made-to-order kitchen studio.
+Stages: New enquiry → Qualified → Site visit booked → Quote sent → Contract and deposit → In production → Installed.
+Lead fields: Source (list: website, marketplace, referral, Instagram), Budget (number), Site visit date (date), Loss reason (list).
+Source required to leave "New enquiry", Budget before "Quote sent", Loss reason when lost.
+When a deal reaches "Site visit booked", create a task for the surveyor one day before the visit.</pre>
+<p>Kai asks a few clarifying questions (say, whether repeat orders need their own pipeline), shows a plan and, once you confirm, creates everything through the official API and sends a report. Later changes are another message, typed or spoken. Honest limits: required fields need an amoCRM plan that has them, and Kai checks your process rather than inventing it.</p>
+
+<h2>Common mistakes when setting up a pipeline</h2>
+<ul>
+  <li><strong>States instead of actions.</strong> "In progress", "Thinking": deals sit there for months. A stage answers "what has the salesperson done".</li>
+  <li><strong>Too many stages.</strong> Past ten, conversion is unreadable and deals move by feel.</li>
+  <li><strong>One pipeline for everything.</strong> First-time, repeat and partner sales have different cycles.</li>
+  <li><strong>Optional fields only.</strong> An optional "Source" is empty within weeks; you never learn which ads pay.</li>
+  <li><strong>No "Loss reason".</strong> The lost-deals report becomes a number you can't act on.</li>
+</ul>
+
+<h2>What if you use Kommo?</h2>
+<p>Same logic, English interface. Pipeline: <kbd>Pipelines → Add pipeline</kbd>; stages: <kbd>… → Edit Pipeline → Add stage</kbd>, click to rename, drag to reorder. Only empty stages and pipelines can be deleted, never the first pipeline. "Incoming Leads" can be toggled off but not deleted; "Closed-Won" and "Closed-Lost" can be renamed. Fields: open a lead, <kbd>Setup</kbd> tab, <kbd>+ Add field</kbd>, required-per-stage in the same place. Admin role only, on every Kommo plan. Kai connects the same way.</p>
+
+<h2>Comparison: manual, integrator or Kai</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Criterion</th><th>Manual</th><th>Integrator</th><th>Kai</th></tr></thead>
+  <tbody>
+    <tr><td>Time</td><td>1–2 hours for a simple pipeline</td><td>Typically 3–5 weeks</td><td>One conversation: questions → plan → setup</td></tr>
+    <tr><td>Cost</td><td>Free, your own time</td><td>Typically €1,500–4,000</td><td>From €29/month, 3 days free, no card</td></tr>
+    <tr><td>Who is needed</td><td>amoCRM administrator</td><td>An owner on your side plus a spec</td><td>amoCRM administrator for OAuth</td></tr>
+    <tr><td>Changes later</td><td>Click through again</td><td>New spec, new invoice</td><td>Another chat message</td></tr>
+    <tr><td>Best for</td><td>One pipeline, a dozen fields</td><td>Custom integrations: accounting, telephony, inventory</td><td>Pipelines, fields, automations, API integrations without code</td></tr>
+  </tbody>
+</table>
+</div>
+<p>amoAI, Kommo AI agent, no-code connectors (Albato, ApiX-Drive, Make, Zapier, n8n) and chatbots such as Salebot cover adjacent jobs: customer conversations and data sync. None designs your stages and fields; step 0 stays with you.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>How many stages should an amoCRM pipeline have?</h3>
+    <p>Usually 5–7 working stages plus the two system ones, each a verifiable action by the salesperson. More than ten usually means two processes share one pipeline.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Can a field be required at just one stage?</h3>
+    <p>Yes: in the field's settings you pick the stages of one or several pipelines. Available from the "Advanced" plan upwards; set up by an administrator.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What happens to deals if I delete a stage or a pipeline?</h3>
+    <p>Move the deals first. A stage is deleted by dragging it to the bin; a pipeline only once every deal, including closed ones, is out, and it cannot be restored.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Do I need a developer to set up amoCRM?</h3>
+    <p>Not for pipelines, fields, required fields and basic automations. A developer or integrator is needed for non-standard links: accounting software, a custom website, unusual telephony APIs.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How does Kai access amoCRM, and is it safe?</h3>
+    <p>Through official amoCRM/Kommo OAuth: one-click approval, no passwords or API keys shared. Tokens are stored encrypted, Kai doesn't store deal data, and access can be revoked in the CRM settings any time. The company is registered in Poland (EU).</p>
+  </div>
+  <div class="faq-item">
+    <h3>How much does Kai cost, and is there a free trial?</h3>
+    <p>Start €29/month (~100 requests), Pro €59/month (~500), Max €119/month (fair use, priority and custom work). First 3 days free, no card. Pay by card, Apple Pay, Google Pay, Telegram Stars or USDT.</p>
+  </div>
+</div>
+
+<h2>What next</h2>
+<p>Stage map on paper? Open <kbd>Leads → Setup</kbd> and build it in an evening. Prefer someone to ask the right questions and do it through the API? Describe your business to Kai in one message.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Try in Telegram</a>
+  <a class="btn btn-secondary" href="https://ai-crm-bot-production.up.railway.app/chat?lang=en">Open web chat</a>
+</div>
+
+<p class="author">Author: Kai Team · Updated <time datetime="2026-09-24">September 24, 2026</time> · Paths checked against the official amoCRM and Kommo help centres.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aicrm2000-lab.github.io/kai-landing/">Home</a> · <a href="https://aicrm2000-lab.github.io/kai-landing/privacy-en.html">Privacy</a> · <a href="https://aicrm2000-lab.github.io/kai-landing/terms-en.html">Terms</a> · <a href="https://aicrm2000-lab.github.io/kai-landing/guides/amocrm-pipeline-setup.html">Русская версия</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aicrm2000-lab.github.io/kai-landing/guides/en/amocrm-pipeline-setup.html#article",
+      "headline": "How to Set Up a Sales Pipeline in amoCRM Without a Developer",
+      "description": "Step by step: pipeline stages, custom fields and required fields in amoCRM via Leads → Setup, common mistakes, and how to do the same with one message to Kai.",
+      "inLanguage": "en",
+      "datePublished": "2026-09-24",
+      "dateModified": "2026-09-24",
+      "mainEntityOfPage": "https://aicrm2000-lab.github.io/kai-landing/guides/en/amocrm-pipeline-setup.html",
+      "image": "https://aicrm2000-lab.github.io/kai-landing/og-image.png",
+      "author": {"@type": "Organization", "name": "Kai", "url": "https://aicrm2000-lab.github.io/kai-landing/"},
+      "publisher": {"@type": "Organization", "name": "Kai", "url": "https://aicrm2000-lab.github.io/kai-landing/"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How many stages should an amoCRM pipeline have?", "acceptedAnswer": {"@type": "Answer", "text": "Usually 5–7 working stages plus the two system ones, each a verifiable action by the salesperson. More than ten usually means two processes share one pipeline."}},
+        {"@type": "Question", "name": "Can a field be required at just one stage?", "acceptedAnswer": {"@type": "Answer", "text": "Yes: in the field's settings you pick the stages of one or several pipelines. Available from the \"Advanced\" plan upwards; set up by an administrator."}},
+        {"@type": "Question", "name": "What happens to deals if I delete a stage or a pipeline?", "acceptedAnswer": {"@type": "Answer", "text": "Move the deals first. A stage is deleted by dragging it to the bin; a pipeline only once every deal, including closed ones, is out, and it cannot be restored."}},
+        {"@type": "Question", "name": "Do I need a developer to set up amoCRM?", "acceptedAnswer": {"@type": "Answer", "text": "Not for pipelines, fields, required fields and basic automations. A developer or integrator is needed for non-standard links: accounting software, a custom website, unusual telephony APIs."}},
+        {"@type": "Question", "name": "How does Kai access amoCRM, and is it safe?", "acceptedAnswer": {"@type": "Answer", "text": "Through official amoCRM/Kommo OAuth: one-click approval, no passwords or API keys shared. Tokens are stored encrypted, Kai doesn't store deal data, and access can be revoked in the CRM settings any time. The company is registered in Poland (EU)."}},
+        {"@type": "Question", "name": "How much does Kai cost, and is there a free trial?", "acceptedAnswer": {"@type": "Answer", "text": "Start €29/month (~100 requests), Pro €59/month (~500), Max €119/month (fair use, priority and custom work). First 3 days free, no card. Pay by card, Apple Pay, Google Pay, Telegram Stars or USDT."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Kai", "item": "https://aicrm2000-lab.github.io/kai-landing/"},
+        {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://aicrm2000-lab.github.io/kai-landing/guides/"},
+        {"@type": "ListItem", "position": 3, "name": "amoCRM Sales Pipeline Setup Without a Developer", "item": "https://aicrm2000-lab.github.io/kai-landing/guides/en/amocrm-pipeline-setup.html"}
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

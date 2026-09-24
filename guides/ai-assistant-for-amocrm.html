@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ИИ-ассистент для amoCRM: что умеет и как выбрать (2026)</title>
+<meta name="description" content="Четыре класса ИИ для amoCRM: amoAI, чат-боты, no-code коннекторы и ассистенты-настройщики вроде Kai. Критерии выбора, сравнение, цены и честные ограничения.">
+<link rel="canonical" href="https://aicrm2000-lab.github.io/kai-landing/guides/ai-assistant-for-amocrm.html">
+<link rel="alternate" hreflang="ru" href="https://aicrm2000-lab.github.io/kai-landing/guides/ai-assistant-for-amocrm.html">
+<link rel="alternate" hreflang="en" href="https://aicrm2000-lab.github.io/kai-landing/guides/en/ai-assistant-for-amocrm.html">
+<link rel="alternate" hreflang="x-default" href="https://aicrm2000-lab.github.io/kai-landing/guides/ai-assistant-for-amocrm.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="ИИ-ассистент для amoCRM: что умеет и как выбрать (2026)">
+<meta property="og:description" content="Четыре класса ИИ для amoCRM: amoAI, чат-боты, no-code коннекторы и ассистенты-настройщики вроде Kai. Критерии выбора, сравнение, цены и честные ограничения.">
+<meta property="og:url" content="https://aicrm2000-lab.github.io/kai-landing/guides/ai-assistant-for-amocrm.html">
+<meta property="og:image" content="https://aicrm2000-lab.github.io/kai-landing/og-image.png">
+<meta property="og:site_name" content="Kai">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="article:published_time" content="2026-09-24">
+<meta property="article:modified_time" content="2026-09-24">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
+.hdr{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.hdr-in{max-width:760px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:8px;color:var(--ink);font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;flex:none}
+.nav{margin-left:auto;display:flex;gap:14px;font-size:14px;font-weight:600;flex-wrap:wrap}
+main{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:12px}
+.crumbs a{color:var(--muted)}
+h1{color:var(--ink);font-size:clamp(26px,5vw,36px);line-height:1.2;font-weight:800;margin:0 0 14px;letter-spacing:-.01em}
+h2{color:var(--ink);font-size:clamp(21px,3.6vw,25px);line-height:1.3;font-weight:700;margin:36px 0 12px}
+h3{color:var(--ink);font-size:18px;margin:22px 0 8px;font-weight:700}
+p{margin:0 0 14px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:22px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:16px 18px 6px;margin:0 0 8px}
+.tldr h2{margin:0 0 10px;font-size:15px;color:var(--accent-2);text-transform:uppercase;letter-spacing:.08em}
+ul,ol{padding-left:22px;margin:0 0 14px}
+li{margin-bottom:8px}
+li::marker{color:var(--accent)}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:12px;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;min-width:680px;font-size:15px}
+th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:none}
+td strong{color:var(--ink)}
+code,.msg{font-family:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace}
+code{background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;font-size:.88em;color:var(--ink)}
+.msg{display:block;background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:14px 16px;margin:0 0 14px;font-size:14.5px;line-height:1.6;color:var(--ink);white-space:pre-wrap;word-break:break-word}
+.path{color:var(--ink);font-weight:600}
+.faq h3{margin-top:20px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0 8px}
+.btn{display:inline-block;padding:12px 18px;border-radius:10px;font-weight:700;font-size:16px}
+.btn-p{background:var(--accent);color:#fff}
+.btn-s{border:1px solid var(--accent-2);color:var(--accent-2)}
+.btn:hover{text-decoration:none;filter:brightness(1.08)}
+.author{border-top:1px solid var(--border);margin-top:32px;padding-top:16px;font-size:14px;color:var(--muted)}
+.good{color:var(--good);font-weight:600}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="https://aicrm2000-lab.github.io/kai-landing/" aria-label="Kai — на главную">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M35.5 13.5 A15 15 0 1 0 39 24" fill="none" stroke="#7C5CFF" stroke-width="5.5" stroke-linecap="round"/><circle cx="38.5" cy="12.5" r="3.6" fill="#A78BFA"/></svg>
+      Kai
+    </a>
+    <nav class="nav">
+      <a href="https://aicrm2000-lab.github.io/kai-landing/">Сайт</a>
+      <a href="https://t.me/aiicrm_bot">Telegram-бот</a>
+      <a href="https://aicrm2000-lab.github.io/kai-landing/guides/en/ai-assistant-for-amocrm.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Хлебные крошки"><a href="https://aicrm2000-lab.github.io/kai-landing/">Kai</a> › <a href="https://aicrm2000-lab.github.io/kai-landing/guides/">Гайды</a> › ИИ-ассистент для amoCRM</nav>
+
+<h1>ИИ-ассистент для amoCRM: что умеет и как выбрать (2026)</h1>
+<p class="meta">Команда Kai · Обновлено 24 сентября 2026</p>
+
+<p class="lead">«ИИ-ассистент для amoCRM» в 2026 году — это четыре разных класса инструментов: встроенный amoAI, который помогает писать ответы и резюмировать переписку; чат-боты, которые общаются с клиентами; no-code коннекторы, которые переносят данные между сервисами; и ассистенты-настройщики вроде Kai, которые по сообщению в чате создают воронки, поля и автоматизации. Выбирать стоит не «самый умный», а тот, что закрывает вашу задачу: продавать в чатах, связать сервисы или наконец настроить саму CRM.</p>
+
+<div class="tldr">
+<h2>Коротко</h2>
+<ul>
+<li><strong>amoAI</strong> работает внутри переписки (резюме, подсказки ответов, правка текста) и не меняет структуру CRM; доступен на тарифах «Профессиональный» и «Enterprise».</li>
+<li><strong>Чат-боты</strong> (Salesbot, Salebot, ChatAI) отвечают клиентам; <strong>no-code коннекторы</strong> (Albato, ApiX-Drive, Make, Zapier, n8n) переносят данные между сервисами. Ни те, ни другие не проектируют воронку.</li>
+<li><strong>Ассистент-настройщик Kai</strong> подключается к amoCRM и Kommo в один клик по OAuth и выполняет 60+ действий по API: воронки, поля, автоматизации, интеграции, аналитика.</li>
+<li><strong>Цены:</strong> Kai от €29/мес, 3 дня бесплатно без карты; интегратор в РФ — обычно 3–5 недель и 150–400 тыс. ₽; боты и коннекторы — по собственным подпискам.</li>
+<li><strong>Критерии выбора:</strong> доступ по OAuth без ключей, что именно инструмент меняет в CRM, есть ли план и отчёт для отката, как считаются лимиты.</li>
+</ul>
+</div>
+
+<h2>Четыре класса «ИИ для amoCRM»</h2>
+
+<h3>1. Встроенный amoAI (в Kommo — Copilot и AI agent)</h3>
+<p>amoAI — кнопка в поле сообщения: переписывает и улучшает тексты, исправляет ошибки, меняет тон, делает резюме переписки (сохраняется как примечание) и подсказывает готовые ответы. Включается в <span class="path">Настройки → amoAI</span>. В Kommo аналогичную роль играет Copilot (резюме сделок, подсказки ответов, предложение заполнить пустые поля), а AI agent отвечает на входящие сообщения клиентов и квалифицирует лиды. Ни один из них не создаёт воронки, поля и автоматизации — это помощники внутри уже настроенной CRM.</p>
+
+<h3>2. Чат-боты для клиентов</h3>
+<p>Salesbot внутри amoCRM, внешние Salebot и ChatAI, а также Wazzup и Umnico, которые заводят WhatsApp- и Telegram-чаты в CRM. Их задача — отвечать клиентам, собирать заявки, вести диалог по сценарию и ставить теги. Структура воронки при этом остаётся вашей заботой.</p>
+
+<h3>3. No-code коннекторы</h3>
+<p>Albato, ApiX-Drive, Make, Zapier, n8n. Типовые связки: «заявка с сайта → сделка в amoCRM», «сделка закрыта → строка в Google Sheets». Хороши для переноса данных, но каждую связку вы собираете руками, а структуру CRM они не трогают.</p>
+
+<h3>4. Ассистенты-настройщики</h3>
+<p>Kai работает иначе: вы описываете бизнес в Telegram-боте или веб-чате, он задаёт уточняющие вопросы, согласовывает план, затем сам создаёт воронки, этапы, поля, автоматизации и интеграции по API и присылает отчёт. Это не анкета, а диагностика — и замена не менеджеру, а интегратору на типовых задачах.</p>
+
+<h2>Критерии выбора</h2>
+<ul>
+<li><strong>Доступ.</strong> Хороший знак — установка из amoМаркета и подключение по OAuth без копирования ключей API: токены шифруются, доступ отзывается в один клик. Плохой знак — просьба прислать логин и пароль от аккаунта.</li>
+<li><strong>Что именно меняет в CRM.</strong> Спросите прямо: инструмент только читает данные, пишет в сделки или создаёт структуру (воронки, поля, триггеры)? Чем шире права, тем важнее следующий пункт.</li>
+<li><strong>Откат и отчёт.</strong> Любое изменение структуры должно быть перечислено: что создано, что переименовано. Kai согласовывает план до изменений и пишет отчёт после; интегратор фиксирует объём в ТЗ; боты и коннекторы структуру обычно не трогают.</li>
+<li><strong>Цена и лимиты.</strong> Подписка за запросы (Kai), за операции (коннекторы), за диалоги (боты) или разовый проект (интегратор). Считайте стоимость результата, а не тарифа: настроенная воронка за €29 и за 200 тыс. ₽ — разный объём работ.</li>
+<li><strong>Язык и юрисдикция.</strong> Kai говорит по-русски и по-английски, понимает голосовые сообщения, компания зарегистрирована в Польше (ЕС), данные сделок не хранит.</li>
+</ul>
+
+<h2>Пример: воронка, обязательное поле и автоматизация</h2>
+
+<h3>Вручную в amoCRM</h3>
+<ol>
+<li><span class="path">Сделки → Настроить</span> → нажмите на название воронки в левом верхнем углу → добавьте новую воронку. Этапы добавляются кнопкой «+», переименовываются кликом по этапу.</li>
+<li>Откройте любую карточку сделки → <span class="path">Настроить → Добавить поле</span> → выберите тип и название. Там же поле можно сделать обязательным для заполнения на определённых этапах.</li>
+<li><span class="path">Сделки → Настроить → Digital Pipeline</span> → на нужном этапе добавьте действие: создание задачи, добавление тегов, смена этапа сделки, отправка Webhook. Digital Pipeline доступен с тарифа «Расширенный».</li>
+</ol>
+<p>В Kommo: <span class="path">«…» в верхнем меню → Edit pipeline → Add stage</span>; поля — <span class="path">Pipelines → All leads → + New lead → вкладка Setup → + Add field</span>, там же галочка «обязательное на этапах».</p>
+
+<h3>Через Kai</h3>
+<ol>
+<li>Установите виджет Kai из amoМаркета (или Kommo Marketplace) и подтвердите доступ по OAuth. Ключи и пароли не нужны.</li>
+<li>Напишите боту одно сообщение:
+<blockquote class="msg">Стоматология, 2 администратора. Нужна воронка «Первичные пациенты»: Заявка → Консультация назначена → Был на приёме → План лечения → Оплата. На этапе «Консультация назначена» поле «Дата визита» обязательное. Если сделка 3 дня без движения — задача админу.</blockquote></li>
+<li>Kai задаст два-три уточняющих вопроса, покажет план, после вашего «да» создаст воронку, поле и триггер и пришлёт отчёт с перечнем изменений.</li>
+</ol>
+
+<h2>Сравнение инструментов</h2>
+<div class="tbl">
+<table>
+<thead><tr><th>Инструмент</th><th>Что меняет в CRM</th><th>Доступ</th><th>Откат и контроль</th><th>Цена</th></tr></thead>
+<tbody>
+<tr><td><strong>amoAI / Kommo Copilot</strong></td><td>Тексты, резюме, подсказки. Структуру не меняет</td><td>Встроен, включает админ</td><td>Откатывать нечего</td><td>Входит в тариф CRM («Профессиональный», «Enterprise» в amoCRM)</td></tr>
+<tr><td><strong>Чат-боты</strong> (Salesbot, Salebot, ChatAI)</td><td>Переписка с клиентом, заявки, теги</td><td>Встроен или по API</td><td>Сценарий правите руками</td><td>Подписка бота</td></tr>
+<tr><td><strong>No-code коннекторы</strong> (Albato, ApiX-Drive, Make, Zapier, n8n)</td><td>Переносят данные между сервисами</td><td>Ключ API или OAuth сервиса</td><td>Связку отключаете сами</td><td>Подписка за операции</td></tr>
+<tr><td><strong>Ассистент-настройщик Kai</strong></td><td>Воронки, поля, автоматизации, интеграции, аналитика</td><td class="good">OAuth в 1 клик, без ключей</td><td>План до изменений, отчёт после</td><td>От €29/мес, 3 дня бесплатно</td></tr>
+<tr><td><strong>Интегратор</strong></td><td>Всё, включая нестандартное</td><td>Обычно админ-доступ</td><td>ТЗ и акты</td><td>Обычно 150–400 тыс. ₽, 3–5 недель</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Честные ограничения</h2>
+<ul>
+<li>Ни один ИИ не знает ваши продажи лучше вас. Kai задаёт вопросы, но отвечаете вы; если процесс не описан, воронка получится «средней по нише».</li>
+<li>Kai работает через открытый API amoCRM. То, чего API не позволяет (часть настроек прав, визуальные виджеты), делается руками или интегратором; для этого есть фикс-доработка за €30.</li>
+<li>Лимиты запросов: ~100 в месяц на Start хватает на настройку и правки одного аккаунта, но не на ежедневный чат «обо всём».</li>
+<li>amoAI и Copilot зависят от тарифа самой CRM: на младших планах amoCRM их просто нет.</li>
+<li>Боты и коннекторы требуют поддержки: переименовали этап в воронке — проверьте, не сломалась ли связка.</li>
+</ul>
+
+<section class="faq">
+<h2>Вопросы и ответы</h2>
+
+<h3>Чем amoAI отличается от Kai?</h3>
+<p>amoAI — помощник в переписке: резюме, подсказки ответов, правка текста. Kai — настройщик: создаёт воронки, поля и автоматизации по API. Они не конкурируют, их можно использовать вместе.</p>
+
+<h3>Нужно ли давать ассистенту логин и пароль от amoCRM?</h3>
+<p>Нет. Kai подключается через виджет в amoМаркете по OAuth; токены шифруются, а доступ отзывается на вкладке «Установленные» в amoМаркете.</p>
+
+<h3>Можно ли откатить то, что сделал ассистент?</h3>
+<p>Kai показывает план до изменений и присылает отчёт после, поэтому каждое действие известно. Кнопки «отменить всё» в amoCRM нет: созданное удаляется или переименовывается по отчёту — руками или новой командой Kai.</p>
+
+<h3>Заменит ли ассистент интегратора?</h3>
+<p>На типовых задачах — воронки, поля, триггеры, интеграции с Telegram, Slack и Google Sheets — да. Сложные кастомные виджеты, миграции и обучение команды остаются работой интегратора.</p>
+
+<h3>Работает ли Kai с Kommo и Битрикс24?</h3>
+<p>Да. amoCRM и Kommo — через виджеты в маркетплейсах, Битрикс24 — через приложение, своя CRM — по документации API с песочницей для проверки. Один аккаунт и одна история в Telegram и веб-чате.</p>
+
+<h3>Сколько это стоит?</h3>
+<p>Start — €29/мес (~100 запросов, 1 CRM-аккаунт), Pro — €59/мес (~500 запросов, до 3 аккаунтов, автоматизации), Max — €119/мес (fair-use, до 10 аккаунтов, приоритетная поддержка). Нестандартная доработка — фикс +€30. Первые 3 дня бесплатно, без карты; оплата картой, Telegram Stars или USDT.</p>
+</section>
+
+<h2>Что дальше</h2>
+<p>Опишите свой бизнес в двух-трёх фразах и посмотрите, какой план предложит Kai. Три дня бесплатно, карта не нужна.</p>
+<div class="cta">
+<a class="btn btn-p" href="https://t.me/aiicrm_bot">Попробовать в Telegram</a>
+<a class="btn btn-s" href="https://ai-crm-bot-production.up.railway.app/chat?lang=ru">Открыть веб-чат</a>
+</div>
+
+<p class="author">Автор: Команда Kai · Обновлено 2026-09-24 · <a href="https://aicrm2000-lab.github.io/kai-landing/guides/en/ai-assistant-for-amocrm.html" hreflang="en">Read in English</a></p>
+</article>
+</main>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aicrm2000-lab.github.io/kai-landing/guides/ai-assistant-for-amocrm.html#article",
+      "mainEntityOfPage": "https://aicrm2000-lab.github.io/kai-landing/guides/ai-assistant-for-amocrm.html",
+      "headline": "ИИ-ассистент для amoCRM: что умеет и как выбрать (2026)",
+      "description": "Четыре класса ИИ для amoCRM: amoAI, чат-боты, no-code коннекторы и ассистенты-настройщики вроде Kai. Критерии выбора, сравнение, цены и честные ограничения.",
+      "image": "https://aicrm2000-lab.github.io/kai-landing/og-image.png",
+      "datePublished": "2026-09-24",
+      "dateModified": "2026-09-24",
+      "inLanguage": "ru",
+      "author": {"@type": "Organization", "name": "Kai", "url": "https://aicrm2000-lab.github.io/kai-landing/"},
+      "publisher": {"@type": "Organization", "name": "Kai", "url": "https://aicrm2000-lab.github.io/kai-landing/"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Чем amoAI отличается от Kai?", "acceptedAnswer": {"@type": "Answer", "text": "amoAI — помощник в переписке: резюме, подсказки ответов, правка текста. Kai — настройщик: создаёт воронки, поля и автоматизации по API. Они не конкурируют, их можно использовать вместе."}},
+        {"@type": "Question", "name": "Нужно ли давать ассистенту логин и пароль от amoCRM?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Kai подключается через виджет в amoМаркете по OAuth; токены шифруются, а доступ отзывается на вкладке «Установленные» в amoМаркете."}},
+        {"@type": "Question", "name": "Можно ли откатить то, что сделал ассистент?", "acceptedAnswer": {"@type": "Answer", "text": "Kai показывает план до изменений и присылает отчёт после, поэтому каждое действие известно. Кнопки «отменить всё» в amoCRM нет: созданное удаляется или переименовывается по отчёту — руками или новой командой Kai."}},
+        {"@type": "Question", "name": "Заменит ли ассистент интегратора?", "acceptedAnswer": {"@type": "Answer", "text": "На типовых задачах — воронки, поля, триггеры, интеграции с Telegram, Slack и Google Sheets — да. Сложные кастомные виджеты, миграции и обучение команды остаются работой интегратора."}},
+        {"@type": "Question", "name": "Работает ли Kai с Kommo и Битрикс24?", "acceptedAnswer": {"@type": "Answer", "text": "Да. amoCRM и Kommo — через виджеты в маркетплейсах, Битрикс24 — через приложение, своя CRM — по документации API с песочницей для проверки. Один аккаунт и одна история в Telegram и веб-чате."}},
+        {"@type": "Question", "name": "Сколько это стоит?", "acceptedAnswer": {"@type": "Answer", "text": "Start — €29/мес (~100 запросов, 1 CRM-аккаунт), Pro — €59/мес (~500 запросов, до 3 аккаунтов, автоматизации), Max — €119/мес (fair-use, до 10 аккаунтов, приоритетная поддержка). Нестандартная доработка — фикс +€30. Первые 3 дня бесплатно, без карты; оплата картой, Telegram Stars или USDT."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Kai", "item": "https://aicrm2000-lab.github.io/kai-landing/"},
+        {"@type": "ListItem", "position": 2, "name": "Гайды", "item": "https://aicrm2000-lab.github.io/kai-landing/guides/"},
+        {"@type": "ListItem", "position": 3, "name": "ИИ-ассистент для amoCRM: что умеет и как выбрать (2026)", "item": "https://aicrm2000-lab.github.io/kai-landing/guides/ai-assistant-for-amocrm.html"}
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

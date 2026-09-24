@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Автоматизации в Kommo без разработчика: гид 2026</title>
+<meta name="description" content="Digital Pipeline и Salesbot в Kommo: что настроить самому, 3 сценария по шагам (задача, молчание клиента, Telegram при выигрыше), лимиты и как это делает Kai.">
+<link rel="canonical" href="https://aicrm2000-lab.github.io/kai-landing/guides/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="ru" href="https://aicrm2000-lab.github.io/kai-landing/guides/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="en" href="https://aicrm2000-lab.github.io/kai-landing/guides/en/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="x-default" href="https://aicrm2000-lab.github.io/kai-landing/guides/kommo-automation-no-developer.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Kai">
+<meta property="og:title" content="Автоматизации в Kommo без разработчика: гид 2026">
+<meta property="og:description" content="Digital Pipeline и Salesbot: что можно настроить самому, три сценария по шагам, ограничения и как то же самое делает Kai по сообщению в чате.">
+<meta property="og:url" content="https://aicrm2000-lab.github.io/kai-landing/guides/kommo-automation-no-developer.html">
+<meta property="og:image" content="https://aicrm2000-lab.github.io/kai-landing/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,-apple-system,Segoe UI,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.hdr{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.hdr-in{max-width:760px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;flex:none}
+.hdr nav{margin-left:auto;display:flex;gap:16px;font-size:14px}
+.hdr nav a{color:var(--muted);text-decoration:none}
+.hdr nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:24px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:16px}
+.crumbs a{color:var(--muted);text-decoration:none}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.2;margin:0 0 12px;font-weight:800;letter-spacing:-.01em}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.lead{font-size:19px;color:var(--ink)}
+h2{color:var(--ink);font-size:24px;margin:40px 0 12px;font-weight:700;line-height:1.25}
+h3{color:var(--ink);font-size:18px;margin:24px 0 8px;font-weight:700}
+p{margin:0 0 14px}
+ol,ul{padding-left:22px;margin:0 0 14px}
+li{margin:6px 0}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin:20px 0}
+.tldr h2{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-2)}
+.tldr ul{margin:0}
+code,.path,.msg{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.path{font-size:14.5px;color:var(--ink);background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px}
+.msg{background:var(--bg-1);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;margin:14px 0;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word}
+.msg small{display:block;font-family:'Plus Jakarta Sans',sans-serif;color:var(--muted);font-size:13px;margin-bottom:6px}
+.tbl{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15px}
+th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+.faq h3{margin-top:22px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px}
+.btn-p{background:var(--accent);color:#fff}
+.btn-s{border:1px solid var(--border);color:var(--ink);background:var(--bg-2)}
+.note{color:var(--muted);font-size:15px}
+.author{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","@id":"https://aicrm2000-lab.github.io/kai-landing/guides/kommo-automation-no-developer.html#article","headline":"Автоматизации в Kommo без разработчика (2026)","description":"Digital Pipeline и Salesbot в Kommo: что настроить самому, три сценария по шагам, ограничения и как то же самое делает Kai.","datePublished":"2026-09-24","dateModified":"2026-09-24","inLanguage":"ru","mainEntityOfPage":"https://aicrm2000-lab.github.io/kai-landing/guides/kommo-automation-no-developer.html","image":"https://aicrm2000-lab.github.io/kai-landing/og-image.png","author":{"@type":"Organization","name":"Kai","url":"https://aicrm2000-lab.github.io/kai-landing/"},"publisher":{"@type":"Organization","name":"Kai","url":"https://aicrm2000-lab.github.io/kai-landing/"}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Нужен ли программист, чтобы настроить Digital Pipeline в Kommo?","acceptedAnswer":{"@type":"Answer","text":"Нет. Триггеры Digital Pipeline и сценарии Salesbot собираются мышкой в интерфейсе Kommo. Разработчик нужен только для своих виджетов или сложных вебхуков во внешние системы."}},
+{"@type":"Question","name":"Чем Salesbot отличается от триггеров Digital Pipeline?","acceptedAnswer":{"@type":"Answer","text":"Триггер — одно действие при событии на этапе: задача, тег, письмо, вебхук. Salesbot — многошаговый сценарий с сообщениями клиенту, паузами, условиями и теми же действиями внутри. Salesbot не входит в тариф Base."}},
+{"@type":"Question","name":"Есть ли в Kommo триггер «клиент не ответил»?","acceptedAnswer":{"@type":"Answer","text":"Отдельного триггера нет. Молчание клиента ловят шагом Pause в Salesbot (ожидание сообщения с таймером до 8760 часов) или отложенной задачей Digital Pipeline: In 1 day, In 3 days, End of the week."}},
+{"@type":"Question","name":"Как отправить уведомление в Telegram при выигрыше сделки?","acceptedAnswer":{"@type":"Answer","text":"Штатно — Send internal message (только сотрудникам внутри Kommo), Send webhook в своего бота или коннектор, либо виджет из Kommo Marketplace. Kai подключает канал «сделка → Telegram» по описанию в чате."}},
+{"@type":"Question","name":"Работает ли то же самое в amoCRM?","acceptedAnswer":{"@type":"Answer","text":"Да, Kommo — международная версия amoCRM. Путь в amoCRM: Сделки → Настроить → под этапом «Добавить триггер» → «Создать задачу». Kai работает с обеими CRM."}},
+{"@type":"Question","name":"Заменяет ли Kai интегратора?","acceptedAnswer":{"@type":"Answer","text":"Для типовых правил — задачи, теги, переносы, уведомления, интеграции с Telegram, Slack, Google Sheets — да. Для сложной логики со своими виджетами и большим количеством внешних систем интегратор по-прежнему уместен."}}
+]},
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Kai","item":"https://aicrm2000-lab.github.io/kai-landing/"},
+{"@type":"ListItem","position":2,"name":"Гиды","item":"https://aicrm2000-lab.github.io/kai-landing/guides/"},
+{"@type":"ListItem","position":3,"name":"Автоматизации в Kommo без разработчика","item":"https://aicrm2000-lab.github.io/kai-landing/guides/kommo-automation-no-developer.html"}
+]}
+]}
+</script>
+</head>
+<body>
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="https://aicrm2000-lab.github.io/kai-landing/" aria-label="Kai — на главную">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M35.5 13.5 A15 15 0 1 0 39 24" fill="none" stroke="#7C5CFF" stroke-width="5.5" stroke-linecap="round"/><circle cx="38.5" cy="12.5" r="3.6" fill="#A78BFA"/></svg>
+      Kai
+    </a>
+    <nav>
+      <a href="https://aicrm2000-lab.github.io/kai-landing/">Сайт</a>
+      <a href="https://t.me/aiicrm_bot">Telegram-бот</a>
+      <a href="https://aicrm2000-lab.github.io/kai-landing/guides/en/kommo-automation-no-developer.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Хлебные крошки"><a href="https://aicrm2000-lab.github.io/kai-landing/">Kai</a> › <a href="https://aicrm2000-lab.github.io/kai-landing/guides/">Гиды</a> › Автоматизации в Kommo</nav>
+
+<h1>Автоматизации в Kommo без разработчика (2026)</h1>
+<p class="meta">Команда Kai · Обновлено 24 сентября 2026</p>
+
+<p class="lead">В Kommo основные автоматизации настраиваются без программиста: в Digital Pipeline вы вешаете триггер на этап воронки (задача, тег, смена этапа, письмо, вебхук), а в конструкторе Salesbot собираете сценарий из готовых блоков. Три самых частых сценария — задача при смене этапа, напоминание при молчании клиента и уведомление в Telegram о выигранной сделке — закрываются штатными средствами за 10–30 минут каждый. Если разбираться в конструкторе не хочется, то же правило можно описать словами: Kai настроит его через официальный API Kommo.</p>
+
+<div class="tldr">
+<h2>Коротко</h2>
+<ul>
+<li>Digital Pipeline открывается через <span class="path">Leads → Automate</span>; под этапом доступны 12 типов триггеров и 5 вариантов отсрочки: Immediately, End of the day, In 1 day, In 3 days, End of the week.</li>
+<li>Salesbot — конструктор сценариев без лимита шагов; пауза-таймер до 8760 часов; запуск по новому сообщению, переходу сделки на этап, смене ответственного или по расписанию. В тариф Base не входит.</li>
+<li>Родного действия «написать в Telegram-группу» нет: внутреннее сообщение сотруднику, вебхук или виджет из Marketplace.</li>
+<li>Интегратор: обычно 3–5 недель и типично 150–400 тыс. ₽ за внедрение в РФ. Kai: одно сообщение в чате, от €29/мес, 3 дня бесплатно без карты.</li>
+</ul>
+</div>
+
+<h2>Что такое Digital Pipeline и Salesbot</h2>
+<p><strong>Digital Pipeline</strong> — это автоматизация, привязанная к этапам воронки. Каждый этап — столбец на доске, под ним можно повесить правило «когда сделка попала сюда, сделай X». Правило может ждать (до конца дня, три дня), проверять условие (тег, ответственный, значение поля) и выполнять одно действие.</p>
+<p><strong>Salesbot</strong> — конструктор многошаговых сценариев. Он умеет то же, что и триггеры, плюс общается с клиентом в чатах: отправляет сообщения с кнопками, ждёт ответ, ветвится по условиям, ставит задачи и дёргает вебхуки. Запускается как один из триггеров Digital Pipeline или по событиям в чатах. Названия пунктов меню ниже даны по английской справке Kommo; в русском интерфейсе они переведены, но расположены там же.</p>
+
+<h2>Что можно настроить самому</h2>
+<p>Список триггеров Digital Pipeline по официальной справке: Salesbot, Add task, Create lead, Send email, Send webhook, Change lead stage, Add tags, Complete tasks, Generate form, Change lead's user, Change field, Delete files. Для каждого можно добавить условия по ответственному, тегам и полям и включить галочку <em>Apply the trigger to all leads already in this stage</em>, иначе правило действует только на новые сделки.</p>
+<p>В Salesbot блоки делятся на шаги диалога (Message, Condition, Pause, Validation, Send internal message) и действия (Add task, Change lead status, Manage tags, Set field, Change responsible user, Send email, Send webhook, Widget, Round Robin). Есть готовые шаблоны, с которых проще начать, чем с пустого сценария.</p>
+
+<h2>Сценарий 1. Задача менеджеру при смене этапа</h2>
+<h3>Вручную в Kommo</h3>
+<ol>
+<li>Откройте <span class="path">Leads → Automate</span>.</li>
+<li>Под нужным этапом нажмите «+» → <span class="path">Add trigger → Add task</span>.</li>
+<li>Заполните текст задачи, тип, ответственного (по умолчанию — ответственный за сделку) и срок: Immediately, End of the day, In 1 day, In 3 days или End of the week.</li>
+<li>При необходимости добавьте условие (например, только для тега «Горячий») и сохраните. Проверьте на одной тестовой сделке.</li>
+</ol>
+<p class="note">В amoCRM то же самое: <span class="path">Сделки → Настроить</span> → под этапом «Добавить триггер» → «Создать задачу».</p>
+<h3>Через Kai</h3>
+<div class="msg"><small>Сообщение в Telegram-боте или веб-чате</small>Когда сделка переходит на этап «КП отправлено», ставь ответственному задачу «Уточнить, получил ли клиент КП» со сроком «конец дня». Только для сделок с тегом «Горячий».</div>
+<p>Kai переспросит, если этап называется иначе, покажет план и создаст триггер по API. Отчёт о том, что именно создано, останется в истории чата.</p>
+
+<h2>Сценарий 2. Напоминание, если клиент замолчал</h2>
+<h3>Вручную в Kommo</h3>
+<p>Отдельного триггера «клиент не ответил» в Kommo нет, поэтому есть два пути.</p>
+<ol>
+<li><strong>Простой, без Salesbot.</strong> На этапе «КП отправлено» повесьте триггер Add task со сроком In 1 day: «Клиент не ответил — позвонить». Если клиент ответил раньше, менеджер просто закрывает задачу.</li>
+<li><strong>Точный, через Salesbot.</strong> <span class="path">Settings → Communication tools → Salesbots → Create a new bot</span>. Соберите цепочку: Message (текст напоминания клиенту) → Pause с ожиданием входящего сообщения и таймером (например, 24 часа) → Add task менеджеру. Затем в Digital Pipeline добавьте триггер Salesbot на нужный этап. Логику ветвления «ответил / не ответил» обязательно прогоните на тестовом чате.</li>
+</ol>
+<h3>Через Kai</h3>
+<div class="msg"><small>Сообщение Kai</small>Если сделка стоит на этапе «КП отправлено» больше суток без активности — поставь задачу ответственному «Клиент молчит, перезвонить» и напиши мне в Telegram.</div>
+<p>Задачу и уведомление Kai настраивает сам; кроме того, он следит за воронкой 24/7 и сообщает о «зависших» сделках в ежедневном отчёте. Сценарий диалога с клиентом внутри чата — это всё ещё Salesbot: Kai подготовит структуру шагов, но блоки в конструкторе вы соберёте руками.</p>
+
+<h2>Сценарий 3. Уведомление в Telegram при выигрыше</h2>
+<h3>Вручную в Kommo</h3>
+<ol>
+<li><strong>Внутри Kommo.</strong> Salesbot с запуском при переходе сделки на этап Closed – won и шагом Send internal message. Сообщение видит только выбранный сотрудник или команда внутри Kommo — во внешний Telegram-чат оно не уходит.</li>
+<li><strong>Через вебхук.</strong> <span class="path">Add trigger → Send webhook</span> на этап выигрыша, а на стороне приёмника — свой Telegram-бот или коннектор (Albato, ApiX-Drive, Make, n8n, Zapier), который формирует сообщение в группу.</li>
+<li><strong>Через виджет.</strong> В Kommo Marketplace есть сторонние виджеты уведомлений в Telegram; условия и цена — у разработчика виджета.</li>
+</ol>
+<h3>Через Kai</h3>
+<div class="msg"><small>Сообщение Kai</small>Подключи уведомления: когда сделка выиграна, отправляй в Telegram-группу отдела сообщение с названием сделки, суммой и ответственным.</div>
+<p>Kai подключает интеграции «сделка → Telegram / Slack / Google Sheets / вебхук» без промежуточного коннектора. Kai не хранит данные сделок: сообщение формируется по событию и уходит адресату.</p>
+
+<h2>Ограничения, о которых узнаёшь потом</h2>
+<ul>
+<li>Salesbot недоступен на тарифе Base (по странице цен Kommo на момент публикации); Digital Pipeline есть во всех тарифах.</li>
+<li>Отсрочка триггера выбирается из фиксированного набора. «Через 2 часа» — только паузой в Salesbot.</li>
+<li>Триггеры реагируют на события этапа, а не на поведение клиента. Условия ограничены ответственным, тегами и полями.</li>
+<li>Без галочки «применить к уже находящимся сделкам» правило не затронет текущие сделки — частая причина «ничего не работает».</li>
+<li>После 5–7 триггеров на воронке никто не помнит, что где висит. Аудит воронки в Kai как раз находит такие пересечения.</li>
+</ul>
+
+<h2>Сравнение: сам, интегратор, коннектор, Kai</h2>
+<div class="tbl">
+<table>
+<thead><tr><th></th><th>Сам в Kommo</th><th>Интегратор</th><th>No-code коннектор</th><th>Kai</th></tr></thead>
+<tbody>
+<tr><td>Срок</td><td>10–30 мин на сценарий</td><td>Обычно 3–5 недель</td><td>Часы на связку</td><td>Минуты на сценарий</td></tr>
+<tr><td>Цена</td><td>Входит в тариф Kommo</td><td>Типично 150–400 тыс. ₽ в РФ</td><td>Подписка коннектора</td><td>От €29/мес</td></tr>
+<tr><td>Что нужно уметь</td><td>Разобраться в конструкторе</td><td>Составить ТЗ</td><td>Понимать вебхуки и поля</td><td>Описать бизнес словами</td></tr>
+<tr><td>Кто поддерживает</td><td>Вы</td><td>Интегратор по договору</td><td>Вы</td><td>Kai следит 24/7, отчёт в чат</td></tr>
+<tr><td>Когда выбирать</td><td>1–3 простых правила</td><td>Сложная логика, много систем</td><td>Связки между сервисами</td><td>Типовые правила и интеграции без ручной настройки</td></tr>
+</tbody>
+</table>
+</div>
+
+<section class="faq">
+<h2>Частые вопросы</h2>
+<h3>Нужен ли программист, чтобы настроить Digital Pipeline в Kommo?</h3>
+<p>Нет. Триггеры и сценарии Salesbot собираются мышкой в интерфейсе. Разработчик нужен только для собственных виджетов или сложных вебхуков во внешние системы.</p>
+<h3>Чем Salesbot отличается от триггеров Digital Pipeline?</h3>
+<p>Триггер — одно действие при событии на этапе. Salesbot — многошаговый сценарий с сообщениями клиенту, паузами, условиями и теми же действиями внутри. Salesbot не входит в тариф Base.</p>
+<h3>Есть ли в Kommo триггер «клиент не ответил»?</h3>
+<p>Отдельного нет. Молчание ловят шагом Pause в Salesbot (ожидание сообщения с таймером до 8760 часов) или отложенной задачей Digital Pipeline: In 1 day, In 3 days, End of the week.</p>
+<h3>Как отправить уведомление в Telegram при выигрыше сделки?</h3>
+<p>Штатно — Send internal message (только сотрудникам внутри Kommo), Send webhook в своего бота или коннектор, либо виджет из Kommo Marketplace. Kai подключает канал «сделка → Telegram» по описанию в чате.</p>
+<h3>Работает ли то же самое в amoCRM?</h3>
+<p>Да, Kommo — международная версия amoCRM. Путь в amoCRM: Сделки → Настроить → под этапом «Добавить триггер» → «Создать задачу». Kai работает с обеими CRM, а также с Битрикс24 и своей CRM по документации API.</p>
+<h3>Заменяет ли Kai интегратора?</h3>
+<p>Для типовых правил — задачи, теги, переносы, уведомления, интеграции с Telegram, Slack, Google Sheets — да. Для сложной логики со своими виджетами и большим количеством внешних систем интегратор по-прежнему уместен; Kai в этом случае хотя бы подготовит ТЗ в PDF.</p>
+</section>
+
+<h2>Что дальше</h2>
+<p>Подключите Kommo к Kai в один клик через OAuth (виджет опубликован в Kommo Marketplace, ключи не нужны) и опишите первое правило своими словами. Три дня бесплатно, без карты.</p>
+<div class="cta">
+<a class="btn btn-p" href="https://t.me/aiicrm_bot">Попробовать в Telegram</a>
+<a class="btn btn-s" href="https://ai-crm-bot-production.up.railway.app/chat?lang=ru">Открыть веб-чат</a>
+</div>
+
+<p class="author">Автор: Команда Kai · Обновлено 2026-09-24 · <a href="https://aicrm2000-lab.github.io/kai-landing/guides/en/kommo-automation-no-developer.html" hreflang="en">Read in English</a></p>
+</article>
+</main>
+</body>
+</html>
