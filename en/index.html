@@ -599,6 +599,120 @@ hr.sep {
 }
 .step-desc { font-size: 16px; color: var(--fog); line-height: 1.65; }
 
+/* ─── BUILD DEMO (#how): chat on the left, a CRM board that assembles on the right ─── */
+.kd {
+  margin-top: 48px; padding: 16px;
+  border: 1px solid var(--graphite); border-radius: 16px;
+  background: linear-gradient(180deg, rgba(23,19,50,.5), rgba(16,14,32,.85));
+  box-shadow: rgba(255,255,255,.03) 0 1px 0 inset;
+}
+.kd-top { display: flex; align-items: center; justify-content: space-between; gap: 12px 16px; flex-wrap: wrap; margin-bottom: 14px; }
+.kd-label {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--muted); border: 1px dashed var(--smoke); border-radius: 999px; padding: 5px 11px;
+}
+.kd-chips { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.kd-pick { font-size: 13.5px; color: var(--muted); margin-right: 2px; }
+.kd-chip, .kd-opt, .kd-again {
+  font: 500 13.5px/1 var(--font); color: var(--text); background: transparent;
+  border: 1px solid var(--smoke); border-radius: 999px; padding: 0 14px; min-height: 40px;
+  cursor: pointer; transition: border-color .15s, background .15s, color .15s;
+}
+.kd-chip:hover, .kd-opt:hover, .kd-again:hover { border-color: var(--accent); color: var(--ink); }
+.kd-chip[aria-pressed="true"] { background: var(--accent-dim); border-color: var(--accent); color: var(--ink); }
+.kd button:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+.kd-panel { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.4fr); gap: 12px; }
+.kd-panel[hidden] { display: none; }
+.kd-chat, .kd-board {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 14px;
+  display: flex; flex-direction: column; min-height: 436px;
+}
+.kd-chat { gap: 10px; }
+.kd-msg { max-width: 94%; padding: 10px 13px; border-radius: 14px; font-size: 14.5px; line-height: 1.45; }
+.kd-u { align-self: flex-end; background: var(--accent-gradient); color: #fff; border-bottom-right-radius: 4px; }
+.kd-k { align-self: flex-start; background: var(--bg-2); color: var(--text); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+.kd-opts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.kd-opt { font-size: 13px; min-height: 36px; padding: 0 12px; background: rgba(124,92,255,.08); border-color: var(--border-soft); }
+.kd-opt.pick { background: var(--accent); border-color: var(--accent); color: #fff; }
+.kd-opts.done .kd-opt:not(.pick) { opacity: .4; pointer-events: none; }
+.kd-plan { list-style: none; margin: 8px 0 12px; display: grid; gap: 5px; font-size: 13.5px; color: var(--text); }
+.kd-plan li::before { content: '✓'; color: var(--good); margin-right: 8px; }
+.kd-go, .kd-cta {
+  font: 600 14px/1 var(--font); color: #fff; background: var(--accent-gradient); border: 0; border-radius: 8px;
+  min-height: 40px; padding: 0 18px; cursor: pointer; box-shadow: 0 0 20px rgba(124,92,255,.3);
+  transition: opacity .15s, transform .15s;
+}
+.kd-go:hover, .kd-cta:hover { opacity: .9; transform: translateY(-1px); }
+.kd-go[disabled] { opacity: .45; cursor: default; box-shadow: none; transform: none; }
+.kd-go.kd-wait, .kd-opts.kd-wait .kd-opt { animation: kdWait 1.6s ease-in-out infinite; }
+@keyframes kdWait { 0%,100% { box-shadow: 0 0 0 0 rgba(124,92,255,.55); } 50% { box-shadow: 0 0 0 7px rgba(124,92,255,0); } }
+.kd-done { border-color: rgba(67,224,160,.35); color: var(--ink); }
+.kd-dots { align-self: flex-start; display: none; gap: 4px; padding: 11px 13px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 14px; border-bottom-left-radius: 4px; }
+.kd-dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: kdDot 1s ease-in-out infinite; }
+.kd-dots i:nth-child(2) { animation-delay: .15s; } .kd-dots i:nth-child(3) { animation-delay: .3s; }
+@keyframes kdDot { 0%,60%,100% { opacity: .3; transform: none; } 30% { opacity: 1; transform: translateY(-3px); } }
+.kd-board { gap: 12px; }
+.kd-bhead { display: flex; align-items: center; gap: 8px; min-height: 22px; }
+.kd-win { display: inline-flex; gap: 4px; margin-right: 2px; }
+.kd-win i { width: 8px; height: 8px; border-radius: 50%; background: var(--smoke); }
+.kd-crm { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; color: var(--dim); }
+.kd-bname { font-size: 14px; font-weight: 600; color: var(--ink); }
+.kd-cols { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; }
+.kd-col {
+  position: relative; min-height: 124px; padding: 10px 7px 8px; overflow: hidden;
+  border: 1px solid var(--border); border-radius: 9px; background: var(--bg-1);
+  display: flex; flex-direction: column; gap: 6px; align-content: start;
+  transition: border-color .3s ease, background .3s ease;
+}
+.kd-col::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--kc, var(--accent)); transition: opacity .3s ease; }
+.kd-col:nth-child(2) { --kc: #8E72FF; } .kd-col:nth-child(3) { --kc: #A78BFA; } .kd-col:nth-child(4) { --kc: #C4B5FD; }
+.kd-col:nth-child(5) { --kc: var(--warn); } .kd-col:nth-child(6) { --kc: var(--good); }
+.kd-n { font-family: var(--mono); font-size: 10.5px; color: var(--dim); }
+.kd-st { font-size: 12px; font-weight: 600; line-height: 1.25; color: var(--text); overflow-wrap: anywhere; }
+.kd-lead { margin-top: 4px; padding: 6px 7px; border-radius: 7px; background: var(--bg-2); border: 1px solid var(--border-soft); font-size: 11.5px; line-height: 1.3; color: var(--ink); }
+.kd-task { align-self: flex-start; font-size: 10.5px; line-height: 1.3; color: var(--good); border: 1px solid rgba(67,224,160,.35); border-radius: 6px; padding: 3px 6px; }
+.kd-task::before { content: '⏱ '; }
+.kd-sec { display: grid; gap: 7px; }
+.kd-sub { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+.kd-fields { display: flex; flex-wrap: wrap; gap: 6px; }
+.kd-f { font-size: 12.5px; color: var(--text); border: 1px solid var(--border); background: var(--bg-1); border-radius: 7px; padding: 5px 9px; }
+.kd-autos { display: grid; gap: 6px; }
+.kd-a { font-size: 12.5px; line-height: 1.4; color: var(--text); border: 1px solid var(--border); border-left: 2px solid var(--accent); background: var(--bg-1); border-radius: 7px; padding: 6px 9px; }
+.kd-log { margin-top: auto; display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+.kd-log code { font: inherit; }
+.kd-log code::after { content: ' ✓'; color: var(--good); }
+.kd-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px 16px; flex-wrap: wrap; margin-top: 14px; }
+.kd-note { font-size: 13.5px; color: var(--muted); max-width: 52ch; }
+.kd-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+/* timeline state (only when the script runs; without it the finished state is shown) */
+.kd-js .kd-i { opacity: 0; transform: translateY(8px); }
+.kd-js .kd-i.on { opacity: 1; transform: none; transition: opacity .35s ease, transform .4s cubic-bezier(.16,1,.3,1); }
+.kd-js .kd-dots.kd-i { transform: none; }
+.kd-js .kd-dots.on { display: inline-flex; }
+.kd-js .kd-col.kd-i { opacity: 1; transform: none; }
+.kd-js .kd-col:not(.on) { border-style: dashed; border-color: rgba(124,92,255,.32); background: transparent; }
+.kd-js .kd-col:not(.on)::before, .kd-js .kd-col:not(.on) > .kd-n, .kd-js .kd-col:not(.on) > .kd-st { opacity: 0; }
+.kd-js .kd-col > .kd-n, .kd-js .kd-col > .kd-st { transition: opacity .3s ease; }
+.kd-js .kd-sub { opacity: .35; transition: opacity .3s ease; }
+.kd-js .kd-sec.live .kd-sub { opacity: 1; }
+#how .step.kd-on { border-color: var(--accent); box-shadow: 0 8px 32px rgba(124,92,255,.14), rgba(255,255,255,.03) 0 1px 0 inset; }
+@media (max-width: 900px) {
+  .kd { padding: 12px; margin-top: 36px; }
+  .kd-top { margin-bottom: 10px; }
+  .kd-pick { display: none; }
+  .kd-chips { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .kd-panel { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .kd-chat { min-height: 348px; padding: 12px; gap: 8px; }
+  .kd-msg { font-size: 14px; padding: 9px 12px; }
+  .kd-board { min-height: 0; padding: 12px; gap: 10px; }
+  .kd-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .kd-col { min-height: 60px; padding: 9px 7px 7px; gap: 3px; }
+  .kd-lead { margin-top: 2px; }
+  .kd-log { display: none; }
+  .kd-btns { width: 100%; }
+  .kd-btns button { flex: 1 1 auto; }
+}
+
 /* ─── CRM CAPABILITIES ─── */
 .crm { background: var(--carbon); }
 .crm-grid {
@@ -2220,6 +2334,87 @@ footer {
     <h2 class="section-heading reveal reveal-delay-1" data-ru="Три шага<br>до <em>готовой CRM</em>" data-en="Three steps<br>to a <em>ready CRM</em>">Три шага<br>до <em>готовой CRM</em></h2>
     <p class="section-sub reveal reveal-delay-2" data-ru="Больше не&nbsp;нужно разбираться в&nbsp;настройках или нанимать интегратора." data-en="No need to&nbsp;figure out settings or hire an&nbsp;integrator anymore.">No need to&nbsp;figure out settings or hire an&nbsp;integrator anymore.</p>
 
+    <!-- KD:START -->
+    <div class="kd reveal" id="kd">
+      <div class="kd-top">
+        <span class="kd-label" data-ru="Демо по сценарию · ничего не отправляется" data-en="Scripted demo · nothing is sent">Scripted demo · nothing is sent</span>
+        <div class="kd-chips" role="group" aria-labelledby="kdPick"><span class="kd-pick" id="kdPick" data-ru="Выберите бизнес:" data-en="Pick a business:">Pick a business:</span><button class="kd-chip" type="button" data-niche="dental" aria-pressed="true" data-ru="Стоматология" data-en="Dental clinic">Dental clinic</button><button class="kd-chip" type="button" data-niche="realty" aria-pressed="false" data-ru="Недвижимость" data-en="Real estate">Real estate</button><button class="kd-chip" type="button" data-niche="store" aria-pressed="false" data-ru="Интернет-магазин" data-en="Online store">Online store</button><button class="kd-chip" type="button" data-niche="renovation" aria-pressed="false" data-ru="Ремонт квартир" data-en="Renovation">Renovation</button></div>
+      </div>
+      <div class="kd-panel" data-niche="dental">
+        <div class="kd-chat">
+          <div class="kd-msg kd-u kd-i" data-ph="1" data-g="700"><span data-ru="У нас стоматология. Заявки идут с сайта и из Instagram, половина теряется." data-en="We run a dental clinic. Leads come from the site and Instagram, and half of them get lost.">We run a dental clinic. Leads come from the site and Instagram, and half of them get lost.</span></div>
+          <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Сколько первичных обращений в месяц?" data-en="How many new patient requests a month?">How many new patient requests a month?</span><div class="kd-opts"><button class="kd-opt" type="button" data-ru="до 50" data-en="up to 50">up to 50</button><button class="kd-opt" type="button" data-ru="50–150" data-en="50–150">50–150</button><button class="kd-opt" type="button" data-ru="больше 150" data-en="over 150">over 150</button></div></div>
+          <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">The plan is ready:</span><ul class="kd-plan"><li data-ru="воронка «Первичные пациенты»" data-en="pipeline “New patients”">pipeline “New patients”</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages around your process">6 stages around your process</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 deal fields</li><li data-ru="2 автозадачи по событиям" data-en="2 event-driven auto-tasks">2 event-driven auto-tasks</li></ul><button class="kd-go" type="button" data-ru="Реализовать" data-en="Implement">Implement</button></div>
+          <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. Создано в CRM: 1 воронка, 6 этапов, 4 поля, 2 автоматизации." data-en="Done. Created in the CRM: 1 pipeline, 6 stages, 4 fields, 2 automations.">Done. Created in the CRM: 1 pipeline, 6 stages, 4 fields, 2 automations.</span></div>
+        </div>
+        <div class="kd-board">
+          <div class="kd-bhead"><span class="kd-win" aria-hidden="true"><i></i><i></i><i></i></span><span class="kd-crm">CRM</span><span class="kd-bname kd-i" data-ph="3" data-o="1" data-g="180" data-ru="Первичные пациенты" data-en="New patients">New patients</span></div>
+          <div class="kd-cols"><div class="kd-col kd-i" data-ph="3" data-o="3" data-g="140"><span class="kd-n">1</span><span class="kd-st" data-ru="Заявка" data-en="Request">Request</span><div class="kd-lead kd-i" data-ph="3" data-o="18" data-g="520"><span class="kd-lt" data-ru="Анна, имплант" data-en="Anna, implant">Anna, implant</span></div><span class="kd-task kd-i" data-ph="3" data-o="19" data-g="520" data-ru="Перезвонить · 15 мин" data-en="Call back · 15 min">Call back · 15 min</span></div><div class="kd-col kd-i" data-ph="3" data-o="4" data-g="140"><span class="kd-n">2</span><span class="kd-st" data-ru="Дозвон" data-en="Reached">Reached</span></div><div class="kd-col kd-i" data-ph="3" data-o="5" data-g="140"><span class="kd-n">3</span><span class="kd-st" data-ru="Запись" data-en="Booked">Booked</span></div><div class="kd-col kd-i" data-ph="3" data-o="6" data-g="140"><span class="kd-n">4</span><span class="kd-st" data-ru="Визит подтверждён" data-en="Visit confirmed">Visit confirmed</span></div><div class="kd-col kd-i" data-ph="3" data-o="7" data-g="140"><span class="kd-n">5</span><span class="kd-st" data-ru="Приём" data-en="Appointment">Appointment</span></div><div class="kd-col kd-i" data-ph="3" data-o="8" data-g="140"><span class="kd-n">6</span><span class="kd-st" data-ru="План лечения" data-en="Treatment plan">Treatment plan</span></div></div>
+          <div class="kd-sec"><span class="kd-sub" data-ru="Поля сделки" data-en="Deal fields">Deal fields</span><div class="kd-fields"><span class="kd-f kd-i" data-ph="3" data-o="10" data-g="120" data-ru="Направление" data-en="Service">Service</span><span class="kd-f kd-i" data-ph="3" data-o="11" data-g="120" data-ru="Врач" data-en="Doctor">Doctor</span><span class="kd-f kd-i" data-ph="3" data-o="12" data-g="120" data-ru="Дата приёма" data-en="Appointment date">Appointment date</span><span class="kd-f kd-i" data-ph="3" data-o="13" data-g="120" data-ru="Сумма плана" data-en="Plan amount">Plan amount</span></div></div>
+          <div class="kd-sec"><span class="kd-sub" data-ru="Автоматизации" data-en="Automations">Automations</span><div class="kd-autos"><div class="kd-a kd-i" data-ph="3" data-o="15" data-g="320" data-ru="Новая заявка → задача: перезвонить за 15 минут" data-en="New request → task: call back within 15 minutes">New request → task: call back within 15 minutes</div><div class="kd-a kd-i" data-ph="3" data-o="16" data-g="320" data-ru="Записан на приём → задача: подтвердить визит накануне" data-en="Booked → task: confirm the visit the day before">Booked → task: confirm the visit the day before</div></div></div>
+          <div class="kd-log" aria-hidden="true"><code class="kd-i" data-ph="3" data-o="2" data-g="260" data-ru="создать_воронку" data-en="create_pipeline">create_pipeline</code><code class="kd-i" data-ph="3" data-o="9" data-g="260" data-ru="добавить_этап ×6" data-en="add_stage ×6">add_stage ×6</code><code class="kd-i" data-ph="3" data-o="14" data-g="260" data-ru="создать_поле ×4" data-en="create_field ×4">create_field ×4</code><code class="kd-i" data-ph="3" data-o="17" data-g="420" data-ru="создать_автоматизацию ×2" data-en="create_automation ×2">create_automation ×2</code></div>
+        </div>
+      </div>
+      <div class="kd-panel" data-niche="realty" hidden>
+        <div class="kd-chat">
+          <div class="kd-msg kd-u kd-i" data-ph="1" data-g="700"><span data-ru="Агентство недвижимости. Лиды дорогие, а агенты перезванивают через сутки." data-en="A real-estate agency. Leads are expensive, and agents call back a day later.">A real-estate agency. Leads are expensive, and agents call back a day later.</span></div>
+          <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Как заявки попадают к агентам?" data-en="How do requests reach the agents?">How do requests reach the agents?</span><div class="kd-opts"><button class="kd-opt" type="button" data-ru="берут сами" data-en="they pick them">they pick them</button><button class="kd-opt" type="button" data-ru="через колл-центр" data-en="via a call centre">via a call centre</button><button class="kd-opt" type="button" data-ru="по очереди" data-en="round robin">round robin</button></div></div>
+          <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">The plan is ready:</span><ul class="kd-plan"><li data-ru="воронка «Покупатели»" data-en="pipeline “Buyers”">pipeline “Buyers”</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages around your process">6 stages around your process</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 deal fields</li><li data-ru="2 автозадачи по событиям" data-en="2 event-driven auto-tasks">2 event-driven auto-tasks</li></ul><button class="kd-go" type="button" data-ru="Реализовать" data-en="Implement">Implement</button></div>
+          <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. Создано в CRM: 1 воронка, 6 этапов, 4 поля, 2 автоматизации." data-en="Done. Created in the CRM: 1 pipeline, 6 stages, 4 fields, 2 automations.">Done. Created in the CRM: 1 pipeline, 6 stages, 4 fields, 2 automations.</span></div>
+        </div>
+        <div class="kd-board">
+          <div class="kd-bhead"><span class="kd-win" aria-hidden="true"><i></i><i></i><i></i></span><span class="kd-crm">CRM</span><span class="kd-bname kd-i" data-ph="3" data-o="1" data-g="180" data-ru="Покупатели" data-en="Buyers">Buyers</span></div>
+          <div class="kd-cols"><div class="kd-col kd-i" data-ph="3" data-o="3" data-g="140"><span class="kd-n">1</span><span class="kd-st" data-ru="Заявка" data-en="Request">Request</span><div class="kd-lead kd-i" data-ph="3" data-o="18" data-g="520"><span class="kd-lt" data-ru="2-комнатная, центр" data-en="2-bedroom, city centre">2-bedroom, city centre</span></div><span class="kd-task kd-i" data-ph="3" data-o="19" data-g="520" data-ru="Перезвонить · 15 мин" data-en="Call back · 15 min">Call back · 15 min</span></div><div class="kd-col kd-i" data-ph="3" data-o="4" data-g="140"><span class="kd-n">2</span><span class="kd-st" data-ru="Квалификация" data-en="Qualified">Qualified</span></div><div class="kd-col kd-i" data-ph="3" data-o="5" data-g="140"><span class="kd-n">3</span><span class="kd-st" data-ru="Подборка" data-en="Shortlist">Shortlist</span></div><div class="kd-col kd-i" data-ph="3" data-o="6" data-g="140"><span class="kd-n">4</span><span class="kd-st" data-ru="Показ" data-en="Viewing">Viewing</span></div><div class="kd-col kd-i" data-ph="3" data-o="7" data-g="140"><span class="kd-n">5</span><span class="kd-st" data-ru="Бронь" data-en="Reserved">Reserved</span></div><div class="kd-col kd-i" data-ph="3" data-o="8" data-g="140"><span class="kd-n">6</span><span class="kd-st" data-ru="Договор" data-en="Contract">Contract</span></div></div>
+          <div class="kd-sec"><span class="kd-sub" data-ru="Поля сделки" data-en="Deal fields">Deal fields</span><div class="kd-fields"><span class="kd-f kd-i" data-ph="3" data-o="10" data-g="120" data-ru="Тип объекта" data-en="Property type">Property type</span><span class="kd-f kd-i" data-ph="3" data-o="11" data-g="120" data-ru="Бюджет" data-en="Budget">Budget</span><span class="kd-f kd-i" data-ph="3" data-o="12" data-g="120" data-ru="Район" data-en="District">District</span><span class="kd-f kd-i" data-ph="3" data-o="13" data-g="120" data-ru="Способ покупки" data-en="Payment method">Payment method</span></div></div>
+          <div class="kd-sec"><span class="kd-sub" data-ru="Автоматизации" data-en="Automations">Automations</span><div class="kd-autos"><div class="kd-a kd-i" data-ph="3" data-o="15" data-g="320" data-ru="Новая заявка → задача: перезвонить за 15 минут" data-en="New request → task: call back within 15 minutes">New request → task: call back within 15 minutes</div><div class="kd-a kd-i" data-ph="3" data-o="16" data-g="320" data-ru="Подборка без ответа сутки → задача: назначить показ" data-en="Shortlist unanswered for a day → task: book a viewing">Shortlist unanswered for a day → task: book a viewing</div></div></div>
+          <div class="kd-log" aria-hidden="true"><code class="kd-i" data-ph="3" data-o="2" data-g="260" data-ru="создать_воронку" data-en="create_pipeline">create_pipeline</code><code class="kd-i" data-ph="3" data-o="9" data-g="260" data-ru="добавить_этап ×6" data-en="add_stage ×6">add_stage ×6</code><code class="kd-i" data-ph="3" data-o="14" data-g="260" data-ru="создать_поле ×4" data-en="create_field ×4">create_field ×4</code><code class="kd-i" data-ph="3" data-o="17" data-g="420" data-ru="создать_автоматизацию ×2" data-en="create_automation ×2">create_automation ×2</code></div>
+        </div>
+      </div>
+      <div class="kd-panel" data-niche="store" hidden>
+        <div class="kd-chat">
+          <div class="kd-msg kd-u kd-i" data-ph="1" data-g="700"><span data-ru="Интернет-магазин. Заказы с сайта и соцсетей живут в разных окнах." data-en="An online store. Orders from the site and social media live in different windows.">An online store. Orders from the site and social media live in different windows.</span></div>
+          <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Кто подтверждает заказы?" data-en="Who confirms the orders?">Who confirms the orders?</span><div class="kd-opts"><button class="kd-opt" type="button" data-ru="один человек" data-en="one person">one person</button><button class="kd-opt" type="button" data-ru="2–3 менеджера" data-en="2–3 managers">2–3 managers</button><button class="kd-opt" type="button" data-ru="смены" data-en="shifts">shifts</button></div></div>
+          <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">The plan is ready:</span><ul class="kd-plan"><li data-ru="воронка «Заказы с сайта»" data-en="pipeline “Website orders”">pipeline “Website orders”</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages around your process">6 stages around your process</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 deal fields</li><li data-ru="2 автозадачи по событиям" data-en="2 event-driven auto-tasks">2 event-driven auto-tasks</li></ul><button class="kd-go" type="button" data-ru="Реализовать" data-en="Implement">Implement</button></div>
+          <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. Создано в CRM: 1 воронка, 6 этапов, 4 поля, 2 автоматизации." data-en="Done. Created in the CRM: 1 pipeline, 6 stages, 4 fields, 2 automations.">Done. Created in the CRM: 1 pipeline, 6 stages, 4 fields, 2 automations.</span></div>
+        </div>
+        <div class="kd-board">
+          <div class="kd-bhead"><span class="kd-win" aria-hidden="true"><i></i><i></i><i></i></span><span class="kd-crm">CRM</span><span class="kd-bname kd-i" data-ph="3" data-o="1" data-g="180" data-ru="Заказы с сайта" data-en="Website orders">Website orders</span></div>
+          <div class="kd-cols"><div class="kd-col kd-i" data-ph="3" data-o="3" data-g="140"><span class="kd-n">1</span><span class="kd-st" data-ru="Заказ" data-en="Order">Order</span><div class="kd-lead kd-i" data-ph="3" data-o="18" data-g="520"><span class="kd-lt" data-ru="Заказ №1042" data-en="Order #1042">Order #1042</span></div><span class="kd-task kd-i" data-ph="3" data-o="19" data-g="520" data-ru="Подтвердить заказ" data-en="Confirm the order">Confirm the order</span></div><div class="kd-col kd-i" data-ph="3" data-o="4" data-g="140"><span class="kd-n">2</span><span class="kd-st" data-ru="Подтверждён" data-en="Confirmed">Confirmed</span></div><div class="kd-col kd-i" data-ph="3" data-o="5" data-g="140"><span class="kd-n">3</span><span class="kd-st" data-ru="Оплачен" data-en="Paid">Paid</span></div><div class="kd-col kd-i" data-ph="3" data-o="6" data-g="140"><span class="kd-n">4</span><span class="kd-st" data-ru="Собран" data-en="Packed">Packed</span></div><div class="kd-col kd-i" data-ph="3" data-o="7" data-g="140"><span class="kd-n">5</span><span class="kd-st" data-ru="В доставке" data-en="Shipping">Shipping</span></div><div class="kd-col kd-i" data-ph="3" data-o="8" data-g="140"><span class="kd-n">6</span><span class="kd-st" data-ru="Доставлен" data-en="Delivered">Delivered</span></div></div>
+          <div class="kd-sec"><span class="kd-sub" data-ru="Поля сделки" data-en="Deal fields">Deal fields</span><div class="kd-fields"><span class="kd-f kd-i" data-ph="3" data-o="10" data-g="120" data-ru="Канал продажи" data-en="Sales channel">Sales channel</span><span class="kd-f kd-i" data-ph="3" data-o="11" data-g="120" data-ru="Способ оплаты" data-en="Payment method">Payment method</span><span class="kd-f kd-i" data-ph="3" data-o="12" data-g="120" data-ru="Служба доставки" data-en="Carrier">Carrier</span><span class="kd-f kd-i" data-ph="3" data-o="13" data-g="120" data-ru="Трек-номер" data-en="Tracking number">Tracking number</span></div></div>
+          <div class="kd-sec"><span class="kd-sub" data-ru="Автоматизации" data-en="Automations">Automations</span><div class="kd-autos"><div class="kd-a kd-i" data-ph="3" data-o="15" data-g="320" data-ru="Новый заказ → задача: подтвердить заказ" data-en="New order → task: confirm the order">New order → task: confirm the order</div><div class="kd-a kd-i" data-ph="3" data-o="16" data-g="320" data-ru="Сутки без оплаты → задача: напомнить клиенту" data-en="A day without payment → task: remind the customer">A day without payment → task: remind the customer</div></div></div>
+          <div class="kd-log" aria-hidden="true"><code class="kd-i" data-ph="3" data-o="2" data-g="260" data-ru="создать_воронку" data-en="create_pipeline">create_pipeline</code><code class="kd-i" data-ph="3" data-o="9" data-g="260" data-ru="добавить_этап ×6" data-en="add_stage ×6">add_stage ×6</code><code class="kd-i" data-ph="3" data-o="14" data-g="260" data-ru="создать_поле ×4" data-en="create_field ×4">create_field ×4</code><code class="kd-i" data-ph="3" data-o="17" data-g="420" data-ru="создать_автоматизацию ×2" data-en="create_automation ×2">create_automation ×2</code></div>
+        </div>
+      </div>
+      <div class="kd-panel" data-niche="renovation" hidden>
+        <div class="kd-chat">
+          <div class="kd-msg kd-u kd-i" data-ph="1" data-g="700"><span data-ru="Делаем ремонт квартир. Смету отправили — и тишина, никто не дожимает." data-en="We renovate apartments. We send the estimate, then silence: nobody follows up.">We renovate apartments. We send the estimate, then silence: nobody follows up.</span></div>
+          <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Кто общается с клиентом?" data-en="Who talks to the client?">Who talks to the client?</span><div class="kd-opts"><button class="kd-opt" type="button" data-ru="один человек" data-en="one person">one person</button><button class="kd-opt" type="button" data-ru="менеджер и прораб" data-en="manager and foreman">manager and foreman</button><button class="kd-opt" type="button" data-ru="ещё и замерщик" data-en="plus a surveyor">plus a surveyor</button></div></div>
+          <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">The plan is ready:</span><ul class="kd-plan"><li data-ru="воронка «Продажа договора»" data-en="pipeline “Contract sales”">pipeline “Contract sales”</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages around your process">6 stages around your process</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 deal fields</li><li data-ru="2 автозадачи по событиям" data-en="2 event-driven auto-tasks">2 event-driven auto-tasks</li></ul><button class="kd-go" type="button" data-ru="Реализовать" data-en="Implement">Implement</button></div>
+          <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. Создано в CRM: 1 воронка, 6 этапов, 4 поля, 2 автоматизации." data-en="Done. Created in the CRM: 1 pipeline, 6 stages, 4 fields, 2 automations.">Done. Created in the CRM: 1 pipeline, 6 stages, 4 fields, 2 automations.</span></div>
+        </div>
+        <div class="kd-board">
+          <div class="kd-bhead"><span class="kd-win" aria-hidden="true"><i></i><i></i><i></i></span><span class="kd-crm">CRM</span><span class="kd-bname kd-i" data-ph="3" data-o="1" data-g="180" data-ru="Продажа договора" data-en="Contract sales">Contract sales</span></div>
+          <div class="kd-cols"><div class="kd-col kd-i" data-ph="3" data-o="3" data-g="140"><span class="kd-n">1</span><span class="kd-st" data-ru="Заявка" data-en="Request">Request</span><div class="kd-lead kd-i" data-ph="3" data-o="18" data-g="520"><span class="kd-lt" data-ru="Ремонт, 54 м²" data-en="Renovation, 54 m²">Renovation, 54 m²</span></div><span class="kd-task kd-i" data-ph="3" data-o="19" data-g="520" data-ru="Позвонить сегодня" data-en="Call today">Call today</span></div><div class="kd-col kd-i" data-ph="3" data-o="4" data-g="140"><span class="kd-n">2</span><span class="kd-st" data-ru="Квалификация" data-en="Qualified">Qualified</span></div><div class="kd-col kd-i" data-ph="3" data-o="5" data-g="140"><span class="kd-n">3</span><span class="kd-st" data-ru="Замер" data-en="Site visit">Site visit</span></div><div class="kd-col kd-i" data-ph="3" data-o="6" data-g="140"><span class="kd-n">4</span><span class="kd-st" data-ru="Смета" data-en="Estimate">Estimate</span></div><div class="kd-col kd-i" data-ph="3" data-o="7" data-g="140"><span class="kd-n">5</span><span class="kd-st" data-ru="Договор" data-en="Contract">Contract</span></div><div class="kd-col kd-i" data-ph="3" data-o="8" data-g="140"><span class="kd-n">6</span><span class="kd-st" data-ru="Аванс" data-en="Deposit">Deposit</span></div></div>
+          <div class="kd-sec"><span class="kd-sub" data-ru="Поля сделки" data-en="Deal fields">Deal fields</span><div class="kd-fields"><span class="kd-f kd-i" data-ph="3" data-o="10" data-g="120" data-ru="Тип работ" data-en="Work type">Work type</span><span class="kd-f kd-i" data-ph="3" data-o="11" data-g="120" data-ru="Площадь, м²" data-en="Area, m²">Area, m²</span><span class="kd-f kd-i" data-ph="3" data-o="12" data-g="120" data-ru="Бюджет" data-en="Budget">Budget</span><span class="kd-f kd-i" data-ph="3" data-o="13" data-g="120" data-ru="Сумма по смете" data-en="Estimate total">Estimate total</span></div></div>
+          <div class="kd-sec"><span class="kd-sub" data-ru="Автоматизации" data-en="Automations">Automations</span><div class="kd-autos"><div class="kd-a kd-i" data-ph="3" data-o="15" data-g="320" data-ru="Новая заявка → задача: выяснить объект и предложить замер" data-en="New request → task: qualify and offer a site visit">New request → task: qualify and offer a site visit</div><div class="kd-a kd-i" data-ph="3" data-o="16" data-g="320" data-ru="Замер проведён → задача: отправить смету за 2 дня" data-en="Site visit done → task: send the estimate in 2 days">Site visit done → task: send the estimate in 2 days</div></div></div>
+          <div class="kd-log" aria-hidden="true"><code class="kd-i" data-ph="3" data-o="2" data-g="260" data-ru="создать_воронку" data-en="create_pipeline">create_pipeline</code><code class="kd-i" data-ph="3" data-o="9" data-g="260" data-ru="добавить_этап ×6" data-en="add_stage ×6">add_stage ×6</code><code class="kd-i" data-ph="3" data-o="14" data-g="260" data-ru="создать_поле ×4" data-en="create_field ×4">create_field ×4</code><code class="kd-i" data-ph="3" data-o="17" data-g="420" data-ru="создать_автоматизацию ×2" data-en="create_automation ×2">create_automation ×2</code></div>
+        </div>
+      </div>
+      <div class="kd-foot">
+        <span class="kd-note" data-ru="Настоящий Kai задаёт больше вопросов и строит план под ваш процесс." data-en="The real Kai asks more questions and builds the plan around your process.">The real Kai asks more questions and builds the plan around your process.</span>
+        <div class="kd-btns"><button class="kd-again" type="button" data-ru="Другой бизнес" data-en="Another business">Another business</button><button class="kd-cta" type="button" data-ru="Сделать так в моей CRM" data-en="Do this in my CRM">Do this in my CRM</button></div>
+      </div>
+    </div>
+    <!-- KD:END -->
+
     <div class="steps-row" style="margin-top:56px">
       <div class="step reveal tilt-card">
         <div class="step-num">01</div>
@@ -3061,6 +3256,100 @@ reveals.forEach(r => observer.observe(r));
     entries.forEach(function(e){ if (e.isIntersecting){ play(e.target); io.unobserve(e.target); } });
   }, { rootMargin: '-30% 0px -30% 0px' });
   cards.forEach(function(c){ io.observe(c); if (touch) c.addEventListener('click', function(){ play(c); }); });
+})();
+
+/* ─── BUILD DEMO (#how) ─── */
+(function(){
+  var root = document.getElementById('kd'); if (!root) return;
+  var panels = [].slice.call(root.querySelectorAll('.kd-panel'));
+  var chips = [].slice.call(root.querySelectorAll('.kd-chip'));
+  if (!panels.length) return;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var steps = [].slice.call(document.querySelectorAll('#how .step'));
+  var cur = panels[0], phase = 0, timers = [], auto = true, seen = false, played = false;
+  function track(ev){ if (window.kaiTrack) kaiTrack(ev); }
+  function show(i){
+    panels.forEach(function(p, k){ p.hidden = k !== i; });
+    chips.forEach(function(c, k){ c.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
+    cur = panels[i];
+  }
+  function idx(){ return panels.indexOf(cur); }
+  /* reduced motion: the finished board is shown, the chips only switch the business */
+  if (reduce) {
+    root.addEventListener('click', function(e){
+      var t = e.target.closest && e.target.closest('button'); if (!t) return;
+      if (t.classList.contains('kd-chip')) show(chips.indexOf(t));
+      else if (t.classList.contains('kd-again')) show((idx() + 1) % panels.length);
+      else if (t.classList.contains('kd-cta')) { track('demo_cta'); if (window.kaiChatOpen) kaiChatOpen(); }
+    });
+    return;
+  }
+  root.classList.add('kd-js');
+  function clear(){ timers.forEach(clearTimeout); timers = []; }
+  function later(fn, ms){ timers.push(setTimeout(fn, ms)); }
+  function stepOn(n){ steps.forEach(function(el, i){ el.classList.toggle('kd-on', i === n - 1); }); }
+  function items(ph){
+    var a = [].slice.call(cur.querySelectorAll('.kd-i[data-ph="' + ph + '"]'));
+    return a.sort(function(x, y){ return (+x.getAttribute('data-o') || 0) - (+y.getAttribute('data-o') || 0); });
+  }
+  function reveal(ph, done){
+    var t = 0, prev = null;
+    items(ph).forEach(function(el){
+      var before = prev;
+      later(function(){
+        if (before && before.classList.contains('kd-dots')) before.classList.remove('on');
+        el.classList.add('on');
+        var sec = el.closest('.kd-sec'); if (sec) sec.classList.add('live');
+      }, t);
+      t += +el.getAttribute('data-g') || 0; prev = el;
+    });
+    later(done || function(){}, t);
+  }
+  function reset(){
+    clear(); phase = 0;
+    [].forEach.call(cur.querySelectorAll('.on, .live, .pick, .done, .kd-wait'), function(el){
+      el.classList.remove('on', 'live', 'pick', 'kd-wait'); if (el.classList.contains('kd-opts')) el.classList.remove('done');
+    });
+    var go = cur.querySelector('.kd-go'); if (go) go.disabled = false;
+    stepOn(0);
+  }
+  function arm(){   /* first run only: move on by itself if the visitor just watches */
+    if (!auto || !seen) return;
+    if (phase === 1) later(function(){ if (auto && seen) pick(cur.querySelectorAll('.kd-opt')[1]); }, 5200);
+    else if (phase === 2) later(function(){ if (auto && seen) build(false); }, 5200);
+  }
+  function start(){
+    reset(); phase = 1; stepOn(1); track('demo_start');
+    reveal(1, function(){ var o = cur.querySelector('.kd-opt'); if (o) o.parentNode.classList.add('kd-wait'); arm(); });
+  }
+  function pick(btn){
+    if (phase !== 1 || !btn) return;
+    clear(); phase = 2; stepOn(2);
+    btn.classList.add('pick'); btn.parentNode.classList.add('done'); btn.parentNode.classList.remove('kd-wait');
+    reveal(2, function(){ var go = cur.querySelector('.kd-go'); if (go) go.classList.add('kd-wait'); arm(); });
+  }
+  function build(byUser){
+    if (phase !== 2) return;
+    clear(); phase = 3; stepOn(3); track('demo_build');
+    var go = cur.querySelector('.kd-go'); if (go) { go.disabled = true; go.classList.remove('kd-wait'); }
+    if (byUser && innerWidth < 900) { var b = cur.querySelector('.kd-board'); if (b && b.scrollIntoView) b.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+    reveal(3, function(){ phase = 4; played = true; track('demo_done'); });
+  }
+  root.addEventListener('click', function(e){
+    var t = e.target.closest && e.target.closest('button'); if (!t) return;
+    if (t.classList.contains('kd-chip')) { auto = false; show(chips.indexOf(t)); start(); }
+    else if (t.classList.contains('kd-opt')) { auto = false; pick(t); }
+    else if (t.classList.contains('kd-go')) { auto = false; build(true); }
+    else if (t.classList.contains('kd-again')) { auto = false; show((idx() + 1) % panels.length); start(); }
+    else if (t.classList.contains('kd-cta')) { track('demo_cta'); if (window.kaiChatOpen) kaiChatOpen(); }
+  });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(es){
+      seen = es[0].isIntersecting;
+      if (!seen) return;
+      if (phase === 0 && !played) start(); else arm();
+    }, { threshold: 0.3 }).observe(root);
+  } else { seen = true; start(); }
 })();
 
 /* ─── SMOOTH NAV ─── */

@@ -1,0 +1,77 @@
+{
+  "_comment": "Content of the scripted build demo in the «How it works» section. Stages, fields and rules are taken from Kai's niche playbooks (shortened). After editing run: py -3.12 build_demo.py && py -3.12 build_en.py",
+  "ui": {
+    "label": {"ru": "Демо по сценарию · ничего не отправляется", "en": "Scripted demo · nothing is sent"},
+    "pick": {"ru": "Выберите бизнес:", "en": "Pick a business:"},
+    "plan": {"ru": "План готов:", "en": "The plan is ready:"},
+    "plan_pipeline": {"ru": "воронка «{name}»", "en": "pipeline “{name}”"},
+    "plan_stages": {"ru": "{n} этапов под ваш процесс", "en": "{n} stages around your process"},
+    "plan_fields": {"ru": "{n} поля сделки", "en": "{n} deal fields"},
+    "plan_autos": {"ru": "{n} автозадачи по событиям", "en": "{n} event-driven auto-tasks"},
+    "go": {"ru": "Реализовать", "en": "Implement"},
+    "done": {"ru": "Готово. Создано в CRM: 1 воронка, {s} этапов, {f} поля, {a} автоматизации.", "en": "Done. Created in the CRM: 1 pipeline, {s} stages, {f} fields, {a} automations."},
+    "fields": {"ru": "Поля сделки", "en": "Deal fields"},
+    "autos": {"ru": "Автоматизации", "en": "Automations"},
+    "log_pipeline": {"ru": "создать_воронку", "en": "create_pipeline"},
+    "log_stage": {"ru": "добавить_этап", "en": "add_stage"},
+    "log_field": {"ru": "создать_поле", "en": "create_field"},
+    "log_auto": {"ru": "создать_автоматизацию", "en": "create_automation"},
+    "again": {"ru": "Другой бизнес", "en": "Another business"},
+    "cta": {"ru": "Сделать так в моей CRM", "en": "Do this in my CRM"},
+    "note": {"ru": "Настоящий Kai задаёт больше вопросов и строит план под ваш процесс.", "en": "The real Kai asks more questions and builds the plan around your process."}
+  },
+  "niches": [
+    {
+      "id": "dental",
+      "chip": {"ru": "Стоматология", "en": "Dental clinic"},
+      "user": {"ru": "У нас стоматология. Заявки идут с сайта и из Instagram, половина теряется.", "en": "We run a dental clinic. Leads come from the site and Instagram, and half of them get lost."},
+      "q": {"ru": "Сколько первичных обращений в месяц?", "en": "How many new patient requests a month?"},
+      "opts": [{"ru": "до 50", "en": "up to 50"}, {"ru": "50–150", "en": "50–150"}, {"ru": "больше 150", "en": "over 150"}],
+      "pipeline": {"ru": "Первичные пациенты", "en": "New patients"},
+      "stages": [{"ru": "Заявка", "en": "Request"}, {"ru": "Дозвон", "en": "Reached"}, {"ru": "Запись", "en": "Booked"}, {"ru": "Визит подтверждён", "en": "Visit confirmed"}, {"ru": "Приём", "en": "Appointment"}, {"ru": "План лечения", "en": "Treatment plan"}],
+      "fields": [{"ru": "Направление", "en": "Service"}, {"ru": "Врач", "en": "Doctor"}, {"ru": "Дата приёма", "en": "Appointment date"}, {"ru": "Сумма плана", "en": "Plan amount"}],
+      "autos": [{"ru": "Новая заявка → задача: перезвонить за 15 минут", "en": "New request → task: call back within 15 minutes"}, {"ru": "Записан на приём → задача: подтвердить визит накануне", "en": "Booked → task: confirm the visit the day before"}],
+      "lead": {"ru": "Анна, имплант", "en": "Anna, implant"},
+      "task": {"ru": "Перезвонить · 15 мин", "en": "Call back · 15 min"}
+    },
+    {
+      "id": "realty",
+      "chip": {"ru": "Недвижимость", "en": "Real estate"},
+      "user": {"ru": "Агентство недвижимости. Лиды дорогие, а агенты перезванивают через сутки.", "en": "A real-estate agency. Leads are expensive, and agents call back a day later."},
+      "q": {"ru": "Как заявки попадают к агентам?", "en": "How do requests reach the agents?"},
+      "opts": [{"ru": "берут сами", "en": "they pick them"}, {"ru": "через колл-центр", "en": "via a call centre"}, {"ru": "по очереди", "en": "round robin"}],
+      "pipeline": {"ru": "Покупатели", "en": "Buyers"},
+      "stages": [{"ru": "Заявка", "en": "Request"}, {"ru": "Квалификация", "en": "Qualified"}, {"ru": "Подборка", "en": "Shortlist"}, {"ru": "Показ", "en": "Viewing"}, {"ru": "Бронь", "en": "Reserved"}, {"ru": "Договор", "en": "Contract"}],
+      "fields": [{"ru": "Тип объекта", "en": "Property type"}, {"ru": "Бюджет", "en": "Budget"}, {"ru": "Район", "en": "District"}, {"ru": "Способ покупки", "en": "Payment method"}],
+      "autos": [{"ru": "Новая заявка → задача: перезвонить за 15 минут", "en": "New request → task: call back within 15 minutes"}, {"ru": "Подборка без ответа сутки → задача: назначить показ", "en": "Shortlist unanswered for a day → task: book a viewing"}],
+      "lead": {"ru": "2-комнатная, центр", "en": "2-bedroom, city centre"},
+      "task": {"ru": "Перезвонить · 15 мин", "en": "Call back · 15 min"}
+    },
+    {
+      "id": "store",
+      "chip": {"ru": "Интернет-магазин", "en": "Online store"},
+      "user": {"ru": "Интернет-магазин. Заказы с сайта и соцсетей живут в разных окнах.", "en": "An online store. Orders from the site and social media live in different windows."},
+      "q": {"ru": "Кто подтверждает заказы?", "en": "Who confirms the orders?"},
+      "opts": [{"ru": "один человек", "en": "one person"}, {"ru": "2–3 менеджера", "en": "2–3 managers"}, {"ru": "смены", "en": "shifts"}],
+      "pipeline": {"ru": "Заказы с сайта", "en": "Website orders"},
+      "stages": [{"ru": "Заказ", "en": "Order"}, {"ru": "Подтверждён", "en": "Confirmed"}, {"ru": "Оплачен", "en": "Paid"}, {"ru": "Собран", "en": "Packed"}, {"ru": "В доставке", "en": "Shipping"}, {"ru": "Доставлен", "en": "Delivered"}],
+      "fields": [{"ru": "Канал продажи", "en": "Sales channel"}, {"ru": "Способ оплаты", "en": "Payment method"}, {"ru": "Служба доставки", "en": "Carrier"}, {"ru": "Трек-номер", "en": "Tracking number"}],
+      "autos": [{"ru": "Новый заказ → задача: подтвердить заказ", "en": "New order → task: confirm the order"}, {"ru": "Сутки без оплаты → задача: напомнить клиенту", "en": "A day without payment → task: remind the customer"}],
+      "lead": {"ru": "Заказ №1042", "en": "Order #1042"},
+      "task": {"ru": "Подтвердить заказ", "en": "Confirm the order"}
+    },
+    {
+      "id": "renovation",
+      "chip": {"ru": "Ремонт квартир", "en": "Renovation"},
+      "user": {"ru": "Делаем ремонт квартир. Смету отправили — и тишина, никто не дожимает.", "en": "We renovate apartments. We send the estimate, then silence: nobody follows up."},
+      "q": {"ru": "Кто общается с клиентом?", "en": "Who talks to the client?"},
+      "opts": [{"ru": "один человек", "en": "one person"}, {"ru": "менеджер и прораб", "en": "manager and foreman"}, {"ru": "ещё и замерщик", "en": "plus a surveyor"}],
+      "pipeline": {"ru": "Продажа договора", "en": "Contract sales"},
+      "stages": [{"ru": "Заявка", "en": "Request"}, {"ru": "Квалификация", "en": "Qualified"}, {"ru": "Замер", "en": "Site visit"}, {"ru": "Смета", "en": "Estimate"}, {"ru": "Договор", "en": "Contract"}, {"ru": "Аванс", "en": "Deposit"}],
+      "fields": [{"ru": "Тип работ", "en": "Work type"}, {"ru": "Площадь, м²", "en": "Area, m²"}, {"ru": "Бюджет", "en": "Budget"}, {"ru": "Сумма по смете", "en": "Estimate total"}],
+      "autos": [{"ru": "Новая заявка → задача: выяснить объект и предложить замер", "en": "New request → task: qualify and offer a site visit"}, {"ru": "Замер проведён → задача: отправить смету за 2 дня", "en": "Site visit done → task: send the estimate in 2 days"}],
+      "lead": {"ru": "Ремонт, 54 м²", "en": "Renovation, 54 m²"},
+      "task": {"ru": "Позвонить сегодня", "en": "Call today"}
+    }
+  ]
+}
