@@ -558,6 +558,78 @@ hr.sep {
 }
 .feat-desc { font-size: 16px; color: var(--fog); line-height: 1.6; }
 
+/* ─── AUDIT CARD (#features): a Kai message with findings, one-tap fixes and a grade ─── */
+.ka {
+  margin-top: 44px; max-width: 880px; padding: 18px;
+  border: 1px solid var(--graphite); border-radius: 16px; background: var(--bg);
+  box-shadow: rgba(255,255,255,.03) 0 1px 0 inset;
+}
+.ka-head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px 14px; align-items: start; }
+.ka-ava { width: 38px; height: 38px; border-radius: 11px; background: var(--accent-dim); border: 1px solid var(--border-soft); display: grid; place-items: center; }
+.ka-who { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; font-size: 14px; font-weight: 600; color: var(--ink); }
+.ka-tag {
+  font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--muted); border: 1px dashed var(--smoke); border-radius: 999px; padding: 3px 9px;
+}
+.ka-text { margin-top: 5px; font-size: 15.5px; line-height: 1.5; color: var(--text); }
+.ka-grade { min-width: 96px; padding: 9px 12px; text-align: center; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-1); }
+.ka-letter { display: block; font: 700 30px/1 var(--mono); color: var(--crit); transition: color .4s ease; }
+.ka[data-g="C"] .ka-letter { color: var(--warn); }
+.ka[data-g="B"] .ka-letter { color: var(--accent-2); }
+.ka[data-g="A"] .ka-letter { color: var(--good); }
+.ka-score { display: block; margin-top: 4px; font: 12.5px var(--mono); color: var(--text); font-variant-numeric: tabular-nums; }
+.ka-cap { display: block; margin-top: 2px; font-size: 11px; color: var(--muted); }
+.ka-bar { height: 6px; margin-top: 14px; border-radius: 99px; background: var(--bg-2); overflow: hidden; }
+.ka-bar i { display: block; height: 100%; width: 38%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), var(--good)); transition: width .7s cubic-bezier(.16,1,.3,1); }
+.ka-list { list-style: none; display: grid; gap: 8px; margin-top: 14px; }
+.ka-row {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 6px 12px; align-items: center;
+  min-height: 64px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 11px; background: var(--bg-1);
+  transition: border-color .3s ease;
+}
+.ka-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--crit); box-shadow: 0 0 0 4px rgba(255,107,138,.14); transition: background .3s ease, box-shadow .3s ease; }
+.ka-row[data-sev="med"] .ka-dot { background: var(--warn); box-shadow: 0 0 0 4px rgba(245,196,81,.14); }
+.ka-t { display: block; font-size: 14.5px; font-weight: 600; line-height: 1.35; color: var(--ink); }
+.ka-d, .ka-r { display: block; margin-top: 2px; font-size: 13.5px; line-height: 1.45; color: var(--muted); }
+.ka-r { display: none; color: var(--good); }
+.ka-fix, .ka-again {
+  font: 500 13.5px/1 var(--font); color: var(--ink); background: var(--accent-dim);
+  border: 1px solid var(--accent); border-radius: 8px; min-height: 40px; padding: 0 14px; cursor: pointer;
+  transition: background .15s, transform .15s;
+}
+.ka-fix:hover { background: rgba(124,92,255,.28); transform: translateY(-1px); }
+.ka button:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+.ka-row.fixed { border-color: rgba(67,224,160,.3); }
+.ka-row.fixed .ka-dot { background: var(--good); box-shadow: 0 0 0 4px rgba(67,224,160,.14); }
+.ka-row.fixed .ka-d, .ka-row.fixed .ka-fix { display: none; }
+.ka-row.fixed .ka-r { display: block; animation: fadeUp .4s cubic-bezier(.16,1,.3,1) both; }
+.ka-row.fixed::after { content: '✓'; min-width: 40px; text-align: center; font-weight: 700; color: var(--good); }
+.ka-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px 16px; flex-wrap: wrap; margin-top: 14px; }
+.ka-notes { font-size: 13.5px; line-height: 1.5; color: var(--muted); max-width: 54ch; }
+.ka-final { display: none; color: var(--text); }
+.ka.all .ka-note { display: none; }
+.ka.all .ka-final { display: inline; }
+.ka-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.ka-again { display: none; background: transparent; border-color: var(--smoke); color: var(--text); }
+.ka.all .ka-again { display: inline-block; }
+.ka-cta {
+  font: 600 14px/1 var(--font); color: #fff; background: var(--accent-gradient); border: 0; border-radius: 8px;
+  min-height: 40px; padding: 0 18px; cursor: pointer; box-shadow: 0 0 20px rgba(124,92,255,.3); transition: opacity .15s, transform .15s;
+}
+.ka-cta:hover { opacity: .9; transform: translateY(-1px); }
+@media (max-width: 640px) {
+  .ka { padding: 12px; margin-top: 36px; }
+  .ka-head { grid-template-columns: auto minmax(0, 1fr); }
+  .ka-grade { grid-column: 1 / -1; display: flex; align-items: baseline; justify-content: center; gap: 10px; }
+  .ka-letter { font-size: 24px; }
+  .ka-score, .ka-cap { margin-top: 0; }
+  .ka-row { grid-template-columns: auto minmax(0, 1fr); }
+  .ka-fix { grid-column: 1 / -1; width: 100%; }
+  .ka-row.fixed::after { display: none; }
+  .ka-btns { width: 100%; }
+  .ka-btns button { flex: 1 1 auto; }
+}
+
 /* ─── HOW IT WORKS ─── */
 .how { background: var(--void); }
 .steps-row {
@@ -2443,6 +2515,33 @@ footer {
     <p class="section-label reveal" data-ru="Возможности" data-en="Features">Возможности</p>
     <h2 class="section-heading reveal reveal-delay-1" data-ru="Kai — это <em>аналитик</em>,<br>который думает с вами" data-en="Kai is an <em>analyst</em><br>who thinks with you">Kai — это <em>аналитик</em>,<br>который думает с вами</h2>
     <p class="section-sub reveal reveal-delay-2" data-ru="Не&nbsp;шаблонный бот с&nbsp;анкетой. Живой диалог с&nbsp;экспертом, который потом всё реализует сам." data-en="Not a&nbsp;template bot with a&nbsp;survey. A&nbsp;real dialog with an&nbsp;expert who then implements everything.">Не&nbsp;шаблонный бот с&nbsp;анкетой. Живой диалог с&nbsp;экспертом, который потом всё реализует сам.</p>
+    <!-- KA:START audit card -->
+    <div class="ka reveal" id="ka" data-g="D">
+      <div class="ka-head">
+        <span class="ka-ava"><svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true"><path d="M35.5 13.5 A15 15 0 1 0 39 24" fill="none" stroke="#7C5CFF" stroke-width="5.5" stroke-linecap="round"/><circle cx="38.5" cy="12.5" r="3.6" fill="#A78BFA"/></svg></span>
+        <div class="ka-msg">
+          <div class="ka-who"><span>Kai</span><span class="ka-tag" data-ru="Демо-данные" data-en="Demo data">Демо-данные</span></div>
+          <p class="ka-text" data-ru="Проверил воронку «Продажи». Нашёл 4 проблемы — чиню по кнопке." data-en="I checked the “Sales” pipeline and found 4 issues. One tap fixes each.">Проверил воронку «Продажи». Нашёл 4 проблемы — чиню по кнопке.</p>
+        </div>
+        <div class="ka-grade" aria-live="polite">
+          <span class="ka-letter">D</span>
+          <span class="ka-score"><span class="ka-num">38</span>/100</span>
+          <span class="ka-cap" data-ru="здоровье воронки" data-en="pipeline health">здоровье воронки</span>
+        </div>
+      </div>
+      <div class="ka-bar" aria-hidden="true"><i></i></div>
+      <ul class="ka-list">
+        <li class="ka-row" data-sev="high" data-w="19"><span class="ka-dot" aria-hidden="true"></span><div class="ka-body"><span class="ka-t" data-ru="Нет причин отказа" data-en="No loss reasons">Нет причин отказа</span><span class="ka-d" data-ru="Сделки закрываются без объяснения — не видно, где вы теряете." data-en="Deals close with no explanation, so you cannot see where you lose.">Сделки закрываются без объяснения — не видно, где вы теряете.</span><span class="ka-r" data-ru="Создано 6 причин отказа" data-en="6 loss reasons created">Создано 6 причин отказа</span></div><button class="ka-fix" type="button" data-ru="Починить" data-en="Fix">Починить</button></li>
+        <li class="ka-row" data-sev="med" data-w="9"><span class="ka-dot" aria-hidden="true"></span><div class="ka-body"><span class="ka-t" data-ru="Нет источников лидов" data-en="No lead sources">Нет источников лидов</span><span class="ka-d" data-ru="Непонятно, какой канал приводит клиентов." data-en="You cannot tell which channel brings customers.">Непонятно, какой канал приводит клиентов.</span><span class="ka-r" data-ru="Источники заведены: сайт, Instagram, звонок, рекомендация" data-en="Sources created: website, Instagram, phone, referral">Источники заведены: сайт, Instagram, звонок, рекомендация</span></div><button class="ka-fix" type="button" data-ru="Починить" data-en="Fix">Починить</button></li>
+        <li class="ka-row" data-sev="high" data-w="19"><span class="ka-dot" aria-hidden="true"></span><div class="ka-body"><span class="ka-t" data-ru="62% открытых сделок стоят на этапе «Думает»" data-en="62% of open deals sit at “Thinking”">62% открытых сделок стоят на этапе «Думает»</span><span class="ka-d" data-ru="Узкое место: сделки заходят на этап и не выходят." data-en="A bottleneck: deals enter the stage and do not leave it.">Узкое место: сделки заходят на этап и не выходят.</span><span class="ka-r" data-ru="Правило: 2 дня на этапе → задача менеджеру" data-en="Rule: 2 days at the stage → a task for the rep">Правило: 2 дня на этапе → задача менеджеру</span></div><button class="ka-fix" type="button" data-ru="Добавить правило" data-en="Add a rule">Добавить правило</button></li>
+        <li class="ka-row" data-sev="med" data-w="9"><span class="ka-dot" aria-hidden="true"></span><div class="ka-body"><span class="ka-t" data-ru="Нет автоматизаций" data-en="No automations">Нет автоматизаций</span><span class="ka-d" data-ru="Всё держится на памяти менеджеров." data-en="Everything depends on what the reps remember.">Всё держится на памяти менеджеров.</span><span class="ka-r" data-ru="Правило: нет ответа 30 минут → задача" data-en="Rule: no reply for 30 minutes → a task">Правило: нет ответа 30 минут → задача</span></div><button class="ka-fix" type="button" data-ru="Добавить правило" data-en="Add a rule">Добавить правило</button></li>
+      </ul>
+      <div class="ka-foot">
+        <span class="ka-notes"><span class="ka-note" data-ru="Так выглядит аудит в чате: находки и кнопки. На вашей воронке цифры будут ваши." data-en="This is how the audit looks in the chat: findings and buttons. On your pipeline the numbers will be yours.">Так выглядит аудит в чате: находки и кнопки. На вашей воронке цифры будут ваши.</span><span class="ka-final" data-ru="Воронка в порядке — оценка A. На вашей CRM это один запрос в чате." data-en="The pipeline is in shape — grade A. On your CRM it is one request in the chat.">Воронка в порядке — оценка A. На вашей CRM это один запрос в чате.</span></span>
+        <div class="ka-btns"><button class="ka-again" type="button" data-ru="Сначала" data-en="Start over">Сначала</button><button class="ka-cta" type="button" data-ru="Проверить мою воронку" data-en="Audit my pipeline">Проверить мою воронку</button></div>
+      </div>
+    </div>
+    <!-- KA:END -->
     <div class="features-grid" style="margin-top:56px">
 
       <div class="feat-card glow-card depth-card" data-feat="chat">
@@ -3350,6 +3449,44 @@ reveals.forEach(r => observer.observe(r));
       if (phase === 0 && !played) start(); else arm();
     }, { threshold: 0.3 }).observe(root);
   } else { seen = true; start(); }
+})();
+
+/* ─── AUDIT CARD (#features) ─── */
+(function(){
+  var root = document.getElementById('ka'); if (!root) return;
+  var rows = [].slice.call(root.querySelectorAll('.ka-row'));
+  var letter = root.querySelector('.ka-letter'), num = root.querySelector('.ka-num'), bar = root.querySelector('.ka-bar i');
+  if (!rows.length || !letter || !num || !bar) return;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var BASE = 38, shown = BASE, raf = 0;
+  function track(ev){ if (window.kaiTrack) kaiTrack(ev); }
+  function grade(v){ return v >= 90 ? 'A' : v >= 70 ? 'B' : v >= 55 ? 'C' : 'D'; }
+  function total(){ var v = BASE; rows.forEach(function(r){ if (r.classList.contains('fixed')) v += +r.getAttribute('data-w') || 0; }); return v; }
+  function paint(v){ num.textContent = v; var g = grade(v); if (letter.textContent !== g) letter.textContent = g; root.setAttribute('data-g', g); }
+  function go(v){
+    bar.style.width = v + '%';
+    cancelAnimationFrame(raf);
+    if (reduce) { shown = v; paint(v); return; }
+    var from = shown, t0 = performance.now();
+    (function tick(now){
+      var k = Math.min(1, (now - t0) / 600); shown = Math.round(from + (v - from) * k); paint(shown);
+      if (k < 1) raf = requestAnimationFrame(tick);
+    })(t0);
+  }
+  root.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('button'); if (!b) return;
+    if (b.classList.contains('ka-fix')) {
+      var row = b.closest('.ka-row'); if (!row || row.classList.contains('fixed')) return;
+      row.classList.add('fixed'); track('audit_fix'); go(total());
+      var all = rows.every(function(r){ return r.classList.contains('fixed'); });
+      if (all) { root.classList.add('all'); track('audit_done'); }
+      var next = all ? root.querySelector('.ka-cta') : root.querySelector('.ka-row:not(.fixed) .ka-fix');
+      if (next) next.focus({ preventScroll: true });   /* the pressed button is gone: keep keyboard focus inside the card */
+    } else if (b.classList.contains('ka-again')) {
+      rows.forEach(function(r){ r.classList.remove('fixed'); }); root.classList.remove('all'); go(BASE);
+      var first = root.querySelector('.ka-fix'); if (first) first.focus({ preventScroll: true });
+    } else if (b.classList.contains('ka-cta')) { track('audit_cta'); if (window.kaiChatOpen) kaiChatOpen(); }
+  });
 })();
 
 /* ─── SMOOTH NAV ─── */
