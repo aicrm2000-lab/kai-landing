@@ -72,6 +72,45 @@
       "autos": [{"ru": "Новая заявка → задача: выяснить объект и предложить замер", "en": "New request → task: qualify and offer a site visit"}, {"ru": "Замер проведён → задача: отправить смету за 2 дня", "en": "Site visit done → task: send the estimate within 2 days"}],
       "lead": {"ru": "Ремонт, 54 м²", "en": "Renovation, 54 m²"},
       "task": {"ru": "Позвонить сегодня", "en": "Call today"}
+    },
+    {
+      "id": "auto",
+      "chip": {"ru": "Автосервис", "en": "Car service"},
+      "user": {"ru": "Автосервис. Клиенты записываются и не приезжают, пост простаивает.", "en": "A car service. Customers book and do not show up, the bay sits idle."},
+      "q": {"ru": "Сколько машин в месяц проходит через сервис?", "en": "How many cars a month go through the service?"},
+      "opts": [{"ru": "до 100", "en": "up to 100"}, {"ru": "100–300", "en": "100–300"}, {"ru": "больше 300", "en": "over 300"}],
+      "pipeline": {"ru": "Запись и заезд", "en": "Booking and intake"},
+      "stages": [{"ru": "Обращение", "en": "Request"}, {"ru": "Запись", "en": "Booked"}, {"ru": "Приём авто", "en": "Car received"}, {"ru": "Диагностика", "en": "Diagnostics"}, {"ru": "Смета", "en": "Estimate"}, {"ru": "Работы выполнены", "en": "Work done"}],
+      "fields": [{"ru": "Марка и модель", "en": "Make and model"}, {"ru": "Госномер", "en": "Plate number"}, {"ru": "Тип услуги", "en": "Service type"}, {"ru": "Дата записи", "en": "Booking date"}],
+      "autos": [{"ru": "Новое обращение → задача: уточнить авто и предложить окно", "en": "New request → task: ask about the car and offer a slot"}, {"ru": "Запись оформлена → задача: напомнить о записи накануне", "en": "Booked → task: remind the customer the day before"}],
+      "lead": {"ru": "Kia Rio, ТО", "en": "Kia Rio, service"},
+      "task": {"ru": "Предложить окно", "en": "Offer a slot"}
+    },
+    {
+      "id": "beauty",
+      "chip": {"ru": "Салон красоты", "en": "Beauty salon"},
+      "user": {"ru": "Салон красоты. Заявки из Instagram теряются в директе.", "en": "A beauty salon. Requests from Instagram get lost in direct messages."},
+      "q": {"ru": "Сколько визитов в месяц?", "en": "How many visits a month?"},
+      "opts": [{"ru": "до 200", "en": "up to 200"}, {"ru": "200–500", "en": "200–500"}, {"ru": "больше 500", "en": "over 500"}],
+      "pipeline": {"ru": "Новые клиенты", "en": "New clients"},
+      "stages": [{"ru": "Заявка", "en": "Request"}, {"ru": "Дозвон", "en": "Reached"}, {"ru": "Запись", "en": "Booked"}, {"ru": "Визит подтверждён", "en": "Visit confirmed"}, {"ru": "Услуга оказана", "en": "Service done"}, {"ru": "Повторная запись", "en": "Rebooked"}],
+      "fields": [{"ru": "Категория услуги", "en": "Service category"}, {"ru": "Мастер", "en": "Specialist"}, {"ru": "Дата визита", "en": "Visit date"}, {"ru": "Сумма визита", "en": "Visit amount"}],
+      "autos": [{"ru": "Новая заявка → задача: ответить за 10 минут и предложить окна", "en": "New request → task: reply within 10 minutes and offer slots"}, {"ru": "Услуга оказана → задача: предложить следующий визит", "en": "Service done → task: offer the next visit"}],
+      "lead": {"ru": "Мария, маникюр", "en": "Maria, manicure"},
+      "task": {"ru": "Ответить · 10 мин", "en": "Reply · 10 min"}
+    },
+    {
+      "id": "courses",
+      "chip": {"ru": "Онлайн-школа", "en": "Online school"},
+      "user": {"ru": "Онлайн-школа. После вебинара сотни регистраций, менеджеры не успевают.", "en": "An online school. Hundreds of sign-ups after a webinar, the managers cannot keep up."},
+      "q": {"ru": "Продаёте запусками или постоянно?", "en": "Do you sell through launches or evergreen?"},
+      "opts": [{"ru": "запусками", "en": "launches"}, {"ru": "постоянно", "en": "evergreen"}, {"ru": "и так и так", "en": "both"}],
+      "pipeline": {"ru": "Продажа курса", "en": "Course sales"},
+      "stages": [{"ru": "Регистрация", "en": "Sign-up"}, {"ru": "Квалификация", "en": "Qualified"}, {"ru": "Созвон назначен", "en": "Call booked"}, {"ru": "Созвон проведён", "en": "Call done"}, {"ru": "Счёт выставлен", "en": "Invoice sent"}, {"ru": "Оплата", "en": "Paid"}],
+      "fields": [{"ru": "Продукт", "en": "Product"}, {"ru": "Тариф", "en": "Plan"}, {"ru": "Поток", "en": "Cohort"}, {"ru": "Рассрочка", "en": "Instalments"}],
+      "autos": [{"ru": "Регистрация → задача: написать и предложить диагностику", "en": "Sign-up → task: message and offer a diagnostic call"}, {"ru": "Счёт выставлен → задача на завтра: напомнить о дедлайне цены", "en": "Invoice sent → task for tomorrow: remind about the price deadline"}],
+      "lead": {"ru": "Ольга, курс «Дизайн»", "en": "Olga, “Design” course"},
+      "task": {"ru": "Написать · диагностика", "en": "Message · diagnostic"}
     }
   ]
 }

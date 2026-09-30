@@ -898,6 +898,102 @@ hr.sep {
   width: 6px; height: 6px; border-radius: 50%;
 }
 
+/* ─── BEFORE / AFTER (#crm): one pipeline, a slider between the mess and the Kai version ─── */
+.ba { margin-top: 48px; padding: 16px; border: 1px solid var(--graphite); border-radius: 16px; background: var(--bg); box-shadow: rgba(255,255,255,.03) 0 1px 0 inset; }
+.ba-top { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px 14px; align-items: center; margin-bottom: 12px; }
+.ba-lab { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); white-space: nowrap; }
+.ba-lab-a { color: var(--good); border-color: rgba(67,224,160,.35); }
+.ba-hint { font-size: 13.5px; color: var(--muted); text-align: center; }
+.ba-stage { position: relative; display: grid; min-height: 292px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: var(--bg-1); touch-action: pan-y; }
+/* both boards share one grid cell, so the stage is as tall as the taller board and nothing is clipped */
+.ba-board { grid-area: 1 / 1; padding: 12px; display: grid; gap: 6px; align-content: start; }
+.ba-before { grid-template-columns: repeat(7, minmax(0, 1fr)); background: #130F24; }
+.ba-after { grid-template-columns: repeat(6, minmax(0, 1fr)); background: var(--bg-1); clip-path: inset(0 0 0 50%); }
+.ba-col { min-height: 258px; padding: 8px 7px; border-radius: 9px; border: 1px solid var(--border); background: rgba(11,10,20,.6); display: flex; flex-direction: column; gap: 5px; overflow: hidden; }
+.ba-before .ba-col { border-style: dashed; border-color: rgba(255,107,138,.28); }
+.ba-after .ba-col { border-color: rgba(67,224,160,.25); }
+.ba-n { font: 10.5px var(--mono); color: var(--muted); }
+.ba-col b { font-size: 12px; line-height: 1.25; color: var(--text); hyphens: auto; overflow-wrap: break-word; }
+.ba-deal { margin-top: 2px; padding: 5px 6px; border-radius: 6px; background: var(--bg-2); border: 1px solid var(--border-soft); font-size: 11.5px; line-height: 1.3; color: var(--ink); display: grid; gap: 2px; hyphens: auto; overflow-wrap: break-word; }
+.ba-deal i { font-style: normal; font-size: 10.5px; color: var(--muted); }
+.ba-deal .ba-f { color: var(--crit); }
+.ba-deal .ba-f.old { color: var(--warn); }
+.ba-deal .ba-f::before { content: '● '; }
+.ba-deal.ok { border-color: rgba(67,224,160,.3); }
+.ba-deal .ba-t { color: var(--good); }
+.ba-deal .ba-t::before { content: '✓ '; }
+.ba-line { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: var(--accent-2); box-shadow: 0 0 12px rgba(124,92,255,.6); pointer-events: none; }
+.ba-knob { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 34px; height: 34px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-size: 16px; box-shadow: 0 6px 20px rgba(0,0,0,.45); }
+.ba-range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; -webkit-appearance: none; appearance: none; touch-action: pan-y; }
+.ba-range:focus-visible + .ba-knob, .ba-stage:has(.ba-range:focus-visible) .ba-knob { outline: 2px solid #fff; outline-offset: 2px; }
+.ba-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px 16px; flex-wrap: wrap; margin-top: 12px; }
+.ba-note { font-size: 13px; line-height: 1.5; color: var(--muted); max-width: 64ch; }
+.ba-btns { display: flex; gap: 8px; }
+.ba-b { font: 500 13px/1 var(--font); color: var(--text); background: transparent; border: 1px solid var(--smoke); border-radius: 999px; min-height: 36px; padding: 0 14px; cursor: pointer; transition: border-color .15s, color .15s; }
+.ba-b:hover { border-color: var(--accent); color: var(--ink); }
+.ba button:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+@media (max-width: 900px) {
+  .ba { padding: 12px; margin-top: 36px; }
+  .ba-top { grid-template-columns: auto auto; justify-content: space-between; }
+  .ba-hint { grid-column: 1 / -1; grid-row: 1; text-align: left; }
+  .ba-stage { min-height: 0; }
+  .ba-before { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .ba-after { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ba-col { min-height: 0; }
+  .ba-before .ba-col:nth-child(n+5), .ba-after .ba-col:nth-child(n+4) { display: none; }
+}
+@media (max-width: 480px) {
+  .ba-before { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ba-after { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ba-before .ba-col:nth-child(n+4), .ba-after .ba-col:nth-child(n+3) { display: none; }
+  .ba-btns { width: 100%; }
+  .ba-btns button { flex: 1 1 auto; }
+}
+
+/* ─── PHRASE → ACTION CONSOLE (#api) ─── */
+.ac { margin-top: 48px; padding: 16px; border: 1px solid var(--graphite); border-radius: 16px; background: var(--bg-1); box-shadow: rgba(255,255,255,.03) 0 1px 0 inset; }
+.ac-head { display: flex; align-items: center; justify-content: space-between; gap: 10px 16px; flex-wrap: wrap; margin-bottom: 12px; }
+.ac-lead { display: flex; align-items: center; gap: 8px 12px; flex-wrap: wrap; }
+.ac-title { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.ac-nav { display: flex; align-items: center; gap: 8px; }
+.ac-cnt { font: 12.5px var(--mono); color: var(--muted); min-width: 52px; text-align: center; font-variant-numeric: tabular-nums; }
+.ac-prev, .ac-next { width: 40px; height: 40px; border-radius: 999px; border: 1px solid var(--smoke); background: transparent; color: var(--text); font-size: 20px; line-height: 1; cursor: pointer; transition: border-color .15s, color .15s; }
+.ac-prev:hover, .ac-next:hover { border-color: var(--accent); color: var(--ink); }
+.ac button:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+.ac-screen { display: grid; gap: 8px; padding: 14px; border-radius: 12px; background: var(--bg); border: 1px solid var(--border); min-height: 132px; font-family: var(--mono); font-size: 13px; line-height: 1.5; }
+.ac-row { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 8px; align-items: start; }
+.ac-who { color: var(--muted); font-size: 12px; padding-top: 2px; }
+.ac-kai { color: var(--accent-2); }
+.ac-out { color: var(--text); overflow-wrap: anywhere; }
+.ac-out-q { color: var(--ink); }
+.ac-out-a { color: var(--accent-2); }
+.ac-out-r { font-family: var(--font); font-size: 14px; }
+.ac-ok { color: var(--good); }
+/* hide at once, reveal with a fade */
+.ac-screen.typing .ac-out-a, .ac-screen.typing .ac-out-r, .ac-screen.typing .ac-ok { opacity: 0; transition: none; }
+.ac-screen .ac-out-a, .ac-screen .ac-out-r, .ac-screen .ac-ok { transition: opacity .35s ease; }
+.ac-hint { margin-top: 10px; font-size: 13px; color: var(--muted); }
+.ac-all { margin-top: 10px; }
+.ac-all summary { cursor: pointer; font-size: 13.5px; color: var(--accent-2); list-style: none; }
+.ac-all summary::before { content: '▸ '; }
+.ac-all[open] summary::before { content: '▾ '; }
+.ac-all summary::-webkit-details-marker { display: none; }
+.ac-list { margin: 10px 0 0; padding: 0 0 0 20px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; font-size: 13.5px; color: var(--text); }
+.ac-list li { min-width: 0; }
+.ac-pick { font: inherit; color: inherit; text-align: left; background: none; border: 0; padding: 0; cursor: pointer; }
+.ac-pick:hover .ac-q { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.ac-list .ac-a { display: inline-block; margin: 0 6px; font-family: var(--mono); font-size: 12px; color: var(--accent-2); }
+.ac-list .ac-r { color: var(--muted); }
+.ac-list .ac-r::before { content: '— '; }
+.api-badge.has-ex { cursor: pointer; }
+.api-badge.has-ex:hover, .api-badge.is-ex { border-color: var(--accent); color: var(--ink); }
+.api-badge.is-ex { outline: 2px solid var(--accent); outline-offset: 1px; }
+@media (max-width: 640px) {
+  .ac { padding: 12px; margin-top: 36px; }
+  .ac-screen { font-size: 12.5px; padding: 12px; }
+  .ac-row { grid-template-columns: 28px minmax(0, 1fr) auto; }
+}
+
 /* ─── AGENT OFFICE PREVIEW (#office): a mock-up the visitor drives, plus the interest button ─── */
 .office { background: var(--void); }
 .ko {
@@ -915,7 +1011,7 @@ hr.sep {
 .ko-agents, .ko-right { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
 .ko-agents { display: grid; gap: 8px; align-content: start; }
 .ko-agent {
-  display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; gap: 4px 10px; align-items: center;
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 4px 10px; align-items: center;
   padding: 10px 12px; border: 1px solid var(--border); border-radius: 11px; background: var(--bg-1);
   transition: border-color .3s ease, box-shadow .3s ease;
 }
@@ -923,6 +1019,9 @@ hr.sep {
 .ko-who b { display: block; font-size: 14px; color: var(--ink); }
 .ko-role { display: block; font-size: 12.5px; line-height: 1.35; color: var(--muted); }
 .ko-pill { font-size: 11px; letter-spacing: .02em; padding: 4px 8px; border-radius: 999px; white-space: nowrap; color: var(--good); border: 1px solid rgba(67,224,160,.35); }
+/* the status pill sits under the name at every width: the role text keeps the whole middle column */
+.ko-agent .ko-pill { grid-column: 2; justify-self: start; }
+.ko-agent .ko-cnt { grid-row: 1; grid-column: 3; }
 .ko-pill::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: currentColor; margin-right: 6px; vertical-align: 1px; }
 .ko-agent .p-wait { display: none; color: var(--muted); border-color: var(--smoke); }
 .ko-agent.wait .p-duty { display: none; }
@@ -956,7 +1055,7 @@ hr.sep {
 .ko-ok, .ko-no { font: 600 13px/1 var(--font); border-radius: 8px; min-height: 36px; padding: 0 14px; cursor: pointer; transition: opacity .15s; }
 .ko-ok { color: #fff; background: var(--accent-gradient); border: 0; box-shadow: 0 0 16px rgba(124,92,255,.25); }
 .ko-no { color: var(--text); background: transparent; border: 1px solid var(--smoke); }
-.ko-ok[disabled], .ko-no[disabled] { opacity: .45; cursor: default; }
+.ko-ok[aria-disabled="true"], .ko-no[aria-disabled="true"] { opacity: .45; cursor: default; }
 .ko-empty { font-size: 13px; color: var(--muted); align-self: center; }
 .ko-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px 16px; flex-wrap: wrap; margin-top: 14px; }
 .ko-note { font-size: 13.5px; line-height: 1.5; color: var(--muted); max-width: 60ch; }
@@ -969,9 +1068,6 @@ hr.sep {
 @media (max-width: 900px) {
   .ko { padding: 12px; margin-top: 36px; }
   .ko-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; }
-  .ko-agent { grid-template-columns: auto minmax(0, 1fr) auto; }
-  .ko-agent .ko-pill { grid-column: 2; justify-self: start; }
-  .ko-agent .ko-cnt { grid-row: 1; grid-column: 3; }
   .ko-cta { width: 100%; }
 }
 
@@ -2522,7 +2618,7 @@ footer {
     <div class="kd reveal" id="kd">
       <div class="kd-top">
         <span class="kd-label" data-ru="Демо по сценарию · ничего не отправляется" data-en="Scripted demo · nothing is sent">Демо по сценарию · ничего не отправляется</span>
-        <div class="kd-chips" role="group" aria-labelledby="kdPick"><span class="kd-pick" id="kdPick" data-ru="Выберите бизнес:" data-en="Pick a business:">Выберите бизнес:</span><button class="kd-chip" type="button" data-niche="dental" aria-pressed="true" data-ru="Стоматология" data-en="Dental clinic">Стоматология</button><button class="kd-chip" type="button" data-niche="realty" aria-pressed="false" data-ru="Недвижимость" data-en="Real estate">Недвижимость</button><button class="kd-chip" type="button" data-niche="store" aria-pressed="false" data-ru="Интернет-магазин" data-en="Online store">Интернет-магазин</button><button class="kd-chip" type="button" data-niche="renovation" aria-pressed="false" data-ru="Ремонт квартир" data-en="Renovation">Ремонт квартир</button></div>
+        <div class="kd-chips" role="group" aria-labelledby="kdPick"><span class="kd-pick" id="kdPick" data-ru="Выберите бизнес:" data-en="Pick a business:">Выберите бизнес:</span><button class="kd-chip" type="button" data-niche="dental" aria-pressed="true" data-ru="Стоматология" data-en="Dental clinic">Стоматология</button><button class="kd-chip" type="button" data-niche="realty" aria-pressed="false" data-ru="Недвижимость" data-en="Real estate">Недвижимость</button><button class="kd-chip" type="button" data-niche="store" aria-pressed="false" data-ru="Интернет-магазин" data-en="Online store">Интернет-магазин</button><button class="kd-chip" type="button" data-niche="renovation" aria-pressed="false" data-ru="Ремонт квартир" data-en="Renovation">Ремонт квартир</button><button class="kd-chip" type="button" data-niche="auto" aria-pressed="false" data-ru="Автосервис" data-en="Car service">Автосервис</button><button class="kd-chip" type="button" data-niche="beauty" aria-pressed="false" data-ru="Салон красоты" data-en="Beauty salon">Салон красоты</button><button class="kd-chip" type="button" data-niche="courses" aria-pressed="false" data-ru="Онлайн-школа" data-en="Online school">Онлайн-школа</button></div>
       </div>
       <div class="kd-panel" data-niche="dental">
         <div class="kd-chat">
@@ -2589,6 +2685,57 @@ footer {
           <div class="kd-cols"><div class="kd-col kd-i" data-ph="3" data-o="3" data-g="140"><span class="kd-n">1</span><span class="kd-st" data-ru="Заявка" data-en="Request">Заявка</span><div class="kd-lead kd-i" data-ph="3" data-o="18" data-g="520"><span class="kd-lt" data-ru="Ремонт, 54 м²" data-en="Renovation, 54 m²">Ремонт, 54 м²</span></div><span class="kd-task kd-i" data-ph="3" data-o="19" data-g="520" data-ru="Позвонить сегодня" data-en="Call today">Позвонить сегодня</span></div><div class="kd-col kd-i" data-ph="3" data-o="4" data-g="140"><span class="kd-n">2</span><span class="kd-st" data-ru="Квалификация" data-en="Qualified">Квалификация</span></div><div class="kd-col kd-i" data-ph="3" data-o="5" data-g="140"><span class="kd-n">3</span><span class="kd-st" data-ru="Замер" data-en="Site visit">Замер</span></div><div class="kd-col kd-i" data-ph="3" data-o="6" data-g="140"><span class="kd-n">4</span><span class="kd-st" data-ru="Смета" data-en="Estimate">Смета</span></div><div class="kd-col kd-i" data-ph="3" data-o="7" data-g="140"><span class="kd-n">5</span><span class="kd-st" data-ru="Договор" data-en="Contract">Договор</span></div><div class="kd-col kd-i" data-ph="3" data-o="8" data-g="140"><span class="kd-n">6</span><span class="kd-st" data-ru="Аванс" data-en="Deposit">Аванс</span></div></div>
           <div class="kd-sec"><span class="kd-sub" data-ru="Поля сделки" data-en="Deal fields">Поля сделки</span><div class="kd-fields"><span class="kd-f kd-i" data-ph="3" data-o="10" data-g="120" data-ru="Тип работ" data-en="Work type">Тип работ</span><span class="kd-f kd-i" data-ph="3" data-o="11" data-g="120" data-ru="Площадь, м²" data-en="Area, m²">Площадь, м²</span><span class="kd-f kd-i" data-ph="3" data-o="12" data-g="120" data-ru="Бюджет" data-en="Budget">Бюджет</span><span class="kd-f kd-i" data-ph="3" data-o="13" data-g="120" data-ru="Сумма по смете" data-en="Estimate total">Сумма по смете</span></div></div>
           <div class="kd-sec"><span class="kd-sub" data-ru="Правила Kai" data-en="Kai rules">Правила Kai</span><div class="kd-autos"><div class="kd-a kd-i" data-ph="3" data-o="15" data-g="320" data-ru="Новая заявка → задача: выяснить объект и предложить замер" data-en="New request → task: qualify and offer a site visit">Новая заявка → задача: выяснить объект и предложить замер</div><div class="kd-a kd-i" data-ph="3" data-o="16" data-g="320" data-ru="Замер проведён → задача: отправить смету за 2 дня" data-en="Site visit done → task: send the estimate within 2 days">Замер проведён → задача: отправить смету за 2 дня</div></div></div>
+          <div class="kd-log" aria-hidden="true"><code class="kd-i" data-ph="3" data-o="2" data-g="260" data-ru="создать_воронку" data-en="create_pipeline">создать_воронку</code><code class="kd-i" data-ph="3" data-o="9" data-g="260" data-ru="добавить_этап ×6" data-en="add_stage ×6">добавить_этап ×6</code><code class="kd-i" data-ph="3" data-o="14" data-g="260" data-ru="создать_поле ×4" data-en="create_field ×4">создать_поле ×4</code><code class="kd-i" data-ph="3" data-o="17" data-g="420" data-ru="создать_автоматизацию ×2" data-en="create_automation ×2">создать_автоматизацию ×2</code></div>
+        </div>
+      </div>
+      <div class="kd-panel" data-niche="auto" hidden>
+        <div class="kd-chat">
+          <div class="kd-msg kd-u kd-i" data-ph="1" data-g="700"><span data-ru="Автосервис. Клиенты записываются и не приезжают, пост простаивает." data-en="A car service. Customers book and do not show up, the bay sits idle.">Автосервис. Клиенты записываются и не приезжают, пост простаивает.</span></div>
+          <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Сколько машин в месяц проходит через сервис?" data-en="How many cars a month go through the service?">Сколько машин в месяц проходит через сервис?</span><div class="kd-opts done"><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="до 100" data-en="up to 100">до 100</button><button class="kd-opt pick" type="button" aria-pressed="true" aria-disabled="true" data-ru="100–300" data-en="100–300">100–300</button><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="больше 300" data-en="over 300">больше 300</button></div></div>
+          <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Запись и заезд»" data-en="pipeline “Booking and intake”">воронка «Запись и заезд»</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages built around your process">6 этапов под ваш процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
+          <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям." data-en="Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.">Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям.</span></div>
+        </div>
+        <div class="kd-board">
+          <div class="kd-bhead"><span class="kd-win" aria-hidden="true"><i></i><i></i><i></i></span><span class="kd-crm">CRM</span><span class="kd-bname kd-i" data-ph="3" data-o="1" data-g="180" data-ru="Запись и заезд" data-en="Booking and intake">Запись и заезд</span></div>
+          <div class="kd-cols"><div class="kd-col kd-i" data-ph="3" data-o="3" data-g="140"><span class="kd-n">1</span><span class="kd-st" data-ru="Обращение" data-en="Request">Обращение</span><div class="kd-lead kd-i" data-ph="3" data-o="18" data-g="520"><span class="kd-lt" data-ru="Kia Rio, ТО" data-en="Kia Rio, service">Kia Rio, ТО</span></div><span class="kd-task kd-i" data-ph="3" data-o="19" data-g="520" data-ru="Предложить окно" data-en="Offer a slot">Предложить окно</span></div><div class="kd-col kd-i" data-ph="3" data-o="4" data-g="140"><span class="kd-n">2</span><span class="kd-st" data-ru="Запись" data-en="Booked">Запись</span></div><div class="kd-col kd-i" data-ph="3" data-o="5" data-g="140"><span class="kd-n">3</span><span class="kd-st" data-ru="Приём авто" data-en="Car received">Приём авто</span></div><div class="kd-col kd-i" data-ph="3" data-o="6" data-g="140"><span class="kd-n">4</span><span class="kd-st" data-ru="Диагностика" data-en="Diagnostics">Диагностика</span></div><div class="kd-col kd-i" data-ph="3" data-o="7" data-g="140"><span class="kd-n">5</span><span class="kd-st" data-ru="Смета" data-en="Estimate">Смета</span></div><div class="kd-col kd-i" data-ph="3" data-o="8" data-g="140"><span class="kd-n">6</span><span class="kd-st" data-ru="Работы выполнены" data-en="Work done">Работы выполнены</span></div></div>
+          <div class="kd-sec"><span class="kd-sub" data-ru="Поля сделки" data-en="Deal fields">Поля сделки</span><div class="kd-fields"><span class="kd-f kd-i" data-ph="3" data-o="10" data-g="120" data-ru="Марка и модель" data-en="Make and model">Марка и модель</span><span class="kd-f kd-i" data-ph="3" data-o="11" data-g="120" data-ru="Госномер" data-en="Plate number">Госномер</span><span class="kd-f kd-i" data-ph="3" data-o="12" data-g="120" data-ru="Тип услуги" data-en="Service type">Тип услуги</span><span class="kd-f kd-i" data-ph="3" data-o="13" data-g="120" data-ru="Дата записи" data-en="Booking date">Дата записи</span></div></div>
+          <div class="kd-sec"><span class="kd-sub" data-ru="Правила Kai" data-en="Kai rules">Правила Kai</span><div class="kd-autos"><div class="kd-a kd-i" data-ph="3" data-o="15" data-g="320" data-ru="Новое обращение → задача: уточнить авто и предложить окно" data-en="New request → task: ask about the car and offer a slot">Новое обращение → задача: уточнить авто и предложить окно</div><div class="kd-a kd-i" data-ph="3" data-o="16" data-g="320" data-ru="Запись оформлена → задача: напомнить о записи накануне" data-en="Booked → task: remind the customer the day before">Запись оформлена → задача: напомнить о записи накануне</div></div></div>
+          <div class="kd-log" aria-hidden="true"><code class="kd-i" data-ph="3" data-o="2" data-g="260" data-ru="создать_воронку" data-en="create_pipeline">создать_воронку</code><code class="kd-i" data-ph="3" data-o="9" data-g="260" data-ru="добавить_этап ×6" data-en="add_stage ×6">добавить_этап ×6</code><code class="kd-i" data-ph="3" data-o="14" data-g="260" data-ru="создать_поле ×4" data-en="create_field ×4">создать_поле ×4</code><code class="kd-i" data-ph="3" data-o="17" data-g="420" data-ru="создать_автоматизацию ×2" data-en="create_automation ×2">создать_автоматизацию ×2</code></div>
+        </div>
+      </div>
+      <div class="kd-panel" data-niche="beauty" hidden>
+        <div class="kd-chat">
+          <div class="kd-msg kd-u kd-i" data-ph="1" data-g="700"><span data-ru="Салон красоты. Заявки из Instagram теряются в директе." data-en="A beauty salon. Requests from Instagram get lost in direct messages.">Салон красоты. Заявки из Instagram теряются в директе.</span></div>
+          <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Сколько визитов в месяц?" data-en="How many visits a month?">Сколько визитов в месяц?</span><div class="kd-opts done"><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="до 200" data-en="up to 200">до 200</button><button class="kd-opt pick" type="button" aria-pressed="true" aria-disabled="true" data-ru="200–500" data-en="200–500">200–500</button><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="больше 500" data-en="over 500">больше 500</button></div></div>
+          <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Новые клиенты»" data-en="pipeline “New clients”">воронка «Новые клиенты»</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages built around your process">6 этапов под ваш процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
+          <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям." data-en="Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.">Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям.</span></div>
+        </div>
+        <div class="kd-board">
+          <div class="kd-bhead"><span class="kd-win" aria-hidden="true"><i></i><i></i><i></i></span><span class="kd-crm">CRM</span><span class="kd-bname kd-i" data-ph="3" data-o="1" data-g="180" data-ru="Новые клиенты" data-en="New clients">Новые клиенты</span></div>
+          <div class="kd-cols"><div class="kd-col kd-i" data-ph="3" data-o="3" data-g="140"><span class="kd-n">1</span><span class="kd-st" data-ru="Заявка" data-en="Request">Заявка</span><div class="kd-lead kd-i" data-ph="3" data-o="18" data-g="520"><span class="kd-lt" data-ru="Мария, маникюр" data-en="Maria, manicure">Мария, маникюр</span></div><span class="kd-task kd-i" data-ph="3" data-o="19" data-g="520" data-ru="Ответить · 10 мин" data-en="Reply · 10 min">Ответить · 10 мин</span></div><div class="kd-col kd-i" data-ph="3" data-o="4" data-g="140"><span class="kd-n">2</span><span class="kd-st" data-ru="Дозвон" data-en="Reached">Дозвон</span></div><div class="kd-col kd-i" data-ph="3" data-o="5" data-g="140"><span class="kd-n">3</span><span class="kd-st" data-ru="Запись" data-en="Booked">Запись</span></div><div class="kd-col kd-i" data-ph="3" data-o="6" data-g="140"><span class="kd-n">4</span><span class="kd-st" data-ru="Визит подтверждён" data-en="Visit confirmed">Визит подтверждён</span></div><div class="kd-col kd-i" data-ph="3" data-o="7" data-g="140"><span class="kd-n">5</span><span class="kd-st" data-ru="Услуга оказана" data-en="Service done">Услуга оказана</span></div><div class="kd-col kd-i" data-ph="3" data-o="8" data-g="140"><span class="kd-n">6</span><span class="kd-st" data-ru="Повторная запись" data-en="Rebooked">Повторная запись</span></div></div>
+          <div class="kd-sec"><span class="kd-sub" data-ru="Поля сделки" data-en="Deal fields">Поля сделки</span><div class="kd-fields"><span class="kd-f kd-i" data-ph="3" data-o="10" data-g="120" data-ru="Категория услуги" data-en="Service category">Категория услуги</span><span class="kd-f kd-i" data-ph="3" data-o="11" data-g="120" data-ru="Мастер" data-en="Specialist">Мастер</span><span class="kd-f kd-i" data-ph="3" data-o="12" data-g="120" data-ru="Дата визита" data-en="Visit date">Дата визита</span><span class="kd-f kd-i" data-ph="3" data-o="13" data-g="120" data-ru="Сумма визита" data-en="Visit amount">Сумма визита</span></div></div>
+          <div class="kd-sec"><span class="kd-sub" data-ru="Правила Kai" data-en="Kai rules">Правила Kai</span><div class="kd-autos"><div class="kd-a kd-i" data-ph="3" data-o="15" data-g="320" data-ru="Новая заявка → задача: ответить за 10 минут и предложить окна" data-en="New request → task: reply within 10 minutes and offer slots">Новая заявка → задача: ответить за 10 минут и предложить окна</div><div class="kd-a kd-i" data-ph="3" data-o="16" data-g="320" data-ru="Услуга оказана → задача: предложить следующий визит" data-en="Service done → task: offer the next visit">Услуга оказана → задача: предложить следующий визит</div></div></div>
+          <div class="kd-log" aria-hidden="true"><code class="kd-i" data-ph="3" data-o="2" data-g="260" data-ru="создать_воронку" data-en="create_pipeline">создать_воронку</code><code class="kd-i" data-ph="3" data-o="9" data-g="260" data-ru="добавить_этап ×6" data-en="add_stage ×6">добавить_этап ×6</code><code class="kd-i" data-ph="3" data-o="14" data-g="260" data-ru="создать_поле ×4" data-en="create_field ×4">создать_поле ×4</code><code class="kd-i" data-ph="3" data-o="17" data-g="420" data-ru="создать_автоматизацию ×2" data-en="create_automation ×2">создать_автоматизацию ×2</code></div>
+        </div>
+      </div>
+      <div class="kd-panel" data-niche="courses" hidden>
+        <div class="kd-chat">
+          <div class="kd-msg kd-u kd-i" data-ph="1" data-g="700"><span data-ru="Онлайн-школа. После вебинара сотни регистраций, менеджеры не успевают." data-en="An online school. Hundreds of sign-ups after a webinar, the managers cannot keep up.">Онлайн-школа. После вебинара сотни регистраций, менеджеры не успевают.</span></div>
+          <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Продаёте запусками или постоянно?" data-en="Do you sell through launches or evergreen?">Продаёте запусками или постоянно?</span><div class="kd-opts done"><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="запусками" data-en="launches">запусками</button><button class="kd-opt pick" type="button" aria-pressed="true" aria-disabled="true" data-ru="постоянно" data-en="evergreen">постоянно</button><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="и так и так" data-en="both">и так и так</button></div></div>
+          <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Продажа курса»" data-en="pipeline “Course sales”">воронка «Продажа курса»</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages built around your process">6 этапов под ваш процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
+          <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям." data-en="Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.">Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям.</span></div>
+        </div>
+        <div class="kd-board">
+          <div class="kd-bhead"><span class="kd-win" aria-hidden="true"><i></i><i></i><i></i></span><span class="kd-crm">CRM</span><span class="kd-bname kd-i" data-ph="3" data-o="1" data-g="180" data-ru="Продажа курса" data-en="Course sales">Продажа курса</span></div>
+          <div class="kd-cols"><div class="kd-col kd-i" data-ph="3" data-o="3" data-g="140"><span class="kd-n">1</span><span class="kd-st" data-ru="Регистрация" data-en="Sign-up">Регистрация</span><div class="kd-lead kd-i" data-ph="3" data-o="18" data-g="520"><span class="kd-lt" data-ru="Ольга, курс «Дизайн»" data-en="Olga, “Design” course">Ольга, курс «Дизайн»</span></div><span class="kd-task kd-i" data-ph="3" data-o="19" data-g="520" data-ru="Написать · диагностика" data-en="Message · diagnostic">Написать · диагностика</span></div><div class="kd-col kd-i" data-ph="3" data-o="4" data-g="140"><span class="kd-n">2</span><span class="kd-st" data-ru="Квалификация" data-en="Qualified">Квалификация</span></div><div class="kd-col kd-i" data-ph="3" data-o="5" data-g="140"><span class="kd-n">3</span><span class="kd-st" data-ru="Созвон назначен" data-en="Call booked">Созвон назначен</span></div><div class="kd-col kd-i" data-ph="3" data-o="6" data-g="140"><span class="kd-n">4</span><span class="kd-st" data-ru="Созвон проведён" data-en="Call done">Созвон проведён</span></div><div class="kd-col kd-i" data-ph="3" data-o="7" data-g="140"><span class="kd-n">5</span><span class="kd-st" data-ru="Счёт выставлен" data-en="Invoice sent">Счёт выставлен</span></div><div class="kd-col kd-i" data-ph="3" data-o="8" data-g="140"><span class="kd-n">6</span><span class="kd-st" data-ru="Оплата" data-en="Paid">Оплата</span></div></div>
+          <div class="kd-sec"><span class="kd-sub" data-ru="Поля сделки" data-en="Deal fields">Поля сделки</span><div class="kd-fields"><span class="kd-f kd-i" data-ph="3" data-o="10" data-g="120" data-ru="Продукт" data-en="Product">Продукт</span><span class="kd-f kd-i" data-ph="3" data-o="11" data-g="120" data-ru="Тариф" data-en="Plan">Тариф</span><span class="kd-f kd-i" data-ph="3" data-o="12" data-g="120" data-ru="Поток" data-en="Cohort">Поток</span><span class="kd-f kd-i" data-ph="3" data-o="13" data-g="120" data-ru="Рассрочка" data-en="Instalments">Рассрочка</span></div></div>
+          <div class="kd-sec"><span class="kd-sub" data-ru="Правила Kai" data-en="Kai rules">Правила Kai</span><div class="kd-autos"><div class="kd-a kd-i" data-ph="3" data-o="15" data-g="320" data-ru="Регистрация → задача: написать и предложить диагностику" data-en="Sign-up → task: message and offer a diagnostic call">Регистрация → задача: написать и предложить диагностику</div><div class="kd-a kd-i" data-ph="3" data-o="16" data-g="320" data-ru="Счёт выставлен → задача на завтра: напомнить о дедлайне цены" data-en="Invoice sent → task for tomorrow: remind about the price deadline">Счёт выставлен → задача на завтра: напомнить о дедлайне цены</div></div></div>
           <div class="kd-log" aria-hidden="true"><code class="kd-i" data-ph="3" data-o="2" data-g="260" data-ru="создать_воронку" data-en="create_pipeline">создать_воронку</code><code class="kd-i" data-ph="3" data-o="9" data-g="260" data-ru="добавить_этап ×6" data-en="add_stage ×6">добавить_этап ×6</code><code class="kd-i" data-ph="3" data-o="14" data-g="260" data-ru="создать_поле ×4" data-en="create_field ×4">создать_поле ×4</code><code class="kd-i" data-ph="3" data-o="17" data-g="420" data-ru="создать_автоматизацию ×2" data-en="create_automation ×2">создать_автоматизацию ×2</code></div>
         </div>
       </div>
@@ -2908,6 +3055,25 @@ footer {
     <h2 class="section-heading reveal reveal-delay-1" data-ru="Полное управление <em>CRM</em><br>через чат" data-en="Full <em>CRM</em> management<br>via chat">Полное управление <em>CRM</em><br>через чат</h2>
     <p class="section-sub reveal reveal-delay-2" data-ru="60+ действий через официальный API вашей CRM. Всё через обычный чат&nbsp;в&nbsp;Telegram — без кода, без интеграторов." data-en="60+ actions via your CRM's official API. All through a&nbsp;regular Telegram chat — no code, no integrators.">60+ действий через официальный API вашей CRM. Всё через обычный чат&nbsp;в&nbsp;Telegram — без кода, без интеграторов.</p>
 
+    <!-- BA:START before/after -->
+    <div class="ba reveal" id="ba">
+      <div class="ba-top">
+        <span class="ba-lab ba-lab-b" data-ru="До" data-en="Before">До</span>
+        <span class="ba-hint" data-ru="Тяните ползунок: одна и та же воронка до и после одного разговора с Kai" data-en="Drag the slider: the same pipeline before and after one conversation with Kai">Тяните ползунок: одна и та же воронка до и после одного разговора с Kai</span>
+        <span class="ba-lab ba-lab-a" data-ru="После Kai" data-en="After Kai">После Kai</span>
+      </div>
+      <div class="ba-stage">
+        <div class="ba-board ba-before" aria-hidden="true"><div class="ba-col"><span class="ba-n" aria-hidden="true">1</span><b data-ru="Новые" data-en="New">Новые</b><div class="ba-deal"><span data-ru="Иван П." data-en="Ivan P.">Иван П.</span><i class="ba-f notask" data-ru="нет задачи" data-en="no task">нет задачи</i></div><div class="ba-deal"><span data-ru="ООО «Ромашка»" data-en="Daisy LLC">ООО «Ромашка»</span><i class="ba-f notask" data-ru="нет задачи" data-en="no task">нет задачи</i></div></div><div class="ba-col"><span class="ba-n" aria-hidden="true">2</span><b data-ru="Новые (2)" data-en="New (2)">Новые (2)</b><div class="ba-deal"><span data-ru="Иван П." data-en="Ivan P.">Иван П.</span><i class="ba-f dup" data-ru="дубль" data-en="duplicate">дубль</i></div></div><div class="ba-col"><span class="ba-n" aria-hidden="true">3</span><b data-ru="Перезвонить???" data-en="Call back???">Перезвонить???</b><div class="ba-deal"><span data-ru="Ольга В." data-en="Olga V.">Ольга В.</span><i class="ba-f notask" data-ru="нет задачи" data-en="no task">нет задачи</i></div></div><div class="ba-col"><span class="ba-n" aria-hidden="true">4</span><b data-ru="Думает" data-en="Thinking">Думает</b><div class="ba-deal"><span data-ru="Анна С." data-en="Anna S.">Анна С.</span><i class="ba-f old" data-ru="37 дней" data-en="37 days">37 дней</i></div><div class="ba-deal"><span data-ru="Офис Плюс" data-en="Office Plus">Офис Плюс</span><i class="ba-f notask" data-ru="нет задачи" data-en="no task">нет задачи</i></div><div class="ba-deal"><span data-ru="Кухни-Про" data-en="Kitchens Pro">Кухни-Про</span><i class="ba-f old" data-ru="37 дней" data-en="37 days">37 дней</i></div></div><div class="ba-col"><span class="ba-n" aria-hidden="true">5</span><b data-ru="Думает — старые" data-en="Thinking — old">Думает — старые</b><div class="ba-deal"><span data-ru="Мебель Норд" data-en="Nord Furniture">Мебель Норд</span><i class="ba-f old" data-ru="37 дней" data-en="37 days">37 дней</i></div></div><div class="ba-col"><span class="ba-n" aria-hidden="true">6</span><b data-ru="Договор" data-en="Contract">Договор</b><div class="ba-deal"><span data-ru="Строй-Дом" data-en="Build House">Строй-Дом</span></div></div><div class="ba-col"><span class="ba-n" aria-hidden="true">7</span><b data-ru="Не ответил" data-en="No answer">Не ответил</b><div class="ba-deal"><span data-ru="Пётр К." data-en="Pyotr K.">Пётр К.</span><i class="ba-f old" data-ru="37 дней" data-en="37 days">37 дней</i></div></div></div>
+        <div class="ba-board ba-after" id="baAfter"><div class="ba-col"><span class="ba-n" aria-hidden="true">1</span><b data-ru="Заявка" data-en="Request">Заявка</b><div class="ba-deal ok"><span data-ru="Иван П." data-en="Ivan P.">Иван П.</span><i class="ba-t" data-ru="задача: сегодня" data-en="task: today">задача: сегодня</i></div><div class="ba-deal ok"><span data-ru="ООО «Ромашка»" data-en="Daisy LLC">ООО «Ромашка»</span><i class="ba-t" data-ru="задача: сегодня" data-en="task: today">задача: сегодня</i></div></div><div class="ba-col"><span class="ba-n" aria-hidden="true">2</span><b data-ru="Квалификация" data-en="Qualified">Квалификация</b><div class="ba-deal ok"><span data-ru="Ольга В." data-en="Olga V.">Ольга В.</span><i class="ba-t" data-ru="задача: завтра" data-en="task: tomorrow">задача: завтра</i></div></div><div class="ba-col"><span class="ba-n" aria-hidden="true">3</span><b data-ru="КП отправлено" data-en="Proposal sent">КП отправлено</b><div class="ba-deal ok"><span data-ru="Анна С." data-en="Anna S.">Анна С.</span><i class="ba-t" data-ru="задача: через 2 дня" data-en="task: in 2 days">задача: через 2 дня</i></div><div class="ba-deal ok"><span data-ru="Офис Плюс" data-en="Office Plus">Офис Плюс</span><i class="ba-t" data-ru="задача: завтра" data-en="task: tomorrow">задача: завтра</i></div></div><div class="ba-col"><span class="ba-n" aria-hidden="true">4</span><b data-ru="Переговоры" data-en="Negotiation">Переговоры</b><div class="ba-deal ok"><span data-ru="Кухни-Про" data-en="Kitchens Pro">Кухни-Про</span><i class="ba-t" data-ru="задача: сегодня" data-en="task: today">задача: сегодня</i></div></div><div class="ba-col"><span class="ba-n" aria-hidden="true">5</span><b data-ru="Договор" data-en="Contract">Договор</b><div class="ba-deal ok"><span data-ru="Строй-Дом" data-en="Build House">Строй-Дом</span><i class="ba-t" data-ru="задача: подписать" data-en="task: sign">задача: подписать</i></div></div><div class="ba-col"><span class="ba-n" aria-hidden="true">6</span><b data-ru="Оплата" data-en="Payment">Оплата</b></div></div>
+        <div class="ba-line" id="baLine" aria-hidden="true"><span class="ba-knob">⇔</span></div>
+        <input class="ba-range" id="baRange" type="range" min="0" max="100" value="50" autocomplete="off" aria-label="До / после Kai" data-ru-label="До / после Kai" data-en-label="Before / after Kai">
+      </div>
+      <div class="ba-foot">
+        <span class="ba-note" data-ru="Демо-данные. Слева: дубли этапов, сделки без задач и «Думает» на 37 дней. Справа: этапы под процесс, у каждой сделки следующий шаг." data-en="Demo data. Left: duplicate stages, deals without tasks and “Thinking” for 37 days. Right: stages built around the process, every deal has a next step.">Демо-данные. Слева: дубли этапов, сделки без задач и «Думает» на 37 дней. Справа: этапы под процесс, у каждой сделки следующий шаг.</span>
+        <div class="ba-btns"><button class="ba-b" type="button" data-v="100" data-ru="Показать «до»" data-en="Show “before”">Показать «до»</button><button class="ba-b" type="button" data-v="0" data-ru="Показать «после»" data-en="Show “after”">Показать «после»</button></div>
+      </div>
+    </div>
+    <!-- BA:END -->
     <div class="crm-grid reveal reveal-delay-1" style="margin-top:56px">
       <div class="crm-card">
         <div class="crm-card-num">01</div>
@@ -2947,6 +3113,40 @@ footer {
     <h2 class="section-heading reveal reveal-delay-1" data-ru="Доступные<br><em>API-действия</em>" data-en="Available<br><em>API actions</em>">Доступные<br><em>API-действия</em></h2>
     <p class="section-sub reveal reveal-delay-2" data-ru="Kai использует официальный API вашей CRM. Все операции выполняются безопасно и&nbsp;без ваших паролей." data-en="Kai uses your CRM's official API. All operations are performed securely without your passwords.">Kai использует официальный API вашей CRM. Все операции выполняются безопасно и&nbsp;без ваших паролей.</p>
 
+    <!-- AC:START phrase → action console -->
+    <div class="ac reveal" id="ac">
+      <div class="ac-head">
+        <div class="ac-lead"><span class="ac-title" data-ru="Фраза → действие → ответ" data-en="Phrase → action → reply">Фраза → действие → ответ</span><span class="ko-tag" data-ru="Примеры ответов · ничего не отправляется" data-en="Example replies · nothing is sent">Примеры ответов · ничего не отправляется</span></div>
+        <div class="ac-nav"><button type="button" class="ac-prev" aria-label="Назад" data-ru-label="Назад" data-en-label="Previous">‹</button><span class="ac-cnt" aria-hidden="true">1 / 14</span><button type="button" class="ac-next" aria-label="Дальше" data-ru-label="Дальше" data-en-label="Next">›</button></div>
+      </div>
+      <div class="ac-screen" id="acScreen" aria-live="polite">
+        <span class="sr-only ac-pos"></span>
+        <div class="ac-row"><span class="ac-who ac-you" aria-hidden="true">›</span><span class="ac-out ac-out-q"></span></div>
+        <div class="ac-row"><span class="ac-who ac-act" aria-hidden="true">⚙</span><code class="ac-out ac-out-a"></code><span class="ac-ok" aria-hidden="true">✓</span></div>
+        <div class="ac-row"><span class="ac-who ac-kai" aria-hidden="true">Kai</span><span class="ac-out ac-out-r"></span></div>
+      </div>
+      <p class="ac-hint" data-ru="Нажмите любое действие в списке ниже, чтобы увидеть фразу, которая его запускает." data-en="Tap any action in the list below to see the phrase that triggers it.">Нажмите любое действие в списке ниже, чтобы увидеть фразу, которая его запускает.</p>
+      <details class="ac-all">
+        <summary><span data-ru="Все примеры" data-en="All examples">Все примеры</span></summary>
+        <ol class="ac-list" id="acList">
+          <li data-act-ru="создать_воронку" data-act-en="create_pipeline"><button type="button" class="ac-pick"><span class="ac-q" data-ru="Создай воронку «Продажи» с этапами заявка, КП, договор, оплата" data-en="Create a “Sales” pipeline with stages request, proposal, contract, payment">Создай воронку «Продажи» с этапами заявка, КП, договор, оплата</span></button><code class="ac-a" data-ru="создать_воронку" data-en="create_pipeline">создать_воронку</code><span class="ac-r" data-ru="Создал воронку «Продажи»: 4 этапа." data-en="Created the “Sales” pipeline: 4 stages.">Создал воронку «Продажи»: 4 этапа.</span></li>
+          <li data-act-ru="добавить_этап" data-act-en="add_stage"><button type="button" class="ac-pick"><span class="ac-q" data-ru="Добавь этап «Замер» в воронку «Продажи»" data-en="Add a “Site visit” stage to the “Sales” pipeline">Добавь этап «Замер» в воронку «Продажи»</span></button><code class="ac-a" data-ru="добавить_этап" data-en="add_stage">добавить_этап</code><span class="ac-r" data-ru="Этап «Замер» добавлен в воронку «Продажи»." data-en="Stage “Site visit” added to the “Sales” pipeline.">Этап «Замер» добавлен в воронку «Продажи».</span></li>
+          <li data-act-ru="создать_поле" data-act-en="create_field"><button type="button" class="ac-pick"><span class="ac-q" data-ru="Сделай в сделках числовое поле «Бюджет»" data-en="Add a numeric “Budget” field to deals">Сделай в сделках числовое поле «Бюджет»</span></button><code class="ac-a" data-ru="создать_поле" data-en="create_field">создать_поле</code><span class="ac-r" data-ru="Поле «Бюджет» (число) создано в сделках." data-en="Field “Budget” (number) created for deals.">Поле «Бюджет» (число) создано в сделках.</span></li>
+          <li data-act-ru="сделать_поле_обязательным" data-act-en="make_field_required"><button type="button" class="ac-pick"><span class="ac-q" data-ru="Поле «Источник» обязательно на этапе «Договор»" data-en="Make “Source” required at the “Contract” stage">Поле «Источник» обязательно на этапе «Договор»</span></button><code class="ac-a" data-ru="сделать_поле_обязательным" data-en="make_field_required">сделать_поле_обязательным</code><span class="ac-r" data-ru="Поле «Источник» теперь обязательно на этапе «Договор»." data-en="“Source” is now required at the “Contract” stage.">Поле «Источник» теперь обязательно на этапе «Договор».</span></li>
+          <li data-act-ru="создать_сделку" data-act-en="create_deal"><button type="button" class="ac-pick"><span class="ac-q" data-ru="Заведи сделку «Иванов, кухня» на 250 000" data-en="Create a deal “Ivanov, kitchen” for 250 000">Заведи сделку «Иванов, кухня» на 250 000</span></button><code class="ac-a" data-ru="создать_сделку" data-en="create_deal">создать_сделку</code><span class="ac-r" data-ru="Сделка создана на этапе «Заявка»." data-en="Deal created at the “Request” stage.">Сделка создана на этапе «Заявка».</span></li>
+          <li data-act-ru="создать_задачу" data-act-en="create_task"><button type="button" class="ac-pick"><span class="ac-q" data-ru="Поставь задачу по сделке «Иванов, кухня»: позвонить клиенту завтра" data-en="Set a task on “Ivanov, kitchen”: call the client tomorrow">Поставь задачу по сделке «Иванов, кухня»: позвонить клиенту завтра</span></button><code class="ac-a" data-ru="создать_задачу" data-en="create_task">создать_задачу</code><span class="ac-r" data-ru="Задача создана: звонок, срок — завтра, привязана к сделке." data-en="Task created: call, due tomorrow, linked to the deal.">Задача создана: звонок, срок — завтра, привязана к сделке.</span></li>
+          <li data-act-ru="создать_автоматизацию" data-act-en="create_automation"><button type="button" class="ac-pick"><span class="ac-q" data-ru="Когда сделка переходит в «КП отправлено» — задача «перезвонить» через 2 дня" data-en="When a deal moves to “Proposal sent”, set a task “call back” due in 2 days">Когда сделка переходит в «КП отправлено» — задача «перезвонить» через 2 дня</span></button><code class="ac-a" data-ru="создать_автоматизацию" data-en="create_automation">создать_автоматизацию</code><span class="ac-r" data-ru="Правило добавлено: переход в «КП отправлено» → задача со сроком 2 дня." data-en="Rule added: move to “Proposal sent” → a task due in 2 days.">Правило добавлено: переход в «КП отправлено» → задача со сроком 2 дня.</span></li>
+          <li data-act-ru="создать_автоматизацию" data-act-en="create_automation"><button type="button" class="ac-pick"><span class="ac-q" data-ru="Если клиенту не ответили 30 минут — задача по сделке" data-en="If a customer waits 30 minutes for a reply, set a task on the deal">Если клиенту не ответили 30 минут — задача по сделке</span></button><code class="ac-a" data-ru="создать_автоматизацию" data-en="create_automation">создать_автоматизацию</code><span class="ac-r" data-ru="Правило добавлено: нет ответа 30 минут → задача по сделке." data-en="Rule added: no reply for 30 minutes → a task on the deal.">Правило добавлено: нет ответа 30 минут → задача по сделке.</span></li>
+          <li data-act-ru="аудит_воронки" data-act-en="funnel_audit"><button type="button" class="ac-pick"><span class="ac-q" data-ru="Проверь воронку «Продажи»" data-en="Check the “Sales” pipeline">Проверь воронку «Продажи»</span></button><code class="ac-a" data-ru="аудит_воронки" data-en="funnel_audit">аудит_воронки</code><span class="ac-r" data-ru="Нашёл 3 проблемы: нет причин отказа, нет источников, 62% сделок на этапе «Думает». Две чиню кнопкой." data-en="Found 3 issues: no loss reasons, no sources, 62% of deals at “Thinking”. Two are fixed with one tap.">Нашёл 3 проблемы: нет причин отказа, нет источников, 62% сделок на этапе «Думает». Две чиню кнопкой.</span></li>
+          <li data-act-ru="анализ_drop_off" data-act-en="drop_off_analysis"><button type="button" class="ac-pick"><span class="ac-q" data-ru="Где теряются сделки?" data-en="Where do deals get lost?">Где теряются сделки?</span></button><code class="ac-a" data-ru="анализ_drop_off" data-en="drop_off_analysis">анализ_drop_off</code><span class="ac-r" data-ru="Больше всего сделок стоит на «Думает»: 62% открытых. Конверсия в договор 18%." data-en="Most deals sit at “Thinking”: 62% of open ones. Conversion to contract is 18%.">Больше всего сделок стоит на «Думает»: 62% открытых. Конверсия в договор 18%.</span></li>
+          <li data-act-ru="лид_скоринг" data-act-en="lead_scoring"><button type="button" class="ac-pick"><span class="ac-q" data-ru="Кому звонить первым?" data-en="Who should I call first?">Кому звонить первым?</span></button><code class="ac-a" data-ru="лид_скоринг" data-en="lead_scoring">лид_скоринг</code><span class="ac-r" data-ru="Топ-5 горячих: «Офис Плюс» 84, «Кухни-Про» 79, … Записать оценки в поле?" data-en="Top 5 hot leads: “Office Plus” 84, “Kitchens Pro” 79, … Write the scores to the field?">Топ-5 горячих: «Офис Плюс» 84, «Кухни-Про» 79, … Записать оценки в поле?</span></li>
+          <li data-act-ru="регламент_SOP" data-act-en="generate_SOP"><button type="button" class="ac-pick"><span class="ac-q" data-ru="Регламент для отдела продаж по этой воронке" data-en="A sales-team SOP for this pipeline">Регламент для отдела продаж по этой воронке</span></button><code class="ac-a" data-ru="регламент_SOP" data-en="generate_SOP">регламент_SOP</code><span class="ac-r" data-ru="Готово: ежедневный, недельный и месячный регламент с акцентами по находкам аудита." data-en="Done: a daily, weekly and monthly routine with accents from the audit findings.">Готово: ежедневный, недельный и месячный регламент с акцентами по находкам аудита.</span></li>
+          <li data-act-ru="импорт_базы_контактов" data-act-en="import_contacts"><button type="button" class="ac-pick"><span class="ac-q" data-ru="(присылает файл clients.xlsx)" data-en="(sends clients.xlsx)">(присылает файл clients.xlsx)</span></button><code class="ac-a" data-ru="импорт_базы_контактов" data-en="import_contacts">импорт_базы_контактов</code><span class="ac-r" data-ru="Похоже на базу клиентов: 120 контактов с телефоном или email. Могу импортировать, дубли по телефону пропущу." data-en="Looks like a client base: 120 contacts with a phone or email. I can import them and skip duplicates by phone.">Похоже на базу клиентов: 120 контактов с телефоном или email. Могу импортировать, дубли по телефону пропущу.</span></li>
+          <li data-act-ru="внешняя_интеграция" data-act-en="external_integration"><button type="button" class="ac-pick"><span class="ac-q" data-ru="Сообщай в Telegram о каждой новой сделке" data-en="Notify me in Telegram about every new deal">Сообщай в Telegram о каждой новой сделке</span></button><code class="ac-a" data-ru="внешняя_интеграция" data-en="external_integration">внешняя_интеграция</code><span class="ac-r" data-ru="Почти готово: пришлите токен бота (@BotFather) и chat id (@getmyid_bot) одним сообщением — и я всё соберу." data-en="Almost done: send your bot’s token (@BotFather) and chat id (@getmyid_bot) in one message and I’ll set it up.">Почти готово: пришлите токен бота (@BotFather) и chat id (@getmyid_bot) одним сообщением — и я всё соберу.</span></li>
+        </ol>
+      </details>
+    </div>
+    <!-- AC:END -->
     <div class="api-grid reveal">
       <div class="api-badge" data-ru="<span class='dot'></span>создать_воронку" data-en="<span class='dot'></span>create_pipeline"><span class="dot"></span>создать_воронку</div>
       <div class="api-badge" data-ru="<span class='dot'></span>обновить_воронку" data-en="<span class='dot'></span>update_pipeline"><span class="dot"></span>обновить_воронку</div>
@@ -3045,12 +3245,13 @@ footer {
       <div class="ko-top">
         <span class="ko-tag" data-ru="Макет · функции ещё нет" data-en="Mock-up · not built yet">Макет · функции ещё нет</span>
         <div class="ko-stats">
-          <span class="ko-stat"><b id="koDuty">4</b> <span data-ru="на посту из 5" data-en="on duty of 5">на посту из 5</span></span>
+          <span class="ko-stat"><b id="koDuty">4</b> <span data-ru="на посту из 5" data-en="of 5 on duty">на посту из 5</span></span>
           <span class="ko-stat"><b id="koActs">0</b> <span data-ru="действий сегодня" data-en="actions today">действий сегодня</span></span>
           <span class="ko-stat"><b id="koWait">0</b> <span data-ru="ждут одобрения" data-en="waiting for approval">ждут одобрения</span></span>
         </div>
       </div>
       <div class="ko-grid">
+        <span class="sr-only ko-live" role="status"></span>
         <div class="ko-agents">
           <div class="ko-agent" data-agent="doctor"><span class="ko-ico" aria-hidden="true">🩺</span><div class="ko-who"><b data-ru="Доктор CRM" data-en="CRM Doctor">Доктор CRM</b><span class="ko-role" data-ru="раз в день проверяет воронку и предлагает починку" data-en="checks the pipeline daily and proposes fixes">раз в день проверяет воронку и предлагает починку</span></div><span class="ko-pill p-duty" data-ru="на посту" data-en="on duty">на посту</span><span class="ko-pill p-wait" data-ru="ждёт данных 3 из 20" data-en="waiting for data 3 of 20">ждёт данных 3 из 20</span><span class="ko-cnt" aria-hidden="true">0</span></div>
           <div class="ko-agent" data-agent="scorer"><span class="ko-ico" aria-hidden="true">🎯</span><div class="ko-who"><b data-ru="Скоринг лидов" data-en="Lead scorer">Скоринг лидов</b><span class="ko-role" data-ru="оценивает новые заявки и заполняет поле" data-en="scores new leads and fills the field">оценивает новые заявки и заполняет поле</span></div><span class="ko-pill p-duty" data-ru="на посту" data-en="on duty">на посту</span><span class="ko-pill p-wait" data-ru="ждёт данных 3 из 20" data-en="waiting for data 3 of 20">ждёт данных 3 из 20</span><span class="ko-cnt" aria-hidden="true">0</span></div>
@@ -3706,13 +3907,123 @@ reveals.forEach(r => observer.observe(r));
   });
 })();
 
+/* ─── BEFORE / AFTER (#crm) ─── */
+(function(){
+  var root = document.getElementById('ba'); if (!root) return;
+  var range = document.getElementById('baRange'), after = document.getElementById('baAfter'), line = document.getElementById('baLine');
+  if (!range || !after || !line) return;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, moved = false, raf = 0;
+  range.value = 50;   /* Firefox restores a dragged value on reload: start where the picture starts */
+  function set(v){
+    v = Math.max(0, Math.min(100, +v || 0));
+    after.style.clipPath = 'inset(0 0 0 ' + v + '%)';
+    line.style.left = v + '%';
+    if (String(range.value) !== String(v)) range.value = v;
+    if (!moved) { moved = true; if (window.kaiTrack) kaiTrack('ba_move'); }
+  }
+  range.addEventListener('input', function(){ cancelAnimationFrame(raf); set(range.value); });
+  root.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('.ba-b'); if (!b) return;
+    var to = +b.getAttribute('data-v'), from = +range.value;
+    cancelAnimationFrame(raf);
+    if (reduce) { set(to); return; }
+    var t0 = performance.now();
+    (function tick(now){ var k = Math.min(1, (now - t0) / 420); set(from + (to - from) * (1 - Math.pow(1 - k, 3))); if (k < 1) raf = requestAnimationFrame(tick); })(t0);
+  });
+})();
+
+/* ─── PHRASE → ACTION CONSOLE (#api) ─── */
+(function(){
+  var root = document.getElementById('ac'); if (!root) return;
+  var items = [].slice.call(root.querySelectorAll('#acList li')); if (!items.length) return;
+  var screen = document.getElementById('acScreen'), q = root.querySelector('.ac-out-q'), a = root.querySelector('.ac-out-a'), r = root.querySelector('.ac-out-r');
+  var cnt = root.querySelector('.ac-cnt'), pos = root.querySelector('.ac-pos'), reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var i = 0, timer = 0, byAct = {};
+  function lang(){ return document.documentElement.lang === 'en' ? 'en' : 'ru'; }
+  items.forEach(function(li, k){ byAct[li.getAttribute('data-act-ru')] = k; byAct[li.getAttribute('data-act-en')] = k; });
+  /* badges that have an example open it on tap */
+  [].forEach.call(document.querySelectorAll('#api .api-badge'), function(b){
+    var name = (b.textContent || '').trim();
+    if (byAct[name] != null) { b.classList.add('has-ex'); b.setAttribute('tabindex', '0'); b.setAttribute('role', 'button'); }
+  });
+  function show(k, animate){
+    i = (k + items.length) % items.length;
+    var li = items[i];
+    q.textContent = li.querySelector('.ac-q').textContent;
+    a.textContent = lang() === 'en' ? li.getAttribute('data-act-en') : li.getAttribute('data-act-ru');
+    r.textContent = li.querySelector('.ac-r').textContent;
+    if (cnt) cnt.textContent = (i + 1) + ' / ' + items.length;
+    if (pos) pos.textContent = (i + 1) + ' / ' + items.length + '. ';   /* the live region says where we are */
+    [].forEach.call(document.querySelectorAll('#api .api-badge.has-ex'), function(b){
+      var on = (b.textContent || '').trim() === a.textContent;
+      b.classList.toggle('is-ex', on);
+      if (on) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
+    });
+    clearTimeout(timer);
+    if (animate && !reduce) { screen.classList.add('typing'); timer = setTimeout(function(){ screen.classList.remove('typing'); }, 500); }
+    else screen.classList.remove('typing');
+  }
+  root.addEventListener('click', function(e){
+    var t = e.target;
+    if (t.closest && t.closest('.ac-prev')) { show(i - 1, true); track(); }
+    else if (t.closest && t.closest('.ac-next')) { show(i + 1, true); track(); }
+    else { var li = t.closest && t.closest('#acList .ac-pick') && t.closest('#acList li'); if (li) { show(items.indexOf(li), true); track(); into(); } }
+  });
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('#api .api-badge.has-ex'); if (!b) return;
+    var k = byAct[(b.textContent || '').trim()]; if (k == null) return;
+    show(k, true); track(); into();
+  });
+  document.addEventListener('keydown', function(e){
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList && e.target.classList.contains('has-ex')) { e.preventDefault(); e.target.click(); }
+  });
+  var tracked = false;
+  function track(){ if (!tracked) { tracked = true; if (window.kaiTrack) kaiTrack('ac_use'); } }
+  /* bring the screen into view when it is off screen (badges and list sit below it) */
+  function into(){
+    var rc = screen.getBoundingClientRect();
+    if (screen.scrollIntoView && (rc.bottom < 60 || rc.top > innerHeight - 60)) screen.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+  }
+  /* reserve the height of the tallest example so the page below never jumps (measured in a hidden copy) */
+  function actName(li){ return lang() === 'en' ? li.getAttribute('data-act-en') : li.getAttribute('data-act-ru'); }
+  function reserve(){
+    if (!screen.offsetWidth) return;
+    var c = screen.cloneNode(true);
+    c.removeAttribute('id'); c.removeAttribute('aria-live'); c.setAttribute('aria-hidden', 'true'); c.classList.remove('typing');
+    c.style.cssText = 'position:absolute;left:-9999px;top:0;visibility:hidden;min-height:0;width:' + screen.offsetWidth + 'px';
+    document.body.appendChild(c);
+    var cq = c.querySelector('.ac-out-q'), ca = c.querySelector('.ac-out-a'), cr = c.querySelector('.ac-out-r'), max = 0;
+    items.forEach(function(li){
+      cq.textContent = li.querySelector('.ac-q').textContent; ca.textContent = actName(li); cr.textContent = li.querySelector('.ac-r').textContent;
+      max = Math.max(max, c.offsetHeight);
+    });
+    c.parentNode.removeChild(c);
+    screen.style.minHeight = max + 'px';
+  }
+  /* re-measure when the console's own width changes (rotation, window resize, zoom) */
+  var lastW = 0, rT = 0;
+  function onW(){ clearTimeout(rT); rT = setTimeout(function(){ var w = screen.offsetWidth; if (w && w !== lastW) { lastW = w; reserve(); } }, 150); }
+  if (window.ResizeObserver) new ResizeObserver(onW).observe(screen); else addEventListener('resize', onW, { passive: true });
+  window.kaiConsoleRelang = function(){ show(i, false); reserve(); };
+  show(0, false);
+  lastW = screen.offsetWidth; reserve();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(reserve);
+})();
+
 /* ─── AGENT OFFICE PREVIEW (#office) ─── */
 (function(){
   var root = document.getElementById('ko'); if (!root) return;
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var acts = 0, wait = 0, duty = 4;
   var elActs = document.getElementById('koActs'), elWait = document.getElementById('koWait'), elDuty = document.getElementById('koDuty');
-  var feed = document.getElementById('koFeed'), empty = root.querySelector('.ko-empty');
+  var feed = document.getElementById('koFeed'), empty = root.querySelector('.ko-empty'), live = root.querySelector('.ko-live');
+  /* keyboard and screen-reader users hear what happened (buttons stay focusable, marked aria-disabled) */
+  function say(l, extra){
+    if (!live || !l) return;
+    var who = l.querySelector('b'), txt = l.querySelector('.ko-txt');
+    live.textContent = '';
+    live.textContent = (who ? who.textContent + ': ' : '') + (txt ? txt.textContent : '') + (extra || '');
+  }
   function track(ev){ if (window.kaiTrack) kaiTrack(ev); }
   function bump(el, n){ if (!el) return; el.textContent = n; el.classList.remove('tick'); void el.offsetWidth; el.classList.add('tick'); }
   function showLine(sel){
@@ -3725,26 +4036,32 @@ reveals.forEach(r => observer.observe(r));
   root.addEventListener('click', function(e){
     var b = e.target.closest && e.target.closest('button'); if (!b) return;
     if (b.classList.contains('ko-ev')) {
-      if (b.disabled) return;
+      if (b.classList.contains('done')) return;
       var key = b.getAttribute('data-to'), a = root.querySelector('.ko-agent[data-agent="' + key + '"]');
-      b.disabled = true; b.classList.add('done'); track('office_event');
+      b.setAttribute('aria-disabled', 'true'); b.classList.add('done'); track('office_event');
       if (a) { a.classList.add('busy'); if (a.classList.contains('wait')) { a.classList.remove('wait'); duty += 1; bump(elDuty, duty); } }
       var done = function(){
         if (a) { a.classList.remove('busy'); var c = a.querySelector('.ko-cnt'); if (c) c.textContent = (+c.textContent || 0) + 1; }
         var l = showLine('.ko-line[data-for="' + key + '"]');
         acts += 1; bump(elActs, acts);
-        if (l && l.classList.contains('ko-appr')) { wait += 1; bump(elWait, wait); }
+        var extra = '';
+        if (l && l.classList.contains('ko-appr')) {
+          wait += 1; bump(elWait, wait);
+          var ok0 = l.querySelector('.ko-ok'), no0 = l.querySelector('.ko-no');
+          if (ok0 && no0) extra = '. ' + ok0.textContent + ' / ' + no0.textContent + '?';
+        }
+        say(l, extra);
       };
       if (reduce) done(); else setTimeout(done, 1100);
     } else if (b.classList.contains('ko-ok') || b.classList.contains('ko-no')) {
       var ok = b.classList.contains('ko-ok'), ap = b.closest('.ko-appr');
       if (!ap || ap.classList.contains('decided')) return;
       ap.classList.add('decided');
-      [].forEach.call(ap.querySelectorAll('button'), function(x){ x.disabled = true; });
+      [].forEach.call(ap.querySelectorAll('button'), function(x){ x.setAttribute('aria-disabled', 'true'); });
       wait = Math.max(0, wait - 1); bump(elWait, wait);
       if (ok) { acts += 1; bump(elActs, acts); }
       track(ok ? 'office_approve' : 'office_reject');
-      showLine('.ko-line[data-res="' + (ok ? 'ok' : 'no') + '"]');
+      say(showLine('.ko-line[data-res="' + (ok ? 'ok' : 'no') + '"]'));
     }
   });
   var cta = root.querySelector('.ko-cta'); if (cta) cta.addEventListener('click', function(){ track('office_want'); });
@@ -3819,6 +4136,7 @@ function applyLang(lang) {
   });
   if (window.kaiChatRelang) window.kaiChatRelang(lang);
   if (window.kaiHeroRelang) window.kaiHeroRelang();
+  if (window.kaiConsoleRelang) window.kaiConsoleRelang();
 }
 
 if (currentLang !== 'ru') applyLang(currentLang);
