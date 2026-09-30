@@ -898,6 +898,83 @@ hr.sep {
   width: 6px; height: 6px; border-radius: 50%;
 }
 
+/* ─── AGENT OFFICE PREVIEW (#office): a mock-up the visitor drives, plus the interest button ─── */
+.office { background: var(--void); }
+.ko {
+  margin-top: 48px; padding: 16px;
+  border: 1px solid var(--graphite); border-radius: 16px;
+  background: linear-gradient(180deg, rgba(23,19,50,.5), rgba(16,14,32,.85));
+  box-shadow: rgba(255,255,255,.03) 0 1px 0 inset;
+}
+.ko-top { display: flex; align-items: center; justify-content: space-between; gap: 10px 16px; flex-wrap: wrap; margin-bottom: 14px; }
+.ko-tag { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); border: 1px dashed var(--smoke); border-radius: 999px; padding: 5px 11px; }
+.ko-stats { display: flex; gap: 8px 18px; flex-wrap: wrap; font-size: 13.5px; color: var(--muted); }
+.ko-stat b { font: 600 15px var(--mono); color: var(--ink); font-variant-numeric: tabular-nums; display: inline-block; }
+.ko-stat b.tick { animation: qPop .35s cubic-bezier(.16,1,.3,1); }
+.ko-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.25fr); gap: 12px; }
+.ko-agents, .ko-right { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+.ko-agents { display: grid; gap: 8px; align-content: start; }
+.ko-agent {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; gap: 4px 10px; align-items: center;
+  padding: 10px 12px; border: 1px solid var(--border); border-radius: 11px; background: var(--bg-1);
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+.ko-ico { font-size: 18px; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 9px; background: var(--accent-dim); }
+.ko-who b { display: block; font-size: 14px; color: var(--ink); }
+.ko-role { display: block; font-size: 12.5px; line-height: 1.35; color: var(--muted); }
+.ko-pill { font-size: 11px; letter-spacing: .02em; padding: 4px 8px; border-radius: 999px; white-space: nowrap; color: var(--good); border: 1px solid rgba(67,224,160,.35); }
+.ko-pill::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: currentColor; margin-right: 6px; vertical-align: 1px; }
+.ko-agent .p-wait { display: none; color: var(--muted); border-color: var(--smoke); }
+.ko-agent.wait .p-duty { display: none; }
+.ko-agent.wait .p-wait { display: inline-block; }
+.ko-cnt { min-width: 26px; text-align: center; font: 600 12.5px var(--mono); color: var(--text); background: var(--bg-2); border-radius: 7px; padding: 4px 6px; font-variant-numeric: tabular-nums; }
+.ko-agent.busy { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(124,92,255,.14); }
+.ko-agent.busy .ko-ico { animation: kdWait 1.1s ease-in-out infinite; }
+.ko-right { display: grid; gap: 10px; align-content: start; }
+.ko-sub { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.ko-events { display: grid; gap: 6px; }
+.ko-ev {
+  display: flex; align-items: center; gap: 10px; width: 100%; text-align: left;
+  font: 500 13.5px/1.35 var(--font); color: var(--ink); background: var(--bg-1);
+  border: 1px solid var(--border); border-radius: 9px; padding: 9px 12px; min-height: 42px; cursor: pointer;
+  transition: border-color .15s, background .15s, opacity .2s;
+}
+.ko-ev::before { content: '→'; color: var(--accent-2); flex: 0 0 auto; }
+.ko-ev:hover { border-color: var(--accent); background: rgba(124,92,255,.08); }
+.ko-ev.done { opacity: .5; cursor: default; }
+.ko-ev.done::before { content: '✓'; color: var(--good); }
+.ko button:focus-visible, .ko a:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+.ko-feed { display: grid; gap: 6px; min-height: 148px; }
+.ko-line { padding: 8px 11px; border-left: 2px solid var(--accent); border-radius: 0 9px 9px 0; background: var(--bg-1); font-size: 13px; line-height: 1.45; color: var(--text); }
+.ko-line b { color: var(--ink); font-weight: 600; margin-right: 6px; }
+.ko-line.in { animation: fadeUp .4s cubic-bezier(.16,1,.3,1) both; }
+.ko-line[hidden] { display: none; }
+.ko-appr { border-left-color: var(--warn); }
+.ko-res { border-left-color: var(--good); }
+.ko-appr.decided { opacity: .65; }
+.ko-btns { display: flex; gap: 8px; margin-top: 8px; }
+.ko-ok, .ko-no { font: 600 13px/1 var(--font); border-radius: 8px; min-height: 36px; padding: 0 14px; cursor: pointer; transition: opacity .15s; }
+.ko-ok { color: #fff; background: var(--accent-gradient); border: 0; box-shadow: 0 0 16px rgba(124,92,255,.25); }
+.ko-no { color: var(--text); background: transparent; border: 1px solid var(--smoke); }
+.ko-ok[disabled], .ko-no[disabled] { opacity: .45; cursor: default; }
+.ko-empty { font-size: 13px; color: var(--muted); align-self: center; }
+.ko-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px 16px; flex-wrap: wrap; margin-top: 14px; }
+.ko-note { font-size: 13.5px; line-height: 1.5; color: var(--muted); max-width: 60ch; }
+.ko-cta {
+  display: inline-flex; align-items: center; justify-content: center; font: 600 14px/1 var(--font); color: #fff;
+  background: var(--accent-gradient); border-radius: 8px; min-height: 42px; padding: 0 20px;
+  box-shadow: 0 0 20px rgba(124,92,255,.3); transition: opacity .15s, transform .15s; white-space: nowrap;
+}
+.ko-cta:hover { opacity: .9; transform: translateY(-1px); }
+@media (max-width: 900px) {
+  .ko { padding: 12px; margin-top: 36px; }
+  .ko-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .ko-agent { grid-template-columns: auto minmax(0, 1fr) auto; }
+  .ko-agent .ko-pill { grid-column: 2; justify-self: start; }
+  .ko-agent .ko-cnt { grid-row: 1; grid-column: 3; }
+  .ko-cta { width: 100%; }
+}
+
 /* ─── COMPARE SECTION ─── */
 .compare { background: var(--carbon); }
 .compare-grid {
@@ -2958,6 +3035,59 @@ footer {
 <hr class="sep">
 
 <!-- COMPARE: Kai vs Integrator -->
+<!-- KO:START office preview -->
+<section class="office" id="office">
+  <div class="container">
+    <p class="section-label reveal" data-ru="Превью · в разработке" data-en="Preview · in development">Превью · в разработке</p>
+    <h2 class="section-heading reveal reveal-delay-1" data-ru="Офис <em>агентов</em> Kai" data-en="The Kai <em>agent office</em>">Офис <em>агентов</em> Kai</h2>
+    <p class="section-sub reveal reveal-delay-2" data-ru="Команда ИИ-помощников работает в вашей CRM и отчитывается на одном экране. Это макет: нажмите событие, посмотрите, кто его берёт, и скажите, нужно ли вам такое." data-en="A team of AI assistants works inside your CRM and reports on one screen. This is a mock-up: tap an event, see who takes it, and tell us whether you want it.">Команда ИИ-помощников работает в вашей CRM и отчитывается на одном экране. Это макет: нажмите событие, посмотрите, кто его берёт, и скажите, нужно ли вам такое.</p>
+    <div class="ko reveal" id="ko">
+      <div class="ko-top">
+        <span class="ko-tag" data-ru="Макет · функции ещё нет" data-en="Mock-up · not built yet">Макет · функции ещё нет</span>
+        <div class="ko-stats">
+          <span class="ko-stat"><b id="koDuty">4</b> <span data-ru="на посту из 5" data-en="on duty of 5">на посту из 5</span></span>
+          <span class="ko-stat"><b id="koActs">0</b> <span data-ru="действий сегодня" data-en="actions today">действий сегодня</span></span>
+          <span class="ko-stat"><b id="koWait">0</b> <span data-ru="ждут одобрения" data-en="waiting for approval">ждут одобрения</span></span>
+        </div>
+      </div>
+      <div class="ko-grid">
+        <div class="ko-agents">
+          <div class="ko-agent" data-agent="doctor"><span class="ko-ico" aria-hidden="true">🩺</span><div class="ko-who"><b data-ru="Доктор CRM" data-en="CRM Doctor">Доктор CRM</b><span class="ko-role" data-ru="раз в день проверяет воронку и предлагает починку" data-en="checks the pipeline daily and proposes fixes">раз в день проверяет воронку и предлагает починку</span></div><span class="ko-pill p-duty" data-ru="на посту" data-en="on duty">на посту</span><span class="ko-pill p-wait" data-ru="ждёт данных 3 из 20" data-en="waiting for data 3 of 20">ждёт данных 3 из 20</span><span class="ko-cnt" aria-hidden="true">0</span></div>
+          <div class="ko-agent" data-agent="scorer"><span class="ko-ico" aria-hidden="true">🎯</span><div class="ko-who"><b data-ru="Скоринг лидов" data-en="Lead scorer">Скоринг лидов</b><span class="ko-role" data-ru="оценивает новые заявки и заполняет поле" data-en="scores new leads and fills the field">оценивает новые заявки и заполняет поле</span></div><span class="ko-pill p-duty" data-ru="на посту" data-en="on duty">на посту</span><span class="ko-pill p-wait" data-ru="ждёт данных 3 из 20" data-en="waiting for data 3 of 20">ждёт данных 3 из 20</span><span class="ko-cnt" aria-hidden="true">0</span></div>
+          <div class="ko-agent" data-agent="watch"><span class="ko-ico" aria-hidden="true">⏱</span><div class="ko-who"><b data-ru="Контроль ответов" data-en="Reply watch">Контроль ответов</b><span class="ko-role" data-ru="клиент ждёт ответа — ставит задачу" data-en="a customer is waiting — sets a task">клиент ждёт ответа — ставит задачу</span></div><span class="ko-pill p-duty" data-ru="на посту" data-en="on duty">на посту</span><span class="ko-pill p-wait" data-ru="ждёт данных 3 из 20" data-en="waiting for data 3 of 20">ждёт данных 3 из 20</span><span class="ko-cnt" aria-hidden="true">0</span></div>
+          <div class="ko-agent" data-agent="summary"><span class="ko-ico" aria-hidden="true">📝</span><div class="ko-who"><b data-ru="Резюме сделок" data-en="Deal summaries">Резюме сделок</b><span class="ko-role" data-ru="пишет итоги переписки в карточку сделки" data-en="writes chat summaries into the deal card">пишет итоги переписки в карточку сделки</span></div><span class="ko-pill p-duty" data-ru="на посту" data-en="on duty">на посту</span><span class="ko-pill p-wait" data-ru="ждёт данных 3 из 20" data-en="waiting for data 3 of 20">ждёт данных 3 из 20</span><span class="ko-cnt" aria-hidden="true">0</span></div>
+          <div class="ko-agent wait" data-agent="loss"><span class="ko-ico" aria-hidden="true">🔍</span><div class="ko-who"><b data-ru="Аналитик потерь" data-en="Loss analyst">Аналитик потерь</b><span class="ko-role" data-ru="разбирает проигранные сделки, предлагает правила" data-en="reviews lost deals and proposes rules">разбирает проигранные сделки, предлагает правила</span></div><span class="ko-pill p-duty" data-ru="на посту" data-en="on duty">на посту</span><span class="ko-pill p-wait" data-ru="ждёт данных 3 из 20" data-en="waiting for data 3 of 20">ждёт данных 3 из 20</span><span class="ko-cnt" aria-hidden="true">0</span></div>
+        </div>
+        <div class="ko-right">
+          <p class="ko-sub" data-ru="События в CRM — нажмите, чтобы отдать агенту" data-en="CRM events — tap to hand one to an agent">События в CRM — нажмите, чтобы отдать агенту</p>
+          <div class="ko-events">
+            <button class="ko-ev" type="button" data-to="scorer" data-ru="Новая заявка: Игорь, ремонт 60 м²" data-en="New lead: Igor, 60 m² renovation">Новая заявка: Игорь, ремонт 60 м²</button>
+            <button class="ko-ev" type="button" data-to="watch" data-ru="Клиент не отвечает 30 минут: сделка «Анна, имплант»" data-en="No reply for 30 minutes: deal “Anna, implant”">Клиент не отвечает 30 минут: сделка «Анна, имплант»</button>
+            <button class="ko-ev" type="button" data-to="summary" data-ru="Сделка перешла на этап «Договор»: «Офис Плюс»" data-en="Deal moved to “Contract”: “Office Plus”">Сделка перешла на этап «Договор»: «Офис Плюс»</button>
+            <button class="ko-ev" type="button" data-to="loss" data-ru="Сделка проиграна без причины: «Мебель Норд»" data-en="Deal lost with no reason: “Nord Furniture”">Сделка проиграна без причины: «Мебель Норд»</button>
+          </div>
+          <p class="ko-sub" data-ru="Лента" data-en="Feed">Лента</p>
+          <div class="ko-feed" id="koFeed">
+            <div class="ko-line" data-for="scorer" hidden><b data-ru="Скоринг лидов" data-en="Lead scorer">Скоринг лидов</b><span class="ko-txt" data-ru="оценка 78/100, горячий лид; поле «Оценка лида» заполнено" data-en="score 78/100, a hot lead; the “Lead score” field is filled">оценка 78/100, горячий лид; поле «Оценка лида» заполнено</span></div>
+            <div class="ko-line" data-for="watch" hidden><b data-ru="Контроль ответов" data-en="Reply watch">Контроль ответов</b><span class="ko-txt" data-ru="задача «Перезвонить Анне» поставлена, срок сегодня" data-en="task “Call Anna back” created, due today">задача «Перезвонить Анне» поставлена, срок сегодня</span></div>
+            <div class="ko-line" data-for="summary" hidden><b data-ru="Резюме сделок" data-en="Deal summaries">Резюме сделок</b><span class="ko-txt" data-ru="в карточку записано: сумма и срок согласованы, открыт вопрос по доставке" data-en="written to the card: amount and dates agreed, delivery still open">в карточку записано: сумма и срок согласованы, открыт вопрос по доставке</span></div>
+            <div class="ko-line ko-appr" data-for="loss" hidden><b data-ru="Аналитик потерь" data-en="Loss analyst">Аналитик потерь</b><span class="ko-txt" data-ru="причина: цена, сравнивали с конкурентом (цитата из переписки в карточке). Предлагаю правило: КП без ответа 2 дня → задача «уточнить бюджет»" data-en="cause: price, compared with a competitor (quote from the chat is in the card). Proposed rule: proposal unanswered for 2 days → task “clarify the budget”">причина: цена, сравнивали с конкурентом (цитата из переписки в карточке). Предлагаю правило: КП без ответа 2 дня → задача «уточнить бюджет»</span><div class="ko-btns"><button class="ko-ok" type="button" data-ru="Одобрить" data-en="Approve">Одобрить</button><button class="ko-no" type="button" data-ru="Отклонить" data-en="Reject">Отклонить</button></div></div>
+            <div class="ko-line ko-res" data-res="ok" hidden><b data-ru="Офис" data-en="Office">Офис</b><span class="ko-txt" data-ru="правило добавлено: версия 2, откат одной кнопкой" data-en="rule added: version 2, one-tap rollback">правило добавлено: версия 2, откат одной кнопкой</span></div>
+            <div class="ko-line ko-res" data-res="no" hidden><b data-ru="Офис" data-en="Office">Офис</b><span class="ko-txt" data-ru="отклонено; это предложение не повторится 60 дней" data-en="rejected; this proposal will not come back for 60 days">отклонено; это предложение не повторится 60 дней</span></div>
+            <p class="ko-empty" data-ru="Пока пусто — нажмите событие." data-en="Nothing yet — tap an event.">Пока пусто — нажмите событие.</p>
+          </div>
+        </div>
+      </div>
+      <div class="ko-foot">
+        <span class="ko-note" data-ru="Настоящего «Офиса» ещё нет. Кнопка ведёт в бота: запишем вас первым и спросим, какой агент нужен. Строим, когда наберётся достаточно желающих." data-en="The real office does not exist yet. The button opens the bot: we put you on the early list and ask which agent you need. We build it once enough people want it.">Настоящего «Офиса» ещё нет. Кнопка ведёт в бота: запишем вас первым и спросим, какой агент нужен. Строим, когда наберётся достаточно желающих.</span>
+        <a class="ko-cta" href="https://t.me/aiicrm_bot?start=office" target="_blank" rel="noopener" data-ru="Хочу такой офис" data-en="I want this office">Хочу такой офис</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+<!-- KO:END -->
 <section class="compare">
   <div class="container">
     <p class="section-label reveal" data-ru="Почему Kai" data-en="Why Kai">Почему Kai</p>
@@ -3574,6 +3704,50 @@ reveals.forEach(r => observer.observe(r));
       var first = root.querySelector('.ka-fix'); if (first) first.focus({ preventScroll: true });
     } else if (b.classList.contains('ka-cta')) { track('audit_cta'); if (window.kaiChatOpen) kaiChatOpen(); }
   });
+})();
+
+/* ─── AGENT OFFICE PREVIEW (#office) ─── */
+(function(){
+  var root = document.getElementById('ko'); if (!root) return;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var acts = 0, wait = 0, duty = 4;
+  var elActs = document.getElementById('koActs'), elWait = document.getElementById('koWait'), elDuty = document.getElementById('koDuty');
+  var feed = document.getElementById('koFeed'), empty = root.querySelector('.ko-empty');
+  function track(ev){ if (window.kaiTrack) kaiTrack(ev); }
+  function bump(el, n){ if (!el) return; el.textContent = n; el.classList.remove('tick'); void el.offsetWidth; el.classList.add('tick'); }
+  function showLine(sel){
+    var l = root.querySelector(sel); if (!l) return null;
+    l.hidden = false; l.classList.add('in');
+    if (feed) feed.appendChild(l);                     /* chronological order, whatever the visitor taps first */
+    if (empty) { empty.hidden = true; if (feed) feed.appendChild(empty); }
+    return l;
+  }
+  root.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('button'); if (!b) return;
+    if (b.classList.contains('ko-ev')) {
+      if (b.disabled) return;
+      var key = b.getAttribute('data-to'), a = root.querySelector('.ko-agent[data-agent="' + key + '"]');
+      b.disabled = true; b.classList.add('done'); track('office_event');
+      if (a) { a.classList.add('busy'); if (a.classList.contains('wait')) { a.classList.remove('wait'); duty += 1; bump(elDuty, duty); } }
+      var done = function(){
+        if (a) { a.classList.remove('busy'); var c = a.querySelector('.ko-cnt'); if (c) c.textContent = (+c.textContent || 0) + 1; }
+        var l = showLine('.ko-line[data-for="' + key + '"]');
+        acts += 1; bump(elActs, acts);
+        if (l && l.classList.contains('ko-appr')) { wait += 1; bump(elWait, wait); }
+      };
+      if (reduce) done(); else setTimeout(done, 1100);
+    } else if (b.classList.contains('ko-ok') || b.classList.contains('ko-no')) {
+      var ok = b.classList.contains('ko-ok'), ap = b.closest('.ko-appr');
+      if (!ap || ap.classList.contains('decided')) return;
+      ap.classList.add('decided');
+      [].forEach.call(ap.querySelectorAll('button'), function(x){ x.disabled = true; });
+      wait = Math.max(0, wait - 1); bump(elWait, wait);
+      if (ok) { acts += 1; bump(elActs, acts); }
+      track(ok ? 'office_approve' : 'office_reject');
+      showLine('.ko-line[data-res="' + (ok ? 'ok' : 'no') + '"]');
+    }
+  });
+  var cta = root.querySelector('.ko-cta'); if (cta) cta.addEventListener('click', function(){ track('office_want'); });
 })();
 
 /* ─── SMOOTH NAV ─── */
