@@ -66,7 +66,8 @@ def panel(n: dict, ui: dict, first: bool) -> str:
     # готовое состояние вшито в разметку (без JS и при «уменьшить движение» блок показан собранным):
     # выбран второй ответ, остальные выключены, «Реализовать» уже нажата; скрипт сбрасывает это перед показом
     opts = "".join(
-        leaf("button", op, "kd-opt pick" if i == 1 else "kd-opt", ' type="button"' + ("" if i == 1 else " disabled"))
+        leaf("button", op, "kd-opt pick" if i == 1 else "kd-opt",
+             ' type="button"' + (' aria-pressed="true" aria-disabled="true"' if i == 1 else ' aria-pressed="false" disabled'))
         for i, op in enumerate(n["opts"]))
     plan = "".join(leaf("li", t) for t in (
         fmt(ui["plan_pipeline"], name=n["pipeline"]["ru"]) | {"en": ui["plan_pipeline"]["en"].format(name=n["pipeline"]["en"])},

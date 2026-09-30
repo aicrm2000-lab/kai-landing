@@ -8,7 +8,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Kai — Set up your CRM without developers | AI assistant for amoCRM and Kommo</title>
 <meta name="description" content="Kai is an AI assistant that sets up amoCRM and Kommo from a plain-language message in Telegram or your browser: pipelines, fields, tasks, automations, integrations and analytics. 3 days free, no card.">
-<meta name="keywords" content="amoCRM, Kommo, Битрикс24, Bitrix24, настройка CRM, AI ассистент, автоматизация CRM, Telegram бот CRM, воронки продаж, API amoCRM, CRM без программиста, настройка воронок, кастомные поля amoCRM, настройка Битрикс24, интеграция CRM, Kai CRM, AI CRM bot">
+<meta name="keywords" content="amoCRM, Kommo, Bitrix24, CRM setup, AI assistant, CRM automation, Telegram CRM bot, sales pipelines, amoCRM API, Kommo API, CRM without developers">
 <meta name="author" content="Kai">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://aicrm2000-lab.github.io/kai-landing/en/">
@@ -37,10 +37,11 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "inLanguage": "en",
   "name": "Kai",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web, Telegram",
-  "description": "AI-ассистент для настройки и управления CRM-системами amoCRM и Kommo через браузер или Telegram. 60+ API-действий: воронки, поля, этапы, сделки, контакты, автоматизации.",
+  "description": "AI assistant that sets up and manages amoCRM and Kommo from your browser or Telegram. 60+ API actions: pipelines, fields, stages, deals, contacts, automations.",
   "url": "https://aicrm2000-lab.github.io/kai-landing/",
   "offers": {
     "@type": "AggregateOffer",
@@ -50,13 +51,13 @@
     "offerCount": "3"
   },
   "featureList": [
-    "AI-консультации по структуре CRM",
-    "Создание воронок и этапов продаж",
-    "Кастомные поля в сделки, контакты, компании",
-    "Автоматизации: Digital Pipeline, триггеры, Salesbot",
-    "Генерация технического задания в PDF",
-    "Распознавание голосовых сообщений",
-    "OAuth-подключение в 1 клик"
+    "AI consulting on your CRM structure",
+    "Sales pipelines and stages",
+    "Custom fields for deals, contacts and companies",
+    "Automations: Digital Pipeline, triggers, Salesbot",
+    "Technical specification as a PDF",
+    "Voice message recognition",
+    "One-click OAuth connection"
   ],
   "screenshot": "https://aicrm2000-lab.github.io/kai-landing/og-image-v2.png",
   "creator": {
@@ -77,53 +78,54 @@
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "en",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Что умеет Kai?",
+      "name": "What can Kai do?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Kai — AI-ассистент, который через браузер или Telegram настраивает amoCRM и Kommo: создаёт воронки, поля, этапы, сделки, контакты, задачи, автоматизации. 60+ API-действий без программистов."
+        "text": "Kai is an AI assistant that sets up amoCRM and Kommo from your browser or Telegram: it creates pipelines, fields, stages, deals, contacts, tasks and automations. 60+ API actions without developers."
       }
     },
     {
       "@type": "Question",
-      "name": "Это безопасно? Вы получите доступ к моим данным?",
+      "name": "Is it safe? Will you get access to my data?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Kai работает через официальный OAuth 2.0 от amoCRM/Kommo. Мы не видим ваш пароль. Вы можете отозвать доступ в любой момент в настройках CRM."
+        "text": "Kai works through the official amoCRM/Kommo OAuth 2.0. We never see your password. You can revoke access at any time in your CRM settings."
       }
     },
     {
       "@type": "Question",
-      "name": "Сколько стоит Kai?",
+      "name": "How much does Kai cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Три тарифа: Start — €29/мес (1 CRM), Pro — €59/мес (3 CRM), Max — €119/мес (10 CRM). Первые 3 дня бесплатно."
+        "text": "Three plans: Start — €29/month (1 CRM), Pro — €59/month (3 CRMs), Max — €119/month (10 CRMs). The first 3 days are free."
       }
     },
     {
       "@type": "Question",
-      "name": "Kai работает с Kommo?",
+      "name": "Does Kai work with Kommo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Да, Kai поддерживает и amoCRM, и Kommo. API совместим, подключение через OAuth."
+        "text": "Yes, Kai supports both amoCRM and Kommo. The API is compatible, the connection goes through OAuth."
       }
     },
     {
       "@type": "Question",
-      "name": "Kai работает с Битрикс24?",
+      "name": "Does Kai work with Bitrix24?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Интеграция с Битрикс24 (Bitrix24) в разработке — бета уже доступна в боте. Полностью поддерживаются amoCRM и Kommo."
+        "text": "The Bitrix24 integration is in development — a beta is already available in the bot. amoCRM and Kommo are fully supported."
       }
     },
     {
       "@type": "Question",
-      "name": "Можно ли попробовать бесплатно?",
+      "name": "Can I try it for free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Да, первые 3 дня бесплатно без ограничений. Попробуйте без риска."
+        "text": "Yes, the first 3 days are free with no limits. Try it risk-free."
       }
     }
   ]
@@ -614,6 +616,9 @@ hr.sep {
 .ka-row.pend .ka-dot { background: var(--warn); box-shadow: 0 0 0 4px rgba(245,196,81,.14); }
 .ka-row.pend .ka-r, .ka-row.pend::after { color: var(--warn); }
 .ka-row.pend::after { content: '…'; }
+.ka-ra { display: none; margin-top: 2px; font-size: 13.5px; line-height: 1.45; color: var(--good); }
+.ka-row.alt .ka-r { display: none; }
+.ka-row.fixed.alt .ka-ra { display: block; animation: fadeUp .4s cubic-bezier(.16,1,.3,1) both; }
 .ka-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px 16px; flex-wrap: wrap; margin-top: 14px; }
 .ka-notes { font-size: 13.5px; line-height: 1.5; color: var(--muted); max-width: 54ch; }
 .ka-final { display: none; color: var(--text); }
@@ -720,6 +725,7 @@ hr.sep {
 .kd-opt { font-size: 13px; min-height: 36px; padding: 0 12px; background: rgba(124,92,255,.08); border-color: var(--border-soft); }
 .kd-opt.pick { background: #6A48F0; border-color: #6A48F0; color: #fff; }
 .kd-opt[disabled] { cursor: default; pointer-events: none; }
+.kd-opts.done .kd-opt.pick { cursor: default; }
 .kd-opts.done .kd-opt:not(.pick) { opacity: .4; pointer-events: none; }
 .kd-plan { list-style: none; margin: 8px 0 12px; display: grid; gap: 5px; font-size: 13.5px; color: var(--text); }
 .kd-plan li::before { content: '✓'; color: var(--good); margin-right: 8px; }
@@ -1936,6 +1942,7 @@ footer {
   border: 0; display: block;
   background: var(--bg);
 }
+.chat-panel-x { display: none; }
 @media (max-width: 640px) {
   .chat-panel {
     inset: 0;
@@ -1944,6 +1951,10 @@ footer {
     border-radius: 0;
     border: none;
   }
+  /* the panel covers the launcher on phones: its own close bar is the way back to the page */
+  .chat-panel-x { display: flex; align-items: center; justify-content: flex-end; width: 100%; height: 44px; padding: 0 16px;
+    border: 0; border-bottom: 1px solid var(--border); background: var(--bg-1); color: var(--text); font: 600 18px/1 var(--font); cursor: pointer; }
+  .chat-panel iframe { height: calc(100% - 44px); }
   .chat-tip { right: 88px; bottom: 28px; max-width: calc(100vw - 110px); }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2340,7 +2351,7 @@ footer {
     <li><span data-ru="менеджер ушёл — база осталась" data-en="the rep quit — the data stayed">the rep quit — the data stayed</span><span data-ru="здоровье сделки: что брошено и что дальше" data-en="deal health: what was dropped, what is next">deal health: what was dropped, what is next</span></li>
     <li><span data-ru="«клиент думает» — этап, где сделки живут вечно" data-en="“the client is thinking” — where deals live forever">“the client is thinking” — where deals live forever</span><span data-ru="аудит покажет, где сделки застряли" data-en="the audit shows where deals get stuck">the audit shows where deals get stuck</span></li>
     <li><span data-ru="воронка без этапов — просто список" data-en="a pipeline with no stages is just a list">a pipeline with no stages is just a list</span><span data-ru="этапы под ваш процесс, а не по шаблону" data-en="stages built around your process">stages built around your process</span></li>
-    <li><span data-ru="горячий лид остыл за выходные" data-en="a hot lead goes cold over the weekend">a hot lead goes cold over the weekend</span><span data-ru="нет ответа 30 минут — задача менеджеру" data-en="no reply for 30 minutes — a task for the rep">no reply for 30 minutes — a task for the rep</span></li>
+    <li><span data-ru="горячий лид остыл за выходные" data-en="a hot lead goes cold over the weekend">a hot lead goes cold over the weekend</span><span data-ru="нет ответа 30 минут — задача по сделке" data-en="no reply for 30 minutes — a task on the deal">no reply for 30 minutes — a task on the deal</span></li>
     <li><span data-ru="если всё в голове — это не система" data-en="if it’s all in your head, it’s not a system">if it’s all in your head, it’s not a system</span><span data-ru="ТЗ — в PDF, регламент — в чате, а не в голове" data-en="the spec as a PDF, the SOP in your chat">the spec as a PDF, the SOP in your chat</span></li>
     <li><span data-ru="отчёт за квартал не должен собираться неделю" data-en="a quarterly report shouldn’t take a week">a quarterly report shouldn’t take a week</span><span data-ru="аналитика воронки — одним сообщением" data-en="pipeline analytics in one message">pipeline analytics in one message</span></li>
     <li><span data-ru="дубль контакта = двойной звонок клиенту" data-en="a duplicate contact = a double call">a duplicate contact = a double call</span><span data-ru="дубли ловлю до создания контакта" data-en="duplicates caught before a contact is created">duplicates caught before a contact is created</span></li>
@@ -2399,7 +2410,7 @@ footer {
         </div>
       </a>
       <a href="https://www.bitrix24.ru/" target="_blank" rel="noopener" class="int-logo soon bx-link"
-         title="Интеграция с Bitrix24 — в разработке (бета уже в боте)"
+         title="Bitrix24 integration — in development (beta already in the bot)"
          data-ru-title="Интеграция с Bitrix24 — в разработке (бета уже в боте)"
          data-en-title="Bitrix24 integration — in development (beta already in the bot)"
          data-ru-href="https://www.bitrix24.ru/" data-en-href="https://www.bitrix24.com/">
@@ -2440,7 +2451,7 @@ footer {
         <div class="kd-chat">
           <div class="kd-msg kd-u kd-i" data-ph="1" data-g="700"><span data-ru="У нас стоматология. Заявки идут с сайта и из Instagram, половина теряется." data-en="We run a dental clinic. Leads come from the site and Instagram, and half of them get lost.">We run a dental clinic. Leads come from the site and Instagram, and half of them get lost.</span></div>
           <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Сколько первичных обращений в месяц?" data-en="How many new patient requests a month?">How many new patient requests a month?</span><div class="kd-opts done"><button class="kd-opt" type="button" disabled data-ru="до 50" data-en="up to 50">up to 50</button><button class="kd-opt pick" type="button" data-ru="50–150" data-en="50–150">50–150</button><button class="kd-opt" type="button" disabled data-ru="больше 150" data-en="over 150">over 150</button></div></div>
+          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Сколько первичных обращений в месяц?" data-en="How many new patient requests a month?">How many new patient requests a month?</span><div class="kd-opts done"><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="до 50" data-en="up to 50">up to 50</button><button class="kd-opt pick" type="button" aria-pressed="true" aria-disabled="true" data-ru="50–150" data-en="50–150">50–150</button><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="больше 150" data-en="over 150">over 150</button></div></div>
           <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">The plan is ready:</span><ul class="kd-plan"><li data-ru="воронка «Первичные пациенты»" data-en="pipeline “New patients”">pipeline “New patients”</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages built around your process">6 stages built around your process</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 deal fields</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 rules that create tasks on events</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Implement</button></div>
           <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям." data-en="Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.">Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.</span></div>
@@ -2457,7 +2468,7 @@ footer {
         <div class="kd-chat">
           <div class="kd-msg kd-u kd-i" data-ph="1" data-g="700"><span data-ru="Агентство недвижимости. Лиды дорогие, а агенты перезванивают через сутки." data-en="A real-estate agency. Leads are expensive, and agents call back a day later.">A real-estate agency. Leads are expensive, and agents call back a day later.</span></div>
           <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Как заявки попадают к агентам?" data-en="How do requests reach the agents?">How do requests reach the agents?</span><div class="kd-opts done"><button class="kd-opt" type="button" disabled data-ru="берут сами" data-en="agents take them">agents take them</button><button class="kd-opt pick" type="button" data-ru="через колл-центр" data-en="via a call center">via a call center</button><button class="kd-opt" type="button" disabled data-ru="по очереди" data-en="round robin">round robin</button></div></div>
+          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Как заявки попадают к агентам?" data-en="How do requests reach the agents?">How do requests reach the agents?</span><div class="kd-opts done"><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="берут сами" data-en="agents take them">agents take them</button><button class="kd-opt pick" type="button" aria-pressed="true" aria-disabled="true" data-ru="через колл-центр" data-en="via a call center">via a call center</button><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="по очереди" data-en="round robin">round robin</button></div></div>
           <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">The plan is ready:</span><ul class="kd-plan"><li data-ru="воронка «Покупатели»" data-en="pipeline “Buyers”">pipeline “Buyers”</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages built around your process">6 stages built around your process</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 deal fields</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 rules that create tasks on events</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Implement</button></div>
           <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям." data-en="Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.">Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.</span></div>
@@ -2474,7 +2485,7 @@ footer {
         <div class="kd-chat">
           <div class="kd-msg kd-u kd-i" data-ph="1" data-g="700"><span data-ru="Интернет-магазин. Заказы с сайта и соцсетей живут в разных окнах." data-en="An online store. Orders from the site and social media live in different windows.">An online store. Orders from the site and social media live in different windows.</span></div>
           <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Кто подтверждает заказы?" data-en="Who confirms the orders?">Who confirms the orders?</span><div class="kd-opts done"><button class="kd-opt" type="button" disabled data-ru="один человек" data-en="one person">one person</button><button class="kd-opt pick" type="button" data-ru="2–3 менеджера" data-en="2–3 reps">2–3 reps</button><button class="kd-opt" type="button" disabled data-ru="смены" data-en="shifts">shifts</button></div></div>
+          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Кто подтверждает заказы?" data-en="Who confirms the orders?">Who confirms the orders?</span><div class="kd-opts done"><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="один человек" data-en="one person">one person</button><button class="kd-opt pick" type="button" aria-pressed="true" aria-disabled="true" data-ru="2–3 менеджера" data-en="2–3 reps">2–3 reps</button><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="смены" data-en="shifts">shifts</button></div></div>
           <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">The plan is ready:</span><ul class="kd-plan"><li data-ru="воронка «Заказы с сайта»" data-en="pipeline “Website orders”">pipeline “Website orders”</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages built around your process">6 stages built around your process</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 deal fields</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 rules that create tasks on events</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Implement</button></div>
           <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям." data-en="Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.">Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.</span></div>
@@ -2491,7 +2502,7 @@ footer {
         <div class="kd-chat">
           <div class="kd-msg kd-u kd-i" data-ph="1" data-g="700"><span data-ru="Делаем ремонт квартир. Смету отправили — и тишина, никто не дожимает." data-en="We renovate apartments. We send the estimate, then silence: nobody follows up.">We renovate apartments. We send the estimate, then silence: nobody follows up.</span></div>
           <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Кто общается с клиентом?" data-en="Who talks to the client?">Who talks to the client?</span><div class="kd-opts done"><button class="kd-opt" type="button" disabled data-ru="один человек" data-en="one person">one person</button><button class="kd-opt pick" type="button" data-ru="менеджер и прораб" data-en="sales rep and foreman">sales rep and foreman</button><button class="kd-opt" type="button" disabled data-ru="ещё и замерщик" data-en="plus a surveyor">plus a surveyor</button></div></div>
+          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Кто общается с клиентом?" data-en="Who talks to the client?">Who talks to the client?</span><div class="kd-opts done"><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="один человек" data-en="one person">one person</button><button class="kd-opt pick" type="button" aria-pressed="true" aria-disabled="true" data-ru="менеджер и прораб" data-en="sales rep and foreman">sales rep and foreman</button><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="ещё и замерщик" data-en="plus a surveyor">plus a surveyor</button></div></div>
           <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">The plan is ready:</span><ul class="kd-plan"><li data-ru="воронка «Продажа договора»" data-en="pipeline “Contract sales”">pipeline “Contract sales”</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages built around your process">6 stages built around your process</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 deal fields</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 rules that create tasks on events</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Implement</button></div>
           <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям." data-en="Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.">Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.</span></div>
@@ -2559,7 +2570,7 @@ footer {
         <li class="ka-row" data-sev="high" data-w="20"><span class="ka-dot" aria-hidden="true"></span><div class="ka-body"><span class="ka-sev" data-ru="Критично" data-en="Critical">Critical</span><span class="ka-t" id="ka-t1" data-ru="Нет причин отказа" data-en="No loss reasons">No loss reasons</span><span class="ka-d" data-ru="Сделки закрываются без объяснения — не видно, где вы теряете." data-en="Deals are closed as lost with no reason, so you can’t see where you lose them.">Deals are closed as lost with no reason, so you can’t see where you lose them.</span><span class="ka-r" data-ru="Создано 5 причин отказа" data-en="5 loss reasons created">5 loss reasons created</span></div><button class="ka-fix" type="button" aria-describedby="ka-t1" data-ru="Починить" data-en="Fix">Fix</button></li>
         <li class="ka-row" data-sev="med" data-w="10"><span class="ka-dot" aria-hidden="true"></span><div class="ka-body"><span class="ka-sev" data-ru="Важно" data-en="Important">Important</span><span class="ka-t" id="ka-t2" data-ru="Нет источников лидов" data-en="No lead sources">No lead sources</span><span class="ka-d" data-ru="Непонятно, какой канал приводит клиентов." data-en="You cannot tell which channel brings customers.">You cannot tell which channel brings customers.</span><span class="ka-r" data-ru="Заведено 5 источников лидов" data-en="5 lead sources created">5 lead sources created</span></div><button class="ka-fix" type="button" aria-describedby="ka-t2" data-ru="Починить" data-en="Fix">Fix</button></li>
         <li class="ka-row" data-sev="high" data-w="0"><span class="ka-dot" aria-hidden="true"></span><div class="ka-body"><span class="ka-sev" data-ru="Критично" data-en="Critical">Critical</span><span class="ka-t" id="ka-t3" data-ru="62% открытых сделок стоят на этапе «Думает»" data-en="62% of open deals sit at “Thinking”">62% of open deals sit at “Thinking”</span><span class="ka-d" data-ru="Узкое место: сделки заходят на этап и не выходят." data-en="A bottleneck: deals enter the stage and do not leave it.">A bottleneck: deals enter the stage and do not leave it.</span><span class="ka-r" data-ru="Kai поставил правило: сделка пришла на этап → задача менеджеру на 2 дня. Узкое место уйдёт, когда сделки сдвинутся." data-en="Kai set a rule: a deal enters the stage → a task for the rep, due in 2 days. The bottleneck clears once deals move.">Kai set a rule: a deal enters the stage → a task for the rep, due in 2 days. The bottleneck clears once deals move.</span></div><button class="ka-fix" type="button" aria-describedby="ka-t3" data-ru="Попросить Kai" data-en="Ask Kai">Ask Kai</button></li>
-        <li class="ka-row" data-sev="med" data-w="10"><span class="ka-dot" aria-hidden="true"></span><div class="ka-body"><span class="ka-sev" data-ru="Важно" data-en="Important">Important</span><span class="ka-t" id="ka-t4" data-ru="Нет автоматизаций" data-en="No automations">No automations</span><span class="ka-d" data-ru="Всё держится на памяти менеджеров." data-en="Everything depends on what the reps remember.">Everything depends on what the reps remember.</span><span class="ka-r" data-ru="Kai поставил правило: нет ответа 30 минут → задача менеджеру" data-en="Kai set a rule: no reply for 30 minutes → a task for the rep">Kai set a rule: no reply for 30 minutes → a task for the rep</span></div><button class="ka-fix" type="button" aria-describedby="ka-t4" data-ru="Попросить Kai" data-en="Ask Kai">Ask Kai</button></li>
+        <li class="ka-row" data-sev="med" data-w="10"><span class="ka-dot" aria-hidden="true"></span><div class="ka-body"><span class="ka-sev" data-ru="Важно" data-en="Important">Important</span><span class="ka-t" id="ka-t4" data-ru="Нет автоматизаций" data-en="No automations">No automations</span><span class="ka-d" data-ru="Всё держится на памяти менеджеров." data-en="Everything depends on what the reps remember.">Everything depends on what the reps remember.</span><span class="ka-r" data-ru="Kai поставил правило: нет ответа 30 минут → задача по сделке" data-en="Kai set a rule: no reply for 30 minutes → a task on the deal">Kai set a rule: no reply for 30 minutes → a task on the deal</span><span class="ka-ra" data-ru="Снято: правило выше стало первой автоматизацией" data-en="Cleared: the rule above is your first automation">Cleared: the rule above is your first automation</span></div><button class="ka-fix" type="button" aria-describedby="ka-t4" data-ru="Попросить Kai" data-en="Ask Kai">Ask Kai</button></li>
       </ul>
       <div class="ka-foot">
         <span class="ka-notes"><span class="ka-note" data-ru="Так выглядят аудит и чек-ап в чате: находки, кнопки, оценка. На вашей воронке цифры будут ваши." data-en="This is how the audit and the check-up look in the chat: findings, buttons, a grade. Your own pipeline will show your own numbers.">This is how the audit and the check-up look in the chat: findings, buttons, a grade. Your own pipeline will show your own numbers.</span><span class="ka-final" data-ru="Оценка B. Узкое место уйдёт, когда сделки сдвинутся: правило уже стоит. В вашей CRM это один запрос в чате." data-en="Grade B. The bottleneck clears once deals move: the rule is already in place. In your CRM it takes one chat message.">Grade B. The bottleneck clears once deals move: the rule is already in place. In your CRM it takes one chat message.</span></span>
@@ -2667,7 +2678,7 @@ footer {
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Аудит воронки + авто-лечение" data-en="Funnel audit + auto-healing">Funnel audit + auto-healing</h3>
-        <p class="feat-desc" data-ru="Находит проблемы — нет причин отказа, источников, автоматизаций, узкие места, низкая конверсия — и чинит их одной кнопкой." data-en="Finds problems — missing loss reasons, sources, automations, bottlenecks, low conversion — and fixes them with one button.">Finds problems — missing loss reasons, sources, automations, bottlenecks, low conversion — and fixes them with one button.</p>
+        <p class="feat-desc" data-ru="Находит проблемы — нет причин отказа, источников, автоматизаций, узкие места, низкая конверсия. Причины и источники чинит одной кнопкой, автоматизации добавляет по сообщению." data-en="Finds problems — missing loss reasons, sources, automations, bottlenecks, low conversion. Loss reasons and sources are fixed with one button; automations are added with one message.">Finds problems — missing loss reasons, sources, automations, bottlenecks, low conversion. Loss reasons and sources are fixed with one button; automations are added with one message.</p>
       </div>
 
       <div class="feat-card glow-card depth-card" data-feat="new-dropoff">
@@ -3028,7 +3039,7 @@ footer {
             <td style="padding:14px 16px" data-ru="Отчёты CRM, выводы — свои" data-en="CRM reports, conclusions are yours">CRM reports, conclusions are yours</td>
             <td style="padding:14px 16px" data-ru="Разово, в рамках проекта" data-en="One-off, within the project">One-off, within the project</td>
             <td style="padding:14px 16px" data-ru="Сводки по сделкам" data-en="Deal summaries">Deal summaries</td>
-            <td style="padding:14px 16px;color:var(--paper)" data-ru="Находит узкие места и чинит их одной кнопкой, следит 24/7" data-en="Finds bottlenecks and fixes them with one tap, watches 24/7">Finds bottlenecks and fixes them with one tap, watches 24/7</td>
+            <td style="padding:14px 16px;color:var(--paper)" data-ru="Находит узкие места и подсказывает, как их убрать; проверяет каждый день" data-en="Finds bottlenecks and tells you how to clear them; checks every day">Finds bottlenecks and tells you how to clear them; checks every day</td>
           </tr>
           <tr style="border-top:1px solid var(--border)">
             <td style="padding:14px 16px;color:var(--paper);font-weight:600" data-ru="Время до результата" data-en="Time to result">Time to result</td>
@@ -3259,7 +3270,7 @@ footer {
         <li><a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Telegram</a></li>
         <li><a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" data-ru="Поддержка" data-en="Support">Support</a></li>
         <li><a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" data-ru="Подключить CRM" data-en="Connect CRM">Connect CRM</a></li>
-        <li><a href="../guides/" data-ru="Гайды по amoCRM и Kommo" data-en="Guides: amoCRM &amp; Kommo">Guides: amoCRM &amp; Kommo</a></li>
+        <li><a href="../guides/en/" data-ru-href="../guides/en/" data-en-href="../guides/en/" data-ru="Гайды по amoCRM и Kommo" data-en="Guides: amoCRM &amp; Kommo">Guides: amoCRM &amp; Kommo</a></li>
       </ul>
     </div>
   </div>
@@ -3278,7 +3289,7 @@ footer {
 
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner">
-  <span data-ru="Мы используем cookie для аналитики посещаемости. Без вашего согласия они не ставятся — сайт работает и без них. Подробнее в <a href='privacy.html'>Политике конфиденциальности</a>." data-en="We use cookies for site analytics. Nothing is stored without your consent — the site works fine without them. See our <a href='privacy-en.html'>Privacy Policy</a>.">We use cookies for site analytics. Nothing is stored without your consent — the site works fine without them. See our <a href='privacy-en.html'>Privacy Policy</a>.</span>
+  <span data-ru="Мы используем cookie для аналитики посещаемости. Без вашего согласия они не ставятся — сайт работает и без них. Подробнее в <a href='../privacy-en.html'>Политике конфиденциальности</a>." data-en="We use cookies for site analytics. Nothing is stored without your consent — the site works fine without them. See our <a href='../privacy-en.html'>Privacy Policy</a>.">We use cookies for site analytics. Nothing is stored without your consent — the site works fine without them. See our <a href='../privacy-en.html'>Privacy Policy</a>.</span>
   <div class="cookie-btns">
     <button class="cookie-btn cookie-btn-accept" id="cookieAccept" data-ru="Принять" data-en="Accept">Accept</button>
     <button class="cookie-btn cookie-btn-decline" id="cookieDecline" data-ru="Только необходимые" data-en="Only necessary">Only necessary</button>
@@ -3434,7 +3445,9 @@ reveals.forEach(r => observer.observe(r));
   function reset(){   /* the markup ships in the finished state: clear it before a run */
     clear(); phase = 0;
     [].forEach.call(cur.querySelectorAll('.on, .live'), function(el){ el.classList.remove('on', 'live'); });
-    [].forEach.call(cur.querySelectorAll('.kd-opt'), function(b){ b.disabled = false; b.classList.remove('pick'); });
+    [].forEach.call(cur.querySelectorAll('.kd-opt'), function(b){
+      b.disabled = false; b.classList.remove('pick'); b.setAttribute('aria-pressed', 'false'); b.removeAttribute('aria-disabled');
+    });
     [].forEach.call(cur.querySelectorAll('.kd-opts'), function(o){ o.classList.remove('done', 'kd-wait'); });
     var go = cur.querySelector('.kd-go'); if (go) { go.removeAttribute('aria-disabled'); go.classList.remove('kd-wait'); }
     if (live) live.textContent = '';
@@ -3455,7 +3468,10 @@ reveals.forEach(r => observer.observe(r));
     if (phase !== 1 || !btn) return;
     clear(); phase = 2; stepOn(2); track('demo_answer');
     var box = btn.parentNode;
-    [].forEach.call(box.querySelectorAll('.kd-opt'), function(b){ if (b !== btn) b.disabled = true; });
+    [].forEach.call(box.querySelectorAll('.kd-opt'), function(b){
+      b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+      if (b === btn) b.setAttribute('aria-disabled', 'true'); else b.disabled = true;
+    });
     btn.classList.add('pick'); box.classList.add('done'); box.classList.remove('kd-wait');
     reveal(2, function(){ var go = cur.querySelector('.kd-go'); if (go) go.classList.add('kd-wait'); arm(); });
   }
@@ -3466,7 +3482,7 @@ reveals.forEach(r => observer.observe(r));
     if (byUser && innerWidth <= 900) { var b = cur.querySelector('.kd-board'); if (b && b.scrollIntoView) b.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
     reveal(3, function(){
       phase = 4; played = true; track('demo_done');
-      var d = cur.querySelector('.kd-done'); if (live && d) live.textContent = d.textContent;   /* announce the result once */
+      var d = cur.querySelector('.kd-done'); if (byUser && live && d) live.textContent = d.textContent;   /* announce a real press once */
     });
   }
   root.addEventListener('click', function(e){
@@ -3480,9 +3496,9 @@ reveals.forEach(r => observer.observe(r));
   /* a visitor who focuses or aims at a control drives the demo: no more automatic steps */
   root.addEventListener('focusin', function(){ auto = false; clearTimeout(autoT); });
   root.addEventListener('keydown', function(){ auto = false; clearTimeout(autoT); });
-  root.addEventListener('pointerover', function(e){
+  root.addEventListener('pointermove', function(e){
     if (e.pointerType === 'mouse' && e.target.closest && e.target.closest('.kd-opt, .kd-go')) { auto = false; clearTimeout(autoT); }
-  });
+  }, { passive: true });
   if ('IntersectionObserver' in window) {
     /* start when the block's top passes 65% of the screen height: works for any block height */
     new IntersectionObserver(function(es){
@@ -3532,14 +3548,18 @@ reveals.forEach(r => observer.observe(r));
     if (b.classList.contains('ka-fix')) {
       var row = b.closest('.ka-row'); if (!row || row.classList.contains('fixed')) return;
       row.classList.add('fixed');
-      if (!(+row.getAttribute('data-w'))) row.classList.add('pend');   /* a rule is set, the finding clears later */
+      if (!(+row.getAttribute('data-w'))) {   /* a rule is set, the finding clears later */
+        row.classList.add('pend');
+        /* in the product any rule removes «no automations»: close that row together with this one */
+        rows.forEach(function(x){ if (!x.classList.contains('fixed') && x.querySelector('.ka-ra')) x.classList.add('fixed', 'alt'); });
+      }
       track('audit_fix');
       var v = total(); go(v);
       var all = rows.every(function(r){ return r.classList.contains('fixed'); });
       if (all) { root.classList.add('all'); track('audit_done'); }
       if (live) {   /* one announcement per press: what was done and the new grade */
         var r = row.querySelector('.ka-r');
-        live.textContent = (r ? r.textContent + '. ' : '') + (cap ? cap.textContent + ': ' : '') + grade(v) + ', ' + v + '/100';
+        live.textContent = (r ? r.textContent.replace(/\.\s*$/, '') + '. ' : '') + (cap ? cap.textContent + ': ' : '') + grade(v) + ', ' + v + '/100';
       }
       /* the pressed button is gone: move keyboard focus to the next open finding, or to the call to action */
       var i = rows.indexOf(row);
@@ -3547,7 +3567,7 @@ reveals.forEach(r => observer.observe(r));
       var next = all ? root.querySelector('.ka-cta') : nr && nr.querySelector('.ka-fix');
       if (next) next.focus({ preventScroll: true });
     } else if (b.classList.contains('ka-again')) {
-      rows.forEach(function(x){ x.classList.remove('fixed', 'pend'); }); root.classList.remove('all'); go(BASE);
+      rows.forEach(function(x){ x.classList.remove('fixed', 'pend', 'alt'); }); root.classList.remove('all'); go(BASE);
       if (live) live.textContent = '';
       var first = root.querySelector('.ka-fix'); if (first) first.focus({ preventScroll: true });
     } else if (b.classList.contains('ka-cta')) { track('audit_cta'); if (window.kaiChatOpen) kaiChatOpen(); }
@@ -3603,16 +3623,20 @@ function applyLang(lang) {
     const t = el.getAttribute('data-' + lang + '-title');
     if (t != null) el.title = t;
   });
+  document.querySelectorAll('[data-' + lang + '-label]').forEach(el => {
+    const l = el.getAttribute('data-' + lang + '-label');
+    if (l != null) el.setAttribute('aria-label', l);
+  });
   document.querySelectorAll('[data-' + lang + '-href]').forEach(el => {
     const h = el.getAttribute('data-' + lang + '-href');
     if (h != null) el.href = h;
   });
   var pl = document.querySelector('.privacy-link');
-  if (pl) pl.href = lang === 'en' ? 'privacy-en.html' : 'privacy.html';
+  if (pl) pl.href = lang === 'en' ? '../privacy-en.html' : '../privacy.html';
   var tl = document.querySelector('a[href*="terms"]');
-  if (tl) tl.href = lang === 'en' ? 'terms-en.html' : 'terms.html';
+  if (tl) tl.href = lang === 'en' ? '../terms-en.html' : '../terms.html';
   var rl = document.querySelector('.refund-link');
-  if (rl) rl.href = lang === 'en' ? 'refund-en.html' : 'refund.html';
+  if (rl) rl.href = lang === 'en' ? '../refund-en.html' : '../refund.html';
   document.querySelectorAll('.chat-link').forEach(function(cl) {
     cl.href = 'https://ai-crm-bot-production.up.railway.app/chat?lang=' + (lang === 'en' ? 'en' : 'ru');
   });
@@ -3719,7 +3743,7 @@ window.addEventListener('scroll', () => {
   <svg class="cl-chat" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
   <svg class="cl-close" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
 </button>
-<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Kai chat" tabindex="-1"></div>
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Kai chat" tabindex="-1"><button class="chat-panel-x" id="chatPanelX" type="button" aria-label="Close chat" data-ru-label="Закрыть чат" data-en-label="Close chat">✕</button></div>
 
 <script>
 (function() {
@@ -3803,6 +3827,7 @@ window.addEventListener('scroll', () => {
   };
 
   launcher.addEventListener('click', function(){ isOpen ? closePanel() : openPanel(); });
+  var panelX = document.getElementById('chatPanelX'); if (panelX) panelX.addEventListener('click', closePanel);
   /* opened from the demo / audit buttons: move focus into the dialog so keyboard and screen-reader users land in it */
   window.kaiChatOpen = function(){
     chatOpener = document.activeElement;

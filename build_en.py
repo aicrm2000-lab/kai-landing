@@ -22,7 +22,63 @@ EN_META = {
     "og_title": "Kai — AI assistant that sets up your CRM",
     "og_description": ("Set up amoCRM and Kommo by chatting: pipelines, fields, tasks, automations, integrations, "
                        "analytics. 60+ API actions. 3 days free, no card."),
+    "keywords": ("amoCRM, Kommo, Bitrix24, CRM setup, AI assistant, CRM automation, Telegram CRM bot, sales pipelines, "
+                 "amoCRM API, Kommo API, CRM without developers"),
 }
+EN_LD = {
+    "description": ("AI assistant that sets up and manages amoCRM and Kommo from your browser or Telegram. "
+                    "60+ API actions: pipelines, fields, stages, deals, contacts, automations."),
+    "featureList": ["AI consulting on your CRM structure", "Sales pipelines and stages", "Custom fields for deals, contacts and companies",
+                    "Automations: Digital Pipeline, triggers, Salesbot", "Technical specification as a PDF",
+                    "Voice message recognition", "One-click OAuth connection"],
+    "faq": [
+        ("What can Kai do?", "Kai is an AI assistant that sets up amoCRM and Kommo from your browser or Telegram: it creates pipelines, "
+                             "fields, stages, deals, contacts, tasks and automations. 60+ API actions without developers."),
+        ("Is it safe? Will you get access to my data?", "Kai works through the official amoCRM/Kommo OAuth 2.0. We never see your password. "
+                                                        "You can revoke access at any time in your CRM settings."),
+        ("How much does Kai cost?", "Three plans: Start — €29/month (1 CRM), Pro — €59/month (3 CRMs), Max — €119/month (10 CRMs). "
+                                    "The first 3 days are free."),
+        ("Does Kai work with Kommo?", "Yes, Kai supports both amoCRM and Kommo. The API is compatible, the connection goes through OAuth."),
+        ("Does Kai work with Bitrix24?", "The Bitrix24 integration is in development — a beta is already available in the bot. "
+                                         "amoCRM and Kommo are fully supported."),
+        ("Can I try it for free?", "Yes, the first 3 days are free with no limits. Try it risk-free."),
+    ],
+}
+
+
+def _burn_attr_variants(m: "re.Match") -> str:
+    """title / aria-label с data-en-title / data-en-label → английское значение прямо в атрибуте."""
+    tag = m.group(0)
+    for attr, variant in (("title", "data-en-title"), ("aria-label", "data-en-label")):
+        v = re.search(rf'\s{variant}="([^"]*)"', tag)
+        if v:
+            if re.search(rf'\s{attr}="', tag):
+                tag = re.sub(rf'\s{attr}="[^"]*"', f' {attr}="{v.group(1)}"', tag, count=1)
+            else:
+                tag = tag[:-1] + f' {attr}="{v.group(1)}">'
+    return tag
+
+
+def _english_jsonld(html: str) -> str:
+    """Два блока ld+json: описание, featureList и вопросы FAQ — по-английски, inLanguage = en."""
+    import json
+    blocks = list(re.finditer(r'<script type="application/ld\+json">(.*?)</script>', html, re.S))
+    for m in reversed(blocks):
+        try:
+            d = json.loads(m.group(1))
+        except ValueError:
+            continue
+        d["inLanguage"] = "en"
+        if d.get("@type") == "SoftwareApplication":
+            d["description"] = EN_LD["description"]
+            d["featureList"] = EN_LD["featureList"]
+        elif d.get("@type") == "FAQPage":
+            for q, (name, text) in zip(d.get("mainEntity", []), EN_LD["faq"]):
+                q["name"] = name
+                q["acceptedAnswer"]["text"] = text
+        new = '<script type="application/ld+json">\n' + json.dumps(d, ensure_ascii=False, indent=2) + '\n</script>'
+        html = html[:m.start()] + new + html[m.end():]
+    return html
 
 
 def apply_data_en(html: str) -> str:
@@ -87,6 +143,15 @@ def main() -> None:
     # английские версии политик
     for p in ("privacy", "terms", "refund"):
         html = html.replace(f'href="../{p}.html"', f'href="../{p}-en.html"')
+        # applyLang() перезаписывает эти ссылки из скрипта, а cookie-текст держит ссылку внутри значения атрибута
+        html = html.replace(f"'{p}-en.html' : '{p}.html'", f"'../{p}-en.html' : '../{p}.html'")
+        html = html.replace(f"href='{p}-en.html'", f"href='../{p}-en.html'").replace(f"href='{p}.html'", f"href='../{p}-en.html'")
+    html = html.replace('href="../guides/"', 'href="../guides/en/"')
+    # атрибуты title/aria-label с английскими вариантами
+    html = re.sub(r'<(?P<tag>[a-zA-Z][\w-]*)(?P<attrs>(?:[^>"]|"[^"]*")*)>', _burn_attr_variants, html)
+    # структурированные данные и ключевые слова — английские
+    html = _english_jsonld(html)
+    html = re.sub(r'<meta name="keywords" content="[^"]*">', f'<meta name="keywords" content="{EN_META["keywords"]}">', html, count=1)
     # английский по умолчанию: не читаем сохранённый язык, уважаем только ?lang=
     html = html.replace("let currentLang = 'en';\ntry { currentLang = localStorage.getItem('kai_lang') || detectLang(); } catch (e) { currentLang = detectLang(); }",
                         "let currentLang = 'en';   // статическая EN-версия: язык страницы — английский")
