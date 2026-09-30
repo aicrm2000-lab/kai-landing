@@ -63,7 +63,11 @@ def panel(n: dict, ui: dict, first: bool) -> str:
     done = leaf("span", fmt(ui["done"], s=s_n, f=f_n, a=a_n))
     done_step = step(0)
 
-    opts = "".join(leaf("button", op, "kd-opt", ' type="button"') for op in n["opts"])
+    # готовое состояние вшито в разметку (без JS и при «уменьшить движение» блок показан собранным):
+    # выбран второй ответ, остальные выключены, «Реализовать» уже нажата; скрипт сбрасывает это перед показом
+    opts = "".join(
+        leaf("button", op, "kd-opt pick" if i == 1 else "kd-opt", ' type="button"' + ("" if i == 1 else " disabled"))
+        for i, op in enumerate(n["opts"]))
     plan = "".join(leaf("li", t) for t in (
         fmt(ui["plan_pipeline"], name=n["pipeline"]["ru"]) | {"en": ui["plan_pipeline"]["en"].format(name=n["pipeline"]["en"])},
         fmt(ui["plan_stages"], n=s_n), fmt(ui["plan_fields"], n=f_n), fmt(ui["plan_autos"], n=a_n)))
@@ -72,9 +76,9 @@ def panel(n: dict, ui: dict, first: bool) -> str:
         <div class="kd-chat">
           <div class="kd-msg kd-u kd-i" data-ph="1" data-g="700">{leaf("span", n["user"])}</div>
           <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0">{leaf("span", n["q"])}<div class="kd-opts">{opts}</div></div>
+          <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0">{leaf("span", n["q"])}<div class="kd-opts done">{opts}</div></div>
           <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0">{leaf("span", ui["plan"])}<ul class="kd-plan">{plan}</ul>{leaf("button", ui["go"], "kd-go", ' type="button"')}</div>
+          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0">{leaf("span", ui["plan"])}<ul class="kd-plan">{plan}</ul>{leaf("button", ui["go"], "kd-go", ' type="button" aria-disabled="true"')}</div>
           <div class="kd-msg kd-k kd-done kd-i"{done_step}>{done}</div>
         </div>
         <div class="kd-board">
@@ -100,6 +104,7 @@ def main() -> None:
         <div class="kd-chips" role="group" aria-labelledby="kdPick">{leaf("span", ui["pick"], "kd-pick", ' id="kdPick"')}{chips}</div>
       </div>
 {chr(10).join(panel(n, ui, i == 0) for i, n in enumerate(niches))}
+      <span class="sr-only kd-live" role="status"></span>
       <div class="kd-foot">
         {leaf("span", ui["note"], "kd-note")}
         <div class="kd-btns">{leaf("button", ui["again"], "kd-again", ' type="button"')}{leaf("button", ui["cta"], "kd-cta", ' type="button"')}</div>

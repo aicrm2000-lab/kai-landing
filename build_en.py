@@ -27,7 +27,8 @@ EN_META = {
 
 def apply_data_en(html: str) -> str:
     """Для каждого элемента с data-en заменяем содержимое на data-en (там может быть разметка)."""
-    tag_re = re.compile(r'<(?P<tag>[a-zA-Z][\w-]*)(?P<attrs>[^>]*?)\sdata-en="(?P<en>[^"]*)"(?P<rest>[^>]*)>', re.S)
+    # значения атрибутов могут содержать разметку (<br>, <em>, <span>), поэтому «>» внутри кавычек не конец тега
+    tag_re = re.compile(r'<(?P<tag>[a-zA-Z][\w-]*)(?P<attrs>(?:[^>"]|"[^"]*")*?)\sdata-en="(?P<en>[^"]*)"(?P<rest>(?:[^>"]|"[^"]*")*)>', re.S)
     out, pos = [], 0
     for m in tag_re.finditer(html):
         tag = m.group("tag")
@@ -38,7 +39,7 @@ def apply_data_en(html: str) -> str:
         close = f"</{tag}>"
         # ищем закрывающий тег с учётом вложенности того же тега
         depth, i = 1, m.end()
-        open_re = re.compile(rf"<{tag}\b[^>]*>|</{tag}>", re.S)
+        open_re = re.compile(rf'<{tag}\b(?:[^>"]|"[^"]*")*>|</{tag}>', re.S)
         end = None
         while depth:
             n = open_re.search(html, i)
@@ -94,7 +95,13 @@ def main() -> None:
     os.makedirs(OUT_DIR, exist_ok=True)
     io.open(os.path.join(OUT_DIR, "index.html"), "w", encoding="utf-8", newline="\n").write(html)
     n_ru = len(re.findall(r'data-ru="', html))
-    print(f"en/index.html: {len(html) // 1024} KB, data-ru attrs kept: {n_ru}")
+    # контроль: в теле не должно остаться русского текста вне скриптов, стилей и атрибутов
+    body = re.sub(r"<(script|style)\b[\s\S]*?</\1>", " ", html[html.find("<body"):])
+    text = re.sub(r'<(?:[^>"]|"[^"]*")*>', "\x00", body)   # теги убираем с учётом «>» внутри значений атрибутов
+    left = [t.strip() for t in text.split("\x00") if re.search(r"[А-Яа-яЁё]", t)]
+    print(f"en/index.html: {len(html) // 1024} KB, data-ru attrs kept: {n_ru}, Russian text nodes left: {len(left)}")
+    for t in left[:8]:
+        print("   RU:", t[:70])
 
 
 if __name__ == "__main__":
