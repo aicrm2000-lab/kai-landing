@@ -14,8 +14,8 @@ import re
 HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = "https://aicrm2000-lab.github.io/kai-landing/"
 TODAY = dt.date.today().isoformat()
-MARK = ('<svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path d="M35.5 13.5 A15 15 0 1 0 39 24" fill="none" '
-        'stroke="#7C5CFF" stroke-width="5.5" stroke-linecap="round"/><circle cx="38.5" cy="12.5" r="3.6" fill="#A78BFA"/></svg>')
+MARK = ('<svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path d="M24 9.3a15.3 15.3 0 1 0 15.3 15.3" fill="none" '
+        'stroke="#7C5CFF" stroke-width="4.3" stroke-linecap="round"/><circle cx="35.7" cy="10.3" r="4.3" fill="#A78BFA"/></svg>')
 
 INDEX_CSS = """
 :root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA}
