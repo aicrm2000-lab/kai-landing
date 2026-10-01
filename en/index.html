@@ -2001,6 +2001,88 @@ footer {
 }
 .scroll-top:hover svg { transform: translateY(-2px); }
 
+/* ─── CALL KAI · SOON: hero button + call screen over a blurred page ─── */
+.btn-call {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 18px 11px 14px; border-radius: 6px; cursor: pointer;
+  font: 500 15px/1 var(--font); color: var(--text);
+  background: rgba(124,92,255,.06); border: 1px solid rgba(124,92,255,.35);
+  transition: border-color 150ms, color 150ms, background 150ms;
+}
+.btn-call:hover { border-color: var(--accent); color: var(--ink); background: rgba(124,92,255,.12); }
+.btn-call[hidden] { display: none; }
+.btn-call:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+.bc-ico { position: relative; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent-dim); color: var(--accent-2); }
+.bc-ico::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(167,139,250,.6); animation: bcPing 2.2s ease-out infinite; }
+@keyframes bcPing { from { transform: scale(1); opacity: .9; } to { transform: scale(1.7); opacity: 0; } }
+.bc-soon { font: 600 10px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent-2); border: 1px dashed rgba(167,139,250,.55); border-radius: 999px; padding: 4px 7px; }
+
+.kc {
+  position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0;
+  padding: 16px; border: 0; background: transparent; color: var(--ink);
+  overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain;   /* short screens: the card scrolls */
+}
+.kc:not([open]) { display: none; }   /* browsers without <dialog> must not show a closed one */
+.kc[open] { display: grid; place-items: center; }
+.kc::backdrop { background: rgba(8,7,15,.5); -webkit-backdrop-filter: blur(14px) saturate(120%); backdrop-filter: blur(14px) saturate(120%); }
+html.kc-lock { overflow: hidden; scrollbar-gutter: stable; }
+.kc-blob { position: fixed; border-radius: 50%; filter: blur(70px); pointer-events: none; animation: kcDrift 16s ease-in-out infinite alternate; }
+.kc-blob.b1 { width: 46vmax; height: 46vmax; top: -14vmax; left: -12vmax; background: #7C5CFF; opacity: .5; }
+.kc-blob.b2 { width: 40vmax; height: 40vmax; bottom: -16vmax; right: -14vmax; background: #43E0A0; opacity: .22; animation-duration: 20s; }
+.kc-blob.b3 { width: 28vmax; height: 28vmax; top: 34%; left: 58%; background: #A78BFA; opacity: .32; animation-duration: 12s; }
+@keyframes kcDrift { 0% { transform: translate(0, 0) scale(1); } 50% { transform: translate(6vmax, 4vmax) scale(1.12); } 100% { transform: translate(-4vmax, 7vmax) scale(.94); } }
+.kc-card {
+  position: relative; z-index: 1; width: min(420px, 100%); margin: auto; padding: 30px 24px 22px; text-align: center;
+  border-radius: 22px; background: rgba(16,14,32,.72); border: 1px solid rgba(124,92,255,.28);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  box-shadow: 0 30px 80px rgba(0,0,0,.5), rgba(255,255,255,.04) 0 1px 0 inset;
+  animation: kcIn .45s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes kcIn { from { opacity: 0; transform: translateY(14px) scale(.97); } to { opacity: 1; transform: none; } }
+.kc-x { position: absolute; top: 10px; right: 10px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: transparent; color: var(--muted); font-size: 16px; cursor: pointer; }
+.kc-x:hover { color: var(--ink); background: rgba(255,255,255,.06); }
+.kc button:focus-visible, .kc a:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+.kc-ava { position: relative; width: 112px; height: 112px; margin: 4px auto 16px; display: grid; place-items: center; }
+.kc-ring { position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(124,92,255,.55); animation: kcRing 2.4s cubic-bezier(.2,.6,.3,1) infinite; }
+.kc-ring:nth-child(2) { animation-delay: .8s; }
+.kc-ring:nth-child(3) { animation-delay: 1.6s; }
+@keyframes kcRing { from { transform: scale(.72); opacity: .9; } to { transform: scale(1.75); opacity: 0; } }
+.kc-core { position: relative; width: 84px; height: 84px; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle at 35% 30%, #2A2152, #120F24); border: 1px solid rgba(124,92,255,.45); box-shadow: 0 0 44px rgba(124,92,255,.45); }
+.kc-status { font: 600 12px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); min-height: 14px; }
+.kc-s1::after { content: '…'; animation: blink 1s step-end infinite; }
+.kc-s2 { display: none; color: var(--accent-2); }
+.kc.on .kc-s1 { display: none; }
+.kc.on .kc-s2 { display: inline; }
+.kc-wave { display: flex; align-items: center; justify-content: center; gap: 3px; height: 30px; margin: 12px 0 18px; }
+.kc-wave i { width: 3px; height: 100%; border-radius: 2px; background: linear-gradient(180deg, #A78BFA, #7C5CFF); transform: scaleY(.18); animation: kcWave 1.15s ease-in-out infinite; animation-delay: calc(var(--k) * -.07s); }
+.kc.on .kc-wave i { animation-name: kcWave2; }
+@keyframes kcWave { 0%, 100% { transform: scaleY(.18); } 50% { transform: scaleY(var(--h)); } }
+@keyframes kcWave2 { 0%, 100% { transform: scaleY(.12); } 50% { transform: scaleY(calc(var(--h) * .45)); } }
+.kc-body { opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .45s ease, transform .5s cubic-bezier(.16,1,.3,1), visibility 0s linear .45s; }
+.kc.on .kc-body { opacity: 1; visibility: visible; transform: none; transition: opacity .45s ease, transform .5s cubic-bezier(.16,1,.3,1); }
+.kc-title { font: 600 22px/1.25 var(--font-heading); letter-spacing: -.015em; color: var(--ink); }
+.kc-text { margin-top: 10px; font-size: 15px; line-height: 1.55; color: var(--text); }
+.kc-btns { display: grid; gap: 8px; margin-top: 20px; }
+.kc-go { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 18px; border-radius: 10px; font: 600 14.5px/1.25 var(--font); text-align: center; color: #fff; background: var(--accent-gradient); box-shadow: 0 0 22px rgba(124,92,255,.35); }
+.kc-go:hover { opacity: .92; }
+.kc-close { min-height: 42px; border-radius: 10px; font: 500 14px/1 var(--font); color: var(--text); background: transparent; border: 1px solid var(--smoke); cursor: pointer; }
+.kc-close:hover { border-color: var(--accent); color: var(--ink); }
+@media (max-height: 560px) {
+  .kc-card { padding: 18px 18px 16px; }
+  .kc-ava { width: 64px; height: 64px; margin: 0 auto 8px; }
+  .kc-core { width: 52px; height: 52px; }
+  .kc-core svg { width: 30px; height: 30px; }
+  .kc-wave { height: 18px; margin: 8px 0 10px; }
+  .kc-text { margin-top: 6px; font-size: 14px; }
+  .kc-btns { margin-top: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bc-ico::after, .kc-blob, .kc-ring, .kc-wave i, .kc-card, .kc-s1::after { animation: none !important; }
+  .kc-ring:not(:first-child) { display: none; }
+  .kc-wave i { transform: scaleY(calc(var(--h) * .5)); }
+  .kc-body { transition: none; }
+}
+
 /* ─── CHAT LAUNCHER + PANEL ─── */
 .chat-launcher {
   position: fixed;
@@ -2352,7 +2434,8 @@ footer {
   .hero-sub { font-size: 16px; }
   .hero-actions { flex-direction: column; align-items: stretch; gap: 10px; }
   .hero-actions .btn-primary,
-  .hero-actions .btn-ghost { justify-content: center; width: 100%; text-align: center; }
+  .hero-actions .btn-ghost,
+  .hero-actions .btn-call { justify-content: center; width: 100%; text-align: center; }
   .hero-mockup { margin-top: 40px; }
   .tg-window { max-width: 100%; }
   .steps-grid { gap: 16px; }
@@ -2551,12 +2634,37 @@ footer {
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg>
         <span data-ru="Попробовать в браузере" data-en="Try in browser">Try in browser</span>
       </a>
+      <button type="button" class="btn-call" id="callKai" aria-haspopup="dialog">
+        <span class="bc-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.6 4-2 1.3a11 11 0 005.1 5.1l1.3-2 4 1.6v3a2 2 0 01-2.2 2A17 17 0 013 6.2 2 2 0 015 4z"/></svg></span>
+        <span data-ru="Позвонить Kai" data-en="Call Kai">Call Kai</span>
+        <span class="bc-soon" data-ru="скоро" data-en="soon">soon</span>
+      </button>
       <a href="#how" class="btn-ghost">
         <span data-ru="Как это работает ↓" data-en="How it works ↓">How it works ↓</span>
       </a>
     </div>
   </div>
 </section>
+
+<!-- CALL:START call Kai dialog -->
+<dialog class="kc" id="kaiCall" aria-labelledby="kcTitle">
+  <span class="kc-blob b1" aria-hidden="true"></span><span class="kc-blob b2" aria-hidden="true"></span><span class="kc-blob b3" aria-hidden="true"></span>
+  <div class="kc-card">
+    <button type="button" class="kc-x" aria-label="Close" data-ru-label="Закрыть" data-en-label="Close">✕</button>
+    <div class="kc-ava" aria-hidden="true"><span class="kc-ring"></span><span class="kc-ring"></span><span class="kc-ring"></span><span class="kc-core"><svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true"><path d="M35.5 13.5 A15 15 0 1 0 39 24" fill="none" stroke="#7C5CFF" stroke-width="5.5" stroke-linecap="round"/><circle cx="38.5" cy="12.5" r="3.6" fill="#A78BFA"/></svg></span></div>
+    <p class="kc-status"><span class="kc-s1" data-ru="Соединяем" data-en="Connecting">Connecting</span><span class="kc-s2" data-ru="Скоро на связи" data-en="Coming soon">Coming soon</span></p>
+    <div class="kc-wave" aria-hidden="true"><i style="--k:0;--h:0.35"></i><i style="--k:1;--h:0.6"></i><i style="--k:2;--h:0.9"></i><i style="--k:3;--h:0.55"></i><i style="--k:4;--h:0.8"></i><i style="--k:5;--h:1"></i><i style="--k:6;--h:0.7"></i><i style="--k:7;--h:0.45"></i><i style="--k:8;--h:0.85"></i><i style="--k:9;--h:0.6"></i><i style="--k:10;--h:0.95"></i><i style="--k:11;--h:0.5"></i><i style="--k:12;--h:0.75"></i><i style="--k:13;--h:0.4"></i><i style="--k:14;--h:0.65"></i><i style="--k:15;--h:0.3"></i><i style="--k:16;--h:0.55"></i><i style="--k:17;--h:0.8"></i><i style="--k:18;--h:0.45"></i><i style="--k:19;--h:0.3"></i></div>
+    <div class="kc-body">
+      <h3 class="kc-title" id="kcTitle" data-ru="Звонок Kai — скоро" data-en="Calling Kai — coming soon">Calling Kai — coming soon</h3>
+      <p class="kc-text" data-ru="Скоро с Kai можно будет поговорить голосом: рассказываете о бизнесе вслух, он задаёт вопросы и настраивает CRM прямо во время разговора. А голосовые сообщения в Telegram Kai понимает уже сейчас." data-en="Soon you will be able to talk to Kai: describe your business out loud, Kai asks questions and sets up the CRM during the call. Kai already understands voice messages in Telegram.">Soon you will be able to talk to Kai: describe your business out loud, Kai asks questions and sets up the CRM during the call. Kai already understands voice messages in Telegram.</p>
+      <div class="kc-btns">
+        <a class="kc-go" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3M8 21h8"/></svg><span data-ru="Отправить голосовое в Telegram" data-en="Send a voice note in Telegram">Send a voice note in Telegram</span></a>
+        <button class="kc-close" type="button" data-ru="Закрыть" data-en="Close">Close</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+<!-- CALL:END -->
 
 <!-- CONNECT STRIP -->
 <a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" class="connect-strip reveal">
@@ -4065,6 +4173,43 @@ reveals.forEach(r => observer.observe(r));
   var cta = root.querySelector('.ko-cta'); if (cta) cta.addEventListener('click', function(){ track('office_want'); });
 })();
 
+/* ─── CALL KAI · SOON ─── */
+(function(){
+  var btn = document.getElementById('callKai'), dlg = document.getElementById('kaiCall');
+  if (!btn || !dlg) return;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, t = 0;
+  if (typeof dlg.showModal !== 'function') { btn.hidden = true; return; }   /* very old browsers: no half-working button */
+  /* cleanup does not rely on the dialog 'close' event alone (some embedded browsers never fire it) */
+  var shown = false;
+  function done(){
+    if (!shown) return; shown = false;
+    clearTimeout(t); dlg.classList.remove('on');
+    document.documentElement.classList.remove('kc-lock'); document.documentElement.style.paddingRight = '';
+    try { btn.focus({ preventScroll: true }); } catch (e) {}
+  }
+  function close(){ if (dlg.open) dlg.close(); done(); }
+  btn.addEventListener('click', function(){
+    dlg.classList.remove('on');
+    var de = document.documentElement, sw = innerWidth - de.clientWidth;
+    if (sw > 0 && !(window.CSS && CSS.supports && CSS.supports('scrollbar-gutter', 'stable'))) de.style.paddingRight = sw + 'px';
+    de.classList.add('kc-lock');
+    dlg.showModal(); shown = true;
+    if (window.kaiTrack) kaiTrack('call_click');
+    clearTimeout(t);
+    if (reduce) dlg.classList.add('on');
+    else t = setTimeout(function(){ dlg.classList.add('on'); }, 1800);   /* «connecting…» then the message */
+  });
+  dlg.addEventListener('close', done);
+  dlg.addEventListener('cancel', function(e){ e.preventDefault(); close(); });   /* Escape */
+  var downOnDlg = false;   /* close on the blurred page only when the press also started there (not a drag-select) */
+  dlg.addEventListener('pointerdown', function(e){ downOnDlg = (e.target === dlg); });
+  dlg.addEventListener('click', function(e){
+    if (e.target === dlg && downOnDlg) close();                           /* a tap on the blurred page closes it */
+    var b = e.target.closest && e.target.closest('.kc-x, .kc-close'); if (b) close();
+    if (e.target.closest && e.target.closest('.kc-go')) { if (window.kaiTrack) kaiTrack('call_voice'); close(); }
+  });
+})();
+
 /* ─── SMOOTH NAV ─── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
@@ -4344,7 +4489,7 @@ window.addEventListener('scroll', () => {
     f.contentWindow.postMessage({kaiHandoff: href, req: req}, CHAT_ORIGIN);
     setTimeout(function() { window.removeEventListener('message', onMsg); go(href); }, 1500);
   }, true);
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && isOpen) closePanel(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && isOpen && !document.querySelector('dialog[open]')) closePanel(); });
 
   /* proactive nudge: 12s after load, at most once per day */
   function today() { return new Date().toISOString().slice(0, 10); }
