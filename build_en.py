@@ -7,6 +7,7 @@
 и делает английский языком по умолчанию для скриптов страницы. Запуск: py -3.12 build_en.py
 """
 import io
+import json
 import os
 import re
 
@@ -21,26 +22,27 @@ EN_META = {
                     "your browser: pipelines, fields, tasks, automations, integrations and analytics. 3 days free, no card."),
     "og_title": "Kai — AI assistant that sets up your CRM",
     "og_description": ("Set up amoCRM and Kommo by chatting: pipelines, fields, tasks, automations, integrations, "
-                       "analytics. 60+ API actions. 3 days free, no card."),
+                       "analytics. 65 actions. 3 days free, no card."),
     "keywords": ("amoCRM, Kommo, Bitrix24, CRM setup, AI assistant, CRM automation, Telegram CRM bot, sales pipelines, "
                  "amoCRM API, Kommo API, CRM without developers"),
 }
 EN_LD = {
     "description": ("AI assistant that sets up and manages amoCRM and Kommo from your browser or Telegram. "
-                    "60+ API actions: pipelines, fields, stages, deals, contacts, automations."),
+                    "65 actions: pipelines, fields, stages, deals, contacts, automations."),
     "featureList": ["AI consulting on your CRM structure", "Sales pipelines and stages", "Custom fields for deals, contacts and companies",
                     "Automations: Digital Pipeline, triggers, Salesbot", "Technical specification as a PDF",
                     "Voice message recognition", "One-click OAuth connection"],
     "faq": [
         ("What can Kai do?", "Kai is an AI assistant that sets up amoCRM and Kommo from your browser or Telegram: it creates pipelines, "
-                             "fields, stages, deals, contacts, tasks and automations. 60+ API actions without developers."),
+                             "fields, stages, deals, contacts, tasks and automations. 65 actions without developers."),
         ("Is it safe? Will you get access to my data?", "Kai works through the official amoCRM/Kommo OAuth 2.0. We never see your password. "
                                                         "You can revoke access at any time in your CRM settings."),
         ("How much does Kai cost?", "Three plans: Start — €29/month (1 CRM), Pro — €59/month (3 CRMs), Max — €119/month (10 CRMs). "
                                     "The first 3 days are free."),
         ("Does Kai work with Kommo?", "Yes, Kai supports both amoCRM and Kommo. The API is compatible, the connection goes through OAuth."),
-        ("Does Kai work with Bitrix24?", "The Bitrix24 integration is in development — a beta is already available in the bot. "
-                                         "amoCRM and Kommo are fully supported."),
+        ("Does Kai work with Bitrix24?", "Yes, in beta: Bitrix24 connects through an inbound webhook, Kai sets up pipelines, "
+                                         "stages, fields, deals, contacts and tasks and runs the analytics. Automations inside "
+                                         "Bitrix24 and widgets are not available yet. amoCRM and Kommo are fully supported."),
         ("Can I try it for free?", "Yes, the first 3 days are free with no limits. Try it risk-free."),
     ],
 }
@@ -119,8 +121,23 @@ def apply_data_en(html: str) -> str:
     return "".join(out)
 
 
+def check_action_count(src: str) -> int:
+    """Одно число действий на всей странице: значков в сетке API = счётчик под сеткой = все «NN действий» /
+    «NN actions» (в RU-исходнике и в английских мета/JSON-LD этого файла). Разъехалось — сборка падает,
+    чтобы новое действие не оставило «60+», «65» и «68» на одной странице."""
+    n = len(re.findall(r'<div class="api-badge"', src))
+    texts = src + json.dumps(EN_META, ensure_ascii=False) + json.dumps(EN_LD, ensure_ascii=False)
+    said = re.findall(r"(\d+)\+?\s*(?:API-)?(?:действий|actions)\b", texts)
+    said += re.findall(r'data-count="(\d+)">\d+</strong>\s*<span data-ru="действий', src)
+    bad = sorted({x for x in said if int(x) != n})
+    if not n or not said or bad:
+        raise SystemExit(f"Число действий разъехалось: значков {n}, в текстах {sorted(set(said))} — поправь тексты или значки")
+    return n
+
+
 def main() -> None:
     html = io.open(SRC, encoding="utf-8").read()
+    n_actions = check_action_count(html)
     html = apply_data_en(html)
     html = html.replace('<html lang="ru"', '<html lang="en"', 1)
     html = re.sub(r"<title>.*?</title>", f"<title>{EN_META['title']}</title>", html, count=1, flags=re.S)
@@ -164,7 +181,8 @@ def main() -> None:
     body = re.sub(r"<(script|style)\b[\s\S]*?</\1>", " ", html[html.find("<body"):])
     text = re.sub(r'<(?:[^>"]|"[^"]*")*>', "\x00", body)   # теги убираем с учётом «>» внутри значений атрибутов
     left = [t.strip() for t in text.split("\x00") if re.search(r"[А-Яа-яЁё]", t)]
-    print(f"en/index.html: {len(html) // 1024} KB, data-ru attrs kept: {n_ru}, Russian text nodes left: {len(left)}")
+    print(f"en/index.html: {len(html) // 1024} KB, data-ru attrs kept: {n_ru}, Russian text nodes left: {len(left)}, "
+          f"actions: {n_actions} everywhere")
     for t in left[:8]:
         print("   RU:", t[:70])
 
