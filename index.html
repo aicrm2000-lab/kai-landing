@@ -2065,6 +2065,9 @@ html.kc-lock { overflow: hidden; scrollbar-gutter: stable; }
 .kc-btns { display: grid; gap: 8px; margin-top: 20px; }
 .kc-go { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 18px; border-radius: 10px; font: 600 14.5px/1.25 var(--font); text-align: center; color: #fff; background: var(--accent-gradient); box-shadow: 0 0 22px rgba(124,92,255,.35); }
 .kc-go:hover { opacity: .92; }
+button.kc-go { border: 0; cursor: pointer; width: 100%; }
+.kc-tg { justify-self: center; display: inline-flex; align-items: center; min-height: 32px; padding: 0 6px; font: 500 13.5px/1.3 var(--font); color: var(--text); text-decoration: underline; text-decoration-color: rgba(167,139,250,.45); text-underline-offset: 3px; }
+.kc-tg:hover { color: var(--ink); text-decoration-color: var(--accent); }
 .kc-close { min-height: 42px; border-radius: 10px; font: 500 14px/1 var(--font); color: var(--text); background: transparent; border: 1px solid var(--smoke); cursor: pointer; }
 .kc-close:hover { border-color: var(--accent); color: var(--ink); }
 @media (max-height: 560px) {
@@ -2656,9 +2659,10 @@ html.kc-lock { overflow: hidden; scrollbar-gutter: stable; }
     <div class="kc-wave" aria-hidden="true"><i style="--k:0;--h:0.35"></i><i style="--k:1;--h:0.6"></i><i style="--k:2;--h:0.9"></i><i style="--k:3;--h:0.55"></i><i style="--k:4;--h:0.8"></i><i style="--k:5;--h:1"></i><i style="--k:6;--h:0.7"></i><i style="--k:7;--h:0.45"></i><i style="--k:8;--h:0.85"></i><i style="--k:9;--h:0.6"></i><i style="--k:10;--h:0.95"></i><i style="--k:11;--h:0.5"></i><i style="--k:12;--h:0.75"></i><i style="--k:13;--h:0.4"></i><i style="--k:14;--h:0.65"></i><i style="--k:15;--h:0.3"></i><i style="--k:16;--h:0.55"></i><i style="--k:17;--h:0.8"></i><i style="--k:18;--h:0.45"></i><i style="--k:19;--h:0.3"></i></div>
     <div class="kc-body">
       <h3 class="kc-title" id="kcTitle" data-ru="Звонок Kai — скоро" data-en="Calling Kai — coming soon">Звонок Kai — скоро</h3>
-      <p class="kc-text" data-ru="Скоро с Kai можно будет поговорить голосом: рассказываете о бизнесе вслух, он задаёт вопросы и настраивает CRM прямо во время разговора. А голосовые сообщения в Telegram Kai понимает уже сейчас." data-en="Soon you will be able to talk to Kai: describe your business out loud, Kai asks questions and sets up the CRM during the call. Kai already understands voice messages in Telegram.">Скоро с Kai можно будет поговорить голосом: рассказываете о бизнесе вслух, он задаёт вопросы и настраивает CRM прямо во время разговора. А голосовые сообщения в Telegram Kai понимает уже сейчас.</p>
+      <p class="kc-text" data-ru="Скоро с Kai можно будет поговорить голосом — прямо в браузере и в Telegram: рассказываете о бизнесе вслух, он задаёт вопросы и настраивает CRM во время разговора. А голосовые сообщения Kai понимает уже сейчас — в чате на сайте и в Telegram." data-en="Soon you will be able to talk to Kai — right in the browser and in Telegram: describe your business out loud, Kai asks questions and sets up the CRM during the call. Kai already understands voice messages — in the chat on this site and in Telegram.">Скоро с Kai можно будет поговорить голосом — прямо в браузере и в Telegram: рассказываете о бизнесе вслух, он задаёт вопросы и настраивает CRM во время разговора. А голосовые сообщения Kai понимает уже сейчас — в чате на сайте и в Telegram.</p>
       <div class="kc-btns">
-        <a class="kc-go" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3M8 21h8"/></svg><span data-ru="Отправить голосовое в Telegram" data-en="Send a voice note in Telegram">Отправить голосовое в Telegram</span></a>
+        <button type="button" class="kc-go kc-chat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3M8 21h8"/></svg><span data-ru="Записать голосовое в чате на сайте" data-en="Record a voice note in the site chat">Записать голосовое в чате на сайте</span></button>
+        <a class="kc-tg" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" data-ru="или отправить голосовое в Telegram" data-en="or send a voice note in Telegram">или отправить голосовое в Telegram</a>
         <button class="kc-close" type="button" data-ru="Закрыть" data-en="Close">Закрыть</button>
       </div>
     </div>
@@ -4208,7 +4212,8 @@ reveals.forEach(r => observer.observe(r));
   dlg.addEventListener('click', function(e){
     if (e.target === dlg && downOnDlg) close();                           /* a tap on the blurred page closes it */
     var b = e.target.closest && e.target.closest('.kc-x, .kc-close'); if (b) close();
-    if (e.target.closest && e.target.closest('.kc-go')) { if (window.kaiTrack) kaiTrack('call_voice'); close(); }
+    if (e.target.closest && e.target.closest('.kc-chat')) { if (window.kaiTrack) kaiTrack('call_chat'); close(); if (window.kaiChatOpen) kaiChatOpen(); }
+    if (e.target.closest && e.target.closest('.kc-tg')) { if (window.kaiTrack) kaiTrack('call_voice'); close(); }
   });
 })();
 
@@ -4423,7 +4428,7 @@ window.addEventListener('scroll', () => {
       f.src = CHAT_URL + (document.documentElement.lang === 'en' ? '?lang=en' : '?lang=ru') + (handoffCode ? '&h=' + encodeURIComponent(handoffCode) : '');
       handoffCode = null;
       f.title = 'Kai chat';
-      f.setAttribute('allow', 'clipboard-write');
+      f.setAttribute('allow', 'microphone; autoplay; clipboard-write');   /* voice notes and calls inside the chat */
       panel.appendChild(f);
       loaded = true;
     }
