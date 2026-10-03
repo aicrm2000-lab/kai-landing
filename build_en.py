@@ -18,8 +18,8 @@ BASE = "https://aicrm2000-lab.github.io/kai-landing/"
 
 EN_META = {
     "title": "Kai — Set up your CRM without developers | AI assistant for amoCRM and Kommo",
-    "description": ("Kai is an AI assistant that sets up amoCRM and Kommo from a plain-language message in Telegram or "
-                    "your browser: pipelines, fields, tasks, automations, integrations and analytics. 3 days free, no card."),
+    "description": ("Kai sets up amoCRM and Kommo from a plain-language message in Telegram or your browser: "
+                    "pipelines, fields, tasks, automations, analytics. 3 days free, no card."),
     "og_title": "Kai — AI assistant that sets up your CRM",
     "og_description": ("Set up amoCRM and Kommo by chatting: pipelines, fields, tasks, automations, integrations, "
                        "analytics. 65 actions. 3 days free, no card."),

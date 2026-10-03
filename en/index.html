@@ -7,7 +7,7 @@
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Kai — Set up your CRM without developers | AI assistant for amoCRM and Kommo</title>
-<meta name="description" content="Kai is an AI assistant that sets up amoCRM and Kommo from a plain-language message in Telegram or your browser: pipelines, fields, tasks, automations, integrations and analytics. 3 days free, no card.">
+<meta name="description" content="Kai sets up amoCRM and Kommo from a plain-language message in Telegram or your browser: pipelines, fields, tasks, automations, analytics. 3 days free, no card.">
 <meta name="keywords" content="amoCRM, Kommo, Bitrix24, CRM setup, AI assistant, CRM automation, Telegram CRM bot, sales pipelines, amoCRM API, Kommo API, CRM without developers">
 <meta name="author" content="Kai">
 <meta name="robots" content="index, follow">
@@ -1074,6 +1074,7 @@ hr.sep {
 
 /* ─── COMPARE SECTION ─── */
 .compare { background: var(--carbon); }
+.compare { padding: 72px 0 8px; }
 .compare-grid {
   margin-top: 56px;
   display: grid;
@@ -2450,8 +2451,14 @@ button.kc-go { border: 0; cursor: pointer; width: 100%; }
 .install-cta:hover { opacity: .85; transform: translateY(-1px); }
 
 /* ─── RESPONSIVE ─── */
+/* short screens (1366×768 laptops, small phones): a lower pixel field so the buttons stay on the first screen */
+@media (max-height: 820px) {
+  .hero { padding-top: clamp(64px, 8vh, 90px); }
+  .hero-logo-space { height: clamp(220px, 36vh, 600px); }
+}
 @media (max-width: 768px) {
   section { padding: 64px 16px; }
+  .compare { padding: 64px 16px 8px; }   /* the inline padding used to win and left no gutter */
   .container { padding: 0; }
   .cta-band { padding: 64px 16px; }
   .cta-inner h2 { font-size: clamp(24px,6vw,32px); }
@@ -2464,7 +2471,7 @@ button.kc-go { border: 0; cursor: pointer; width: 100%; }
 @media (max-width: 640px) {
   .connect-strip { font-size: 12px; padding: 10px 16px; gap: 8px; margin: 0 16px; }
   .hero { padding: 0; }
-  .hero-logo-space { min-height: 38vh; }
+  .hero-logo-space { min-height: 0; }
   .hero h1 { font-size: clamp(28px,8vw,40px); }
   .hero-sub { font-size: 16px; }
   .hero-actions { flex-direction: column; align-items: stretch; gap: 10px; }
@@ -3483,7 +3490,7 @@ button.kc-go { border: 0; cursor: pointer; width: 100%; }
 <hr class="sep">
 
 <!-- PRICING -->
-<section class="compare" id="compare" style="padding:72px 0 8px">
+<section class="compare" id="compare">
   <div class="container">
     <p class="section-label reveal" data-ru="Сравнение" data-en="Comparison">Comparison</p>
     <h2 class="section-heading reveal reveal-delay-1" data-ru="Kai против <em>других способов</em> настроить CRM" data-en="Kai vs <em>other ways</em> to set up a CRM">Kai vs <em>other ways</em> to set up a CRM</h2>
