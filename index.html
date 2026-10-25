@@ -7,7 +7,7 @@
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>AI-ассистент для настройки CRM (amoCRM, Kommo) | Kai</title>
-<meta name="description" content="Kai — AI-ассистент, который настраивает вашу CRM по сообщению в чате: в Telegram или в браузере. 65 действий: воронки, поля, сделки, автоматизации, аналитика. 3 дня бесплатно, без карты.">
+<meta name="description" content="Kai — AI-ассистент, который настраивает вашу CRM по сообщению в чате: в Telegram или в браузере. Воронки, поля, сделки, автоматизации. 3 дня бесплатно, без карты.">
 <meta name="keywords" content="amoCRM, Kommo, Битрикс24, Bitrix24, настройка CRM, AI ассистент, автоматизация CRM, Telegram бот CRM, воронки продаж, API amoCRM, CRM без программиста, настройка воронок, кастомные поля amoCRM, настройка Битрикс24, интеграция CRM, Kai CRM, AI CRM bot">
 <meta name="author" content="Kai">
 <meta name="robots" content="index, follow">
@@ -67,7 +67,8 @@
     "sameAs": [
       "https://x.com/kai_crm",
       "https://www.threads.com/@kai_crm",
-      "https://t.me/aiicrm_bot"
+      "https://t.me/aiicrm_bot",
+      "https://github.com/aicrm2000-lab"
     ]
   }
 }
@@ -288,6 +289,7 @@ nav {
 @media (max-width: 860px) {
   .nav-links { display: none; }
   .nav-inner .lang-toggle { display: none; }
+  .nav-inner .hw-toggle { display: none !important; }   /* phones: the toggle lives in the menu */
   .nav-cta { display: none; }
   .nav-inner .burger { display: flex; margin-left: 10px; }
   .nav-connect {
@@ -1266,6 +1268,9 @@ footer {
 }
 .footer-bottom a { color: var(--ash); transition: color 150ms; }
 .footer-bottom a:hover { color: var(--fog); }
+
+.table-hint { display: none; margin-top: 28px; font: 500 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+#compare table th:first-child, #compare table td:first-child { position: sticky; left: 0; z-index: 1; background: var(--bg-1); box-shadow: 1px 0 0 var(--border); }
 
 /* ─── SCROLL ANIMATIONS ─── */
 .reveal {
@@ -2455,6 +2460,11 @@ button.kc-go { border: 0; cursor: pointer; width: 100%; }
   .hero h1 { font-size: clamp(28px,8vw,40px); }
   .hero-sub { font-size: 16px; }
   .hero-actions { flex-direction: column; align-items: stretch; gap: 10px; }
+  .hero-actions .btn-call, .hero-actions .btn-ghost { display: none; }   /* the call lives in the nav; «how it works» is one swipe below */
+  .hero-note { margin-top: 18px; }
+  .cookie-banner { padding: 10px 14px 12px; gap: 10px; font-size: 12px; line-height: 1.4; }
+  .cookie-btn { padding: 8px 14px; font-size: 12px; }
+  .table-hint { display: block; }
   .hero-actions .btn-primary,
   .hero-actions .btn-ghost,
   .hero-actions .btn-call { justify-content: center; width: 100%; text-align: center; }
@@ -2700,7 +2710,6 @@ html.hw .section-label::before {
     <h1 data-ru="Настройка <span class='a'>CRM</span><br>без программистов" data-en="Set up your <span class='a'>CRM</span><br>without developers">Настройка <span class="a">CRM</span><br>без программистов</h1>
 
     <p class="hero-sub" data-ru="Kai&nbsp;— AI-ассистент, который настраивает твою CRM по&nbsp;сообщению в&nbsp;обычном чате: в&nbsp;Telegram или прямо в&nbsp;браузере. Задаёт правильные вопросы, строит план под&nbsp;твой бизнес и&nbsp;настраивает CRM автоматически." data-en="Kai is an AI assistant that sets up your CRM from a&nbsp;plain-language message in Telegram or right in your&nbsp;browser. It asks the right questions, builds a&nbsp;plan for your business and configures the CRM automatically.">Kai&nbsp;— AI-ассистент, который настраивает твою CRM по&nbsp;сообщению в&nbsp;обычном чате: в&nbsp;Telegram или прямо в&nbsp;браузере. Задаёт правильные вопросы, строит план под&nbsp;твой бизнес и&nbsp;настраивает CRM автоматически.</p>
-    <p class="hero-note" data-ru="Нужен аккаунт в твоей CRM — у большинства систем есть бесплатный пробный период. Какие CRM поддерживаются — <a href='#crm'>ниже</a>." data-en="You need an account in your CRM — most systems offer a free trial. Supported CRMs are listed <a href='#crm'>below</a>.">Нужен аккаунт в твоей CRM — у большинства систем есть бесплатный пробный период. Какие CRM поддерживаются — <a href='#crm'>ниже</a>.</p>
 
     <div class="hero-actions">
       <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="btn-primary">
@@ -2720,6 +2729,7 @@ html.hw .section-label::before {
         <span data-ru="Как это работает" data-en="How it works">Как это работает</span>
       </a>
     </div>
+    <p class="hero-note" data-ru="Нужен аккаунт в твоей CRM — у большинства систем есть бесплатный пробный период. Какие CRM поддерживаются — <a href='#crm'>ниже</a>." data-en="You need an account in your CRM — most systems offer a free trial. Supported CRMs are listed <a href='#crm'>below</a>.">Нужен аккаунт в твоей CRM — у большинства систем есть бесплатный пробный период. Какие CRM поддерживаются — <a href='#crm'>ниже</a>.</p>
   </div>
 </section>
 
@@ -3473,6 +3483,7 @@ html.hw .section-label::before {
     <p class="section-label reveal" data-ru="Сравнение" data-en="Comparison">Сравнение</p>
     <h2 class="section-heading reveal reveal-delay-1" data-ru="Kai против других способов настроить CRM" data-en="Kai vs other ways to set up a CRM">Kai против других способов настроить CRM</h2>
     <p class="section-sub reveal reveal-delay-2" data-ru="Честно: у каждого пути есть место. Kai закрывает самый частый случай — когда нужна рабочая CRM за минуты, а не проект на недели." data-en="Honestly: every route has its place. Kai covers the most common case — a working CRM in minutes, not a weeks-long project.">Честно: у каждого пути есть место. Kai закрывает самый частый случай — когда нужна рабочая CRM за минуты, а не проект на недели.</p>
+    <p class="table-hint reveal" data-ru="Таблица листается вбок" data-en="The table scrolls sideways">Таблица листается вбок</p>
     <div class="reveal reveal-delay-2" style="margin-top:32px;overflow-x:auto;border:1px solid var(--border);border-radius:16px;background:var(--bg-1)">
       <table style="width:100%;min-width:720px;border-collapse:collapse;font-size:14px;line-height:1.45">
         <thead>
