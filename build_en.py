@@ -21,8 +21,7 @@ EN_META = {
     "description": ("Kai sets up your CRM from a plain-language message in Telegram or your browser: "
                     "pipelines, fields, tasks, automations, analytics. 65 actions. 3 days free, no card."),
     "og_title": "Kai — AI assistant that sets up your CRM",
-    "og_description": ("Set up your CRM by chatting — in Telegram or in your browser: pipelines, fields, tasks, automations, "
-                       "analytics. 65 actions. 3 days free, no card."),
+    "og_description": "An AI assistant that configures your CRM from a chat message — in Telegram or in your browser.",
     "keywords": ("amoCRM, Kommo, Bitrix24, CRM setup, AI assistant, CRM automation, Telegram CRM bot, sales pipelines, "
                  "amoCRM API, Kommo API, CRM without developers"),
 }
