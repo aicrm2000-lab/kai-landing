@@ -157,7 +157,6 @@ def main() -> None:
     for prop in ("og:image", "twitter:image"):
         html = re.sub(rf'(<meta (?:property|name)="{prop}" content=")(?!https?:)([^"]+)"',
                       lambda m: f'{m.group(1)}{BASE}{m.group(2)}"', html)
-    html = html.replace("og-image-v3.png", "og-image-v3-en.png")   # английская OG-картинка
     # английские версии политик
     for p in ("privacy", "terms", "refund"):
         html = html.replace(f'href="../{p}.html"', f'href="../{p}-en.html"')
