@@ -2593,7 +2593,7 @@ button.kc-go { border: 0; cursor: pointer; width: 100%; }
 html.hw {
   --accent: #FF7A1A; --accent-2: #FFB347;
   --accent-rgb: 255,122,26; --accent-2-rgb: 255,179,71; --accent-hi-rgb: 255,200,130;
-  --accent-deep: #E05E00; --accent-mid: #FF8F3A; --accent-light: #FFD59E;
+  --accent-deep: #E05E00; --accent-mid: #FF8F3A; --accent-light: #FFD59E; --mark-dot-rgb: 118,186,74;
   --accent-dim: rgba(255,122,26,.13); --accent-glow: rgba(255,122,26,.30);
   --accent-gradient: linear-gradient(135deg, #FF7A1A 0%, #FFB347 100%);
   --bg: #0C0A0E; --bg-1: #140F13; --bg-2: #1C1518; --border: #2E201C; --border-soft: rgba(255,122,26,.14);
@@ -4891,7 +4891,21 @@ window.addEventListener('scroll', () => {
     const ring=readCells(g,R,c);g.clearRect(0,0,R,R);
     const dr=rad*0.98,dRad=lw*0.5;g.beginPath();g.arc(c+Math.cos(gc)*dr,c+Math.sin(gc)*dr,dRad,0,Math.PI*2);g.fill();
     return {ring,dot:readCells(g,R,c),R};}
-  const M=markCells();
+  /* Halloween (html.hw): the mark is a pumpkin — body → «ring» particles, stem → «dot» particles (green via --mark-dot-rgb) */
+  function pumpkinCells(){const R=48,o=document.createElement('canvas');o.width=o.height=R;const g=o.getContext('2d'),c=R/2;
+    g.fillStyle='#fff';const el=(x,y,rx,ry)=>{g.beginPath();g.ellipse(x,y,rx,ry,0,0,Math.PI*2);g.fill();};
+    el(24,28,15,16.5);el(13.5,28,9.5,15);el(34.5,28,9.5,15);
+    g.globalCompositeOperation='destination-out';
+    const tri=(a,b,d)=>{g.beginPath();g.moveTo(a[0],a[1]);g.lineTo(b[0],b[1]);g.lineTo(d[0],d[1]);g.closePath();g.fill();};
+    tri([12,25],[21,25],[16.5,17]);tri([27,25],[36,25],[31.5,17]);tri([22,30.5],[26,30.5],[24,27]);
+    g.beginPath();g.moveTo(10,33);g.lineTo(38,33);g.lineTo(35,39);g.lineTo(31,35.5);g.lineTo(27.5,40);g.lineTo(24,36);g.lineTo(20.5,40);g.lineTo(17,35.5);g.lineTo(13,39);g.closePath();g.fill();
+    g.fillRect(17,12,1,5);g.fillRect(30,12,1,5);g.fillRect(17,41,1,4);g.fillRect(30,41,1,4);   /* lobe seams */
+    g.globalCompositeOperation='source-over';
+    const ring=readCells(g,R,c);g.clearRect(0,0,R,R);
+    g.beginPath();g.moveTo(22,12.5);g.lineTo(23.5,5);g.lineTo(28,4);g.lineTo(27,12.5);g.closePath();g.fill();
+    return {ring,dot:readCells(g,R,c),R};}
+  const M=document.documentElement.classList.contains('hw')?pumpkinCells():markCells();
+  const DOTC=_cssRGB('--mark-dot-rgb', HI);
   const particles=M.ring.map(c=>({dot:0,gx:c.gx,gy:c.gy,x:0,y:0,vx:0,vy:0,ph:Math.random()*6.28,wx:0,wy:0,init:0}))
     .concat(M.dot.map(c=>({dot:1,gx:c.gx,gy:c.gy,x:0,y:0,vx:0,vy:0,ph:Math.random()*6.28,wx:0,wy:0,init:0})));
 
@@ -4914,7 +4928,7 @@ window.addEventListener('scroll', () => {
     if(reduce)drawStatic();}
   /* reduced motion: no frame loop, so the still logo is repainted after every resize */
   function drawStatic(){ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='lighter';const s=Math.max(2,baseCell*0.62);
-    particles.forEach(p=>{ctx.fillStyle=rgba(p.dot?HI:ACC,p.dot?1:0.8);ctx.fillRect(Math.round(cx+p.gx*baseCell-s/2),Math.round(cy+p.gy*baseCell-s/2),Math.ceil(s),Math.ceil(s));});
+    particles.forEach(p=>{ctx.fillStyle=rgba(p.dot?DOTC:ACC,p.dot?1:0.8);ctx.fillRect(Math.round(cx+p.gx*baseCell-s/2),Math.round(cy+p.gy*baseCell-s/2),Math.ceil(s),Math.ceil(s));});
     ctx.globalCompositeOperation='source-over';}
 
   let wState='idle',wT=0,wNext=5+Math.random()*4,wPhase='in',wScale=1,wIdx=0;
@@ -4956,7 +4970,7 @@ window.addEventListener('scroll', () => {
         if(d2<R*R){const d=Math.sqrt(d2)||1,fr=1-d/R;p.vx+=dx/d*fr*fr*7;p.vy+=dy/d*fr*fr*7;}}
       p.vx*=0.82;p.vy*=0.82;p.x+=p.vx;p.y+=p.vy;
       const shim=reduce?0.9:(0.6+0.4*Math.sin(t*2.2+p.ph));
-      const col=wordActive?HI:(p.dot?HI:ACC);
+      const col=wordActive?HI:(p.dot?DOTC:ACC);
       const al=wordActive?Math.min(1,0.95*shim):(p.dot?1:0.8)*shim;
       ctx.fillStyle=rgba(col,al);ctx.fillRect(Math.round(p.x-sz/2),Math.round(p.y-sz/2),Math.ceil(sz),Math.ceil(sz));
     }
