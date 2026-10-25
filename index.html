@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://ai-crm-bot-production.up.railway.app; connect-src 'self' https://ai-crm-bot-production.up.railway.app; base-uri 'self'; form-action 'self'">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Kai — Настройка CRM без программистов | AI-ассистент для amoCRM и Kommo</title>
-<meta name="description" content="Kai — AI-ассистент, который настраивает amoCRM и Kommo через браузер или Telegram. 65 действий: воронки, поля, сделки, автоматизации. Битрикс24 — бета.">
+<title>AI-ассистент для настройки CRM (amoCRM, Kommo) | Kai</title>
+<meta name="description" content="Kai — AI-ассистент, который настраивает вашу CRM по сообщению в чате: в Telegram или в браузере. 65 действий: воронки, поля, сделки, автоматизации, аналитика. 3 дня бесплатно, без карты.">
 <meta name="keywords" content="amoCRM, Kommo, Битрикс24, Bitrix24, настройка CRM, AI ассистент, автоматизация CRM, Telegram бот CRM, воронки продаж, API amoCRM, CRM без программиста, настройка воронок, кастомные поля amoCRM, настройка Битрикс24, интеграция CRM, Kai CRM, AI CRM bot">
 <meta name="author" content="Kai">
 <meta name="robots" content="index, follow">
@@ -20,7 +20,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aii-crm.com/">
 <meta property="og:title" content="Kai — AI-ассистент для настройки CRM">
-<meta property="og:description" content="Настройка amoCRM и Kommo через браузер или Telegram. 65 действий: воронки, поля, сделки, автоматизации. Битрикс24 — бета.">
+<meta property="og:description" content="Настройка CRM по сообщению в чате — в Telegram или в браузере. 65 действий: воронки, поля, сделки, автоматизации, аналитика. 3 дня бесплатно.">
 <meta property="og:image" content="https://aii-crm.com/og-image-v2.png">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:locale:alternate" content="en_US">
@@ -29,7 +29,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Kai — AI-ассистент для настройки CRM">
-<meta name="twitter:description" content="Настройка amoCRM и Kommo через браузер или Telegram. Битрикс24 — бета. 65 действий без программистов.">
+<meta name="twitter:description" content="Настройка CRM по сообщению в чате — в Telegram или в браузере. 65 действий без программистов. 3 дня бесплатно.">
 <meta name="twitter:image" content="https://aii-crm.com/og-image-v2.png">
 
 <!-- Structured Data / JSON-LD -->
@@ -41,7 +41,7 @@
   "name": "Kai",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web, Telegram",
-  "description": "AI-ассистент для настройки и управления CRM-системами amoCRM и Kommo через браузер или Telegram. 65 действий: воронки, поля, этапы, сделки, контакты, автоматизации.",
+  "description": "AI-ассистент, который настраивает CRM по сообщению в чате — в Telegram или в браузере. 65 действий: воронки, поля, этапы, сделки, контакты, автоматизации, аналитика.",
   "url": "https://aii-crm.com/",
   "offers": {
     "@type": "AggregateOffer",
@@ -54,7 +54,7 @@
     "AI-консультации по структуре CRM",
     "Создание воронок и этапов продаж",
     "Кастомные поля в сделки, контакты, компании",
-    "Автоматизации: Digital Pipeline, триггеры, Salesbot",
+    "Автоматизации по событиям CRM",
     "Генерация технического задания в PDF",
     "Распознавание голосовых сообщений",
     "OAuth-подключение в 1 клик"
@@ -85,7 +85,7 @@
       "name": "Что умеет Kai?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Kai — AI-ассистент, который через браузер или Telegram настраивает amoCRM и Kommo: создаёт воронки, поля, этапы, сделки, контакты, задачи, автоматизации. 65 действий без программистов."
+        "text": "Kai — AI-ассистент, который настраивает CRM по сообщению в чате — в Telegram или в браузере: создаёт воронки, поля, этапы, сделки, контакты, задачи, автоматизации. 65 действий без программистов."
       }
     },
     {
@@ -125,7 +125,7 @@
       "name": "Можно ли попробовать бесплатно?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Да, первые 3 дня бесплатно без ограничений. Попробуйте без риска."
+        "text": "Да: 3 дня бесплатно и без карты, отсчёт — с подключения CRM. В пробном периоде ~25 запросов и возможности тарифа Start."
       }
     }
   ]
@@ -2709,11 +2709,11 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
     <li data-hint="t"><span data-ru="нажмите на логотип" data-en="tap the logo">нажмите на логотип</span><span data-ru="" data-en=""></span></li>
     <li data-hw="1"><span data-ru="сделки-призраки: висят в воронке с прошлого года" data-en="ghost deals: haunting the pipeline since last year">сделки-призраки: висят в воронке с прошлого года</span><span data-ru="правило «сделка без движения 14 дней → задача менеджеру», без спиритизма" data-en="rule “no movement for 14 days → task for the rep”, no séance needed">правило «сделка без движения 14 дней → задача менеджеру», без спиритизма</span></li>
     <li data-hw="1"><span data-ru="база клиентов как дом с привидениями: все слышали, никто не видел" data-en="a client base like a haunted house: everyone’s heard of it, nobody’s seen it">база клиентов как дом с привидениями: все слышали, никто не видел</span><span data-ru="Kai показывает, кто реально в CRM и что с ними происходит" data-en="Kai shows who is really in the CRM and what happens to them">Kai показывает, кто реально в CRM и что с ними происходит</span></li>
-    <li><span data-ru="лид без источника — как чек без суммы" data-en="a lead with no source — a receipt with no total">лид без источника — как чек без суммы</span><span data-ru="источники лидов заведу за вас" data-en="lead sources set up for you">источники лидов заведу за вас</span></li>
+    <li><span data-ru="лид без источника — как чек без суммы" data-en="a lead with no source — a receipt with no total">лид без источника — как чек без суммы</span><span data-ru="источники лидов заведу за тебя" data-en="lead sources set up for you">источники лидов заведу за тебя</span></li>
     <li><span data-ru="сделка без задачи — сделка без будущего" data-en="a deal with no task — a deal with no future">сделка без задачи — сделка без будущего</span><span data-ru="автозадача на каждом этапе воронки" data-en="an auto-task at every pipeline stage">автозадача на каждом этапе воронки</span></li>
     <li><span data-ru="менеджер ушёл — база осталась" data-en="the rep quit — the data stayed">менеджер ушёл — база осталась</span><span data-ru="здоровье сделки: что брошено и что дальше" data-en="deal health: what was dropped, what is next">здоровье сделки: что брошено и что дальше</span></li>
     <li><span data-ru="«клиент думает» — этап, где сделки живут вечно" data-en="“the client is thinking” — where deals live forever">«клиент думает» — этап, где сделки живут вечно</span><span data-ru="аудит покажет, где сделки застряли" data-en="the audit shows where deals get stuck">аудит покажет, где сделки застряли</span></li>
-    <li><span data-ru="воронка без этапов — просто список" data-en="a pipeline with no stages is just a list">воронка без этапов — просто список</span><span data-ru="этапы под ваш процесс, а не по шаблону" data-en="stages built around your process">этапы под ваш процесс, а не по шаблону</span></li>
+    <li><span data-ru="воронка без этапов — просто список" data-en="a pipeline with no stages is just a list">воронка без этапов — просто список</span><span data-ru="этапы под твой процесс, а не по шаблону" data-en="stages built around your process">этапы под твой процесс, а не по шаблону</span></li>
     <li><span data-ru="горячий лид остыл за выходные" data-en="a hot lead goes cold over the weekend">горячий лид остыл за выходные</span><span data-ru="нет ответа 30 минут — задача по сделке" data-en="no reply for 30 minutes — a task on the deal">нет ответа 30 минут — задача по сделке</span></li>
     <li><span data-ru="если всё в голове — это не система" data-en="if it’s all in your head, it’s not a system">если всё в голове — это не система</span><span data-ru="ТЗ — в PDF, регламент — в чате, а не в голове" data-en="the spec as a PDF, the SOP in your chat">ТЗ — в PDF, регламент — в чате, а не в голове</span></li>
     <li><span data-ru="отчёт за квартал не должен собираться неделю" data-en="a quarterly report shouldn’t take a week">отчёт за квартал не должен собираться неделю</span><span data-ru="аналитика воронки — одним сообщением" data-en="pipeline analytics in one message">аналитика воронки — одним сообщением</span></li>
@@ -2730,8 +2730,8 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
 
     <h1 data-ru="Настройка <span class='a'>CRM</span><br>без программистов" data-en="Set up your <span class='a'>CRM</span><br>without developers">Настройка <span class="a">CRM</span><br>без программистов</h1>
 
-    <p class="hero-sub" data-ru="Kai&nbsp;— AI-ассистент, который настраивает amoCRM, Kommo и&nbsp;Битрикс24&nbsp;(бета) по&nbsp;сообщению в&nbsp;обычном чате: в&nbsp;Telegram или прямо в&nbsp;браузере. Задаёт правильные вопросы, строит план под&nbsp;ваш бизнес и&nbsp;настраивает CRM автоматически." data-en="Kai is an AI assistant that sets up amoCRM, Kommo and Bitrix24&nbsp;(beta) from a&nbsp;plain-language message in Telegram or right in your&nbsp;browser. It asks the right questions, builds a&nbsp;plan for your business and configures the CRM automatically.">Kai&nbsp;— AI-ассистент, который настраивает amoCRM, Kommo и&nbsp;Битрикс24&nbsp;(бета) по&nbsp;сообщению в&nbsp;обычном чате: в&nbsp;Telegram или прямо в&nbsp;браузере. Задаёт правильные вопросы, строит план под&nbsp;ваш бизнес и&nbsp;настраивает CRM автоматически.</p>
-    <p class="hero-note" data-ru="Нужен аккаунт <b>amoCRM</b> или <b>Kommo</b> — у них 14 дней бесплатно. Bitrix24 пока в бете: структура и данные, без автоматизаций." data-en="You need an <b>amoCRM</b> or <b>Kommo</b> account — they give 14 days free. Bitrix24 is in beta: structure and data, no automations yet.">Нужен аккаунт <b>amoCRM</b> или <b>Kommo</b> — у них 14 дней бесплатно. Bitrix24 пока в бете: структура и данные, без автоматизаций.</p>
+    <p class="hero-sub" data-ru="Kai&nbsp;— AI-ассистент, который настраивает твою CRM по&nbsp;сообщению в&nbsp;обычном чате: в&nbsp;Telegram или прямо в&nbsp;браузере. Задаёт правильные вопросы, строит план под&nbsp;твой бизнес и&nbsp;настраивает CRM автоматически." data-en="Kai is an AI assistant that sets up your CRM from a&nbsp;plain-language message in Telegram or right in your&nbsp;browser. It asks the right questions, builds a&nbsp;plan for your business and configures the CRM automatically.">Kai&nbsp;— AI-ассистент, который настраивает твою CRM по&nbsp;сообщению в&nbsp;обычном чате: в&nbsp;Telegram или прямо в&nbsp;браузере. Задаёт правильные вопросы, строит план под&nbsp;твой бизнес и&nbsp;настраивает CRM автоматически.</p>
+    <p class="hero-note" data-ru="Нужен аккаунт в твоей CRM — у большинства систем есть бесплатный пробный период. Какие CRM поддерживаются — <a href='#crm'>ниже</a>." data-en="You need an account in your CRM — most systems offer a free trial. Supported CRMs are listed <a href='#crm'>below</a>.">Нужен аккаунт в твоей CRM — у большинства систем есть бесплатный пробный период. Какие CRM поддерживаются — <a href='#crm'>ниже</a>.</p>
 
     <div class="hero-actions">
       <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="btn-primary">
@@ -2837,7 +2837,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
     <div class="kd reveal" id="kd">
       <div class="kd-top">
         <span class="kd-label" data-ru="Демо по сценарию · ничего не отправляется" data-en="Scripted demo · nothing is sent">Демо по сценарию · ничего не отправляется</span>
-        <div class="kd-chips" role="group" aria-labelledby="kdPick"><span class="kd-pick" id="kdPick" data-ru="Выберите бизнес:" data-en="Pick a business:">Выберите бизнес:</span><button class="kd-chip" type="button" data-niche="dental" aria-pressed="true" data-ru="Стоматология" data-en="Dental clinic">Стоматология</button><button class="kd-chip" type="button" data-niche="realty" aria-pressed="false" data-ru="Недвижимость" data-en="Real estate">Недвижимость</button><button class="kd-chip" type="button" data-niche="store" aria-pressed="false" data-ru="Интернет-магазин" data-en="Online store">Интернет-магазин</button><button class="kd-chip" type="button" data-niche="renovation" aria-pressed="false" data-ru="Ремонт квартир" data-en="Renovation">Ремонт квартир</button><button class="kd-chip" type="button" data-niche="auto" aria-pressed="false" data-ru="Автосервис" data-en="Car service">Автосервис</button><button class="kd-chip" type="button" data-niche="beauty" aria-pressed="false" data-ru="Салон красоты" data-en="Beauty salon">Салон красоты</button><button class="kd-chip" type="button" data-niche="courses" aria-pressed="false" data-ru="Онлайн-школа" data-en="Online school">Онлайн-школа</button></div>
+        <div class="kd-chips" role="group" aria-labelledby="kdPick"><span class="kd-pick" id="kdPick" data-ru="Выбери бизнес:" data-en="Pick a business:">Выбери бизнес:</span><button class="kd-chip" type="button" data-niche="dental" aria-pressed="true" data-ru="Стоматология" data-en="Dental clinic">Стоматология</button><button class="kd-chip" type="button" data-niche="realty" aria-pressed="false" data-ru="Недвижимость" data-en="Real estate">Недвижимость</button><button class="kd-chip" type="button" data-niche="store" aria-pressed="false" data-ru="Интернет-магазин" data-en="Online store">Интернет-магазин</button><button class="kd-chip" type="button" data-niche="renovation" aria-pressed="false" data-ru="Ремонт квартир" data-en="Renovation">Ремонт квартир</button><button class="kd-chip" type="button" data-niche="auto" aria-pressed="false" data-ru="Автосервис" data-en="Car service">Автосервис</button><button class="kd-chip" type="button" data-niche="beauty" aria-pressed="false" data-ru="Салон красоты" data-en="Beauty salon">Салон красоты</button><button class="kd-chip" type="button" data-niche="courses" aria-pressed="false" data-ru="Онлайн-школа" data-en="Online school">Онлайн-школа</button></div>
       </div>
       <div class="kd-panel" data-niche="dental">
         <div class="kd-chat">
@@ -2845,7 +2845,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
           <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Сколько первичных обращений в месяц?" data-en="How many new patient requests a month?">Сколько первичных обращений в месяц?</span><div class="kd-opts done"><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="до 50" data-en="up to 50">до 50</button><button class="kd-opt pick" type="button" aria-pressed="true" aria-disabled="true" data-ru="50–150" data-en="50–150">50–150</button><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="больше 150" data-en="over 150">больше 150</button></div></div>
           <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Первичные пациенты»" data-en="pipeline “New patients”">воронка «Первичные пациенты»</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages built around your process">6 этапов под ваш процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
+          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Первичные пациенты»" data-en="pipeline “New patients”">воронка «Первичные пациенты»</li><li data-ru="6 этапов под твой процесс" data-en="6 stages built around your process">6 этапов под твой процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
           <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям." data-en="Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.">Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям.</span></div>
         </div>
         <div class="kd-board">
@@ -2862,7 +2862,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
           <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Как заявки попадают к агентам?" data-en="How do requests reach the agents?">Как заявки попадают к агентам?</span><div class="kd-opts done"><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="берут сами" data-en="agents take them">берут сами</button><button class="kd-opt pick" type="button" aria-pressed="true" aria-disabled="true" data-ru="через колл-центр" data-en="via a call center">через колл-центр</button><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="по очереди" data-en="round robin">по очереди</button></div></div>
           <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Покупатели»" data-en="pipeline “Buyers”">воронка «Покупатели»</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages built around your process">6 этапов под ваш процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
+          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Покупатели»" data-en="pipeline “Buyers”">воронка «Покупатели»</li><li data-ru="6 этапов под твой процесс" data-en="6 stages built around your process">6 этапов под твой процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
           <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям." data-en="Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.">Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям.</span></div>
         </div>
         <div class="kd-board">
@@ -2879,7 +2879,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
           <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Кто подтверждает заказы?" data-en="Who confirms the orders?">Кто подтверждает заказы?</span><div class="kd-opts done"><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="один человек" data-en="one person">один человек</button><button class="kd-opt pick" type="button" aria-pressed="true" aria-disabled="true" data-ru="2–3 менеджера" data-en="2–3 reps">2–3 менеджера</button><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="смены" data-en="shifts">смены</button></div></div>
           <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Заказы с сайта»" data-en="pipeline “Website orders”">воронка «Заказы с сайта»</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages built around your process">6 этапов под ваш процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
+          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Заказы с сайта»" data-en="pipeline “Website orders”">воронка «Заказы с сайта»</li><li data-ru="6 этапов под твой процесс" data-en="6 stages built around your process">6 этапов под твой процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
           <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям." data-en="Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.">Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям.</span></div>
         </div>
         <div class="kd-board">
@@ -2896,7 +2896,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
           <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Кто общается с клиентом?" data-en="Who talks to the client?">Кто общается с клиентом?</span><div class="kd-opts done"><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="один человек" data-en="one person">один человек</button><button class="kd-opt pick" type="button" aria-pressed="true" aria-disabled="true" data-ru="менеджер и прораб" data-en="sales rep and foreman">менеджер и прораб</button><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="ещё и замерщик" data-en="plus a surveyor">ещё и замерщик</button></div></div>
           <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Продажа договора»" data-en="pipeline “Contract sales”">воронка «Продажа договора»</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages built around your process">6 этапов под ваш процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
+          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Продажа договора»" data-en="pipeline “Contract sales”">воронка «Продажа договора»</li><li data-ru="6 этапов под твой процесс" data-en="6 stages built around your process">6 этапов под твой процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
           <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям." data-en="Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.">Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям.</span></div>
         </div>
         <div class="kd-board">
@@ -2913,7 +2913,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
           <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Сколько машин в месяц проходит через сервис?" data-en="How many cars a month go through the service?">Сколько машин в месяц проходит через сервис?</span><div class="kd-opts done"><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="до 100" data-en="up to 100">до 100</button><button class="kd-opt pick" type="button" aria-pressed="true" aria-disabled="true" data-ru="100–300" data-en="100–300">100–300</button><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="больше 300" data-en="over 300">больше 300</button></div></div>
           <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Запись и заезд»" data-en="pipeline “Booking and intake”">воронка «Запись и заезд»</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages built around your process">6 этапов под ваш процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
+          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Запись и заезд»" data-en="pipeline “Booking and intake”">воронка «Запись и заезд»</li><li data-ru="6 этапов под твой процесс" data-en="6 stages built around your process">6 этапов под твой процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
           <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям." data-en="Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.">Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям.</span></div>
         </div>
         <div class="kd-board">
@@ -2930,7 +2930,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
           <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Сколько визитов в месяц?" data-en="How many visits a month?">Сколько визитов в месяц?</span><div class="kd-opts done"><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="до 200" data-en="up to 200">до 200</button><button class="kd-opt pick" type="button" aria-pressed="true" aria-disabled="true" data-ru="200–500" data-en="200–500">200–500</button><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="больше 500" data-en="over 500">больше 500</button></div></div>
           <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Новые клиенты»" data-en="pipeline “New clients”">воронка «Новые клиенты»</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages built around your process">6 этапов под ваш процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
+          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Новые клиенты»" data-en="pipeline “New clients”">воронка «Новые клиенты»</li><li data-ru="6 этапов под твой процесс" data-en="6 stages built around your process">6 этапов под твой процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
           <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям." data-en="Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.">Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям.</span></div>
         </div>
         <div class="kd-board">
@@ -2947,7 +2947,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
           <div class="kd-dots kd-i" data-ph="1" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="kd-msg kd-k kd-i" data-ph="1" data-g="0"><span data-ru="Продаёте запусками или постоянно?" data-en="Do you sell through launches or evergreen?">Продаёте запусками или постоянно?</span><div class="kd-opts done"><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="запусками" data-en="launches">запусками</button><button class="kd-opt pick" type="button" aria-pressed="true" aria-disabled="true" data-ru="постоянно" data-en="evergreen">постоянно</button><button class="kd-opt" type="button" aria-pressed="false" disabled data-ru="и так и так" data-en="both">и так и так</button></div></div>
           <div class="kd-dots kd-i" data-ph="2" data-g="900" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Продажа курса»" data-en="pipeline “Course sales”">воронка «Продажа курса»</li><li data-ru="6 этапов под ваш процесс" data-en="6 stages built around your process">6 этапов под ваш процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
+          <div class="kd-msg kd-k kd-i" data-ph="2" data-g="0"><span data-ru="План готов:" data-en="The plan is ready:">План готов:</span><ul class="kd-plan"><li data-ru="воронка «Продажа курса»" data-en="pipeline “Course sales”">воронка «Продажа курса»</li><li data-ru="6 этапов под твой процесс" data-en="6 stages built around your process">6 этапов под твой процесс</li><li data-ru="4 поля сделки" data-en="4 deal fields">4 поля сделки</li><li data-ru="2 правила: задачи по событиям" data-en="2 rules that create tasks on events">2 правила: задачи по событиям</li></ul><button class="kd-go" type="button" aria-disabled="true" data-ru="Реализовать" data-en="Implement">Реализовать</button></div>
           <div class="kd-msg kd-k kd-done kd-i" data-ph="3" data-o="20" data-g="0"><span data-ru="Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям." data-en="Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.">Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям.</span></div>
         </div>
         <div class="kd-board">
@@ -2960,7 +2960,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       </div>
       <span class="sr-only kd-live" role="status"></span>
       <div class="kd-foot">
-        <span class="kd-note" data-ru="Настоящий Kai задаёт больше вопросов и строит план под ваш процесс." data-en="The real Kai asks more questions and builds the plan around your process.">Настоящий Kai задаёт больше вопросов и строит план под ваш процесс.</span>
+        <span class="kd-note" data-ru="Настоящий Kai задаёт больше вопросов и строит план под твой процесс." data-en="The real Kai asks more questions and builds the plan around your process.">Настоящий Kai задаёт больше вопросов и строит план под твой процесс.</span>
         <div class="kd-btns"><button class="kd-again" type="button" data-ru="Другой бизнес" data-en="Another business">Другой бизнес</button><button class="kd-cta" type="button" data-ru="Сделать так в моей CRM" data-en="Do this in my CRM">Сделать так в моей CRM</button></div>
       </div>
     </div>
@@ -2992,7 +2992,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
 <section class="features" id="features">
   <div class="container">
     <p class="section-label reveal" data-ru="Возможности" data-en="Features">Возможности</p>
-    <h2 class="section-heading reveal reveal-delay-1" data-ru="Kai — это <em>аналитик</em>,<br>который думает с вами" data-en="Kai is an <em>analyst</em><br>who thinks with you">Kai — это <em>аналитик</em>,<br>который думает с вами</h2>
+    <h2 class="section-heading reveal reveal-delay-1" data-ru="Kai — это <em>аналитик</em>,<br>который думает с тобой" data-en="Kai is an <em>analyst</em><br>who thinks with you">Kai — это <em>аналитик</em>,<br>который думает с тобой</h2>
     <p class="section-sub reveal reveal-delay-2" data-ru="Не&nbsp;шаблонный бот с&nbsp;анкетой. Живой диалог с&nbsp;экспертом, который потом всё реализует сам." data-en="Not a&nbsp;template bot with a&nbsp;survey. A&nbsp;real dialog with an&nbsp;expert who then implements everything.">Не&nbsp;шаблонный бот с&nbsp;анкетой. Живой диалог с&nbsp;экспертом, который потом всё реализует сам.</p>
     <!-- KA:START audit card -->
     <div class="ka reveal" id="ka" data-g="D">
@@ -3078,13 +3078,12 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Понимает голосовые" data-en="Understands voice messages">Понимает голосовые</h3>
-        <p class="feat-desc" data-ru="Отправьте голосовое — Kai распознает речь через Whisper и ответит. Диктуйте задачи, не набирая текст." data-en="Send a voice message — Kai recognizes speech via Whisper and responds. Dictate tasks without typing.">Отправьте голосовое — Kai распознает речь через Whisper и ответит. Диктуйте задачи, не набирая текст.</p>
+        <p class="feat-desc" data-ru="Отправь голосовое — Kai распознает речь и ответит. Диктуй задачи, не набирая текст." data-en="Send a voice message — Kai recognizes speech and responds. Dictate tasks without typing.">Отправь голосовое — Kai распознает речь и ответит. Диктуй задачи, не набирая текст.</p>
         <button type="button" class="feat-call" data-call-kai="feature" aria-haspopup="dialog"><span class="bc-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.6 4-2 1.3a11 11 0 005.1 5.1l1.3-2 4 1.6v3a2 2 0 01-2.2 2A17 17 0 013 6.2 2 2 0 015 4z"/></svg></span><span data-ru="Или позвоните Kai" data-en="Or call Kai">Или позвоните Kai</span> <span class="bc-soon" data-ru="скоро" data-en="soon">скоро</span></button>
       </div>
 
 
       <div class="feat-card glow-card depth-card" data-feat="new-watch">
-        <span class="feat-new">NEW</span>
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <circle cx="12" cy="12" r="9" stroke="#A78BFA" stroke-width="1.3"/>
@@ -3159,7 +3158,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Чек-ап воронки" data-en="Funnel check-up">Чек-ап воронки</h3>
-        <p class="feat-desc" data-ru="Сводка здоровья воронки с оценкой A–D и еженедельной авто-доставкой прямо в чат. Держите руку на пульсе." data-en="Funnel health summary with an A–D grade and weekly auto-delivery right to the chat. Stay on the pulse.">Сводка здоровья воронки с оценкой A–D и еженедельной авто-доставкой прямо в чат. Держите руку на пульсе.</p>
+        <p class="feat-desc" data-ru="Сводка здоровья воронки с оценкой A–D и еженедельной авто-доставкой прямо в чат. Держи руку на пульсе." data-en="Funnel health summary with an A–D grade and weekly auto-delivery right to the chat. Stay on the pulse.">Сводка здоровья воронки с оценкой A–D и еженедельной авто-доставкой прямо в чат. Держи руку на пульсе.</p>
       </div>
 
       <div class="feat-card glow-card depth-card" data-feat="new-sop">
@@ -3216,11 +3215,10 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Мультиаккаунт и мульти-админ" data-en="Multi-account &amp; multi-admin">Мультиаккаунт и мульти-админ</h3>
-        <p class="feat-desc" data-ru="Несколько аккаунтов и админов на одну CRM — без задвоения автоматизаций. Работайте командой над одной воронкой." data-en="Multiple accounts and admins on one CRM — without duplicating automations. Work as a team on one funnel.">Несколько аккаунтов и админов на одну CRM — без задвоения автоматизаций. Работайте командой над одной воронкой.</p>
+        <p class="feat-desc" data-ru="Несколько аккаунтов и админов на одну CRM — без задвоения автоматизаций. Работай командой над одной воронкой." data-en="Multiple accounts and admins on one CRM — without duplicating automations. Work as a team on one funnel.">Несколько аккаунтов и админов на одну CRM — без задвоения автоматизаций. Работай командой над одной воронкой.</p>
       </div>
 
       <div class="feat-card glow-card depth-card" data-feat="new-meeting">
-        <span class="feat-new">NEW</span>
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <rect x="4" y="3" width="16" height="18" rx="2" stroke="#A78BFA" stroke-width="1.3"/>
@@ -3236,7 +3234,6 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       </div>
 
       <div class="feat-card glow-card depth-card" data-feat="new-health">
-        <span class="feat-new">NEW</span>
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M3.5 12h3.2l1.9-5 3 10 2.2-5h6.7" class="dh-pulse" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="34" stroke-dashoffset="0"/>
@@ -3248,7 +3245,6 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       </div>
 
       <div class="feat-card glow-card depth-card" data-feat="new-memory">
-        <span class="feat-new">NEW</span>
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <circle cx="12" cy="12" r="3.1" stroke="#A78BFA" stroke-width="1.3"/>
@@ -3273,7 +3269,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
   <div class="container">
     <p class="section-label reveal" data-ru="Полный контроль" data-en="Full control">Полный контроль</p>
     <h2 class="section-heading reveal reveal-delay-1" data-ru="Полное управление <em>CRM</em><br>через чат" data-en="Full <em>CRM</em> management<br>via chat">Полное управление <em>CRM</em><br>через чат</h2>
-    <p class="section-sub reveal reveal-delay-2" data-ru="65 действий через официальный API вашей CRM. Всё через обычный чат&nbsp;в&nbsp;Telegram — без кода, без интеграторов." data-en="65 actions via your CRM's official API. All through a&nbsp;regular Telegram chat — no code, no integrators.">65 действий через официальный API вашей CRM. Всё через обычный чат&nbsp;в&nbsp;Telegram — без кода, без интеграторов.</p>
+    <p class="section-sub reveal reveal-delay-2" data-ru="65 действий через официальный API твоей CRM — в&nbsp;Telegram или в&nbsp;браузере, без кода и&nbsp;интеграторов." data-en="65 actions via your CRM's official API — in Telegram or in your browser, no code, no integrators.">65 действий через официальный API твоей CRM — в&nbsp;Telegram или в&nbsp;браузере, без кода и&nbsp;интеграторов.</p>
 
     <!-- BA:START before/after -->
     <div class="ba reveal" id="ba">
@@ -3313,7 +3309,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <div class="crm-card">
         <div class="crm-card-num">04</div>
         <h3 class="crm-card-title" data-ru="Задачи и автоматизации" data-en="Tasks and automations">Задачи и автоматизации</h3>
-        <p class="crm-card-desc" data-ru="Создаёт задачи (звонок, встреча, письмо) с дедлайном. Настраивает автоматизации: Digital Pipeline, триггеры, Salesbot-ы, вебхуки." data-en="Creates tasks (call, meeting, email) with deadlines. Sets up automations: Digital Pipeline, triggers, Salesbots, webhooks.">Создаёт задачи (звонок, встреча, письмо) с дедлайном. Настраивает автоматизации: Digital Pipeline, триггеры, Salesbot-ы, вебхуки.</p>
+        <p class="crm-card-desc" data-ru="Создаёт задачи (звонок, встреча, письмо) с дедлайном. Настраивает автоматизации «событие → действие», уведомления и вебхуки." data-en="Creates tasks (call, meeting, email) with deadlines. Sets up event → action automations, notifications and webhooks.">Создаёт задачи (звонок, встреча, письмо) с дедлайном. Настраивает автоматизации «событие → действие», уведомления и вебхуки.</p>
       </div>
       <div class="crm-card">
         <div class="crm-card-num">05</div>
@@ -3331,7 +3327,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
   <div class="container">
     <p class="section-label reveal" data-ru="API-действия" data-en="API actions">API-действия</p>
     <h2 class="section-heading reveal reveal-delay-1" data-ru="Доступные<br><em>API-действия</em>" data-en="Available<br><em>API actions</em>">Доступные<br><em>API-действия</em></h2>
-    <p class="section-sub reveal reveal-delay-2" data-ru="Kai использует официальный API вашей CRM. Все операции выполняются безопасно и&nbsp;без ваших паролей." data-en="Kai uses your CRM's official API. All operations are performed securely without your passwords.">Kai использует официальный API вашей CRM. Все операции выполняются безопасно и&nbsp;без ваших паролей.</p>
+    <p class="section-sub reveal reveal-delay-2" data-ru="Kai использует официальный API твоей CRM. Все операции выполняются безопасно и&nbsp;без твоих паролей." data-en="Kai uses your CRM's official API. All operations are performed securely without your passwords.">Kai использует официальный API твоей CRM. Все операции выполняются безопасно и&nbsp;без твоих паролей.</p>
 
     <!-- AC:START phrase → action console -->
     <div class="ac reveal" id="ac">
@@ -3460,7 +3456,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
   <div class="container">
     <p class="section-label reveal" data-ru="Превью · в разработке" data-en="Preview · in development">Превью · в разработке</p>
     <h2 class="section-heading reveal reveal-delay-1" data-ru="Офис <em>агентов</em> Kai" data-en="The Kai <em>agent office</em>">Офис <em>агентов</em> Kai</h2>
-    <p class="section-sub reveal reveal-delay-2" data-ru="Команда ИИ-помощников работает в вашей CRM и отчитывается на одном экране. Это макет: нажмите событие, посмотрите, кто его берёт, и скажите, нужно ли вам такое." data-en="A team of AI assistants works inside your CRM and reports on one screen. This is a mock-up: tap an event, see who takes it, and tell us whether you want it.">Команда ИИ-помощников работает в вашей CRM и отчитывается на одном экране. Это макет: нажмите событие, посмотрите, кто его берёт, и скажите, нужно ли вам такое.</p>
+    <p class="section-sub reveal reveal-delay-2" data-ru="Команда ИИ-помощников работает в твоей CRM и отчитывается на одном экране. Это макет: нажмите событие, посмотрите, кто его берёт, и скажите, нужно ли вам такое." data-en="A team of AI assistants works inside your CRM and reports on one screen. This is a mock-up: tap an event, see who takes it, and tell us whether you want it.">Команда ИИ-помощников работает в твоей CRM и отчитывается на одном экране. Это макет: нажмите событие, посмотрите, кто его берёт, и скажите, нужно ли вам такое.</p>
     <div class="ko reveal" id="ko">
       <div class="ko-top">
         <span class="ko-tag" data-ru="Макет · функции ещё нет" data-en="Mock-up · not built yet">Макет · функции ещё нет</span>
@@ -3500,7 +3496,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
         </div>
       </div>
       <div class="ko-foot">
-        <span class="ko-note" data-ru="Настоящего «Офиса» ещё нет. Кнопка ведёт в бота: запишем вас первым и спросим, какой агент нужен. Строим, когда наберётся достаточно желающих." data-en="The real office does not exist yet. The button opens the bot: we put you on the early list and ask which agent you need. We build it once enough people want it.">Настоящего «Офиса» ещё нет. Кнопка ведёт в бота: запишем вас первым и спросим, какой агент нужен. Строим, когда наберётся достаточно желающих.</span>
+        <span class="ko-note" data-ru="Настоящего «Офиса» ещё нет. Кнопка ведёт в бота: запишем тебя первым и спросим, какой агент нужен. Строим, когда наберётся достаточно желающих." data-en="The real office does not exist yet. The button opens the bot: we put you on the early list and ask which agent you need. We build it once enough people want it.">Настоящего «Офиса» ещё нет. Кнопка ведёт в бота: запишем тебя первым и спросим, какой агент нужен. Строим, когда наберётся достаточно желающих.</span>
         <a class="ko-cta" href="https://t.me/aiicrm_bot?start=office" target="_blank" rel="noopener" data-ru="Хочу такой офис" data-en="I want this office">Хочу такой офис</a>
       </div>
     </div>
@@ -3634,6 +3630,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
           <li data-ru="Причины отказа и источники" data-en="Loss reasons & lead sources">Причины отказа и источники</li>
           <li data-ru="Импорт базы из Excel/CSV" data-en="Import from Excel/CSV">Импорт базы из Excel/CSV</li>
           <li data-ru="Голосовые и скриншоты" data-en="Voice messages & screenshots">Голосовые и скриншоты</li>
+          <li data-ru="Карта аккаунта в PDF" data-en="Account map (PDF)">Карта аккаунта в PDF</li>
           <li data-ru="~100 запросов/мес" data-en="~100 requests/mo">~100 запросов/мес</li>
           <li data-ru="1 CRM-аккаунт" data-en="1 CRM account">1 CRM-аккаунт</li>
           <li class="disabled" data-ru="Автоматизации" data-en="Automations">Автоматизации</li>
@@ -3647,14 +3644,13 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
         <div class="plan-name">Pro</div>
         <div class="plan-price">€59 <span data-ru="/мес" data-en="/mo">/мес</span></div>
         <p class="plan-pitch" data-ru="+ автоматизации и управление" data-en="+ automation & management">+ автоматизации и управление</p>
-        <div class="plan-trial" data-ru="3 дня бесплатно" data-en="3 days free">3 дня бесплатно</div>
+        <div class="plan-trial" data-ru="Пробный период — на функциях Start" data-en="Trial runs on Start features">Пробный период — на функциях Start</div>
         <div class="plan-includes" data-ru="Всё из Start, плюс:" data-en="Everything in Start, plus:">Всё из Start, плюс:</div>
         <ul class="plan-features">
-          <li data-ru="Автоматизации (Digital Pipeline)" data-en="Automations (Digital Pipeline)">Автоматизации (Digital Pipeline)</li>
+          <li data-ru="Автоматизации по событиям CRM" data-en="Event-based CRM automations">Автоматизации по событиям CRM</li>
           <li data-ru="Пользователи и роли" data-en="Users & roles">Пользователи и роли</li>
           <li data-ru="Виджеты маркетплейса CRM" data-en="CRM marketplace widgets">Виджеты маркетплейса CRM</li>
           <li data-ru="Sales-скиллы: бриф к встрече, здоровье сделки" data-en="Sales skills: meeting brief, deal health">Sales-скиллы: бриф к встрече, здоровье сделки</li>
-          <li data-ru="Карта аккаунта в PDF" data-en="Account map (PDF)">Карта аккаунта в PDF</li>
           <li data-ru="Стандартные интеграции (Telegram, Slack, Discord, Sheets)" data-en="Standard integrations (Telegram, Slack, Discord, Sheets)">Стандартные интеграции (Telegram, Slack, Discord, Sheets)</li>
           <li data-ru="~500 запросов/мес" data-en="~500 requests/mo">~500 запросов/мес</li>
           <li data-ru="До 3 CRM-аккаунтов" data-en="Up to 3 CRM accounts">До 3 CRM-аккаунтов</li>
@@ -3667,14 +3663,15 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
         <div class="plan-name">Max</div>
         <div class="plan-price">€119 <span data-ru="/мес" data-en="/mo">/мес</span></div>
         <p class="plan-pitch" data-ru="+ приоритет и доработки" data-en="+ priority & custom work">+ приоритет и доработки</p>
-        <div class="plan-trial" data-ru="3 дня бесплатно" data-en="3 days free">3 дня бесплатно</div>
+        <div class="plan-trial" data-ru="Пробный период — на функциях Start" data-en="Trial runs on Start features">Пробный период — на функциях Start</div>
         <div class="plan-includes" data-ru="Всё из Pro, плюс:" data-en="Everything in Pro, plus:">Всё из Pro, плюс:</div>
         <ul class="plan-features">
           <li data-ru="Приоритетная поддержка" data-en="Priority support">Приоритетная поддержка</li>
           <li data-ru="Расширенная память о клиентах" data-en="Extended client memory">Расширенная память о клиентах</li>
-          <li data-ru="Кастомные доработки под ваш бизнес" data-en="Custom builds tailored to your business">Кастомные доработки под ваш бизнес</li>
+          <li data-ru="Кастомные доработки под твой бизнес" data-en="Custom builds tailored to your business">Кастомные доработки под твой бизнес</li>
           <li data-ru="+€30 за доработку (фикс)" data-en="+€30 per build (flat)">+€30 за доработку (фикс)</li>
-          <li data-ru="Fair-use запросов" data-en="Fair-use requests">Fair-use запросов</li>
+          <li data-ru="~1 600 запросов/мес" data-en="~1,600 requests/mo">~1 600 запросов/мес</li>
+          <li data-ru="Своя CRM по API" data-en="Your own CRM via API">Своя CRM по API</li>
           <li data-ru="До 10 CRM-аккаунтов" data-en="Up to 10 CRM accounts">До 10 CRM-аккаунтов</li>
         </ul>
         <a href="https://t.me/aiicrm_bot?start=pay_extra" target="_blank" rel="noopener" class="plan-cta plan-cta-ghost" data-ru="Оформить" data-en="Choose">Оформить</a>
@@ -3693,11 +3690,8 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       </ul>
       <div class="note-targets">
         <span data-ru="свой вебхук" data-en="your webhook">свой вебхук</span>
-        <span>Discord</span>
         <span data-ru="Email" data-en="Email">Email</span>
         <span>Notion</span>
-        <span>Slack</span>
-        <span>Google Sheets</span>
         <span data-ru="любой HTTP-API" data-en="any HTTP API">любой HTTP-API</span>
       </div>
     </div>
@@ -3705,7 +3699,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
     <div class="pricing-note support-note reveal">
       <strong data-ru="Поддержка, которая чинит, а не отписывается" data-en="Support that fixes things, not just replies">Поддержка, которая чинит, а не отписывается</strong>
       <span class="note-tag" data-ru="на всех тарифах" data-en="all plans">на всех тарифах</span>
-      <p data-ru="Пишите в саппорт-бот — он принимает вопрос или баг прямо в чате. Сообщения о багах уходят в автоматический AI-конвейер: он воспроизводит проблему, готовит исправление и выкатывает его, а вам приходит уведомление, что починили." data-en="Message the support bot — it takes your question or bug right in the chat. Bug reports go into an automated AI pipeline that reproduces the problem, prepares the fix and ships it, then notifies you that it is done.">Пишите в саппорт-бот — он принимает вопрос или баг прямо в чате. Сообщения о багах уходят в автоматический AI-конвейер: он воспроизводит проблему, готовит исправление и выкатывает его, а вам приходит уведомление, что починили.</p>
+      <p data-ru="Пиши в саппорт-бот — он принимает вопрос или баг прямо в чате. Сообщения о багах уходят в автоматический AI-конвейер: он воспроизводит проблему, готовит исправление и выкатывает его, а вам приходит уведомление, что починили." data-en="Message the support bot — it takes your question or bug right in the chat. Bug reports go into an automated AI pipeline that reproduces the problem, prepares the fix and ships it, then notifies you that it is done.">Пиши в саппорт-бот — он принимает вопрос или баг прямо в чате. Сообщения о багах уходят в автоматический AI-конвейер: он воспроизводит проблему, готовит исправление и выкатывает его, а вам приходит уведомление, что починили.</p>
       <a class="support-bot" href="https://t.me/aiicrm_support_bot" target="_blank" rel="noopener">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 3.6L2.4 11.1c-1 .4-1 1.7.1 2l4.9 1.5 1.9 5.8c.2.7 1.1 1 1.6.4l2.7-2.7 5 3.7c.7.5 1.7.1 1.9-.7l3.4-15.9c.2-1-.7-1.9-1.7-1.6zM8.6 14.3l9.3-5.9-7.7 6.9-.3 3.6z"/></svg>
         @aiicrm_support_bot
@@ -3721,7 +3715,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       </div>
       <div class="faq-item">
         <button class="faq-q" data-ru="Что если кончатся запросы?" data-en="What if I run out of requests?">Что если кончатся запросы?</button>
-        <div class="faq-a"><div class="faq-a-inner" data-ru="Докупишь пакет или поднимешь тариф прямо в боте (/plan). На пробном периоде дневного лимита нет — есть общий бюджет на 3 дня, и бот предупредит, когда останется ~3 запроса." data-en="Top up or upgrade right in the bot (/plan). There is no daily cap on trial — just a 3-day budget, and the bot warns you when ~3 requests are left.">Докупишь пакет или поднимешь тариф прямо в боте (/plan). На пробном периоде дневного лимита нет — есть общий бюджет на 3 дня, и бот предупредит, когда останется ~3 запроса.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-ru="Докупишь пакет или поднимешь тариф прямо в боте (/plan). На пробном периоде дневного лимита нет — есть общий бюджет на 3 дня, и бот предупредит, когда останется ~8 запросов." data-en="Top up or upgrade right in the bot (/plan). There is no daily cap on trial — just a 3-day budget, and the bot warns you when ~8 requests are left.">Докупишь пакет или поднимешь тариф прямо в боте (/plan). На пробном периоде дневного лимита нет — есть общий бюджет на 3 дня, и бот предупредит, когда останется ~8 запросов.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" data-ru="Можно сменить тариф?" data-en="Can I change my plan?">Можно сменить тариф?</button>
@@ -3737,7 +3731,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       </div>
       <div class="faq-item">
         <button class="faq-q" data-ru="Спишете сами при продлении?" data-en="Will you auto-charge me?">Спишете сами при продлении?</button>
-        <div class="faq-a"><div class="faq-a-inner" data-ru="Нет — за 7 дней предупредим, тихого списания не будет." data-en="No silent charges — we remind you 7 days before renewal.">Нет — за 7 дней предупредим, тихого списания не будет.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-ru="Карта продлевается автоматически, но за 7 дней пришлём напоминание — отменить можно прямо в боте. Stars и крипта — разовые, без автосписания." data-en="Card plans renew automatically, but we remind you 7 days before — you can cancel right in the bot. Stars and crypto are one-off, no auto-charge.">Карта продлевается автоматически, но за 7 дней пришлём напоминание — отменить можно прямо в боте. Stars и крипта — разовые, без автосписания.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" data-ru="Что такое «запрос»?" data-en="What is a 'request'?">Что такое «запрос»?</button>
@@ -3745,11 +3739,11 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       </div>
       <div class="faq-item">
         <button class="faq-q" data-ru="А если не подойдёт?" data-en="What if it's not for me?">А если не подойдёт?</button>
-        <div class="faq-a"><div class="faq-a-inner" data-ru="Первые 3 дня — бесплатно, без карты; отсчёт — с подключения CRM. Попробуй без риска." data-en="First 3 days free, no card; the clock starts when you connect the CRM. Try risk-free.">Первые 3 дня — бесплатно, без карты; отсчёт — с подключения CRM. Попробуй без риска.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-ru="Первые 3 дня — бесплатно, без карты; отсчёт — с подключения CRM. В пробном периоде ~25 запросов и возможности тарифа Start. Попробуй без риска." data-en="First 3 days free, no card; the clock starts when you connect the CRM. The trial includes ~25 requests and Start-plan features. Try risk-free.">Первые 3 дня — бесплатно, без карты; отсчёт — с подключения CRM. В пробном периоде ~25 запросов и возможности тарифа Start. Попробуй без риска.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" data-ru="Кто делает Kai и где мои данные?" data-en="Who makes Kai and where is my data?">Кто делает Kai и где мои данные?</button>
-        <div class="faq-a"><div class="faq-a-inner" data-ru="Kai делает небольшая команда из Польши (ЕС). Доступ к CRM — только OAuth 2.0: паролей не видим, токены шифруются при хранении. ИИ-провайдеры (OpenAI, Anthropic) получают только текст запроса — без токенов и базы. Доступ отзывается в настройках CRM в любой момент, команда /delete_account стирает всё на нашей стороне. Подробности — в политике конфиденциальности внизу страницы." data-en="Kai is built by a small team from Poland (EU). CRM access is OAuth 2.0 only: we never see passwords, tokens are encrypted at rest. AI providers (OpenAI, Anthropic) receive only the text of your request — never tokens or your database. You can revoke access in the CRM settings anytime; /delete_account erases everything on our side. Details are in the privacy policy at the bottom of the page.">Kai делает небольшая команда из Польши (ЕС). Доступ к CRM — только OAuth 2.0: паролей не видим, токены шифруются при хранении. ИИ-провайдеры (OpenAI, Anthropic) получают только текст запроса — без токенов и базы. Доступ отзывается в настройках CRM в любой момент, команда /delete_account стирает всё на нашей стороне. Подробности — в политике конфиденциальности внизу страницы.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-ru="Kai делает небольшая команда из Польши (ЕС). Доступ к CRM — только OAuth 2.0: паролей не видим, токены шифруются при хранении. ИИ-провайдеры (OpenAI, Anthropic) получают только текст запроса — без токенов и базы. Доступ отзывается в настройках CRM в любой момент; /disconnect отвязывает CRM, полное удаление данных — по запросу в @aiicrm_support_bot. Подробности — в политике конфиденциальности внизу страницы." data-en="Kai is built by a small team from Poland (EU). CRM access is OAuth 2.0 only: we never see passwords, tokens are encrypted at rest. AI providers (OpenAI, Anthropic) receive only the text of your request — never tokens or your database. You can revoke access in the CRM settings anytime; /disconnect unlinks the CRM, and full data deletion is done on request via @aiicrm_support_bot. Details are in the privacy policy at the bottom of the page.">Kai делает небольшая команда из Польши (ЕС). Доступ к CRM — только OAuth 2.0: паролей не видим, токены шифруются при хранении. ИИ-провайдеры (OpenAI, Anthropic) получают только текст запроса — без токенов и базы. Доступ отзывается в настройках CRM в любой момент; /disconnect отвязывает CRM, полное удаление данных — по запросу в @aiicrm_support_bot. Подробности — в политике конфиденциальности внизу страницы.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" data-ru="Нужен договор или счёт на компанию?" data-en="Need a contract or a company invoice?">Нужен договор или счёт на компанию?</button>
@@ -3811,7 +3805,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo">Kai</div>
-      <p class="footer-desc" data-ru="AI-ассистент для настройки вашей CRM. Консультирует как эксперт, реализует как программист — в браузере или Telegram." data-en="AI assistant for your CRM setup. Consults like an expert, implements like a developer — in your browser or Telegram.">AI-ассистент для настройки вашей CRM. Консультирует как эксперт, реализует как программист — в браузере или Telegram.</p>
+      <p class="footer-desc" data-ru="AI-ассистент для настройки твоей CRM. Консультирует как эксперт, реализует как программист — в браузере или Telegram." data-en="AI assistant for your CRM setup. Consults like an expert, implements like a developer — in your browser or Telegram.">AI-ассистент для настройки твоей CRM. Консультирует как эксперт, реализует как программист — в браузере или Telegram.</p>
       <a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" class="footer-cta">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
         <span data-ru="Подключить CRM" data-en="Connect CRM">Подключить CRM</span>
@@ -3843,7 +3837,6 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <ul>
         <li><a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Telegram</a></li>
         <li><a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" data-ru="Поддержка" data-en="Support">Поддержка</a></li>
-        <li><a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" data-ru="Подключить CRM" data-en="Connect CRM">Подключить CRM</a></li>
         <li><a href="guides/" data-ru-href="guides/" data-en-href="guides/en/" data-ru="Гайды по amoCRM и Kommo" data-en="Guides: amoCRM &amp; Kommo">Гайды по amoCRM и Kommo</a></li>
       </ul>
     </div>

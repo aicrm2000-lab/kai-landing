@@ -17,24 +17,24 @@ OUT_DIR = os.path.join(HERE, "en")
 BASE = "https://aii-crm.com/"
 
 EN_META = {
-    "title": "Kai — Set up your CRM without developers | AI assistant for amoCRM and Kommo",
-    "description": ("Kai sets up amoCRM and Kommo from a plain-language message in Telegram or your browser: "
-                    "pipelines, fields, tasks, automations, analytics. 3 days free, no card."),
+    "title": "AI assistant that sets up your CRM (amoCRM, Kommo) | Kai",
+    "description": ("Kai sets up your CRM from a plain-language message in Telegram or your browser: "
+                    "pipelines, fields, tasks, automations, analytics. 65 actions. 3 days free, no card."),
     "og_title": "Kai — AI assistant that sets up your CRM",
-    "og_description": ("Set up amoCRM and Kommo by chatting: pipelines, fields, tasks, automations, integrations, "
+    "og_description": ("Set up your CRM by chatting — in Telegram or in your browser: pipelines, fields, tasks, automations, "
                        "analytics. 65 actions. 3 days free, no card."),
     "keywords": ("amoCRM, Kommo, Bitrix24, CRM setup, AI assistant, CRM automation, Telegram CRM bot, sales pipelines, "
                  "amoCRM API, Kommo API, CRM without developers"),
 }
 EN_LD = {
-    "description": ("AI assistant that sets up and manages amoCRM and Kommo from your browser or Telegram. "
-                    "65 actions: pipelines, fields, stages, deals, contacts, automations."),
+    "description": ("AI assistant that sets up your CRM from a chat message — in Telegram or in your browser. "
+                    "65 actions: pipelines, fields, stages, deals, contacts, automations, analytics."),
     "featureList": ["AI consulting on your CRM structure", "Sales pipelines and stages", "Custom fields for deals, contacts and companies",
-                    "Automations: Digital Pipeline, triggers, Salesbot", "Technical specification as a PDF",
+                    "Event-based CRM automations", "Technical specification as a PDF",
                     "Voice message recognition", "One-click OAuth connection"],
     "faq": [
-        ("What can Kai do?", "Kai is an AI assistant that sets up amoCRM and Kommo from your browser or Telegram: it creates pipelines, "
-                             "fields, stages, deals, contacts, tasks and automations. 65 actions without developers."),
+        ("What can Kai do?", "Kai is an AI assistant that sets up your CRM from a chat message — in Telegram or in your browser: it creates "
+                             "pipelines, fields, stages, deals, contacts, tasks and automations. 65 actions without developers."),
         ("Is it safe? Will you get access to my data?", "Kai works through the official amoCRM/Kommo OAuth 2.0. We never see your password. "
                                                         "You can revoke access at any time in your CRM settings."),
         ("How much does Kai cost?", "Three plans: Start — €29/month (1 CRM), Pro — €59/month (3 CRMs), Max — €119/month (10 CRMs). "
@@ -43,7 +43,7 @@ EN_LD = {
         ("Does Kai work with Bitrix24?", "Yes, in beta: Bitrix24 connects through an inbound webhook, Kai sets up pipelines, "
                                          "stages, fields, deals, contacts and tasks and runs the analytics. Automations inside "
                                          "Bitrix24 and widgets are not available yet. amoCRM and Kommo are fully supported."),
-        ("Can I try it for free?", "Yes, the first 3 days are free with no limits. Try it risk-free."),
+        ("Can I try it for free?", "Yes: 3 days free, no card, starting when you connect your CRM. The trial includes ~25 requests and Start-plan features."),
     ],
 }
 
