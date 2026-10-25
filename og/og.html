@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Kai OG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=JetBrains+Mono:wght@500&display=block">
+<style>
+  :root { --bg:#0B0A14; --ink:#F4F2FF; --muted:#9A93BF; --accent:#7C5CFF; --accent-2:#A78BFA; --border:#241D45; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1200px; height:630px; overflow:hidden; background:var(--bg); }
+  body { font-family:'Plus Jakarta Sans','Segoe UI',system-ui,sans-serif; color:var(--ink); position:relative; -webkit-font-smoothing:antialiased; }
+  .grid { position:absolute; inset:0; background-image:linear-gradient(rgba(124,92,255,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(124,92,255,.10) 1px,transparent 1px); background-size:40px 40px; -webkit-mask-image:radial-gradient(70% 70% at 60% 40%,#000 40%,transparent 100%); }
+  .glow { position:absolute; width:900px; height:900px; border-radius:50%; filter:blur(40px); }
+  .g1 { left:-320px; top:-420px; background:radial-gradient(circle,rgba(124,92,255,.42),transparent 60%); }
+  .g2 { right:-380px; bottom:-520px; background:radial-gradient(circle,rgba(167,139,250,.26),transparent 60%); }
+  .frame { position:absolute; inset:28px; border:1px solid rgba(124,92,255,.22); border-radius:18px; }
+  .wrap { position:absolute; left:84px; top:76px; right:84px; bottom:70px; display:flex; flex-direction:column; }
+  .brand { display:flex; align-items:center; gap:18px; }
+  .brand svg { width:56px; height:56px; }
+  .brand b { font-size:34px; font-weight:600; letter-spacing:-.01em; }
+  .brand span { margin-left:6px; padding:6px 14px; border:1px solid var(--border); border-radius:999px; font:500 15px/1 'JetBrains Mono',monospace; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-2); }
+  h1 { margin-top:auto; font-size:76px; line-height:1.04; font-weight:700; letter-spacing:-.03em; max-width:980px; }
+  h1 em { font-style:normal; background:linear-gradient(135deg,#7C5CFF,#A78BFA); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  p { margin-top:26px; font-size:27px; line-height:1.35; color:var(--muted); max-width:900px; font-weight:500; }
+  .row { margin-top:34px; display:flex; align-items:center; gap:14px; }
+  .chip { padding:11px 20px; border-radius:999px; font-size:21px; font-weight:600; border:1px solid var(--border); background:rgba(23,19,50,.7); }
+  .chip.hot { background:linear-gradient(135deg,#7C5CFF,#A78BFA); border-color:transparent; color:#fff; box-shadow:0 8px 30px rgba(124,92,255,.35); }
+  .dom { position:absolute; right:84px; bottom:70px; font:500 22px/1 'JetBrains Mono',monospace; letter-spacing:.06em; color:var(--accent-2); }
+</style>
+</head>
+<body>
+<div class="glow g1"></div><div class="glow g2"></div><div class="grid"></div><div class="frame"></div>
+<div class="wrap">
+  <div class="brand">
+    <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="#7C5CFF" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="#A78BFA"/></svg>
+    <b>Kai</b><span id="tag">AI-ассистент для CRM</span>
+  </div>
+  <h1 id="h">Настройка <em>CRM</em><br>без программистов</h1>
+  <p id="p">Расскажи о бизнесе в чате — Kai задаст вопросы, построит план и настроит твою CRM сам.</p>
+  <div class="row" id="row"><span class="chip hot">3 дня бесплатно</span><span class="chip">без карты</span><span class="chip">Telegram и браузер</span></div>
+</div>
+<div class="dom">aii-crm.com</div>
+<script>
+  if (new URLSearchParams(location.search).get('lang') === 'en') {
+    document.documentElement.lang = 'en';
+    document.getElementById('tag').textContent = 'AI assistant for your CRM';
+    document.getElementById('h').innerHTML = 'Set up your <em>CRM</em><br>without developers';
+    document.getElementById('p').textContent = 'Describe your business in a chat — Kai asks the right questions, builds a plan and configures your CRM itself.';
+    document.getElementById('row').innerHTML = '<span class="chip hot">3 days free</span><span class="chip">no card</span><span class="chip">Telegram &amp; browser</span>';
+  }
+</script>
+</body>
+</html>
