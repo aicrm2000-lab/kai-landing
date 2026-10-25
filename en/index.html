@@ -135,12 +135,13 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B0A14'/><path d='M16 6.5a9.5 9.5 0 1 0 9.5 9.5' stroke='%237C5CFF' stroke-width='4' stroke-linecap='round' fill='none'/><circle cx='23.4' cy='8.6' r='2.6' fill='%23A78BFA'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;800&display=swap"></noscript>
 <style>
 :root {
   /* KAI dark palette */
   --bg:        #0B0A14;
+  --bg-rgb:    11,10,20;
   --bg-1:      #100E20;
   --bg-2:      #171332;
   --border:    #241D45;
@@ -199,7 +200,7 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 0 24px;
   border-bottom: 1px solid rgba(255,255,255,0.07);
-  background: rgba(13,13,15,0.85);
+  background: rgba(var(--bg-rgb),.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
@@ -262,7 +263,7 @@ nav {
   padding: 7px 16px;
   background: var(--accent-gradient);
   color: #fff;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 13px; font-weight: 500;
   letter-spacing: -0.01em;
   transition: opacity 150ms;
@@ -275,7 +276,7 @@ nav {
   margin-left: 18px;
   padding: 7px 15px;
   border: 1px solid var(--accent);
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 13px; font-weight: 500;
   color: var(--accent-2);
   white-space: nowrap; flex-shrink: 0;
@@ -370,11 +371,11 @@ nav {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 5px 14px;
   border: 1px solid var(--graphite);
-  border-radius: 9999px;
+  border-radius: 999px;
   font-size: 12px; font-weight: 400;
   color: var(--fog);
   margin-bottom: 28px;
-  background: rgba(20,20,24,.6);
+  background: rgba(var(--bg-rgb),.6);
   backdrop-filter: blur(8px);
   animation: fadeUp .8s cubic-bezier(.16,1,.3,1) both;
 }
@@ -434,7 +435,7 @@ nav {
   padding: 12px 24px;
   background: var(--accent-gradient);
   color: #fff;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 15px; font-weight: 500;
   letter-spacing: -0.01em;
   transition: opacity 150ms, transform 150ms;
@@ -456,7 +457,7 @@ nav {
   padding: 12px 24px;
   border: 1px solid var(--smoke);
   color: var(--mist);
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 15px; font-weight: 400;
   transition: border-color 150ms, color 150ms, background 150ms;
 }
@@ -466,7 +467,7 @@ nav {
   padding: 12px 24px;
   border: 1px solid var(--border);
   color: var(--text);
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 15px; font-weight: 500;
   transition: border-color 150ms, color 150ms, background 150ms;
 }
@@ -492,7 +493,7 @@ section { padding: 96px 24px; }
 .container { max-width: 1200px; margin: 0 auto; }
 .section-label {
   font-family: var(--mono);
-  font-size: 13px; font-weight: 400;
+  font-size: 13px; font-weight: 500;
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: .12em;
@@ -594,7 +595,7 @@ hr.sep {
 .ka[data-g="A"] .ka-letter { color: var(--good); }
 .ka-score { display: block; margin-top: 4px; font: 12.5px var(--mono); color: var(--text); font-variant-numeric: tabular-nums; }
 .ka-cap { display: block; margin-top: 2px; font-size: 11px; color: var(--muted); }
-.ka-bar { height: 6px; margin-top: 14px; border-radius: 99px; background: var(--bg-2); overflow: hidden; }
+.ka-bar { height: 6px; margin-top: 14px; border-radius: 999px; background: var(--bg-2); overflow: hidden; }
 .ka-bar i { display: block; height: 100%; width: 40%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), var(--good)); transition: width .7s cubic-bezier(.16,1,.3,1); }
 .ka-list { list-style: none; display: grid; gap: 8px; margin-top: 14px; }
 .ka-row {
@@ -611,7 +612,7 @@ hr.sep {
 .ka-r { display: none; color: var(--good); }
 .ka-fix, .ka-again {
   font: 500 13.5px/1 var(--font); color: var(--ink); background: var(--accent-dim);
-  border: 1px solid var(--accent); border-radius: 8px; min-height: 40px; padding: 0 14px; cursor: pointer;
+  border: 1px solid var(--accent); border-radius: 10px; min-height: 40px; padding: 0 14px; cursor: pointer;
   transition: background .15s, transform .15s;
 }
 .ka-fix:hover { background: rgba(var(--accent-rgb),.28); transform: translateY(-1px); }
@@ -638,7 +639,7 @@ hr.sep {
 .ka-again { display: none; background: transparent; border-color: var(--smoke); color: var(--text); }
 .ka.all .ka-again { display: inline-block; }
 .ka-cta {
-  font: 600 14px/1 var(--font); color: #fff; background: var(--accent-gradient); border: 0; border-radius: 8px;
+  font: 600 14px/1 var(--font); color: #fff; background: var(--accent-gradient); border: 0; border-radius: 10px;
   min-height: 40px; padding: 0 18px; cursor: pointer; box-shadow: 0 0 20px rgba(var(--accent-rgb),.3); transition: opacity .15s, transform .15s;
 }
 .ka-cta:hover { opacity: .9; transform: translateY(-1px); }
@@ -740,7 +741,7 @@ hr.sep {
 .kd-plan { list-style: none; margin: 8px 0 12px; display: grid; gap: 5px; font-size: 13.5px; color: var(--text); }
 .kd-plan li::before { content: '✓'; color: var(--good); margin-right: 8px; }
 .kd-go, .kd-cta {
-  font: 600 14px/1 var(--font); color: #fff; background: var(--accent-gradient); border: 0; border-radius: 8px;
+  font: 600 14px/1 var(--font); color: #fff; background: var(--accent-gradient); border: 0; border-radius: 10px;
   min-height: 40px; padding: 0 18px; cursor: pointer; box-shadow: 0 0 20px rgba(var(--accent-rgb),.3);
   transition: opacity .15s, transform .15s;
 }
@@ -773,7 +774,6 @@ hr.sep {
 .kd-st { font-size: 12px; font-weight: 600; line-height: 1.25; color: var(--text); overflow-wrap: break-word; }
 .kd-lead { margin-top: 4px; padding: 6px 7px; border-radius: 7px; background: var(--bg-2); border: 1px solid var(--border-soft); font-size: 11.5px; line-height: 1.3; color: var(--ink); overflow-wrap: anywhere; }
 .kd-task { align-self: flex-start; max-width: 100%; overflow-wrap: anywhere; font-size: 10.5px; line-height: 1.3; color: var(--good); border: 1px solid rgba(67,224,160,.35); border-radius: 6px; padding: 3px 6px; }
-.kd-task::before { content: '⏱ '; }
 .kd-sec { display: grid; gap: 7px; }
 .kd-sub { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .kd-fields { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -879,7 +879,7 @@ hr.sep {
 .api-badge .dot {
   width: 6px; height: 6px; border-radius: 50%;
   background: var(--green);
-  box-shadow: 0 0 6px rgba(34,197,94,.4);
+  box-shadow: 0 0 6px rgba(67,224,160,.4);
   flex-shrink: 0;
 }
 .api-badge.soon {
@@ -889,7 +889,7 @@ hr.sep {
 .api-badge.soon:hover { border-color: var(--orange); color: var(--mist); transform: none; }
 .api-badge.soon .dot {
   background: var(--orange);
-  box-shadow: 0 0 6px rgba(245,158,11,.4);
+  box-shadow: 0 0 6px rgba(245,196,81,.4);
 }
 .api-count {
   margin-top: 28px;
@@ -1062,7 +1062,7 @@ hr.sep {
 .ko-res { border-left-color: var(--good); }
 .ko-appr.decided { opacity: .65; }
 .ko-btns { display: flex; gap: 8px; margin-top: 8px; }
-.ko-ok, .ko-no { font: 600 13px/1 var(--font); border-radius: 8px; min-height: 36px; padding: 0 14px; cursor: pointer; transition: opacity .15s; }
+.ko-ok, .ko-no { font: 600 13px/1 var(--font); border-radius: 10px; min-height: 36px; padding: 0 14px; cursor: pointer; transition: opacity .15s; }
 .ko-ok { color: #fff; background: var(--accent-gradient); border: 0; box-shadow: 0 0 16px rgba(var(--accent-rgb),.25); }
 .ko-no { color: var(--text); background: transparent; border: 1px solid var(--smoke); }
 .ko-ok[aria-disabled="true"], .ko-no[aria-disabled="true"] { opacity: .45; cursor: default; }
@@ -1071,7 +1071,7 @@ hr.sep {
 .ko-note { font-size: 13.5px; line-height: 1.5; color: var(--muted); max-width: 60ch; }
 .ko-cta {
   display: inline-flex; align-items: center; justify-content: center; font: 600 14px/1 var(--font); color: #fff;
-  background: var(--accent-gradient); border-radius: 8px; min-height: 42px; padding: 0 20px;
+  background: var(--accent-gradient); border-radius: 10px; min-height: 42px; padding: 0 20px;
   box-shadow: 0 0 20px rgba(var(--accent-rgb),.3); transition: opacity .15s, transform .15s; white-space: nowrap;
 }
 .ko-cta:hover { opacity: .9; transform: translateY(-1px); }
@@ -1083,7 +1083,7 @@ hr.sep {
 
 /* ─── COMPARE SECTION ─── */
 .compare { background: var(--carbon); }
-.compare { padding: 72px 0 8px; }
+.compare { padding: 96px 24px; }
 .compare-grid {
   margin-top: 56px;
   display: grid;
@@ -1113,10 +1113,11 @@ hr.sep {
 .compare-badge {
   display: inline-block;
   padding: 3px 10px;
-  border-radius: 4px;
-  font-size: 11px; font-weight: 500;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 11px; font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: .06em;
+  letter-spacing: .08em;
   margin-bottom: 20px;
 }
 .compare-card.old .compare-badge {
@@ -1213,9 +1214,9 @@ hr.sep {
 }
 .cta-inner h2 {
   font-family: var(--font-heading);
-  font-size: clamp(32px,4vw,52px);
+  font-size: clamp(32px,4vw,48px);
   font-weight: 500;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
   line-height: 1.1;
   color: var(--paper);
 }
@@ -1226,7 +1227,7 @@ hr.sep {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.cta-inner p {
+.cta-inner p:not(.section-label) {
   margin-top: 20px;
   font-size: 17px; color: var(--fog);
   line-height: 1.55;
@@ -1334,7 +1335,7 @@ footer {
   gap: 6px;
   padding: 8px 16px;
   background: var(--accent-gradient);
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 13px;
   font-weight: 600;
   color: #fff;
@@ -1355,9 +1356,9 @@ footer {
 .integrations-label {
   font-family: var(--mono);
   font-size: 13px; font-weight: 500;
-  color: var(--accent-2);
+  color: var(--accent);
   text-transform: uppercase;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   margin-bottom: 32px;
   display: flex; align-items: center; justify-content: center; gap: 14px;
 }
@@ -1394,13 +1395,6 @@ footer {
   color: var(--paper);
   letter-spacing: -0.02em;
 }
-.kommo-wordmark {
-  font-family: 'Nunito', 'Inter', sans-serif;
-  font-weight: 800;
-  font-size: 28px;
-  color: var(--paper);
-  letter-spacing: -0.03em;
-}
 
 /* Bitrix24 — beta (webhook connection), the mark behaves like its neighbours */
 .int-logo.soon { position: relative; cursor: pointer; }
@@ -1425,7 +1419,7 @@ footer {
   letter-spacing: .08em;
   color: var(--accent-2);
   background: rgba(var(--accent-rgb),.12);
-  border: 1px solid #241D45;
+  border: 1px solid var(--border);
   border-radius: 999px;
   padding: 3px 9px;
   white-space: nowrap;
@@ -1437,7 +1431,7 @@ footer {
   gap: 8px;
   margin-top: 28px;
   padding: 8px 18px;
-  border-radius: 100px;
+  border-radius: 999px;
   border: 1px solid rgba(var(--accent-rgb),.25);
   background: rgba(var(--accent-rgb),.06);
   font-size: 13px;
@@ -1669,15 +1663,6 @@ footer {
 .feat-card[data-feat="new-memory"]:is(:hover:not(.tap),.play) .mem-n3 { opacity: 1; transition-delay: .24s; }
 
 .api-badge { position: relative; overflow: hidden; }
-.api-badge::before {
-  content: '';
-  position: absolute; top: 0; bottom: 0;
-  width: 40%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.04), transparent);
-  left: -100%;
-  animation: shimmer 6s ease-in-out infinite;
-  animation-delay: calc(var(--i, 0) * .3s);
-}
 
 /* ─── PRICING ─── */
 .pricing { background: var(--void); }
@@ -1712,20 +1697,21 @@ footer {
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
+  font-family: var(--mono);
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .06em;
+  font-weight: 600;
+  letter-spacing: .08em;
   text-transform: uppercase;
   color: #fff;
   background: var(--accent-gradient);
-  border-radius: 99px;
+  border-radius: 999px;
   padding: 4px 14px;
   white-space: nowrap;
 }
 .plan-name {
   font-family: var(--font-heading);
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--paper);
   margin-bottom: 4px;
 }
@@ -1734,7 +1720,7 @@ footer {
   font-size: 42px;
   font-weight: 700;
   color: var(--paper);
-  letter-spacing: -1px;
+  letter-spacing: -0.025em;
   line-height: 1;
   margin: 8px 0;
 }
@@ -1778,7 +1764,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(34,197,94,.1);
+  background: rgba(67,224,160,.1);
   border-radius: 50%;
 }
 .plan-features li.disabled {
@@ -1833,13 +1819,14 @@ footer {
 }
 .pricing-note .note-tag {
   display: inline-block;
+  font-family: var(--mono);
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .05em;
+  font-weight: 600;
+  letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--accent-2);
   border: 1px solid var(--accent-2);
-  border-radius: 99px;
+  border-radius: 999px;
   padding: 2px 8px;
   margin-left: 8px;
   vertical-align: middle;
@@ -2015,7 +2002,7 @@ footer {
 /* ─── CALL KAI · SOON: hero button + call screen over a blurred page ─── */
 .btn-call {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 11px 18px 11px 14px; border-radius: 6px; cursor: pointer;
+  padding: 11px 18px 11px 14px; border-radius: 10px; cursor: pointer;
   font: 500 15px/1 var(--font); color: var(--text);
   background: linear-gradient(135deg, rgba(var(--accent-rgb),.26), rgba(var(--accent-2-rgb),.08)); border: 1px solid rgba(var(--accent-2-rgb),.7);
   box-shadow: 0 8px 26px rgba(var(--accent-rgb),.24);
@@ -2069,7 +2056,7 @@ footer {
 html.kc-lock { overflow: hidden; scrollbar-gutter: stable; }
 .kc-blob { position: fixed; border-radius: 50%; filter: blur(70px); pointer-events: none; animation: kcDrift 16s ease-in-out infinite alternate; }
 .kc-blob.b1 { width: 46vmax; height: 46vmax; top: -14vmax; left: -12vmax; background: var(--accent); opacity: .5; }
-.kc-blob.b2 { width: 40vmax; height: 40vmax; bottom: -16vmax; right: -14vmax; background: #43E0A0; opacity: .22; animation-duration: 20s; }
+.kc-blob.b2 { width: 40vmax; height: 40vmax; bottom: -16vmax; right: -14vmax; background: var(--good); opacity: .22; animation-duration: 20s; }
 .kc-blob.b3 { width: 28vmax; height: 28vmax; top: 34%; left: 58%; background: var(--accent-2); opacity: .32; animation-duration: 12s; }
 @keyframes kcDrift { 0% { transform: translate(0, 0) scale(1); } 50% { transform: translate(6vmax, 4vmax) scale(1.12); } 100% { transform: translate(-4vmax, 7vmax) scale(.94); } }
 .kc-card {
@@ -2103,7 +2090,7 @@ html.kc-lock { overflow: hidden; scrollbar-gutter: stable; }
 @keyframes kcWave2 { 0%, 100% { transform: scaleY(.12); } 50% { transform: scaleY(calc(var(--h) * .45)); } }
 .kc-body { opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .45s ease, transform .5s cubic-bezier(.16,1,.3,1), visibility 0s linear .45s; }
 .kc.on .kc-body { opacity: 1; visibility: visible; transform: none; transition: opacity .45s ease, transform .5s cubic-bezier(.16,1,.3,1); }
-.kc-title { font: 600 22px/1.25 var(--font-heading); letter-spacing: -.015em; color: var(--ink); }
+.kc-title { font: 500 22px/1.25 var(--font-heading); letter-spacing: -.015em; color: var(--ink); }
 .kc-text { margin-top: 10px; font-size: 15px; line-height: 1.55; color: var(--text); }
 .kc-btns { display: grid; gap: 8px; margin-top: 20px; }
 .kc-go { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 18px; border-radius: 10px; font: 600 14.5px/1.25 var(--font); text-align: center; color: #fff; background: var(--accent-gradient); box-shadow: 0 0 22px rgba(var(--accent-rgb),.35); }
@@ -2285,7 +2272,7 @@ button.kc-go { border: 0; cursor: pointer; width: 100%; }
 .cookie-btns { display: flex; gap: 8px; flex-shrink: 0; }
 .cookie-btn {
   padding: 8px 18px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -2335,15 +2322,10 @@ button.kc-go { border: 0; cursor: pointer; width: 100%; }
   font-weight: 600;
   color: var(--ink);
   box-shadow: 0 0 34px rgba(var(--accent-rgb),.28);
-  animation: connectGlow 3.2s ease-in-out infinite;
   text-decoration: none;
   transition: border-color .3s, background .3s, transform .2s;
   position: relative;
   overflow: hidden;
-}
-@keyframes connectGlow {
-  0%,100% { box-shadow: 0 0 30px rgba(var(--accent-rgb),.24); }
-  50%     { box-shadow: 0 0 46px rgba(var(--accent-rgb),.42); }
 }
 @media (prefers-reduced-motion: reduce) { .connect-strip { animation: none; } }
 
@@ -2356,17 +2338,6 @@ button.kc-go { border: 0; cursor: pointer; width: 100%; }
 .connect-strip svg { color: var(--accent); flex-shrink: 0; }
 .connect-strip-arrow { transition: transform .2s; }
 .connect-strip:hover .connect-strip-arrow { transform: translateX(3px); }
-.connect-strip-pulse {
-  position: absolute;
-  left: 0; top: 0; right: 0; bottom: 0;
-  border-radius: inherit;
-  background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb),.08), transparent);
-  animation: strip-shimmer 3s ease-in-out infinite;
-}
-@keyframes strip-shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
 
 /* ─── FOOTER CTA ─── */
 .footer-cta {
@@ -2470,8 +2441,8 @@ button.kc-go { border: 0; cursor: pointer; width: 100%; }
   .compare { padding: 64px 16px 8px; }   /* the inline padding used to win and left no gutter */
   .container { padding: 0; }
   .cta-band { padding: 64px 16px; }
-  .cta-inner h2 { font-size: clamp(24px,6vw,32px); }
-  .cta-inner p { font-size: 15px; }
+  .cta-inner h2 { font-size: clamp(24px,6vw,36px); }
+  .cta-inner p:not(.section-label) { font-size: 15px; }
   .integrations { padding: 48px 16px; }
   .integrations-logos { gap: 32px; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
@@ -2479,7 +2450,7 @@ button.kc-go { border: 0; cursor: pointer; width: 100%; }
 }
 @media (max-width: 640px) {
   .connect-strip { font-size: 12px; padding: 10px 16px; gap: 8px; margin: 0 16px; }
-  .hero { padding: 0; }
+  .hero { padding: 0 16px; }
   .hero-logo-space { min-height: 0; }
   .hero h1 { font-size: clamp(28px,8vw,40px); }
   .hero-sub { font-size: 16px; }
@@ -2491,7 +2462,7 @@ button.kc-go { border: 0; cursor: pointer; width: 100%; }
   .tg-window { max-width: 100%; }
   .steps-grid { gap: 16px; }
   .step { padding: 24px 20px; }
-  .step-num { font-size: 40px; }
+  .step-num { font-size: 32px; }
   .crm-grid { gap: 16px; }
   .crm-card { padding: 24px 20px; }
   .crm-card-num { font-size: 28px; }
@@ -2510,39 +2481,6 @@ button.kc-go { border: 0; cursor: pointer; width: 100%; }
   .hero-scroll-hint { margin-top: 32px; }
   .integrations { padding: 40px 16px; }
   .integrations-logos { gap: 24px; }
-}
-/* ─── INTRO OVERLAY ─── */
-.intro-overlay {
-  position: fixed; inset: 0; z-index: 9999;
-  background: var(--void);
-  display: flex; align-items: center; justify-content: center;
-  pointer-events: none;
-}
-.intro-overlay .intro-logo {
-  font-family: var(--font-heading);
-  font-size: 48px; font-weight: 700;
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  opacity: 0;
-  transform: scale(.8);
-  animation: introLogoIn .6s .1s cubic-bezier(.16,1,.3,1) forwards;
-}
-@keyframes introLogoIn {
-  to { opacity: 1; transform: scale(1); }
-}
-.intro-overlay.out {
-  animation: introOut .7s .5s cubic-bezier(.4,0,.2,1) forwards;
-}
-.intro-overlay.out .intro-logo {
-  animation: introLogoOut .4s .3s ease forwards;
-}
-@keyframes introLogoOut {
-  to { opacity: 0; transform: scale(1.1); }
-}
-@keyframes introOut {
-  to { opacity: 0; visibility: hidden; }
 }
 
 /* ─── ANIMATED LOGO ─── */
@@ -2567,16 +2505,6 @@ button.kc-go { border: 0; cursor: pointer; width: 100%; }
 }
 
 /* ─── ENHANCED 3D DEPTH ─── */
-.depth-card {
-  transition: transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s ease;
-}
-.depth-card:hover {
-  transform: perspective(800px) rotateX(2deg) translateY(-6px);
-  box-shadow:
-    0 20px 40px rgba(0,0,0,.3),
-    0 0 0 1px rgba(var(--accent-rgb),.15),
-    inset 0 1px 0 rgba(255,255,255,.05);
-}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -2596,11 +2524,20 @@ html.hw {
   --accent-deep: #E05E00; --accent-mid: #FF8F3A; --accent-light: #FFD59E; --mark-dot-rgb: 118,186,74;
   --accent-dim: rgba(255,122,26,.13); --accent-glow: rgba(255,122,26,.30);
   --accent-gradient: linear-gradient(135deg, #FF7A1A 0%, #FFB347 100%);
-  --bg: #0C0A0E; --bg-1: #140F13; --bg-2: #1C1518; --border: #2E201C; --border-soft: rgba(255,122,26,.14);
+  --bg: #0C0A0E; --bg-rgb: 12,10,14; --bg-1: #140F13; --bg-2: #1C1518; --border: #2E201C; --border-soft: rgba(255,122,26,.14);
   --void: #0C0A0E; --carbon: #140F13; --obsidian: #1C1518; --graphite: #2E201C; --smoke: #3A2A28;
   --ink: #FBF5EE; --paper: #FBF5EE; --text: #D9CFC8; --mist: #D9CFC8; --muted: #9A8A86; --fog: #9A8A86; --dim: #6E5B58; --ash: #6E5B58;
 }
-html:not(.hw) .hw-deco { display: none; }
+html:not(.hw) .hw-deco, html:not(.hw) .hw-ghosts { display: none; }
+.hw-toggle {
+  display: none; width: 32px; height: 32px; margin-left: 8px; flex-shrink: 0; cursor: pointer;
+  border: 1px solid var(--graphite); border-radius: 10px; background: var(--bg-1) url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M15.5 7.2c-.2-1.6.6-3 2.3-3.6' stroke='%2375B04A' stroke-width='2.2' fill='none' stroke-linecap='round'/><ellipse cx='10' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='22' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='16' cy='18' rx='7' ry='9.6' fill='%23FF7A1A'/><path d='M10 15l3 3.6-3.8 1.3zM22 15l-3 3.6 3.8 1.3z' fill='%230C0A0E'/><path d='M9.2 22.6c2 2.6 4.3 3.9 6.8 3.9s4.8-1.3 6.8-3.9c-2.2.9-4.5 1.4-6.8 1.4s-4.6-.5-6.8-1.4z' fill='%230C0A0E'/></svg>") center/18px no-repeat;
+  transition: filter .2s, opacity .2s, border-color .2s;
+}
+html[data-hw-season="1"] .hw-toggle { display: inline-block; }
+html:not(.hw) .hw-toggle { filter: grayscale(1); opacity: .55; }
+.hw-toggle:hover { border-color: var(--accent); opacity: 1; }
+.mobile-menu-footer .hw-toggle { margin-left: 0; }
 html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
   content: ''; width: 20px; height: 20px; margin-left: -4px; flex-shrink: 0;
   background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M15.5 7.2c-.2-1.6.6-3 2.3-3.6' stroke='%2375B04A' stroke-width='2.2' fill='none' stroke-linecap='round'/><ellipse cx='10' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='22' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='16' cy='18' rx='7' ry='9.6' fill='%23FF7A1A'/><path d='M10 15l3 3.6-3.8 1.3zM22 15l-3 3.6 3.8 1.3z' fill='%230C0A0E'/><path d='M9.2 22.6c2 2.6 4.3 3.9 6.8 3.9s4.8-1.3 6.8-3.9c-2.2.9-4.5 1.4-6.8 1.4s-4.6-.5-6.8-1.4z' fill='%230C0A0E'/></svg>") center/contain no-repeat;
@@ -2608,45 +2545,71 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
   animation: hwGlow 2.6s ease-in-out infinite alternate;
 }
 @keyframes hwGlow { from { filter: drop-shadow(0 0 3px rgba(255,122,26,.35)); } to { filter: drop-shadow(0 0 9px rgba(255,179,71,.8)); } }
+html.hw .section-label::before {
+  content: ''; display: inline-block; width: 18px; height: 9px; margin-right: 8px; vertical-align: 0;
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'><path d='M50 14c-2 5-6 8-11 8-6 0-11-3-15-9C19 17 10 18 2 14c5 6 7 13 6 21 6-4 12-4 18 0 1 4 3 7 6 9l8-6c3 2 6 3 10 3s7-1 10-3l8 6c3-2 5-5 6-9 6-4 12-4 18 0-1-8 1-15 6-21-8 4-17 3-22-1-4 6-9 9-15 9-5 0-9-3-11-8z' fill='%23FFB06A'/><path d='M43 11l3 6h8l3-6-3.5 2.5L50 11l-3.5 2.5z' fill='%23FFB06A'/></svg>") center/contain no-repeat;
+}
 .hw-deco { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
 .hw-web {
-  position: absolute; top: 56px; width: clamp(120px, 16vw, 220px); aspect-ratio: 1; opacity: .42;
-  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160' fill='none' stroke='%23FBF5EE' stroke-width='1' stroke-opacity='.55'><path d='M0 0L160 0M0 0L158 42M0 0L144 82M0 0L118 118M0 0L82 144M0 0L42 158M0 0L0 160'/><path d='M38 0Q35 35 0 38M76 0Q70 70 0 76M114 0Q105 105 0 114M152 0Q140 140 0 152'/></svg>") top left/contain no-repeat;
+  position: absolute; top: 56px; width: clamp(140px, 18vw, 260px); aspect-ratio: 1; opacity: .5;
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%23FBF5EE' stroke-width='1' stroke-opacity='.6' stroke-linecap='round'><path d='M0 0L200 0M0 0L193 52M0 0L173 100M0 0L141 141M0 0L100 173M0 0L52 193M0 0L0 200M34.0 0.0Q30.3 4.0 32.8 8.8Q28.3 11.7 29.4 17.0Q24.3 18.6 24.0 24.0Q18.6 24.3 17.0 29.4Q11.7 28.3 8.8 32.8Q4.0 30.3 0.0 34.0M68.0 0.0Q60.7 8.0 65.7 17.6Q56.5 23.4 58.9 34.0Q48.6 37.3 48.1 48.1Q37.3 48.6 34.0 58.9Q23.4 56.5 17.6 65.7Q8.0 60.7 0.0 68.0M102.0 0.0Q91.0 12.0 98.5 26.4Q84.8 35.1 88.3 51.0Q72.8 55.9 72.1 72.1Q55.9 72.8 51.0 88.3Q35.1 84.8 26.4 98.5Q12.0 91.0 0.0 102.0M136.0 0.0Q121.4 16.0 131.4 35.2Q113.1 46.8 117.8 68.0Q97.1 74.5 96.2 96.2Q74.5 97.1 68.0 117.8Q46.8 113.1 35.2 131.4Q16.0 121.4 0.0 136.0M170.0 0.0Q151.7 20.0 164.2 44.0Q141.4 58.6 147.2 85.0Q121.4 93.1 120.2 120.2Q93.1 121.4 85.0 147.2Q58.6 141.4 44.0 164.2Q20.0 151.7 0.0 170.0M150 0L160 14M0 150L14 160'/></svg>") top left/contain no-repeat;
 }
 .hw-web.l { left: 0; }
 .hw-web.r { right: 0; transform: scaleX(-1); }
-.hw-bats i { position: absolute; left: -8vw; width: 46px; height: 24px; opacity: .55; animation: hwFly 30s linear infinite; }
-.hw-bats b {
-  display: block; width: 100%; height: 100%; animation: hwFlap .38s ease-in-out infinite alternate;
-  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 32'><path d='M32 7c-1.6 3.6-4.2 5.4-7.4 5.4-3.4 0-6.6-1.8-9.6-5.4-3.8 3-8.4 3.8-13.8 2.4 3 3.6 4.6 8 4.4 13.2 4.6-2.6 9.2-2.4 13.6.6 1 2.8 2.2 4.8 3.8 6.2L32 23.6l9 5.8c1.6-1.4 2.8-3.4 3.8-6.2 4.4-3 9-3.2 13.6-.6-.2-5.2 1.4-9.6 4.4-13.2-5.4 1.4-10 .6-13.8-2.4-3 3.6-6.2 5.4-9.6 5.4-3.2 0-5.8-1.8-7.4-5.4z' fill='%23FF9A3C'/></svg>") center/contain no-repeat;
+.cta-band .hw-web { top: 0; width: clamp(110px, 14vw, 180px); opacity: .35; }
+.hw-fog {
+  position: absolute; left: -10%; right: -10%; bottom: -4%; height: 42%; filter: blur(22px); opacity: .9;
+  background:
+    radial-gradient(55% 60% at 18% 100%, rgba(255,140,60,.16), transparent 70%),
+    radial-gradient(45% 55% at 62% 100%, rgba(255,179,71,.12), transparent 70%),
+    radial-gradient(40% 50% at 90% 100%, rgba(255,122,26,.14), transparent 70%);
+  animation: hwFog 16s ease-in-out infinite alternate;
 }
-.hw-bats i:nth-child(1) { top: 18%; animation-duration: 34s; animation-delay: -6s; transform: scale(.7); }
+@keyframes hwFog { from { transform: translateX(-3%); } to { transform: translateX(3%); } }
+.hw-spider { position: absolute; top: 0; left: 72%; width: 2px; height: 160px; transform-origin: top center; animation: hwSwing 5.5s ease-in-out infinite alternate; }
+.hw-spider::before { content: ''; position: absolute; left: 0; top: 0; width: 1px; height: 100%; background: linear-gradient(180deg, rgba(251,245,238,.0), rgba(251,245,238,.55)); }
+.hw-spider i { position: absolute; left: -23px; bottom: -40px; width: 48px; height: 48px; background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'><path d='M20 26L6 16M20 30L4 30M20 36L6 46M22 42L10 56M40 26L54 16M40 30L56 30M40 36L54 46M38 42L50 56' fill='none' stroke='%23FF9A3C' stroke-width='2.4' stroke-linecap='round' stroke-opacity='.9'/><ellipse cx='30' cy='34' rx='11' ry='13' fill='%23241A1E' stroke='%23FF9A3C' stroke-width='1.6'/><circle cx='30' cy='18' r='6.5' fill='%23241A1E' stroke='%23FF9A3C' stroke-width='1.6'/><circle cx='27.5' cy='17' r='1.5' fill='%23FFD59E'/><circle cx='32.5' cy='17' r='1.5' fill='%23FFD59E'/></svg>") center/contain no-repeat; animation: hwDrop 9s ease-in-out infinite; }
+@keyframes hwSwing { from { transform: rotate(-4deg); } to { transform: rotate(4deg); } }
+@keyframes hwDrop { 0%, 55% { translate: 0 0; } 70% { translate: 0 70px; } 80% { translate: 0 62px; } 100% { translate: 0 0; } }
+.hw-bats i { position: absolute; left: -10vw; width: 54px; height: 27px; opacity: .7; animation: hwFly 30s linear infinite; }
+.hw-bats b { display: block; width: 100%; height: 100%; animation: hwFlap .34s ease-in-out infinite alternate; background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'><path d='M50 14c-2 5-6 8-11 8-6 0-11-3-15-9C19 17 10 18 2 14c5 6 7 13 6 21 6-4 12-4 18 0 1 4 3 7 6 9l8-6c3 2 6 3 10 3s7-1 10-3l8 6c3-2 5-5 6-9 6-4 12-4 18 0-1-8 1-15 6-21-8 4-17 3-22-1-4 6-9 9-15 9-5 0-9-3-11-8z' fill='%23FFB06A'/><path d='M43 11l3 6h8l3-6-3.5 2.5L50 11l-3.5 2.5z' fill='%23FFB06A'/></svg>") center/contain no-repeat; }
+.hw-bats i:nth-child(1) { top: 16%; animation-duration: 34s; animation-delay: -6s; transform: scale(.7); }
 .hw-bats i:nth-child(2) { top: 30%; animation-duration: 27s; animation-delay: -19s; }
-.hw-bats i:nth-child(3) { top: 12%; animation-duration: 41s; animation-delay: -30s; transform: scale(.55); }
-.hw-bats i:nth-child(4) { top: 62%; animation-duration: 31s; animation-delay: -12s; transform: scale(.8); }
-.hw-bats i:nth-child(5) { top: 74%; animation-duration: 37s; animation-delay: -25s; transform: scale(.6); }
+.hw-bats i:nth-child(3) { top: 10%; animation-duration: 41s; animation-delay: -30s; transform: scale(.5); }
+.hw-bats i:nth-child(4) { top: 60%; animation-duration: 31s; animation-delay: -12s; transform: scale(.85); }
+.hw-bats i:nth-child(5) { top: 72%; animation-duration: 37s; animation-delay: -25s; transform: scale(.6); }
 @keyframes hwFly {
-  0%   { translate: 0 0; }
-  25%  { translate: 30vw -6vh; }
-  50%  { translate: 58vw 3vh; }
-  75%  { translate: 86vw -5vh; }
-  100% { translate: 118vw 2vh; }
+  0%   { translate: 0 0; rotate: 0deg; }
+  25%  { translate: 30vw -7vh; rotate: -6deg; }
+  50%  { translate: 58vw 3vh; rotate: 5deg; }
+  75%  { translate: 86vw -6vh; rotate: -5deg; }
+  100% { translate: 120vw 2vh; rotate: 0deg; }
 }
-@keyframes hwFlap { from { transform: scaleY(1); } to { transform: scaleY(.45); } }
+@keyframes hwFlap { from { transform: scaleY(1); } to { transform: scaleY(.4); } }
+.hw-ghosts { position: fixed; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; mix-blend-mode: screen; }
+.hw-ghosts i { position: absolute; bottom: -120px; width: 72px; height: 96px; opacity: .17; filter: blur(.5px); background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 80'><path d='M30 4C16 4 8 15 8 30v40c0 3 3 4 5 2l5-5 5 5c2 2 4 2 6 0l1-1 1 1c2 2 4 2 6 0l5-5 5 5c2 2 5 1 5-2V30C52 15 44 4 30 4z' fill='%23FFF3E6'/><ellipse cx='22' cy='30' rx='4' ry='6' fill='%230C0A0E'/><ellipse cx='38' cy='30' rx='4' ry='6' fill='%230C0A0E'/><ellipse cx='30' cy='45' rx='3.5' ry='4.5' fill='%230C0A0E'/></svg>") center/contain no-repeat; animation: hwGhost 28s linear infinite; }
+.hw-ghosts i:nth-child(1) { left: 8%; animation-duration: 31s; animation-delay: -4s; }
+.hw-ghosts i:nth-child(2) { left: 52%; animation-duration: 37s; animation-delay: -21s; transform: scale(.8); }
+.hw-ghosts i:nth-child(3) { left: 84%; animation-duration: 26s; animation-delay: -12s; transform: scale(.65); }
+@keyframes hwGhost {
+  0%   { translate: 0 0; rotate: -4deg; opacity: 0; }
+  10%  { opacity: .17; }
+  50%  { translate: 5vw -55vh; rotate: 4deg; }
+  90%  { opacity: .17; }
+  100% { translate: -4vw -115vh; rotate: -3deg; opacity: 0; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .hw-bats { display: none; }
+  .hw-bats, .hw-ghosts, .hw-spider { display: none; }
+  .hw-fog { animation: none; }
   html.hw .nav-logo::after, html.hw .footer-brand .logo::after { animation: none; }
 }
-@media (max-width: 640px) { .hw-web { opacity: .3; top: 52px; } .hw-bats i:nth-child(4), .hw-bats i:nth-child(5) { display: none; } }
+@media (max-width: 640px) { .hw-web { opacity: .35; top: 52px; } .hw-bats i:nth-child(4), .hw-bats i:nth-child(5) { display: none; } .hw-spider { left: 80%; height: 110px; } .hw-ghosts i:nth-child(2) { display: none; } }
 </style>
-<script>(function(){try{var p=new URLSearchParams(location.search).get('hw'),d=new Date(),m=d.getMonth(),n=d.getDate(),on=(m===9&&n>=25)||(m===10&&n<=2);if(p==='1')on=true;else if(p==='0')on=false;if(!on)return;document.documentElement.classList.add('hw');var i=document.querySelector('link[rel="icon"]');if(i)i.setAttribute('href',"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230C0A0E'/><path d='M15.5 7.2c-.2-1.6.6-3 2.3-3.6' stroke='%2375B04A' stroke-width='2.2' fill='none' stroke-linecap='round'/><ellipse cx='10' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='22' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='16' cy='18' rx='7' ry='9.6' fill='%23FF7A1A'/><path d='M10 15l3 3.6-3.8 1.3zM22 15l-3 3.6 3.8 1.3z' fill='%230C0A0E'/><path d='M9.2 22.6c2 2.6 4.3 3.9 6.8 3.9s4.8-1.3 6.8-3.9c-2.2.9-4.5 1.4-6.8 1.4s-4.6-.5-6.8-1.4z' fill='%230C0A0E'/></svg>");}catch(e){}})();</script>
+<script>(function(){try{var h=document.documentElement,p=new URLSearchParams(location.search).get('hw'),d=new Date(),m=d.getMonth(),n=d.getDate(),season=(m===9&&n>=25)||(m===10&&n<=2),on=season,st=null;try{st=localStorage.getItem('kai_hw');}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1')on=true;else if(p==='0')on=false;if(season||on)h.setAttribute('data-hw-season','1');if(!on)return;h.classList.add('hw');var i=document.querySelector('link[rel="icon"]');if(i)i.setAttribute('href',"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230C0A0E'/><path d='M15.5 7.2c-.2-1.6.6-3 2.3-3.6' stroke='%2375B04A' stroke-width='2.2' fill='none' stroke-linecap='round'/><ellipse cx='10' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='22' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='16' cy='18' rx='7' ry='9.6' fill='%23FF7A1A'/><path d='M10 15l3 3.6-3.8 1.3zM22 15l-3 3.6 3.8 1.3z' fill='%230C0A0E'/><path d='M9.2 22.6c2 2.6 4.3 3.9 6.8 3.9s4.8-1.3 6.8-3.9c-2.2.9-4.5 1.4-6.8 1.4s-4.6-.5-6.8-1.4z' fill='%230C0A0E'/></svg>");}catch(e){}})();</script>
 </head>
 <body>
+<div class="hw-ghosts" aria-hidden="true"><i></i><i></i><i></i></div>
 
-<!-- INTRO OVERLAY -->
-<div class="intro-overlay" id="introOverlay">
-  <span class="intro-logo">Kai</span>
-</div>
 
 <!-- NAV -->
 <nav>
@@ -2662,11 +2625,12 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
     </ul>
 <button type="button" class="nav-call" data-call-kai="nav" aria-haspopup="dialog" aria-label="Call Kai" data-ru-label="Позвонить Kai" data-en-label="Call Kai" title="Call Kai" data-ru-title="Позвонить Kai" data-en-title="Call Kai"><span class="bc-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.6 4-2 1.3a11 11 0 005.1 5.1l1.3-2 4 1.6v3a2 2 0 01-2.2 2A17 17 0 013 6.2 2 2 0 015 4z"/></svg></span><span class="nc-t" data-ru="Позвонить Kai" data-en="Call Kai">Call Kai</span></button>
 <a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" class="nav-connect"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg><span data-ru="Подключить CRM" data-en="Connect CRM">Connect CRM</span></a>
-<a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="nav-cta" data-ru="Попробовать в Telegram →" data-en="Try in Telegram →">Try in Telegram →</a>
+<a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="nav-cta" data-ru="Попробовать в Telegram" data-en="Try in Telegram">Try in Telegram</a>
     <div class="lang-toggle">
       <button class="lang-btn active" data-lang="ru">RU</button>
       <button class="lang-btn" data-lang="en">EN</button>
     </div>
+    <button type="button" class="hw-toggle" aria-pressed="true" title="Хеллоуин-режим: выключить"></button>
     <button class="burger" id="burger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -2680,13 +2644,14 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
   <a href="https://ai-crm-bot-production.up.railway.app/chat?lang=ru" target="_blank" rel="noopener" class="chat-link" data-ru="Веб-чат" data-en="Web chat">Web chat</a>
   <a href="https://t.me/aiicrm_support_bot" target="_blank" rel="noopener" data-ru="Поддержка" data-en="Support">Support</a>
   <button type="button" class="mm-call" data-call-kai="menu" aria-haspopup="dialog"><span class="bc-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.6 4-2 1.3a11 11 0 005.1 5.1l1.3-2 4 1.6v3a2 2 0 01-2.2 2A17 17 0 013 6.2 2 2 0 015 4z"/></svg></span><span data-ru="Позвонить Kai" data-en="Call Kai">Call Kai</span> <span class="bc-soon" data-ru="скоро" data-en="soon">soon</span></button>
-  <a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" data-ru="⚡ Подключить CRM" data-en="⚡ Connect CRM">⚡ Connect CRM</a>
+  <a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" data-ru="Подключить CRM" data-en="Connect CRM">Connect CRM</a>
   <div class="mobile-menu-footer">
     <div class="lang-toggle">
       <button class="lang-btn active" data-lang="ru">RU</button>
       <button class="lang-btn" data-lang="en">EN</button>
     </div>
-    <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="mobile-menu-cta" data-ru="Попробовать →" data-en="Try it →">Try it →</a>
+    <button type="button" class="hw-toggle" aria-pressed="true" title="Хеллоуин-режим: выключить"></button>
+    <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="mobile-menu-cta" data-ru="Попробовать" data-en="Try it">Try it</a>
   </div>
 </div>
 
@@ -2696,7 +2661,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
   <div class="hero-gridlines"></div>
   <canvas id="kai" aria-hidden="true"></canvas>
   <div class="hero-frame"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
-  <div class="hw-deco" aria-hidden="true"><span class="hw-web l"></span><span class="hw-web r"></span><div class="hw-bats"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div></div>
+  <div class="hw-deco" aria-hidden="true"><span class="hw-web l"></span><span class="hw-web r"></span><span class="hw-fog"></span><span class="hw-spider"><i></i></span><div class="hw-bats"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div></div>
 
   <div class="hero-logo-space" id="heroLogoSpace" aria-hidden="true"></div>
   <div class="hero-tag" id="heroTag" aria-hidden="true"></div>
@@ -2707,8 +2672,12 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
     <li><span data-ru="экселька — это не CRM, прости" data-en="a spreadsheet is not a CRM, sorry">a spreadsheet is not a CRM, sorry</span><span data-ru="базу из Excel переношу в CRM сам" data-en="I import your Excel data into the CRM">I import your Excel data into the CRM</span></li>
     <li data-hint="k"><span data-ru="напечатайте слово — логотип его соберёт" data-en="type a word — the logo will spell it">type a word — the logo will spell it</span><span data-ru="" data-en=""></span></li>
     <li data-hint="t"><span data-ru="нажмите на логотип" data-en="tap the logo">tap the logo</span><span data-ru="" data-en=""></span></li>
-    <li data-hw="1"><span data-ru="сделки-призраки: висят в воронке с прошлого года" data-en="ghost deals: haunting the pipeline since last year">ghost deals: haunting the pipeline since last year</span><span data-ru="правило «сделка без движения 14 дней → задача менеджеру», без спиритизма" data-en="rule “no movement for 14 days → task for the rep”, no séance needed">rule “no movement for 14 days → task for the rep”, no séance needed</span></li>
+    <li data-hw="1"><span data-ru="сделки-призраки: висят в воронке с прошлого года" data-en="ghost deals: haunting the pipeline since last year">ghost deals: haunting the pipeline since last year</span><span data-ru="правило «нет движения 14 дней → задача менеджеру», без спиритизма" data-en="rule “no movement for 14 days → task for the rep”, no séance needed">rule “no movement for 14 days → task for the rep”, no séance needed</span></li>
     <li data-hw="1"><span data-ru="база клиентов как дом с привидениями: все слышали, никто не видел" data-en="a client base like a haunted house: everyone’s heard of it, nobody’s seen it">a client base like a haunted house: everyone’s heard of it, nobody’s seen it</span><span data-ru="Kai показывает, кто реально в CRM и что с ними происходит" data-en="Kai shows who is really in the CRM and what happens to them">Kai shows who is really in the CRM and what happens to them</span></li>
+    <li data-hw="1"><span data-ru="зомби-лиды: каждый квартал встают из «отказа»" data-en="zombie leads: rising from “lost” every quarter">zombie leads: rising from “lost” every quarter</span><span data-ru="у каждой сделки источник и причина отказа — некому восставать" data-en="every deal gets a source and a loss reason — nothing left to rise">every deal gets a source and a loss reason — nothing left to rise</span></li>
+    <li data-hw="1"><span data-ru="менеджер-вампир: высасывает время на отчёты" data-en="the vampire rep: sucks hours into reports">the vampire rep: sucks hours into reports</span><span data-ru="отчёт по воронке — одной фразой в чате, хоть в полночь" data-en="a pipeline report in one chat message, even at midnight">a pipeline report in one chat message, even at midnight</span></li>
+    <li data-hw="1"><span data-ru="страшнее Хеллоуина только воронка без этапов" data-en="scarier than Halloween: a pipeline with no stages">scarier than Halloween: a pipeline with no stages</span><span data-ru="этапы под твой процесс за одно сообщение" data-en="stages for your process in one message">stages for your process in one message</span></li>
+    <li data-hw="1"><span data-ru="паутина в CRM: поля, которые никто не заполняет с 2023" data-en="cobwebs in the CRM: fields nobody has filled since 2023">cobwebs in the CRM: fields nobody has filled since 2023</span><span data-ru="Kai находит пустые поля и убирает лишнее" data-en="Kai finds the empty fields and clears the clutter">Kai finds the empty fields and clears the clutter</span></li>
     <li><span data-ru="лид без источника — как чек без суммы" data-en="a lead with no source — a receipt with no total">a lead with no source — a receipt with no total</span><span data-ru="источники лидов заведу за тебя" data-en="lead sources set up for you">lead sources set up for you</span></li>
     <li><span data-ru="сделка без задачи — сделка без будущего" data-en="a deal with no task — a deal with no future">a deal with no task — a deal with no future</span><span data-ru="автозадача на каждом этапе воронки" data-en="an auto-task at every pipeline stage">an auto-task at every pipeline stage</span></li>
     <li><span data-ru="менеджер ушёл — база осталась" data-en="the rep quit — the data stayed">the rep quit — the data stayed</span><span data-ru="здоровье сделки: что брошено и что дальше" data-en="deal health: what was dropped, what is next">deal health: what was dropped, what is next</span></li>
@@ -2725,7 +2694,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
   <div class="hero-plate">
     <div class="hero-badge">
       <span class="badge-dot"></span>
-      <span data-ru="Работает в браузере и Telegram — без установки" data-en="Works in your browser and Telegram — no install">Works in your browser and Telegram — no install</span>
+      <span data-hw-ru="Работает в браузере и Telegram — без установки и без заклинаний" data-hw-en="Works in your browser and Telegram — no install, no spells" data-ru="Работает в браузере и Telegram — без установки" data-en="Works in your browser and Telegram — no install">Works in your browser and Telegram — no install</span>
     </div>
 
     <h1 data-ru="Настройка <span class='a'>CRM</span><br>без программистов" data-en="Set up your <span class='a'>CRM</span><br>without developers">Set up your <span class='a'>CRM</span><br>without developers</h1>
@@ -2748,7 +2717,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
         <span class="bc-soon" data-ru="скоро" data-en="soon">soon</span>
       </button>
       <a href="#how" class="btn-ghost">
-        <span data-ru="Как это работает ↓" data-en="How it works ↓">How it works ↓</span>
+        <span data-ru="Как это работает" data-en="How it works">How it works</span>
       </a>
     </div>
   </div>
@@ -2760,7 +2729,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
   <canvas class="kc-rain" aria-hidden="true"></canvas>
   <div class="kc-card">
     <button type="button" class="kc-x" aria-label="Close" data-ru-label="Закрыть" data-en-label="Close">✕</button>
-    <div class="kc-ava" aria-hidden="true"><span class="kc-core"><svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="#7C5CFF" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="#A78BFA"/></svg></span></div>
+    <div class="kc-ava" aria-hidden="true"><span class="kc-core"><svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg></span></div>
     <p class="kc-status"><span class="kc-s1" data-ru="Соединяем" data-en="Connecting">Connecting</span><span class="kc-s2" data-ru="Скоро на связи" data-en="Coming soon">Coming soon</span></p>
     <div class="kc-wave" aria-hidden="true"><i style="--k:0;--h:0.35"></i><i style="--k:1;--h:0.6"></i><i style="--k:2;--h:0.9"></i><i style="--k:3;--h:0.55"></i><i style="--k:4;--h:0.8"></i><i style="--k:5;--h:1"></i><i style="--k:6;--h:0.7"></i><i style="--k:7;--h:0.45"></i><i style="--k:8;--h:0.85"></i><i style="--k:9;--h:0.6"></i><i style="--k:10;--h:0.95"></i><i style="--k:11;--h:0.5"></i><i style="--k:12;--h:0.75"></i><i style="--k:13;--h:0.4"></i><i style="--k:14;--h:0.65"></i><i style="--k:15;--h:0.3"></i><i style="--k:16;--h:0.55"></i><i style="--k:17;--h:0.8"></i><i style="--k:18;--h:0.45"></i><i style="--k:19;--h:0.3"></i></div>
     <div class="kc-body">
@@ -2779,9 +2748,8 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
 
 <!-- CONNECT STRIP -->
 <a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" class="connect-strip reveal">
-  <span class="connect-strip-pulse"></span>
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-  <span data-ru="Подключи CRM за 1 клик — OAuth без ключей" data-en="Connect your CRM in 1 click — OAuth, no keys">Connect your CRM in 1 click — OAuth, no keys</span>
+  <span data-hw-ru="Подключи CRM за 1 клик, пока не стемнело — OAuth без ключей" data-hw-en="Connect your CRM in 1 click before dark — OAuth, no keys" data-ru="Подключи CRM за 1 клик — OAuth без ключей" data-en="Connect your CRM in 1 click — OAuth, no keys">Connect your CRM in 1 click — OAuth, no keys</span>
   <svg class="connect-strip-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
 </a>
 <!-- INTEGRATIONS -->
@@ -2818,7 +2786,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       </a>
     </div>
     <div class="partner-badge">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 0l2.12 5.26L16 6.18l-4.24 3.7L13.05 16 8 12.84 2.95 16l1.29-6.12L0 6.18l5.88-.92z" fill="#7C5CFF"/></svg>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 0l2.12 5.26L16 6.18l-4.24 3.7L13.05 16 8 12.84 2.95 16l1.29-6.12L0 6.18l5.88-.92z" fill="var(--accent)"/></svg>
       <span data-ru="Официальный партнёр Kommo" data-en="Official Kommo Partner">Official Kommo Partner</span>
     </div>
   </div>
@@ -2829,8 +2797,8 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
   <div class="container">
-    <p class="section-label reveal" data-ru="Как работает" data-en="How it works">How it works</p>
-    <h2 class="section-heading reveal reveal-delay-1" data-ru="Три шага<br>до <em>готовой CRM</em>" data-en="Three steps<br>to a <em>ready CRM</em>">Three steps<br>to a <em>ready CRM</em></h2>
+    <p class="section-label reveal" data-hw-ru="Как это колдует" data-hw-en="How the magic works" data-ru="Как работает" data-en="How it works">How it works</p>
+    <h2 class="section-heading reveal reveal-delay-1" data-ru="Три шага<br>до готовой CRM" data-en="Three steps<br>to a ready CRM">Three steps<br>to a ready CRM</h2>
     <p class="section-sub reveal reveal-delay-2" data-ru="Больше не&nbsp;нужно разбираться в&nbsp;настройках или нанимать интегратора." data-en="No need to&nbsp;figure out settings or hire an&nbsp;integrator anymore.">No need to&nbsp;figure out settings or hire an&nbsp;integrator anymore.</p>
 
     <!-- KD:START -->
@@ -2979,7 +2947,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       </div>
       <div class="step reveal reveal-delay-2 tilt-card">
         <div class="step-num">03</div>
-        <h3 class="step-title" data-ru="Готово — CRM настроена" data-en="Done — CRM is configured">Done — CRM is configured</h3>
+        <h3 class="step-title" data-hw-ru="Готово — CRM настроена, призраки изгнаны" data-hw-en="Done — CRM configured, ghosts banished" data-ru="Готово — CRM настроена" data-en="Done — CRM is configured">Done — CRM is configured</h3>
         <p class="step-desc" data-ru="Нажимаешь «Реализовать» — Kai создаёт всё в твоём CRM-аккаунте за секунды через официальный API." data-en="Press 'Implement' — Kai creates everything in your CRM account in seconds via official API.">Press 'Implement' — Kai creates everything in your CRM account in seconds via official API.</p>
       </div>
     </div>
@@ -2991,13 +2959,13 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
 <!-- FEATURES -->
 <section class="features" id="features">
   <div class="container">
-    <p class="section-label reveal" data-ru="Возможности" data-en="Features">Features</p>
-    <h2 class="section-heading reveal reveal-delay-1" data-ru="Kai — это <em>аналитик</em>,<br>который думает с тобой" data-en="Kai is an <em>analyst</em><br>who thinks with you">Kai is an <em>analyst</em><br>who thinks with you</h2>
+    <p class="section-label reveal" data-hw-ru="Заклинания" data-hw-en="Spells" data-ru="Возможности" data-en="Features">Features</p>
+    <h2 class="section-heading reveal reveal-delay-1" data-ru="Kai — это аналитик,<br>который думает с тобой" data-en="Kai is an analyst<br>who thinks with you">Kai is an analyst<br>who thinks with you</h2>
     <p class="section-sub reveal reveal-delay-2" data-ru="Не&nbsp;шаблонный бот с&nbsp;анкетой. Живой диалог с&nbsp;экспертом, который потом всё реализует сам." data-en="Not a&nbsp;template bot with a&nbsp;survey. A&nbsp;real dialog with an&nbsp;expert who then implements everything.">Not a&nbsp;template bot with a&nbsp;survey. A&nbsp;real dialog with an&nbsp;expert who then implements everything.</p>
     <!-- KA:START audit card -->
     <div class="ka reveal" id="ka" data-g="D">
       <div class="ka-head">
-        <span class="ka-ava"><svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="#7C5CFF" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="#A78BFA"/></svg></span>
+        <span class="ka-ava"><svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg></span>
         <div class="ka-msg">
           <div class="ka-who"><span>Kai</span><span class="ka-tag" data-ru="Демо-данные" data-en="Demo data">Demo data</span></div>
           <p class="ka-text" data-ru="Проверил воронку «Продажи». Нашёл 4 проблемы: две чиню кнопкой, две — по сообщению." data-en="I checked the “Sales” pipeline and found 4 issues. Two are fixed with one tap, two with one message.">I checked the “Sales” pipeline and found 4 issues. Two are fixed with one tap, two with one message.</p>
@@ -3010,13 +2978,13 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       </div>
       <div class="ka-bar" aria-hidden="true"><i></i></div>
       <ul class="ka-list">
-        <li class="ka-row" data-sev="high" data-w="20"><span class="ka-dot" aria-hidden="true"></span><div class="ka-body"><span class="ka-sev" data-ru="Критично" data-en="Critical">Critical</span><span class="ka-t" id="ka-t1" data-ru="Нет причин отказа" data-en="No loss reasons">No loss reasons</span><span class="ka-d" data-ru="Сделки закрываются без объяснения — не видно, где вы теряете." data-en="Deals are closed as lost with no reason, so you can’t see where you lose them.">Deals are closed as lost with no reason, so you can’t see where you lose them.</span><span class="ka-r" data-ru="Создано 5 причин отказа" data-en="5 loss reasons created">5 loss reasons created</span></div><button class="ka-fix" type="button" aria-describedby="ka-t1" data-ru="Починить" data-en="Fix">Fix</button></li>
+        <li class="ka-row" data-sev="high" data-w="20"><span class="ka-dot" aria-hidden="true"></span><div class="ka-body"><span class="ka-sev" data-ru="Критично" data-en="Critical">Critical</span><span class="ka-t" id="ka-t1" data-ru="Нет причин отказа" data-en="No loss reasons">No loss reasons</span><span class="ka-d" data-ru="Сделки закрываются без объяснения — не видно, где ты теряешь." data-en="Deals are closed as lost with no reason, so you can’t see where you lose them.">Deals are closed as lost with no reason, so you can’t see where you lose them.</span><span class="ka-r" data-ru="Создано 5 причин отказа" data-en="5 loss reasons created">5 loss reasons created</span></div><button class="ka-fix" type="button" aria-describedby="ka-t1" data-ru="Починить" data-en="Fix">Fix</button></li>
         <li class="ka-row" data-sev="med" data-w="10"><span class="ka-dot" aria-hidden="true"></span><div class="ka-body"><span class="ka-sev" data-ru="Важно" data-en="Important">Important</span><span class="ka-t" id="ka-t2" data-ru="Нет источников лидов" data-en="No lead sources">No lead sources</span><span class="ka-d" data-ru="Непонятно, какой канал приводит клиентов." data-en="You cannot tell which channel brings customers.">You cannot tell which channel brings customers.</span><span class="ka-r" data-ru="Заведено 5 источников лидов" data-en="5 lead sources created">5 lead sources created</span></div><button class="ka-fix" type="button" aria-describedby="ka-t2" data-ru="Починить" data-en="Fix">Fix</button></li>
         <li class="ka-row" data-sev="high" data-w="0"><span class="ka-dot" aria-hidden="true"></span><div class="ka-body"><span class="ka-sev" data-ru="Критично" data-en="Critical">Critical</span><span class="ka-t" id="ka-t3" data-ru="62% открытых сделок стоят на этапе «Думает»" data-en="62% of open deals sit at “Thinking”">62% of open deals sit at “Thinking”</span><span class="ka-d" data-ru="Узкое место: сделки заходят на этап и не выходят." data-en="A bottleneck: deals enter the stage and do not leave it.">A bottleneck: deals enter the stage and do not leave it.</span><span class="ka-r" data-ru="Kai поставил правило: сделка пришла на этап → задача менеджеру на 2 дня. Узкое место уйдёт, когда сделки сдвинутся." data-en="Kai set a rule: a deal enters the stage → a task for the rep, due in 2 days. The bottleneck clears once deals move.">Kai set a rule: a deal enters the stage → a task for the rep, due in 2 days. The bottleneck clears once deals move.</span></div><button class="ka-fix" type="button" aria-describedby="ka-t3" data-ru="Попросить Kai" data-en="Ask Kai">Ask Kai</button></li>
         <li class="ka-row" data-sev="med" data-w="10"><span class="ka-dot" aria-hidden="true"></span><div class="ka-body"><span class="ka-sev" data-ru="Важно" data-en="Important">Important</span><span class="ka-t" id="ka-t4" data-ru="Нет автоматизаций" data-en="No automations">No automations</span><span class="ka-d" data-ru="Всё держится на памяти менеджеров." data-en="Everything depends on what the reps remember.">Everything depends on what the reps remember.</span><span class="ka-r" data-ru="Kai поставил правило: нет ответа 30 минут → задача по сделке" data-en="Kai set a rule: no reply for 30 minutes → a task on the deal">Kai set a rule: no reply for 30 minutes → a task on the deal</span><span class="ka-ra" data-ru="Снято: правило выше стало первой автоматизацией" data-en="Cleared: the rule above is your first automation">Cleared: the rule above is your first automation</span></div><button class="ka-fix" type="button" aria-describedby="ka-t4" data-ru="Попросить Kai" data-en="Ask Kai">Ask Kai</button></li>
       </ul>
       <div class="ka-foot">
-        <span class="ka-notes"><span class="ka-note" data-ru="Так выглядят аудит и чек-ап в чате: находки, кнопки, оценка. На вашей воронке цифры будут ваши." data-en="This is how the audit and the check-up look in the chat: findings, buttons, a grade. Your own pipeline will show your own numbers.">This is how the audit and the check-up look in the chat: findings, buttons, a grade. Your own pipeline will show your own numbers.</span><span class="ka-final" data-ru="Оценка B. Узкое место уйдёт, когда сделки сдвинутся: правило уже стоит. В вашей CRM это один запрос в чате." data-en="Grade B. The bottleneck clears once deals move: the rule is already in place. In your CRM it takes one chat message.">Grade B. The bottleneck clears once deals move: the rule is already in place. In your CRM it takes one chat message.</span></span>
+        <span class="ka-notes"><span class="ka-note" data-ru="Так выглядят аудит и чек-ап в чате: находки, кнопки, оценка. На твоей воронке цифры будут твои." data-en="This is how the audit and the check-up look in the chat: findings, buttons, a grade. Your own pipeline will show your own numbers.">This is how the audit and the check-up look in the chat: findings, buttons, a grade. Your own pipeline will show your own numbers.</span><span class="ka-final" data-ru="Оценка B. Узкое место уйдёт, когда сделки сдвинутся: правило уже стоит. В твоей CRM это один запрос в чате." data-en="Grade B. The bottleneck clears once deals move: the rule is already in place. In your CRM it takes one chat message.">Grade B. The bottleneck clears once deals move: the rule is already in place. In your CRM it takes one chat message.</span></span>
         <div class="ka-btns"><button class="ka-again" type="button" data-ru="Сначала" data-en="Start over">Start over</button><button class="ka-cta" type="button" data-ru="Проверить мою воронку" data-en="Audit my pipeline">Audit my pipeline</button></div>
       </div>
       <span class="sr-only ka-live" role="status"></span>
@@ -3027,12 +2995,12 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <div class="feat-card glow-card depth-card" data-feat="chat">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <rect class="chat-q" x="2" y="2" width="14" height="10" rx="2" stroke="#A78BFA" stroke-width="1.3" fill="none"/>
-            <line x1="5" y1="5.5" x2="13" y2="5.5" stroke="#A78BFA" stroke-width="1.2" opacity=".5"/>
-            <line x1="5" y1="8.5" x2="10" y2="8.5" stroke="#A78BFA" stroke-width="1.2" opacity=".5"/>
-            <rect class="chat-a" x="8" y="12" width="14" height="8" rx="2" stroke="#A78BFA" stroke-width="1.3" fill="none" opacity=".4"/>
-            <line class="chat-a-line" x1="11" y1="15" x2="19" y2="15" stroke="#A78BFA" stroke-width="1.2" opacity="0"/>
-            <line class="chat-a-line2" x1="11" y1="17.5" x2="16" y2="17.5" stroke="#A78BFA" stroke-width="1.2" opacity="0"/>
+            <rect class="chat-q" x="2" y="2" width="14" height="10" rx="2" stroke="var(--accent-2)" stroke-width="1.3" fill="none"/>
+            <line x1="5" y1="5.5" x2="13" y2="5.5" stroke="var(--accent-2)" stroke-width="1.2" opacity=".5"/>
+            <line x1="5" y1="8.5" x2="10" y2="8.5" stroke="var(--accent-2)" stroke-width="1.2" opacity=".5"/>
+            <rect class="chat-a" x="8" y="12" width="14" height="8" rx="2" stroke="var(--accent-2)" stroke-width="1.3" fill="none" opacity=".4"/>
+            <line class="chat-a-line" x1="11" y1="15" x2="19" y2="15" stroke="var(--accent-2)" stroke-width="1.2" opacity="0"/>
+            <line class="chat-a-line2" x1="11" y1="17.5" x2="16" y2="17.5" stroke="var(--accent-2)" stroke-width="1.2" opacity="0"/>
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Консультирует как эксперт" data-en="Consults like an expert">Consults like an expert</h3>
@@ -3042,9 +3010,9 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <div class="feat-card glow-card depth-card" data-feat="auto">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path class="gear-body" d="M12 15.5A3.5 3.5 0 1012 8.5a3.5 3.5 0 000 7z" stroke="#A78BFA" stroke-width="1.3" fill="none"/>
-            <path class="gear-teeth" d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z" stroke="#A78BFA" stroke-width="1.3" fill="none"/>
-            <path class="gear-check" d="M8 12.5l2.5 2.5 5-5" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="12" stroke-dashoffset="12"/>
+            <path class="gear-body" d="M12 15.5A3.5 3.5 0 1012 8.5a3.5 3.5 0 000 7z" stroke="var(--accent-2)" stroke-width="1.3" fill="none"/>
+            <path class="gear-teeth" d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z" stroke="var(--accent-2)" stroke-width="1.3" fill="none"/>
+            <path class="gear-check" d="M8 12.5l2.5 2.5 5-5" stroke="var(--accent-2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="12" stroke-dashoffset="12"/>
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Настраивает CRM автоматически" data-en="Configures CRM automatically">Configures CRM automatically</h3>
@@ -3054,27 +3022,27 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <div class="feat-card glow-card depth-card" data-feat="pdf">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path class="doc-page" d="M6 2h8l6 6v14a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2z" stroke="#A78BFA" stroke-width="1.3" fill="none"/>
-            <path class="doc-fold" d="M14 2v6h6" stroke="#A78BFA" stroke-width="1.3" fill="none"/>
-            <line class="doc-line doc-line-1" x1="8" y1="13" x2="16" y2="13" stroke="#A78BFA" stroke-width="1.3" opacity=".5"/>
-            <line class="doc-line doc-line-2" x1="8" y1="16" x2="14" y2="16" stroke="#A78BFA" stroke-width="1.3" opacity=".5"/>
-            <line class="doc-line doc-line-3" x1="8" y1="19" x2="12" y2="19" stroke="#A78BFA" stroke-width="1.3" opacity=".5"/>
+            <path class="doc-page" d="M6 2h8l6 6v14a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2z" stroke="var(--accent-2)" stroke-width="1.3" fill="none"/>
+            <path class="doc-fold" d="M14 2v6h6" stroke="var(--accent-2)" stroke-width="1.3" fill="none"/>
+            <line class="doc-line doc-line-1" x1="8" y1="13" x2="16" y2="13" stroke="var(--accent-2)" stroke-width="1.3" opacity=".5"/>
+            <line class="doc-line doc-line-2" x1="8" y1="16" x2="14" y2="16" stroke="var(--accent-2)" stroke-width="1.3" opacity=".5"/>
+            <line class="doc-line doc-line-3" x1="8" y1="19" x2="12" y2="19" stroke="var(--accent-2)" stroke-width="1.3" opacity=".5"/>
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Генерирует ТЗ в PDF" data-en="Generates specs in PDF">Generates specs in PDF</h3>
-        <p class="feat-desc" data-ru="Согласованный план превращается в профессиональный документ — техническое задание для вашей команды или интегратора." data-en="The agreed plan becomes a professional document — technical specifications for your team or integrator.">The agreed plan becomes a professional document — technical specifications for your team or integrator.</p>
+        <p class="feat-desc" data-ru="Согласованный план превращается в профессиональный документ — техническое задание для твоей команды или интегратора." data-en="The agreed plan becomes a professional document — technical specifications for your team or integrator.">The agreed plan becomes a professional document — technical specifications for your team or integrator.</p>
       </div>
 
       <div class="feat-card glow-card depth-card" data-feat="voice">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <rect class="mic-body" x="9" y="2" width="6" height="12" rx="3" stroke="#A78BFA" stroke-width="1.3" fill="none"/>
-            <path class="mic-arc" d="M5 12a7 7 0 0014 0" stroke="#A78BFA" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-            <line class="mic-stand" x1="12" y1="19" x2="12" y2="22" stroke="#A78BFA" stroke-width="1.3"/>
-            <line class="wave wave-1" x1="2" y1="8" x2="2" y2="16" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" opacity="0"/>
-            <line class="wave wave-2" x1="5" y1="6" x2="5" y2="18" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" opacity="0"/>
-            <line class="wave wave-3" x1="19" y1="6" x2="19" y2="18" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" opacity="0"/>
-            <line class="wave wave-4" x1="22" y1="8" x2="22" y2="16" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" opacity="0"/>
+            <rect class="mic-body" x="9" y="2" width="6" height="12" rx="3" stroke="var(--accent-2)" stroke-width="1.3" fill="none"/>
+            <path class="mic-arc" d="M5 12a7 7 0 0014 0" stroke="var(--accent-2)" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            <line class="mic-stand" x1="12" y1="19" x2="12" y2="22" stroke="var(--accent-2)" stroke-width="1.3"/>
+            <line class="wave wave-1" x1="2" y1="8" x2="2" y2="16" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" opacity="0"/>
+            <line class="wave wave-2" x1="5" y1="6" x2="5" y2="18" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" opacity="0"/>
+            <line class="wave wave-3" x1="19" y1="6" x2="19" y2="18" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" opacity="0"/>
+            <line class="wave wave-4" x1="22" y1="8" x2="22" y2="16" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" opacity="0"/>
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Понимает голосовые" data-en="Understands voice messages">Understands voice messages</h3>
@@ -3086,10 +3054,10 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <div class="feat-card glow-card depth-card" data-feat="new-watch">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="9" stroke="#A78BFA" stroke-width="1.3"/>
-            <circle cx="12" cy="12" r="4.5" stroke="#A78BFA" stroke-width="1.1" opacity=".45"/>
-            <line class="wa-sweep" x1="12" y1="12" x2="12" y2="3.4" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round"/>
-            <circle class="wa-blip" cx="15.6" cy="8.6" r="1.6" fill="#A78BFA"/>
+            <circle cx="12" cy="12" r="9" stroke="var(--accent-2)" stroke-width="1.3"/>
+            <circle cx="12" cy="12" r="4.5" stroke="var(--accent-2)" stroke-width="1.1" opacity=".45"/>
+            <line class="wa-sweep" x1="12" y1="12" x2="12" y2="3.4" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round"/>
+            <circle class="wa-blip" cx="15.6" cy="8.6" r="1.6" fill="var(--accent-2)"/>
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Каждый день проверяет CRM" data-en="Checks your CRM every day">Checks your CRM every day</h3>
@@ -3099,13 +3067,13 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <div class="feat-card glow-card depth-card" data-feat="new-browser">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <rect x="2.5" y="4" width="19" height="15" rx="2" stroke="#A78BFA" stroke-width="1.3"/>
-            <line x1="2.5" y1="8" x2="21.5" y2="8" stroke="#A78BFA" stroke-width="1.2"/>
-            <circle class="br-dot br-dot-1" cx="5.4" cy="6" r=".8" fill="#A78BFA"/>
-            <circle class="br-dot br-dot-2" cx="8" cy="6" r=".8" fill="#A78BFA" opacity=".4"/>
-            <circle class="br-dot br-dot-3" cx="10.6" cy="6" r=".8" fill="#A78BFA" opacity=".4"/>
-            <line x1="6" y1="12" x2="14" y2="12" stroke="#A78BFA" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-            <line class="br-cursor" x1="6" y1="15.5" x2="10" y2="15.5" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="2.5" y="4" width="19" height="15" rx="2" stroke="var(--accent-2)" stroke-width="1.3"/>
+            <line x1="2.5" y1="8" x2="21.5" y2="8" stroke="var(--accent-2)" stroke-width="1.2"/>
+            <circle class="br-dot br-dot-1" cx="5.4" cy="6" r=".8" fill="var(--accent-2)"/>
+            <circle class="br-dot br-dot-2" cx="8" cy="6" r=".8" fill="var(--accent-2)" opacity=".4"/>
+            <circle class="br-dot br-dot-3" cx="10.6" cy="6" r=".8" fill="var(--accent-2)" opacity=".4"/>
+            <line x1="6" y1="12" x2="14" y2="12" stroke="var(--accent-2)" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
+            <line class="br-cursor" x1="6" y1="15.5" x2="10" y2="15.5" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Работает и без Telegram" data-en="Works without Telegram">Works without Telegram</h3>
@@ -3115,9 +3083,9 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <div class="feat-card glow-card depth-card" data-feat="new-audit">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path class="au-funnel" d="M3 4h13l-5 6v6l-3 1.5V10L3 4z" stroke="#A78BFA" stroke-width="1.3" stroke-linejoin="round"/>
-            <circle class="au-badge" cx="17.5" cy="15.5" r="4.5" stroke="#A78BFA" stroke-width="1.3"/>
-            <path class="au-check" d="M15.3 15.6l1.5 1.5 2.6-2.9" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="9" stroke-dashoffset="9"/>
+            <path class="au-funnel" d="M3 4h13l-5 6v6l-3 1.5V10L3 4z" stroke="var(--accent-2)" stroke-width="1.3" stroke-linejoin="round"/>
+            <circle class="au-badge" cx="17.5" cy="15.5" r="4.5" stroke="var(--accent-2)" stroke-width="1.3"/>
+            <path class="au-check" d="M15.3 15.6l1.5 1.5 2.6-2.9" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="9" stroke-dashoffset="9"/>
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Аудит воронки + авто-лечение" data-en="Funnel audit + auto-healing">Funnel audit + auto-healing</h3>
@@ -3127,9 +3095,9 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <div class="feat-card glow-card depth-card" data-feat="new-dropoff">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M4 3v17h17" stroke="#A78BFA" stroke-width="1.3" stroke-linecap="round"/>
-            <path class="do-line" d="M6.5 7l3.5 4.5 3-1.5 5.5 7" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="28" stroke-dashoffset="28"/>
-            <path class="do-arrow" d="M18.5 17v-3.2M18.5 17h-3.2" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 3v17h17" stroke="var(--accent-2)" stroke-width="1.3" stroke-linecap="round"/>
+            <path class="do-line" d="M6.5 7l3.5 4.5 3-1.5 5.5 7" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="28" stroke-dashoffset="28"/>
+            <path class="do-arrow" d="M18.5 17v-3.2M18.5 17h-3.2" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Аналитика drop-off" data-en="Drop-off analytics">Drop-off analytics</h3>
@@ -3139,9 +3107,9 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <div class="feat-card glow-card depth-card" data-feat="new-scoring">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M4 17a8 8 0 0116 0" stroke="#A78BFA" stroke-width="1.3" stroke-linecap="round"/>
-            <line class="sc-needle" x1="12" y1="17" x2="8" y2="12.5" stroke="#A78BFA" stroke-width="1.6" stroke-linecap="round"/>
-            <circle cx="12" cy="17" r="1.5" fill="#A78BFA"/>
+            <path d="M4 17a8 8 0 0116 0" stroke="var(--accent-2)" stroke-width="1.3" stroke-linecap="round"/>
+            <line class="sc-needle" x1="12" y1="17" x2="8" y2="12.5" stroke="var(--accent-2)" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="12" cy="17" r="1.5" fill="var(--accent-2)"/>
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Лид-скоринг" data-en="Lead scoring">Lead scoring</h3>
@@ -3151,10 +3119,10 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <div class="feat-card glow-card depth-card" data-feat="new-checkup">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M4 20h16" stroke="#A78BFA" stroke-width="1.3" stroke-linecap="round"/>
-            <rect class="cu-bar cu-bar-1" x="6" y="12" width="3" height="8" rx="1" stroke="#A78BFA" stroke-width="1.3"/>
-            <rect class="cu-bar cu-bar-2" x="10.5" y="8" width="3" height="12" rx="1" stroke="#A78BFA" stroke-width="1.3"/>
-            <rect class="cu-bar cu-bar-3" x="15" y="4.5" width="3" height="15.5" rx="1" stroke="#A78BFA" stroke-width="1.3"/>
+            <path d="M4 20h16" stroke="var(--accent-2)" stroke-width="1.3" stroke-linecap="round"/>
+            <rect class="cu-bar cu-bar-1" x="6" y="12" width="3" height="8" rx="1" stroke="var(--accent-2)" stroke-width="1.3"/>
+            <rect class="cu-bar cu-bar-2" x="10.5" y="8" width="3" height="12" rx="1" stroke="var(--accent-2)" stroke-width="1.3"/>
+            <rect class="cu-bar cu-bar-3" x="15" y="4.5" width="3" height="15.5" rx="1" stroke="var(--accent-2)" stroke-width="1.3"/>
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Чек-ап воронки" data-en="Funnel check-up">Funnel check-up</h3>
@@ -3164,14 +3132,14 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <div class="feat-card glow-card depth-card" data-feat="new-sop">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M6 3h9l4 4v13a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#A78BFA" stroke-width="1.3" stroke-linejoin="round"/>
-            <path d="M15 3v4h4" stroke="#A78BFA" stroke-width="1.3" stroke-linejoin="round"/>
-            <path class="sop-c sop-c-1" d="M7.5 11l1.2 1.2 2.3-2.4" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7" stroke-dashoffset="7"/>
-            <path class="sop-c sop-c-2" d="M7.5 15l1.2 1.2 2.3-2.4" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7" stroke-dashoffset="7"/>
-            <path class="sop-c sop-c-3" d="M7.5 19l1.2 1.2 2.3-2.4" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7" stroke-dashoffset="7"/>
-            <line x1="13.5" y1="11" x2="16.5" y2="11" stroke="#A78BFA" stroke-width="1.2" opacity=".5"/>
-            <line x1="13.5" y1="15" x2="16.5" y2="15" stroke="#A78BFA" stroke-width="1.2" opacity=".5"/>
-            <line x1="13.5" y1="19" x2="16.5" y2="19" stroke="#A78BFA" stroke-width="1.2" opacity=".5"/>
+            <path d="M6 3h9l4 4v13a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="var(--accent-2)" stroke-width="1.3" stroke-linejoin="round"/>
+            <path d="M15 3v4h4" stroke="var(--accent-2)" stroke-width="1.3" stroke-linejoin="round"/>
+            <path class="sop-c sop-c-1" d="M7.5 11l1.2 1.2 2.3-2.4" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7" stroke-dashoffset="7"/>
+            <path class="sop-c sop-c-2" d="M7.5 15l1.2 1.2 2.3-2.4" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7" stroke-dashoffset="7"/>
+            <path class="sop-c sop-c-3" d="M7.5 19l1.2 1.2 2.3-2.4" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7" stroke-dashoffset="7"/>
+            <line x1="13.5" y1="11" x2="16.5" y2="11" stroke="var(--accent-2)" stroke-width="1.2" opacity=".5"/>
+            <line x1="13.5" y1="15" x2="16.5" y2="15" stroke="var(--accent-2)" stroke-width="1.2" opacity=".5"/>
+            <line x1="13.5" y1="19" x2="16.5" y2="19" stroke="var(--accent-2)" stroke-width="1.2" opacity=".5"/>
           </svg>
         </div>
         <h3 class="feat-title" data-ru="SOP — авто-регламент" data-en="SOP — auto playbook">SOP — auto playbook</h3>
@@ -3181,21 +3149,21 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <div class="feat-card glow-card depth-card" data-feat="new-import">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <rect x="4" y="10" width="16" height="11" rx="1.5" stroke="#A78BFA" stroke-width="1.3"/>
-            <path d="M4 14h16M10 10v11M15 10v11" stroke="#A78BFA" stroke-width="1.1" opacity=".5"/>
-            <path class="im-arrow" d="M12 2.5v5.5m0 0l-2.2-2.2M12 8l2.2-2.2" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="4" y="10" width="16" height="11" rx="1.5" stroke="var(--accent-2)" stroke-width="1.3"/>
+            <path d="M4 14h16M10 10v11M15 10v11" stroke="var(--accent-2)" stroke-width="1.1" opacity=".5"/>
+            <path class="im-arrow" d="M12 2.5v5.5m0 0l-2.2-2.2M12 8l2.2-2.2" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Умный импорт базы из Excel" data-en="Smart Excel import">Smart Excel import</h3>
-        <p class="feat-desc" data-ru="Распознаёт колонки (бюджет → цена сделки), дедуплицирует и прозрачно сопоставляет поля — вы видите весь маппинг перед импортом." data-en="Recognizes columns (budget → deal value), deduplicates and maps fields transparently — you see the full mapping before import.">Recognizes columns (budget → deal value), deduplicates and maps fields transparently — you see the full mapping before import.</p>
+        <p class="feat-desc" data-ru="Распознаёт колонки (бюджет → цена сделки), дедуплицирует и прозрачно сопоставляет поля — ты видишь весь маппинг перед импортом." data-en="Recognizes columns (budget → deal value), deduplicates and maps fields transparently — you see the full mapping before import.">Recognizes columns (budget → deal value), deduplicates and maps fields transparently — you see the full mapping before import.</p>
       </div>
 
       <div class="feat-card glow-card depth-card" data-feat="new-discovery">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <g class="dc-lens">
-              <circle cx="10.5" cy="10.5" r="6" stroke="#A78BFA" stroke-width="1.3"/>
-              <line x1="15" y1="15" x2="20" y2="20" stroke="#A78BFA" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="10.5" cy="10.5" r="6" stroke="var(--accent-2)" stroke-width="1.3"/>
+              <line x1="15" y1="15" x2="20" y2="20" stroke="var(--accent-2)" stroke-width="1.6" stroke-linecap="round"/>
             </g>
           </svg>
         </div>
@@ -3206,11 +3174,11 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <div class="feat-card glow-card depth-card" data-feat="new-multi">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <circle cx="9" cy="8" r="3.2" stroke="#A78BFA" stroke-width="1.3"/>
-            <path d="M3.3 20a5.7 5.7 0 0111.4 0" stroke="#A78BFA" stroke-width="1.3" stroke-linecap="round"/>
+            <circle cx="9" cy="8" r="3.2" stroke="var(--accent-2)" stroke-width="1.3"/>
+            <path d="M3.3 20a5.7 5.7 0 0111.4 0" stroke="var(--accent-2)" stroke-width="1.3" stroke-linecap="round"/>
             <g class="mu-user2">
-              <circle cx="16.8" cy="9" r="2.6" stroke="#A78BFA" stroke-width="1.3"/>
-              <path d="M13.8 20a4 4 0 017.5-1.9" stroke="#A78BFA" stroke-width="1.3" stroke-linecap="round"/>
+              <circle cx="16.8" cy="9" r="2.6" stroke="var(--accent-2)" stroke-width="1.3"/>
+              <path d="M13.8 20a4 4 0 017.5-1.9" stroke="var(--accent-2)" stroke-width="1.3" stroke-linecap="round"/>
             </g>
           </svg>
         </div>
@@ -3221,12 +3189,12 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <div class="feat-card glow-card depth-card" data-feat="new-meeting">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <rect x="4" y="3" width="16" height="18" rx="2" stroke="#A78BFA" stroke-width="1.3"/>
-            <path class="mt-l mt-l1" d="M7.4 8h6.4" stroke="#A78BFA" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="7" stroke-dashoffset="7"/>
-            <path class="mt-l mt-l2" d="M7.4 12h9" stroke="#A78BFA" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="10" stroke-dashoffset="10"/>
-            <path class="mt-l mt-l3" d="M7.4 16h5" stroke="#A78BFA" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="6" stroke-dashoffset="6"/>
-            <circle class="mt-q" cx="18.4" cy="16.6" r="3.4" fill="#0B0A14" stroke="#A78BFA" stroke-width="1.3"/>
-            <path class="mt-q" d="M17.5 15.6a.95.95 0 011.85.32c0 .64-.9.8-.9 1.42" stroke="#A78BFA" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+            <rect x="4" y="3" width="16" height="18" rx="2" stroke="var(--accent-2)" stroke-width="1.3"/>
+            <path class="mt-l mt-l1" d="M7.4 8h6.4" stroke="var(--accent-2)" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="7" stroke-dashoffset="7"/>
+            <path class="mt-l mt-l2" d="M7.4 12h9" stroke="var(--accent-2)" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="10" stroke-dashoffset="10"/>
+            <path class="mt-l mt-l3" d="M7.4 16h5" stroke="var(--accent-2)" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="6" stroke-dashoffset="6"/>
+            <circle class="mt-q" cx="18.4" cy="16.6" r="3.4" fill="#0B0A14" stroke="var(--accent-2)" stroke-width="1.3"/>
+            <path class="mt-q" d="M17.5 15.6a.95.95 0 011.85.32c0 .64-.9.8-.9 1.42" stroke="var(--accent-2)" stroke-width="1.1" stroke-linecap="round" fill="none"/>
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Подготовка к встрече" data-en="Meeting prep">Meeting prep</h3>
@@ -3236,8 +3204,8 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <div class="feat-card glow-card depth-card" data-feat="new-health">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M3.5 12h3.2l1.9-5 3 10 2.2-5h6.7" class="dh-pulse" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="34" stroke-dashoffset="0"/>
-            <circle class="dh-dot" cx="20.6" cy="12" r="1.7" fill="#A78BFA"/>
+            <path d="M3.5 12h3.2l1.9-5 3 10 2.2-5h6.7" class="dh-pulse" stroke="var(--accent-2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="34" stroke-dashoffset="0"/>
+            <circle class="dh-dot" cx="20.6" cy="12" r="1.7" fill="var(--accent-2)"/>
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Здоровье сделки" data-en="Deal health check">Deal health check</h3>
@@ -3247,11 +3215,11 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <div class="feat-card glow-card depth-card" data-feat="new-memory">
         <div class="feat-icon">
           <svg class="feat-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="3.1" stroke="#A78BFA" stroke-width="1.3"/>
-            <circle class="mem-n mem-n1" cx="5" cy="6.4" r="2" stroke="#A78BFA" stroke-width="1.2"/>
-            <circle class="mem-n mem-n2" cx="19" cy="6.4" r="2" stroke="#A78BFA" stroke-width="1.2"/>
-            <circle class="mem-n mem-n3" cx="12" cy="20" r="2" stroke="#A78BFA" stroke-width="1.2"/>
-            <path d="M6.6 7.7 9.8 10.2M17.4 7.7 14.2 10.2M12 15.1V18" stroke="#A78BFA" stroke-width="1.2" stroke-linecap="round" opacity=".6"/>
+            <circle cx="12" cy="12" r="3.1" stroke="var(--accent-2)" stroke-width="1.3"/>
+            <circle class="mem-n mem-n1" cx="5" cy="6.4" r="2" stroke="var(--accent-2)" stroke-width="1.2"/>
+            <circle class="mem-n mem-n2" cx="19" cy="6.4" r="2" stroke="var(--accent-2)" stroke-width="1.2"/>
+            <circle class="mem-n mem-n3" cx="12" cy="20" r="2" stroke="var(--accent-2)" stroke-width="1.2"/>
+            <path d="M6.6 7.7 9.8 10.2M17.4 7.7 14.2 10.2M12 15.1V18" stroke="var(--accent-2)" stroke-width="1.2" stroke-linecap="round" opacity=".6"/>
           </svg>
         </div>
         <h3 class="feat-title" data-ru="Память о клиенте" data-en="Client memory">Client memory</h3>
@@ -3268,7 +3236,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
 <section class="crm" id="crm">
   <div class="container">
     <p class="section-label reveal" data-ru="Полный контроль" data-en="Full control">Full control</p>
-    <h2 class="section-heading reveal reveal-delay-1" data-ru="Полное управление <em>CRM</em><br>через чат" data-en="Full <em>CRM</em> management<br>via chat">Full <em>CRM</em> management<br>via chat</h2>
+    <h2 class="section-heading reveal reveal-delay-1" data-ru="Полное управление CRM<br>через чат" data-en="Full CRM management<br>via chat">Full CRM management<br>via chat</h2>
     <p class="section-sub reveal reveal-delay-2" data-ru="65 действий через официальный API твоей CRM — в&nbsp;Telegram или в&nbsp;браузере, без кода и&nbsp;интеграторов." data-en="65 actions via your CRM's official API — in Telegram or in your browser, no code, no integrators.">65 actions via your CRM's official API — in Telegram or in your browser, no code, no integrators.</p>
 
     <!-- BA:START before/after -->
@@ -3292,27 +3260,22 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
     <!-- BA:END -->
     <div class="crm-grid reveal reveal-delay-1" style="margin-top:56px">
       <div class="crm-card">
-        <div class="crm-card-num">01</div>
         <h3 class="crm-card-title" data-ru="Воронки и этапы" data-en="Pipelines and stages">Pipelines and stages</h3>
         <p class="crm-card-desc" data-ru="Создаёт, переименовывает и удаляет воронки. Добавляет этапы с цветами из палитры CRM, меняет порядок и группирует по логике продаж." data-en="Creates, renames, and deletes pipelines. Adds stages with colors from the CRM palette, reorders and groups by sales logic.">Creates, renames, and deletes pipelines. Adds stages with colors from the CRM palette, reorders and groups by sales logic.</p>
       </div>
       <div class="crm-card">
-        <div class="crm-card-num">02</div>
         <h3 class="crm-card-title" data-ru="Поля и сущности" data-en="Fields and entities">Fields and entities</h3>
         <p class="crm-card-desc" data-ru="Добавляет кастомные поля (текст, число, список, дата, числовые/денежные) в сделки, контакты и компании. Делает поля обязательными, задаёт значения." data-en="Adds custom fields (text, number, list, date, numeric/monetary) to deals, contacts, and companies. Makes fields required, sets values.">Adds custom fields (text, number, list, date, numeric/monetary) to deals, contacts, and companies. Makes fields required, sets values.</p>
       </div>
       <div class="crm-card">
-        <div class="crm-card-num">03</div>
         <h3 class="crm-card-title" data-ru="Сделки, контакты, компании" data-en="Deals, contacts, companies">Deals, contacts, companies</h3>
         <p class="crm-card-desc" data-ru="Создаёт сделки с бюджетом, контакты с телефоном и email, компании. Связывает сущности между собой, перемещает сделки по этапам." data-en="Creates deals with budgets, contacts with phone and email, companies. Links entities, moves deals through stages.">Creates deals with budgets, contacts with phone and email, companies. Links entities, moves deals through stages.</p>
       </div>
       <div class="crm-card">
-        <div class="crm-card-num">04</div>
         <h3 class="crm-card-title" data-ru="Задачи и автоматизации" data-en="Tasks and automations">Tasks and automations</h3>
         <p class="crm-card-desc" data-ru="Создаёт задачи (звонок, встреча, письмо) с дедлайном. Настраивает автоматизации «событие → действие», уведомления и вебхуки." data-en="Creates tasks (call, meeting, email) with deadlines. Sets up event → action automations, notifications and webhooks.">Creates tasks (call, meeting, email) with deadlines. Sets up event → action automations, notifications and webhooks.</p>
       </div>
       <div class="crm-card">
-        <div class="crm-card-num">05</div>
         <h3 class="crm-card-title" data-ru="Теги, примечания, аналитика" data-en="Tags, notes, analytics">Tags, notes, analytics</h3>
         <p class="crm-card-desc" data-ru="Создаёт и применяет теги. Добавляет примечания к сделкам. Показывает статистику: воронки, поля, пользователи, активность аккаунта." data-en="Creates and applies tags. Adds notes to deals. Shows analytics: pipelines, fields, users, account activity.">Creates and applies tags. Adds notes to deals. Shows analytics: pipelines, fields, users, account activity.</p>
       </div>
@@ -3326,7 +3289,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
 <section class="api" id="api">
   <div class="container">
     <p class="section-label reveal" data-ru="API-действия" data-en="API actions">API actions</p>
-    <h2 class="section-heading reveal reveal-delay-1" data-ru="Доступные<br><em>API-действия</em>" data-en="Available<br><em>API actions</em>">Available<br><em>API actions</em></h2>
+    <h2 class="section-heading reveal reveal-delay-1" data-ru="Доступные<br>API-действия" data-en="Available<br>API actions">Available<br>API actions</h2>
     <p class="section-sub reveal reveal-delay-2" data-ru="Kai использует официальный API твоей CRM. Все операции выполняются безопасно и&nbsp;без твоих паролей." data-en="Kai uses your CRM's official API. All operations are performed securely without your passwords.">Kai uses your CRM's official API. All operations are performed securely without your passwords.</p>
 
     <!-- AC:START phrase → action console -->
@@ -3450,13 +3413,12 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
 
 <hr class="sep">
 
-<!-- COMPARE: Kai vs Integrator -->
 <!-- KO:START office preview -->
 <section class="office" id="office">
   <div class="container">
-    <p class="section-label reveal" data-ru="Превью · в разработке" data-en="Preview · in development">Preview · in development</p>
-    <h2 class="section-heading reveal reveal-delay-1" data-ru="Офис <em>агентов</em> Kai" data-en="The Kai <em>agent office</em>">The Kai <em>agent office</em></h2>
-    <p class="section-sub reveal reveal-delay-2" data-ru="Команда ИИ-помощников работает в твоей CRM и отчитывается на одном экране. Это макет: нажмите событие, посмотрите, кто его берёт, и скажите, нужно ли вам такое." data-en="A team of AI assistants works inside your CRM and reports on one screen. This is a mock-up: tap an event, see who takes it, and tell us whether you want it.">A team of AI assistants works inside your CRM and reports on one screen. This is a mock-up: tap an event, see who takes it, and tell us whether you want it.</p>
+    <p class="section-label reveal" data-hw-ru="Превью · варится в котле" data-hw-en="Preview · brewing in the cauldron" data-ru="Превью · в разработке" data-en="Preview · in development">Preview · in development</p>
+    <h2 class="section-heading reveal reveal-delay-1" data-ru="Офис агентов Kai" data-en="The Kai agent office">The Kai agent office</h2>
+    <p class="section-sub reveal reveal-delay-2" data-ru="Команда ИИ-помощников работает в твоей CRM и отчитывается на одном экране. Это макет: нажми событие, посмотри, кто его берёт, и скажи, нужно ли тебе такое." data-en="A team of AI assistants works inside your CRM and reports on one screen. This is a mock-up: tap an event, see who takes it, and tell us whether you want it.">A team of AI assistants works inside your CRM and reports on one screen. This is a mock-up: tap an event, see who takes it, and tell us whether you want it.</p>
     <div class="ko reveal" id="ko">
       <div class="ko-top">
         <span class="ko-tag" data-ru="Макет · функции ещё нет" data-en="Mock-up · not built yet">Mock-up · not built yet</span>
@@ -3505,55 +3467,11 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
 
 <hr class="sep">
 <!-- KO:END -->
-<section class="compare">
-  <div class="container">
-    <p class="section-label reveal" data-ru="Почему Kai" data-en="Why Kai">Why Kai</p>
-    <h2 class="section-heading reveal reveal-delay-1" data-ru="Kai <em>vs</em> интегратор" data-en="Kai <em>vs</em> integrator">Kai <em>vs</em> integrator</h2>
-
-    <div class="compare-grid" style="margin-top:56px">
-      <div class="compare-card old reveal">
-        <div class="compare-badge" data-ru="Классический путь" data-en="Traditional way">Traditional way</div>
-        <h3 data-ru="Нанять интегратора" data-en="Hire an integrator">Hire an integrator</h3>
-        <ul class="compare-list">
-          <li><span class="icon">→</span> <span data-ru="Согласование ТЗ: 3–5 дней" data-en="Specs approval: 3–5 days">Specs approval: 3–5 days</span></li>
-          <li><span class="icon">→</span> <span data-ru="Настройка CRM: 1–3 недели" data-en="CRM setup: 1–3 weeks">CRM setup: 1–3 weeks</span></li>
-          <li><span class="icon">→</span> <span data-ru="Правки после запуска: ещё неделя" data-en="Post-launch fixes: another week">Post-launch fixes: another week</span></li>
-          <li><span class="icon">→</span> <span data-ru="Общение через менеджера" data-en="Communication through a manager">Communication through a manager</span></li>
-          <li><span class="icon">→</span> <span data-ru="Каждое изменение — новый запрос" data-en="Every change — a new request">Every change — a new request</span></li>
-          <li><span class="icon">→</span> <span data-ru="После запуска — тишина до нового счёта" data-en="After launch — silence until the next invoice">After launch — silence until the next invoice</span></li>
-        </ul>
-        <div class="compare-bottom">
-          <div class="compare-price" data-ru="150 000 — 400 000 ₽" data-en="€1,500 — €4,000">€1,500 — €4,000</div>
-        </div>
-      </div>
-
-      <div class="compare-card kai reveal reveal-delay-1">
-        <div class="compare-badge">Kai</div>
-        <h3 data-ru="Настроить самому через чат" data-en="Set up yourself via chat">Set up yourself via chat</h3>
-        <ul class="compare-list">
-          <li><span class="icon">✓</span> <span data-ru="Консультация + план: 5 минут" data-en="Consultation + plan: 5 minutes">Consultation + plan: 5 minutes</span></li>
-          <li><span class="icon">✓</span> <span data-ru="Настройка CRM: минуты" data-en="CRM setup: minutes">CRM setup: minutes</span></li>
-          <li><span class="icon">✓</span> <span data-ru="Правки: скажи Kai что изменить" data-en="Fixes: tell Kai what to change">Fixes: tell Kai what to change</span></li>
-          <li><span class="icon">✓</span> <span data-ru="Прямой диалог: браузер или Telegram" data-en="Direct dialog: browser or Telegram">Direct dialog: browser or Telegram</span></li>
-          <li><span class="icon">✓</span> <span data-ru="65 действий через API" data-en="65 actions via API">65 actions via API</span></li>
-          <li><span class="icon">✓</span> <span data-ru="Ежедневный мониторинг воронки и починка в один тап" data-en="Daily funnel monitoring and one-tap fixes">Daily funnel monitoring and one-tap fixes</span></li>
-        </ul>
-        <div class="compare-bottom">
-          <div class="compare-price"><span data-ru="от €29/мес · автоматизации — от €59" data-en="from €29/mo · automations from €59">from €29/mo · automations from €59</span></div>
-          <a href="#pricing" class="compare-plans-link" data-ru="Смотреть тарифы →" data-en="See plans →">See plans →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="sep">
-
-<!-- PRICING -->
+<!-- COMPARE: Kai vs other ways -->
 <section class="compare" id="compare">
   <div class="container">
     <p class="section-label reveal" data-ru="Сравнение" data-en="Comparison">Comparison</p>
-    <h2 class="section-heading reveal reveal-delay-1" data-ru="Kai против <em>других способов</em> настроить CRM" data-en="Kai vs <em>other ways</em> to set up a CRM">Kai vs <em>other ways</em> to set up a CRM</h2>
+    <h2 class="section-heading reveal reveal-delay-1" data-ru="Kai против других способов настроить CRM" data-en="Kai vs other ways to set up a CRM">Kai vs other ways to set up a CRM</h2>
     <p class="section-sub reveal reveal-delay-2" data-ru="Честно: у каждого пути есть место. Kai закрывает самый частый случай — когда нужна рабочая CRM за минуты, а не проект на недели." data-en="Honestly: every route has its place. Kai covers the most common case — a working CRM in minutes, not a weeks-long project.">Honestly: every route has its place. Kai covers the most common case — a working CRM in minutes, not a weeks-long project.</p>
     <div class="reveal reveal-delay-2" style="margin-top:32px;overflow-x:auto;border:1px solid var(--border);border-radius:16px;background:var(--bg-1)">
       <table style="width:100%;min-width:720px;border-collapse:collapse;font-size:14px;line-height:1.45">
@@ -3612,7 +3530,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
 <section class="pricing" id="pricing">
   <div class="container">
     <p class="section-label reveal" data-ru="Тарифы" data-en="Plans">Plans</p>
-    <h2 class="section-heading reveal reveal-delay-1" data-ru="Выбери план под <em>свой этап</em>" data-en="Pick the plan for <em>your stage</em>">Pick the plan for <em>your stage</em></h2>
+    <h2 class="section-heading reveal reveal-delay-1" data-hw-ru="Выбери план: без гадостей, только сладости" data-hw-en="Pick a plan: no tricks, only treats" data-ru="Выбери план под свой этап" data-en="Pick the plan for your stage">Pick the plan for your stage</h2>
     <p class="section-sub reveal reveal-delay-2" data-ru="Первые 3 дня — бесплатно, отсчёт идёт с подключения CRM. Оплата картой, Telegram Stars или криптой (USDT)." data-en="First 3 days free — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).">First 3 days free — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).</p>
 
     <div class="pricing-grid reveal reveal-delay-2 stagger-in">
@@ -3621,7 +3539,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
         <div class="plan-name">Start</div>
         <div class="plan-price">€29 <span data-ru="/мес" data-en="/mo">/mo</span></div>
         <p class="plan-pitch" data-ru="Настройка CRM разговором" data-en="Set up your CRM by talking">Set up your CRM by talking</p>
-        <div class="plan-trial" data-ru="3 дня бесплатно" data-en="3 days free">3 days free</div>
+        <div class="plan-trial" data-hw-ru="3 дня бесплатно, без жертвоприношений" data-hw-en="3 days free, no sacrifices" data-ru="3 дня бесплатно" data-en="3 days free">3 days free</div>
         <ul class="plan-features">
           <li data-ru="Консультация и ТЗ в PDF" data-en="Consultation & spec (PDF)">Consultation & spec (PDF)</li>
           <li data-ru="Воронки, этапы, кастомные поля" data-en="Pipelines, stages, custom fields">Pipelines, stages, custom fields</li>
@@ -3640,7 +3558,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       </div>
 
       <div class="plan-card featured">
-        <div class="plan-badge" data-ru="Хит" data-en="Popular">Popular</div>
+        <div class="plan-badge" data-hw-ru="Жуть как популярно" data-hw-en="Scary popular" data-ru="Хит" data-en="Popular">Popular</div>
         <div class="plan-name">Pro</div>
         <div class="plan-price">€59 <span data-ru="/мес" data-en="/mo">/mo</span></div>
         <p class="plan-pitch" data-ru="+ автоматизации и управление" data-en="+ automation & management">+ automation & management</p>
@@ -3685,7 +3603,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
       <p data-ru="Нестандартная интеграция или доработка (свой вебхук, связка с внешним сервисом, особый сценарий) доступна только на тарифе Max. Каждая доработка — фиксированно €30, без «сколько попросят»." data-en="A non-standard integration or custom build (your own webhook, a link to an external service, a special scenario) is available on the Max plan only. Each build is a flat €30, no guesswork.">A non-standard integration or custom build (your own webhook, a link to an external service, a special scenario) is available on the Max plan only. Each build is a flat €30, no guesswork.</p>
       <ul class="note-points">
         <li data-ru="<b>Цепочки шагов.</b> «Создай запись в моём сервисе → пришли её id в Telegram» — до 3 запросов подряд, данные передаются между шагами." data-en="<b>Multi-step chains.</b> &laquo;Create a record in my service → send its id to Telegram&raquo; — up to 3 chained requests, with data passed between steps."><b>Multi-step chains.</b> &laquo;Create a record in my service → send its id to Telegram&raquo; — up to 3 chained requests, with data passed between steps.</li>
-        <li data-ru="<b>Прозрачность.</b> Перед включением Kai показывает, что реально улетит — на тестовой сделке, с закрытыми секретами. Кнопка «📤 Отправить тест» шлёт пробный запрос сразу." data-en="<b>Full transparency.</b> Before switching it on, Kai shows exactly what will be sent — on a test deal, with secrets masked. The &laquo;📤 Send test&raquo; button fires a trial request right away."><b>Full transparency.</b> Before switching it on, Kai shows exactly what will be sent — on a test deal, with secrets masked. The &laquo;📤 Send test&raquo; button fires a trial request right away.</li>
+        <li data-ru="<b>Прозрачность.</b> Перед включением Kai показывает, что реально улетит — на тестовой сделке, с закрытыми секретами. Кнопка «Отправить тест» шлёт пробный запрос сразу." data-en="<b>Full transparency.</b> Before switching it on, Kai shows exactly what will be sent — on a test deal, with secrets masked. The &laquo;Send test&raquo; button fires a trial request right away."><b>Full transparency.</b> Before switching it on, Kai shows exactly what will be sent — on a test deal, with secrets masked. The &laquo;Send test&raquo; button fires a trial request right away.</li>
         <li data-ru="<b>Оплата в один тап.</b> €30 за доработку — кнопкой прямо в чате, картой." data-en="<b>One-tap payment.</b> €30 per build — pay by card with a button right in the chat."><b>One-tap payment.</b> €30 per build — pay by card with a button right in the chat.</li>
       </ul>
       <div class="note-targets">
@@ -3699,19 +3617,19 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
     <div class="pricing-note support-note reveal">
       <strong data-ru="Поддержка, которая чинит, а не отписывается" data-en="Support that fixes things, not just replies">Support that fixes things, not just replies</strong>
       <span class="note-tag" data-ru="на всех тарифах" data-en="all plans">all plans</span>
-      <p data-ru="Пиши в саппорт-бот — он принимает вопрос или баг прямо в чате. Сообщения о багах уходят в автоматический AI-конвейер: он воспроизводит проблему, готовит исправление и выкатывает его, а вам приходит уведомление, что починили." data-en="Message the support bot — it takes your question or bug right in the chat. Bug reports go into an automated AI pipeline that reproduces the problem, prepares the fix and ships it, then notifies you that it is done.">Message the support bot — it takes your question or bug right in the chat. Bug reports go into an automated AI pipeline that reproduces the problem, prepares the fix and ships it, then notifies you that it is done.</p>
+      <p data-ru="Пиши в саппорт-бот — он принимает вопрос или баг прямо в чате. Сообщения о багах уходят в автоматический AI-конвейер: он воспроизводит проблему, готовит исправление и выкатывает его, а тебе приходит уведомление, что починили." data-en="Message the support bot — it takes your question or bug right in the chat. Bug reports go into an automated AI pipeline that reproduces the problem, prepares the fix and ships it, then notifies you that it is done.">Message the support bot — it takes your question or bug right in the chat. Bug reports go into an automated AI pipeline that reproduces the problem, prepares the fix and ships it, then notifies you that it is done.</p>
       <a class="support-bot" href="https://t.me/aiicrm_support_bot" target="_blank" rel="noopener">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 3.6L2.4 11.1c-1 .4-1 1.7.1 2l4.9 1.5 1.9 5.8c.2.7 1.1 1 1.6.4l2.7-2.7 5 3.7c.7.5 1.7.1 1.9-.7l3.4-15.9c.2-1-.7-1.9-1.7-1.6zM8.6 14.3l9.3-5.9-7.7 6.9-.3 3.6z"/></svg>
         @aiicrm_support_bot
       </a>
     </div>
 
-    <h3 class="section-heading reveal" style="font-size:clamp(22px,3vw,30px);margin-top:56px" data-ru="Частые <em>вопросы</em>" data-en="Frequently asked <em>questions</em>">Frequently asked <em>questions</em></h3>
+    <h3 class="section-heading reveal" style="font-size:clamp(26px,3vw,34px);margin-top:64px" data-ru="Частые вопросы" data-en="Frequently asked questions">Frequently asked questions</h3>
 
     <div class="faq-grid reveal reveal-delay-1">
       <div class="faq-item">
         <button class="faq-q" data-ru="Kai что-то делает сам, без моих запросов?" data-en="Does Kai do anything on its own?">Does Kai do anything on its own?</button>
-        <div class="faq-a"><div class="faq-a-inner" data-ru="Да — раз в день проверяет здоровье воронки. Если всё хорошо, молчит. Если что-то просело — пришлёт сигнал, совет и кнопки починки. Это бесплатно и не тратит ваши запросы." data-en="Yes — it checks your funnel health daily. All good — it stays quiet. Something dropped — you get an alert, advice and fix buttons. Free, doesn't spend your requests.">Yes — it checks your funnel health daily. All good — it stays quiet. Something dropped — you get an alert, advice and fix buttons. Free, doesn't spend your requests.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-ru="Да — раз в день проверяет здоровье воронки. Если всё хорошо, молчит. Если что-то просело — пришлёт сигнал, совет и кнопки починки. Это бесплатно и не тратит твои запросы." data-en="Yes — it checks your funnel health daily. All good — it stays quiet. Something dropped — you get an alert, advice and fix buttons. Free, doesn't spend your requests.">Yes — it checks your funnel health daily. All good — it stays quiet. Something dropped — you get an alert, advice and fix buttons. Free, doesn't spend your requests.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" data-ru="Что если кончатся запросы?" data-en="What if I run out of requests?">What if I run out of requests?</button>
@@ -3781,11 +3699,12 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
 
 <!-- CTA BAND -->
 <section class="cta-band" id="cta">
+  <div class="hw-deco" aria-hidden="true"><span class="hw-web l"></span><span class="hw-web r"></span></div>
   <div class="cta-inner">
     <p class="section-label" style="justify-content:center;display:flex" data-ru="Начать сейчас" data-en="Start now">Start now</p>
-    <h2 class="reveal" data-ru="Консультация. Настройка.<br><em>Готово.</em>" data-en="Consultation. Setup.<br><em>Done.</em>">Consultation. Setup.<br><em>Done.</em></h2>
+    <h2 class="reveal" data-hw-ru="Без страха. Без программистов.<br><em>Готово.</em>" data-hw-en="No fear. No developers.<br><em>Done.</em>" data-ru="Консультация. Настройка.<br><em>Готово.</em>" data-en="Consultation. Setup.<br><em>Done.</em>">Consultation. Setup.<br><em>Done.</em></h2>
     <div class="hero-actions reveal reveal-delay-1">
-      <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="btn-primary" style="font-size:16px;padding:14px 28px;">
+      <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="btn-primary">
         <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M13.4 2L1.6 6.5c-.6.2-.5 1 .1 1.2l3.3 1.1 1.1 3.7c.2.6 1 .7 1.2.1L11.9 3.4c.3-.7-.4-1.4-1.1-1.1z" fill="currentColor"/></svg>
         <span data-ru="Открыть Kai в Telegram" data-en="Open Kai in Telegram">Open Kai in Telegram</span>
       </a>
@@ -3841,7 +3760,7 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
   </div>
   <div class="container">
     <div class="footer-bottom">
-      <span data-ru="© 2026 Kai. Настройка CRM без программистов." data-en="© 2026 Kai. CRM setup without developers.">© 2026 Kai. CRM setup without developers.</span>
+      <span data-hw-ru="© 2026 Kai. Настройка CRM без программистов и без нечисти." data-hw-en="© 2026 Kai. CRM setup without developers or ghouls." data-ru="© 2026 Kai. Настройка CRM без программистов." data-en="© 2026 Kai. CRM setup without developers.">© 2026 Kai. CRM setup without developers.</span>
       <div style="display:flex;flex-wrap:wrap;gap:8px 20px;">
         <a href="../privacy-en.html" class="privacy-link" data-ru="Политика конфиденциальности" data-en="Privacy policy">Privacy policy</a>
         <a href="../terms-en.html" data-ru="Условия использования" data-en="Terms of service">Terms of service</a>
@@ -3854,13 +3773,28 @@ html.hw .nav-logo::after, html.hw .footer-brand .logo::after {
 
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner">
-  <span data-ru="Мы используем cookie для аналитики посещаемости. Без вашего согласия они не ставятся — сайт работает и без них. Подробнее в <a href='../privacy-en.html'>Политике конфиденциальности</a>." data-en="We use cookies for site analytics. Nothing is stored without your consent — the site works fine without them. See our <a href='../privacy-en.html'>Privacy Policy</a>.">We use cookies for site analytics. Nothing is stored without your consent — the site works fine without them. See our <a href='../privacy-en.html'>Privacy Policy</a>.</span>
+  <span data-hw-ru="Печеньки на Хеллоуин: cookie только для аналитики посещаемости. Без твоего согласия они не ставятся — сайт работает и без них. Подробнее в <a href='../privacy-en.html'>Политике конфиденциальности</a>." data-hw-en="Halloween treats: cookies are for site analytics only. Nothing is stored without your consent — the site works fine without them. See our <a href='../privacy-en.html'>Privacy Policy</a>." data-ru="Мы используем cookie для аналитики посещаемости. Без твоего согласия они не ставятся — сайт работает и без них. Подробнее в <a href='../privacy-en.html'>Политике конфиденциальности</a>." data-en="We use cookies for site analytics. Nothing is stored without your consent — the site works fine without them. See our <a href='../privacy-en.html'>Privacy Policy</a>.">We use cookies for site analytics. Nothing is stored without your consent — the site works fine without them. See our <a href='../privacy-en.html'>Privacy Policy</a>.</span>
   <div class="cookie-btns">
     <button class="cookie-btn cookie-btn-accept" id="cookieAccept" data-ru="Принять" data-en="Accept">Accept</button>
     <button class="cookie-btn cookie-btn-decline" id="cookieDecline" data-ru="Только необходимые" data-en="Only necessary">Only necessary</button>
   </div>
 </div>
 
+<script>
+/* ─── HALLOWEEN: copy variants + toggle ─── */
+(function(){
+  var h=document.documentElement,hw=h.classList.contains('hw'),en=h.lang==='en';
+  if(hw){document.querySelectorAll('[data-hw-ru]').forEach(function(el){
+    el.setAttribute('data-ru',el.getAttribute('data-hw-ru'));
+    if(el.hasAttribute('data-hw-en'))el.setAttribute('data-en',el.getAttribute('data-hw-en'));
+    el.innerHTML=el.getAttribute(en?'data-en':'data-ru');});}
+  document.querySelectorAll('.hw-toggle').forEach(function(b){
+    b.title=hw?(en?'Halloween mode: turn off':'Хеллоуин-режим: выключить'):(en?'Halloween mode: turn on':'Хеллоуин-режим: включить');
+    b.setAttribute('aria-pressed',hw?'true':'false');
+    b.addEventListener('click',function(){try{localStorage.setItem('kai_hw',hw?'0':'1');}catch(e){}
+      var u=new URL(location.href);u.searchParams.delete('hw');location.href=u.href;location.reload();});});
+})();
+</script>
 <script>
 /* ─── SCROLL POSITION PERSISTENCE ─── */
 (function() {
@@ -3921,6 +3855,8 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 reveals.forEach(r => observer.observe(r));
+function revealInView(){const vh=innerHeight;reveals.forEach(r=>{const b=r.getBoundingClientRect();if(b.top<vh&&b.bottom>0)r.classList.add('visible');});}
+revealInView();addEventListener('load',revealInView);addEventListener('hashchange',()=>setTimeout(revealInView,60));
 
 /* ─── FEATURE CARDS: staggered scroll-reveal ─── */
 (function(){
@@ -4318,7 +4254,7 @@ reveals.forEach(r => observer.observe(r));
     var LAYERS = [{fs: 11, sp: [4.5, 7], a: .42, head: '170,150,255', len: 8},
                   {fs: 16, sp: [5.5, 8.5], a: .72, head: '214,204,255', len: 11},
                   {fs: 22, sp: [6.5, 10], a: 1, head: '240,234,255', len: 13}];
-    var SLOT = 14, RFONT = '600 %px ui-monospace,"SF Mono",Menlo,Consolas,monospace', ACC = (getComputedStyle(document.documentElement).getPropertyValue('--accent-rgb').trim() || '124,92,255'), HI = (getComputedStyle(document.documentElement).getPropertyValue('--accent-hi-rgb').trim() || '178,150,255');
+    var SLOT = 14, RFONT = '600 %px "JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace', ACC = (getComputedStyle(document.documentElement).getPropertyValue('--accent-rgb').trim() || '124,92,255'), HI = (getComputedStyle(document.documentElement).getPropertyValue('--accent-hi-rgb').trim() || '178,150,255');
     var ENTER = .5, WORD_IN = .55, WORD_OUT = 1.9, CALM = 2;   /* seconds after opening; CALM: the rain comes back, slow */
     var W = 0, H = 0, OX = 0, OY = 0, calm = false, cols = [], spawn = true, rainA = 0, accel = 1, entered = false, raf = 0, start = 0, last = 0, logoA = 0, burst = 0;
     function rg(){ return GLYPHS[(Math.random() * GLYPHS.length) | 0]; }
@@ -4590,14 +4526,6 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
   });
 });
 
-/* ─── INTRO OVERLAY ─── */
-(function() {
-  var overlay = document.getElementById('introOverlay');
-  if (!overlay) return;
-  setTimeout(function() { overlay.classList.add('out'); }, 600);
-  setTimeout(function() { overlay.remove(); }, 1400);
-})();
-
 /* ─── SHIMMER INDEX FOR API BADGES ─── */
 document.querySelectorAll('.api-badge').forEach((b, i) => {
   b.style.setProperty('--i', i);
@@ -4671,7 +4599,7 @@ window.addEventListener('scroll', () => {
 
 <!-- CHAT LAUNCHER -->
 <div class="chat-tip" id="chatTip">
-  <span id="chatTipText" data-ru="👋 Настрою CRM за пару минут — расскажешь, чем занимаешься?" data-en="👋 I can set up your CRM in minutes — tell me what you do?">👋 I can set up your CRM in minutes — tell me what you do?</span>
+  <span id="chatTipText" data-hw-ru="Бу! Настрою CRM за пару минут — расскажешь, чем занимаешься?" data-hw-en="Boo! I can set up your CRM in minutes — tell me what you do?" data-ru="Настрою CRM за пару минут — расскажешь, чем занимаешься?" data-en="I can set up your CRM in minutes — tell me what you do?">I can set up your CRM in minutes — tell me what you do?</span>
   <button class="chat-tip-x" id="chatTipX" aria-label="Close">✕</button>
 </div>
 <span class="chat-badge" id="chatBadge" aria-hidden="true">1</span>
@@ -4716,7 +4644,7 @@ window.addEventListener('scroll', () => {
     markNudged();
     if (!loaded) {
       var f = document.createElement('iframe');
-      f.src = CHAT_URL + (document.documentElement.lang === 'en' ? '?lang=en' : '?lang=ru') + (handoffCode ? '&h=' + encodeURIComponent(handoffCode) : '');
+      f.src = CHAT_URL + (document.documentElement.lang === 'en' ? '?lang=en' : '?lang=ru') + (handoffCode ? '&h=' + encodeURIComponent(handoffCode) : '') + (document.documentElement.classList.contains('hw') ? '&hw=1' : '&hw=0');
       handoffCode = null;
       f.title = 'Kai chat';
       f.setAttribute('allow', 'microphone; autoplay; clipboard-write');   /* voice notes and calls inside the chat */
@@ -4867,12 +4795,13 @@ window.addEventListener('scroll', () => {
   const ctx = cv.getContext('2d', { alpha: true });
   const _cssRGB = (n, d) => { const v = getComputedStyle(document.documentElement).getPropertyValue(n).trim().split(',').map(Number); return v.length === 3 && v.every(x => x >= 0) ? v : d; };
   const ACC = _cssRGB('--accent-rgb', [124,92,255]), HI = _cssRGB('--accent-hi-rgb', [178,150,255]);
-  const MONO = '800 %px ui-monospace,"SF Mono",Menlo,Consolas,monospace';
+  const MONO = '800 %px "JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace';
   const rgba = (c,a) => 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + a + ')';
   const lang = () => (document.documentElement.lang === 'en' ? 'en' : 'ru');
+  const HW = document.documentElement.classList.contains('hw');
   const getWords = () => lang() === 'en'
-    ? ['KAI','CRM','Sales','Flow','Growth','Focus']
-    : ['KAI','CRM','Продажи','Воронка','Процесс','Рост'];
+    ? (HW ? ['BOO','KAI','SPOOKY','GHOST','PUMPKIN','31.10'] : ['KAI','CRM','Sales','Flow','Growth','Focus'])
+    : (HW ? ['BOO','KAI','ЖУТЬ','ПРИЗРАК','ТЫКВА','31.10'] : ['KAI','CRM','Продажи','Воронка','Процесс','Рост']);
   let W=0,H=0,DPR=1,t=0,cx=0,cy=0,baseCell=8;
   let run=true,rafId=0,seen=true;
   const P = { x:-999, y:-999, active:false, lastT:0 };
@@ -4939,7 +4868,7 @@ window.addEventListener('scroll', () => {
     t+=0.016;ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='lighter';
     if(rain>0){rain-=0.016;const cw=16,n=Math.ceil(W/cw),fade=Math.min(1,rain/0.9);
       if(!drops||drops.length!==n)drops=Array.from({length:n},()=>-Math.random()*40);
-      ctx.font='14px ui-monospace,Menlo,Consolas,monospace';ctx.textAlign='center';ctx.textBaseline='top';
+      ctx.font='14px "JetBrains Mono",ui-monospace,Menlo,Consolas,monospace';ctx.textAlign='center';ctx.textBaseline='top';
       for(let i=0;i<n;i++){drops[i]+=0.5+((i*7)%5)*0.09;const hd=drops[i]|0;
         for(let k=0;k<14;k++){const y=(hd-k)*cw;if(y<0||y>H)continue;
           ctx.fillStyle=rgba(k?ACC:HI,(k?0.55*(1-k/14):0.95)*fade);
@@ -4954,6 +4883,7 @@ window.addEventListener('scroll', () => {
       else if(wPhase==='hold'&&wT>3.2){wPhase='out';wT=0;}
       else if(wPhase==='out'&&wT>1.6){wState='idle';wT=0;wNext=16+Math.random()*8;typed=false;buf='';}}
     const bob=Math.sin(t*0.9)*baseCell*0.5,bob2=Math.cos(t*0.9)*baseCell*0.5;
+    const flick=HW&&!wordActive?0.84+0.16*Math.abs(Math.sin(t*7.3)*Math.sin(t*2.1+1)):1;   /* candle inside the pumpkin */
     for(const p of particles){
       let TX,TY,sz=Math.max(2,baseCell*0.62);
       if(wordActive){TX=cx+p.wx*wScale;TY=cy+p.wy*wScale;sz*=1.25;}
@@ -4965,7 +4895,7 @@ window.addEventListener('scroll', () => {
       const shim=reduce?0.9:(0.6+0.4*Math.sin(t*2.2+p.ph));
       const col=wordActive?HI:(p.dot?DOTC:ACC);
       const al=wordActive?Math.min(1,0.95*shim):(p.dot?1:0.8)*shim;
-      ctx.fillStyle=rgba(col,al);ctx.fillRect(Math.round(p.x-sz/2),Math.round(p.y-sz/2),Math.ceil(sz),Math.ceil(sz));
+      ctx.fillStyle=rgba(col,al*flick);ctx.fillRect(Math.round(p.x-sz/2),Math.round(p.y-sz/2),Math.ceil(sz),Math.ceil(sz));
     }
     ctx.globalCompositeOperation='source-over';
     if(!reduce&&run)rafId=requestAnimationFrame(frame);
@@ -4986,7 +4916,7 @@ window.addEventListener('scroll', () => {
   const touch=matchMedia('(hover: none)').matches;
   /* pains and what Kai does about them live in the markup (#heroPains), already in the page language */
   function getPairs(){const o=[];const hw=document.documentElement.classList.contains('hw');document.querySelectorAll('#heroPains li').forEach(li=>{
-    if(li.hasAttribute('data-hw')&&!hw)return;
+    if(li.hasAttribute('data-hw')!==hw)return;
     const sp=li.querySelectorAll('span'),h=li.getAttribute('data-hint')||'';
     if(sp.length>1&&(!h||(!reduce&&h===(touch?'t':'k'))))o.push([sp[0].textContent,sp[1].textContent]);});return o;}
   function rndr(txt,cur,fix){if(!tagEl)return;
