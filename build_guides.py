@@ -12,7 +12,7 @@ import os
 import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-BASE = "https://aicrm2000-lab.github.io/kai-landing/"
+BASE = "https://aii-crm.com/"
 TODAY = dt.date.today().isoformat()
 MARK = ('<svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" '
         'stroke="#7C5CFF" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="#A78BFA"/></svg>')

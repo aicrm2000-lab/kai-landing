@@ -14,7 +14,7 @@ import re
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "index.html")
 OUT_DIR = os.path.join(HERE, "en")
-BASE = "https://aicrm2000-lab.github.io/kai-landing/"
+BASE = "https://aii-crm.com/"
 
 EN_META = {
     "title": "Kai — Set up your CRM without developers | AI assistant for amoCRM and Kommo",
