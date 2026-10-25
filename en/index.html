@@ -3784,10 +3784,12 @@ html.hw .section-label::before {
 /* ─── HALLOWEEN: copy variants + toggle ─── */
 (function(){
   var h=document.documentElement,hw=h.classList.contains('hw'),en=h.lang==='en';
-  if(hw){document.querySelectorAll('[data-hw-ru]').forEach(function(el){
+  function swap(){document.querySelectorAll('[data-hw-ru]').forEach(function(el){
+    if(el.getAttribute('data-ru')===el.getAttribute('data-hw-ru'))return;
     el.setAttribute('data-ru',el.getAttribute('data-hw-ru'));
     if(el.hasAttribute('data-hw-en'))el.setAttribute('data-en',el.getAttribute('data-hw-en'));
     el.innerHTML=el.getAttribute(en?'data-en':'data-ru');});}
+  if(hw){swap();document.addEventListener('DOMContentLoaded',swap);}   /* the chat bubble is parsed after this script */
   document.querySelectorAll('.hw-toggle').forEach(function(b){
     b.title=hw?(en?'Halloween mode: turn off':'Хеллоуин-режим: выключить'):(en?'Halloween mode: turn on':'Хеллоуин-режим: включить');
     b.setAttribute('aria-pressed',hw?'true':'false');
