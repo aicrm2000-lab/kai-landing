@@ -45,7 +45,7 @@ def index_page(lang: str, guides: list[dict]) -> str:
     self_url = BASE + ("guides/" if ru else "guides/en/")
     alt_ru, alt_en = BASE + "guides/", BASE + "guides/en/"
     up = "../" if ru else "../../"
-    chat = "https://ai-crm-bot-production.up.railway.app/chat?lang=" + lang
+    chat = "https://app.aii-crm.com/chat?lang=" + lang
     return f"""<!doctype html>
 <html lang="{lang}">
 <head>
