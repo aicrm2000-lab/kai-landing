@@ -163,6 +163,7 @@ def main() -> None:
         html = html.replace(f"'{p}-en.html' : '{p}.html'", f"'../{p}-en.html' : '../{p}.html'")
         html = html.replace(f"href='{p}-en.html'", f"href='../{p}-en.html'").replace(f"href='{p}.html'", f"href='../{p}-en.html'")
     html = html.replace('href="../guides/"', 'href="../guides/en/"')
+    html = html.replace('app.aii-crm.com/account?lang=ru"', 'app.aii-crm.com/account?lang=en"').replace('mode=signup&amp;lang=ru"', 'mode=signup&amp;lang=en"')   # кабинет: язык и без JS
     # атрибуты title/aria-label с английскими вариантами
     html = re.sub(r'<(?P<tag>[a-zA-Z][\w-]*)(?P<attrs>(?:[^>"]|"[^"]*")*)>', _burn_attr_variants, html)
     # структурированные данные и ключевые слова — английские
