@@ -2640,6 +2640,7 @@ html.hw .section-label::before {
       <li><a href="#pricing" data-ru="Тарифы" data-en="Plans">Тарифы</a></li>
       <li><a href="https://app.aii-crm.com/chat?lang=ru" target="_blank" rel="noopener" class="chat-link" data-ru="Веб-чат" data-en="Web chat">Веб-чат</a></li>
       <li><a href="https://t.me/aiicrm_support_bot" target="_blank" rel="noopener" data-ru="Поддержка" data-en="Support">Поддержка</a></li>
+      <li><a href="https://app.aii-crm.com/account" class="acct-link" data-ru="Войти" data-en="Sign in">Войти</a></li>
     </ul>
 <button type="button" class="nav-call" data-call-kai="nav" aria-haspopup="dialog" aria-label="Позвонить Kai" data-ru-label="Позвонить Kai" data-en-label="Call Kai" title="Позвонить Kai" data-ru-title="Позвонить Kai" data-en-title="Call Kai"><span class="bc-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.6 4-2 1.3a11 11 0 005.1 5.1l1.3-2 4 1.6v3a2 2 0 01-2.2 2A17 17 0 013 6.2 2 2 0 015 4z"/></svg></span><span class="nc-t" data-ru="Позвонить Kai" data-en="Call Kai">Позвонить Kai</span></button>
 <a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" class="nav-connect"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg><span data-ru="Подключить CRM" data-en="Connect CRM">Подключить CRM</span></a>
@@ -2661,6 +2662,7 @@ html.hw .section-label::before {
   <a href="#pricing" data-ru="Тарифы" data-en="Plans">Тарифы</a>
   <a href="https://app.aii-crm.com/chat?lang=ru" target="_blank" rel="noopener" class="chat-link" data-ru="Веб-чат" data-en="Web chat">Веб-чат</a>
   <a href="https://t.me/aiicrm_support_bot" target="_blank" rel="noopener" data-ru="Поддержка" data-en="Support">Поддержка</a>
+  <a href="https://app.aii-crm.com/account" class="acct-link" data-ru="Войти в кабинет" data-en="Sign in">Войти в кабинет</a>
   <button type="button" class="mm-call" data-call-kai="menu" aria-haspopup="dialog"><span class="bc-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.6 4-2 1.3a11 11 0 005.1 5.1l1.3-2 4 1.6v3a2 2 0 01-2.2 2A17 17 0 013 6.2 2 2 0 015 4z"/></svg></span><span data-ru="Позвонить Kai" data-en="Call Kai">Позвонить Kai</span> <span class="bc-soon" data-ru="скоро" data-en="soon">скоро</span></button>
   <a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" data-ru="Подключить CRM" data-en="Connect CRM">Подключить CRM</a>
   <div class="mobile-menu-footer">
@@ -3768,6 +3770,7 @@ html.hw .section-label::before {
         <li><a href="#api" data-ru="API-действия" data-en="API actions">API-действия</a></li>
         <li><a href="https://app.aii-crm.com/chat?lang=ru" target="_blank" rel="noopener" class="chat-link" data-ru="Веб-чат" data-en="Web chat">Веб-чат</a></li>
         <li><a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" data-ru="Попробовать" data-en="Try it">Попробовать</a></li>
+        <li><a href="https://app.aii-crm.com/account" class="acct-link" data-ru="Личный кабинет" data-en="Account">Личный кабинет</a></li>
       </ul>
     </div>
     <div class="footer-links">
@@ -4535,6 +4538,7 @@ function applyLang(lang) {
   document.querySelectorAll('.chat-link').forEach(function(cl) {
     cl.href = 'https://app.aii-crm.com/chat?lang=' + (lang === 'en' ? 'en' : 'ru');
   });
+  document.querySelectorAll('.acct-link').forEach(function(a) { a.href = 'https://app.aii-crm.com/account?lang=' + (lang === 'en' ? 'en' : 'ru'); });
   if (window.kaiChatRelang) window.kaiChatRelang(lang);
   if (window.kaiHeroRelang) window.kaiHeroRelang();
   if (window.kaiConsoleRelang) window.kaiConsoleRelang();
