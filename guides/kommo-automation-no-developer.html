@@ -16,16 +16,16 @@
 <meta property="og:title" content="Автоматизации в Kommo без разработчика: гид 2026">
 <meta property="og:description" content="Digital Pipeline и Salesbot: что можно настроить самому, три сценария по шагам, ограничения и как то же самое делает Kai по сообщению в чате.">
 <meta property="og:url" content="https://aii-crm.com/guides/kommo-automation-no-developer.html">
-<meta property="og:image" content="https://aii-crm.com/og-image-v4.png">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,-apple-system,Segoe UI,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden}
 a{color:var(--accent-2)}
 .hdr{border-bottom:1px solid var(--border);background:var(--bg-1)}
 .hdr-in{max-width:760px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
@@ -51,7 +51,7 @@ li{margin:6px 0}
 code,.path,.msg{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
 .path{font-size:14.5px;color:var(--ink);background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px}
 .msg{background:var(--bg-1);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;margin:14px 0;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word}
-.msg small{display:block;font-family:'Plus Jakarta Sans',sans-serif;color:var(--muted);font-size:13px;margin-bottom:6px}
+.msg small{display:block;font-family:'Manrope',system-ui,sans-serif;color:var(--muted);font-size:13px;margin-bottom:6px}
 .tbl{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px}
 table{border-collapse:collapse;width:100%;min-width:600px;font-size:15px}
 th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
@@ -67,7 +67,7 @@ tr:last-child td{border-bottom:0}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"Article","@id":"https://aii-crm.com/guides/kommo-automation-no-developer.html#article","headline":"Автоматизации в Kommo без разработчика (2026)","description":"Digital Pipeline и Salesbot в Kommo: что настроить самому, три сценария по шагам, ограничения и как то же самое делает Kai.","datePublished":"2026-09-24","dateModified":"2026-09-24","inLanguage":"ru","mainEntityOfPage":"https://aii-crm.com/guides/kommo-automation-no-developer.html","image":"https://aii-crm.com/og-image-v4.png","author":{"@type":"Organization","name":"Kai","url":"https://aii-crm.com/"},"publisher":{"@type":"Organization","name":"Kai","url":"https://aii-crm.com/"}},
+{"@type":"Article","@id":"https://aii-crm.com/guides/kommo-automation-no-developer.html#article","headline":"Автоматизации в Kommo без разработчика (2026)","description":"Digital Pipeline и Salesbot в Kommo: что настроить самому, три сценария по шагам, ограничения и как то же самое делает Kai.","datePublished":"2026-09-24","dateModified":"2026-09-24","inLanguage":"ru","mainEntityOfPage":"https://aii-crm.com/guides/kommo-automation-no-developer.html","image":"https://aii-crm.com/og-image-v5.png","author":{"@type":"Organization","name":"Kai","url":"https://aii-crm.com/"},"publisher":{"@type":"Organization","name":"Kai","url":"https://aii-crm.com/"}},
 {"@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Нужен ли программист, чтобы настроить Digital Pipeline в Kommo?","acceptedAnswer":{"@type":"Answer","text":"Нет. Триггеры Digital Pipeline и сценарии Salesbot собираются мышкой в интерфейсе Kommo. Разработчик нужен только для своих виджетов или сложных вебхуков во внешние системы."}},
 {"@type":"Question","name":"Чем Salesbot отличается от триггеров Digital Pipeline?","acceptedAnswer":{"@type":"Answer","text":"Триггер — одно действие при событии на этапе: задача, тег, письмо, вебхук. Salesbot — многошаговый сценарий с сообщениями клиенту, паузами, условиями и теми же действиями внутри. Salesbot не входит в тариф Base."}},
