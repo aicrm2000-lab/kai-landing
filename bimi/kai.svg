@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny-ps" viewBox="0 0 512 512">
+  <title>Kai</title>
+  <rect width="512" height="512" fill="#FFFFFF"/>
+  <path d="M418.2 208.8A168.9 168.9 0 1 1 250.7 87.1" fill="none" stroke="#111111" stroke-width="72" stroke-linecap="round"/>
+  <circle cx="353.3" cy="122" r="36" fill="#111111"/>
+</svg>
