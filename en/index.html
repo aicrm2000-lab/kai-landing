@@ -230,8 +230,9 @@ nav {
   list-style: none;
 }
 .nav-links a {
-  padding: 6px 13px;
+  padding: 6px 11px;
   font-size: 13px; font-weight: 400;
+  white-space: nowrap;
   color: var(--mist);
   transition: color 150ms;
   border-radius: 6px;
@@ -293,6 +294,7 @@ nav {
 @media (max-width: 1100px) { .nav-connect { display: none; } }
 @media (max-width: 860px) {
   .nav-links { display: none; }
+  .nav-inner .nav-call { margin: 0 10px 0 4px; }   /* air between the handset and «Connect CRM» */
   .nav-inner .lang-toggle { display: none; }
   .nav-inner .hw-toggle { display: none !important; }   /* phones: the toggle lives in the menu */
   .nav-cta { display: none; }
@@ -2028,8 +2030,9 @@ footer {
 .nav-call .bc-ico { width: 24px; height: 24px; }
 .nav-call .bc-ico svg { width: 13px; height: 13px; }
 .nav-call:focus-visible, .mm-call:focus-visible, .feat-call:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
-/* below 1280px the nav has no room for the label: a round handset with a tooltip */
-@media (max-width: 1279px) {
+/* the nav fits the call label only on wide screens (the Halloween toggle and «Connect CRM» take the rest) */
+@media (min-width: 1440px) { .nav-inner { max-width: 1320px; } }
+@media (max-width: 1439px) {
   .nav-call { margin-left: 12px; width: 36px; height: 36px; padding: 0; justify-content: center; }
   .nav-call .nc-t { display: none; }
   .nav-call .bc-ico { width: 28px; height: 28px; }
@@ -5026,9 +5029,10 @@ window.addEventListener('scroll', () => {
   var LANG=document.documentElement.lang||'ru';
   window.kaiTrack=function(ev){
     if(!on) return;
+    const UTM=(()=>{try{const p=new URLSearchParams(location.search);const v=['utm_source','utm_medium','utm_campaign'].map(k=>(p.get(k)||'').slice(0,40));return v.some(Boolean)?v.join('/'):'';}catch(e){return '';}})();
     try{navigator.sendBeacon('https://app.aii-crm.com/track',
       JSON.stringify({vid:V,event:ev,path:location.pathname+location.hash,
-                      ref:document.referrer,lang:LANG}));}catch(e){}
+                      ref:document.referrer,lang:LANG,utm:UTM}));}catch(e){}
   };
   window.kaiAnalyticsStart=function(){ if(on) return; V=vid(); on=true; kaiTrack('pageview'); };
   window.kaiAnalyticsStop=function(){ on=false; V=''; forget(); };
