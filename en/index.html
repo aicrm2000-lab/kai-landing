@@ -292,11 +292,15 @@ nav {
 .nav-connect:hover { background: rgba(var(--accent-rgb),.12); color: var(--ink); box-shadow: 0 0 18px rgba(var(--accent-rgb),.3); }
 .nav-connect svg { flex-shrink: 0; }
 @media (max-width: 1100px) { .nav-connect { display: none; } }
+.nav-login { margin-left: 8px; padding: 7px 10px; font-size: 13px; font-weight: 500; color: var(--mist); white-space: nowrap; border-radius: 10px; transition: color 150ms, background 150ms; }
+.nav-login:hover { color: var(--paper); background: rgba(255,255,255,.05); }
+.mobile-menu-login { margin-left: auto; margin-right: 10px; padding: 9px 14px; font-size: 13px; font-weight: 600; color: var(--mist); border: 1px solid var(--line, var(--graphite)); border-radius: 10px; white-space: nowrap; }
 @media (max-width: 860px) {
   .nav-links { display: none; }
   .nav-inner .nav-call { margin: 0 10px 0 4px; }   /* air between the handset and «Connect CRM» */
   .nav-inner .lang-toggle { display: none; }
   .nav-inner .hw-toggle { display: none !important; }   /* phones: the toggle lives in the menu */
+  .nav-inner .nav-login { display: none; }
   .nav-cta { display: none; }
   .nav-inner .burger { display: flex; margin-left: 10px; }
   .nav-connect {
@@ -2623,6 +2627,7 @@ html.hw .section-label::before {
 }
 @media (max-width: 640px) { .hw-web { opacity: .35; top: 52px; } .hw-bats i:nth-child(4), .hw-bats i:nth-child(5) { display: none; } .hw-spider { left: 80%; height: 110px; } .hw-ghosts i:nth-child(2) { display: none; } }
 </style>
+<script>(function(){try{if(new URLSearchParams(location.search).get('me')==='1')localStorage.setItem('kai_no_track','1');}catch(e){}})();</script>
 <script>(function(){try{var h=document.documentElement,p=new URLSearchParams(location.search).get('hw'),d=new Date(),m=d.getMonth(),n=d.getDate(),season=(m===9&&n>=25)||(m===10&&n<=2),on=season,st=null;try{st=localStorage.getItem('kai_hw');}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1')on=true;else if(p==='0')on=false;if(season||on)h.setAttribute('data-hw-season','1');if(!on)return;h.classList.add('hw');var i=document.querySelector('link[rel="icon"]');if(i)i.setAttribute('href',"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230C0A0E'/><path d='M15.5 7.2c-.2-1.6.6-3 2.3-3.6' stroke='%2375B04A' stroke-width='2.2' fill='none' stroke-linecap='round'/><ellipse cx='10' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='22' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='16' cy='18' rx='7' ry='9.6' fill='%23FF7A1A'/><path d='M10 15l3 3.6-3.8 1.3zM22 15l-3 3.6 3.8 1.3z' fill='%230C0A0E'/><path d='M9.2 22.6c2 2.6 4.3 3.9 6.8 3.9s4.8-1.3 6.8-3.9c-2.2.9-4.5 1.4-6.8 1.4s-4.6-.5-6.8-1.4z' fill='%230C0A0E'/></svg>");}catch(e){}})();</script>
 </head>
 <body>
@@ -2640,11 +2645,11 @@ html.hw .section-label::before {
       <li><a href="#pricing" data-ru="Тарифы" data-en="Plans">Plans</a></li>
       <li><a href="https://app.aii-crm.com/chat?lang=ru" target="_blank" rel="noopener" class="chat-link" data-ru="Веб-чат" data-en="Web chat">Web chat</a></li>
       <li><a href="https://t.me/aiicrm_support_bot" target="_blank" rel="noopener" data-ru="Поддержка" data-en="Support">Support</a></li>
-      <li><a href="https://app.aii-crm.com/account" class="acct-link" data-ru="Войти" data-en="Sign in">Sign in</a></li>
     </ul>
 <button type="button" class="nav-call" data-call-kai="nav" aria-haspopup="dialog" aria-label="Call Kai" data-ru-label="Позвонить Kai" data-en-label="Call Kai" title="Call Kai" data-ru-title="Позвонить Kai" data-en-title="Call Kai"><span class="bc-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.6 4-2 1.3a11 11 0 005.1 5.1l1.3-2 4 1.6v3a2 2 0 01-2.2 2A17 17 0 013 6.2 2 2 0 015 4z"/></svg></span><span class="nc-t" data-ru="Позвонить Kai" data-en="Call Kai">Call Kai</span></button>
 <a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" class="nav-connect"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg><span data-ru="Подключить CRM" data-en="Connect CRM">Connect CRM</span></a>
-<a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="nav-cta" data-ru="Попробовать в Telegram" data-en="Try in Telegram">Try in Telegram</a>
+<a href="https://app.aii-crm.com/account" class="nav-login acct-link" data-ru="Войти" data-en="Sign in">Sign in</a>
+<a href="https://app.aii-crm.com/account?mode=signup" class="nav-cta acct-link signup-link" data-ru="Регистрация" data-en="Sign up">Sign up</a>
     <div class="lang-toggle">
       <button class="lang-btn active" data-lang="ru">RU</button>
       <button class="lang-btn" data-lang="en">EN</button>
@@ -2662,8 +2667,6 @@ html.hw .section-label::before {
   <a href="#pricing" data-ru="Тарифы" data-en="Plans">Plans</a>
   <a href="https://app.aii-crm.com/chat?lang=ru" target="_blank" rel="noopener" class="chat-link" data-ru="Веб-чат" data-en="Web chat">Web chat</a>
   <a href="https://t.me/aiicrm_support_bot" target="_blank" rel="noopener" data-ru="Поддержка" data-en="Support">Support</a>
-  <a href="https://app.aii-crm.com/account" class="acct-link" data-ru="Войти в кабинет" data-en="Sign in">Sign in</a>
-  <a href="https://app.aii-crm.com/account?mode=signup" class="acct-link signup-link" data-ru="Создать аккаунт" data-en="Create account">Create account</a>
   <button type="button" class="mm-call" data-call-kai="menu" aria-haspopup="dialog"><span class="bc-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.6 4-2 1.3a11 11 0 005.1 5.1l1.3-2 4 1.6v3a2 2 0 01-2.2 2A17 17 0 013 6.2 2 2 0 015 4z"/></svg></span><span data-ru="Позвонить Kai" data-en="Call Kai">Call Kai</span> <span class="bc-soon" data-ru="скоро" data-en="soon">soon</span></button>
   <a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" data-ru="Подключить CRM" data-en="Connect CRM">Connect CRM</a>
   <div class="mobile-menu-footer">
@@ -2672,7 +2675,8 @@ html.hw .section-label::before {
       <button class="lang-btn" data-lang="en">EN</button>
     </div>
     <button type="button" class="hw-toggle" aria-pressed="true" title="Хеллоуин-режим: выключить"></button>
-    <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="mobile-menu-cta" data-ru="Попробовать" data-en="Try it">Try it</a>
+    <a href="https://app.aii-crm.com/account" class="mobile-menu-login acct-link" data-ru="Войти" data-en="Sign in">Sign in</a>
+    <a href="https://app.aii-crm.com/account?mode=signup" class="mobile-menu-cta acct-link signup-link" data-ru="Регистрация" data-en="Sign up">Sign up</a>
   </div>
 </div>
 
@@ -5036,9 +5040,11 @@ window.addEventListener('scroll', () => {
   window.kaiTrack=function(ev){
     if(!on) return;
     const UTM=(()=>{try{const p=new URLSearchParams(location.search);const v=['utm_source','utm_medium','utm_campaign'].map(k=>(p.get(k)||'').slice(0,40));return v.some(Boolean)?v.join('/'):'';}catch(e){return '';}})();
+    try{if(localStorage.getItem('kai_no_track')==='1')return;}catch(e){}   /* владелец и команда: ?me=1 один раз в браузере */
+    const DEV=matchMedia('(hover: none)').matches?'mobile':'desktop', TZ=(()=>{try{return Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){return '';}})();
     try{navigator.sendBeacon('https://app.aii-crm.com/track',
       JSON.stringify({vid:V,event:ev,path:location.pathname+location.hash,
-                      ref:document.referrer,lang:LANG,utm:UTM}));}catch(e){}
+                      ref:document.referrer,lang:LANG,utm:UTM,dev:DEV,sw:screen.width,tz:TZ}));}catch(e){}
   };
   window.kaiAnalyticsStart=function(){ if(on) return; V=vid(); on=true; kaiTrack('pageview'); };
   window.kaiAnalyticsStop=function(){ on=false; V=''; forget(); };
