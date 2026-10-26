@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Настройка CRM без интегратора: чек-лист из 12 пунктов | Kai</title>
+<meta name="description" content="12 пунктов, без которых CRM не заработает: этапы под реальный процесс, обязательные поля, источники, причины отказа, задачи и ответственные, дубли, импорт, первые автоматизации, обучение команды, недельный разбор — и когда интегратор всё же нужен.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Команда Kai">
+<link rel="canonical" href="https://aii-crm.com/guides/crm-setup-without-integrator-checklist.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/crm-setup-without-integrator-checklist.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/crm-setup-without-integrator-checklist.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/crm-setup-without-integrator-checklist.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/crm-setup-without-integrator-checklist.html">
+<meta property="og:title" content="Настройка CRM без интегратора: чек-лист из 12 пунктов">
+<meta property="og:description" content="Проект, данные, привычка: 12 проверяемых пунктов для amoCRM, Kommo и Битрикс24 — руками или одним сообщением Kai. Плюс честный пункт про интегратора.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v4.png">
+<meta property="article:published_time" content="2026-10-26">
+<meta property="article:modified_time" content="2026-10-26">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Настройка CRM без интегратора: чек-лист из 12 пунктов">
+<meta name="twitter:description" content="Проект, данные, привычка: 12 проверяемых пунктов для amoCRM, Kommo и Битрикс24 — руками или одним сообщением Kai. Плюс честный пункт про интегратора.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v4.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/" aria-label="Kai — на главную">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="#7C5CFF" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="#A78BFA"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Навигация">
+      <a href="https://aii-crm.com/">Сайт</a>
+      <a href="https://t.me/aiicrm_bot">Telegram-бот</a>
+      <a href="https://aii-crm.com/guides/en/crm-setup-without-integrator-checklist.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Хлебные крошки">
+  <a href="https://aii-crm.com/">Kai</a> › <a href="https://aii-crm.com/guides/">Гайды</a> › Чек-лист настройки CRM
+</nav>
+
+<h1>Настройка CRM без интегратора: чек-лист из 12 пунктов</h1>
+<p class="meta">Обновлено 26 октября 2026 · Команда Kai · 8 минут чтения</p>
+
+<p class="lead">Настройка CRM без интегратора — это когда владелец или руководитель продаж сам доводит систему до состояния, в котором менеджеры в ней реально работают, а отчёты показывают правду. Для малого бизнеса с одной-двумя воронками это посильно: интерфейсы amoCRM, Kommo и Битрикс24 рассчитаны на администратора без кода, а рутину — поля, этапы, задачи, импорт — можно отдать ИИ-ассистенту вроде Kai. Чек-лист ниже — двенадцать пунктов, по которым стоит пройти перед запуском, независимо от того, кто кликает. У каждого пункта есть проверка: если она не проходит, пункт не закрыт.</p>
+
+<section class="tldr" aria-label="Коротко">
+  <h2>Коротко / TL;DR</h2>
+  <ul>
+    <li>Пункты 1–4 (этапы, поля, источники, причины отказа) — это проект. Без них остальное не имеет смысла.</li>
+    <li>Пункты 5–8 (задачи, ответственные, дубли, импорт) — порядок в данных.</li>
+    <li>Пункты 9–11 (автоматизации, обучение, недельный разбор) — привычка команды.</li>
+    <li>Пункт 12 — честный ответ, когда интегратор всё-таки нужен.</li>
+    <li>По времени: один-два вечера на проект, день на данные, три-четыре недели на привычку.</li>
+  </ul>
+</section>
+
+<h2>Проект: пункты 1–4</h2>
+
+<h3>1. Этапы повторяют реальный процесс</h3>
+<p>Выпиши путь клиента от заявки до денег и оставь только точки, где менеджер совершает проверяемое действие: «Квалификация», «КП отправлено», «Договор подписан». Этапы-состояния («Думает», «В работе», «Перезвонить») — главный источник зависших сделок. Обычно хватает 5–7 рабочих этапов; первичные и повторные продажи — в разные воронки.<br>
+<strong>Проверь:</strong> по названию этапа понятно, что менеджер уже сделал.</p>
+
+<h3>2. Обязательные поля — только нужные</h3>
+<p>Поле заводи, если его значение попадёт в отчёт или повлияет на решение. Для всего, по чему нужен отчёт, — список, а не текст. Не больше одного-двух обязательных полей на этап: иначе менеджеры начнут ставить прочерки. Помни, что тип созданного поля потом не изменить.<br>
+<strong>Проверь:</strong> на старте не больше десяти полей, и ты можешь назвать, где используется каждое.</p>
+
+<h3>3. Источники заданы списком</h3>
+<p>Сайт, реклама, рекомендация, маркетплейс, холодный звонок — список из 5–8 пунктов. Источник ставится на входе и обязателен при выходе из первого этапа. Многие каналы — формы сайта, мессенджеры — проставляют его автоматически.<br>
+<strong>Проверь:</strong> за последнюю неделю ни одной сделки без источника.</p>
+
+<h3>4. Причины отказа — список из 5–7 пунктов</h3>
+<p>«Дорого», «выбрали других», «не отвечает», «не актуально», «не наш клиент». Причина обязательна при закрытии сделки как проигранной. Без неё отчёт по отказам — просто число.<br>
+<strong>Проверь:</strong> открой отчёт по проигранным за месяц — он читается и подсказывает, что менять.</p>
+
+<h2>Данные: пункты 5–8</h2>
+
+<h3>5. У каждой открытой сделки есть задача</h3>
+<p>Сделка без задачи — сделка без будущего: про неё никто не вспомнит. Правило для команды: закрыл задачу — поставил следующую, даже если это «позвонить через месяц».<br>
+<strong>Проверь:</strong> фильтр «сделки без задач» в конце дня пуст.</p>
+
+<h3>6. У каждой сделки один ответственный</h3>
+<p>Сделок «общих» и сделок на владельце аккаунта быть не должно. Договорись, как распределяются новые заявки: по очереди, по направлению, по региону.<br>
+<strong>Проверь:</strong> на администраторе и на уволившихся сотрудниках нет ни одной открытой сделки.</p>
+
+<h3>7. Дубли под контролем</h3>
+<p>Один клиент — одна карточка. Перед созданием контакта — поиск по телефону; телефоны в одном формате с кодом страны; найденные дубли объединяются, а не удаляются.<br>
+<strong>Проверь:</strong> поиск по десяти случайным телефонам находит по одной карточке.</p>
+
+<h3>8. База импортирована с тегом</h3>
+<p>Старую базу переноси после пунктов 1–4, иначе придётся переделывать поля. Подготовь таблицу, прогони пробные 10 строк, всем записям поставь тег импорта и источник — подробно это разобрано в <a href="https://aii-crm.com/guides/import-contacts-excel-amocrm-kommo.html">гайде про импорт из Excel</a>.<br>
+<strong>Проверь:</strong> число записей в CRM совпадает с таблицей, фильтр по тегу показывает столько же.</p>
+
+<h2>Привычка: пункты 9–11</h2>
+
+<h3>9. Включены первые две автоматизации</h3>
+<p>Задача при переходе на этап и напоминание о молчании клиента или зависшей сделке. Внутри CRM это Digital Pipeline (amoCRM, Kommo) или роботы (Битрикс24); у Kai — правила на его стороне, которые включаются одной фразой. Остальные пять правил, которые окупаются быстро, — в <a href="https://aii-crm.com/guides/crm-automations-that-pay-off.html">гайде про автоматизации</a>.<br>
+<strong>Проверь:</strong> тестовая сделка, переведённая на этап, получила задачу без твоего участия.</p>
+
+<h3>10. Команда обучена за 30 минут</h3>
+<p>Одна страница регламента: что в какое поле, когда двигать сделку, что делать с отказом. Покажи на живой сделке, а не на слайдах. Первую неделю — ежедневная десятиминутная проверка: сделки без задач, без источника, на неправильном этапе.<br>
+<strong>Проверь:</strong> каждый менеджер сам провёл одну сделку от заявки до закрытия.</p>
+
+<h3>11. Недельный разбор воронки</h3>
+<p>Двадцать минут раз в неделю: сделки по этапам, где застряли, причины отказа, сделки без задач. Чини одну вещь за неделю, не десять. Kai делает такую проверку ежедневно сам — ставит оценку A–D, присылает еженедельную сводку в чат, а причины отказа и источники чинит одной кнопкой.<br>
+<strong>Проверь:</strong> в календаре стоит повторяющаяся встреча, и она прошла хотя бы три раза подряд.</p>
+
+<h2>Пункт 12. Когда интегратор всё-таки нужен</h2>
+<p>Чек-лист выше закрывает одну-две воронки небольшой команды — руками или с ассистентом. Интегратор нужен, если есть хотя бы одно из этого:</p>
+<ul>
+  <li>Связка с 1С или другой учётной системой, телефонией с нестандартным API, складом или самописным сайтом.</li>
+  <li>Переезд из другой CRM с историей переписки, задачами и файлами.</li>
+  <li>Несколько отделов с разными процессами и правами доступа.</li>
+  <li>Сложные бизнес-процессы и роботы в Битрикс24 — ассистенты вроде Kai их пока не настраивают.</li>
+  <li>У тебя нет двух вечеров и человека, который будет держать порядок после запуска.</li>
+</ul>
+<p>Приходи к интегратору с ТЗ: списком этапов, полей, источников, причин отказа и правил из пунктов 1–9. Kai умеет собрать такое ТЗ в PDF по согласованному плану — это экономит первые встречи и даёт понятную смету.</p>
+
+<h2>С Kai это одно сообщение</h2>
+<p>Kai — ИИ-ассистент, который настраивает amoCRM и Kommo (Битрикс24 — в бете) по сообщению в чате: в Telegram-боте <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> или в <a href="https://app.aii-crm.com/chat?lang=ru">веб-чате</a>. CRM подключается по OAuth 2.0 в один клик. Пункты 1–9 он закрывает за один диалог: задаёт уточняющие вопросы с вариантами ответов, показывает план, после подтверждения создаёт всё через официальный API и присылает отчёт.</p>
+<pre>Я владелец студии мебели на заказ, 3 менеджера, заявки с сайта и из Instagram. Настрой amoCRM по чек-листу: этапы под процесс, поля с обязательностью, источники, причины отказа, задача по каждой открытой сделке.</pre>
+<pre>Проверь мою воронку: сколько сделок без задач, без источника и без ответственного — и предложи, что починить первым.</pre>
+<pre>Собери ТЗ в PDF по согласованному плану — отдам интегратору для связки с 1С.</pre>
+<p>Честные ограничения. Дыру в процессе Kai назовёт, но решения о том, как ты продаёшь, останутся за тобой — это диагностика, а не анкета. Обучение команды и дисциплина разбора (пункты 10–11) не автоматизируются. Автоматизации по событиям входят в тариф Pro (€59/мес); Start за €29/мес закрывает структуру, поля, задачи и импорт; первые 3 дня — бесплатно, без карты, около 25 запросов. В Битрикс24 роботы и виджеты пока не настраиваются.</p>
+
+<h2>Частые вопросы</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>Сколько времени занимает настройка CRM самому?</h3>
+    <p>Для одной воронки и небольшой команды: один-два вечера на проект этапов и полей, день на импорт и порядок в данных и три-четыре недели, чтобы команда привыкла. С ассистентом вроде Kai уходит часть кликов, но проектирование процесса и обучение остаются за тобой.</p>
+  </div>
+  <div class="faq-item">
+    <h3>С чего начать, если CRM уже есть, но в ней бардак?</h3>
+    <p>С пунктов 1, 4 и 5: приведи этапы к реальному процессу, добавь причины отказа и поставь задачу по каждой открытой сделке. Затем закрой сделки, по которым нет движения больше трёх месяцев, с честной причиной отказа — и только потом включай автоматизации.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Какие пункты чек-листа можно отдать ИИ-ассистенту?</h3>
+    <p>Всё, что сводится к созданию и настройке: этапы, поля и их обязательность, списки источников и причин отказа, задачи по сделкам, импорт с проверкой дублей, первые автоматизации, еженедельная сводка. Решения о процессе, обучение команды и дисциплина разбора остаются на тебе.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Чем чек-лист отличается для amoCRM, Kommo и Битрикс24?</h3>
+    <p>Логика одинаковая, различаются интерфейс и тарифы: обязательные поля на этапах зависят от тарифа CRM; автоматизации внутри CRM — это Digital Pipeline или роботы Битрикс24. Kai полностью поддерживает amoCRM и Kommo, Битрикс24 — в бете, без роботов и виджетов.</p>
+  </div>
+</div>
+
+<h2>Что дальше</h2>
+<p>Распечатай двенадцать пунктов, пройди первые четыре на бумаге сегодня вечером — это и есть проект. Остальное — либо кликами в своей CRM по гайдам выше, либо одним сообщением Kai.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Попробовать в Telegram</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=ru">Открыть веб-чат</a>
+</div>
+
+<p class="author">Автор: Команда Kai · Обновлено <time datetime="2026-10-26">26 октября 2026</time> · Пункты чек-листа одинаковы для amoCRM, Kommo и Битрикс24, пути в интерфейсе сверяй со справкой своей CRM.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/">Главная</a> · <a href="https://aii-crm.com/privacy.html">Конфиденциальность</a> · <a href="https://aii-crm.com/terms.html">Условия</a> · <a href="https://aii-crm.com/guides/en/crm-setup-without-integrator-checklist.html">English version</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/crm-setup-without-integrator-checklist.html#article",
+      "headline": "Настройка CRM без интегратора: чек-лист из 12 пунктов",
+      "description": "12 пунктов, без которых CRM не заработает: этапы под реальный процесс, обязательные поля, источники, причины отказа, задачи и ответственные, дубли, импорт, первые автоматизации, обучение команды, недельный разбор — и когда интегратор всё же нужен.",
+      "inLanguage": "ru",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "mainEntityOfPage": "https://aii-crm.com/guides/crm-setup-without-integrator-checklist.html",
+      "image": "https://aii-crm.com/og-image-v4.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Сколько времени занимает настройка CRM самому?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Для одной воронки и небольшой команды: один-два вечера на проект этапов и полей, день на импорт и порядок в данных и три-четыре недели, чтобы команда привыкла. С ассистентом вроде Kai уходит часть кликов, но проектирование процесса и обучение остаются за тобой."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "С чего начать, если CRM уже есть, но в ней бардак?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "С пунктов 1, 4 и 5: приведи этапы к реальному процессу, добавь причины отказа и поставь задачу по каждой открытой сделке. Затем закрой сделки, по которым нет движения больше трёх месяцев, с честной причиной отказа — и только потом включай автоматизации."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие пункты чек-листа можно отдать ИИ-ассистенту?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Всё, что сводится к созданию и настройке: этапы, поля и их обязательность, списки источников и причин отказа, задачи по сделкам, импорт с проверкой дублей, первые автоматизации, еженедельная сводка. Решения о процессе, обучение команды и дисциплина разбора остаются на тебе."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Чем чек-лист отличается для amoCRM, Kommo и Битрикс24?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Логика одинаковая, различаются интерфейс и тарифы: обязательные поля на этапах зависят от тарифа CRM; автоматизации внутри CRM — это Digital Pipeline или роботы Битрикс24. Kai полностью поддерживает amoCRM и Kommo, Битрикс24 — в бете, без роботов и виджетов."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Гайды",
+          "item": "https://aii-crm.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Настройка CRM без интегратора: чек-лист из 12 пунктов",
+          "item": "https://aii-crm.com/guides/crm-setup-without-integrator-checklist.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

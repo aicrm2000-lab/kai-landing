@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRM setup without an integrator: a 12-point checklist | Kai</title>
+<meta name="description" content="Twelve things a working CRM needs: stages that mirror the real process, required fields, sources, loss reasons, a task on every open deal, an owner per deal, duplicates, import, first automations, team onboarding, a weekly review, and when an integrator is still the right call.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/en/crm-setup-without-integrator-checklist.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/crm-setup-without-integrator-checklist.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/crm-setup-without-integrator-checklist.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/crm-setup-without-integrator-checklist.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/en/crm-setup-without-integrator-checklist.html">
+<meta property="og:title" content="CRM setup without an integrator: a 12-point checklist">
+<meta property="og:description" content="Design, data, habit: 12 checkable items for amoCRM, Kommo and Bitrix24, by hand or with one message to Kai. Plus an honest item about integrators.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v4.png">
+<meta property="article:published_time" content="2026-10-26">
+<meta property="article:modified_time" content="2026-10-26">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CRM setup without an integrator: a 12-point checklist">
+<meta name="twitter:description" content="Design, data, habit: 12 checkable items for amoCRM, Kommo and Bitrix24, by hand or with one message to Kai. Plus an honest item about integrators.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v4.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/" aria-label="Kai — home">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="#7C5CFF" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="#A78BFA"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Navigation">
+      <a href="https://aii-crm.com/">Website</a>
+      <a href="https://t.me/aiicrm_bot">Telegram bot</a>
+      <a href="https://aii-crm.com/guides/crm-setup-without-integrator-checklist.html" hreflang="ru">RU</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Breadcrumbs">
+  <a href="https://aii-crm.com/">Kai</a> › <a href="https://aii-crm.com/guides/en/">Guides</a> › CRM setup checklist
+</nav>
+
+<h1>CRM setup without an integrator: a 12-point checklist</h1>
+<p class="meta">Updated October 26, 2026 · Kai Team · 7 min read</p>
+
+<p class="lead">Setting up a CRM without an integrator means the owner or head of sales brings the system to a state where reps actually work in it and the reports tell the truth. For a small business with one or two pipelines this is doable: amoCRM, Kommo and Bitrix24 are built for an administrator without code, and the routine (fields, stages, tasks, import) can go to an AI assistant such as Kai. Below are twelve items to check before launch, whoever does the clicking; if a check fails, the item is not done.</p>
+
+<section class="tldr" aria-label="TL;DR">
+  <h2>TL;DR</h2>
+  <ul>
+    <li>Items 1–4 (stages, fields, sources, loss reasons) are the design.</li>
+    <li>Items 5–8 (tasks, owners, duplicates, import) are order in the data.</li>
+    <li>Items 9–11 (automations, onboarding, weekly review) are the team's habit.</li>
+    <li>Item 12: when an integrator is still needed.</li>
+    <li>One or two evenings for the design, a day for the data, three to four weeks for the habit.</li>
+  </ul>
+</section>
+
+<h2>Design: items 1–4</h2>
+
+<h3>1. Stages mirror the real process</h3>
+<p>Write down the customer's path from enquiry to money and keep only the points where a rep does something verifiable: "Qualified", "Quote sent", "Contract signed". State-stages ("Thinking", "In progress") are the main source of stuck deals. 5–7 working stages are enough; first-time and repeat sales go in separate pipelines.<br>
+<strong>Check:</strong> the stage name tells you what the rep has already done.</p>
+
+<h3>2. Required fields, only the necessary ones</h3>
+<p>Create a field only if it lands in a report or drives a decision; anything you report on is a list, not free text. One or two required fields per stage at most, or reps start typing dashes; a field's type cannot be changed later.<br>
+<strong>Check:</strong> no more than ten fields at launch, each with a known use.</p>
+
+<h3>3. Sources are a list</h3>
+<p>Website, ads, referral, marketplace, cold call: a list of 5–8 items, set on entry and required to leave the first stage. Forms and messengers often fill it automatically.<br>
+<strong>Check:</strong> not a single deal without a source in the past week.</p>
+
+<h3>4. Loss reasons are a list of 5–7 items</h3>
+<p>"Too expensive", "chose a competitor", "no response", "no longer relevant", "not our client". Required when a deal is closed as lost; without it the loss report is just a number.<br>
+<strong>Check:</strong> the monthly lost-deals report reads clearly and suggests what to change.</p>
+
+<h2>Data: items 5–8</h2>
+
+<h3>5. Every open deal has a task</h3>
+<p>A deal without a task is a deal without a future. The team rule: close a task, set the next one, even if it is "call in a month".<br>
+<strong>Check:</strong> the "deals without tasks" filter is empty at the end of the day.</p>
+
+<h3>6. Every deal has one owner</h3>
+<p>No "shared" deals and none sitting on the account owner. Agree how new enquiries are distributed: in turn, by product line or region.<br>
+<strong>Check:</strong> no open deals on the administrator or on people who have left.</p>
+
+<h3>7. Duplicates are under control</h3>
+<p>One client, one card. Search by phone before creating a contact; phones in one format with the country code; duplicates are merged, not deleted.<br>
+<strong>Check:</strong> a search for ten random phones finds one card each.</p>
+
+<h3>8. The base is imported with a tag</h3>
+<p>Move the old base after items 1–4, or you will redo the fields. Prepare the table, run a 10-row test, tag every record and set a source; details in the <a href="https://aii-crm.com/guides/en/import-contacts-excel-amocrm-kommo.html">Excel import guide</a>.<br>
+<strong>Check:</strong> the record count matches the table and a filter by the tag shows the same number.</p>
+
+<h2>Habit: items 9–11</h2>
+
+<h3>9. The first two automations are on</h3>
+<p>A task when a deal reaches a stage, and a reminder about a silent client or a stuck deal. Inside the CRM that is Digital Pipeline (amoCRM, Kommo) or robots (Bitrix24); in Kai, rules on its side switched on with one phrase. Five more rules are in the <a href="https://aii-crm.com/guides/en/crm-automations-that-pay-off.html">automations guide</a>.<br>
+<strong>Check:</strong> a test deal moved to a stage received a task without you.</p>
+
+<h3>10. The team is onboarded in 30 minutes</h3>
+<p>A one-page SOP: what goes in which field, when to move a deal, what to do with a lost one. Show it on a live deal, not slides. First week: a ten-minute daily check for deals without tasks or a source, or at the wrong stage.<br>
+<strong>Check:</strong> every rep has taken one deal from enquiry to close.</p>
+
+<h3>11. A weekly funnel review</h3>
+<p>Twenty minutes a week: deals per stage, where they are stuck, loss reasons, deals without tasks. Fix one thing per week. Kai runs this check daily: it grades the funnel A–D, sends a weekly summary to the chat and fixes loss reasons and sources in one tap.<br>
+<strong>Check:</strong> a recurring meeting in the calendar that has happened three times in a row.</p>
+
+<h2>Item 12. When an integrator is still needed</h2>
+<p>The checklist covers one or two pipelines for a small team. You need an integrator if any of these is true:</p>
+<ul>
+  <li>Links to accounting software, telephony, a warehouse system or a custom website.</li>
+  <li>Migration from another CRM with history, tasks and files.</li>
+  <li>Several departments with different processes and access rights.</li>
+  <li>Business processes and robots in Bitrix24; assistants such as Kai do not set those up yet.</li>
+  <li>Nobody has two evenings, or will keep order after launch.</li>
+</ul>
+<p>Come with a spec: the stages, fields, sources, loss reasons and rules from items 1–9. Kai can produce it as PDF from the agreed plan, which saves the first meetings.</p>
+
+<h2>With Kai it is one message</h2>
+<p>Kai is an AI assistant that configures amoCRM and Kommo (Bitrix24 in beta) from a chat message, in the Telegram bot <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> or the <a href="https://app.aii-crm.com/chat?lang=en">web chat</a>, connected through one-click OAuth 2.0. Items 1–9 take one conversation: clarifying questions with answer options, a plan, then everything is created through the official API and reported back.</p>
+<pre>I own a made-to-order furniture studio, 3 reps, enquiries from the website and Instagram. Set up amoCRM by the checklist: stages for the process, fields with required rules, sources, loss reasons, a task on every open deal.</pre>
+<pre>Check my pipeline: how many deals have no task, no source and no owner, and suggest what to fix first.</pre>
+<pre>Prepare a spec as PDF from the agreed plan for the integrator doing the accounting link.</pre>
+<p>Honest limits. Kai points out holes in the process, but how you sell stays your decision. Onboarding and review discipline (items 10–11) cannot be automated. Event automations are Pro (€59/month); Start at €29/month covers structure, fields, tasks and import; the first 3 days are free, no card, about 25 requests. In Bitrix24, robots and widgets are not configured yet.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>How long does it take to set up a CRM yourself?</h3>
+    <p>One pipeline, small team: one or two evenings to design stages and fields, a day for import and cleanup, three to four weeks for the team to build the habit. An assistant such as Kai removes part of the clicking; process design and training stay with you.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Where do I start if I already have a CRM but it is a mess?</h3>
+    <p>With items 1, 4 and 5: align the stages with the real process, add loss reasons and put a task on every open deal. Then close deals with no movement for over three months with an honest loss reason, and only then switch on automations.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Which checklist items can be handed to an AI assistant?</h3>
+    <p>Everything that is creating and configuring: stages, fields and required rules, source and loss-reason lists, tasks on deals, import with duplicate checks, first automations, the weekly summary. Process decisions, onboarding and review discipline remain yours.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How does the checklist differ for amoCRM, Kommo and Bitrix24?</h3>
+    <p>The logic is the same; interface and plans differ: required fields per stage are not on every amoCRM plan but on every Kommo plan, and in-CRM automations are Digital Pipeline or Bitrix24 robots. Kai fully supports amoCRM and Kommo; Bitrix24 is in beta, without robots and widgets.</p>
+  </div>
+</div>
+
+<h2>What next</h2>
+<p>Print the twelve items and do the first four on paper this evening: that is the design. The rest is clicks in your CRM, or one message to Kai.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Try in Telegram</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Open web chat</a>
+</div>
+
+<p class="author">Author: Kai Team · Updated <time datetime="2026-10-26">October 26, 2026</time> · The checklist items are the same for amoCRM, Kommo and Bitrix24; check interface paths in your CRM's help centre.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/">Home</a> · <a href="https://aii-crm.com/privacy-en.html">Privacy</a> · <a href="https://aii-crm.com/terms-en.html">Terms</a> · <a href="https://aii-crm.com/guides/crm-setup-without-integrator-checklist.html">Русская версия</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/en/crm-setup-without-integrator-checklist.html#article",
+      "headline": "CRM setup without an integrator: a 12-point checklist",
+      "description": "Twelve things a working CRM needs: stages that mirror the real process, required fields, sources, loss reasons, a task on every open deal, an owner per deal, duplicates, import, first automations, team onboarding, a weekly review, and when an integrator is still the right call.",
+      "inLanguage": "en",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "mainEntityOfPage": "https://aii-crm.com/guides/en/crm-setup-without-integrator-checklist.html",
+      "image": "https://aii-crm.com/og-image-v4.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does it take to set up a CRM yourself?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One pipeline, small team: one or two evenings to design stages and fields, a day for import and cleanup, three to four weeks for the team to build the habit. An assistant such as Kai removes part of the clicking; process design and training stay with you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do I start if I already have a CRM but it is a mess?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With items 1, 4 and 5: align the stages with the real process, add loss reasons and put a task on every open deal. Then close deals with no movement for over three months with an honest loss reason, and only then switch on automations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which checklist items can be handed to an AI assistant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Everything that is creating and configuring: stages, fields and required rules, source and loss-reason lists, tasks on deals, import with duplicate checks, first automations, the weekly summary. Process decisions, onboarding and review discipline remain yours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the checklist differ for amoCRM, Kommo and Bitrix24?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The logic is the same; interface and plans differ: required fields per stage are not on every amoCRM plan but on every Kommo plan, and in-CRM automations are Digital Pipeline or Bitrix24 robots. Kai fully supports amoCRM and Kommo; Bitrix24 is in beta, without robots and widgets."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://aii-crm.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "CRM setup without an integrator: a 12-point checklist",
+          "item": "https://aii-crm.com/guides/en/crm-setup-without-integrator-checklist.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
