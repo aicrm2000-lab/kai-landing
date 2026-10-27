@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Examples: the CRM before and after one message to Kai | Kai</title>
+<meta name="description" content="Four typical situations in amoCRM and Kommo: what the pipeline looked like, the message sent to Kai, what Kai did and how the CRM looks after. Real actions, no integrator.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aii-crm.com/cases/en/">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/cases/"><link rel="alternate" hreflang="en" href="https://aii-crm.com/cases/en/"><link rel="alternate" hreflang="x-default" href="https://aii-crm.com/cases/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Kai"><meta property="og:url" content="https://aii-crm.com/cases/en/">
+<meta property="og:title" content="Before → after: amoCRM and Kommo set up with one message"><meta property="og:description" content="Four typical situations in amoCRM and Kommo: what the pipeline looked like, the message sent to Kai, what Kai did and how the CRM looks after. Real actions, no integrator."><meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Before → after: amoCRM and Kommo set up with one message"><meta name="twitter:description" content="Four typical situations in amoCRM and Kommo: what the pipeline looked like, the message sent to Kai, what Kai did and how the CRM looks after. Real actions, no integrator."><meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B0A14'/><path d='M16 6.5a9.5 9.5 0 1 0 9.5 9.5' stroke='%237C5CFF' stroke-width='4' stroke-linecap='round' fill='none'/><circle cx='23.4' cy='8.6' r='2.6' fill='%23A78BFA'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0;--bad:#FF7B93;--warn:#F5C451;--mono:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 'Manrope',system-ui,sans-serif;padding:0 16px 64px}
+.wrap{max-width:860px;margin:0 auto}header{display:flex;align-items:center;gap:12px;padding:22px 0;border-bottom:1px solid var(--border)}
+header a{color:var(--ink);text-decoration:none;font-weight:700}header nav{margin-left:auto;display:flex;gap:18px;font-size:14px}header nav a{color:var(--muted);font-weight:500}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin:40px 0 12px;text-wrap:balance}
+.lead{color:var(--text);max-width:64ch}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}.toc a{font:600 13px var(--mono);color:var(--accent-2);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:6px 12px}.toc a:hover{border-color:var(--accent)}
+.case{margin-top:44px;border:1px solid var(--border);border-radius:18px;background:var(--bg-1);padding:22px;scroll-margin-top:16px}
+.case .top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}.badge{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}.badge.crm{color:var(--accent-2);border-color:rgba(124,92,255,.45)}
+.case h2{margin:0 0 6px;font-size:clamp(21px,3.2vw,26px);line-height:1.25;color:var(--ink);letter-spacing:-.01em;text-wrap:balance}
+.case p{margin:6px 0}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.col{border:1px solid var(--border);border-radius:14px;padding:14px;background:var(--bg)}
+.col h3{margin:0 0 10px;font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.col.before h3{color:var(--bad)}.col.after h3{color:var(--good)}.col h3 i{width:8px;height:8px;border-radius:50%;background:currentColor;display:inline-block}
+.board{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.board span{font-size:13px;font-weight:600;color:var(--ink);background:var(--bg-2);border:1px solid var(--border);border-radius:8px;padding:6px 9px}.board em{font-style:normal;color:var(--muted);font-size:12px}
+.col.after .board span{border-color:rgba(67,224,160,.35)}
+.k{margin:12px 0 4px;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.list{margin:0;padding:0;list-style:none;font-size:14px}.list li{padding:5px 0;border-top:1px solid var(--border);display:flex;gap:8px;align-items:baseline}.list li:first-child{border-top:0}
+.list b{color:var(--ink);font-weight:600}.list small{color:var(--muted);font-size:12px}.list .stamp{font:600 10px var(--mono);color:var(--warn);border:1px solid rgba(245,196,81,.5);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.list.none li{color:var(--muted);font-style:italic}.list.pain li::before{content:'–';color:var(--bad)}.list.gain li::before{content:'✓';color:var(--good);font-weight:700}
+.rule{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;font-size:14px}.rule b{color:var(--ink);font-weight:600}.rule span::before{content:'→ ';color:var(--accent-2)}
+.chat{margin:16px 0;display:grid;gap:10px}.msg{max-width:92%;border-radius:16px;padding:12px 14px;font-size:15px;line-height:1.5}
+.msg.me{justify-self:end;background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.45);color:var(--ink);border-bottom-right-radius:6px}
+.msg.kai{justify-self:start;background:var(--bg-2);border:1px solid var(--border);border-bottom-left-radius:6px}.msg .who{display:block;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.msg.kai .ok{color:var(--good);font-weight:700}
+.did{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}.did span{font:500 12px var(--mono);color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:4px 8px}.did span b{color:var(--accent-2);font-weight:600}
+.time{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--bg-2);border:1px solid var(--border);font-size:14px;color:var(--text)}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.btn{display:inline-block;padding:11px 16px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;font-size:14px}.btn.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}
+button.btn{cursor:pointer;border:1px solid var(--border);font:inherit;font-weight:700;font-size:14px}
+.cta{margin-top:40px;padding:22px;border-radius:16px;background:var(--bg-2);border:1px solid var(--border)}.cta b{color:var(--ink)}.cta a{display:inline-block;margin:10px 10px 0 0;padding:12px 18px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+.cta a.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}footer{margin-top:40px;color:var(--muted);font-size:13px}footer a{color:var(--muted)}
+.more{margin-top:28px}.more a{color:var(--accent-2)}
+@media (max-width:700px){.ba{grid-template-columns:1fr}.case{padding:16px;border-radius:14px}.msg{max-width:100%}body{font-size:16px}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Before → after: amoCRM and Kommo set up with one message", "description": "Four typical situations in amoCRM and Kommo: what the pipeline looked like, the message sent to Kai, what Kai did and how the CRM looks after. Real actions, no integrator.", "url": "https://aii-crm.com/cases/en/", "inLanguage": "en", "datePublished": "2026-10-27", "dateModified": "2026-10-27", "author": {"@type": "Organization", "name": "Kai"}, "publisher": {"@type": "Organization", "name": "Kai", "url": "https://aii-crm.com/"}, "isPartOf": {"@type": "WebSite", "name": "Kai", "url": "https://aii-crm.com/"}, "hasPart": [{"@type": "HowTo", "name": "Half of the requests were lost between the call and the booking", "url": "https://aii-crm.com/cases/en/#dental-amocrm", "step": [{"@type": "HowToStep", "text": "Create a “New patients” pipeline: Request → Reached → Booked → Visit confirmed → Appointment → Treatment plan. Deal fields: Service (list: therapy, prosthetics, implants, pediatric), Doctor, Visit date, Plan amount. Visit date is required at the “Booked” stage. Rules: new request — task for the front desk to call back within 15 minutes; deal moved to “Booked” — task the day before to confirm the visit; no movement in “Reached” for 2 days — task “call again”."}]}, {"@type": "HowTo", "name": "Budget and district were typed into the deal name", "url": "https://aii-crm.com/cases/en/#realty-kommo", "step": [{"@type": "HowToStep", "text": "In Kommo create a “Buyers” pipeline: Request → Qualification → Selection → Viewing → Reservation → Contract. Fields: Property type (list: studio, 1BR, 2BR, 3BR+, house), Budget (number), District, Payment method (mortgage, cash, instalments). Budget and District are required at “Qualification”. Rules: new request — task to call back within 15 minutes; deal in “Selection” — task for tomorrow to schedule a viewing; no movement after “Viewing” for 3 days — task “ask for the decision”. Loss reasons: bought elsewhere, too expensive, changed mind, no answer."}]}, {"@type": "HowTo", "name": "The pipeline existed, but deals sat in “Measurement” for months", "url": "https://aii-crm.com/cases/en/#renovation-audit-amocrm", "step": [{"@type": "HowToStep", "text": "Audit the “Contract sale” pipeline. Then fix it: make “Estimate amount” required at the “Estimate” stage, add loss reasons (too expensive, chose others, postponed, no answer), rule: no movement in “Measurement” for 5 days — task for the foreman “send the estimate”. And show me the pipeline dashboard."}]}, {"@type": "HowTo", "name": "Registrations lived in a spreadsheet, price deadlines were reminded from memory", "url": "https://aii-crm.com/cases/en/#courses-kommo", "step": [{"@type": "HowToStep", "text": "In Kommo create a “Course sales” pipeline: Registration → Qualification → Call scheduled → Call done → Invoice sent → Payment. Fields: Product (list), Plan (list: basic, with mentor, VIP), Cohort, Instalments (yes/no). Rules: Registration — task to write and offer a diagnostic call; “Invoice sent” — task for tomorrow to remind about the price deadline; “Payment” — tag “student” and a Telegram notification to the sales team."}]}]}</script>
+</head>
+<body><div class="wrap">
+<header><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="#7C5CFF" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="#A78BFA"/></svg><a href="../../">Kai</a><nav><a href="../../guides/en/">Guides</a><a href="../../#pricing">Plans</a><a href="https://aii-crm.com/cases/">RU</a></nav></header>
+<h1>Before → after: amoCRM and Kommo set up with one message</h1>
+<p class="lead">Each example is a typical picture people bring to Kai: one pipeline for everything, fields in notes, tasks from memory. Below: the message people write to Kai, what it does in the CRM and the result. No client numbers here, only the configuration and the time.</p>
+<div class="toc"><a href="#dental-amocrm">amoCRM · Dental clinic</a><a href="#realty-kommo">Kommo · Real estate agency</a><a href="#renovation-audit-amocrm">amoCRM · Apartment renovation</a><a href="#courses-kommo">Kommo · Online school</a></div>
+
+<article class="case" id="dental-amocrm">
+  <div class="top"><span class="badge crm">amoCRM</span><span class="badge">Dental clinic</span></div>
+  <h2>Half of the requests were lost between the call and the booking</h2>
+  <p>One “Main” pipeline for everything: website, Instagram and phone requests land in “New”, then “In progress” and “Closed”. The doctor and the visit date live in notes, nobody reminds about the visit.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Before</h3>
+      <div class="k">Pipeline stages</div><div class="board"><span>New</span><em>→</em><span>In progress</span><em>→</em><span>Closed</span></div>
+      <div class="k">Deal fields</div><ul class="list none"><li>no fields — everything in notes</li></ul>
+      <div class="k">Rules</div><ul class="list none"><li>no rules — everything from memory</li></ul>
+      <div class="k">What was breaking</div><ul class="list pain"><li>no “Reached” stage — unclear who was called back</li><li>visit date in a note, the front desk searches by eye</li><li>visits are not confirmed — patients do not show up</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>After</h3>
+      <div class="k">Pipeline stages</div><div class="board"><span>Request</span><em>→</em><span>Reached</span><em>→</em><span>Booked</span><em>→</em><span>Visit confirmed</span><em>→</em><span>Appointment</span><em>→</em><span>Treatment plan</span></div>
+      <div class="k">Deal fields</div><ul class="list"><li><b>Service</b><small>list</small></li><li><b>Doctor</b></li><li><b>Visit date</b><span class="stamp">required at “Booked”</span></li><li><b>Plan amount</b><small>number</small></li></ul>
+      <div class="k">Rules</div><div class="rule"><b>New request</b><span>task “call back” in 15 minutes</span><b>Moved to “Booked”</b><span>task the day before: confirm the visit</span><b>“Reached” idle for 2 days</b><span>task “call again”</span></div>
+      <div class="k">What changed</div><ul class="list gain"><li>every request gets a call in the first 15 minutes — a rule, not the front desk’s memory</li><li>the visit date cannot be skipped: without it the deal will not move to “Booked”</li><li>a confirmation task appears the day before — fewer no-shows</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Message to Kai</span>Create a “New patients” pipeline: Request → Reached → Booked → Visit confirmed → Appointment → Treatment plan. Deal fields: Service (list: therapy, prosthetics, implants, pediatric), Doctor, Visit date, Plan amount. Visit date is required at the “Booked” stage. Rules: new request — task for the front desk to call back within 15 minutes; deal moved to “Booked” — task the day before to confirm the visit; no movement in “Reached” for 2 days — task “call again”.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Done.</span> “New patients” pipeline created, 6 stages. Added 4 fields, “Visit date” is required at “Booked”. Three rules are on: call back within 15 minutes, confirm the visit the day before, call again after 2 days. System stages “Won” and “Lost” untouched.</div>
+  </div>
+  <div class="k">What Kai did</div><div class="did"><span>create pipeline</span><span>create field <b>×4</b></span><span>make field required</span><span>create rule <b>×3</b></span></div>
+  <div class="time">One message, about two minutes. An integrator does the same in 2–5 business days.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Create a “New patients” pipeline: Request → Reached → Booked → Visit confirmed → Appointment → Treatment plan. Deal fields: Service (list: therapy, prosthetics, implants, pediatric), Doctor, Visit date, Plan amount. Visit date is required at the “Booked” stage. Rules: new request — task for the front desk to call back within 15 minutes; deal moved to “Booked” — task the day before to confirm the visit; no movement in “Reached” for 2 days — task “call again”.">Copy the message</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Repeat it in your chat</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Open in Telegram</a></div>
+</article>
+<article class="case" id="realty-kommo">
+  <div class="top"><span class="badge crm">Kommo</span><span class="badge">Real estate agency</span></div>
+  <h2>Budget and district were typed into the deal name</h2>
+  <p>All leads in “Incoming”, no stages. Budget, district and property type typed into the deal name: “John, 2BR, up to 90k, downtown”. A selection is sent and forgotten, nobody follows up after a viewing.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Before</h3>
+      <div class="k">Pipeline stages</div><div class="board"><span>Incoming</span><em>→</em><span>Working</span><em>→</em><span>Deal</span></div>
+      <div class="k">Deal fields</div><ul class="list none"><li>no fields — everything in notes</li></ul>
+      <div class="k">Rules</div><ul class="list none"><li>no rules — everything from memory</li></ul>
+      <div class="k">What was breaking</div><ul class="list pain"><li>no filtering by budget or district — everything is text</li><li>deals stall after a viewing with no next step</li><li>no loss reasons — unclear why buyers leave</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>After</h3>
+      <div class="k">Pipeline stages</div><div class="board"><span>Request</span><em>→</em><span>Qualification</span><em>→</em><span>Selection</span><em>→</em><span>Viewing</span><em>→</em><span>Reservation</span><em>→</em><span>Contract</span></div>
+      <div class="k">Deal fields</div><ul class="list"><li><b>Property type</b><small>list</small></li><li><b>Budget</b><span class="stamp">number · required at “Qualification”</span></li><li><b>District</b><span class="stamp">required at “Qualification”</span></li><li><b>Payment method</b><small>list</small></li></ul>
+      <div class="k">Rules</div><div class="rule"><b>New request</b><span>task “call back” in 15 minutes</span><b>Moved to “Selection”</b><span>task for tomorrow: schedule a viewing</span><b>“Viewing” idle for 3 days</b><span>task “ask for the decision”</span></div>
+      <div class="k">What changed</div><ul class="list gain"><li>filter “2BR up to 90,000 downtown” in a second, by fields</li><li>every viewing gets a next step and a deadline</li><li>losses with reasons: you see where you lose — price or speed</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Message to Kai</span>In Kommo create a “Buyers” pipeline: Request → Qualification → Selection → Viewing → Reservation → Contract. Fields: Property type (list: studio, 1BR, 2BR, 3BR+, house), Budget (number), District, Payment method (mortgage, cash, instalments). Budget and District are required at “Qualification”. Rules: new request — task to call back within 15 minutes; deal in “Selection” — task for tomorrow to schedule a viewing; no movement after “Viewing” for 3 days — task “ask for the decision”. Loss reasons: bought elsewhere, too expensive, changed mind, no answer.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Done.</span> “Buyers” pipeline, 6 stages. Fields: Property type, Budget, District, Payment method; Budget and District are required at “Qualification”. Three rules are on, four loss reasons added — loss analytics will now count.</div>
+  </div>
+  <div class="k">What Kai did</div><div class="did"><span>create pipeline</span><span>create field <b>×4</b></span><span>make field required <b>×2</b></span><span>create rule <b>×3</b></span><span>loss reasons</span></div>
+  <div class="time">One message, about two minutes. Fields, stages and rules go into Kommo via the API, no widgets.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="In Kommo create a “Buyers” pipeline: Request → Qualification → Selection → Viewing → Reservation → Contract. Fields: Property type (list: studio, 1BR, 2BR, 3BR+, house), Budget (number), District, Payment method (mortgage, cash, instalments). Budget and District are required at “Qualification”. Rules: new request — task to call back within 15 minutes; deal in “Selection” — task for tomorrow to schedule a viewing; no movement after “Viewing” for 3 days — task “ask for the decision”. Loss reasons: bought elsewhere, too expensive, changed mind, no answer.">Copy the message</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Repeat it in your chat</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Open in Telegram</a></div>
+</article>
+<article class="case" id="renovation-audit-amocrm">
+  <div class="top"><span class="badge crm">amoCRM</span><span class="badge">Apartment renovation</span></div>
+  <h2>The pipeline existed, but deals sat in “Measurement” for months</h2>
+  <p>The “Contract sale” pipeline was set up long ago, but estimates go out when someone remembers, amounts are empty, no loss reasons — the pipeline report is blank. The owner cannot see where the money is stuck.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Before</h3>
+      <div class="k">Pipeline stages</div><div class="board"><span>Request</span><em>→</em><span>Qualification</span><em>→</em><span>Measurement</span><em>→</em><span>Estimate</span><em>→</em><span>Contract</span><em>→</em><span>Deposit</span></div>
+      <div class="k">Deal fields</div><ul class="list"><li><b>Work type</b></li><li><b>Area, m²</b></li><li><b>Budget</b></li><li><b>Estimate amount</b><small>empty in 8 of 10 deals</small></li></ul>
+      <div class="k">Rules</div><ul class="list none"><li>no rules — everything from memory</li></ul>
+      <div class="k">What was breaking</div><ul class="list pain"><li>23 deals idle for over two weeks in “Measurement”</li><li>estimate amount empty — revenue forecast impossible</li><li>without loss reasons you cannot tell why clients leave</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>After</h3>
+      <div class="k">Pipeline stages</div><div class="board"><span>Request</span><em>→</em><span>Qualification</span><em>→</em><span>Measurement</span><em>→</em><span>Estimate</span><em>→</em><span>Contract</span><em>→</em><span>Deposit</span></div>
+      <div class="k">Deal fields</div><ul class="list"><li><b>Work type</b></li><li><b>Area, m²</b></li><li><b>Budget</b></li><li><b>Estimate amount</b><span class="stamp">required at “Estimate”</span></li></ul>
+      <div class="k">Rules</div><div class="rule"><b>“Measurement” idle for 5 days</b><span>task for the foreman “send the estimate”</span></div>
+      <div class="k">What changed</div><ul class="list gain"><li>estimates no longer stall: after 5 days a task with an owner appears</li><li>estimate amount is required — the revenue forecast is computed from fields</li><li>losses with reasons, a dashboard any time with one word: “dashboard”</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Message to Kai</span>Audit the “Contract sale” pipeline. Then fix it: make “Estimate amount” required at the “Estimate” stage, add loss reasons (too expensive, chose others, postponed, no answer), rule: no movement in “Measurement” for 5 days — task for the foreman “send the estimate”. And show me the pipeline dashboard.</div>
+    <div class="msg kai"><span class="who">Kai</span>Audit: 23 deals have been in “Measurement” for over 14 days, “Estimate amount” is empty in 80% of deals, no loss reasons, no automations. Fixed: the field is required at “Estimate”, 4 loss reasons added, the 5-day rule is on. Dashboard: 61 open, 23 in “Measurement” (bottleneck), 9 won this month, 4 lost.</div>
+  </div>
+  <div class="k">What Kai did</div><div class="did"><span>pipeline audit</span><span>make field required</span><span>loss reasons</span><span>create rule</span><span>dashboard</span></div>
+  <div class="time">Audit, fixes and summary — one message. Kai deleted nothing: existing deals and stages stayed.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Audit the “Contract sale” pipeline. Then fix it: make “Estimate amount” required at the “Estimate” stage, add loss reasons (too expensive, chose others, postponed, no answer), rule: no movement in “Measurement” for 5 days — task for the foreman “send the estimate”. And show me the pipeline dashboard.">Copy the message</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Repeat it in your chat</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Open in Telegram</a></div>
+</article>
+<article class="case" id="courses-kommo">
+  <div class="top"><span class="badge crm">Kommo</span><span class="badge">Online school</span></div>
+  <h2>Registrations lived in a spreadsheet, price deadlines were reminded from memory</h2>
+  <p>Landing-page registrations land in a spreadsheet, managers sort them by hand. Cohorts get mixed up, an invoice is sent — and the reminder is forgotten. The team learns about a payment from accounting a day later.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Before</h3>
+      <div class="k">Pipeline stages</div><div class="board"><span>Lead</span><em>→</em><span>Payment</span></div>
+      <div class="k">Deal fields</div><ul class="list none"><li>no fields — everything in notes</li></ul>
+      <div class="k">Rules</div><ul class="list none"><li>no rules — everything from memory</li></ul>
+      <div class="k">What was breaking</div><ul class="list pain"><li>nothing between “Lead” and “Payment” — unclear who is at which step</li><li>no Product and Cohort fields — lists are compiled by hand</li><li>payments are noticed late, the welcome and access are delayed</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>After</h3>
+      <div class="k">Pipeline stages</div><div class="board"><span>Registration</span><em>→</em><span>Qualification</span><em>→</em><span>Call scheduled</span><em>→</em><span>Call done</span><em>→</em><span>Invoice sent</span><em>→</em><span>Payment</span></div>
+      <div class="k">Deal fields</div><ul class="list"><li><b>Product</b><small>list</small></li><li><b>Plan</b><small>list</small></li><li><b>Cohort</b></li><li><b>Instalments</b><small>yes/no</small></li></ul>
+      <div class="k">Rules</div><div class="rule"><b>Registration</b><span>task: write and offer a diagnostic call</span><b>“Invoice sent”</b><span>task for tomorrow: remind about the price deadline</span><b>“Payment”</b><span>tag “student” + Telegram notification</span></div>
+      <div class="k">What changed</div><ul class="list gain"><li>every registration gets a first touch — the task is created automatically</li><li>the price-deadline reminder is scheduled the next day by itself</li><li>the team sees the payment at once, in Telegram, without accounting</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Message to Kai</span>In Kommo create a “Course sales” pipeline: Registration → Qualification → Call scheduled → Call done → Invoice sent → Payment. Fields: Product (list), Plan (list: basic, with mentor, VIP), Cohort, Instalments (yes/no). Rules: Registration — task to write and offer a diagnostic call; “Invoice sent” — task for tomorrow to remind about the price deadline; “Payment” — tag “student” and a Telegram notification to the sales team.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Done.</span> “Course sales” pipeline, 6 stages, 4 fields. Rules are on: a task on registration, a deadline reminder the day after the invoice, the “student” tag and a Telegram notification on payment. Colleagues subscribe to notifications with a link from the account page.</div>
+  </div>
+  <div class="k">What Kai did</div><div class="did"><span>create pipeline</span><span>create field <b>×4</b></span><span>create rule <b>×3</b></span><span>tag</span></div>
+  <div class="time">One message. Telegram notifications are built into Kai, no Zapier or webhooks.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="In Kommo create a “Course sales” pipeline: Registration → Qualification → Call scheduled → Call done → Invoice sent → Payment. Fields: Product (list), Plan (list: basic, with mentor, VIP), Cohort, Instalments (yes/no). Rules: Registration — task to write and offer a diagnostic call; “Invoice sent” — task for tomorrow to remind about the price deadline; “Payment” — tag “student” and a Telegram notification to the sales team.">Copy the message</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Repeat it in your chat</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Open in Telegram</a></div>
+</article>
+<p class="more"><a href="../../guides/en/">Step-by-step amoCRM and Kommo guides →</a></p>
+<div class="cta"><b>Want the same? Write to Kai in your own words — it clarifies the details and sets things up.</b><br><a href="https://t.me/aiicrm_bot">Try in Telegram</a><a class="alt" href="https://app.aii-crm.com/chat?lang=en">Open web chat</a></div>
+<footer>© 2026 Kai · <a href="../../privacy-en.html">Privacy</a></footer>
+</div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){ b.addEventListener('click', function(){ var t=b.getAttribute('data-copy'), done=function(){ var o=b.textContent; b.textContent="Copied"; setTimeout(function(){ b.textContent=o; },1500); };
+  if(navigator.clipboard) navigator.clipboard.writeText(t).then(done); else { var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} ta.remove(); done(); } }); });
+</script>
+</body></html>

@@ -66,6 +66,7 @@ def index_page(lang: str, guides: list[dict]) -> str:
 <header>{MARK}<a href="{up}">Kai</a><nav><a href="{up}#pricing">{'Тарифы' if ru else 'Plans'}</a><a href="{alt_en if ru else alt_ru}">{'EN' if ru else 'RU'}</a></nav></header>
 <h1>{html.escape(t)}</h1>
 <p class="lead">{html.escape(d)}</p>
+<a class="card" href="{up}cases/{"" if ru else "en/"}" style="border-color:var(--accent)"><b>{"Примеры: было → стало" if ru else "Examples: before → after"}</b><span>{"Четыре ситуации в amoCRM и Kommo: воронка до, сообщение Kai, что он сделал, воронка после." if ru else "Four situations in amoCRM and Kommo: the pipeline before, the message to Kai, what it did, the pipeline after."}</span></a>
 {items}
 <div class="cta"><b style="color:var(--ink)">{'Хотите, чтобы это сделал Kai?' if ru else 'Want Kai to do it for you?'}</b><br>
 <a href="https://t.me/aiicrm_bot">{'Попробовать в Telegram' if ru else 'Try in Telegram'}</a><a class="alt" href="{chat}">{'Открыть веб-чат' if ru else 'Open web chat'}</a></div>
@@ -83,7 +84,7 @@ def main() -> None:
     io.open(os.path.join(HERE, "guides", "index.html"), "w", encoding="utf-8", newline="\n").write(index_page("ru", guides))
     io.open(os.path.join(HERE, "guides", "en", "index.html"), "w", encoding="utf-8", newline="\n").write(index_page("en", guides))
     # sitemap: главная, /en/, политики, гайды
-    urls = [("", "1.0", "weekly"), ("en/", "0.9", "weekly"), ("guides/", "0.8", "weekly"), ("guides/en/", "0.8", "weekly")]
+    urls = [("", "1.0", "weekly"), ("en/", "0.9", "weekly"), ("guides/", "0.8", "weekly"), ("guides/en/", "0.8", "weekly"), ("cases/", "0.9", "monthly"), ("cases/en/", "0.9", "monthly")]
     urls += [(f"guides/{g['slug']}.html", "0.8", "monthly") for g in guides] + [(f"guides/en/{g['slug']}.html", "0.8", "monthly") for g in guides]
     urls += [(p, "0.3", "monthly") for p in ("privacy.html", "privacy-en.html", "terms.html", "terms-en.html", "refund.html", "refund-en.html")]
     body = "".join(f"  <url>\n    <loc>{BASE}{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n    <changefreq>{c}</changefreq>\n    <priority>{p}</priority>\n  </url>\n" for u, p, c in urls)

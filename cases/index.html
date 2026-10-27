@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Примеры: как было в CRM и как стало после одного сообщения Kai | Kai</title>
+<meta name="description" content="Четыре типовых ситуации в amoCRM и Kommo: что было в воронке, какое сообщение написали Kai, что он сделал и как CRM выглядит после. Настоящие действия, без интегратора.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aii-crm.com/cases/">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/cases/"><link rel="alternate" hreflang="en" href="https://aii-crm.com/cases/en/"><link rel="alternate" hreflang="x-default" href="https://aii-crm.com/cases/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Kai"><meta property="og:url" content="https://aii-crm.com/cases/">
+<meta property="og:title" content="Было → стало: примеры настройки amoCRM и Kommo одним сообщением"><meta property="og:description" content="Четыре типовых ситуации в amoCRM и Kommo: что было в воронке, какое сообщение написали Kai, что он сделал и как CRM выглядит после. Настоящие действия, без интегратора."><meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Было → стало: примеры настройки amoCRM и Kommo одним сообщением"><meta name="twitter:description" content="Четыре типовых ситуации в amoCRM и Kommo: что было в воронке, какое сообщение написали Kai, что он сделал и как CRM выглядит после. Настоящие действия, без интегратора."><meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B0A14'/><path d='M16 6.5a9.5 9.5 0 1 0 9.5 9.5' stroke='%237C5CFF' stroke-width='4' stroke-linecap='round' fill='none'/><circle cx='23.4' cy='8.6' r='2.6' fill='%23A78BFA'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0;--bad:#FF7B93;--warn:#F5C451;--mono:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 'Manrope',system-ui,sans-serif;padding:0 16px 64px}
+.wrap{max-width:860px;margin:0 auto}header{display:flex;align-items:center;gap:12px;padding:22px 0;border-bottom:1px solid var(--border)}
+header a{color:var(--ink);text-decoration:none;font-weight:700}header nav{margin-left:auto;display:flex;gap:18px;font-size:14px}header nav a{color:var(--muted);font-weight:500}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin:40px 0 12px;text-wrap:balance}
+.lead{color:var(--text);max-width:64ch}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}.toc a{font:600 13px var(--mono);color:var(--accent-2);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:6px 12px}.toc a:hover{border-color:var(--accent)}
+.case{margin-top:44px;border:1px solid var(--border);border-radius:18px;background:var(--bg-1);padding:22px;scroll-margin-top:16px}
+.case .top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}.badge{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}.badge.crm{color:var(--accent-2);border-color:rgba(124,92,255,.45)}
+.case h2{margin:0 0 6px;font-size:clamp(21px,3.2vw,26px);line-height:1.25;color:var(--ink);letter-spacing:-.01em;text-wrap:balance}
+.case p{margin:6px 0}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.col{border:1px solid var(--border);border-radius:14px;padding:14px;background:var(--bg)}
+.col h3{margin:0 0 10px;font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.col.before h3{color:var(--bad)}.col.after h3{color:var(--good)}.col h3 i{width:8px;height:8px;border-radius:50%;background:currentColor;display:inline-block}
+.board{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.board span{font-size:13px;font-weight:600;color:var(--ink);background:var(--bg-2);border:1px solid var(--border);border-radius:8px;padding:6px 9px}.board em{font-style:normal;color:var(--muted);font-size:12px}
+.col.after .board span{border-color:rgba(67,224,160,.35)}
+.k{margin:12px 0 4px;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.list{margin:0;padding:0;list-style:none;font-size:14px}.list li{padding:5px 0;border-top:1px solid var(--border);display:flex;gap:8px;align-items:baseline}.list li:first-child{border-top:0}
+.list b{color:var(--ink);font-weight:600}.list small{color:var(--muted);font-size:12px}.list .stamp{font:600 10px var(--mono);color:var(--warn);border:1px solid rgba(245,196,81,.5);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.list.none li{color:var(--muted);font-style:italic}.list.pain li::before{content:'–';color:var(--bad)}.list.gain li::before{content:'✓';color:var(--good);font-weight:700}
+.rule{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;font-size:14px}.rule b{color:var(--ink);font-weight:600}.rule span::before{content:'→ ';color:var(--accent-2)}
+.chat{margin:16px 0;display:grid;gap:10px}.msg{max-width:92%;border-radius:16px;padding:12px 14px;font-size:15px;line-height:1.5}
+.msg.me{justify-self:end;background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.45);color:var(--ink);border-bottom-right-radius:6px}
+.msg.kai{justify-self:start;background:var(--bg-2);border:1px solid var(--border);border-bottom-left-radius:6px}.msg .who{display:block;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.msg.kai .ok{color:var(--good);font-weight:700}
+.did{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}.did span{font:500 12px var(--mono);color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:4px 8px}.did span b{color:var(--accent-2);font-weight:600}
+.time{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--bg-2);border:1px solid var(--border);font-size:14px;color:var(--text)}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.btn{display:inline-block;padding:11px 16px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;font-size:14px}.btn.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}
+button.btn{cursor:pointer;border:1px solid var(--border);font:inherit;font-weight:700;font-size:14px}
+.cta{margin-top:40px;padding:22px;border-radius:16px;background:var(--bg-2);border:1px solid var(--border)}.cta b{color:var(--ink)}.cta a{display:inline-block;margin:10px 10px 0 0;padding:12px 18px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+.cta a.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}footer{margin-top:40px;color:var(--muted);font-size:13px}footer a{color:var(--muted)}
+.more{margin-top:28px}.more a{color:var(--accent-2)}
+@media (max-width:700px){.ba{grid-template-columns:1fr}.case{padding:16px;border-radius:14px}.msg{max-width:100%}body{font-size:16px}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Было → стало: примеры настройки amoCRM и Kommo одним сообщением", "description": "Четыре типовых ситуации в amoCRM и Kommo: что было в воронке, какое сообщение написали Kai, что он сделал и как CRM выглядит после. Настоящие действия, без интегратора.", "url": "https://aii-crm.com/cases/", "inLanguage": "ru", "datePublished": "2026-10-27", "dateModified": "2026-10-27", "author": {"@type": "Organization", "name": "Kai"}, "publisher": {"@type": "Organization", "name": "Kai", "url": "https://aii-crm.com/"}, "isPartOf": {"@type": "WebSite", "name": "Kai", "url": "https://aii-crm.com/"}, "hasPart": [{"@type": "HowTo", "name": "Половина заявок терялась между звонком и записью", "url": "https://aii-crm.com/cases/#dental-amocrm", "step": [{"@type": "HowToStep", "text": "Сделай воронку «Первичные пациенты»: Заявка → Дозвон → Запись → Визит подтверждён → Приём → План лечения. Поля сделки: Направление (список: терапия, ортопедия, имплантация, детская), Врач, Дата приёма, Сумма плана. Дата приёма обязательна на этапе «Запись». Правила: новая заявка — задача администратору перезвонить за 15 минут; сделка перешла в «Запись» — задача накануне подтвердить визит; на «Дозвон» без движения 2 дня — задача «перезвонить ещё раз»."}]}, {"@type": "HowTo", "name": "Бюджет и район писали в названии сделки", "url": "https://aii-crm.com/cases/#realty-kommo", "step": [{"@type": "HowToStep", "text": "В Kommo сделай воронку «Покупатели»: Заявка → Квалификация → Подборка → Показ → Бронь → Договор. Поля: Тип объекта (список: студия, 1к, 2к, 3к+, дом), Бюджет (число), Район, Способ покупки (ипотека, наличные, рассрочка). Бюджет и Район обязательны на «Квалификации». Правила: новая заявка — задача перезвонить за 15 минут; сделка на «Подборке» — задача на завтра назначить показ; после «Показа» без движения 3 дня — задача «узнать решение». Причины отказа: купил у других, дорого, передумал, не дозвонились."}]}, {"@type": "HowTo", "name": "Воронка была, но сделки месяцами висели на «Замере»", "url": "https://aii-crm.com/cases/#renovation-audit-amocrm", "step": [{"@type": "HowToStep", "text": "Проведи аудит воронки «Продажа договора». Потом исправь: сделай «Сумма по смете» обязательной на этапе «Смета», добавь причины отказа (дорого, выбрали других, отложили ремонт, не дозвонились), правило: на «Замере» без движения 5 дней — задача прорабу «отправить смету». И покажи дашборд по воронке."}]}, {"@type": "HowTo", "name": "Регистрации жили в таблице, о дедлайне цены напоминали по памяти", "url": "https://aii-crm.com/cases/#courses-kommo", "step": [{"@type": "HowToStep", "text": "Сделай в Kommo воронку «Продажа курса»: Регистрация → Квалификация → Созвон назначен → Созвон проведён → Счёт выставлен → Оплата. Поля: Продукт (список), Тариф (список: базовый, с куратором, VIP), Поток, Рассрочка (да/нет). Правила: Регистрация — задача написать и предложить диагностику; «Счёт выставлен» — задача на завтра напомнить о дедлайне цены; «Оплата» — тег «студент» и уведомление в Telegram отделу продаж."}]}]}</script>
+</head>
+<body><div class="wrap">
+<header><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="#7C5CFF" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="#A78BFA"/></svg><a href="../">Kai</a><nav><a href="../guides/">Гайды</a><a href="../#pricing">Тарифы</a><a href="https://aii-crm.com/cases/en/">EN</a></nav></header>
+<h1>Было → стало: примеры настройки amoCRM и Kommo одним сообщением</h1>
+<p class="lead">Каждый пример — типовая картина, с которой приходят к Kai: воронка «на всё», поля в примечаниях, задачи по памяти. Ниже — сообщение, которое пишут Kai, что он делает в CRM и что получается. Цифр клиентов тут нет, только конфигурация и время.</p>
+<div class="toc"><a href="#dental-amocrm">amoCRM · Стоматология</a><a href="#realty-kommo">Kommo · Агентство недвижимости</a><a href="#renovation-audit-amocrm">amoCRM · Ремонт квартир</a><a href="#courses-kommo">Kommo · Онлайн-школа</a></div>
+
+<article class="case" id="dental-amocrm">
+  <div class="top"><span class="badge crm">amoCRM</span><span class="badge">Стоматология</span></div>
+  <h2>Половина заявок терялась между звонком и записью</h2>
+  <p>Одна воронка «Основная» на всё: заявки с сайта, Instagram и звонки падают в «Новая», дальше «В работе» и «Закрыто». Врач и дата приёма — в примечаниях, напоминать о визите некому.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Было</h3>
+      <div class="k">Этапы воронки</div><div class="board"><span>Новая</span><em>→</em><span>В работе</span><em>→</em><span>Закрыто</span></div>
+      <div class="k">Поля сделки</div><ul class="list none"><li>полей нет — всё в примечаниях</li></ul>
+      <div class="k">Правила</div><ul class="list none"><li>правил нет — всё по памяти</li></ul>
+      <div class="k">Что ломалось</div><ul class="list pain"><li>нет этапа «Дозвон» — непонятно, кому перезванивали</li><li>дата приёма в примечании, администратор ищет глазами</li><li>визит не подтверждают — пациенты не приходят</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Стало</h3>
+      <div class="k">Этапы воронки</div><div class="board"><span>Заявка</span><em>→</em><span>Дозвон</span><em>→</em><span>Запись</span><em>→</em><span>Визит подтверждён</span><em>→</em><span>Приём</span><em>→</em><span>План лечения</span></div>
+      <div class="k">Поля сделки</div><ul class="list"><li><b>Направление</b><small>список</small></li><li><b>Врач</b></li><li><b>Дата приёма</b><span class="stamp">обязательное на «Запись»</span></li><li><b>Сумма плана</b><small>число</small></li></ul>
+      <div class="k">Правила</div><div class="rule"><b>Новая заявка</b><span>задача «перезвонить» через 15 минут</span><b>Переход в «Запись»</b><span>задача накануне: подтвердить визит</span><b>«Дозвон» без движения 2 дня</b><span>задача «перезвонить ещё раз»</span></div>
+      <div class="k">Что изменилось</div><ul class="list gain"><li>каждая заявка получает звонок в первые 15 минут — правило, а не память администратора</li><li>дата приёма нельзя пропустить: без неё сделка не перейдёт в «Запись»</li><li>за день до визита появляется задача подтвердить — меньше неявок</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Сообщение Kai</span>Сделай воронку «Первичные пациенты»: Заявка → Дозвон → Запись → Визит подтверждён → Приём → План лечения. Поля сделки: Направление (список: терапия, ортопедия, имплантация, детская), Врач, Дата приёма, Сумма плана. Дата приёма обязательна на этапе «Запись». Правила: новая заявка — задача администратору перезвонить за 15 минут; сделка перешла в «Запись» — задача накануне подтвердить визит; на «Дозвон» без движения 2 дня — задача «перезвонить ещё раз».</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Готово.</span> Воронка «Первичные пациенты» создана, 6 этапов. Добавил 4 поля, «Дата приёма» обязательна на «Запись». Три правила включены: перезвон за 15 минут, подтверждение визита накануне, повторный дозвон через 2 дня. Системные этапы «Успешно» и «Отказ» не трогал.</div>
+  </div>
+  <div class="k">Что сделал Kai</div><div class="did"><span>создать воронку</span><span>создать поле <b>×4</b></span><span>сделать поле обязательным</span><span>создать правило <b>×3</b></span></div>
+  <div class="time">Одно сообщение, около двух минут. Интегратор делает то же за 2–5 рабочих дней.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Сделай воронку «Первичные пациенты»: Заявка → Дозвон → Запись → Визит подтверждён → Приём → План лечения. Поля сделки: Направление (список: терапия, ортопедия, имплантация, детская), Врач, Дата приёма, Сумма плана. Дата приёма обязательна на этапе «Запись». Правила: новая заявка — задача администратору перезвонить за 15 минут; сделка перешла в «Запись» — задача накануне подтвердить визит; на «Дозвон» без движения 2 дня — задача «перезвонить ещё раз».">Скопировать сообщение</button><a class="btn" href="https://app.aii-crm.com/chat?lang=ru">Повторить у себя в чате</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Открыть в Telegram</a></div>
+</article>
+<article class="case" id="realty-kommo">
+  <div class="top"><span class="badge crm">Kommo</span><span class="badge">Агентство недвижимости</span></div>
+  <h2>Бюджет и район писали в названии сделки</h2>
+  <p>Все лиды во «Входящих», этапов нет. Бюджет, район и тип объекта — в названии сделки «Иван, 2к, до 90к, центр». Подборку отправили и забыли, после показа никто не перезванивает.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Было</h3>
+      <div class="k">Этапы воронки</div><div class="board"><span>Входящие</span><em>→</em><span>В работе</span><em>→</em><span>Сделка</span></div>
+      <div class="k">Поля сделки</div><ul class="list none"><li>полей нет — всё в примечаниях</li></ul>
+      <div class="k">Правила</div><ul class="list none"><li>правил нет — всё по памяти</li></ul>
+      <div class="k">Что ломалось</div><ul class="list pain"><li>нельзя отфильтровать по бюджету и району — всё в тексте</li><li>после «Показ» сделки зависают без следующего шага</li><li>причин отказа нет — непонятно, почему уходят</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Стало</h3>
+      <div class="k">Этапы воронки</div><div class="board"><span>Заявка</span><em>→</em><span>Квалификация</span><em>→</em><span>Подборка</span><em>→</em><span>Показ</span><em>→</em><span>Бронь</span><em>→</em><span>Договор</span></div>
+      <div class="k">Поля сделки</div><ul class="list"><li><b>Тип объекта</b><small>список</small></li><li><b>Бюджет</b><span class="stamp">число · обязательное на «Квалификации»</span></li><li><b>Район</b><span class="stamp">обязательное на «Квалификации»</span></li><li><b>Способ покупки</b><small>список</small></li></ul>
+      <div class="k">Правила</div><div class="rule"><b>Новая заявка</b><span>задача «перезвонить» через 15 минут</span><b>Переход в «Подборку»</b><span>задача на завтра: назначить показ</span><b>«Показ» без движения 3 дня</b><span>задача «узнать решение»</span></div>
+      <div class="k">Что изменилось</div><ul class="list gain"><li>фильтр «2к до 90 000 в центре» — за секунду, по полям</li><li>после каждого показа есть следующий шаг и срок</li><li>отказы с причинами: видно, где теряем — цена или скорость</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Сообщение Kai</span>В Kommo сделай воронку «Покупатели»: Заявка → Квалификация → Подборка → Показ → Бронь → Договор. Поля: Тип объекта (список: студия, 1к, 2к, 3к+, дом), Бюджет (число), Район, Способ покупки (ипотека, наличные, рассрочка). Бюджет и Район обязательны на «Квалификации». Правила: новая заявка — задача перезвонить за 15 минут; сделка на «Подборке» — задача на завтра назначить показ; после «Показа» без движения 3 дня — задача «узнать решение». Причины отказа: купил у других, дорого, передумал, не дозвонились.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Готово.</span> Воронка «Покупатели», 6 этапов. Поля: Тип объекта, Бюджет, Район, Способ покупки; Бюджет и Район обязательны на «Квалификации». Три правила включены, четыре причины отказа добавлены — теперь аналитика по отказам будет считаться.</div>
+  </div>
+  <div class="k">Что сделал Kai</div><div class="did"><span>создать воронку</span><span>создать поле <b>×4</b></span><span>сделать поле обязательным <b>×2</b></span><span>создать правило <b>×3</b></span><span>причины отказа</span></div>
+  <div class="time">Одно сообщение, около двух минут. Поля, этапы и правила — в Kommo через API, без виджетов.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="В Kommo сделай воронку «Покупатели»: Заявка → Квалификация → Подборка → Показ → Бронь → Договор. Поля: Тип объекта (список: студия, 1к, 2к, 3к+, дом), Бюджет (число), Район, Способ покупки (ипотека, наличные, рассрочка). Бюджет и Район обязательны на «Квалификации». Правила: новая заявка — задача перезвонить за 15 минут; сделка на «Подборке» — задача на завтра назначить показ; после «Показа» без движения 3 дня — задача «узнать решение». Причины отказа: купил у других, дорого, передумал, не дозвонились.">Скопировать сообщение</button><a class="btn" href="https://app.aii-crm.com/chat?lang=ru">Повторить у себя в чате</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Открыть в Telegram</a></div>
+</article>
+<article class="case" id="renovation-audit-amocrm">
+  <div class="top"><span class="badge crm">amoCRM</span><span class="badge">Ремонт квартир</span></div>
+  <h2>Воронка была, но сделки месяцами висели на «Замере»</h2>
+  <p>Воронка «Продажа договора» настроена давно, но смету отправляют когда вспомнят, суммы не заполнены, причин отказа нет — отчёт по воронке пустой. Владелец не видит, где застряли деньги.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Было</h3>
+      <div class="k">Этапы воронки</div><div class="board"><span>Заявка</span><em>→</em><span>Квалификация</span><em>→</em><span>Замер</span><em>→</em><span>Смета</span><em>→</em><span>Договор</span><em>→</em><span>Аванс</span></div>
+      <div class="k">Поля сделки</div><ul class="list"><li><b>Тип работ</b></li><li><b>Площадь, м²</b></li><li><b>Бюджет</b></li><li><b>Сумма по смете</b><small>пустое в 8 из 10 сделок</small></li></ul>
+      <div class="k">Правила</div><ul class="list none"><li>правил нет — всё по памяти</li></ul>
+      <div class="k">Что ломалось</div><ul class="list pain"><li>23 сделки без движения больше двух недель на «Замере»</li><li>сумма по смете не заполнена — прогноз выручки невозможен</li><li>без причин отказа нельзя понять, почему уходят</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Стало</h3>
+      <div class="k">Этапы воронки</div><div class="board"><span>Заявка</span><em>→</em><span>Квалификация</span><em>→</em><span>Замер</span><em>→</em><span>Смета</span><em>→</em><span>Договор</span><em>→</em><span>Аванс</span></div>
+      <div class="k">Поля сделки</div><ul class="list"><li><b>Тип работ</b></li><li><b>Площадь, м²</b></li><li><b>Бюджет</b></li><li><b>Сумма по смете</b><span class="stamp">обязательное на «Смете»</span></li></ul>
+      <div class="k">Правила</div><div class="rule"><b>«Замер» без движения 5 дней</b><span>задача прорабу «отправить смету»</span></div>
+      <div class="k">Что изменилось</div><ul class="list gain"><li>смета больше не зависает: через 5 дней появляется задача с ответственным</li><li>сумма по смете обязательна — прогноз выручки считается по полям</li><li>отказы с причинами, дашборд одним словом «дашборд» в любой момент</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Сообщение Kai</span>Проведи аудит воронки «Продажа договора». Потом исправь: сделай «Сумма по смете» обязательной на этапе «Смета», добавь причины отказа (дорого, выбрали других, отложили ремонт, не дозвонились), правило: на «Замере» без движения 5 дней — задача прорабу «отправить смету». И покажи дашборд по воронке.</div>
+    <div class="msg kai"><span class="who">Kai</span>Аудит: 23 сделки стоят на «Замере» дольше 14 дней, «Сумма по смете» пустая в 80% сделок, причин отказа нет, автоматизаций нет. Исправил: поле обязательно на «Смете», 4 причины отказа добавлены, правило на 5 дней включено. Дашборд: открытых 61, на «Замере» 23 (узкое место), выиграно за месяц 9, проиграно 4.</div>
+  </div>
+  <div class="k">Что сделал Kai</div><div class="did"><span>аудит воронки</span><span>сделать поле обязательным</span><span>причины отказа</span><span>создать правило</span><span>дашборд</span></div>
+  <div class="time">Аудит, правки и сводка — одно сообщение. Kai ничего не удалял: существующие сделки и этапы остались.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Проведи аудит воронки «Продажа договора». Потом исправь: сделай «Сумма по смете» обязательной на этапе «Смета», добавь причины отказа (дорого, выбрали других, отложили ремонт, не дозвонились), правило: на «Замере» без движения 5 дней — задача прорабу «отправить смету». И покажи дашборд по воронке.">Скопировать сообщение</button><a class="btn" href="https://app.aii-crm.com/chat?lang=ru">Повторить у себя в чате</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Открыть в Telegram</a></div>
+</article>
+<article class="case" id="courses-kommo">
+  <div class="top"><span class="badge crm">Kommo</span><span class="badge">Онлайн-школа</span></div>
+  <h2>Регистрации жили в таблице, о дедлайне цены напоминали по памяти</h2>
+  <p>Регистрации с лендинга падают в таблицу, менеджеры разбирают вручную. Потоки путают, счёт выставили — и забыли напомнить. Отдел узнаёт об оплате из бухгалтерии через день.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Было</h3>
+      <div class="k">Этапы воронки</div><div class="board"><span>Лид</span><em>→</em><span>Оплата</span></div>
+      <div class="k">Поля сделки</div><ul class="list none"><li>полей нет — всё в примечаниях</li></ul>
+      <div class="k">Правила</div><ul class="list none"><li>правил нет — всё по памяти</li></ul>
+      <div class="k">Что ломалось</div><ul class="list pain"><li>между «Лид» и «Оплата» ничего — непонятно, кто на каком шаге</li><li>нет полей Продукт и Поток — списки собирают руками</li><li>об оплате узнают поздно, поздравление и доступ задерживаются</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Стало</h3>
+      <div class="k">Этапы воронки</div><div class="board"><span>Регистрация</span><em>→</em><span>Квалификация</span><em>→</em><span>Созвон назначен</span><em>→</em><span>Созвон проведён</span><em>→</em><span>Счёт выставлен</span><em>→</em><span>Оплата</span></div>
+      <div class="k">Поля сделки</div><ul class="list"><li><b>Продукт</b><small>список</small></li><li><b>Тариф</b><small>список</small></li><li><b>Поток</b></li><li><b>Рассрочка</b><small>да/нет</small></li></ul>
+      <div class="k">Правила</div><div class="rule"><b>Регистрация</b><span>задача: написать и предложить диагностику</span><b>«Счёт выставлен»</b><span>задача на завтра: напомнить о дедлайне цены</span><b>«Оплата»</b><span>тег «студент» + уведомление в Telegram</span></div>
+      <div class="k">Что изменилось</div><ul class="list gain"><li>каждая регистрация получает первое касание — задача ставится сама</li><li>напоминание о дедлайне цены ставится автоматически на следующий день</li><li>оплата видна отделу сразу, в Telegram, без бухгалтерии</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Сообщение Kai</span>Сделай в Kommo воронку «Продажа курса»: Регистрация → Квалификация → Созвон назначен → Созвон проведён → Счёт выставлен → Оплата. Поля: Продукт (список), Тариф (список: базовый, с куратором, VIP), Поток, Рассрочка (да/нет). Правила: Регистрация — задача написать и предложить диагностику; «Счёт выставлен» — задача на завтра напомнить о дедлайне цены; «Оплата» — тег «студент» и уведомление в Telegram отделу продаж.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Готово.</span> Воронка «Продажа курса», 6 этапов, 4 поля. Правила включены: задача на регистрации, напоминание о дедлайне на следующий день после счёта, тег «студент» и уведомление в Telegram при оплате. Чтобы получать уведомления, коллеги подписываются по ссылке из кабинета.</div>
+  </div>
+  <div class="k">Что сделал Kai</div><div class="did"><span>создать воронку</span><span>создать поле <b>×4</b></span><span>создать правило <b>×3</b></span><span>тег</span></div>
+  <div class="time">Одно сообщение. Уведомления в Telegram — встроенная функция Kai, без Zapier и вебхуков.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Сделай в Kommo воронку «Продажа курса»: Регистрация → Квалификация → Созвон назначен → Созвон проведён → Счёт выставлен → Оплата. Поля: Продукт (список), Тариф (список: базовый, с куратором, VIP), Поток, Рассрочка (да/нет). Правила: Регистрация — задача написать и предложить диагностику; «Счёт выставлен» — задача на завтра напомнить о дедлайне цены; «Оплата» — тег «студент» и уведомление в Telegram отделу продаж.">Скопировать сообщение</button><a class="btn" href="https://app.aii-crm.com/chat?lang=ru">Повторить у себя в чате</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Открыть в Telegram</a></div>
+</article>
+<p class="more"><a href="../guides/">Пошаговые гайды по amoCRM и Kommo →</a></p>
+<div class="cta"><b>Хочешь так же? Напиши Kai своими словами — он уточнит детали и настроит.</b><br><a href="https://t.me/aiicrm_bot">Попробовать в Telegram</a><a class="alt" href="https://app.aii-crm.com/chat?lang=ru">Открыть веб-чат</a></div>
+<footer>© 2026 Kai · <a href="../privacy.html">Конфиденциальность</a></footer>
+</div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){ b.addEventListener('click', function(){ var t=b.getAttribute('data-copy'), done=function(){ var o=b.textContent; b.textContent="Скопировано"; setTimeout(function(){ b.textContent=o; },1500); };
+  if(navigator.clipboard) navigator.clipboard.writeText(t).then(done); else { var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} ta.remove(); done(); } }); });
+</script>
+</body></html>

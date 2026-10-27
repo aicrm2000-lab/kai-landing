@@ -1,0 +1,127 @@
+# -*- coding: utf-8 -*-
+"""Примеры «было → стало»: содержание для cases/ (RU) и cases/en/ (EN). Собирает build_cases.py.
+
+Каждый пример — типовая картина в CRM до Kai, одно сообщение Kai, что он сделал (настоящие действия из
+services/capabilities.py бота) и как выглядит CRM после. Цифры клиентов не выдумываем: только конфигурация и время.
+"""
+
+CASES = [
+    {
+        "id": "dental-amocrm", "crm": "amoCRM", "kind": {"ru": "Стоматология", "en": "Dental clinic"},
+        "title": {"ru": "Половина заявок терялась между звонком и записью", "en": "Half of the requests were lost between the call and the booking"},
+        "before": {
+            "lead": {"ru": "Одна воронка «Основная» на всё: заявки с сайта, Instagram и звонки падают в «Новая», дальше «В работе» и «Закрыто». Врач и дата приёма — в примечаниях, напоминать о визите некому.",
+                     "en": "One “Main” pipeline for everything: website, Instagram and phone requests land in “New”, then “In progress” and “Closed”. The doctor and the visit date live in notes, nobody reminds about the visit."},
+            "stages": {"ru": ["Новая", "В работе", "Закрыто"], "en": ["New", "In progress", "Closed"]},
+            "fields": {"ru": [], "en": []},
+            "rules": {"ru": [], "en": []},
+            "pains": {"ru": ["нет этапа «Дозвон» — непонятно, кому перезванивали", "дата приёма в примечании, администратор ищет глазами", "визит не подтверждают — пациенты не приходят"],
+                      "en": ["no “Reached” stage — unclear who was called back", "visit date in a note, the front desk searches by eye", "visits are not confirmed — patients do not show up"]},
+        },
+        "message": {"ru": "Сделай воронку «Первичные пациенты»: Заявка → Дозвон → Запись → Визит подтверждён → Приём → План лечения. Поля сделки: Направление (список: терапия, ортопедия, имплантация, детская), Врач, Дата приёма, Сумма плана. Дата приёма обязательна на этапе «Запись». Правила: новая заявка — задача администратору перезвонить за 15 минут; сделка перешла в «Запись» — задача накануне подтвердить визит; на «Дозвон» без движения 2 дня — задача «перезвонить ещё раз».",
+                    "en": "Create a “New patients” pipeline: Request → Reached → Booked → Visit confirmed → Appointment → Treatment plan. Deal fields: Service (list: therapy, prosthetics, implants, pediatric), Doctor, Visit date, Plan amount. Visit date is required at the “Booked” stage. Rules: new request — task for the front desk to call back within 15 minutes; deal moved to “Booked” — task the day before to confirm the visit; no movement in “Reached” for 2 days — task “call again”."},
+        "reply": {"ru": "Готово. Воронка «Первичные пациенты» создана, 6 этапов. Добавил 4 поля, «Дата приёма» обязательна на «Запись». Три правила включены: перезвон за 15 минут, подтверждение визита накануне, повторный дозвон через 2 дня. Системные этапы «Успешно» и «Отказ» не трогал.",
+                  "en": "Done. “New patients” pipeline created, 6 stages. Added 4 fields, “Visit date” is required at “Booked”. Three rules are on: call back within 15 minutes, confirm the visit the day before, call again after 2 days. System stages “Won” and “Lost” untouched."},
+        "actions": [("создать_воронку", 1), ("создать_поле", 4), ("сделать_поле_обязательным", 1), ("создать_автоматизацию", 3)],
+        "after": {
+            "stages": {"ru": ["Заявка", "Дозвон", "Запись", "Визит подтверждён", "Приём", "План лечения"], "en": ["Request", "Reached", "Booked", "Visit confirmed", "Appointment", "Treatment plan"]},
+            "fields": {"ru": [("Направление", "список"), ("Врач", ""), ("Дата приёма", "обязательное на «Запись»"), ("Сумма плана", "число")],
+                       "en": [("Service", "list"), ("Doctor", ""), ("Visit date", "required at “Booked”"), ("Plan amount", "number")]},
+            "rules": {"ru": [("Новая заявка", "задача «перезвонить» через 15 минут"), ("Переход в «Запись»", "задача накануне: подтвердить визит"), ("«Дозвон» без движения 2 дня", "задача «перезвонить ещё раз»")],
+                      "en": [("New request", "task “call back” in 15 minutes"), ("Moved to “Booked”", "task the day before: confirm the visit"), ("“Reached” idle for 2 days", "task “call again”")]},
+            "gains": {"ru": ["каждая заявка получает звонок в первые 15 минут — правило, а не память администратора", "дата приёма нельзя пропустить: без неё сделка не перейдёт в «Запись»", "за день до визита появляется задача подтвердить — меньше неявок"],
+                      "en": ["every request gets a call in the first 15 minutes — a rule, not the front desk’s memory", "the visit date cannot be skipped: without it the deal will not move to “Booked”", "a confirmation task appears the day before — fewer no-shows"]},
+        },
+        "time": {"ru": "Одно сообщение, около двух минут. Интегратор делает то же за 2–5 рабочих дней.", "en": "One message, about two minutes. An integrator does the same in 2–5 business days."},
+    },
+    {
+        "id": "realty-kommo", "crm": "Kommo", "kind": {"ru": "Агентство недвижимости", "en": "Real estate agency"},
+        "title": {"ru": "Бюджет и район писали в названии сделки", "en": "Budget and district were typed into the deal name"},
+        "before": {
+            "lead": {"ru": "Все лиды во «Входящих», этапов нет. Бюджет, район и тип объекта — в названии сделки «Иван, 2к, до 90к, центр». Подборку отправили и забыли, после показа никто не перезванивает.",
+                     "en": "All leads in “Incoming”, no stages. Budget, district and property type typed into the deal name: “John, 2BR, up to 90k, downtown”. A selection is sent and forgotten, nobody follows up after a viewing."},
+            "stages": {"ru": ["Входящие", "В работе", "Сделка"], "en": ["Incoming", "Working", "Deal"]},
+            "fields": {"ru": [], "en": []},
+            "rules": {"ru": [], "en": []},
+            "pains": {"ru": ["нельзя отфильтровать по бюджету и району — всё в тексте", "после «Показ» сделки зависают без следующего шага", "причин отказа нет — непонятно, почему уходят"],
+                      "en": ["no filtering by budget or district — everything is text", "deals stall after a viewing with no next step", "no loss reasons — unclear why buyers leave"]},
+        },
+        "message": {"ru": "В Kommo сделай воронку «Покупатели»: Заявка → Квалификация → Подборка → Показ → Бронь → Договор. Поля: Тип объекта (список: студия, 1к, 2к, 3к+, дом), Бюджет (число), Район, Способ покупки (ипотека, наличные, рассрочка). Бюджет и Район обязательны на «Квалификации». Правила: новая заявка — задача перезвонить за 15 минут; сделка на «Подборке» — задача на завтра назначить показ; после «Показа» без движения 3 дня — задача «узнать решение». Причины отказа: купил у других, дорого, передумал, не дозвонились.",
+                    "en": "In Kommo create a “Buyers” pipeline: Request → Qualification → Selection → Viewing → Reservation → Contract. Fields: Property type (list: studio, 1BR, 2BR, 3BR+, house), Budget (number), District, Payment method (mortgage, cash, instalments). Budget and District are required at “Qualification”. Rules: new request — task to call back within 15 minutes; deal in “Selection” — task for tomorrow to schedule a viewing; no movement after “Viewing” for 3 days — task “ask for the decision”. Loss reasons: bought elsewhere, too expensive, changed mind, no answer."},
+        "reply": {"ru": "Готово. Воронка «Покупатели», 6 этапов. Поля: Тип объекта, Бюджет, Район, Способ покупки; Бюджет и Район обязательны на «Квалификации». Три правила включены, четыре причины отказа добавлены — теперь аналитика по отказам будет считаться.",
+                  "en": "Done. “Buyers” pipeline, 6 stages. Fields: Property type, Budget, District, Payment method; Budget and District are required at “Qualification”. Three rules are on, four loss reasons added — loss analytics will now count."},
+        "actions": [("создать_воронку", 1), ("создать_поле", 4), ("сделать_поле_обязательным", 2), ("создать_автоматизацию", 3), ("создать_причины_отказа", 1)],
+        "after": {
+            "stages": {"ru": ["Заявка", "Квалификация", "Подборка", "Показ", "Бронь", "Договор"], "en": ["Request", "Qualification", "Selection", "Viewing", "Reservation", "Contract"]},
+            "fields": {"ru": [("Тип объекта", "список"), ("Бюджет", "число · обязательное на «Квалификации»"), ("Район", "обязательное на «Квалификации»"), ("Способ покупки", "список")],
+                       "en": [("Property type", "list"), ("Budget", "number · required at “Qualification”"), ("District", "required at “Qualification”"), ("Payment method", "list")]},
+            "rules": {"ru": [("Новая заявка", "задача «перезвонить» через 15 минут"), ("Переход в «Подборку»", "задача на завтра: назначить показ"), ("«Показ» без движения 3 дня", "задача «узнать решение»")],
+                      "en": [("New request", "task “call back” in 15 minutes"), ("Moved to “Selection”", "task for tomorrow: schedule a viewing"), ("“Viewing” idle for 3 days", "task “ask for the decision”")]},
+            "gains": {"ru": ["фильтр «2к до 90 000 в центре» — за секунду, по полям", "после каждого показа есть следующий шаг и срок", "отказы с причинами: видно, где теряем — цена или скорость"],
+                      "en": ["filter “2BR up to 90,000 downtown” in a second, by fields", "every viewing gets a next step and a deadline", "losses with reasons: you see where you lose — price or speed"]},
+        },
+        "time": {"ru": "Одно сообщение, около двух минут. Поля, этапы и правила — в Kommo через API, без виджетов.", "en": "One message, about two minutes. Fields, stages and rules go into Kommo via the API, no widgets."},
+    },
+    {
+        "id": "renovation-audit-amocrm", "crm": "amoCRM", "kind": {"ru": "Ремонт квартир", "en": "Apartment renovation"},
+        "title": {"ru": "Воронка была, но сделки месяцами висели на «Замере»", "en": "The pipeline existed, but deals sat in “Measurement” for months"},
+        "before": {
+            "lead": {"ru": "Воронка «Продажа договора» настроена давно, но смету отправляют когда вспомнят, суммы не заполнены, причин отказа нет — отчёт по воронке пустой. Владелец не видит, где застряли деньги.",
+                     "en": "The “Contract sale” pipeline was set up long ago, but estimates go out when someone remembers, amounts are empty, no loss reasons — the pipeline report is blank. The owner cannot see where the money is stuck."},
+            "stages": {"ru": ["Заявка", "Квалификация", "Замер", "Смета", "Договор", "Аванс"], "en": ["Request", "Qualification", "Measurement", "Estimate", "Contract", "Deposit"]},
+            "fields": {"ru": [("Тип работ", ""), ("Площадь, м²", ""), ("Бюджет", ""), ("Сумма по смете", "пустое в 8 из 10 сделок")],
+                       "en": [("Work type", ""), ("Area, m²", ""), ("Budget", ""), ("Estimate amount", "empty in 8 of 10 deals")]},
+            "rules": {"ru": [], "en": []},
+            "pains": {"ru": ["23 сделки без движения больше двух недель на «Замере»", "сумма по смете не заполнена — прогноз выручки невозможен", "без причин отказа нельзя понять, почему уходят"],
+                      "en": ["23 deals idle for over two weeks in “Measurement”", "estimate amount empty — revenue forecast impossible", "without loss reasons you cannot tell why clients leave"]},
+        },
+        "message": {"ru": "Проведи аудит воронки «Продажа договора». Потом исправь: сделай «Сумма по смете» обязательной на этапе «Смета», добавь причины отказа (дорого, выбрали других, отложили ремонт, не дозвонились), правило: на «Замере» без движения 5 дней — задача прорабу «отправить смету». И покажи дашборд по воронке.",
+                    "en": "Audit the “Contract sale” pipeline. Then fix it: make “Estimate amount” required at the “Estimate” stage, add loss reasons (too expensive, chose others, postponed, no answer), rule: no movement in “Measurement” for 5 days — task for the foreman “send the estimate”. And show me the pipeline dashboard."},
+        "reply": {"ru": "Аудит: 23 сделки стоят на «Замере» дольше 14 дней, «Сумма по смете» пустая в 80% сделок, причин отказа нет, автоматизаций нет. Исправил: поле обязательно на «Смете», 4 причины отказа добавлены, правило на 5 дней включено. Дашборд: открытых 61, на «Замере» 23 (узкое место), выиграно за месяц 9, проиграно 4.",
+                  "en": "Audit: 23 deals have been in “Measurement” for over 14 days, “Estimate amount” is empty in 80% of deals, no loss reasons, no automations. Fixed: the field is required at “Estimate”, 4 loss reasons added, the 5-day rule is on. Dashboard: 61 open, 23 in “Measurement” (bottleneck), 9 won this month, 4 lost."},
+        "actions": [("аудит_воронки", 1), ("сделать_поле_обязательным", 1), ("создать_причины_отказа", 1), ("создать_автоматизацию", 1), ("дашборд", 1)],
+        "after": {
+            "stages": {"ru": ["Заявка", "Квалификация", "Замер", "Смета", "Договор", "Аванс"], "en": ["Request", "Qualification", "Measurement", "Estimate", "Contract", "Deposit"]},
+            "fields": {"ru": [("Тип работ", ""), ("Площадь, м²", ""), ("Бюджет", ""), ("Сумма по смете", "обязательное на «Смете»")],
+                       "en": [("Work type", ""), ("Area, m²", ""), ("Budget", ""), ("Estimate amount", "required at “Estimate”")]},
+            "rules": {"ru": [("«Замер» без движения 5 дней", "задача прорабу «отправить смету»")], "en": [("“Measurement” idle for 5 days", "task for the foreman “send the estimate”")]},
+            "gains": {"ru": ["смета больше не зависает: через 5 дней появляется задача с ответственным", "сумма по смете обязательна — прогноз выручки считается по полям", "отказы с причинами, дашборд одним словом «дашборд» в любой момент"],
+                      "en": ["estimates no longer stall: after 5 days a task with an owner appears", "estimate amount is required — the revenue forecast is computed from fields", "losses with reasons, a dashboard any time with one word: “dashboard”"]},
+        },
+        "time": {"ru": "Аудит, правки и сводка — одно сообщение. Kai ничего не удалял: существующие сделки и этапы остались.", "en": "Audit, fixes and summary — one message. Kai deleted nothing: existing deals and stages stayed."},
+    },
+    {
+        "id": "courses-kommo", "crm": "Kommo", "kind": {"ru": "Онлайн-школа", "en": "Online school"},
+        "title": {"ru": "Регистрации жили в таблице, о дедлайне цены напоминали по памяти", "en": "Registrations lived in a spreadsheet, price deadlines were reminded from memory"},
+        "before": {
+            "lead": {"ru": "Регистрации с лендинга падают в таблицу, менеджеры разбирают вручную. Потоки путают, счёт выставили — и забыли напомнить. Отдел узнаёт об оплате из бухгалтерии через день.",
+                     "en": "Landing-page registrations land in a spreadsheet, managers sort them by hand. Cohorts get mixed up, an invoice is sent — and the reminder is forgotten. The team learns about a payment from accounting a day later."},
+            "stages": {"ru": ["Лид", "Оплата"], "en": ["Lead", "Payment"]},
+            "fields": {"ru": [], "en": []},
+            "rules": {"ru": [], "en": []},
+            "pains": {"ru": ["между «Лид» и «Оплата» ничего — непонятно, кто на каком шаге", "нет полей Продукт и Поток — списки собирают руками", "об оплате узнают поздно, поздравление и доступ задерживаются"],
+                      "en": ["nothing between “Lead” and “Payment” — unclear who is at which step", "no Product and Cohort fields — lists are compiled by hand", "payments are noticed late, the welcome and access are delayed"]},
+        },
+        "message": {"ru": "Сделай в Kommo воронку «Продажа курса»: Регистрация → Квалификация → Созвон назначен → Созвон проведён → Счёт выставлен → Оплата. Поля: Продукт (список), Тариф (список: базовый, с куратором, VIP), Поток, Рассрочка (да/нет). Правила: Регистрация — задача написать и предложить диагностику; «Счёт выставлен» — задача на завтра напомнить о дедлайне цены; «Оплата» — тег «студент» и уведомление в Telegram отделу продаж.",
+                    "en": "In Kommo create a “Course sales” pipeline: Registration → Qualification → Call scheduled → Call done → Invoice sent → Payment. Fields: Product (list), Plan (list: basic, with mentor, VIP), Cohort, Instalments (yes/no). Rules: Registration — task to write and offer a diagnostic call; “Invoice sent” — task for tomorrow to remind about the price deadline; “Payment” — tag “student” and a Telegram notification to the sales team."},
+        "reply": {"ru": "Готово. Воронка «Продажа курса», 6 этапов, 4 поля. Правила включены: задача на регистрации, напоминание о дедлайне на следующий день после счёта, тег «студент» и уведомление в Telegram при оплате. Чтобы получать уведомления, коллеги подписываются по ссылке из кабинета.",
+                  "en": "Done. “Course sales” pipeline, 6 stages, 4 fields. Rules are on: a task on registration, a deadline reminder the day after the invoice, the “student” tag and a Telegram notification on payment. Colleagues subscribe to notifications with a link from the account page."},
+        "actions": [("создать_воронку", 1), ("создать_поле", 4), ("создать_автоматизацию", 3), ("добавить_тег", 1)],
+        "after": {
+            "stages": {"ru": ["Регистрация", "Квалификация", "Созвон назначен", "Созвон проведён", "Счёт выставлен", "Оплата"], "en": ["Registration", "Qualification", "Call scheduled", "Call done", "Invoice sent", "Payment"]},
+            "fields": {"ru": [("Продукт", "список"), ("Тариф", "список"), ("Поток", ""), ("Рассрочка", "да/нет")], "en": [("Product", "list"), ("Plan", "list"), ("Cohort", ""), ("Instalments", "yes/no")]},
+            "rules": {"ru": [("Регистрация", "задача: написать и предложить диагностику"), ("«Счёт выставлен»", "задача на завтра: напомнить о дедлайне цены"), ("«Оплата»", "тег «студент» + уведомление в Telegram")],
+                      "en": [("Registration", "task: write and offer a diagnostic call"), ("“Invoice sent”", "task for tomorrow: remind about the price deadline"), ("“Payment”", "tag “student” + Telegram notification")]},
+            "gains": {"ru": ["каждая регистрация получает первое касание — задача ставится сама", "напоминание о дедлайне цены ставится автоматически на следующий день", "оплата видна отделу сразу, в Telegram, без бухгалтерии"],
+                      "en": ["every registration gets a first touch — the task is created automatically", "the price-deadline reminder is scheduled the next day by itself", "the team sees the payment at once, in Telegram, without accounting"]},
+        },
+        "time": {"ru": "Одно сообщение. Уведомления в Telegram — встроенная функция Kai, без Zapier и вебхуков.", "en": "One message. Telegram notifications are built into Kai, no Zapier or webhooks."},
+    },
+]
+
+ACTION_LABELS = {
+    "создать_воронку": {"ru": "создать воронку", "en": "create pipeline"}, "создать_поле": {"ru": "создать поле", "en": "create field"},
+    "сделать_поле_обязательным": {"ru": "сделать поле обязательным", "en": "make field required"}, "создать_автоматизацию": {"ru": "создать правило", "en": "create rule"},
+    "создать_причины_отказа": {"ru": "причины отказа", "en": "loss reasons"}, "аудит_воронки": {"ru": "аудит воронки", "en": "pipeline audit"},
+    "дашборд": {"ru": "дашборд", "en": "dashboard"}, "добавить_тег": {"ru": "тег", "en": "tag"},
+}
