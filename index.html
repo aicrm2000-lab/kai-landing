@@ -4684,7 +4684,7 @@ window.addEventListener('scroll', () => {
     markNudged();
     if (!loaded) {
       var f = document.createElement('iframe');
-      f.src = CHAT_URL + (document.documentElement.lang === 'en' ? '?lang=en' : '?lang=ru') + (handoffCode ? '&h=' + encodeURIComponent(handoffCode) : '') + (document.documentElement.classList.contains('hw') ? '&hw=1' : '&hw=0');
+      f.src = CHAT_URL + (document.documentElement.lang === 'en' ? '?lang=en' : '?lang=ru') + (handoffCode ? '&h=' + encodeURIComponent(handoffCode) : '') + (document.documentElement.classList.contains('hw') ? '&hw=1' : '&hw=0') + (window.kaiVid && window.kaiVid() ? '&v=' + encodeURIComponent(window.kaiVid()) : '');
       handoffCode = null;
       f.title = 'Kai chat';
       f.setAttribute('allow', 'microphone; autoplay; clipboard-write');   /* voice notes and calls inside the chat */
@@ -5046,17 +5046,37 @@ window.addEventListener('scroll', () => {
     try{document.cookie='kai_vid=; max-age=0; path=/; SameSite=Lax';}catch(e){}
   }
   var LANG=document.documentElement.lang||'ru';
-  window.kaiTrack=function(ev){
+  window.kaiTrack=function(ev,val){
     if(!on) return;
     const UTM=(()=>{try{const p=new URLSearchParams(location.search);const v=['utm_source','utm_medium','utm_campaign'].map(k=>(p.get(k)||'').slice(0,40));return v.some(Boolean)?v.join('/'):'';}catch(e){return '';}})();
     try{if(localStorage.getItem('kai_no_track')==='1')return;}catch(e){}   /* владелец и команда: ?me=1 один раз в браузере */
     const DEV=matchMedia('(hover: none)').matches?'mobile':'desktop', TZ=(()=>{try{return Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){return '';}})();
     try{navigator.sendBeacon('https://app.aii-crm.com/track',
       JSON.stringify({vid:V,event:ev,path:location.pathname+location.hash,
-                      ref:document.referrer,lang:LANG,utm:UTM,dev:DEV,sw:screen.width,tz:TZ}));}catch(e){}
+                      ref:document.referrer,lang:LANG,utm:UTM,dev:DEV,sw:screen.width,tz:TZ,val:(val|0)}));}catch(e){}
   };
   window.kaiAnalyticsStart=function(){ if(on) return; V=vid(); on=true; kaiTrack('pageview'); };
   window.kaiAnalyticsStop=function(){ on=false; V=''; forget(); };
+  window.kaiVid=function(){ return on?V:''; };
+  /* ?me=1 (владелец, команда): один раз сказать серверу, что этот IP и cookie — внутренние; дальше бикон молчит */
+  try{ if(localStorage.getItem('kai_no_track')==='1'&&!localStorage.getItem('kai_me_sent')){ localStorage.setItem('kai_me_sent','1');
+    navigator.sendBeacon('https://app.aii-crm.com/track',JSON.stringify({vid:localStorage.getItem('kai_vid')||'',event:'internal_mark'})); } }catch(e){}
+  /* вовлечённость для борда: engaged (10 с + действие или скролл), глубина скролла 50/90, время на странице по уходу/скрытию */
+  (function(){
+    var sent={}, active=0, last=Date.now(), vis=!document.hidden, inter=false;
+    function once(ev,val){ var k=ev+(val||''); if(sent[k]) return; sent[k]=1; kaiTrack(ev,val); }
+    function tick(){ var now=Date.now(); if(vis) active+=now-last; last=now; }
+    function depth(){ var h=document.documentElement.scrollHeight-innerHeight; return h<=0?100:Math.round(scrollY/h*100); }
+    ['click','keydown','touchstart'].forEach(function(e){ addEventListener(e,function(){ inter=true; },{passive:true,once:true}); });
+    addEventListener('scroll',function(){ var d=depth(); if(d>=50) once('scroll',50); if(d>=90) once('scroll',90); },{passive:true});
+    setTimeout(function(){ if(inter||depth()>=25) once('engaged'); else { var f=function(){ once('engaged'); }; addEventListener('scroll',f,{once:true,passive:true}); addEventListener('click',f,{once:true}); } },10000);
+    function leave(){ tick(); var sec=Math.round(active/1000); active=0; if(sec>0&&on) kaiTrack('leave',Math.min(sec,1800)); }
+    document.addEventListener('visibilitychange',function(){ tick(); vis=!document.hidden; if(document.hidden) leave(); });
+    addEventListener('pagehide',leave);
+    /* ссылки в app.aii-crm.com несут id посетителя — сквозная воронка лендинг → чат → регистрация */
+    document.addEventListener('click',function(e){ var a=e.target&&e.target.closest&&e.target.closest('a[href^="https://app.aii-crm.com/"]'); if(!a||!on||!V) return;
+      try{ var u=new URL(a.href); if(!u.searchParams.has('v')) u.searchParams.set('v',V); a.href=u.toString(); }catch(x){} },true);
+  })();
 
   if(window.kaiConsent==='accepted') window.kaiAnalyticsStart();
   else if(window.kaiConsent==='declined') forget();
