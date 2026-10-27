@@ -26,7 +26,7 @@ CSS = """
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%;color-scheme:dark}
 body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 'Manrope',system-ui,sans-serif;padding:0 16px 64px}
 .wrap{max-width:860px;margin:0 auto}header{display:flex;align-items:center;gap:12px;padding:22px 0;border-bottom:1px solid var(--border)}
-header a{color:var(--ink);text-decoration:none;font-weight:700}header nav{margin-left:auto;display:flex;gap:18px;font-size:14px}header nav a{color:var(--muted);font-weight:500}
+header a{color:var(--ink);text-decoration:none;font-weight:700}header .brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:700}header .brand svg{flex:0 0 28px}header nav{margin-left:auto;display:flex;gap:18px;font-size:14px}header nav a{color:var(--muted);font-weight:500}
 h1{font-size:clamp(28px,5vw,40px);line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin:40px 0 12px;text-wrap:balance}
 .lead{color:var(--text);max-width:64ch}
 .toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}.toc a{font:600 13px var(--mono);color:var(--accent-2);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:6px 12px}.toc a:hover{border-color:var(--accent)}
@@ -67,6 +67,7 @@ T = {
            "none_fields": "полей нет — всё в примечаниях", "none_rules": "правил нет — всё по памяти", "you": "Сообщение Kai", "kai": "Kai",
            "did": "Что сделал Kai", "copy": "Скопировать сообщение", "copied": "Скопировано", "try": "Повторить у себя в чате", "tg": "Открыть в Telegram",
            "cta_b": "Хочешь так же? Напиши Kai своими словами — он уточнит детали и настроит.", "cta_tg": "Попробовать в Telegram", "cta_chat": "Открыть веб-чат",
+           "keywords": "примеры настройки amoCRM, примеры настройки Kommo, воронка продаж до и после, автоматизация CRM пример, ИИ-ассистент для amoCRM, ИИ для Kommo, настройка CRM без интегратора, Kai CRM, стоматология amoCRM, недвижимость Kommo, онлайн-школа CRM",
            "more": "Пошаговые гайды по amoCRM и Kommo →", "nav_guides": "Гайды", "nav_plans": "Тарифы", "privacy": "Конфиденциальность", "toc": "Примеры"},
     "en": {"title": "Examples: the CRM before and after one message to Kai", "h1": "Before → after: amoCRM and Kommo set up with one message",
            "desc": "Four typical situations in amoCRM and Kommo: what the pipeline looked like, the message sent to Kai, what Kai did and how the CRM looks after. Real actions, no integrator.",
@@ -75,6 +76,7 @@ T = {
            "none_fields": "no fields — everything in notes", "none_rules": "no rules — everything from memory", "you": "Message to Kai", "kai": "Kai",
            "did": "What Kai did", "copy": "Copy the message", "copied": "Copied", "try": "Repeat it in your chat", "tg": "Open in Telegram",
            "cta_b": "Want the same? Write to Kai in your own words — it clarifies the details and sets things up.", "cta_tg": "Try in Telegram", "cta_chat": "Open web chat",
+           "keywords": "amoCRM setup examples, Kommo setup examples, sales pipeline before and after, CRM automation example, AI assistant for amoCRM, AI for Kommo, CRM setup without integrator, Kai CRM, dental clinic CRM, real estate Kommo, online school CRM",
            "more": "Step-by-step amoCRM and Kommo guides →", "nav_guides": "Guides", "nav_plans": "Plans", "privacy": "Privacy", "toc": "Examples"},
 }
 
@@ -150,6 +152,7 @@ def page(lang: str) -> str:
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(L['title'])} | Kai</title>
 <meta name="description" content="{e(L['desc'])}">
+<meta name="keywords" content="{e(L['keywords'])}">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{self_url}">
 <link rel="alternate" hreflang="ru" href="{alt_ru}"><link rel="alternate" hreflang="en" href="{alt_en}"><link rel="alternate" hreflang="x-default" href="{alt_ru}">
@@ -163,7 +166,7 @@ def page(lang: str) -> str:
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body><div class="wrap">
-<header>{MARK}<a href="{up}">Kai</a><nav><a href="{guides}">{e(L['nav_guides'])}</a><a href="{up}#pricing">{e(L['nav_plans'])}</a><a href="{alt_en if ru else alt_ru}">{'EN' if ru else 'RU'}</a></nav></header>
+<header><a class="brand" href="{up}" aria-label="Kai — {'на главную' if ru else 'home'}">{MARK}<span>Kai</span></a><nav><a href="{guides}">{e(L['nav_guides'])}</a><a href="{up}#pricing">{e(L['nav_plans'])}</a><a href="{alt_en if ru else alt_ru}">{'EN' if ru else 'RU'}</a></nav></header>
 <h1>{e(L['h1'])}</h1>
 <p class="lead">{e(L['lead'])}</p>
 {toc}

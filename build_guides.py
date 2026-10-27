@@ -17,11 +17,14 @@ TODAY = dt.date.today().isoformat()
 MARK = ('<svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" '
         'stroke="#7C5CFF" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="#A78BFA"/></svg>')
 
+KEYWORDS_RU = "настройка amoCRM, настройка Kommo, воронка продаж amoCRM, автоматизация amoCRM, автоматизация Kommo, CRM без интегратора, ИИ-ассистент для CRM, AI для amoCRM, гайды amoCRM, гайды Kommo, Kai CRM"
+KEYWORDS_EN = "amoCRM setup, Kommo setup, Kommo automation, amoCRM pipeline, CRM without integrator, AI assistant for CRM, AI for Kommo, Kommo guides, amoCRM guides, Kai CRM"
+
 INDEX_CSS = """
 :root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 'Manrope',system-ui,sans-serif;padding:0 16px 64px}
 .wrap{max-width:760px;margin:0 auto}header{display:flex;align-items:center;gap:12px;padding:22px 0;border-bottom:1px solid var(--border)}
-header a{color:var(--ink);text-decoration:none;font-weight:700}header nav{margin-left:auto;display:flex;gap:18px;font-size:14px}header nav a{color:var(--muted);font-weight:500}
+header a{color:var(--ink);text-decoration:none;font-weight:700}header .brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:700}header .brand svg{flex:0 0 28px}header nav{margin-left:auto;display:flex;gap:18px;font-size:14px}header nav a{color:var(--muted);font-weight:500}
 h1{font-size:clamp(28px,5vw,40px);line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin:40px 0 12px}
 .lead{color:var(--text);max-width:62ch}.card{display:block;border:1px solid var(--border);background:var(--bg-1);border-radius:16px;padding:20px 22px;margin-top:14px;text-decoration:none;color:inherit;transition:border-color .15s}
 .card:hover{border-color:var(--accent)}.card b{display:block;color:var(--ink);font-size:19px;margin-bottom:6px}.card span{color:var(--muted);font-size:15px}
@@ -52,6 +55,7 @@ def index_page(lang: str, guides: list[dict]) -> str:
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(t)} | Kai</title>
 <meta name="description" content="{html.escape(d)}">
+<meta name="keywords" content="{html.escape(KEYWORDS_RU if ru else KEYWORDS_EN)}">
 <link rel="canonical" href="{self_url}">
 <link rel="alternate" hreflang="ru" href="{alt_ru}"><link rel="alternate" hreflang="en" href="{alt_en}"><link rel="alternate" hreflang="x-default" href="{alt_ru}">
 <meta property="og:title" content="{html.escape(t)}"><meta property="og:description" content="{html.escape(d)}"><meta property="og:image" content="{BASE}og-image.png"><meta property="og:url" content="{self_url}">
@@ -63,7 +67,7 @@ def index_page(lang: str, guides: list[dict]) -> str:
     "hasPart": [{"@type": "Article", "headline": g["title_ru" if ru else "title_en"], "url": self_url + g["slug"] + ".html"} for g in guides]}, ensure_ascii=False)}</script>
 </head>
 <body><div class="wrap">
-<header>{MARK}<a href="{up}">Kai</a><nav><a href="{up}#pricing">{'Тарифы' if ru else 'Plans'}</a><a href="{alt_en if ru else alt_ru}">{'EN' if ru else 'RU'}</a></nav></header>
+<header><a class="brand" href="{up}" aria-label="Kai — {'на главную' if ru else 'home'}">{MARK}<span>Kai</span></a><nav><a href="{up}#pricing">{'Тарифы' if ru else 'Plans'}</a><a href="{alt_en if ru else alt_ru}">{'EN' if ru else 'RU'}</a></nav></header>
 <h1>{html.escape(t)}</h1>
 <p class="lead">{html.escape(d)}</p>
 <a class="card" href="{up}cases/{"" if ru else "en/"}" style="border-color:var(--accent)"><b>{"Примеры: было → стало" if ru else "Examples: before → after"}</b><span>{"Четыре ситуации в amoCRM и Kommo: воронка до, сообщение Kai, что он сделал, воронка после." if ru else "Four situations in amoCRM and Kommo: the pipeline before, the message to Kai, what it did, the pipeline after."}</span></a>
