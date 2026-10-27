@@ -15,7 +15,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = "https://aii-crm.com/"
 TODAY = dt.date.today().isoformat()
 MARK = ('<svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" '
-        'stroke="#7C5CFF" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="#A78BFA"/></svg>')
+        'stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>')
 
 KEYWORDS_RU = "настройка amoCRM, настройка Kommo, воронка продаж amoCRM, автоматизация amoCRM, автоматизация Kommo, CRM без интегратора, ИИ-ассистент для CRM, AI для amoCRM, гайды amoCRM, гайды Kommo, Kai CRM"
 KEYWORDS_EN = "amoCRM setup, Kommo setup, Kommo automation, amoCRM pipeline, CRM without integrator, AI assistant for CRM, AI for Kommo, Kommo guides, amoCRM guides, Kai CRM"
@@ -53,6 +53,7 @@ def index_page(lang: str, guides: list[dict]) -> str:
 <html lang="{lang}">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){{try{{var p=new URLSearchParams(location.search).get('hw'),d=new Date(),m=d.getMonth(),n=d.getDate(),on=(m===9&&n>=25)||(m===10&&n<=2),st=null;try{{st=localStorage.getItem('kai_hw');}}catch(e){{}}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1')on=true;else if(p==='0')on=false;if(on)document.documentElement.classList.add('hw');}}catch(e){{}}}})();</script>
 <title>{html.escape(t)} | Kai</title>
 <meta name="description" content="{html.escape(d)}">
 <meta name="keywords" content="{html.escape(KEYWORDS_RU if ru else KEYWORDS_EN)}">
@@ -61,7 +62,10 @@ def index_page(lang: str, guides: list[dict]) -> str:
 <meta property="og:title" content="{html.escape(t)}"><meta property="og:description" content="{html.escape(d)}"><meta property="og:image" content="{BASE}og-image.png"><meta property="og:url" content="{self_url}">
 <link rel="icon" href="{FAVICON}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap">
-<style>{INDEX_CSS}</style>
+<style>{INDEX_CSS}/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}}
+html.hw .badge.crm{{border-color:rgba(255,122,26,.45)}}html.hw .msg.me{{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}}
+</style>
 <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "CollectionPage", "name": t, "description": d, "url": self_url, "inLanguage": lang,
     "isPartOf": {"@type": "WebSite", "name": "Kai", "url": BASE},
     "hasPart": [{"@type": "Article", "headline": g["title_ru" if ru else "title_en"], "url": self_url + g["slug"] + ".html"} for g in guides]}, ensure_ascii=False)}</script>

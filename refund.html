@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var p=new URLSearchParams(location.search).get('hw'),d=new Date(),m=d.getMonth(),n=d.getDate(),on=(m===9&&n>=25)||(m===10&&n<=2),st=null;try{st=localStorage.getItem('kai_hw');}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1')on=true;else if(p==='0')on=false;if(on)document.documentElement.classList.add('hw');}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://ai-crm-bot-production.up.railway.app; connect-src 'self' https://ai-crm-bot-production.up.railway.app; base-uri 'self'; form-action 'self'">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -128,6 +129,9 @@ strong { color: var(--ink); font-weight: 600; }
   .cookie-btns { width: 100%; }
   .cookie-btn { flex: 1; }
 }
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
 </style>
 </head>
 <body>
