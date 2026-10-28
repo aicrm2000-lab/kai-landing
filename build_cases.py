@@ -150,7 +150,7 @@ def page(lang: str) -> str:
 <html lang="{lang}">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){{try{{var p=new URLSearchParams(location.search).get('hw'),d=new Date(),m=d.getMonth(),n=d.getDate(),on=(m===9&&n>=25)||(m===10&&n<=2),st=null;try{{st=localStorage.getItem('kai_hw');}}catch(e){{}}try{{var ck=document.cookie.match(/(?:^|; )kai_hw=([01])/);if(ck)st=ck[1];else if(st==='0'||st==='1')document.cookie='kai_hw='+st+';max-age=31536000;path=/;SameSite=Lax'+(/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'');}}catch(e){{}}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1')on=true;else if(p==='0')on=false;if(on)document.documentElement.classList.add('hw');}}catch(e){{}}}})();</script>
+<script>(function(){{try{{var p=new URLSearchParams(location.search).get('hw'),d=new Date(),m=d.getMonth(),n=d.getDate(),on=(m===9&&n>=25)||(m===10&&n<=2),st=null;try{{st=localStorage.getItem('kai_hw');}}catch(e){{}}try{{var ck=document.cookie.match(/(?:^|; )kai_hw=([01])/);if(ck)st=ck[1];if(st==='0'||st==='1'){{document.cookie='kai_hw='+st+';max-age=31536000;path=/;SameSite=Lax'+(/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'');if(ck)localStorage.setItem('kai_hw',st);}}}}catch(e){{}}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1')on=true;else if(p==='0')on=false;if(on)document.documentElement.classList.add('hw');}}catch(e){{}}}})();</script>
 <title>{e(L['title'])} | Kai</title>
 <meta name="description" content="{e(L['desc'])}">
 <meta name="keywords" content="{e(L['keywords'])}">
