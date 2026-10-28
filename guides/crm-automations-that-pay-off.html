@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<script>(function(){try{var p=new URLSearchParams(location.search).get('hw'),d=new Date(),m=d.getMonth(),n=d.getDate(),on=(m===9&&n>=25)||(m===10&&n<=2),st=null;try{st=localStorage.getItem('kai_hw');}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1')on=true;else if(p==='0')on=false;if(on)document.documentElement.classList.add('hw');}catch(e){}})();</script>
+<script>(function(){try{var p=new URLSearchParams(location.search).get('hw'),d=new Date(),m=d.getMonth(),n=d.getDate(),on=(m===9&&n>=25)||(m===10&&n<=2),st=null;try{st=localStorage.getItem('kai_hw');}catch(e){}try{var ck=document.cookie.match(/(?:^|; )kai_hw=([01])/);if(ck)st=ck[1];else if(st==='0'||st==='1')document.cookie='kai_hw='+st+';max-age=31536000;path=/;SameSite=Lax'+(/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'');}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1')on=true;else if(p==='0')on=false;if(on)document.documentElement.classList.add('hw');}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>7 автоматизаций CRM, которые окупаются в первый месяц | Kai</title>
 <meta name="description" content="Автозадача при смене этапа, напоминание о молчании клиента, зависшие сделки, уведомление о лиде в чат команды, обязательные источники и причины отказа, недельная сводка, вебхук: что даёт, где работает и как включить одной фразой через Kai.">
