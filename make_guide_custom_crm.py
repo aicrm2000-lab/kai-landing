@@ -21,7 +21,7 @@ RAW = io.open(GUIDES, encoding="utf-8").read()
 guides = json.loads(RAW)
 _tpl = next(g for g in guides if g["slug"] == "bitrix24-ai-assistant")["html_ru"]
 CSS = re.search(r"<style>.*?</style>", _tpl, re.S).group(0)
-HW = re.search(r"<script>\(function\(\)\{try\{var p=.*?</script>", _tpl, re.S).group(0)
+HW = re.search(r"<script>\(function\(\)\{try\{var h=document\.documentElement,q=.*?</script>", _tpl, re.S).group(0)   # сезонный гейт (hw + ny)
 
 RU = dict(
     lang="ru",

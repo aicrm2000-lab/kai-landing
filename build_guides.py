@@ -53,7 +53,7 @@ def index_page(lang: str, guides: list[dict]) -> str:
 <html lang="{lang}">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){{try{{var p=new URLSearchParams(location.search).get('hw'),d=new Date(),m=d.getMonth(),n=d.getDate(),on=(m===9&&n>=25)||(m===10&&n<=2),st=null;try{{st=localStorage.getItem('kai_hw');}}catch(e){{}}try{{var ck=document.cookie.match(/(?:^|; )kai_hw=([01])/);if(ck)st=ck[1];if(st==='0'||st==='1'){{document.cookie='kai_hw='+st+';max-age=31536000;path=/;SameSite=Lax'+(/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'');if(ck)localStorage.setItem('kai_hw',st);}}}}catch(e){{}}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1')on=true;else if(p==='0')on=false;if(on)document.documentElement.classList.add('hw');}}catch(e){{}}}})();</script>
+<script>(function(){{try{{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){{var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{{st=localStorage.getItem('kai_'+k);}}catch(e){{}}try{{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){{document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}}}catch(e){{}}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){{on=true;pr=2;}}else if(p==='0')on=false;if(on&&(!act||pr>apr)){{act=k;apr=pr;}}}});if(act)h.classList.add(act);}}catch(e){{}}}})();</script>
 <title>{html.escape(t)} | Kai</title>
 <meta name="description" content="{html.escape(d)}">
 <meta name="keywords" content="{html.escape(KEYWORDS_RU if ru else KEYWORDS_EN)}">
@@ -64,6 +64,9 @@ def index_page(lang: str, guides: list[dict]) -> str:
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap">
 <style>{INDEX_CSS}/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
 html.hw{{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}}
+html.ny .badge.crm{{border-color:rgba(33,166,109,.45)}}html.ny .msg.me{{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}}
 html.hw .badge.crm{{border-color:rgba(255,122,26,.45)}}html.hw .msg.me{{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}}
 </style>
 <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "CollectionPage", "name": t, "description": d, "url": self_url, "inLanguage": lang,
