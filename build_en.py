@@ -17,20 +17,22 @@ OUT_DIR = os.path.join(HERE, "en")
 BASE = "https://aii-crm.com/"
 
 EN_META = {
-    "title": "AI assistant that sets up your CRM (amoCRM, Kommo) | Kai",
-    "description": ("Kai sets up your CRM from a plain-language message in Telegram or your browser: "
-                    "pipelines, fields, tasks, automations, analytics. 65 actions. 3 days free, no card."),
+    "title": "AI assistant that sets up amoCRM, Kommo, Bitrix24 and custom CRMs | Kai",
+    "description": ("Kai sets up your CRM from a plain-language message in Telegram or your browser — amoCRM, Kommo, Bitrix24 "
+                    "or your own custom CRM via its API: pipelines, fields, tasks, automations, analytics. 65 actions. 3 days free, no card."),
     "og_title": "Kai — AI assistant that sets up your CRM",
     "og_description": "An AI assistant that configures your CRM from a chat message — in Telegram or in your browser.",
     "keywords": ("amoCRM, Kommo, Bitrix24, CRM setup, AI assistant, CRM automation, Telegram CRM bot, sales pipelines, "
-                 "amoCRM API, Kommo API, CRM without developers"),
+                 "amoCRM API, Kommo API, CRM without developers, custom CRM, in-house CRM, homegrown CRM, your own CRM via API, "
+                 "connect AI agent to custom CRM, AI assistant for in-house CRM, CRM REST API AI integration, bespoke CRM AI agent"),
 }
 EN_LD = {
-    "description": ("AI assistant that sets up your CRM from a chat message — in Telegram or in your browser. "
-                    "65 actions: pipelines, fields, stages, deals, contacts, automations, analytics."),
+    "description": ("AI assistant that sets up your CRM from a chat message — in Telegram or in your browser: amoCRM, Kommo, "
+                    "Bitrix24 or your own custom CRM via its API. 65 actions: pipelines, fields, stages, deals, contacts, automations, analytics."),
     "featureList": ["AI consulting on your CRM structure", "Sales pipelines and stages", "Custom fields for deals, contacts and companies",
                     "Event-based CRM automations", "Technical specification as a PDF",
-                    "Voice message recognition", "One-click OAuth connection"],
+                    "Voice message recognition", "One-click OAuth connection",
+                    "Your own (custom, in-house) CRM via REST API: OAuth 2.0, API key, bearer"],
     "faq": [
         ("What can Kai do?", "Kai is an AI assistant that sets up your CRM from a chat message — in Telegram or in your browser: it creates "
                              "pipelines, fields, stages, deals, contacts, tasks and automations. 65 actions without developers."),
@@ -42,6 +44,7 @@ EN_LD = {
         ("Does Kai work with Bitrix24?", "Yes, in beta: Bitrix24 connects through an inbound webhook, Kai sets up pipelines, "
                                          "stages, fields, deals, contacts and tasks and runs the analytics. Automations inside "
                                          "Bitrix24 and widgets are not available yet. amoCRM and Kommo are fully supported."),
+        ("Does Kai work with a custom or in-house CRM?", "Yes, via its API. Your own CRM — custom, in-house or any other with a REST API — connects through a connector spec: the API address, the auth method (OAuth 2.0, API key, bearer or basic) and which endpoints do what. Kai drafts the spec from your docs or asks step by step, then works with it like with amoCRM: pipelines, deals, contacts, tasks, automations. Only the pipelines list is mandatory. Try it first on Kai Sandbox CRM. Connecting is on the Max plan; discussing and drafting the spec is free."),
         ("Can I try it for free?", "Yes: 3 days free, no card, starting when you connect your CRM. The trial includes ~25 requests and Start-plan features."),
     ],
 }
@@ -163,7 +166,7 @@ def main() -> None:
         html = html.replace(f"'{p}-en.html' : '{p}.html'", f"'../{p}-en.html' : '../{p}.html'")
         html = html.replace(f"href='{p}-en.html'", f"href='../{p}-en.html'").replace(f"href='{p}.html'", f"href='../{p}-en.html'")
     html = html.replace('href="../guides/"', 'href="../guides/en/"')
-    for _p in ("account", "login", "signup", "chat"):   # кабинет, вход, регистрация, чат: язык и без JS
+    for _p in ("account", "login", "signup", "chat", "docs/custom-crm"):   # кабинет, вход, регистрация, чат: язык и без JS
         html = html.replace(f'app.aii-crm.com/{_p}?lang=ru"', f'app.aii-crm.com/{_p}?lang=en"')
     # атрибуты title/aria-label с английскими вариантами
     html = re.sub(r'<(?P<tag>[a-zA-Z][\w-]*)(?P<attrs>(?:[^>"]|"[^"]*")*)>', _burn_attr_variants, html)

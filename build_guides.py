@@ -17,8 +17,8 @@ TODAY = dt.date.today().isoformat()
 MARK = ('<svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" '
         'stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>')
 
-KEYWORDS_RU = "настройка amoCRM, настройка Kommo, воронка продаж amoCRM, автоматизация amoCRM, автоматизация Kommo, CRM без интегратора, ИИ-ассистент для CRM, AI для amoCRM, гайды amoCRM, гайды Kommo, Kai CRM"
-KEYWORDS_EN = "amoCRM setup, Kommo setup, Kommo automation, amoCRM pipeline, CRM without integrator, AI assistant for CRM, AI for Kommo, Kommo guides, amoCRM guides, Kai CRM"
+KEYWORDS_RU = "настройка amoCRM, настройка Kommo, воронка продаж amoCRM, автоматизация amoCRM, автоматизация Kommo, CRM без интегратора, ИИ-ассистент для CRM, AI для amoCRM, гайды amoCRM, гайды Kommo, Kai CRM, подключить ИИ-агента к самописной CRM, ИИ для кастомной CRM, своя CRM по API"
+KEYWORDS_EN = "amoCRM setup, Kommo setup, Kommo automation, amoCRM pipeline, CRM without integrator, AI assistant for CRM, AI for Kommo, Kommo guides, amoCRM guides, Kai CRM, connect AI agent to custom CRM, in-house CRM AI assistant, custom CRM via API"
 
 INDEX_CSS = """
 :root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA}
@@ -42,9 +42,9 @@ def index_page(lang: str, guides: list[dict]) -> str:
     items = "".join(
         f'<a class="card" href="{g["slug"]}.html"><b>{html.escape(g["title_ru" if ru else "title_en"])}</b>'
         f'<span>{html.escape(g["desc_ru" if ru else "desc_en"])}</span></a>' for g in guides)
-    t = ("Гайды: настройка amoCRM и Kommo без программиста" if ru else "Guides: amoCRM and Kommo setup without developers")
-    d = ("Пошаговые гайды по воронкам, полям, автоматизациям и ИИ-инструментам для amoCRM и Kommo — руками, через интегратора и через Kai."
-         if ru else "Step-by-step guides on pipelines, fields, automations and AI tools for amoCRM and Kommo — by hand, via an integrator, or with Kai.")
+    t = ("Гайды: настройка amoCRM, Kommo, Bitrix24 и своей CRM без программиста" if ru else "Guides: amoCRM, Kommo, Bitrix24 and custom CRM setup without developers")
+    d = ("Пошаговые гайды по воронкам, полям, автоматизациям и ИИ-инструментам для amoCRM, Kommo, Bitrix24 и своей (самописной) CRM — руками, через интегратора и через Kai."
+         if ru else "Step-by-step guides on pipelines, fields, automations and AI tools for amoCRM, Kommo, Bitrix24 and your own (custom) CRM — by hand, via an integrator, or with Kai.")
     self_url = BASE + ("guides/" if ru else "guides/en/")
     alt_ru, alt_en = BASE + "guides/", BASE + "guides/en/"
     up = "../" if ru else "../../"
