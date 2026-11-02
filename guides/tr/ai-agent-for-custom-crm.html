@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Özel CRM için yapay zeka ajanı: sistemi yeniden yazmadan API ile nasıl bağlanır | Kai</title>
+<meta name="description" content="Bir yapay zeka ajanının kendi (özel, şirket içi) CRM'inle çalışması için ne gerekir: JSON döndüren bir REST API, OAuth 2.0 / API anahtarı / bearer kimlik doğrulaması ve bir bağlayıcı spesifikasyonu. Üç bağlantı yolu, ajanın sonrasında yapabildikleri, sınırlar ve güvenlik modeli — Kai örneğiyle.">
+<meta name="keywords" content="yapay zeka ajanını özel CRM'e bağlama, şirket içi CRM için yapay zeka asistanı, kendi CRM'ine yapay zeka entegrasyonu, CRM REST API yapay zeka ajanı, özel yazılım CRM yapay zeka, API ile kendi CRM'ini bağlama, kendi yazdığımız CRM'e AI entegrasyonu, AI ajanı CRM entegrasyonu, CRM API entegrasyonu, CRM otomasyonu yapay zeka, HubSpot yapay zeka asistanı, Pipedrive yapay zeka asistanı, EspoCRM API entegrasyonu, SuiteCRM yapay zeka, Laravel CRM API, Kai CRM asistanı">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai team">
+<link rel="canonical" href="https://aii-crm.com/guides/tr/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/guides/it/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/guides/tr/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/guides/be/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/ai-agent-for-custom-crm.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/tr/ai-agent-for-custom-crm.html">
+<meta property="og:title" content="Yapay zeka ajanı özel bir CRM'e API'si üzerinden nasıl bağlanır">
+<meta property="og:description" content="REST API'si olan özel bir CRM, yeniden yazılmadan bir yapay zeka ajanına bağlanır: API adresi, kimlik doğrulama yöntemi, satış hunisi listesi — ardından satış hunileri, lead'ler, görevler ve otomasyonlar sade kelimelerle. Neler gerekir, nasıl bağlanır, sınırlar nerede.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-11-01">
+<meta property="article:modified_time" content="2026-11-01">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yapay zeka ajanı özel bir CRM'e API'si üzerinden nasıl bağlanır">
+<meta name="twitter:description" content="REST API'si olan özel bir CRM, yeniden yazılmadan bir yapay zeka ajanına bağlanır: API adresi, kimlik doğrulama yöntemi, satış hunisi listesi — ardından satış hunileri, lead'ler, görevler ve otomasyonlar sade kelimelerle. Neler gerekir, nasıl bağlanır, sınırlar nerede.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/tr/" aria-label="Kai — ana sayfa">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Gezinme">
+      <a href="https://aii-crm.com/tr/">Web sitesi</a>
+      <a href="https://t.me/aiicrm_bot">Telegram botu</a>
+      <a href="https://aii-crm.com/guides/en/ai-agent-for-custom-crm.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Sayfa yolu">
+  <a href="https://aii-crm.com/tr/">Kai</a> › <a href="https://aii-crm.com/guides/tr/">Rehberler</a> › Özel CRM için yapay zeka ajanı
+</nav>
+
+<h1>Yapay zeka ajanı özel (şirket içi) bir CRM'e API'si üzerinden nasıl bağlanır — sistemi yeniden yazmadan</h1>
+<p class="meta">Güncellendi: 1 Kasım 2026 · Kai Ekibi · 8 dk okuma</p>
+
+<p class="lead">Birçok şirket kendi CRM'ini kullanır: kendi süreci için yazılmış, kendi sunucusunda barındırılan ve hiçbir hazır “amoCRM için yapay zeka asistanı”nın uymadığı bir sistem. Bunun için sistemi yeniden yazmana gerek yok. CRM'in JSON ile yanıt veren bir REST API'si varsa, yapay zeka ajanı ona tıpkı hazır bir CRM'e bağlandığı gibi bağlanır: API'nin nerede olduğunu, nasıl yetkilendirileceğini ve hangi isteğin ne yaptığını tarif edersin, sonra da sohbette sade kelimelerle satış hunileri kurar, görevler ve otomasyonlar oluşturursun. Bu rehber neyin gerektiğini, Kai'de bunun nasıl çalıştığını ve sınırların nerede olduğunu anlatıyor.</p>
+
+<section class="tldr" aria-label="Kısaca">
+  <h2>Kısaca / TL;DR</h2>
+  <ul>
+    <li>Üç şey gerekir: herkese açık bir sunucuda https API adresi, bir kimlik doğrulama yöntemi (OAuth 2.0, API anahtarı, bearer ya da basic) ve satış hunilerini listeleyen bir uç nokta. Gerisi isteğe bağlı.</li>
+    <li>Bağlantı bir bağlayıcı spesifikasyonuyla kurulur: Kai'nin belgelerinden taslağını çıkardığı ya da sohbette adım adım oluşturduğu bir JSON. Kod yazmak yok.</li>
+    <li>Ardından ajan CRM'inle amoCRM'deki gibi çalışır: satış hunileri ve aşamalar, lead'ler, kişiler, şirketler, görevler, notlar, alanlar, analitik; CRM'inden gelen olaylar “olay → eylem” kurallarını besler.</li>
+    <li>Önce Kai Sandbox CRM'de dene — Kai tarafında çalışan ve tıpkı gerçek bir CRM gibi bağlanan bir test CRM'i.</li>
+    <li>Güvenlik: yalnızca https, istekler yalnızca API'nin sunucusuna, şifrelenmiş gizli bilgiler, kod içermeyen şablonlar, boyut ve hız sınırları.</li>
+    <li>Kendi CRM'ini bağlamak Max planında (€119/ay). Sistemi konuşmak ve spesifikasyon taslağı hazırlamak ücretsiz.</li>
+  </ul>
+</section>
+
+<h2>Bir yapay zeka ajanı için “kendi CRM'in” ne demek</h2>
+<p>Buradaki “kendi CRM'in”, hazır entegrasyonlar listesinde olmayan herhangi bir CRM'dir: Laravel ya da Django üzerinde şirket içi bir sistem, EspoCRM veya SuiteCRM gibi açık kaynaklı bir CRM üzerine özel bir geliştirme, satış modülü olan bir iç portal ya da HubSpot veya Pipedrive gibi bir CRM. Ajan için sistemin neyle yazıldığı önemli değildir. Üç şeye ihtiyacı vardır: isteklerin nereye gönderileceği, kimliğini nasıl kanıtlayacağı ve hangi isteğin ne yaptığı. Kai'de bunların hepsi bir bağlayıcı spesifikasyonudur — birkaç düzine satırlık bir JSON. HubSpot, Pipedrive ve EspoCRM için hazır spesifikasyonlar zaten <a href="https://app.aii-crm.com/docs/custom-crm?lang=en">belgelerde</a> var: yapıştır, token'ını ekle, gönder.</p>
+
+<h2>Bağlanmadan önce neler gerekir</h2>
+<ul>
+  <li><strong>API'nin temel URL'si</strong> — yalnızca https ve yalnızca herkese açık bir sunucu. Kai yerel adresleri, özel ağları ve bulut meta veri adreslerini reddeder; böylece kimse ajan üzerinden başkasının altyapısına erişemez.</li>
+  <li>Şu yöntemlerden biriyle <strong>yetkilendirme</strong>: OAuth 2.0 (PKCE'li authorization code ya da client credentials), bearer token, başlıkta API anahtarı veya basic auth. Bu, şirket içi API'lerin çoğunun desteklediği yöntemleri kapsar.</li>
+  <li><strong>Aşamalarıyla birlikte satış hunilerini döndüren bir uç nokta</strong> — tek zorunlu işlem. Lead'ler, kişiler, görevler, notlar, alanlar, kullanıcılar isteğe bağlı: tarif edersen ajan bunları kullanabilir; dışarıda bırakırsan bu işlemin bu CRM için mevcut olmadığını dürüstçe söyler ve neyi eklemen gerektiğini anlatır.</li>
+  <li><strong>JSON yanıtlar.</strong> Bağlayıcı XML ya da HTML kabul etmez.</li>
+  <li><strong>Sistemi bilen biri.</strong> Kai spesifikasyonun taslağını bir açıklamadan çıkarır, ama alan adlarını kodu ya da belgeleri görmüş biri kontrol etmeli.</li>
+</ul>
+
+<h2>Üç bağlantı yolu</h2>
+<ol>
+  <li><strong>Sandbox.</strong> Kai sohbetinde — Telegram'da ya da tarayıcıda — “🔗 Connect CRM” → “🔧 My own CRM via API” → “🧪 Try Kai Sandbox CRM” düğmelerine dokun. Kai kendi tarafında satış hunileri, lead'ler, görevler ve imzalı olaylar içeren küçük bir test CRM'i ayağa kaldırır ve onu tıpkı gerçek bir özel CRM gibi bağlar. Aşağıdaki her şey orada da çalışır — spesifikasyonun tek satırını yazmadan önce ajanın sisteminle ne yapacağını görmenin en hızlı yolu.</li>
+  <li><strong>Belgelerden.</strong> API'ni anlatan birkaç paragrafı sohbete yapıştır ya da bir dosya ekle — Kai spesifikasyonun taslağını çıkarır, sen alan adlarını kontrol edip geri gönderirsin.</li>
+  <li><strong>Adım adım.</strong> “🧩 Build the spec step by step” düğmesi: Kai API adresini, kimlik doğrulama yöntemini ve iki yolu — satış hunileri ve lead'ler — ister, bunları kendisi çağırır ve alan adlarını canlı yanıtlardan okur. JSON yazmak yok; OAuth 2.0'da alanlar sen yetkilendirdikten hemen sonra okunur.</li>
+</ol>
+<p>Hazır bir JSON metin olarak ya da .json dosyası olarak gönderilebilir. Kaydetmeden önce Kai spesifikasyonu doğrular — https, herkese açık sunucu, yer tutucular, gizli bilgiler — ve tam olarak neyin düzeltilmesi gerektiğini söyler. OAuth 2.0'da ardından CRM'in tarafında yetkilendirme için bir “Authorize” düğmesi belirir; diğer yöntemlerde Kai satış hunisi listesini hemen çağırır ve gördüklerini gösterir. Birden fazla CRM arasında <kbd>/accounts</kbd> ile geçiş yap.</p>
+<div class="note">Minimal bir spesifikasyon; bir ad, temel URL, kimlik doğrulama bloğu ve yanıt alanlarına giden yollarıyla tek bir <kbd>pipelines.list</kbd> işleminden oluşur. Bağlanıp satış hunilerini görmek için bu kadarı yeterli; gerisi sonra eklenebilir. Şablon ve örnekler <a href="https://app.aii-crm.com/docs/custom-crm?lang=en">Kai belgelerinde</a>.</div>
+
+<h2>Bağlandıktan sonra ajanın yapabildikleri</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>İşlem</th><th>Kai ne yapar</th><th>Spesifikasyonda ne tarif edilmeli</th></tr></thead>
+  <tbody>
+    <tr><td>Satış hunileri ve aşamalar</td><td>Listeler, oluşturur, yeniden adlandırır, aşama ekler; “kazanıldı” ve “kaybedildi” aşamalarını ayırt eder</td><td>pipelines.list — zorunlu; create, update, add_stage — isteğe bağlı</td></tr>
+    <tr><td>Lead'ler</td><td>Arar, oluşturur, günceller, aşamalar arasında taşır, kişileri ve şirketleri bağlar</td><td>leads.list, leads.search, leads.create, leads.update</td></tr>
+    <tr><td>Kişiler ve şirketler</td><td>Metin ya da sesli mesajdan oluşturur ve günceller</td><td>contacts.*, companies.*</td></tr>
+    <tr><td>Görevler</td><td>Lead'e son tarihli görev oluşturur, tamamlar; lead sağlığı ve toplantı özetleri için listeyi okur</td><td>tasks.create, tasks.complete, tasks.list</td></tr>
+    <tr><td>Notlar ve etiketler</td><td>Not ekler, etiket uygular</td><td>notes.create, notes.list, tags.*</td></tr>
+    <tr><td>Alanlar</td><td>Lead, kişi ve şirket alanları oluşturur: metin, sayı, liste, tarih; değer atar</td><td>fields.*</td></tr>
+    <tr><td>Huni analitiği</td><td>Her aşamada kaç lead olduğu ve nerede takıldıkları</td><td>leads.list'ten gelen veriler</td></tr>
+    <tr><td>Otomasyonlar</td><td>“Olay → eylem” kuralları: CRM'in Kai'nin webhook'una bir olay gönderir, Kai görev oluşturur, not yazar, sohbete bildirir</td><td>Spesifikasyondaki events bloğu + CRM'inden bir webhook, HMAC imzası isteğe bağlı</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Yollar ve istek gövdelerindeki <kbd>{{name}}</kbd> gibi yer tutucular eylemin parametrelerinden, <kbd>{{secret.token}}</kbd> ise bu bağlayıcının gizli bilgilerinden doldurulur. Yanıt yolları noktalıdır: <kbd>data.items</kbd>, <kbd>result.0.id</kbd>. Ajan istekleri yalnızca senin tarif ettiklerinden oluşturur: kod yok, başka hiçbir şeye erişim yok.</p>
+
+<h2>Güvenlik: ajanın sistemine yapamayacakları</h2>
+<ul>
+  <li>Yalnızca https ve yalnızca herkese açık sunucular: adresler hem spesifikasyon kaydedilirken hem de her istekten önce kontrol edilir — DNS yeniden çözümlenir.</li>
+  <li>İstekler yalnızca temel URL'nin sunucusuna gider: spesifikasyondaki yollar görelidir, mutlak URL'ler ve yönlendirmeler yasaktır.</li>
+  <li>Şablonlar kod değildir: yalnızca yer tutucular. Kai'nin ortamına, veritabanına ya da diğer kullanıcılara erişimleri yoktur.</li>
+  <li>Gizli bilgiler şifrelenmiş olarak saklanır, hiçbir zaman loglanmaz ve hata mesajlarından çıkarılır.</li>
+  <li>Sınırlar: spesifikasyon en fazla 64 KB, istek gövdesi en fazla 256 KB, yanıt en fazla 1 MB, 15 saniyelik zaman aşımı, bağlayıcı başına dakikada 60 çağrı.</li>
+  <li>OAuth 2.0: 15 dakika geçerli imzalı bir state, PKCE, sabit bir redirect URI; kod, yalnızca Kai'nin sunucusunda token ile değiştirilir.</li>
+</ul>
+<p>Erişimi istediğin an iptal edebilirsin — CRM'in tarafında token'ı ya da anahtarı sil, ajanın bir sonraki isteği geçmez.</p>
+
+<h2>Sınırlar: neler olmayacak</h2>
+<ul>
+  <li>CRM'inin içinde widget'lar ya da düğmeler: ajan sohbette yaşar ve API üzerinden çalışır; sistemin arayüzüne hiçbir şey eklemez.</li>
+  <li>Spesifikasyonda olmayan işlemler: Kai uç noktaları tahmin etmez, onları tarif etmeni ister.</li>
+  <li>JSON kullanmayan, standart dışı istek imzası olan ya da yalnızca özel ağ içinden erişilebilen API'ler — önce bir geliştirici gerekir.</li>
+</ul>
+
+<h2>Ne zaman geliştirici gerekir</h2>
+<ul>
+  <li>CRM'in API'si yok — yazılması gerekir. Minimum: satış hunisi ve lead listeleri; gerisi adım adım.</li>
+  <li>API var ama yalnızca yerel ağ içinde — yetkilendirmeli, herkese açık bir https uç noktası gerekir.</li>
+  <li>Otomasyonlar için CRM'den olaylar istiyorsun — CRM'in Kai'nin adresine webhook göndermesi gerekir: JSON içeren tek bir POST.</li>
+</ul>
+<p>Diğer tüm durumlarda geliştirici gerekmez: spesifikasyonun taslağını Kai çıkarır, sistemi bilen kişi kontrol eder.</p>
+
+<h2>Kai ile tek mesaj yeter</h2>
+<p>Bağlandıktan sonra CRM'in hakkında konuşmak amoCRM hakkında konuşmaktan farklı değildir: neye ihtiyacın olduğunu anlatırsın, Kai netleştirici sorular sorar, bir plan gösterir, uygular ve rapor gönderir. Örnekler:</p>
+<pre>CRM'imdeki satış hunilerini ve her aşamada kaç lead olduğunu göster.</pre>
+<pre>“Satış” hunisinde 3.500 tutarında “Peters, mutfak” lead'ini oluştur, kişi Peters, telefon +1 555 000-0000, ve yarın için “geri ara” görevi ekle.</pre>
+<pre>Lead “Sözleşme” aşamasına geçtiğinde — sorumluya “faturayı kes” görevini oluştur ve bana sohbette yaz.</pre>
+<p>Kendi CRM'ini bağlamak Max planında: €119/ay, en fazla 10 CRM hesabı, öncelikli destek. Sistemi konuşmak, spesifikasyon taslağı istemek ve soru sormak ücretsizdir — deneme süresinde de, her planda da. Kai İngilizce ve Rusça konuşur.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>CRM'imiz şirket içinde yazıldı, API'si var ama belgesi yok. Çalışır mı?</h3>
+    <p>Evet. İstek ve yanıt örnekleri ya da controller kodundan bir parça gönder — Kai spesifikasyonun taslağını çıkarır. Ya da adım adım oluştur: adresi, kimlik doğrulama yöntemini ve satış hunileri ile lead'lerin yollarını ver; Kai bunları çağırır ve alan adlarını yanıtlardan kendisi okur.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Bir yapay zeka ajanına kendi CRM'ime erişim vermek güvenli mi?</h3>
+    <p>Erişim, spesifikasyonun tarif ettikleriyle sınırlıdır: istekler yalnızca senin sunucuna ve yalnızca https üzerinden, kod içermeyen şablonlar, şifrelenmiş gizli bilgiler, boyut ve hız sınırları. Erişimi iptal etmek için kendi tarafında token'ı ya da anahtarı sil.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Kendi CRM'imi bağlamak ne kadar tutar?</h3>
+    <p>Bu, Max planı — €119/ay, en fazla 10 CRM hesabı, öncelikli destek. Görüşme ve spesifikasyon taslağı ücretsiz. CRM'in kendisini ya da API'sini geliştirmek plana dahil değildir.</p>
+  </div>
+  <div class="faq-item">
+    <h3>HubSpot, Pipedrive ya da EspoCRM de sayılır mı?</h3>
+    <p>Evet. Ajan için bunlar da API üzerinden bağlanan aynı “kendi CRM'ler”dir: onlar için hazır spesifikasyonlar Kai belgelerinde var, yalnızca bir token ya da API anahtarı gerekir.</p>
+  </div>
+</div>
+
+<h2>Sırada ne var</h2>
+<p>Kai sohbetini aç, “Connect CRM” → “My own CRM via API” düğmelerine dokun ve sandbox ile başla ya da belgelerini gönder. Sistemin bir REST API'si varsa, bir akşamda kelimelerle yönetebildiğin bir CRM'e dönüşür.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Telegram'da dene</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Web sohbetini aç</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/docs/custom-crm?lang=en">Belgeler: API ile kendi CRM'in</a>
+</div>
+
+<p class="author">Yazar: Kai Ekibi · Güncellendi: <time datetime="2026-11-01">1 Kasım 2026</time> · Özellikler yayın tarihi itibarıyladır; güncel durum ve spesifikasyon şablonu sohbette ve belgelerde.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/tr/">Ana sayfa</a> · <a href="https://aii-crm.com/privacy-tr.html">Gizlilik</a> · <a href="https://aii-crm.com/terms-tr.html">Koşullar</a> · <a href="https://aii-crm.com/guides/en/ai-agent-for-custom-crm.html">İngilizce sürüm</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/tr/ai-agent-for-custom-crm.html#article",
+      "headline": "Yapay zeka ajanı özel (şirket içi) bir CRM'e API'si üzerinden nasıl bağlanır — sistemi yeniden yazmadan",
+      "description": "Bir yapay zeka ajanının kendi (özel, şirket içi) CRM'inle çalışması için ne gerekir: JSON döndüren bir REST API, OAuth 2.0 / API anahtarı / bearer kimlik doğrulaması ve bir bağlayıcı spesifikasyonu. Üç bağlantı yolu, ajanın sonrasında yapabildikleri, sınırlar ve güvenlik modeli — Kai örneğiyle.",
+      "inLanguage": "tr",
+      "datePublished": "2026-11-01",
+      "dateModified": "2026-11-01",
+      "mainEntityOfPage": "https://aii-crm.com/guides/tr/ai-agent-for-custom-crm.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/tr/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/tr/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "CRM'imiz şirket içinde yazıldı, API'si var ama belgesi yok. Çalışır mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. İstek ve yanıt örnekleri ya da controller kodundan bir parça gönder — Kai spesifikasyonun taslağını çıkarır. Ya da adım adım oluştur: adresi, kimlik doğrulama yöntemini ve satış hunileri ile lead'lerin yollarını ver; Kai bunları çağırır ve alan adlarını yanıtlardan kendisi okur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bir yapay zeka ajanına kendi CRM'ime erişim vermek güvenli mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Erişim, spesifikasyonun tarif ettikleriyle sınırlıdır: istekler yalnızca senin sunucuna ve yalnızca https üzerinden, kod içermeyen şablonlar, şifrelenmiş gizli bilgiler, boyut ve hız sınırları. Erişimi iptal etmek için kendi tarafında token'ı ya da anahtarı sil."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kendi CRM'imi bağlamak ne kadar tutar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bu, Max planı — €119/ay, en fazla 10 CRM hesabı, öncelikli destek. Görüşme ve spesifikasyon taslağı ücretsiz. CRM'in kendisini ya da API'sini geliştirmek plana dahil değildir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "HubSpot, Pipedrive ya da EspoCRM de sayılır mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Ajan için bunlar da API üzerinden bağlanan aynı “kendi CRM'ler”dir: onlar için hazır spesifikasyonlar Kai belgelerinde var, yalnızca bir token ya da API anahtarı gerekir."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Rehberler",
+          "item": "https://aii-crm.com/guides/tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Yapay zeka ajanı özel bir CRM'e API'si üzerinden nasıl bağlanır",
+          "item": "https://aii-crm.com/guides/tr/ai-agent-for-custom-crm.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

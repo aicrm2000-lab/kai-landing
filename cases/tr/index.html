@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<title>Örnekler: Kai&#x27;ye tek mesajdan önce ve sonra CRM | Kai</title>
+<meta name="description" content="amoCRM ve Kommo&#x27;da dört tipik durum: huni nasıldı, Kai&#x27;ye ne yazıldı, Kai ne yaptı ve CRM sonra nasıl görünüyor. Gerçek işlemler, entegratör yok.">
+<meta name="keywords" content="amoCRM kurulum örnekleri, Kommo kurulum örnekleri, satış hunisi önce ve sonra, CRM otomasyon örneği, amoCRM için yapay zeka asistanı, Kommo için yapay zeka, entegratörsüz CRM kurulumu, Kai CRM, diş kliniği CRM, emlak ofisi Kommo, online okul CRM, Kommo satış hunisi kurulumu, CRM huni örnekleri, Kommo otomasyon örnekleri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aii-crm.com/cases/tr/">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/cases/">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/cases/en/">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/cases/de/">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/cases/fr/">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/cases/es/">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/cases/pl/">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/cases/pt/">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/cases/it/">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/cases/tr/">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/cases/be/">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/cases/en/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Kai"><meta property="og:url" content="https://aii-crm.com/cases/tr/">
+<meta property="og:title" content="Önce → sonra: tek mesajla amoCRM ve Kommo kurulumu"><meta property="og:description" content="amoCRM ve Kommo&#x27;da dört tipik durum: huni nasıldı, Kai&#x27;ye ne yazıldı, Kai ne yaptı ve CRM sonra nasıl görünüyor. Gerçek işlemler, entegratör yok."><meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Önce → sonra: tek mesajla amoCRM ve Kommo kurulumu"><meta name="twitter:description" content="amoCRM ve Kommo&#x27;da dört tipik durum: huni nasıldı, Kai&#x27;ye ne yazıldı, Kai ne yaptı ve CRM sonra nasıl görünüyor. Gerçek işlemler, entegratör yok."><meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B0A14'/><path d='M16 6.5a9.5 9.5 0 1 0 9.5 9.5' stroke='%237C5CFF' stroke-width='4' stroke-linecap='round' fill='none'/><circle cx='23.4' cy='8.6' r='2.6' fill='%23A78BFA'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0;--bad:#FF7B93;--warn:#F5C451;--mono:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 'Manrope',system-ui,sans-serif;padding:0 16px 64px}
+.wrap{max-width:860px;margin:0 auto}header{display:flex;align-items:center;gap:12px;padding:22px 0;border-bottom:1px solid var(--border)}
+header a{color:var(--ink);text-decoration:none;font-weight:700}header .brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:700}header .brand svg{flex:0 0 28px}header nav{margin-left:auto;display:flex;gap:18px;font-size:14px}header nav a{color:var(--muted);font-weight:500}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin:40px 0 12px;text-wrap:balance}
+.lead{color:var(--text);max-width:64ch}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}.toc a{font:600 13px var(--mono);color:var(--accent-2);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:6px 12px}.toc a:hover{border-color:var(--accent)}
+.case{margin-top:44px;border:1px solid var(--border);border-radius:18px;background:var(--bg-1);padding:22px;scroll-margin-top:16px}
+.case .top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}.badge{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}.badge.crm{color:var(--accent-2);border-color:rgba(124,92,255,.45)}
+.case h2{margin:0 0 6px;font-size:clamp(21px,3.2vw,26px);line-height:1.25;color:var(--ink);letter-spacing:-.01em;text-wrap:balance}
+.case p{margin:6px 0}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.col{border:1px solid var(--border);border-radius:14px;padding:14px;background:var(--bg)}
+.col h3{margin:0 0 10px;font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.col.before h3{color:var(--bad)}.col.after h3{color:var(--good)}.col h3 i{width:8px;height:8px;border-radius:50%;background:currentColor;display:inline-block}
+.board{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.board span{font-size:13px;font-weight:600;color:var(--ink);background:var(--bg-2);border:1px solid var(--border);border-radius:8px;padding:6px 9px}.board em{font-style:normal;color:var(--muted);font-size:12px}
+.col.after .board span{border-color:rgba(67,224,160,.35)}
+.k{margin:12px 0 4px;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.list{margin:0;padding:0;list-style:none;font-size:14px}.list li{padding:5px 0;border-top:1px solid var(--border);display:flex;gap:8px;align-items:baseline}.list li:first-child{border-top:0}
+.list b{color:var(--ink);font-weight:600}.list small{color:var(--muted);font-size:12px}.list .stamp{font:600 10px var(--mono);color:var(--warn);border:1px solid rgba(245,196,81,.5);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.list.none li{color:var(--muted);font-style:italic}.list.pain li::before{content:'–';color:var(--bad)}.list.gain li::before{content:'✓';color:var(--good);font-weight:700}
+.rule{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;font-size:14px}.rule b{color:var(--ink);font-weight:600}.rule span::before{content:'→ ';color:var(--accent-2)}
+.chat{margin:16px 0;display:grid;gap:10px}.msg{max-width:92%;border-radius:16px;padding:12px 14px;font-size:15px;line-height:1.5}
+.msg.me{justify-self:end;background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.45);color:var(--ink);border-bottom-right-radius:6px}
+.msg.kai{justify-self:start;background:var(--bg-2);border:1px solid var(--border);border-bottom-left-radius:6px}.msg .who{display:block;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.msg.kai .ok{color:var(--good);font-weight:700}
+.did{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}.did span{font:500 12px var(--mono);color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:4px 8px}.did span b{color:var(--accent-2);font-weight:600}
+.time{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--bg-2);border:1px solid var(--border);font-size:14px;color:var(--text)}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.btn{display:inline-block;padding:11px 16px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;font-size:14px}.btn.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}
+button.btn{cursor:pointer;border:1px solid var(--border);font:inherit;font-weight:700;font-size:14px}
+.cta{margin-top:40px;padding:22px;border-radius:16px;background:var(--bg-2);border:1px solid var(--border)}.cta b{color:var(--ink)}.cta a{display:inline-block;margin:10px 10px 0 0;padding:12px 18px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+.cta a.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}footer{margin-top:40px;color:var(--muted);font-size:13px}footer a{color:var(--muted)}
+.more{margin-top:28px}.more a{color:var(--accent-2)}
+@media (max-width:700px){.ba{grid-template-columns:1fr}.case{padding:16px;border-radius:14px}.msg{max-width:100%}body{font-size:16px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Önce → sonra: tek mesajla amoCRM ve Kommo kurulumu", "description": "amoCRM ve Kommo'da dört tipik durum: huni nasıldı, Kai'ye ne yazıldı, Kai ne yaptı ve CRM sonra nasıl görünüyor. Gerçek işlemler, entegratör yok.", "url": "https://aii-crm.com/cases/tr/", "inLanguage": "tr", "datePublished": "2026-10-27", "dateModified": "2026-11-02", "author": {"@type": "Organization", "name": "Kai"}, "publisher": {"@type": "Organization", "name": "Kai", "url": "https://aii-crm.com/"}, "isPartOf": {"@type": "WebSite", "name": "Kai", "url": "https://aii-crm.com/"}, "hasPart": [{"@type": "HowTo", "name": "Talep ile randevu arasında başvuruların yarısı kayboluyordu", "url": "https://aii-crm.com/cases/tr/#dental-amocrm", "step": [{"@type": "HowToStep", "text": "“Yeni hastalar” satış hunisi oluştur: Talep → Ulaşıldı → Randevu → Ziyaret onaylı → Muayene → Tedavi planı. Lead alanları: Hizmet (liste: tedavi, protez, implant, çocuk diş hekimliği), Doktor, Ziyaret tarihi, Plan tutarı. Ziyaret tarihi “Randevu” aşamasında zorunlu olsun. Kurallar: yeni talep — resepsiyona 15 dakika içinde geri arama görevi; lead “Randevu” aşamasına geçti — ziyareti onaylatmak için bir gün önceye görev; “Ulaşıldı” aşamasında 2 gün hareket yok — “tekrar ara” görevi."}]}, {"@type": "HowTo", "name": "Bütçe ve bölge lead adına yazılıyordu", "url": "https://aii-crm.com/cases/tr/#realty-kommo", "step": [{"@type": "HowToStep", "text": "Kommo'da “Alıcılar” hunisi oluştur: Talep → Nitelendirme → Seçim → Gösterim → Rezervasyon → Sözleşme. Alanlar: Mülk tipi (liste: stüdyo, 1 oda, 2 oda, 3+ oda, müstakil ev), Bütçe (sayı), Bölge, Ödeme şekli (konut kredisi, nakit, taksit). Bütçe ve Bölge “Nitelendirme” aşamasında zorunlu olsun. Kurallar: yeni talep — 15 dakika içinde geri arama görevi; lead “Seçim” aşamasında — gösterim planlamak için yarına görev; “Gösterim” sonrasında 3 gün hareket yok — “kararını sor” görevi. Kayıp nedenleri: başka yerden aldı, çok pahalı, vazgeçti, yanıt yok."}]}, {"@type": "HowTo", "name": "Huni vardı ama lead'ler aylarca “Keşif” aşamasında bekliyordu", "url": "https://aii-crm.com/cases/tr/#renovation-audit-amocrm", "step": [{"@type": "HowToStep", "text": "“Sözleşme satışı” hunisini denetle. Sonra düzelt: “Teklif tutarı” alanını “Teklif” aşamasında zorunlu yap, kayıp nedenleri ekle (çok pahalı, başkasını seçti, erteledi, yanıt yok), kural: “Keşif” aşamasında 5 gün hareket yok — şantiye şefine “teklifi gönder” görevi. Bir de huni panelini göster."}]}, {"@type": "HowTo", "name": "Kayıtlar tabloda duruyordu, fiyat son tarihleri hafızadan hatırlatılıyordu", "url": "https://aii-crm.com/cases/tr/#courses-kommo", "step": [{"@type": "HowToStep", "text": "Kommo'da “Kurs satışı” hunisi oluştur: Kayıt → Nitelendirme → Görüşme planlı → Görüşüldü → Fatura kesildi → Ödeme. Alanlar: Ürün (liste), Paket (liste: temel, mentorlu, VIP), Dönem, Taksit (evet/hayır). Kurallar: Kayıt — yazıp tanı görüşmesi önerme görevi; “Fatura kesildi” — fiyat son tarihini hatırlatmak için yarına görev; “Ödeme” — “öğrenci” etiketi ve satış ekibine Telegram bildirimi."}]}]}</script>
+</head>
+<body><div class="wrap">
+<header><a class="brand" href="../../tr/" aria-label="Kai — home"><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg><span>Kai</span></a><nav><a href="../../guides/tr/">Rehberler</a><a href="../../tr/#pricing">Planlar</a><a href="https://aii-crm.com/cases/en/" hreflang="en">EN</a></nav></header>
+<h1>Önce → sonra: tek mesajla amoCRM ve Kommo kurulumu</h1>
+<p class="lead">Her örnek, insanların Kai&#x27;ye getirdiği tipik bir tablo: her şey için tek huni, notlarda kalan alanlar, hafızaya emanet görevler. Aşağıda: Kai&#x27;ye yazılan mesaj, Kai&#x27;nin CRM&#x27;de yaptıkları ve sonuç. Burada müşteri rakamı yok, sadece yapılandırma ve süre.</p>
+<div class="toc"><a href="#dental-amocrm">amoCRM · Diş kliniği</a><a href="#realty-kommo">Kommo · Emlak ofisi</a><a href="#renovation-audit-amocrm">amoCRM · Daire tadilatı</a><a href="#courses-kommo">Kommo · Online okul</a></div>
+
+<article class="case" id="dental-amocrm">
+  <div class="top"><span class="badge crm">amoCRM</span><span class="badge">Diş kliniği</span></div>
+  <h2>Talep ile randevu arasında başvuruların yarısı kayboluyordu</h2>
+  <p>Her şey için tek bir “Ana” huni: web sitesinden, Instagram&#x27;dan ve telefondan gelen talepler “Yeni” aşamasına düşüyor, sonra “İşlemde” ve “Kapandı”. Doktor ve ziyaret tarihi notlarda duruyor, ziyareti kimse hatırlatmıyor.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Önce</h3>
+      <div class="k">Huni aşamaları</div><div class="board"><span>Yeni</span><em>→</em><span>İşlemde</span><em>→</em><span>Kapandı</span></div>
+      <div class="k">Lead alanları</div><ul class="list none"><li>alan yok — her şey notlarda</li></ul>
+      <div class="k">Kurallar</div><ul class="list none"><li>kural yok — her şey hafızada</li></ul>
+      <div class="k">Ne bozuktu</div><ul class="list pain"><li>“Ulaşıldı” aşaması yok — kimin geri arandığı belirsiz</li><li>ziyaret tarihi notta, resepsiyon gözle arıyor</li><li>ziyaretler onaylanmıyor — hastalar gelmiyor</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Sonra</h3>
+      <div class="k">Huni aşamaları</div><div class="board"><span>Talep</span><em>→</em><span>Ulaşıldı</span><em>→</em><span>Randevu</span><em>→</em><span>Ziyaret onaylı</span><em>→</em><span>Muayene</span><em>→</em><span>Tedavi planı</span></div>
+      <div class="k">Lead alanları</div><ul class="list"><li><b>Hizmet</b><small>liste</small></li><li><b>Doktor</b></li><li><b>Ziyaret tarihi</b><span class="stamp">“Randevu” aşamasında zorunlu</span></li><li><b>Plan tutarı</b><small>sayı</small></li></ul>
+      <div class="k">Kurallar</div><div class="rule"><b>Yeni talep</b><span>15 dakika içinde “geri ara” görevi</span><b>“Randevu” aşamasına geçti</b><span>bir gün önce görev: ziyareti onaylat</span><b>“Ulaşıldı” aşamasında 2 gün hareketsiz</b><span>“tekrar ara” görevi</span></div>
+      <div class="k">Ne değişti</div><ul class="list gain"><li>her talep ilk 15 dakikada aranıyor — resepsiyonun hafızasıyla değil, kuralla</li><li>ziyaret tarihi atlanamaz: tarih girilmeden lead “Randevu” aşamasına geçmez</li><li>onay görevi bir gün önceden çıkıyor — gelmeyen hasta azalıyor</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Kai&#x27;ye mesaj</span>“Yeni hastalar” satış hunisi oluştur: Talep → Ulaşıldı → Randevu → Ziyaret onaylı → Muayene → Tedavi planı. Lead alanları: Hizmet (liste: tedavi, protez, implant, çocuk diş hekimliği), Doktor, Ziyaret tarihi, Plan tutarı. Ziyaret tarihi “Randevu” aşamasında zorunlu olsun. Kurallar: yeni talep — resepsiyona 15 dakika içinde geri arama görevi; lead “Randevu” aşamasına geçti — ziyareti onaylatmak için bir gün önceye görev; “Ulaşıldı” aşamasında 2 gün hareket yok — “tekrar ara” görevi.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Tamam.</span> “Yeni hastalar” hunisi oluşturuldu, 6 aşama. 4 alan eklendi, “Ziyaret tarihi” “Randevu” aşamasında zorunlu. Üç kural açık: 15 dakika içinde geri arama, ziyareti bir gün önce onaylatma, 2 gün sonra tekrar arama. Sistem aşamaları “Başarılı” ve “Başarısız” olduğu gibi kaldı.</div>
+  </div>
+  <div class="k">Kai ne yaptı</div><div class="did"><span>huni oluştur</span><span>alan oluştur <b>×4</b></span><span>alanı zorunlu yap</span><span>kural oluştur <b>×3</b></span></div>
+  <div class="time">Tek mesaj, yaklaşık iki dakika. Bir entegratör aynı işi 2–5 iş gününde yapar.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="“Yeni hastalar” satış hunisi oluştur: Talep → Ulaşıldı → Randevu → Ziyaret onaylı → Muayene → Tedavi planı. Lead alanları: Hizmet (liste: tedavi, protez, implant, çocuk diş hekimliği), Doktor, Ziyaret tarihi, Plan tutarı. Ziyaret tarihi “Randevu” aşamasında zorunlu olsun. Kurallar: yeni talep — resepsiyona 15 dakika içinde geri arama görevi; lead “Randevu” aşamasına geçti — ziyareti onaylatmak için bir gün önceye görev; “Ulaşıldı” aşamasında 2 gün hareket yok — “tekrar ara” görevi.">Mesajı kopyala</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Kendi sohbetinde tekrarla</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Telegram&#x27;da aç</a></div>
+</article>
+<article class="case" id="realty-kommo">
+  <div class="top"><span class="badge crm">Kommo</span><span class="badge">Emlak ofisi</span></div>
+  <h2>Bütçe ve bölge lead adına yazılıyordu</h2>
+  <p>Tüm lead&#x27;ler “Gelen” aşamasında, aşama yok. Bütçe, bölge ve mülk tipi lead adına yazılıyor: “Murat, 2 oda, 90 bine kadar, merkez”. Portföy gönderilip unutuluyor, gösterimden sonra kimse dönüş yapmıyor.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Önce</h3>
+      <div class="k">Huni aşamaları</div><div class="board"><span>Gelen</span><em>→</em><span>Çalışılıyor</span><em>→</em><span>Anlaşma</span></div>
+      <div class="k">Lead alanları</div><ul class="list none"><li>alan yok — her şey notlarda</li></ul>
+      <div class="k">Kurallar</div><ul class="list none"><li>kural yok — her şey hafızada</li></ul>
+      <div class="k">Ne bozuktu</div><ul class="list pain"><li>bütçeye ya da bölgeye göre filtre yok — her şey düz metin</li><li>lead&#x27;ler gösterimden sonra bir sonraki adım olmadan takılıp kalıyor</li><li>kayıp nedeni yok — alıcıların neden gittiği belirsiz</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Sonra</h3>
+      <div class="k">Huni aşamaları</div><div class="board"><span>Talep</span><em>→</em><span>Nitelendirme</span><em>→</em><span>Seçim</span><em>→</em><span>Gösterim</span><em>→</em><span>Rezervasyon</span><em>→</em><span>Sözleşme</span></div>
+      <div class="k">Lead alanları</div><ul class="list"><li><b>Mülk tipi</b><small>liste</small></li><li><b>Bütçe</b><span class="stamp">sayı · “Nitelendirme” aşamasında zorunlu</span></li><li><b>Bölge</b><span class="stamp">“Nitelendirme” aşamasında zorunlu</span></li><li><b>Ödeme şekli</b><small>liste</small></li></ul>
+      <div class="k">Kurallar</div><div class="rule"><b>Yeni talep</b><span>15 dakika içinde “geri ara” görevi</span><b>“Seçim” aşamasına geçti</b><span>yarına görev: gösterim planla</span><b>“Gösterim” aşamasında 3 gün hareketsiz</b><span>“kararını sor” görevi</span></div>
+      <div class="k">Ne değişti</div><ul class="list gain"><li>“merkez, 2 oda, 90.000&#x27;e kadar” filtresi bir saniyede, alanlara göre</li><li>her gösterimin bir sonraki adımı ve son tarihi var</li><li>kayıplar nedenleriyle: nerede kaybettiğini görürsün — fiyatta mı, hızda mı</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Kai&#x27;ye mesaj</span>Kommo&#x27;da “Alıcılar” hunisi oluştur: Talep → Nitelendirme → Seçim → Gösterim → Rezervasyon → Sözleşme. Alanlar: Mülk tipi (liste: stüdyo, 1 oda, 2 oda, 3+ oda, müstakil ev), Bütçe (sayı), Bölge, Ödeme şekli (konut kredisi, nakit, taksit). Bütçe ve Bölge “Nitelendirme” aşamasında zorunlu olsun. Kurallar: yeni talep — 15 dakika içinde geri arama görevi; lead “Seçim” aşamasında — gösterim planlamak için yarına görev; “Gösterim” sonrasında 3 gün hareket yok — “kararını sor” görevi. Kayıp nedenleri: başka yerden aldı, çok pahalı, vazgeçti, yanıt yok.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Tamam.</span> “Alıcılar” hunisi, 6 aşama. Alanlar: Mülk tipi, Bütçe, Bölge, Ödeme şekli; Bütçe ve Bölge “Nitelendirme” aşamasında zorunlu. Üç kural açık, dört kayıp nedeni eklendi — kayıp analitiği artık sayılıyor.</div>
+  </div>
+  <div class="k">Kai ne yaptı</div><div class="did"><span>huni oluştur</span><span>alan oluştur <b>×4</b></span><span>alanı zorunlu yap <b>×2</b></span><span>kural oluştur <b>×3</b></span><span>kayıp nedenleri</span></div>
+  <div class="time">Tek mesaj, yaklaşık iki dakika. Alanlar, aşamalar ve kurallar API üzerinden Kommo&#x27;ya gider, widget yok.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Kommo&#x27;da “Alıcılar” hunisi oluştur: Talep → Nitelendirme → Seçim → Gösterim → Rezervasyon → Sözleşme. Alanlar: Mülk tipi (liste: stüdyo, 1 oda, 2 oda, 3+ oda, müstakil ev), Bütçe (sayı), Bölge, Ödeme şekli (konut kredisi, nakit, taksit). Bütçe ve Bölge “Nitelendirme” aşamasında zorunlu olsun. Kurallar: yeni talep — 15 dakika içinde geri arama görevi; lead “Seçim” aşamasında — gösterim planlamak için yarına görev; “Gösterim” sonrasında 3 gün hareket yok — “kararını sor” görevi. Kayıp nedenleri: başka yerden aldı, çok pahalı, vazgeçti, yanıt yok.">Mesajı kopyala</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Kendi sohbetinde tekrarla</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Telegram&#x27;da aç</a></div>
+</article>
+<article class="case" id="renovation-audit-amocrm">
+  <div class="top"><span class="badge crm">amoCRM</span><span class="badge">Daire tadilatı</span></div>
+  <h2>Huni vardı ama lead&#x27;ler aylarca “Keşif” aşamasında bekliyordu</h2>
+  <p>“Sözleşme satışı” hunisi çoktan kurulmuştu ama teklifler biri hatırlayınca gidiyor, tutarlar boş, kayıp nedeni yok — huni raporu bomboş. İşletme sahibi paranın nerede takıldığını göremiyor.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Önce</h3>
+      <div class="k">Huni aşamaları</div><div class="board"><span>Talep</span><em>→</em><span>Nitelendirme</span><em>→</em><span>Keşif</span><em>→</em><span>Teklif</span><em>→</em><span>Sözleşme</span><em>→</em><span>Avans</span></div>
+      <div class="k">Lead alanları</div><ul class="list"><li><b>İş tipi</b></li><li><b>Alan, m²</b></li><li><b>Bütçe</b></li><li><b>Teklif tutarı</b><small>10 lead&#x27;in 8&#x27;inde boş</small></li></ul>
+      <div class="k">Kurallar</div><ul class="list none"><li>kural yok — her şey hafızada</li></ul>
+      <div class="k">Ne bozuktu</div><ul class="list pain"><li>“Keşif” aşamasında iki haftadan uzun süredir bekleyen 23 lead</li><li>teklif tutarı boş — gelir tahmini yapılamıyor</li><li>kayıp nedenleri olmadan müşterilerin neden gittiğini anlayamazsın</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Sonra</h3>
+      <div class="k">Huni aşamaları</div><div class="board"><span>Talep</span><em>→</em><span>Nitelendirme</span><em>→</em><span>Keşif</span><em>→</em><span>Teklif</span><em>→</em><span>Sözleşme</span><em>→</em><span>Avans</span></div>
+      <div class="k">Lead alanları</div><ul class="list"><li><b>İş tipi</b></li><li><b>Alan, m²</b></li><li><b>Bütçe</b></li><li><b>Teklif tutarı</b><span class="stamp">“Teklif” aşamasında zorunlu</span></li></ul>
+      <div class="k">Kurallar</div><div class="rule"><b>“Keşif” aşamasında 5 gün hareketsiz</b><span>şantiye şefine “teklifi gönder” görevi</span></div>
+      <div class="k">Ne değişti</div><ul class="list gain"><li>teklifler artık takılmıyor: 5 gün sonra sorumlusu belli bir görev çıkıyor</li><li>teklif tutarı zorunlu — gelir tahmini alanlardan hesaplanıyor</li><li>kayıplar nedenleriyle, gösterge paneli her an tek kelimeyle: “panel”</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Kai&#x27;ye mesaj</span>“Sözleşme satışı” hunisini denetle. Sonra düzelt: “Teklif tutarı” alanını “Teklif” aşamasında zorunlu yap, kayıp nedenleri ekle (çok pahalı, başkasını seçti, erteledi, yanıt yok), kural: “Keşif” aşamasında 5 gün hareket yok — şantiye şefine “teklifi gönder” görevi. Bir de huni panelini göster.</div>
+    <div class="msg kai"><span class="who">Kai</span>Denetim: 23 lead 14 günden uzun süredir “Keşif” aşamasında, lead&#x27;lerin %80&#x27;inde “Teklif tutarı” boş, kayıp nedeni yok, otomasyon yok. Düzeltildi: alan “Teklif” aşamasında zorunlu, 4 kayıp nedeni eklendi, 5 günlük kural açık. Panel: 61 açık, 23&#x27;ü “Keşif” aşamasında (darboğaz), bu ay 9 kazanıldı, 4 kaybedildi.</div>
+  </div>
+  <div class="k">Kai ne yaptı</div><div class="did"><span>huni denetimi</span><span>alanı zorunlu yap</span><span>kayıp nedenleri</span><span>kural oluştur</span><span>gösterge paneli</span></div>
+  <div class="time">Denetim, düzeltmeler ve özet — tek mesaj. Kai hiçbir şey silmedi: mevcut lead&#x27;ler ve aşamalar yerinde kaldı.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="“Sözleşme satışı” hunisini denetle. Sonra düzelt: “Teklif tutarı” alanını “Teklif” aşamasında zorunlu yap, kayıp nedenleri ekle (çok pahalı, başkasını seçti, erteledi, yanıt yok), kural: “Keşif” aşamasında 5 gün hareket yok — şantiye şefine “teklifi gönder” görevi. Bir de huni panelini göster.">Mesajı kopyala</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Kendi sohbetinde tekrarla</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Telegram&#x27;da aç</a></div>
+</article>
+<article class="case" id="courses-kommo">
+  <div class="top"><span class="badge crm">Kommo</span><span class="badge">Online okul</span></div>
+  <h2>Kayıtlar tabloda duruyordu, fiyat son tarihleri hafızadan hatırlatılıyordu</h2>
+  <p>Landing sayfasından gelen kayıtlar bir tabloya düşüyor, temsilciler onları elle ayıklıyor. Dönemler karışıyor, fatura gönderiliyor — hatırlatma unutuluyor. Ekip ödemeyi bir gün sonra muhasebeden öğreniyor.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Önce</h3>
+      <div class="k">Huni aşamaları</div><div class="board"><span>Lead</span><em>→</em><span>Ödeme</span></div>
+      <div class="k">Lead alanları</div><ul class="list none"><li>alan yok — her şey notlarda</li></ul>
+      <div class="k">Kurallar</div><ul class="list none"><li>kural yok — her şey hafızada</li></ul>
+      <div class="k">Ne bozuktu</div><ul class="list pain"><li>“Lead” ile “Ödeme” arasında hiçbir şey yok — kimin hangi adımda olduğu belirsiz</li><li>Ürün ve Dönem alanları yok — listeler elle hazırlanıyor</li><li>ödemeler geç fark ediliyor, karşılama ve erişim gecikiyor</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Sonra</h3>
+      <div class="k">Huni aşamaları</div><div class="board"><span>Kayıt</span><em>→</em><span>Nitelendirme</span><em>→</em><span>Görüşme planlı</span><em>→</em><span>Görüşüldü</span><em>→</em><span>Fatura kesildi</span><em>→</em><span>Ödeme</span></div>
+      <div class="k">Lead alanları</div><ul class="list"><li><b>Ürün</b><small>liste</small></li><li><b>Paket</b><small>liste</small></li><li><b>Dönem</b></li><li><b>Taksit</b><small>evet/hayır</small></li></ul>
+      <div class="k">Kurallar</div><div class="rule"><b>Kayıt</b><span>görev: yaz ve tanı görüşmesi öner</span><b>“Fatura kesildi”</b><span>yarına görev: fiyat son tarihini hatırlat</span><b>“Ödeme”</b><span>“öğrenci” etiketi + Telegram bildirimi</span></div>
+      <div class="k">Ne değişti</div><ul class="list gain"><li>her kayda ilk temas yapılıyor — görev otomatik oluşuyor</li><li>fiyat son tarihi hatırlatması ertesi güne kendiliğinden planlanıyor</li><li>ekip ödemeyi anında Telegram&#x27;da görüyor, muhasebeyi beklemeden</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Kai&#x27;ye mesaj</span>Kommo&#x27;da “Kurs satışı” hunisi oluştur: Kayıt → Nitelendirme → Görüşme planlı → Görüşüldü → Fatura kesildi → Ödeme. Alanlar: Ürün (liste), Paket (liste: temel, mentorlu, VIP), Dönem, Taksit (evet/hayır). Kurallar: Kayıt — yazıp tanı görüşmesi önerme görevi; “Fatura kesildi” — fiyat son tarihini hatırlatmak için yarına görev; “Ödeme” — “öğrenci” etiketi ve satış ekibine Telegram bildirimi.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Tamam.</span> “Kurs satışı” hunisi, 6 aşama, 4 alan. Kurallar açık: kayıtta görev, faturadan sonraki gün son tarih hatırlatması, ödemede “öğrenci” etiketi ve Telegram bildirimi. Ekip arkadaşları bildirimlere hesap sayfasındaki bir bağlantıyla abone olur.</div>
+  </div>
+  <div class="k">Kai ne yaptı</div><div class="did"><span>huni oluştur</span><span>alan oluştur <b>×4</b></span><span>kural oluştur <b>×3</b></span><span>etiket</span></div>
+  <div class="time">Tek mesaj. Telegram bildirimleri Kai&#x27;nin içinde hazır, Zapier ya da webhook gerekmez.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Kommo&#x27;da “Kurs satışı” hunisi oluştur: Kayıt → Nitelendirme → Görüşme planlı → Görüşüldü → Fatura kesildi → Ödeme. Alanlar: Ürün (liste), Paket (liste: temel, mentorlu, VIP), Dönem, Taksit (evet/hayır). Kurallar: Kayıt — yazıp tanı görüşmesi önerme görevi; “Fatura kesildi” — fiyat son tarihini hatırlatmak için yarına görev; “Ödeme” — “öğrenci” etiketi ve satış ekibine Telegram bildirimi.">Mesajı kopyala</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Kendi sohbetinde tekrarla</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Telegram&#x27;da aç</a></div>
+</article>
+<p class="more"><a href="../../guides/tr/">Adım adım amoCRM ve Kommo rehberleri →</a></p>
+<div class="cta"><b>Aynısını mı istiyorsun? Kai&#x27;ye kendi kelimelerinle yaz — ayrıntıları netleştirir ve her şeyi kurar.</b><br><a href="https://t.me/aiicrm_bot">Telegram&#x27;da dene</a><a class="alt" href="https://app.aii-crm.com/chat?lang=en">Web sohbetini aç</a></div>
+<footer>© 2026 Kai · <a href="../../privacy-tr.html">Gizlilik</a></footer>
+</div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){ b.addEventListener('click', function(){ var t=b.getAttribute('data-copy'), done=function(){ var o=b.textContent; b.textContent="Kopyalandı"; setTimeout(function(){ b.textContent=o; },1500); };
+  if(navigator.clipboard) navigator.clipboard.writeText(t).then(done); else { var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} ta.remove(); done(); } }); });
+</script>
+</body></html>

@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>amoCRM'de Yazılımcı Olmadan Satış Hunisi Kurulumu (2026) | Kai</title>
+<meta name="description" content="Adım adım: amoCRM'de Leads → Setup üzerinden huni aşamaları, özel alanlar ve zorunlu alanlar, sık yapılan hatalar ve aynısını Kai'ye tek mesajla yaptırmak.">
+<meta name="keywords" content="amoCRM veya Kommo'da yazılımcı olmadan satış hunisi ve zorunlu alanlar nasıl kurulur, amoCRM / Kommo hunilerini sohbet mesajından kuran bir yapay zeka asistanı var mı">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/tr/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/guides/it/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/guides/tr/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/guides/be/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/tr/amocrm-pipeline-setup.html">
+<meta property="og:title" content="amoCRM'de Yazılımcı Olmadan Satış Hunisi Nasıl Kurulur (2026)">
+<meta property="og:description" content="Aşamalar, alanlar, zorunlu alanlar, sık yapılan hatalar. amoCRM arayüzünden elle kurulum ve Kai ile tek mesajlık yol.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-09-24">
+<meta property="article:modified_time" content="2026-09-24">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="amoCRM'de Yazılımcı Olmadan Satış Hunisi Nasıl Kurulur (2026)">
+<meta name="twitter:description" content="Aşamalar, alanlar, zorunlu alanlar, sık yapılan hatalar. amoCRM arayüzünde elle ya da Kai'ye tek mesajla.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/tr/" aria-label="Kai — ana sayfa">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Gezinme">
+      <a href="https://aii-crm.com/tr/">Web sitesi</a>
+      <a href="https://t.me/aiicrm_bot">Telegram botu</a>
+      <a href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Sayfa yolu">
+  <a href="https://aii-crm.com/tr/">Kai</a> › <a href="https://aii-crm.com/guides/tr/">Rehberler</a> › amoCRM satış hunisi
+</nav>
+
+<h1>amoCRM'de Yazılımcı Olmadan Satış Hunisi Nasıl Kurulur</h1>
+<p class="meta">Güncelleme: 24 Eylül 2026 · Kai Ekibi · 6 dk okuma</p>
+
+<p class="lead">amoCRM'de satış hunisini 1–2 saatte kendin kurabilirsin: aşamalar <kbd>Leads → Setup</kbd> altında düzenlenir (Rusça arayüzde <kbd>Сделки → Настроить</kbd>), alanlar bir lead kartından <kbd>Setup → Add field</kbd> ile eklenir ve aynı ayarlarla bir alan seçilen aşamalarda zorunlu yapılır. Yazılımcıya gerek yok: yönetici yetkisi ve iyi düşünülmüş bir aşama haritası yeterli. Ya da aynı haritayı tek mesajla Kai gibi bir yapay zeka asistanına gönder; o da her şeyi resmi API üzerinden kurar.</p>
+
+<section class="tldr" aria-label="Kısaca">
+  <h2>Kısaca</h2>
+  <ul>
+    <li>Genellikle 5–7 çalışma aşaması yeterlidir. Her aşama, satış temsilcisinin kontrol edilebilir bir eylemidir; müşterinin bir durumu değil.</li>
+    <li>Sistem aşamaları “Başarılı” ve “Başarısız” silinemez, yalnızca yeniden adlandırılabilir.</li>
+    <li>Bir alanın tipi sonradan değiştirilemez, alanı silmek de içindeki verileri siler. Alanları gerçek lead'ler gelmeden önce planla.</li>
+    <li>Aşamaya göre zorunlu alanlar amoCRM'in “Advanced” planı ve üstünde var; alanları yalnızca yönetici düzenleyebilir.</li>
+    <li>Elle: 1–2 saat. Entegratör: genelde 3–5 hafta ve yaklaşık 1.500–4.000 €. Kai: tek sohbet, aylık 29 €'dan başlayan fiyatla, 3 gün ücretsiz.</li>
+  </ul>
+</section>
+
+<h2>Adım 0. amoCRM'i açmadan önce huniyi kâğıda dök</h2>
+<p>“Bozuk” CRM'lerin çoğunda aşamalar o an uydurulmuştur. Müşterinin talepten paraya giden yolunu yaz ve yalnızca satış temsilcisinin kontrol edilebilir bir şey yaptığı noktaları bırak. Siparişe özel mutfak stüdyosu için örnek:</p>
+<pre>Yeni talep → Nitelikli → Keşif planlandı → Teklif gönderildi → Sözleşme ve avans → Üretimde → Montaj yapıldı</pre>
+<p>Her aşamanın yanına, temsilcinin lead'i ilerletmek için neyi bilmesi gerektiğini not et. Bu notlar senin alanlarındır: başta “Kaynak”, tekliften önce “Bütçe”, kapanışta “Kayıp nedeni”.</p>
+
+<h2>Adım 1. amoCRM arayüzünde huniyi ve aşamaları oluştur</h2>
+<ol>
+  <li><kbd>Leads</kbd> (<kbd>Сделки</kbd>) bölümünü aç ve sağ üst köşedeki <kbd>Setup</kbd> (<kbd>Настроить</kbd>) düğmesine tıkla.</li>
+  <li><kbd>+</kbd> ile aşama ekle. Yeniden adlandırmak ya da rengini değiştirmek için aşamaya tıkla; sırasını değiştirmek için sürükle.</li>
+  <li>Bir aşamayı kaldırmak için önce içindeki lead'leri taşı, sonra aşamayı sağ alt köşedeki çöp kutusuna sürükle.</li>
+  <li>Sistem aşamaları “Başarılı” ve “Başarısız” silinemez, yalnızca yeniden adlandırılabilir; örneğin “Ödendi” ve “Reddedildi” olarak.</li>
+  <li>İkinci bir huni için (tekrar siparişler, partnerler) sol üst köşede mevcut huninin adına tıkla ve yenisini ekle. İlk satışları ve tekrar satışları karıştırmak aşama dönüşümünü anlamsız kılar.</li>
+</ol>
+<div class="note warn">Bir huni ancak içindeki tüm lead'ler, kapananlar dahil, taşındıktan ya da silindikten sonra silinebilir ve geri getirilemez.</div>
+
+<h2>Adım 2. Lead kartına alanlar ekle</h2>
+<ol>
+  <li>Herhangi bir lead'i aç. Kişilerin ve şirketlerin kendi alanları vardır; onlar da kendi kartlarından aynı şekilde ayarlanır.</li>
+  <li><kbd>Setup</kbd>, ardından <kbd>Add field</kbd> düğmesine tıkla; bir tip ve ad seç.</li>
+  <li>Temel tipler: liste, çoklu seçim, metin, metin alanı, sayı, tarih, onay kutusu, doğum günü. “Kaynak” ve “Kayıp nedeni” için liste kullan: serbest metinden rapor çıkmaz.</li>
+  <li>Alanları “Files” yanındaki <kbd>+</kbd> ile sekmelere grupla.</li>
+</ol>
+<p>Asgari set: “Kaynak” (liste), “Bütçe” (sayı), “Sonraki temas tarihi” (tarih), “Kayıp nedeni” (liste). amoCRM'de zaten olanları tekrarlama: lead tutarı, sorumlu kullanıcı, iletişim bilgileri.</p>
+<div class="note warn">Bir alanın tipi oluşturulduktan sonra değiştirilemez; bir alanı silmek de verilerini geri dönüşü olmadan siler.</div>
+
+<h2>Adım 3. Kilit alanları belirli aşamalarda zorunlu yap</h2>
+<p>Alanın ayarlarında, bir ya da birkaç hunide alanın zorunlu olacağı aşamaları seç; alan doldurulana kadar lead ilerleyemez. Adım 0'daki haritadan:</p>
+<ul>
+  <li>“Yeni talep” aşamasından çıkmak için “Kaynak”;</li>
+  <li>“Teklif gönderildi” öncesinde “Bütçe”;</li>
+  <li>“Başarısız” aşamasına taşırken “Kayıp nedeni”.</li>
+</ul>
+<p>Aşama başına bir ya da iki zorunlu alanda dur; fazlasında insanlar tire yazmaya başlar. “Advanced” planı ve üstünde, yalnızca yöneticiler için.</p>
+
+<h2>Adım 4. Üç test lead'ini huniden geçir</h2>
+<p>Üç lead oluştur — “satın aldı”, “reddetti”, “keşifte takıldı” — ve her birini aşamalardan geçir. Zorunlu alanların geçişi engellediğini, analitiğin aşama dönüşümünü gösterdiğini ve takılan lead'in bir görevi olduğunu kontrol et. Sonra hepsini sil.</p>
+
+<h2>Kai yolu: aynı harita tek mesajda</h2>
+<p>Kai, amoCRM ve Kommo'yu sohbet mesajından yapılandıran bir yapay zeka asistanı. CRM'i amoCRM pazar yeri widget'ından tek tıkla OAuth ile bağla, sonra Telegram botu <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> üzerinden ya da <a href="https://app.aii-crm.com/chat?lang=en">web sohbetinde</a> yaz (tek hesap, tek geçmiş). Adım 0'daki harita mesaj olarak:</p>
+<pre>Siparişe özel mutfak stüdyosu için bir satış hunisi kur.
+Aşamalar: Yeni talep → Nitelikli → Keşif planlandı → Teklif gönderildi → Sözleşme ve avans → Üretimde → Montaj yapıldı.
+Lead alanları: Kaynak (liste: web sitesi, pazar yeri, tavsiye, Instagram), Bütçe (sayı), Keşif tarihi (tarih), Kayıp nedeni (liste).
+Kaynak “Yeni talep” aşamasından çıkmak için, Bütçe “Teklif gönderildi” öncesinde, Kayıp nedeni lead kaybedilince zorunlu olsun.
+Lead “Keşif planlandı” aşamasına gelince keşiften bir gün önce keşif uzmanına görev oluştur.</pre>
+<p>Kai birkaç netleştirici soru sorar (örneğin tekrar siparişler için ayrı bir huni gerekip gerekmediğini), bir plan gösterir ve onayladığında her şeyi resmi API üzerinden oluşturup rapor gönderir. Sonraki değişiklikler yeni bir mesajla yapılır, yazılı ya da sesli. Dürüst sınırlar: zorunlu alanlar için amoCRM'de bu özelliği içeren bir plan gerekir; Kai de süreci senin yerine uydurmaz, senin sürecini kontrol eder.</p>
+
+<h2>Huni kurarken sık yapılan hatalar</h2>
+<ul>
+  <li><strong>Eylemler yerine durumlar.</strong> “İşlemde”, “Düşünüyor”: lead'ler orada aylarca bekler. Bir aşama “satış temsilcisi ne yaptı” sorusunu yanıtlar.</li>
+  <li><strong>Çok fazla aşama.</strong> On aşamayı geçince dönüşüm okunmaz hale gelir, lead'ler hisle taşınır.</li>
+  <li><strong>Her şey için tek huni.</strong> İlk satışların, tekrar satışların ve partner satışlarının döngüleri farklıdır.</li>
+  <li><strong>Sadece isteğe bağlı alanlar.</strong> İsteğe bağlı bir “Kaynak” alanı birkaç hafta içinde boş kalır; hangi reklamın para getirdiğini asla öğrenemezsin.</li>
+  <li><strong>“Kayıp nedeni” yok.</strong> Kaybedilen lead'ler raporu, üzerinde hiçbir şey yapamayacağın bir sayıya dönüşür.</li>
+</ul>
+
+<h2>Kommo kullanıyorsan ne olacak?</h2>
+<p>Aynı mantık, İngilizce arayüz. Huni: <kbd>Pipelines → Add pipeline</kbd>; aşamalar: <kbd>… → Edit Pipeline → Add stage</kbd>, yeniden adlandırmak için tıkla, sırasını değiştirmek için sürükle. Yalnızca boş aşamalar ve huniler silinebilir, ilk huni ise hiçbir zaman. “Incoming Leads” kapatılabilir ama silinemez; “Closed-Won” ve “Closed-Lost” yeniden adlandırılabilir. Alanlar: bir lead aç, <kbd>Setup</kbd> sekmesi, <kbd>+ Add field</kbd>; aşamaya göre zorunluluk da aynı yerde. Yalnızca yönetici rolü, her Kommo planında. Kai de aynı şekilde bağlanır.</p>
+
+<h2>Karşılaştırma: elle, entegratör ya da Kai</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Kriter</th><th>Elle</th><th>Entegratör</th><th>Kai</th></tr></thead>
+  <tbody>
+    <tr><td>Süre</td><td>Basit bir huni için 1–2 saat</td><td>Genelde 3–5 hafta</td><td>Tek sohbet: sorular → plan → kurulum</td></tr>
+    <tr><td>Maliyet</td><td>Ücretsiz, kendi zamanın</td><td>Genelde 1.500–4.000 €</td><td>Aylık 29 €'dan başlar, 3 gün ücretsiz, kart gerekmez</td></tr>
+    <tr><td>Kim gerekli</td><td>amoCRM yöneticisi</td><td>Senin tarafında bir sorumlu ve bir şartname</td><td>OAuth için amoCRM yöneticisi</td></tr>
+    <tr><td>Sonraki değişiklikler</td><td>Yine tek tek tıklarsın</td><td>Yeni şartname, yeni fatura</td><td>Bir sohbet mesajı daha</td></tr>
+    <tr><td>En uygun olduğu durum</td><td>Tek huni, bir düzine alan</td><td>Özel entegrasyonlar: muhasebe, telefon santrali, stok</td><td>Huniler, alanlar, otomasyonlar, kodsuz API entegrasyonları</td></tr>
+  </tbody>
+</table>
+</div>
+<p>amoAI, Kommo AI ajanı, kodsuz bağlayıcılar (Albato, ApiX-Drive, Make, Zapier, n8n) ve Salebot gibi sohbet botları komşu işleri üstlenir: müşteri yazışmaları ve veri senkronizasyonu. Hiçbiri aşamalarını ve alanlarını tasarlamaz; adım 0 sende kalır.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>amoCRM hunisinde kaç aşama olmalı?</h3>
+    <p>Genellikle 5–7 çalışma aşaması artı iki sistem aşaması; her biri satış temsilcisinin kontrol edilebilir bir eylemi. Ondan fazlası genellikle iki sürecin tek huniyi paylaştığı anlamına gelir.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Bir alan sadece tek bir aşamada zorunlu olabilir mi?</h3>
+    <p>Evet: alanın ayarlarında bir ya da birkaç hunideki aşamaları seçersin. “Advanced” planı ve üstünde mevcut; yönetici tarafından ayarlanır.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Bir aşamayı ya da huniyi silersem lead'lere ne olur?</h3>
+    <p>Önce lead'leri taşı. Aşama, çöp kutusuna sürüklenerek silinir; huni ise ancak kapananlar dahil tüm lead'ler çıkarıldıktan sonra silinir ve geri getirilemez.</p>
+  </div>
+  <div class="faq-item">
+    <h3>amoCRM kurmak için yazılımcı gerekir mi?</h3>
+    <p>Huniler, alanlar, zorunlu alanlar ve temel otomasyonlar için hayır. Yazılımcı ya da entegratör standart dışı bağlantılar için gerekir: muhasebe yazılımı, özel bir web sitesi, alışılmadık telefon santrali API'leri.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Kai amoCRM'e nasıl erişir, güvenli mi?</h3>
+    <p>Resmi amoCRM/Kommo OAuth ile: tek tıkla onay, şifre ya da API anahtarı paylaşılmaz. Token'lar şifreli saklanır, Kai lead verilerini saklamaz ve erişim CRM ayarlarından her an iptal edilebilir. Şirket Polonya'da (AB) kayıtlıdır.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Kai ne kadar, ücretsiz deneme var mı?</h3>
+    <p>Start aylık 29 € (~100 istek), Pro aylık 59 € (~500), Max aylık 119 € (adil kullanım, öncelik ve özel işler). İlk 3 gün ücretsiz, kart gerekmez. Kart, Apple Pay, Google Pay, Telegram Stars ya da USDT ile öde.</p>
+  </div>
+</div>
+
+<h2>Sırada ne var</h2>
+<p>Aşama haritası kâğıtta hazır mı? <kbd>Leads → Setup</kbd> bölümünü aç ve bir akşamda kur. Doğru soruları soracak ve işi API üzerinden yapacak birini mi tercih edersin? İşini Kai'ye tek mesajla anlat.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Telegram'da dene</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Web sohbetini aç</a>
+</div>
+
+<p class="author">Yazar: Kai Ekibi · Güncelleme: <time datetime="2026-09-24">24 Eylül 2026</time> · Yollar resmi amoCRM ve Kommo yardım merkezleriyle karşılaştırılarak kontrol edildi.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/tr/">Ana sayfa</a> · <a href="https://aii-crm.com/privacy-tr.html">Gizlilik</a> · <a href="https://aii-crm.com/terms-tr.html">Kullanım koşulları</a> · <a href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">İngilizce sürüm</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/tr/amocrm-pipeline-setup.html#article",
+      "headline": "amoCRM'de Yazılımcı Olmadan Satış Hunisi Nasıl Kurulur",
+      "description": "Adım adım: amoCRM'de Leads → Setup üzerinden huni aşamaları, özel alanlar ve zorunlu alanlar, sık yapılan hatalar ve aynısını Kai'ye tek mesajla yaptırmak.",
+      "inLanguage": "tr",
+      "datePublished": "2026-09-24",
+      "dateModified": "2026-09-24",
+      "mainEntityOfPage": "https://aii-crm.com/guides/tr/amocrm-pipeline-setup.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/tr/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/tr/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "amoCRM hunisinde kaç aşama olmalı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Genellikle 5–7 çalışma aşaması artı iki sistem aşaması; her biri satış temsilcisinin kontrol edilebilir bir eylemi. Ondan fazlası genellikle iki sürecin tek huniyi paylaştığı anlamına gelir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bir alan sadece tek bir aşamada zorunlu olabilir mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet: alanın ayarlarında bir ya da birkaç hunideki aşamaları seçersin. “Advanced” planı ve üstünde mevcut; yönetici tarafından ayarlanır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bir aşamayı ya da huniyi silersem lead'lere ne olur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Önce lead'leri taşı. Aşama, çöp kutusuna sürüklenerek silinir; huni ise ancak kapananlar dahil tüm lead'ler çıkarıldıktan sonra silinir ve geri getirilemez."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "amoCRM kurmak için yazılımcı gerekir mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Huniler, alanlar, zorunlu alanlar ve temel otomasyonlar için hayır. Yazılımcı ya da entegratör standart dışı bağlantılar için gerekir: muhasebe yazılımı, özel bir web sitesi, alışılmadık telefon santrali API'leri."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kai amoCRM'e nasıl erişir, güvenli mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Resmi amoCRM/Kommo OAuth ile: tek tıkla onay, şifre ya da API anahtarı paylaşılmaz. Token'lar şifreli saklanır, Kai lead verilerini saklamaz ve erişim CRM ayarlarından her an iptal edilebilir. Şirket Polonya'da (AB) kayıtlıdır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kai ne kadar, ücretsiz deneme var mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start aylık 29 € (~100 istek), Pro aylık 59 € (~500), Max aylık 119 € (adil kullanım, öncelik ve özel işler). İlk 3 gün ücretsiz, kart gerekmez. Kart, Apple Pay, Google Pay, Telegram Stars ya da USDT ile öde."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Rehberler",
+          "item": "https://aii-crm.com/guides/tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "amoCRM'de Yazılımcı Olmadan Satış Hunisi Kurulumu",
+          "item": "https://aii-crm.com/guides/tr/amocrm-pipeline-setup.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

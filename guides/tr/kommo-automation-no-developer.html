@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kommo'da Yazılımcı Olmadan Otomasyon: 2026 Rehberi</title>
+<meta name="description" content="Kommo'da Digital Pipeline ve Salesbot: kendin neleri kurabilirsin, adım adım 3 senaryo, sınırlar ve Kai'nin aynısını tek sohbet mesajıyla nasıl yaptığı.">
+<meta name="keywords" content="Kommo Digital Pipeline ve Salesbot: farkı ne ve hangi planda var, Kommo'da lead kazanılınca yazılımcı olmadan Telegram bildirimi nasıl gönderilir">
+<link rel="canonical" href="https://aii-crm.com/guides/tr/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/guides/it/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/guides/tr/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/guides/be/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/kommo-automation-no-developer.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:title" content="Kommo'da Yazılımcı Olmadan Otomasyon: 2026 Rehberi">
+<meta property="og:description" content="Digital Pipeline ve Salesbot: kendin neleri kurabilirsin, adım adım üç senaryo, sınırlar ve Kai'nin aynısını tek sohbet mesajıyla nasıl yaptığı.">
+<meta property="og:url" content="https://aii-crm.com/guides/tr/kommo-automation-no-developer.html">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.hdr{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.hdr-in{max-width:760px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;flex:none}
+.hdr nav{margin-left:auto;display:flex;gap:16px;font-size:14px}
+.hdr nav a{color:var(--muted);text-decoration:none}
+.hdr nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:24px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:16px}
+.crumbs a{color:var(--muted);text-decoration:none}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.2;margin:0 0 12px;font-weight:800;letter-spacing:-.01em}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.lead{font-size:19px;color:var(--ink)}
+h2{color:var(--ink);font-size:24px;margin:40px 0 12px;font-weight:700;line-height:1.25}
+h3{color:var(--ink);font-size:18px;margin:24px 0 8px;font-weight:700}
+p{margin:0 0 14px}
+ol,ul{padding-left:22px;margin:0 0 14px}
+li{margin:6px 0}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin:20px 0}
+.tldr h2{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-2)}
+.tldr ul{margin:0}
+code,.path,.msg{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.path{font-size:14.5px;color:var(--ink);background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px}
+.msg{background:var(--bg-1);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;margin:14px 0;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word}
+.msg small{display:block;font-family:'Manrope',system-ui,sans-serif;color:var(--muted);font-size:13px;margin-bottom:6px}
+.tbl{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15px}
+th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+.faq h3{margin-top:22px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px}
+.btn-p{background:var(--accent);color:#fff}
+.btn-s{border:1px solid var(--border);color:var(--ink);background:var(--bg-2)}
+.note{color:var(--muted);font-size:15px}
+.author{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/tr/kommo-automation-no-developer.html#article",
+      "headline": "Yazılımcı olmadan Kommo otomasyonları (2026)",
+      "description": "Kommo'da Digital Pipeline ve Salesbot: kendin neleri kurabilirsin, adım adım üç senaryo, sınırlar ve Kai'nin aynısını tek sohbet mesajıyla nasıl yaptığı.",
+      "datePublished": "2026-09-24",
+      "dateModified": "2026-09-24",
+      "inLanguage": "tr",
+      "mainEntityOfPage": "https://aii-crm.com/guides/tr/kommo-automation-no-developer.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/tr/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/tr/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kommo'da Digital Pipeline kurmak için yazılımcı gerekir mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hayır. Digital Pipeline tetikleyicileri ve Salesbot akışları Kommo arayüzünde tıklayarak kurulur. Yazılımcı yalnızca özel widget'lar ya da harici sistemlere karmaşık webhook'lar için gerekir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Salesbot ile Digital Pipeline tetikleyicileri arasındaki fark nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tetikleyici, bir aşama olayının başlattığı tek bir eylemdir: görev, etiket, e-posta, webhook. Salesbot ise müşteri mesajları, duraklamalar, koşullar ve aynı eylemlerden oluşan çok adımlı bir akıştır. Salesbot Base planına dahil değildir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kommo'da “müşteri yanıt vermedi” tetikleyicisi var mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ayrı bir tetikleyici olarak yok. Sessizlik, Salesbot'taki Pause adımıyla (8.760 saate kadar zamanlayıcıyla mesaj bekleme) ya da gecikmeli bir Digital Pipeline göreviyle çözülür: In 1 day, In 3 days, End of the week."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Lead kazanılınca Telegram bildirimini nasıl gönderirim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yerleşik yollarla: Send internal message (yalnızca Kommo kullanıcıları görür), kendi botuna ya da bir bağlayıcıya Send webhook veya Kommo Marketplace'ten bir widget. Kai ise sohbetteki bir tariften lead'den Telegram'a bir kanal bağlar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Aynısı amoCRM'de de çalışır mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, Kommo amoCRM'in uluslararası sürümüdür. amoCRM'de yol şöyle: Leads (Сделки) → Setup (Настроить) → aşamanın altında Add trigger → Create task. Kai her iki CRM ile de çalışır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kai entegratörün yerini tutar mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Görevler, etiketler, aşama geçişleri, bildirimler ve Telegram, Slack ya da Google Sheets entegrasyonları gibi standart kurallar için evet. Özel widget'lar ve çok sayıda harici sistem içeren karmaşık mantık için entegratör hâlâ doğru seçim."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Rehberler",
+          "item": "https://aii-crm.com/guides/tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Yazılımcı olmadan Kommo otomasyonları",
+          "item": "https://aii-crm.com/guides/tr/kommo-automation-no-developer.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="https://aii-crm.com/tr/" aria-label="Kai — ana sayfa">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav>
+      <a href="https://aii-crm.com/tr/">Web sitesi</a>
+      <a href="https://t.me/aiicrm_bot">Telegram botu</a>
+      <a href="https://aii-crm.com/guides/en/kommo-automation-no-developer.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Sayfa yolu"><a href="https://aii-crm.com/tr/">Kai</a> › <a href="https://aii-crm.com/guides/tr/">Rehberler</a> › Kommo otomasyonları</nav>
+
+<h1>Yazılımcı olmadan Kommo otomasyonları (2026)</h1>
+<p class="meta">Kai Ekibi · Güncelleme: 24 Eylül 2026</p>
+
+<p class="lead">Kommo'daki günlük otomasyonların çoğu programcı gerektirmez: Digital Pipeline'da bir aşamaya tetikleyici bağlarsın (görev, etiket, aşama değişikliği, e-posta, webhook), Salesbot'ta ise hazır bloklardan bir akış kurarsın. En yaygın üç senaryo — aşama değişince görev, müşteri sessizleşince hatırlatma ve kazanılan lead için Telegram bildirimi — yerleşik araçlarla her biri 10–30 dakika sürer. Oluşturucuyu öğrenmek istemiyorsan kuralı sade kelimelerle anlat, Kai onu resmi Kommo API'si üzerinden kursun.</p>
+
+<div class="tldr">
+<h2>Kısaca</h2>
+<ul>
+<li>Digital Pipeline <span class="path">Leads → Automate</span> altında; her aşamada 12 tetikleyici tipi ve 5 gecikme seçeneği var: Immediately, End of the day, In 1 day, In 3 days, End of the week.</li>
+<li>Salesbot: akış oluşturucu, adım sınırı yok, Pause zamanlayıcısı 8.760 saate kadar; yeni bir mesajla, lead'in bir aşamaya girmesiyle, sorumlu kullanıcı değişince ya da zamanlamayla başlar. Base planında yok.</li>
+<li>Hazır bir “Telegram grubuna gönder” eylemi yok: iş arkadaşına dahili mesaj, webhook ya da Marketplace widget'ı.</li>
+<li>Bir entegratör genelde 3–5 hafta sürer. Kai: tek sohbet mesajı, aylık 29 €'dan başlayan fiyatla, 3 gün ücretsiz, kart gerekmez.</li>
+</ul>
+</div>
+
+<h2>Digital Pipeline ve Salesbot nedir</h2>
+<p><strong>Digital Pipeline</strong>, huni aşamalarına bağlı otomasyondur. Panodaki her aşamanın altına bir kural asarsın: “bir lead buraya düşünce X'i yap”. Bir kural bekleyebilir, bir koşulu kontrol edebilir (etiket, sorumlu, alan değeri) ve bir eylem çalıştırabilir.</p>
+<p><strong>Salesbot</strong> çok adımlı akışlar için bir oluşturucudur. Tetikleyicilerin yaptığı her şeyi yapar, ayrıca sohbetlerde müşteriyle konuşur: düğmeli mesajlar, yanıt bekleme, dallanma, görevler, webhook'lar. Bir Digital Pipeline tetikleyicisi olarak ya da sohbet olaylarıyla başlar. Aşağıdaki menü adları resmi Kommo yardımına göredir.</p>
+
+<h2>Kendin neleri kurabilirsin</h2>
+<p>Resmi yardıma göre Digital Pipeline tetikleyicileri: Salesbot, Add task, Create lead, Send email, Send webhook, Change lead stage, Add tags, Complete tasks, Generate form, Change lead's user, Change field, Delete files. Her tetikleyici sorumlu kullanıcı, etiketler ve alanlar üzerinde koşul kabul eder; <em>Apply the trigger to all leads already in this stage</em> kutusunu işaretle, yoksa kural yalnızca yeni lead'leri etkiler.</p>
+<p>Salesbot blokları sohbet adımları (Message, Condition, Pause, Validation, Send internal message) ve eylemler (Add task, Change lead status, Manage tags, Set field, Change responsible user, Send email, Send webhook, Widget, Round Robin) olarak ikiye ayrılır. Şablonlarla başlamak daha kolaydır.</p>
+
+<h2>Senaryo 1. Aşama değişince temsilciye görev</h2>
+<h3>Kommo'da elle</h3>
+<ol>
+<li><span class="path">Leads → Automate</span> bölümünü aç.</li>
+<li>İhtiyacın olan aşamanın altında “+” → <span class="path">Add trigger → Add task</span> seçeneğine tıkla.</li>
+<li>Görev metnini, tipini, sorumlu kullanıcıyı ve son tarihi doldur (Immediately, End of the day, In 1 day, In 3 days, End of the week).</li>
+<li>Gerekirse bir koşul ekle (örneğin yalnızca “Sıcak” etiketli lead'ler) ve kaydet. Önce tek bir lead üzerinde test et.</li>
+</ol>
+<p class="note">amoCRM'de de aynısı: <span class="path">Leads (Сделки) → Setup (Настроить)</span> → aşamanın altında “Add trigger” → “Create task”.</p>
+<h3>Kai ile</h3>
+<div class="msg"><small>Telegram botunda ya da web sohbetinde mesaj</small>Bir lead “Teklif gönderildi” aşamasına geçince sorumluya bir görev oluştur: “Müşterinin teklifi aldığını kontrol et”, son tarih gün sonu. Yalnızca “Sıcak” etiketli lead'ler için.</div>
+<p>Aşama farklı adlandırılmışsa Kai geri sorar, planı gösterir ve tetikleyiciyi API üzerinden oluşturur; rapor sohbet geçmişinde kalır.</p>
+
+<h2>Senaryo 2. Müşteri sessizleşince hatırlatma</h2>
+<h3>Kommo'da elle</h3>
+<p>Kommo'da ayrı bir “müşteri yanıt vermedi” tetikleyicisi yok, bu yüzden iki yol var.</p>
+<ol>
+<li><strong>Basit, Salesbot'suz.</strong> “Teklif gönderildi” aşamasına son tarihi In 1 day olan bir Add task tetikleyicisi ekle: “Yanıt yok — müşteriyi ara”. Müşteri daha önce yanıt verirse temsilci görevi kapatır.</li>
+<li><strong>Kesin, Salesbot ile.</strong> <span class="path">Settings → Communication tools → Salesbots → Create a new bot</span>. Zincir: Message (takip mesajı) → gelen mesajı zamanlayıcıyla bekleyen Pause (örneğin 24 saat) → temsilci için Add task. Sonra Digital Pipeline'da aşamaya bir Salesbot tetikleyicisi ekle ve dallanmayı bir test sohbetinde dene.</li>
+</ol>
+<h3>Kai ile</h3>
+<div class="msg"><small>Kai'ye mesaj</small>Bir lead “Teklif gönderildi” aşamasında bir günden fazla hiçbir hareket olmadan beklerse sorumluya “Müşteri sessiz, geri ara” görevi oluştur ve bana Telegram'dan yaz.</div>
+<p>Kai görevi ve bildirimi kurar, huniyi de 7/24 izler; takılan lead'leri günlük raporda işaretler. Müşteriyle konuşma akışı ise hâlâ Salesbot'un işi: adımları Kai taslak olarak hazırlar, blokları sen kurarsın.</p>
+
+<h2>Senaryo 3. Lead kazanılınca Telegram bildirimi</h2>
+<h3>Kommo'da elle</h3>
+<ol>
+<li><strong>Kommo içinde.</strong> Lead Closed – won aşamasına girince başlatılan, Send internal message adımlı bir Salesbot. Bunu yalnızca seçilen kullanıcı ya da ekip Kommo içinde görür; harici bir Telegram sohbetine gitmez.</li>
+<li><strong>Webhook ile.</strong> Kazanılan aşamada <span class="path">Add trigger → Send webhook</span>; grup mesajını kendi Telegram botun ya da bir bağlayıcı (Albato, ApiX-Drive, Make, n8n, Zapier) biçimlendirir.</li>
+<li><strong>Widget ile.</strong> Kommo Marketplace'te üçüncü taraf Telegram bildirim widget'ları var; fiyatı her geliştirici kendisi belirler.</li>
+</ol>
+<h3>Kai ile</h3>
+<div class="msg"><small>Kai'ye mesaj</small>Bildirimleri kur: bir lead kazanılınca satış ekibinin Telegram grubuna lead adı, tutar ve sorumluyla birlikte mesaj at.</div>
+<p>Kai, lead'den Telegram'a, Slack'e, Google Sheets'e ve webhook'a entegrasyonları aracı bir bağlayıcı olmadan kurar ve lead verilerini saklamaz.</p>
+
+<h2>Sonradan fark edilen sınırlar</h2>
+<ul>
+<li>Salesbot Base planında yok (bu yazı yazılırken Kommo'nun fiyat sayfasına göre); Digital Pipeline her planda var.</li>
+<li>Tetikleyici gecikmeleri sabit bir listeden seçilir; “2 saat sonra” için Salesbot'ta Pause gerekir.</li>
+<li>Tetikleyiciler müşteri davranışına değil, aşama olaylarına tepki verir. Koşullar yalnızca sorumlu kullanıcıyı, etiketleri ve alanları kapsar.</li>
+<li>“Aşamadaki mevcut lead'lere uygula” (apply to leads already in this stage) kutusu işaretlenmezse kural mevcut lead'leri yok sayar — “hiçbir şey olmuyor” şikâyetinin olağan nedeni budur.</li>
+<li>5–7 tetikleyiciden sonra kimse neyin nereye bağlı olduğunu hatırlamaz. Kai'nin huni denetimi tam da bu çakışmaları bulmak için var.</li>
+</ul>
+
+<h2>Karşılaştırma: kendin, entegratör, bağlayıcı, Kai</h2>
+<div class="tbl">
+<table>
+<thead><tr><th></th><th>Kommo'da kendin</th><th>Entegratör</th><th>Kodsuz bağlayıcı</th><th>Kai</th></tr></thead>
+<tbody>
+<tr><td>Süre</td><td>Senaryo başına 10–30 dk</td><td>Genelde 3–5 hafta</td><td>Bağlantı başına saatler</td><td>Senaryo başına dakikalar</td></tr>
+<tr><td>Maliyet</td><td>Kommo planına dahil</td><td>Proje ücreti, pazara göre değişir</td><td>Bağlayıcı aboneliği</td><td>Aylık 29 €'dan başlar</td></tr>
+<tr><td>Gereken beceriler</td><td>Oluşturucuyu öğrenmek</td><td>Brif yazmak</td><td>Webhook'ları ve alanları anlamak</td><td>İşini kelimelerle anlatmak</td></tr>
+<tr><td>Bakımı kim yapar</td><td>Sen</td><td>Sözleşmeli entegratör</td><td>Sen</td><td>Kai 7/24 izler, sohbette raporlar</td></tr>
+<tr><td>En uygun olduğu durum</td><td>1–3 basit kural</td><td>Karmaşık mantık, çok sayıda sistem</td><td>Servisler arası bağlantılar</td><td>Standart kurallar ve entegrasyonlar</td></tr>
+</tbody>
+</table>
+</div>
+
+<section class="faq">
+<h2>FAQ</h2>
+<h3>Kommo'da Digital Pipeline kurmak için yazılımcı gerekir mi?</h3>
+<p>Hayır. Digital Pipeline tetikleyicileri ve Salesbot akışları Kommo arayüzünde tıklayarak kurulur. Yazılımcı yalnızca özel widget'lar ya da harici sistemlere karmaşık webhook'lar için gerekir.</p>
+<h3>Salesbot ile Digital Pipeline tetikleyicileri arasındaki fark nedir?</h3>
+<p>Tetikleyici, bir aşama olayının başlattığı tek bir eylemdir: görev, etiket, e-posta, webhook. Salesbot ise müşteri mesajları, duraklamalar, koşullar ve aynı eylemlerden oluşan çok adımlı bir akıştır. Salesbot Base planına dahil değildir.</p>
+<h3>Kommo'da “müşteri yanıt vermedi” tetikleyicisi var mı?</h3>
+<p>Ayrı bir tetikleyici olarak yok. Sessizlik, Salesbot'taki Pause adımıyla (8.760 saate kadar zamanlayıcıyla mesaj bekleme) ya da gecikmeli bir Digital Pipeline göreviyle çözülür: In 1 day, In 3 days, End of the week.</p>
+<h3>Lead kazanılınca Telegram bildirimini nasıl gönderirim?</h3>
+<p>Yerleşik yollarla: Send internal message (yalnızca Kommo kullanıcıları görür), kendi botuna ya da bir bağlayıcıya Send webhook veya Kommo Marketplace'ten bir widget. Kai ise sohbetteki bir tariften lead'den Telegram'a bir kanal bağlar.</p>
+<h3>Aynısı amoCRM'de de çalışır mı?</h3>
+<p>Evet, Kommo amoCRM'in uluslararası sürümüdür. amoCRM'de yol şöyle: Leads (Сделки) → Setup (Настроить) → aşamanın altında “Add trigger” → “Create task”. Kai her iki CRM ile, ayrıca Bitrix24 ve API dokümantasyonu olan özel CRM'lerle çalışır.</p>
+<h3>Kai entegratörün yerini tutar mı?</h3>
+<p>Görevler, etiketler, aşama geçişleri, bildirimler ve Telegram, Slack ya da Google Sheets entegrasyonları gibi standart kurallar için evet. Özel widget'lar ve çok sayıda harici sistem içeren karmaşık mantık için entegratör hâlâ doğru seçim; Kai en azından brifi PDF olarak hazırlar.</p>
+</section>
+
+<h2>Sırada ne var</h2>
+<p>Kommo'yu Kai'ye OAuth ile tek tıkla bağla (widget Kommo Marketplace'te, API anahtarı yok) ve ilk kuralını kendi kelimelerinle anlat. Üç gün ücretsiz, kart gerekmez.</p>
+<div class="cta">
+<a class="btn btn-p" href="https://t.me/aiicrm_bot">Telegram'da dene</a>
+<a class="btn btn-s" href="https://app.aii-crm.com/chat?lang=en">Web sohbetini aç</a>
+</div>
+
+<p class="author">Yazar: Kai Ekibi · Güncelleme: 24.09.2026 · <a href="https://aii-crm.com/guides/kommo-automation-no-developer.html" hreflang="ru">Rusça oku</a></p>
+</article>
+</main>
+</body>
+</html>

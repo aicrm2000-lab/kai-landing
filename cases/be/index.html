@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="be">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<title>Прыклады: як было ў CRM і як стала пасля аднаго паведамлення Kai | Kai</title>
+<meta name="description" content="Чатыры тыповыя сітуацыі ў amoCRM і Kommo: што было ў варонцы, якое паведамленне напісалі Kai, што ён зрабіў і як CRM выглядае пасля. Сапраўдныя дзеянні, без інтэгратара.">
+<meta name="keywords" content="прыклады наладкі amoCRM, прыклады наладкі Kommo, варонка продажаў да і пасля, аўтаматызацыя CRM прыклад, ШІ-асістэнт для amoCRM, ШІ для Kommo, наладка CRM без інтэгратара, Kai CRM, CRM для стаматалогіі, стаматалогія amoCRM, нерухомасць Kommo, CRM для агенцтва нерухомасці, анлайн-школа CRM, як наладзіць варонку ў amoCRM">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aii-crm.com/cases/be/">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/cases/">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/cases/en/">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/cases/de/">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/cases/fr/">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/cases/es/">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/cases/pl/">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/cases/pt/">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/cases/it/">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/cases/tr/">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/cases/be/">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/cases/en/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Kai"><meta property="og:url" content="https://aii-crm.com/cases/be/">
+<meta property="og:title" content="Было → стала: прыклады наладкі amoCRM і Kommo адным паведамленнем"><meta property="og:description" content="Чатыры тыповыя сітуацыі ў amoCRM і Kommo: што было ў варонцы, якое паведамленне напісалі Kai, што ён зрабіў і як CRM выглядае пасля. Сапраўдныя дзеянні, без інтэгратара."><meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Было → стала: прыклады наладкі amoCRM і Kommo адным паведамленнем"><meta name="twitter:description" content="Чатыры тыповыя сітуацыі ў amoCRM і Kommo: што было ў варонцы, якое паведамленне напісалі Kai, што ён зрабіў і як CRM выглядае пасля. Сапраўдныя дзеянні, без інтэгратара."><meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B0A14'/><path d='M16 6.5a9.5 9.5 0 1 0 9.5 9.5' stroke='%237C5CFF' stroke-width='4' stroke-linecap='round' fill='none'/><circle cx='23.4' cy='8.6' r='2.6' fill='%23A78BFA'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0;--bad:#FF7B93;--warn:#F5C451;--mono:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 'Manrope',system-ui,sans-serif;padding:0 16px 64px}
+.wrap{max-width:860px;margin:0 auto}header{display:flex;align-items:center;gap:12px;padding:22px 0;border-bottom:1px solid var(--border)}
+header a{color:var(--ink);text-decoration:none;font-weight:700}header .brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:700}header .brand svg{flex:0 0 28px}header nav{margin-left:auto;display:flex;gap:18px;font-size:14px}header nav a{color:var(--muted);font-weight:500}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin:40px 0 12px;text-wrap:balance}
+.lead{color:var(--text);max-width:64ch}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}.toc a{font:600 13px var(--mono);color:var(--accent-2);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:6px 12px}.toc a:hover{border-color:var(--accent)}
+.case{margin-top:44px;border:1px solid var(--border);border-radius:18px;background:var(--bg-1);padding:22px;scroll-margin-top:16px}
+.case .top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}.badge{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}.badge.crm{color:var(--accent-2);border-color:rgba(124,92,255,.45)}
+.case h2{margin:0 0 6px;font-size:clamp(21px,3.2vw,26px);line-height:1.25;color:var(--ink);letter-spacing:-.01em;text-wrap:balance}
+.case p{margin:6px 0}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.col{border:1px solid var(--border);border-radius:14px;padding:14px;background:var(--bg)}
+.col h3{margin:0 0 10px;font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.col.before h3{color:var(--bad)}.col.after h3{color:var(--good)}.col h3 i{width:8px;height:8px;border-radius:50%;background:currentColor;display:inline-block}
+.board{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.board span{font-size:13px;font-weight:600;color:var(--ink);background:var(--bg-2);border:1px solid var(--border);border-radius:8px;padding:6px 9px}.board em{font-style:normal;color:var(--muted);font-size:12px}
+.col.after .board span{border-color:rgba(67,224,160,.35)}
+.k{margin:12px 0 4px;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.list{margin:0;padding:0;list-style:none;font-size:14px}.list li{padding:5px 0;border-top:1px solid var(--border);display:flex;gap:8px;align-items:baseline}.list li:first-child{border-top:0}
+.list b{color:var(--ink);font-weight:600}.list small{color:var(--muted);font-size:12px}.list .stamp{font:600 10px var(--mono);color:var(--warn);border:1px solid rgba(245,196,81,.5);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.list.none li{color:var(--muted);font-style:italic}.list.pain li::before{content:'–';color:var(--bad)}.list.gain li::before{content:'✓';color:var(--good);font-weight:700}
+.rule{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;font-size:14px}.rule b{color:var(--ink);font-weight:600}.rule span::before{content:'→ ';color:var(--accent-2)}
+.chat{margin:16px 0;display:grid;gap:10px}.msg{max-width:92%;border-radius:16px;padding:12px 14px;font-size:15px;line-height:1.5}
+.msg.me{justify-self:end;background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.45);color:var(--ink);border-bottom-right-radius:6px}
+.msg.kai{justify-self:start;background:var(--bg-2);border:1px solid var(--border);border-bottom-left-radius:6px}.msg .who{display:block;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.msg.kai .ok{color:var(--good);font-weight:700}
+.did{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}.did span{font:500 12px var(--mono);color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:4px 8px}.did span b{color:var(--accent-2);font-weight:600}
+.time{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--bg-2);border:1px solid var(--border);font-size:14px;color:var(--text)}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.btn{display:inline-block;padding:11px 16px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;font-size:14px}.btn.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}
+button.btn{cursor:pointer;border:1px solid var(--border);font:inherit;font-weight:700;font-size:14px}
+.cta{margin-top:40px;padding:22px;border-radius:16px;background:var(--bg-2);border:1px solid var(--border)}.cta b{color:var(--ink)}.cta a{display:inline-block;margin:10px 10px 0 0;padding:12px 18px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+.cta a.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}footer{margin-top:40px;color:var(--muted);font-size:13px}footer a{color:var(--muted)}
+.more{margin-top:28px}.more a{color:var(--accent-2)}
+@media (max-width:700px){.ba{grid-template-columns:1fr}.case{padding:16px;border-radius:14px}.msg{max-width:100%}body{font-size:16px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Было → стала: прыклады наладкі amoCRM і Kommo адным паведамленнем", "description": "Чатыры тыповыя сітуацыі ў amoCRM і Kommo: што было ў варонцы, якое паведамленне напісалі Kai, што ён зрабіў і як CRM выглядае пасля. Сапраўдныя дзеянні, без інтэгратара.", "url": "https://aii-crm.com/cases/be/", "inLanguage": "be", "datePublished": "2026-10-27", "dateModified": "2026-11-02", "author": {"@type": "Organization", "name": "Kai"}, "publisher": {"@type": "Organization", "name": "Kai", "url": "https://aii-crm.com/"}, "isPartOf": {"@type": "WebSite", "name": "Kai", "url": "https://aii-crm.com/"}, "hasPart": [{"@type": "HowTo", "name": "Палова заявак гублялася паміж званком і запісам", "url": "https://aii-crm.com/cases/be/#dental-amocrm", "step": [{"@type": "HowToStep", "text": "Зрабі варонку «Першасныя пацыенты»: Заяўка → Дазвон → Запіс → Візіт падцверджаны → Прыём → План лячэння. Палі здзелкі: Напрамак (спіс: тэрапія, артапедыя, імплантацыя, дзіцячая), Лекар, Дата прыёму, Сума плана. Дата прыёму абавязковая на этапе «Запіс». Правілы: новая заяўка — задача адміністратару перазваніць за 15 хвілін; здзелка перайшла ў «Запіс» — задача напярэдадні падцвердзіць візіт; на «Дазвоне» без руху 2 дні — задача «перазваніць яшчэ раз»."}]}, {"@type": "HowTo", "name": "Бюджэт і раён пісалі ў назве здзелкі", "url": "https://aii-crm.com/cases/be/#realty-kommo", "step": [{"@type": "HowToStep", "text": "У Kommo зрабі варонку «Пакупнікі»: Заяўка → Кваліфікацыя → Падборка → Паказ → Бронь → Дагавор. Палі: Тып аб'екта (спіс: студыя, 1к, 2к, 3к+, дом), Бюджэт (лік), Раён, Спосаб пакупкі (іпатэка, наяўныя, растэрміноўка). Бюджэт і Раён абавязковыя на «Кваліфікацыі». Правілы: новая заяўка — задача перазваніць за 15 хвілін; здзелка на «Падборцы» — задача на заўтра прызначыць паказ; пасля «Паказу» без руху 3 дні — задача «даведацца рашэнне». Прычыны адмовы: купіў у іншых, дорага, перадумаў, не дазваніліся."}]}, {"@type": "HowTo", "name": "Варонка была, але здзелкі месяцамі віселі на «Замеры»", "url": "https://aii-crm.com/cases/be/#renovation-audit-amocrm", "step": [{"@type": "HowToStep", "text": "Правядзі аўдыт варонкі «Продаж дагавора». Потым выпраў: зрабі поле «Сума па каштарысе» абавязковым на этапе «Каштарыс», дадай прычыны адмовы (дорага, выбралі іншых, адклалі рамонт, не дазваніліся), правіла: на «Замеры» без руху 5 дзён — задача прарабу «адправіць каштарыс». І пакажы дашборд па варонцы."}]}, {"@type": "HowTo", "name": "Рэгістрацыі жылі ў табліцы, пра дэдлайн цаны напаміналі па памяці", "url": "https://aii-crm.com/cases/be/#courses-kommo", "step": [{"@type": "HowToStep", "text": "Зрабі ў Kommo варонку «Продаж курса»: Рэгістрацыя → Кваліфікацыя → Званок прызначаны → Званок праведзены → Рахунак выстаўлены → Аплата. Палі: Прадукт (спіс), Тарыф (спіс: базавы, з куратарам, VIP), Паток, Растэрміноўка (так/не). Правілы: Рэгістрацыя — задача напісаць і прапанаваць дыягностыку; «Рахунак выстаўлены» — задача на заўтра напомніць пра дэдлайн цаны; «Аплата» — тэг «студэнт» і апавяшчэнне ў Telegram аддзелу продажаў."}]}]}</script>
+</head>
+<body><div class="wrap">
+<header><a class="brand" href="../../be/" aria-label="Kai — home"><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg><span>Kai</span></a><nav><a href="../../guides/be/">Гайды</a><a href="../../be/#pricing">Тарыфы</a><a href="https://aii-crm.com/cases/en/" hreflang="en">EN</a></nav></header>
+<h1>Было → стала: прыклады наладкі amoCRM і Kommo адным паведамленнем</h1>
+<p class="lead">Кожны прыклад — тыповая карціна, з якой прыходзяць да Kai: адна варонка «на ўсё», палі ў нататках, задачы па памяці. Ніжэй — паведамленне, якое пішуць Kai, што ён робіць у CRM і што атрымліваецца. Лічбаў кліентаў тут няма, толькі канфігурацыя і час.</p>
+<div class="toc"><a href="#dental-amocrm">amoCRM · Стаматалогія</a><a href="#realty-kommo">Kommo · Агенцтва нерухомасці</a><a href="#renovation-audit-amocrm">amoCRM · Рамонт кватэр</a><a href="#courses-kommo">Kommo · Анлайн-школа</a></div>
+
+<article class="case" id="dental-amocrm">
+  <div class="top"><span class="badge crm">amoCRM</span><span class="badge">Стаматалогія</span></div>
+  <h2>Палова заявак гублялася паміж званком і запісам</h2>
+  <p>Адна варонка «Асноўная» на ўсё: заяўкі з сайта, Instagram і званкі трапляюць у «Новая», далей «У рабоце» і «Закрыта». Лекар і дата прыёму — у нататках, нагадваць пра візіт няма каму.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Было</h3>
+      <div class="k">Этапы варонкі</div><div class="board"><span>Новая</span><em>→</em><span>У рабоце</span><em>→</em><span>Закрыта</span></div>
+      <div class="k">Палі здзелкі</div><ul class="list none"><li>палёў няма — усё ў нататках</li></ul>
+      <div class="k">Правілы</div><ul class="list none"><li>правілаў няма — усё па памяці</li></ul>
+      <div class="k">Што ламалася</div><ul class="list pain"><li>няма этапу «Дазвон» — незразумела, каму перазвоньвалі</li><li>дата прыёму ў нататцы, адміністратар шукае вачыма</li><li>візіт не падцвярджаюць — пацыенты не прыходзяць</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Стала</h3>
+      <div class="k">Этапы варонкі</div><div class="board"><span>Заяўка</span><em>→</em><span>Дазвон</span><em>→</em><span>Запіс</span><em>→</em><span>Візіт падцверджаны</span><em>→</em><span>Прыём</span><em>→</em><span>План лячэння</span></div>
+      <div class="k">Палі здзелкі</div><ul class="list"><li><b>Напрамак</b><small>спіс</small></li><li><b>Лекар</b></li><li><b>Дата прыёму</b><span class="stamp">абавязковае на «Запісе»</span></li><li><b>Сума плана</b><small>лік</small></li></ul>
+      <div class="k">Правілы</div><div class="rule"><b>Новая заяўка</b><span>задача «перазваніць» праз 15 хвілін</span><b>Пераход у «Запіс»</b><span>задача напярэдадні: падцвердзіць візіт</span><b>«Дазвон» без руху 2 дні</b><span>задача «перазваніць яшчэ раз»</span></div>
+      <div class="k">Што змянілася</div><ul class="list gain"><li>кожная заяўка атрымлівае званок у першыя 15 хвілін — правіла, а не памяць адміністратара</li><li>дату прыёму немагчыма прапусціць: без яе здзелка не пяройдзе ў «Запіс»</li><li>за дзень да візіту з&#x27;яўляецца задача падцвердзіць — менш няявак</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Паведамленне Kai</span>Зрабі варонку «Першасныя пацыенты»: Заяўка → Дазвон → Запіс → Візіт падцверджаны → Прыём → План лячэння. Палі здзелкі: Напрамак (спіс: тэрапія, артапедыя, імплантацыя, дзіцячая), Лекар, Дата прыёму, Сума плана. Дата прыёму абавязковая на этапе «Запіс». Правілы: новая заяўка — задача адміністратару перазваніць за 15 хвілін; здзелка перайшла ў «Запіс» — задача напярэдадні падцвердзіць візіт; на «Дазвоне» без руху 2 дні — задача «перазваніць яшчэ раз».</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Гатова.</span> Варонка «Першасныя пацыенты» створана, 6 этапаў. Дадаў 4 палі, «Дата прыёму» абавязковая на «Запісе». Тры правілы ўключаны: перазвон за 15 хвілін, падцвярджэнне візіту напярэдадні, паўторны дазвон праз 2 дні. Сістэмныя этапы «Паспяхова» і «Адмова» не чапаў.</div>
+  </div>
+  <div class="k">Што зрабіў Kai</div><div class="did"><span>стварыць варонку</span><span>стварыць поле <b>×4</b></span><span>зрабіць поле абавязковым</span><span>стварыць правіла <b>×3</b></span></div>
+  <div class="time">Адно паведамленне, каля дзвюх хвілін. Інтэгратар робіць тое ж за 2–5 працоўных дзён.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Зрабі варонку «Першасныя пацыенты»: Заяўка → Дазвон → Запіс → Візіт падцверджаны → Прыём → План лячэння. Палі здзелкі: Напрамак (спіс: тэрапія, артапедыя, імплантацыя, дзіцячая), Лекар, Дата прыёму, Сума плана. Дата прыёму абавязковая на этапе «Запіс». Правілы: новая заяўка — задача адміністратару перазваніць за 15 хвілін; здзелка перайшла ў «Запіс» — задача напярэдадні падцвердзіць візіт; на «Дазвоне» без руху 2 дні — задача «перазваніць яшчэ раз».">Скапіяваць паведамленне</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Паўтарыць у сваім чаце</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Адкрыць у Telegram</a></div>
+</article>
+<article class="case" id="realty-kommo">
+  <div class="top"><span class="badge crm">Kommo</span><span class="badge">Агенцтва нерухомасці</span></div>
+  <h2>Бюджэт і раён пісалі ў назве здзелкі</h2>
+  <p>Усе ліды — у «Уваходных», этапаў няма. Бюджэт, раён і тып аб&#x27;екта — у назве здзелкі: «Іван, 2к, да 90к, цэнтр». Падборку адправілі і забылі, пасля паказу ніхто не перазвоньвае.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Было</h3>
+      <div class="k">Этапы варонкі</div><div class="board"><span>Уваходныя</span><em>→</em><span>У рабоце</span><em>→</em><span>Здзелка</span></div>
+      <div class="k">Палі здзелкі</div><ul class="list none"><li>палёў няма — усё ў нататках</li></ul>
+      <div class="k">Правілы</div><ul class="list none"><li>правілаў няма — усё па памяці</li></ul>
+      <div class="k">Што ламалася</div><ul class="list pain"><li>немагчыма адфільтраваць па бюджэце і раёне — усё ў тэксце</li><li>пасля «Паказу» здзелкі завісаюць без наступнага кроку</li><li>прычын адмовы няма — незразумела, чаму сыходзяць</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Стала</h3>
+      <div class="k">Этапы варонкі</div><div class="board"><span>Заяўка</span><em>→</em><span>Кваліфікацыя</span><em>→</em><span>Падборка</span><em>→</em><span>Паказ</span><em>→</em><span>Бронь</span><em>→</em><span>Дагавор</span></div>
+      <div class="k">Палі здзелкі</div><ul class="list"><li><b>Тып аб&#x27;екта</b><small>спіс</small></li><li><b>Бюджэт</b><span class="stamp">лік · абавязковае на «Кваліфікацыі»</span></li><li><b>Раён</b><span class="stamp">абавязковае на «Кваліфікацыі»</span></li><li><b>Спосаб пакупкі</b><small>спіс</small></li></ul>
+      <div class="k">Правілы</div><div class="rule"><b>Новая заяўка</b><span>задача «перазваніць» праз 15 хвілін</span><b>Пераход у «Падборку»</b><span>задача на заўтра: прызначыць паказ</span><b>«Паказ» без руху 3 дні</b><span>задача «даведацца рашэнне»</span></div>
+      <div class="k">Што змянілася</div><ul class="list gain"><li>фільтр «2к да 90 000 у цэнтры» — за секунду, па палях</li><li>пасля кожнага паказу ёсць наступны крок і тэрмін</li><li>адмовы з прычынамі: відаць, дзе губляем — цана ці хуткасць</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Паведамленне Kai</span>У Kommo зрабі варонку «Пакупнікі»: Заяўка → Кваліфікацыя → Падборка → Паказ → Бронь → Дагавор. Палі: Тып аб&#x27;екта (спіс: студыя, 1к, 2к, 3к+, дом), Бюджэт (лік), Раён, Спосаб пакупкі (іпатэка, наяўныя, растэрміноўка). Бюджэт і Раён абавязковыя на «Кваліфікацыі». Правілы: новая заяўка — задача перазваніць за 15 хвілін; здзелка на «Падборцы» — задача на заўтра прызначыць паказ; пасля «Паказу» без руху 3 дні — задача «даведацца рашэнне». Прычыны адмовы: купіў у іншых, дорага, перадумаў, не дазваніліся.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Гатова.</span> Варонка «Пакупнікі», 6 этапаў. Палі: Тып аб&#x27;екта, Бюджэт, Раён, Спосаб пакупкі; Бюджэт і Раён абавязковыя на «Кваліфікацыі». Тры правілы ўключаны, чатыры прычыны адмовы дададзены — цяпер аналітыка па адмовах будзе лічыцца.</div>
+  </div>
+  <div class="k">Што зрабіў Kai</div><div class="did"><span>стварыць варонку</span><span>стварыць поле <b>×4</b></span><span>зрабіць поле абавязковым <b>×2</b></span><span>стварыць правіла <b>×3</b></span><span>прычыны адмовы</span></div>
+  <div class="time">Адно паведамленне, каля дзвюх хвілін. Палі, этапы і правілы — у Kommo праз API, без віджэтаў.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="У Kommo зрабі варонку «Пакупнікі»: Заяўка → Кваліфікацыя → Падборка → Паказ → Бронь → Дагавор. Палі: Тып аб&#x27;екта (спіс: студыя, 1к, 2к, 3к+, дом), Бюджэт (лік), Раён, Спосаб пакупкі (іпатэка, наяўныя, растэрміноўка). Бюджэт і Раён абавязковыя на «Кваліфікацыі». Правілы: новая заяўка — задача перазваніць за 15 хвілін; здзелка на «Падборцы» — задача на заўтра прызначыць паказ; пасля «Паказу» без руху 3 дні — задача «даведацца рашэнне». Прычыны адмовы: купіў у іншых, дорага, перадумаў, не дазваніліся.">Скапіяваць паведамленне</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Паўтарыць у сваім чаце</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Адкрыць у Telegram</a></div>
+</article>
+<article class="case" id="renovation-audit-amocrm">
+  <div class="top"><span class="badge crm">amoCRM</span><span class="badge">Рамонт кватэр</span></div>
+  <h2>Варонка была, але здзелкі месяцамі віселі на «Замеры»</h2>
+  <p>Варонка «Продаж дагавора» наладжана даўно, але каштарыс адпраўляюць, калі ўспомняць, сумы не запоўнены, прычын адмовы няма — справаздача па варонцы пустая. Уладальнік не бачыць, дзе застралі грошы.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Было</h3>
+      <div class="k">Этапы варонкі</div><div class="board"><span>Заяўка</span><em>→</em><span>Кваліфікацыя</span><em>→</em><span>Замер</span><em>→</em><span>Каштарыс</span><em>→</em><span>Дагавор</span><em>→</em><span>Аванс</span></div>
+      <div class="k">Палі здзелкі</div><ul class="list"><li><b>Тып работ</b></li><li><b>Плошча, м²</b></li><li><b>Бюджэт</b></li><li><b>Сума па каштарысе</b><small>пустое ў 8 з 10 здзелак</small></li></ul>
+      <div class="k">Правілы</div><ul class="list none"><li>правілаў няма — усё па памяці</li></ul>
+      <div class="k">Што ламалася</div><ul class="list pain"><li>23 здзелкі без руху больш за два тыдні на «Замеры»</li><li>сума па каштарысе не запоўнена — прагноз выручкі немагчымы</li><li>без прычын адмовы не зразумець, чаму кліенты сыходзяць</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Стала</h3>
+      <div class="k">Этапы варонкі</div><div class="board"><span>Заяўка</span><em>→</em><span>Кваліфікацыя</span><em>→</em><span>Замер</span><em>→</em><span>Каштарыс</span><em>→</em><span>Дагавор</span><em>→</em><span>Аванс</span></div>
+      <div class="k">Палі здзелкі</div><ul class="list"><li><b>Тып работ</b></li><li><b>Плошча, м²</b></li><li><b>Бюджэт</b></li><li><b>Сума па каштарысе</b><span class="stamp">абавязковае на «Каштарысе»</span></li></ul>
+      <div class="k">Правілы</div><div class="rule"><b>«Замер» без руху 5 дзён</b><span>задача прарабу «адправіць каштарыс»</span></div>
+      <div class="k">Што змянілася</div><ul class="list gain"><li>каштарыс больш не завісае: праз 5 дзён з&#x27;яўляецца задача з адказным</li><li>сума па каштарысе абавязковая — прагноз выручкі лічыцца па палях</li><li>адмовы з прычынамі, дашборд адным словам «дашборд» у любы момант</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Паведамленне Kai</span>Правядзі аўдыт варонкі «Продаж дагавора». Потым выпраў: зрабі поле «Сума па каштарысе» абавязковым на этапе «Каштарыс», дадай прычыны адмовы (дорага, выбралі іншых, адклалі рамонт, не дазваніліся), правіла: на «Замеры» без руху 5 дзён — задача прарабу «адправіць каштарыс». І пакажы дашборд па варонцы.</div>
+    <div class="msg kai"><span class="who">Kai</span>Аўдыт: 23 здзелкі стаяць на «Замеры» даўжэй за 14 дзён, «Сума па каштарысе» пустая ў 80% здзелак, прычын адмовы няма, аўтаматызацый няма. Выправіў: поле абавязковае на «Каштарысе», 4 прычыны адмовы дададзены, правіла на 5 дзён уключана. Дашборд: адкрытых 61, на «Замеры» 23 (вузкае месца), выйграна за месяц 9, прайграна 4.</div>
+  </div>
+  <div class="k">Што зрабіў Kai</div><div class="did"><span>аўдыт варонкі</span><span>зрабіць поле абавязковым</span><span>прычыны адмовы</span><span>стварыць правіла</span><span>дашборд</span></div>
+  <div class="time">Аўдыт, праўкі і зводка — адно паведамленне. Kai нічога не выдаляў: існуючыя здзелкі і этапы засталіся.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Правядзі аўдыт варонкі «Продаж дагавора». Потым выпраў: зрабі поле «Сума па каштарысе» абавязковым на этапе «Каштарыс», дадай прычыны адмовы (дорага, выбралі іншых, адклалі рамонт, не дазваніліся), правіла: на «Замеры» без руху 5 дзён — задача прарабу «адправіць каштарыс». І пакажы дашборд па варонцы.">Скапіяваць паведамленне</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Паўтарыць у сваім чаце</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Адкрыць у Telegram</a></div>
+</article>
+<article class="case" id="courses-kommo">
+  <div class="top"><span class="badge crm">Kommo</span><span class="badge">Анлайн-школа</span></div>
+  <h2>Рэгістрацыі жылі ў табліцы, пра дэдлайн цаны напаміналі па памяці</h2>
+  <p>Рэгістрацыі з лендынга трапляюць у табліцу, менеджары разбіраюць іх уручную. Патокі блытаюць, рахунак выставілі — і забыліся напомніць. Аддзел даведваецца пра аплату ад бухгалтэрыі праз дзень.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Было</h3>
+      <div class="k">Этапы варонкі</div><div class="board"><span>Лід</span><em>→</em><span>Аплата</span></div>
+      <div class="k">Палі здзелкі</div><ul class="list none"><li>палёў няма — усё ў нататках</li></ul>
+      <div class="k">Правілы</div><ul class="list none"><li>правілаў няма — усё па памяці</li></ul>
+      <div class="k">Што ламалася</div><ul class="list pain"><li>паміж «Лід» і «Аплата» нічога — незразумела, хто на якім кроку</li><li>няма палёў Прадукт і Паток — спісы збіраюць уручную</li><li>пра аплату даведваюцца позна, віншаванне і доступ затрымліваюцца</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Стала</h3>
+      <div class="k">Этапы варонкі</div><div class="board"><span>Рэгістрацыя</span><em>→</em><span>Кваліфікацыя</span><em>→</em><span>Званок прызначаны</span><em>→</em><span>Званок праведзены</span><em>→</em><span>Рахунак выстаўлены</span><em>→</em><span>Аплата</span></div>
+      <div class="k">Палі здзелкі</div><ul class="list"><li><b>Прадукт</b><small>спіс</small></li><li><b>Тарыф</b><small>спіс</small></li><li><b>Паток</b></li><li><b>Растэрміноўка</b><small>так/не</small></li></ul>
+      <div class="k">Правілы</div><div class="rule"><b>Рэгістрацыя</b><span>задача: напісаць і прапанаваць дыягностыку</span><b>«Рахунак выстаўлены»</b><span>задача на заўтра: напомніць пра дэдлайн цаны</span><b>«Аплата»</b><span>тэг «студэнт» + апавяшчэнне ў Telegram</span></div>
+      <div class="k">Што змянілася</div><ul class="list gain"><li>кожная рэгістрацыя атрымлівае першы кантакт — задача ставіцца сама</li><li>напамін пра дэдлайн цаны ставіцца аўтаматычна на наступны дзень</li><li>аддзел бачыць аплату адразу, у Telegram, без бухгалтэрыі</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Паведамленне Kai</span>Зрабі ў Kommo варонку «Продаж курса»: Рэгістрацыя → Кваліфікацыя → Званок прызначаны → Званок праведзены → Рахунак выстаўлены → Аплата. Палі: Прадукт (спіс), Тарыф (спіс: базавы, з куратарам, VIP), Паток, Растэрміноўка (так/не). Правілы: Рэгістрацыя — задача напісаць і прапанаваць дыягностыку; «Рахунак выстаўлены» — задача на заўтра напомніць пра дэдлайн цаны; «Аплата» — тэг «студэнт» і апавяшчэнне ў Telegram аддзелу продажаў.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Гатова.</span> Варонка «Продаж курса», 6 этапаў, 4 палі. Правілы ўключаны: задача пры рэгістрацыі, напамін пра дэдлайн на наступны дзень пасля рахунку, тэг «студэнт» і апавяшчэнне ў Telegram пры аплаце. Каб атрымліваць апавяшчэнні, калегі падпісваюцца па спасылцы з кабінета.</div>
+  </div>
+  <div class="k">Што зрабіў Kai</div><div class="did"><span>стварыць варонку</span><span>стварыць поле <b>×4</b></span><span>стварыць правіла <b>×3</b></span><span>тэг</span></div>
+  <div class="time">Адно паведамленне. Апавяшчэнні ў Telegram — убудаваная функцыя Kai, без Zapier і вэбхукаў.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Зрабі ў Kommo варонку «Продаж курса»: Рэгістрацыя → Кваліфікацыя → Званок прызначаны → Званок праведзены → Рахунак выстаўлены → Аплата. Палі: Прадукт (спіс), Тарыф (спіс: базавы, з куратарам, VIP), Паток, Растэрміноўка (так/не). Правілы: Рэгістрацыя — задача напісаць і прапанаваць дыягностыку; «Рахунак выстаўлены» — задача на заўтра напомніць пра дэдлайн цаны; «Аплата» — тэг «студэнт» і апавяшчэнне ў Telegram аддзелу продажаў.">Скапіяваць паведамленне</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Паўтарыць у сваім чаце</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Адкрыць у Telegram</a></div>
+</article>
+<p class="more"><a href="../../guides/be/">Пакрокавыя гайды па amoCRM і Kommo →</a></p>
+<div class="cta"><b>Хочаш гэтак жа? Напішы Kai сваімі словамі — ён удакладніць дэталі і наладзіць.</b><br><a href="https://t.me/aiicrm_bot">Паспрабаваць у Telegram</a><a class="alt" href="https://app.aii-crm.com/chat?lang=en">Адкрыць вэб-чат</a></div>
+<footer>© 2026 Kai · <a href="../../privacy-be.html">Прыватнасць</a></footer>
+</div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){ b.addEventListener('click', function(){ var t=b.getAttribute('data-copy'), done=function(){ var o=b.textContent; b.textContent="Скапіявана"; setTimeout(function(){ b.textContent=o; },1500); };
+  if(navigator.clipboard) navigator.clipboard.writeText(t).then(done); else { var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} ta.remove(); done(); } }); });
+</script>
+</body></html>

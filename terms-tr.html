@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://ai-crm-bot-production.up.railway.app; connect-src 'self' https://ai-crm-bot-production.up.railway.app; base-uri 'self'; form-action 'self'">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Kullanım Koşulları — Kai</title>
+<meta name="description" content="Kullanıcının bağlamayı seçtiği CRM platformundaki hesabını, platformun resmi API'si üzerinden yapılandıran ve yöneten yapay zeka asistanı Kai'nin Kullanım Koşulları.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://aii-crm.com/terms-tr.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/terms.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/terms-en.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/terms-de.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/terms-fr.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/terms-es.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/terms-pl.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/terms-pt.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/terms-it.html">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/terms-tr.html">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/terms-be.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/terms-en.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B0A14'/><path d='M16 6.5a9.5 9.5 0 1 0 9.5 9.5' stroke='%237C5CFF' stroke-width='4' stroke-linecap='round' fill='none'/><circle cx='23.4' cy='8.6' r='2.6' fill='%23A78BFA'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0B0A14;
+  --bg-1:    #100E20;
+  --bg-2:    #171332;
+  --border:  #241D45;
+  --accent:  #7C5CFF;
+  --accent-2:#A78BFA;
+  --ink:     #F4F2FF;
+  --text:    #CBC5E4;
+  --muted:   #8B83AC;
+  --dim:     #615A82;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent-2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(11,10,20,0.9);
+  backdrop-filter: blur(20px);
+}
+.nav-inner {
+  max-width: 800px; margin: 0 auto;
+  height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-size: 17px; font-weight: 600; color: var(--ink); }
+.nav-right { display: flex; gap: 18px; align-items: center; }
+.nav-back, .nav-lang { font-size: 13px; color: var(--muted); }
+.nav-lang { border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px; }
+.nav-lang:hover { border-color: var(--accent); color: var(--ink); text-decoration: none; }
+.container { max-width: 800px; margin: 0 auto; padding: 100px 24px 80px; }
+h1 {
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.subtitle { font-size: 14px; color: var(--dim); margin-bottom: 48px; }
+h2 {
+  font-size: 20px; font-weight: 600; color: var(--ink);
+  margin-top: 48px; margin-bottom: 16px; letter-spacing: -0.01em;
+}
+h3 { font-size: 16px; font-weight: 600; color: var(--ink); margin-top: 28px; margin-bottom: 10px; }
+p { margin-bottom: 14px; }
+ul, ol { margin-bottom: 14px; padding-left: 24px; }
+li { margin-bottom: 6px; }
+li::marker { color: var(--dim); }
+strong { color: var(--ink); font-weight: 600; }
+code {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 13px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+.highlight {
+  background: rgba(124,92,255,0.08);
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+  font-size: 14px;
+}
+table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { font-weight: 600; color: var(--ink); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+.table-wrap { overflow-x: auto; }
+.footer { max-width: 800px; margin: 0 auto; padding: 0 24px 60px; font-size: 13px; }
+@media (max-width: 640px) {
+  .container { padding: 90px 18px 60px; }
+  th, td { padding: 8px 10px; }
+}
+
+/* ─── COOKIE BANNER ─── */
+.cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: var(--bg-1);
+  border-top: 1px solid var(--border);
+  padding: 16px 24px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; flex-wrap: wrap;
+  font-size: 13px; color: var(--text);
+  transform: translateY(100%);
+  transition: transform .4s ease;
+}
+.cookie-banner.visible { transform: translateY(0); }
+.cookie-banner a { color: var(--accent-2); }
+.cookie-btns { display: flex; gap: 8px; flex-shrink: 0; }
+.cookie-btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 12px; font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.cookie-btn:hover { opacity: .85; }
+.cookie-btn-accept { background: var(--accent); color: #fff; border: 1px solid transparent; }
+.cookie-btn-decline { background: var(--bg-2); border: 1px solid var(--border); color: var(--ink); }
+@media (max-width: 640px) {
+  .cookie-banner { font-size: 12px; padding: 14px 16px; gap: 12px; }
+  .cookie-btns { width: 100%; }
+  .cookie-btn { flex: 1; }
+}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+<script>(function(){var q=location.search;
+if(q.indexOf('lang=en')!==-1)return;
+var saved=null;try{saved=localStorage.getItem('kai_lang');}catch(e){}
+if(saved==='ru')location.replace('terms.html');})();</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="tr/" class="nav-logo">Kai</a>
+    <div class="nav-right">
+      <a href="https://aii-crm.com/terms-en.html" class="nav-lang">EN</a>
+      <a href="tr/" class="nav-back">← Ana sayfaya dön</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+<h1>Kullanım Koşulları</h1>
+<p class="subtitle">Son güncelleme: 20 Ağustos 2026 · <a href="https://aii-crm.com/terms-en.html">İngilizce sürüm</a></p>
+<p class="subtitle">Bu çeviri kolaylık sağlamak amacıyla sunulmaktadır. İngilizce metinle arasında farklılık bulunması halinde İngilizce sürüm esas alınır.</p>
+
+<p>İşbu Kullanım Koşulları ("Koşullar"), sizinle ("Kullanıcı") Kai hizmetinin yönetimi ("Yönetim", "biz") arasında, Telegram botu <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a> ve web sitesi üzerinden erişilebilen Kai yapay zeka hizmetine ("Hizmet") erişimi ve bu hizmetin kullanımını düzenleyen, hukuken bağlayıcı bir sözleşme teşkil eder.</p>
+
+<div class="highlight">
+  <strong>Koşulların kabulü:</strong> Hizmeti kullanarak (Bot'a ilk mesajınızı göndererek, bir CRM hesabı bağlayarak veya bir abonelik için ödeme yaparak) bu Koşulları okuduğunuzu, tamamen kabul ettiğinizi ve bunlara uymayı taahhüt ettiğinizi onaylarsınız. Herhangi bir hükme katılmıyorsanız lütfen Hizmeti kullanmayı bırakın.
+</div>
+
+<h2>1. Hizmetin tanımı</h2>
+
+<p>Kai, Kullanıcının bağlamayı seçtiği CRM platformundaki hesabını, platformun resmi API'si üzerinden ve Telegram arayüzü aracılığıyla yapılandıran ve yöneten bir yapay zeka asistanıdır. Hizmet şunları sağlar:</p>
+
+<ul>
+  <li>CRM yapısının tasarımı (satış hunileri, alanlar, aşamalar, otomasyonlar) konusunda yapay zeka destekli danışmanlık.</li>
+  <li>Bağlı CRM hesabında Kullanıcı adına API işlemlerinin otomatik olarak yürütülmesi: satış hunileri, alanlar, aşamalar, lead'ler, kişiler, şirketler, görevler, etiketler, webhook'lar ve diğer varlıkların oluşturulması, değiştirilmesi ve silinmesi.</li>
+  <li>Onaylanan plana dayalı teknik şartnamelerin (PDF) oluşturulması.</li>
+  <li>Sesli mesajların tanınması.</li>
+</ul>
+
+<p>Hizmet yalnızca Kullanıcının bağladığı CRM platformunun resmi API'si üzerinden çalışır ve bağımsız bir üründür: herhangi bir CRM platformu işletmecisinin ürünü, iş ortağı veya iştiraki değildir.</p>
+<p>CRM platformunun lisansı veya aboneliği Kullanıcı tarafından ayrıca, o platformun kendi tarifeleriyle satın alınır ve Hizmetin bir parçası değildir.</p>
+
+<h2>2. Kayıt ve hesap</h2>
+
+<h3>2.1. Erişim</h3>
+<p>Hizmeti kullanmak için ayrı bir kayıt gerekmez. Hesabınız, Bot ile ilk etkileşiminizde Telegram profil verilerinize (Telegram ID) dayanılarak otomatik olarak oluşturulur.</p>
+
+<h3>2.2. CRM bağlantısı</h3>
+<p>Bağlı CRM hesabında API işlemleri gerçekleştirilebilmesi için Kullanıcının, CRM platformunun sağladığı OAuth 2.0 protokolü aracılığıyla Hizmeti yetkilendirmesi gerekir. Kullanıcı, erişimi platformun entegrasyon ayarlarından istediği zaman iptal edebilir.</p>
+
+<h3>2.3. Kullanıcıya ilişkin şartlar</h3>
+<ul>
+  <li>En az 18 yaşında olmalı veya yetki alanınızın kanunlarına göre tam fiil ehliyetine sahip olmalısınız.</li>
+  <li>Hizmetin bağlandığı CRM hesabını yönetme yetkisine sahip olmalısınız (hesap yöneticisi olmalı veya yöneticiden uygun izni almış olmalısınız).</li>
+  <li>Hizmeti yürürlükteki mevzuata ve bu Koşullara uygun olarak kullanmalısınız.</li>
+</ul>
+
+<h2>3. Fiyatlandırma ve ödeme</h2>
+
+<h3>3.1. Abonelik planları</h3>
+<p>Hizmet ücretli olarak sunulur. Güncel abonelik planları, fiyatlar ve dahil olan özellikler <a href="tr/#pricing">fiyatlandırma sayfasında</a> yayımlanır ve değiştirilebilir. Fiyat değişikliklerini Kullanıcılara Bot üzerinden en az 14 gün önceden bildiririz.</p>
+
+<h3>3.2. Deneme süresi</h3>
+<p>Yeni kullanıcılar 3 (üç) takvim günlük ücretsiz deneme süresinden yararlanır. Deneme süresi sona erdikten sonra, bir abonelik satın alınana kadar Hizmet özelliklerine erişim kısıtlanır.</p>
+
+<h3>3.3. Ödeme yöntemleri</h3>
+<p>Ödeme, seçilen dönem (30 gün) için peşin olarak yapılır. Fiyatlar euro (EUR) cinsinden gösterilir. Kullanılabilecek ödeme yöntemleri şunlardır: banka kartı (Mir kartları dahil), Telegram Stars ve kripto para (USDT). Ödeme yöntemleri listesi genişletilebilir.</p>
+
+<h3>3.4. Yenileme ve iptal</h3>
+<p>Otomatik yenilenen yöntemlerle ödeme yapıldığında abonelik, siz iptal edene kadar güncel fiyattan bir sonraki dönem için otomatik olarak yenilenir. Tek seferlik yöntemlerle (Telegram Stars, USDT) ödeme yapıldığında erişim ödenen dönem için sağlanır ve otomatik olarak yenilenmez. Aboneliği istediğiniz zaman iptal edebilirsiniz — <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> adresi üzerinden veya ödeme sağlayıcınızın abonelik yönetimi bölümünden. İptalden sonra erişim, ödenen dönemin sonuna kadar devam eder.</p>
+
+<h3>3.5. İadeler</h3>
+<p>İade ve iptal koşulları ile AB tüketici hakları, ayrı bir belge olan <a href="refund-tr.html">İade ve İptal Politikası</a>'nda ayrıntılı olarak düzenlenmiştir. Kısaca: ödemeden itibaren 7 gün içinde bizimle iletişime geçmeniz ve ödenen işlem hakkının %30'undan azını kullanmış olmanız halinde, ayrıca tarafımızca esaslı bir ihlal veya hatalı bir tahsilat durumunda iade yapılır. İade talep etmek için <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> adresine e-posta gönderin.</p>
+
+<h2>4. Kabul edilebilir kullanım</h2>
+
+<h3>4.1. İzin verilen kullanım</h3>
+<p>Kullanıcı Hizmeti şu amaçlarla kullanabilir:</p>
+<ul>
+  <li>Bağlı CRM platformundaki kendi hesabını yapılandırmak ve yönetmek.</li>
+  <li>CRM yapısı ve mantığı konusunda yapay zeka danışmanlığı almak.</li>
+  <li>Teknik şartnameler oluşturmak.</li>
+  <li>Hizmetin işlevselliği kapsamındaki diğer faaliyetler.</li>
+</ul>
+
+<h3>4.2. Yasaklanan eylemler</h3>
+<p>Kullanıcı aşağıdakileri <strong>yapmamayı</strong> kabul eder:</p>
+<ul>
+  <li>Üçüncü kişilere ait CRM hesaplarına, onların açık rızası olmadan erişmek için Hizmeti kullanmak.</li>
+  <li>Hizmetin sunucularına, veritabanlarına veya kaynak koduna yetkisiz erişim sağlamaya çalışmak.</li>
+  <li>Hizmetin kaynak kodunu tersine mühendislik, kaynak koda dönüştürme (decompile) veya başka yollarla elde etmeye çalışmak.</li>
+  <li>Hizmeti spam, kimlik avı (phishing) veya diğer dolandırıcılık faaliyetleri için kullanmak.</li>
+  <li>Yönetimin yazılı onayı olmadan Hizmeti devretmek, yeniden satmak veya üçüncü kişilere ücret karşılığında Hizmete erişim sağlamak.</li>
+  <li>Hizmetle toplu etkileşim için otomatik araçlar (botlar, betikler) kullanmak.</li>
+  <li>Hizmetin altyapısı üzerinde kasıtlı olarak aşırı yük oluşturmak.</li>
+  <li>Hizmeti yürürlükteki mevzuata, bağlı CRM platformunun kurallarına veya bu Koşullara aykırı şekilde kullanmak.</li>
+</ul>
+
+<div class="highlight">
+  <strong>İhlallerin sonuçları:</strong> İhlallerin tespiti halinde Yönetim, önceden bildirimde bulunmaksızın ve ücret iadesi yapmaksızın Hizmete erişimi kısıtlama veya sona erdirme hakkını saklı tutar.
+</div>
+
+<h2>5. Fikri mülkiyet</h2>
+
+<h3>5.1. Yönetimin hakları</h3>
+<p>Yazılım, algoritmalar, modeller, arayüzler, tasarım, metinler, logolar ve ticari markalar dahil ancak bunlarla sınırlı olmamak üzere Hizmet üzerindeki münhasır haklar Yönetime aittir.</p>
+<p>Bu Koşullar, Hizmeti bu Koşullara uygun olarak kullanmaya yönelik sınırlı, münhasır olmayan ve geri alınabilir bir kullanım hakkı dışında, Kullanıcıya Hizmet üzerinde herhangi bir fikri mülkiyet hakkı tanımaz.</p>
+
+<h3>5.2. Kullanıcının veri hakları</h3>
+<p>Kullanıcı, Hizmet aracılığıyla yüklenen veya oluşturulan veriler üzerindeki tüm haklarını korur. Hizmet tarafından Kullanıcının talebi üzerine Kullanıcının CRM hesabında oluşturulan CRM nesneleri (satış hunileri, alanlar, lead'ler vb.) Kullanıcıya aittir.</p>
+
+<h3>5.3. Teknik şartnameler (PDF)</h3>
+<p>Oluşturulan teknik şartnameler, Kullanıcı verilerine dayalı yapay zeka çıktılarıdır. Kullanıcı, oluşturulan belgeleri mesleki amaçları için kullanmaya yönelik münhasır olmayan, sınırsız bir hak elde eder.</p>
+
+<h2>6. Sorumluluğun sınırlandırılması</h2>
+
+<h3>6.1. "Olduğu gibi" sunum</h3>
+<p>Hizmet "olduğu gibi" ve "mevcut olduğu şekliyle" sunulur. Yönetim aşağıdakileri garanti etmez:</p>
+<ul>
+  <li>Hizmetin kesintisiz, hatasız veya sürekli çalışması.</li>
+  <li>Yapay zeka çıktısının Kullanıcının beklentilerini karşılaması.</li>
+  <li>Herhangi bir belirli CRM hesabı yapılandırmasıyla uyumluluk.</li>
+  <li>Hizmetin belirli bir zamanda veya belirli bir bölgeden erişilebilir olması.</li>
+</ul>
+
+<h3>6.2. Zararların sınırlandırılması</h3>
+<p>Yürürlükteki mevzuatın izin verdiği azami ölçüde Yönetim aşağıdakilerden sorumlu tutulamaz:</p>
+<ul>
+  <li>Hizmetin kullanılmasından veya kullanılamamasından kaynaklanan, kâr kaybı, veri kaybı veya itibar zararı dahil doğrudan, dolaylı, arızi, cezai veya netice zararlar.</li>
+  <li>Yanlış öneriler veya istenmeyen CRM değişiklikleri dahil, yapay zeka modelinin eylemleri veya hataları.</li>
+  <li>Üçüncü kişilerin eylemlerinden kaynaklanan kesintiler (Telegram, bağlı CRM platformu, yapay zeka sağlayıcıları, barındırma sağlayıcıları).</li>
+  <li>Yönetimin kontrolü dışındaki nedenlerle CRM hesabına erişimin kaybedilmesi.</li>
+</ul>
+
+<div class="highlight">
+  <strong>Sorumluluk üst sınırı:</strong> Yönetimin herhangi bir talep kapsamında Kullanıcıya karşı toplam sorumluluğu, Kullanıcının Hizmet kullanımının son 3 (üç) ayı için fiilen ödediği tutarı aşamaz.
+</div>
+
+<h3>6.3. Kullanıcının sorumluluğu</h3>
+<p>Aşağıdakilerden yalnızca Kullanıcı sorumludur:</p>
+<ul>
+  <li>Yapay zeka önerilerine dayanarak alınan kararlar. Değişiklikleri CRM hesabına uygulamadan önce eylem planını gözden geçirmenizi öneririz.</li>
+  <li>Telegram ve CRM hesabı erişiminin güvenliği.</li>
+  <li>Hizmetin mesleki faaliyetleriyle bağlantılı olarak hukuka uygun şekilde kullanılması.</li>
+  <li>Hizmete CRM hesabına erişim izni vermenin sonuçları.</li>
+</ul>
+
+<h2>7. Kişisel veriler</h2>
+<p>Kişisel veriler, bu Koşulların ayrılmaz bir parçası olan <a href="privacy-tr.html">Gizlilik Politikası</a>'na uygun olarak işlenir.</p>
+<p>İşlenen verilerin özeti:</p>
+<div class="table-wrap">
+<table>
+  <tr><th>Veri</th><th>Amaç</th></tr>
+  <tr><td>Telegram ID, ad, kullanıcı adı</td><td>Kimlik tespiti ve Hizmetin sunulması</td></tr>
+  <tr><td>Metin ve sesli mesajlar</td><td>Taleplerin işlenmesi, yanıt oluşturulması</td></tr>
+  <tr><td>Bağlı CRM platformunun OAuth token'ları</td><td>CRM hesabına yapılan API isteklerinin yetkilendirilmesi</td></tr>
+</table>
+</div>
+<p>Kai, CRM giriş bilgilerini talep etmez ve saklamaz. Erişim yalnızca OAuth 2.0 ile sağlanır.</p>
+
+<h2>8. Üçüncü taraf hizmetleri</h2>
+<p>Hizmet, üçüncü taraf altyapısı ve API'ler kullanır. Hizmetin kullanılması, ilgili hizmetlerin koşullarının kabul edildiği anlamına gelir:</p>
+<ul>
+  <li><strong>Telegram</strong> — <a href="https://telegram.org/tos" target="_blank" rel="noopener">Telegram Kullanım Koşulları</a></li>
+  <li><strong>Bağladığınız CRM platformu</strong> — kullanım koşulları o platformun web sitesinde yayımlanır</li>
+  <li><strong>OpenAI</strong> — <a href="https://openai.com/policies/terms-of-use" target="_blank" rel="noopener">OpenAI Koşulları</a></li>
+</ul>
+<p>Yönetim, bu hizmetlerin eylemlerinden, politikalarından veya erişilebilirliğinden sorumlu değildir.</p>
+
+<h2>9. Askıya alma ve sona erdirme</h2>
+
+<h3>9.1. Kullanıcı tarafından</h3>
+<p>Kullanıcı, Telegram'da Bot'u engelleyerek Hizmeti kullanmayı istediği zaman bırakabilir. Verilerin tamamen silinmesi için <code>/delete</code> komutunu kullanın veya <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> adresine bir talep gönderin.</p>
+
+<h3>9.2. Yönetim tarafından</h3>
+<p>Yönetim, Kullanıcının Hizmete erişimini aşağıdaki durumlarda askıya alabilir veya sona erdirebilir:</p>
+<ul>
+  <li>Bu Koşulların ihlal edilmesi halinde.</li>
+  <li>Şüpheli veya hileli faaliyet tespit edilmesi halinde.</li>
+  <li>Yetkili makamların talebi üzerine.</li>
+  <li>Hizmetin sonlandırılması halinde — en az 30 gün önceden bildirimde bulunularak.</li>
+</ul>
+
+<h2>10. Uygulanacak hukuk ve uyuşmazlıkların çözümü</h2>
+
+<h3>10.1. Rusya ve BDT ülkelerindeki Kullanıcılar için</h3>
+<p>Bu Koşullar Rusya Federasyonu hukukuna tabidir ve bu hukuka göre yorumlanır. Uyuşmazlıklar yürürlükteki Rus mevzuatına uygun olarak çözülür. Taraflar, dava açmadan önce yazılı bir şikâyet göndererek uyuşmazlığı dava öncesi yollarla çözmeye çalışmayı kabul eder. Yanıt süresi 30 (otuz) takvim günüdür.</p>
+
+<h3>10.2. AB, ABD, Kanada ve diğer yetki alanlarındaki Kullanıcılar için</h3>
+<p>Rusya ve BDT ülkeleri dışında bulunan Kullanıcılar için bu Koşullar, yürürlükteki tüketicinin korunması mevzuatının gerektirdiği ölçüde Kullanıcının ikamet ettiği ülkenin hukukuna tabidir. Uyuşmazlıklar, Kullanıcının bulunduğu yerdeki yetkili mahkemede çözülür. AB'deki Kullanıcılar ayrıca <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">AB Çevrimiçi Uyuşmazlık Çözümü platformunu</a> kullanabilir.</p>
+
+<h3>10.3. AB'deki Kullanıcılar için ek haklar</h3>
+<p>Avrupa Birliği'nde bir tüketiciyseniz, bu Koşullardaki hiçbir hüküm, ikamet ettiğiniz ülkenin tüketicinin korunması mevzuatından doğan, 14 gün içinde cayma hakkı (uygulanabildiği durumlarda) dahil emredici haklarınızı sınırlamaz.</p>
+
+<h2>11. Mücbir sebepler</h2>
+<p>Yönetim; doğal afetler, devlet işlemleri veya ihmalleri, askeri operasyonlar, siber saldırılar, üçüncü taraf hizmet arızaları (Telegram, bağlı CRM platformu, bulut sağlayıcıları), IP engellemeleri ve Yönetimin makul kontrolü dışındaki diğer durumlar dahil ancak bunlarla sınırlı olmamak üzere, mücbir sebeplerden kaynaklanan yükümlülüklerin yerine getirilmemesinden sorumlu değildir.</p>
+
+<h2>12. Koşullardaki değişiklikler</h2>
+<p>Yönetim bu Koşulları tek taraflı olarak değiştirebilir. Esaslı değişiklikleri Kullanıcılara yürürlüğe girmelerinden en az 14 gün önce Bot üzerinden bildiririz. Değişikliklerin yürürlüğe girmesinden sonra Hizmetin kullanılmaya devam edilmesi, güncellenmiş Koşulların kabulü anlamına gelir.</p>
+<p>Değişikliklere katılmıyorsanız, lütfen değişiklikler yürürlüğe girmeden önce Hizmeti kullanmayı bırakın.</p>
+
+<h2>13. Çeşitli hükümler</h2>
+
+<h3>13.1. Bölünebilirlik</h3>
+<p>Bu Koşulların herhangi bir hükmü yetkili bir mahkeme tarafından geçersiz veya uygulanamaz bulunursa, kalan hükümler tam olarak yürürlükte kalmaya devam eder.</p>
+
+<h3>13.2. Haklardan feragat</h3>
+<p>Yönetimin bu Koşullar kapsamındaki herhangi bir hakkı kullanmaması, o haktan feragat ettiği anlamına gelmez.</p>
+
+<h3>13.3. Sözleşmenin bütünlüğü</h3>
+<p>Bu Koşullar, <a href="privacy-tr.html">Gizlilik Politikası</a> ve <a href="refund-tr.html">İade ve İptal Politikası</a> ile birlikte, Hizmetin kullanımına ilişkin olarak Kullanıcı ile Yönetim arasındaki sözleşmenin tamamını oluşturur.</p>
+
+<h2>14. İletişim</h2>
+<p>Bu Koşullarla ilgili her türlü sorunuz için lütfen bizimle iletişime geçin:</p>
+<ul>
+  <li>E-posta: <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a></li>
+  <li>Telegram: <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a></li>
+</ul>
+
+</div>
+
+<div class="footer">
+  <a href="#" id="cookieSettings" style="color:var(--muted)">Çerez ayarları</a> · <a href="tr/" style="color:var(--muted)">← Ana sayfaya dön</a> · <a href="https://aii-crm.com/terms-en.html" style="color:var(--muted)">İngilizce sürüm</a>
+</div>
+
+<div class="cookie-banner" id="cookieBanner">
+  <span>Çerezleri site analitiği için kullanıyoruz. Onayınız olmadan hiçbir şey saklanmaz — site onlar olmadan da sorunsuz çalışır. Ayrıntılar için <a href="privacy-tr.html">Gizlilik Politikamıza</a> bakın.</span>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Kabul et</button>
+    <button class="cookie-btn cookie-btn-decline" id="cookieDecline">Yalnızca gerekli</button>
+  </div>
+</div>
+
+<script>
+/* ─── COOKIE CONSENT ─── */
+(function() {
+  var KEY = 'kai_cookie_consent';
+  var banner = document.getElementById('cookieBanner');
+  function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function write(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+  function show() { banner.classList.add('visible'); }
+  function hide() { banner.classList.remove('visible'); }
+  window.kaiConsent = read();
+  document.getElementById('cookieAccept').addEventListener('click', function() {
+    write('accepted'); window.kaiConsent = 'accepted'; hide();
+    if (window.kaiAnalyticsStart) window.kaiAnalyticsStart();
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function() {
+    write('declined'); window.kaiConsent = 'declined'; hide();
+    if (window.kaiAnalyticsStop) window.kaiAnalyticsStop();
+  });
+  var settings = document.getElementById('cookieSettings');
+  if (settings) settings.addEventListener('click', function(e) { e.preventDefault(); show(); });
+  if (!window.kaiConsent) setTimeout(show, 1000);
+})();
+</script>
+
+<!-- ─── FIRST-PARTY ANALYTICS ─── -->
+<script>
+(function(){
+  var V='', on=false;
+  function vid(){
+    try{
+      var m=document.cookie.match(/(?:^|; )kai_vid=([a-f0-9-]+)/);
+      var v=m?m[1]:(localStorage.getItem('kai_vid')||'');
+      if(!v){v=(crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random().toString(16).slice(2));}
+      localStorage.setItem('kai_vid',v);
+      document.cookie='kai_vid='+v+'; max-age=31536000; path=/; SameSite=Lax';
+      return v;
+    }catch(e){return '';}
+  }
+  function forget(){
+    try{localStorage.removeItem('kai_vid');}catch(e){}
+    try{document.cookie='kai_vid=; max-age=0; path=/; SameSite=Lax';}catch(e){}
+  }
+  var LANG='tr';
+  window.kaiTrack=function(ev){
+    if(!on) return;
+    try{navigator.sendBeacon('https://ai-crm-bot-production.up.railway.app/track',
+      JSON.stringify({vid:V,event:ev,path:location.pathname+location.hash,
+                      ref:document.referrer,lang:LANG}));}catch(e){}
+  };
+  window.kaiAnalyticsStart=function(){ if(on) return; V=vid(); on=true; kaiTrack('pageview'); };
+  window.kaiAnalyticsStop=function(){ on=false; V=''; forget(); };
+
+  if(window.kaiConsent==='accepted') window.kaiAnalyticsStart();
+  else if(window.kaiConsent==='declined') forget();
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('t.me/aiicrm_bot') !== -1) kaiTrack('tg_click');
+    else if (href.indexOf('/chat') !== -1 && href.indexOf('railway.app') !== -1) kaiTrack('webchat_open');
+  }, true);
+})();
+</script>
+
+</body>
+</html>

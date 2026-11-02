@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İlk ayda kendini amorti eden 7 CRM otomasyonu | Kai</title>
+<meta name="description" content="Aşama değişince görev, yanıtsız müşteri hatırlatması, takılan lead uyarısı, ekip sohbetine yeni lead bildirimi, zorunlu kaynak ve kayıp nedenleri, haftalık huni özeti, araçlarına webhook: her birinin çözdüğü sorun, nerede çalıştığı ve Kai'de tek cümleyle nasıl açıldığı.">
+<meta name="keywords" content="Küçük satış ekipleri için CRM otomasyonu fikirleri">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/tr/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/guides/it/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/guides/tr/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/guides/be/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/crm-automations-that-pay-off.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/tr/crm-automations-that-pay-off.html">
+<meta property="og:title" content="İlk ayda kendini amorti eden 7 CRM otomasyonu">
+<meta property="og:description" content="Küçük bir satış ekibi için yedi olay → eylem kuralı: sorun, kural, nerede çalıştığı (CRM'in içinde mi, Kai tarafında mı) ve onu açan cümle.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-10-26">
+<meta property="article:modified_time" content="2026-10-26">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="İlk ayda kendini amorti eden 7 CRM otomasyonu">
+<meta name="twitter:description" content="Küçük bir satış ekibi için yedi olay → eylem kuralı: sorun, kural, nerede çalıştığı (CRM'in içinde mi, Kai tarafında mı) ve onu açan cümle.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/tr/" aria-label="Kai — ana sayfa">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Gezinme">
+      <a href="https://aii-crm.com/tr/">Web sitesi</a>
+      <a href="https://t.me/aiicrm_bot">Telegram botu</a>
+      <a href="https://aii-crm.com/guides/en/crm-automations-that-pay-off.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Sayfa yolu">
+  <a href="https://aii-crm.com/tr/">Kai</a> › <a href="https://aii-crm.com/guides/tr/">Rehberler</a> › 7 CRM otomasyonu
+</nav>
+
+<h1>İlk ayda kendini amorti eden 7 CRM otomasyonu</h1>
+<p class="meta">Güncellendi: 26 Ekim 2026 · Kai Ekibi · 6 dk okuma</p>
+
+<p class="lead">CRM otomasyonu, satış temsilcisi bir şey yapmadan çalışan bir olay → eylem kuralıdır: lead bir aşamaya ulaşır ve görev belirir, müşteri sessizleşir ve hatırlatma devreye girer. İyi bir otomasyon, paranın sızdığı belirli bir deliği kapatır: unutulan talepler, takılıp kalan lead'ler, kayıp nedenleri olmayan bir rapor. Aşağıda küçük bir satış ekibi için genellikle ilk ayda kendini amorti eden yedi kural, her birinin nerede çalıştığı ve Kai'de onu açan cümle var.</p>
+
+<section class="tldr" aria-label="Kısaca">
+  <h2>Kısaca</h2>
+  <ul>
+    <li>İki kuralla başla: aşama değişince görev ve yanıtsız müşteri hatırlatması.</li>
+    <li>Bir kural tek cümleye sığmalı; şema gerektiriyorsa o artık bir iş sürecidir.</li>
+    <li>Bazı kurallar CRM'in içinde yaşar (Digital Pipeline, Bitrix24 robotları), bazıları Kai tarafında.</li>
+    <li>Kai'de olay kuralları Pro planında (€59/ay); 3 günlük deneme süresi Start özellikleriyle çalışır.</li>
+  </ul>
+</section>
+
+<h2>Başlamak için yedi kural</h2>
+
+<h3>1. Lead bir aşamaya ulaşınca görev</h3>
+<p><strong>Sorun.</strong> Temsilci lead'i "Teklif gönderildi" aşamasına taşır ve kimse geri aramaz.<br>
+<strong>Kural.</strong> Lead X aşamasına ulaşır → sorumluya 2 gün süreli "geri ara" görevi; her çalışma aşaması için bir tane.<br>
+<strong>Nerede çalışır.</strong> amoCRM ve Kommo: bunu içeren planlarda Digital Pipeline; Bitrix24: robotlar. Kai: kendi tarafında CRM olaylarını dinleyen ve görevi API üzerinden oluşturan bir kural.</p>
+<pre>Lead "Teklif gönderildi" aşamasına geçince 2 gün süreli "geri ara" görevi ekle.</pre>
+
+<h3>2. Yanıtsız müşteri hatırlatması</h3>
+<p><strong>Sorun.</strong> Müşteri yazar, temsilci toplantıdadır ve kırk dakika sonra müşteri rakibe yazar.<br>
+<strong>Kural.</strong> N dakika yanıt yok → lead'e görev ya da bildirim.<br>
+<strong>Nerede çalışır.</strong> CRM'in içinde: bağlı mesajlaşma kanallarıyla sohbet botları (Kommo'da Salesbot). Kai: yazışma CRM üzerinden yürüyorsa "30 dakika yanıt yok → lead'e görev".</p>
+<pre>Müşteri 30 dakika yanıt beklerse lead'e görev ekle ve bana bildir.</pre>
+
+<h3>3. Takılan lead uyarısı</h3>
+<p><strong>Sorun.</strong> "Düşünüyor" aşaması, 37 gündür hareket yok, hâlâ canlı sayılıyor.<br>
+<strong>Kural.</strong> N gün hareket yok → "durumu güncelle" görevi ya da bildirim.<br>
+<strong>Nerede çalışır.</strong> Kısmen CRM'in içinde ("görev yok" filtreleri, Digital Pipeline zamanlayıcıları), çoğunlukla gözle. Kai: kendi tarafında bir kural ve lead'lerin nerede biriktiğini gösteren günlük huni sağlığı kontrolü.</p>
+<pre>14 gün hareketsiz kalan lead → temsilciye "durumu güncelle" görevi ve bana bildirim.</pre>
+
+<h3>4. Ekip sohbetine yeni lead bildirimi</h3>
+<p><strong>Sorun.</strong> Talep akşam 7'de gelir, sabah 10'da görülür; ilk yanıt veren kazanır.<br>
+<strong>Kural.</strong> Yeni lead → Telegram'a ad, telefon ve kaynakla mesaj.<br>
+<strong>Nerede çalışır.</strong> CRM'in uygulama içi bildirimleri var; ekibin mesajlaşma uygulaması için bir bağlayıcı ya da asistan gerekir. Kai bildirimi doğrudan sohbete gönderir, ayrı bot ya da token gerekmez; Pro buna Telegram, Slack, Discord ve Google Sheets'i ekler.</p>
+<pre>"Web sitesi" hunisinde yeni lead → bana Telegram'dan bildir: ad, telefon, kaynak.</pre>
+
+<h3>5. Kaynak ve kayıp nedeni her zaman dolu</h3>
+<p><strong>Sorun.</strong> Bir ay sonra lead'lerin çoğunda "Kaynak" boş, kaybedilen lead'lerde neden yok.<br>
+<strong>Kural.</strong> Kaynak girilmeden ilk aşamadan çıkılmaz, kayıp nedeni girilmeden lead kayıp olarak kapatılmaz.<br>
+<strong>Nerede çalışır.</strong> CRM'in içinde: aşama bazında zorunlu alanlar (kullanılabilirlik CRM planına bağlı); formlar ve mesajlaşma kanalları kaynağı çoğu zaman kendileri doldurur. Kai listeleri oluşturur, alanları zorunlu yapar; günlük sağlık kontrolü de nedeni girilmemiş lead'leri bulur ve listeleri tek dokunuşla düzeltir.</p>
+<pre>"Yeni talep" aşamasından çıkmak için "Kaynak" alanını, kapanışta da "Kayıp nedeni" alanını zorunlu yap. Nedenler: çok pahalı, rakibi seçti, yanıt yok.</pre>
+
+<h3>6. Haftalık huni özeti</h3>
+<p><strong>Sorun.</strong> Rapor cuma akşamı elle derlenir ve pazartesiye eskimiş olur.<br>
+<strong>Kural.</strong> Haftada bir → aşama başına lead sayısı, nerede takıldıkları, kayıp nedenleri, görevsiz lead'ler.<br>
+<strong>Nerede çalışır.</strong> Kendin açıp baktığın CRM panoları. Kai huni sağlığını her gün kontrol eder, A–D arası not verir ve sohbete haftalık özet gönderir; her şey yolundaysa sessiz kalır, kontrol de istek harcamaz.</p>
+<pre>Bu sohbette haftalık huni sağlığı özetini aç.</pre>
+
+<h3>7. Harici bir araca webhook</h3>
+<p><strong>Sorun.</strong> Lead kazanıldı ve biri siparişi sevkiyat tablosuna elle kopyalıyor.<br>
+<strong>Kural.</strong> Lead "Ödendi" aşamasına geçer → lead verileri webhook ile servisine ya da Google Sheets'e gider.<br>
+<strong>Nerede çalışır.</strong> CRM webhook gönderebilir, ama onu alacak bir şey olmalı. Kai'de Google Sheets'e satır eklemek bir Pro entegrasyonudur; kendi servisine webhook ve çok adımlı zincirler Max planında özel geliştirmedir, senaryo başına sabit €30.</p>
+<pre>Lead "Ödendi" aşamasına geçince https://example.com/hook adresine lead adı, tutar ve telefonla webhook gönder.</pre>
+
+<h2>Kurallar nerede yaşar: CRM'de mi, Kai'de mi</h2>
+<p>Digital Pipeline ve robotlar CRM'in içinde yaşar: orada yapılandırılır, CRM'in ücreti ödendiği sürece çalışır, ama otomasyon içeren bir plan ve tıklamaya harcanan zaman ister. Kai'nin kuralları Kai tarafında yaşar: CRM olaylarını webhook ile dinler ve API üzerinden işlem yapar; bu yüzden tek cümleyle açılır ve değişir, ama Digital Pipeline'da görünmez ve aboneliğin aktif olduğu sürece çalışır. CRM'de oluşturdukları ise kalıcıdır.</p>
+<div class="note warn">Bitrix24 için Kai beta aşamasında: Bitrix24 içinde robot yok, giden webhook üzerinden yalnızca ana olaylarla ilgili bildirimler var. Ana ihtiyacın Bitrix24 içindeki otomasyonlarsa robotları elle ya da bir entegratörle kur.</div>
+
+<h2>Kai ile tek mesaj yeter</h2>
+<p>Kai, amoCRM ve Kommo'yu bir sohbet mesajıyla kuran yapay zeka asistanıdır: Telegram botu <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> ya da <a href="https://app.aii-crm.com/chat?lang=en">web sohbeti</a> üzerinden çalışır, tek tıkla OAuth 2.0 ile bağlanır. Yukarıdaki her cümle hazır bir kuraldır ve birkaçı tek mesajda gönderilebilir:</p>
+<pre>"Satış" hunisinde üç kural aç: "Teklif gönderildi" aşamasına geçiş → 2 gün içinde "geri ara" görevi; 30 dakika yanıt yok → lead'e görev; yeni lead → bana Telegram'dan bildir.</pre>
+<pre>Tüm otomasyonlarımı göster ve mükerrer olanları kaldır.</pre>
+<p>Kai netleştirici sorular sorar (lead'in sorumlusu yoksa görev kime gidecek), bir plan gösterir, onayından sonra kuralları oluşturur ve rapor gönderir; hunide kayıp nedenleri ya da kaynaklar yoksa bunu söyler.</p>
+<p>Dürüst sınırlar: olay kuralları, roller ve standart entegrasyonlar Pro planında (€59/ay); kendi servisine webhook Max planında (€119/ay). Abonelik bittikten sonra da çalışmaya devam eden CRM içi kurallar için Digital Pipeline'ı elle kullan (Kommo'daki yollar <a href="https://aii-crm.com/guides/tr/kommo-automation-no-developer.html">ayrı bir rehberde</a>). Telefoni, muhasebe yazılımı ve birden fazla sistemi kapsayan senaryolar entegratörün işidir.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>Kai'nin kuralları amoCRM ve Kommo'daki Digital Pipeline'dan nasıl farklı?</h3>
+    <p>Digital Pipeline CRM'in içinde yaşar ve onu içeren planlarda orada yapılandırılır. Kai'nin kuralları Kai tarafında yaşar ve API üzerinden işlem yapar; bu yüzden tek cümleyle açılır ve abonelik aktif olduğu sürece çalışır. CRM'de oluşturulan her şey kalır.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Küçük bir satış ekibinin kaç otomasyona ihtiyacı var?</h3>
+    <p>Başlangıç için iki üç tane: aşama değişince görev, yanıtsız müşteri hatırlatması ve yeni lead bildirimi. Gerisini haftalık özet bir delik gösterdiğinde ekle; tek hunide ondan fazla kural, sürecin yeniden düşünülmesi gerektiğini gösterir.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Kai'de otomasyonları açmak için Pro planı gerekir mi?</h3>
+    <p>Evet. Olay kuralları, roller ve standart entegrasyonlar (Telegram, Slack, Discord, Google Sheets) €59/ay ile Pro planında; 3 günlük deneme süresi Start özellikleriyle çalışır. Kendi servisine webhook ve çok adımlı zincirler €119/ay ile Max planında.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Kai'nin bağlantısını kesersem kurallara ne olur?</h3>
+    <p>Kurallar Kai tarafında çalıştığı için bağlantı kesilince durur; CRM'de daha önce oluşturulan her şey kalır. CRM'in içinde çalışan kurallar için Digital Pipeline'ı ya da Bitrix24 robotlarını elle veya bir entegratörle kullan.</p>
+  </div>
+</div>
+
+<h2>Sırada ne var</h2>
+<p>İki kural seç (neredeyse her zaman ilk ikisi) ve bugün aç: Digital Pipeline'da ya da Kai sohbetinde tek cümleyle. Önce insana hatırlatan şeyi otomatikleştir, işi onun yerine yapanı sonra; otomatik yanıtlar ve toplu gönderimler bekleyebilir. Bir hafta sonra özeti aç ve görevleri say.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Telegram'da dene</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Web sohbetini aç</a>
+</div>
+
+<p class="author">Yazar: Kai Ekibi · Güncellendi: <time datetime="2026-10-26">26 Ekim 2026</time> · Plan ayrıntılarını ve özelliklerin kullanılabilirliğini güncel amoCRM, Kommo ve Bitrix24 sayfalarından kontrol et.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/tr/">Ana sayfa</a> · <a href="https://aii-crm.com/privacy-tr.html">Gizlilik</a> · <a href="https://aii-crm.com/terms-tr.html">Koşullar</a> · <a href="https://aii-crm.com/guides/en/crm-automations-that-pay-off.html">İngilizce sürüm</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/tr/crm-automations-that-pay-off.html#article",
+      "headline": "İlk ayda kendini amorti eden 7 CRM otomasyonu",
+      "description": "Aşama değişince görev, yanıtsız müşteri hatırlatması, takılan lead uyarısı, ekip sohbetine yeni lead bildirimi, zorunlu kaynak ve kayıp nedenleri, haftalık huni özeti, araçlarına webhook: her birinin çözdüğü sorun, nerede çalıştığı ve Kai'de tek cümleyle nasıl açıldığı.",
+      "inLanguage": "tr",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "mainEntityOfPage": "https://aii-crm.com/guides/tr/crm-automations-that-pay-off.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/tr/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/tr/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kai'nin kuralları amoCRM ve Kommo'daki Digital Pipeline'dan nasıl farklı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Digital Pipeline CRM'in içinde yaşar ve onu içeren planlarda orada yapılandırılır. Kai'nin kuralları Kai tarafında yaşar ve API üzerinden işlem yapar; bu yüzden tek cümleyle açılır ve abonelik aktif olduğu sürece çalışır. CRM'de oluşturulan her şey kalır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Küçük bir satış ekibinin kaç otomasyona ihtiyacı var?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Başlangıç için iki üç tane: aşama değişince görev, yanıtsız müşteri hatırlatması ve yeni lead bildirimi. Gerisini haftalık özet bir delik gösterdiğinde ekle; tek hunide ondan fazla kural, sürecin yeniden düşünülmesi gerektiğini gösterir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kai'de otomasyonları açmak için Pro planı gerekir mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Olay kuralları, roller ve standart entegrasyonlar (Telegram, Slack, Discord, Google Sheets) €59/ay ile Pro planında; 3 günlük deneme süresi Start özellikleriyle çalışır. Kendi servisine webhook ve çok adımlı zincirler €119/ay ile Max planında."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kai'nin bağlantısını kesersem kurallara ne olur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kurallar Kai tarafında çalıştığı için bağlantı kesilince durur; CRM'de daha önce oluşturulan her şey kalır. CRM'in içinde çalışan kurallar için Digital Pipeline'ı ya da Bitrix24 robotlarını elle veya bir entegratörle kullan."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Rehberler",
+          "item": "https://aii-crm.com/guides/tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "İlk ayda kendini amorti eden 7 CRM otomasyonu",
+          "item": "https://aii-crm.com/guides/tr/crm-automations-that-pay-off.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
