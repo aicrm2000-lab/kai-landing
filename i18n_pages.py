@@ -228,10 +228,14 @@ def dict_files(lang: str) -> list:
     return sorted(os.path.join(PAGES_DIR, f) for f in os.listdir(PAGES_DIR) if f == f"{lang}.json" or (f.startswith(f"{lang}-") and f.endswith(".json")))
 
 
-def load_dict(lang: str) -> "Dict | None":
+def load_dict(lang: str, policies: bool = False) -> "Dict | None":
+    """все файлы языка в одном словаре; при совпадении ключей главнее policies-файл (policies=True, для страниц политик)
+    или остальные файлы (по умолчанию, для гайдов и кейсов) — формальный и неформальный перевод одной строки не спорят"""
     files = dict_files(lang)
     if not files:
         return None
+    is_pol = lambda f: os.path.basename(f).endswith("-policies.json")
+    files = sorted(files, key=lambda f: is_pol(f) == policies)   # главный файл — последним
     strings = {}
     for p in files:
         strings.update(json.load(io.open(p, encoding="utf-8")).get("strings", {}))
@@ -544,8 +548,9 @@ def build(code: str) -> None:
     io.open(os.path.join(out_dir, "index.html"), "w", encoding="utf-8", newline="\n").write(build_guides.index_page(code, guides, d))
     os.makedirs(os.path.join(HERE, "cases", code), exist_ok=True)
     io.open(os.path.join(HERE, "cases", code, "index.html"), "w", encoding="utf-8", newline="\n").write(build_cases.page(code, d))
+    dp = load_dict(code, policies=True)
     for kind in POLICIES:
-        h = translate_html(prep_policy_en(policy_en(kind), kind), d, code)
+        h = translate_html(prep_policy_en(policy_en(kind), kind), dp, code)
         h = relink_policy(h, kind, code)
         io.open(os.path.join(HERE, f"{kind}-{code}.html"), "w", encoding="utf-8", newline="\n").write(h)
     print(f"{code}: {len(guides)} guides + index, cases, {len(POLICIES)} policies; missing {len(set(d.missing))}, rejected {len(set(d.rejected))}")

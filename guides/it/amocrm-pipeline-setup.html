@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Configurare la pipeline di vendita in amoCRM senza sviluppatore (2026) | Kai</title>
+<meta name="description" content="Passo per passo: fasi della pipeline, campi personalizzati e campi obbligatori in amoCRM da Leads → Setup, gli errori più comuni e come fare lo stesso con un solo messaggio a Kai.">
+<meta name="keywords" content="come configurare una pipeline di vendita e i campi obbligatori in amoCRM o Kommo senza sviluppatore, esiste un assistente IA che configura le pipeline di amoCRM / Kommo da un messaggio in chat">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/it/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/guides/it/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/it/amocrm-pipeline-setup.html">
+<meta property="og:title" content="Come configurare una pipeline di vendita in amoCRM senza sviluppatore (2026)">
+<meta property="og:description" content="Fasi, campi, campi obbligatori, errori comuni. La strada manuale dall'interfaccia di amoCRM e quella con un solo messaggio a Kai.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-09-24">
+<meta property="article:modified_time" content="2026-09-24">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Come configurare una pipeline di vendita in amoCRM senza sviluppatore (2026)">
+<meta name="twitter:description" content="Fasi, campi, campi obbligatori, errori comuni. A mano nell'interfaccia di amoCRM o con un solo messaggio a Kai.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/it/" aria-label="Kai — pagina iniziale">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Navigazione">
+      <a href="https://aii-crm.com/it/">Sito web</a>
+      <a href="https://t.me/aiicrm_bot">Bot Telegram</a>
+      <a href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Percorso di navigazione">
+  <a href="https://aii-crm.com/it/">Kai</a> › <a href="https://aii-crm.com/guides/it/">Guide</a> › Pipeline amoCRM
+</nav>
+
+<h1>Come configurare una pipeline di vendita in amoCRM senza sviluppatore</h1>
+<p class="meta">Aggiornato il 24 settembre 2026 · Team Kai · 6 min di lettura</p>
+
+<p class="lead">Una pipeline di vendita in amoCRM puoi costruirla da solo in 1–2 ore: le fasi si modificano in <kbd>Leads → Setup</kbd> (<kbd>Сделки → Настроить</kbd> nell'interfaccia russa), i campi si aggiungono dalla scheda di un lead con <kbd>Setup → Add field</kbd>, e dalle stesse impostazioni rendi un campo obbligatorio nelle fasi che scegli. Non serve uno sviluppatore: bastano i diritti di amministratore e una mappa delle fasi ben pensata. Oppure invia la stessa mappa in un solo messaggio a un assistente IA come Kai, che la costruisce tramite l'API ufficiale.</p>
+
+<section class="tldr" aria-label="In breve">
+  <h2>In breve</h2>
+  <ul>
+    <li>Di solito bastano 5–7 fasi di lavoro. Ogni fase è un'azione verificabile del commerciale, non uno stato del cliente.</li>
+    <li>Le fasi di sistema «Vinta» e «Persa» non si possono eliminare, solo rinominare.</li>
+    <li>Il tipo di un campo non si può cambiare in seguito, ed eliminare un campo ne cancella i dati. Pianifica i campi prima che arrivino le trattative reali.</li>
+    <li>I campi obbligatori per fase sono disponibili dal piano «Advanced» di amoCRM in su; solo un amministratore può modificare i campi.</li>
+    <li>A mano: 1–2 ore. Integratore: di solito 3–5 settimane e circa €1.500–4.000. Kai: una conversazione in chat, da €29/mese, 3 giorni gratis.</li>
+  </ul>
+</section>
+
+<h2>Passo 0. Disegna la pipeline prima di aprire amoCRM</h2>
+<p>La maggior parte dei CRM «rotti» ha fasi inventate al volo. Scrivi il percorso del cliente dalla richiesta all'incasso e tieni solo i punti in cui il commerciale fa qualcosa di verificabile. Esempio per uno studio di cucine su misura:</p>
+<pre>Nuova richiesta → Qualificato → Sopralluogo fissato → Preventivo inviato → Contratto e acconto → In produzione → Installato</pre>
+<p>Accanto a ogni fase annota cosa deve sapere il commerciale per far avanzare la trattativa. Quelle note sono i tuoi campi: «Fonte» all'inizio, «Budget» prima del preventivo, «Motivo di perdita» alla chiusura.</p>
+
+<h2>Passo 1. Crea la pipeline e le fasi nell'interfaccia di amoCRM</h2>
+<ol>
+  <li>Apri <kbd>Leads</kbd> (<kbd>Сделки</kbd>) e clicca <kbd>Setup</kbd> (<kbd>Настроить</kbd>) nell'angolo in alto a destra.</li>
+  <li>Aggiungi una fase con <kbd>+</kbd>. Clicca su una fase per rinominarla o cambiarne il colore; trascinala per riordinarla.</li>
+  <li>Per rimuovere una fase, sposta altrove le sue trattative e trascinala nel cestino in basso a destra.</li>
+  <li>Le fasi di sistema «Vinta» e «Persa» non si possono eliminare, solo rinominare, ad esempio in «Pagata» e «Rifiutata».</li>
+  <li>Per una seconda pipeline (ordini ripetuti, partner) clicca sul nome della pipeline attuale in alto a sinistra e aggiungine una. Mescolare prime vendite e vendite ripetute rende la conversione tra le fasi priva di senso.</li>
+</ol>
+<div class="note warn">Una pipeline si può eliminare solo dopo aver spostato o eliminato tutte le sue trattative, comprese quelle chiuse, e non si può recuperare.</div>
+
+<h2>Passo 2. Aggiungi i campi alla scheda del lead</h2>
+<ol>
+  <li>Apri un lead qualsiasi. Contatti e aziende hanno i propri campi, che si configurano allo stesso modo dalle loro schede.</li>
+  <li>Clicca <kbd>Setup</kbd>, poi <kbd>Add field</kbd>; scegli un tipo e un nome.</li>
+  <li>Tipi principali: elenco, selezione multipla, testo, area di testo, numero, data, casella di spunta, compleanno. Usa gli elenchi per «Fonte» e «Motivo di perdita»: sul testo libero non si fanno report.</li>
+  <li>Raggruppa i campi in schede con il <kbd>+</kbd> accanto a «Files».</li>
+</ol>
+<p>Un set minimo: «Fonte» (elenco), «Budget» (numero), «Data prossimo contatto» (data), «Motivo di perdita» (elenco). Non duplicare ciò che amoCRM ha già: importo della trattativa, utente responsabile, dati di contatto.</p>
+<div class="note warn">Il tipo di un campo non si può cambiare dopo la creazione, ed eliminare un campo ne cancella i dati senza ritorno.</div>
+
+<h2>Passo 3. Rendi obbligatori i campi chiave in fasi specifiche</h2>
+<p>Nelle impostazioni di un campo scegli le fasi di una o più pipeline in cui è obbligatorio; la trattativa non avanza finché non è compilato. Dalla mappa del passo 0:</p>
+<ul>
+  <li>«Fonte» per uscire da «Nuova richiesta»;</li>
+  <li>«Budget» prima di «Preventivo inviato»;</li>
+  <li>«Motivo di perdita» al passaggio in «Persa».</li>
+</ul>
+<p>Fermati a uno o due campi obbligatori per fase; oltre, la gente scrive trattini. Disponibile dal piano «Advanced» in su, solo per gli amministratori.</p>
+
+<h2>Passo 4. Fai passare tre trattative di prova</h2>
+<p>Crea tre trattative — «acquistato», «rifiutato», «bloccato al sopralluogo» — e falle passare per le fasi. Verifica che i campi obbligatori blocchino lo spostamento, che l'analisi mostri la conversione tra le fasi e che la trattativa bloccata abbia un'attività. Poi eliminale.</p>
+
+<h2>La strada con Kai: la stessa mappa in un solo messaggio</h2>
+<p>Kai è un assistente IA che configura amoCRM e Kommo da un messaggio in chat. Collega il CRM con l'OAuth in un clic dal widget nel marketplace di amoCRM, poi scrivi al bot Telegram <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> o nella <a href="https://app.aii-crm.com/chat?lang=en">chat web</a> (un solo account, una sola cronologia). La mappa del passo 0 come messaggio:</p>
+<pre>Configura una pipeline per uno studio di cucine su misura.
+Fasi: Nuova richiesta → Qualificato → Sopralluogo fissato → Preventivo inviato → Contratto e acconto → In produzione → Installato.
+Campi del lead: Fonte (elenco: sito web, marketplace, passaparola, Instagram), Budget (numero), Data sopralluogo (data), Motivo di perdita (elenco).
+Fonte obbligatoria per uscire da «Nuova richiesta», Budget prima di «Preventivo inviato», Motivo di perdita quando la trattativa è persa.
+Quando una trattativa arriva a «Sopralluogo fissato», crea un'attività per il tecnico un giorno prima del sopralluogo.</pre>
+<p>Kai fa qualche domanda di chiarimento (ad esempio se gli ordini ripetuti hanno bisogno di una pipeline a parte), mostra un piano e, dopo la tua conferma, crea tutto tramite l'API ufficiale e invia un report. Le modifiche successive sono un altro messaggio, scritto o vocale. Limiti onesti: i campi obbligatori richiedono un piano di amoCRM che li includa, e Kai verifica il tuo processo, non lo inventa.</p>
+
+<h2>Errori comuni nella configurazione di una pipeline</h2>
+<ul>
+  <li><strong>Stati invece di azioni.</strong> «In lavorazione», «Ci sta pensando»: le trattative restano lì per mesi. Una fase risponde a «cosa ha fatto il commerciale».</li>
+  <li><strong>Troppe fasi.</strong> Oltre dieci la conversione diventa illeggibile e le trattative si spostano a sensazione.</li>
+  <li><strong>Una pipeline per tutto.</strong> Prime vendite, vendite ripetute e vendite tramite partner hanno cicli diversi.</li>
+  <li><strong>Solo campi facoltativi.</strong> Una «Fonte» facoltativa è vuota nel giro di qualche settimana; non saprai mai quali annunci rendono.</li>
+  <li><strong>Nessun «Motivo di perdita».</strong> Il report sulle trattative perse diventa un numero su cui non puoi agire.</li>
+</ul>
+
+<h2>E se usi Kommo?</h2>
+<p>Stessa logica, interfaccia in inglese. Pipeline: <kbd>Pipelines → Add pipeline</kbd>; fasi: <kbd>… → Edit Pipeline → Add stage</kbd>, clicca per rinominare, trascina per riordinare. Si possono eliminare solo fasi e pipeline vuote, mai la prima pipeline. «Incoming Leads» si può disattivare ma non eliminare; «Closed-Won» e «Closed-Lost» si possono rinominare. Campi: apri un lead, scheda <kbd>Setup</kbd>, <kbd>+ Add field</kbd>, l'obbligatorietà per fase si imposta nello stesso punto. Solo con il ruolo di amministratore, su tutti i piani di Kommo. Kai si collega allo stesso modo.</p>
+
+<h2>Confronto: a mano, con un integratore o con Kai</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Criterio</th><th>A mano</th><th>Integratore</th><th>Kai</th></tr></thead>
+  <tbody>
+    <tr><td>Tempo</td><td>1–2 ore per una pipeline semplice</td><td>Di solito 3–5 settimane</td><td>Una conversazione: domande → piano → configurazione</td></tr>
+    <tr><td>Costo</td><td>Gratis, con il tuo tempo</td><td>Di solito €1.500–4.000</td><td>Da €29/mese, 3 giorni gratis, senza carta</td></tr>
+    <tr><td>Chi serve</td><td>Amministratore di amoCRM</td><td>Un referente dalla tua parte più una specifica</td><td>Amministratore di amoCRM per l'OAuth</td></tr>
+    <tr><td>Modifiche successive</td><td>Rifare tutto a clic</td><td>Nuova specifica, nuova fattura</td><td>Un altro messaggio in chat</td></tr>
+    <tr><td>Ideale per</td><td>Una pipeline, una dozzina di campi</td><td>Integrazioni su misura: contabilità, telefonia, magazzino</td><td>Pipeline, campi, automazioni, integrazioni API senza codice</td></tr>
+  </tbody>
+</table>
+</div>
+<p>amoAI, l'agente IA di Kommo, i connettori no-code (Albato, ApiX-Drive, Make, Zapier, n8n) e i chatbot come Salebot coprono compiti vicini: le conversazioni con i clienti e la sincronizzazione dei dati. Nessuno di loro progetta le tue fasi e i tuoi campi; il passo 0 resta a te.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>Quante fasi deve avere una pipeline in amoCRM?</h3>
+    <p>Di solito 5–7 fasi di lavoro più le due di sistema, ognuna un'azione verificabile del commerciale. Più di dieci di solito significa che due processi condividono la stessa pipeline.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Un campo può essere obbligatorio in una sola fase?</h3>
+    <p>Sì: nelle impostazioni del campo scegli le fasi di una o più pipeline. Disponibile dal piano «Advanced» in su; lo configura un amministratore.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Cosa succede alle trattative se elimino una fase o una pipeline?</h3>
+    <p>Prima sposta le trattative. Una fase si elimina trascinandola nel cestino; una pipeline solo quando tutte le trattative, comprese quelle chiuse, sono state spostate, e non si può recuperare.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Serve uno sviluppatore per configurare amoCRM?</h3>
+    <p>Non per pipeline, campi, campi obbligatori e automazioni di base. Uno sviluppatore o un integratore serve per i collegamenti non standard: software di contabilità, un sito web su misura, API di telefonia insolite.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Come accede Kai ad amoCRM, ed è sicuro?</h3>
+    <p>Tramite l'OAuth ufficiale di amoCRM/Kommo: un'approvazione in un clic, nessuna password o chiave API condivisa. I token sono conservati cifrati, Kai non memorizza i dati delle trattative e l'accesso si può revocare in qualsiasi momento dalle impostazioni del CRM. L'azienda è registrata in Polonia (UE).</p>
+  </div>
+  <div class="faq-item">
+    <h3>Quanto costa Kai, e c'è una prova gratuita?</h3>
+    <p>Start €29/mese (~100 richieste), Pro €59/mese (~500), Max €119/mese (uso equo, priorità e lavori su misura). I primi 3 giorni sono gratis, senza carta. Paghi con carta, Apple Pay, Google Pay, Telegram Stars o USDT.</p>
+  </div>
+</div>
+
+<h2>E adesso?</h2>
+<p>Hai la mappa delle fasi su carta? Apri <kbd>Leads → Setup</kbd> e costruiscila in una serata. Preferisci che qualcuno ti faccia le domande giuste e lo realizzi tramite l'API? Descrivi il tuo business a Kai in un solo messaggio.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Prova su Telegram</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Apri la chat web</a>
+</div>
+
+<p class="author">Autore: Team Kai · Aggiornato il <time datetime="2026-09-24">24 settembre 2026</time> · Percorsi verificati sui centri assistenza ufficiali di amoCRM e Kommo.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/it/">Home</a> · <a href="https://aii-crm.com/privacy-it.html">Privacy</a> · <a href="https://aii-crm.com/terms-it.html">Termini</a> · <a href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">Versione inglese</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/it/amocrm-pipeline-setup.html#article",
+      "headline": "Come configurare una pipeline di vendita in amoCRM senza sviluppatore",
+      "description": "Passo per passo: fasi della pipeline, campi personalizzati e campi obbligatori in amoCRM da Leads → Setup, gli errori più comuni e come fare lo stesso con un solo messaggio a Kai.",
+      "inLanguage": "it",
+      "datePublished": "2026-09-24",
+      "dateModified": "2026-09-24",
+      "mainEntityOfPage": "https://aii-crm.com/guides/it/amocrm-pipeline-setup.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/it/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/it/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quante fasi deve avere una pipeline in amoCRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Di solito 5–7 fasi di lavoro più le due di sistema, ognuna un'azione verificabile del commerciale. Più di dieci di solito significa che due processi condividono la stessa pipeline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Un campo può essere obbligatorio in una sola fase?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì: nelle impostazioni del campo scegli le fasi di una o più pipeline. Disponibile dal piano «Advanced» in su; lo configura un amministratore."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cosa succede alle trattative se elimino una fase o una pipeline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prima sposta le trattative. Una fase si elimina trascinandola nel cestino; una pipeline solo quando tutte le trattative, comprese quelle chiuse, sono state spostate, e non si può recuperare."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Serve uno sviluppatore per configurare amoCRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non per pipeline, campi, campi obbligatori e automazioni di base. Uno sviluppatore o un integratore serve per i collegamenti non standard: software di contabilità, un sito web su misura, API di telefonia insolite."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Come accede Kai ad amoCRM, ed è sicuro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tramite l'OAuth ufficiale di amoCRM/Kommo: un'approvazione in un clic, nessuna password o chiave API condivisa. I token sono conservati cifrati, Kai non memorizza i dati delle trattative e l'accesso si può revocare in qualsiasi momento dalle impostazioni del CRM. L'azienda è registrata in Polonia (UE)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto costa Kai, e c'è una prova gratuita?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start €29/mese (~100 richieste), Pro €59/mese (~500), Max €119/mese (uso equo, priorità e lavori su misura). I primi 3 giorni sono gratis, senza carta. Paghi con carta, Apple Pay, Google Pay, Telegram Stars o USDT."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/it/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guide",
+          "item": "https://aii-crm.com/guides/it/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Configurare la pipeline di vendita in amoCRM senza sviluppatore",
+          "item": "https://aii-crm.com/guides/it/amocrm-pipeline-setup.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Importare il database clienti da Excel in amoCRM o Kommo in 10 minuti (2026) | Kai</title>
+<meta name="description" content="Come preparare il foglio di calcolo (colonne, duplicati, formati dei telefoni), la procedura guidata di importazione di amoCRM e Kommo, gli errori comuni e la strada con Kai: invii il file, controlli la mappatura, confermi.">
+<meta name="keywords" content="importare contatti in Kommo da Excel">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/it/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/guides/it/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/import-contacts-excel-amocrm-kommo.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/it/import-contacts-excel-amocrm-kommo.html">
+<meta property="og:title" content="Importare il database clienti da Excel in amoCRM o Kommo in 10 minuti">
+<meta property="og:description" content="Come preparare il foglio di calcolo, lanciare la procedura guidata di importazione senza duplicati e rimediare quando qualcosa va storto. A mano, oppure con un solo file inviato a Kai.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-10-26">
+<meta property="article:modified_time" content="2026-10-26">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Importare il database clienti da Excel in amoCRM o Kommo in 10 minuti">
+<meta name="twitter:description" content="Come preparare il foglio di calcolo, lanciare la procedura guidata di importazione senza duplicati e rimediare quando qualcosa va storto. A mano, oppure con un solo file inviato a Kai.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/it/" aria-label="Kai — pagina iniziale">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Navigazione">
+      <a href="https://aii-crm.com/it/">Sito web</a>
+      <a href="https://t.me/aiicrm_bot">Bot Telegram</a>
+      <a href="https://aii-crm.com/guides/en/import-contacts-excel-amocrm-kommo.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Percorso di navigazione">
+  <a href="https://aii-crm.com/it/">Kai</a> › <a href="https://aii-crm.com/guides/it/">Guide</a> › Importazione da Excel
+</nav>
+
+<h1>Come importare il database clienti da Excel in amoCRM o Kommo in 10 minuti</h1>
+<p class="meta">Aggiornato il 26 ottobre 2026 · Team Kai · 6 min di lettura</p>
+
+<p class="lead">Importare un database clienti da Excel in un CRM significa caricare un foglio di calcolo in modo che ogni riga diventi un contatto (e, se serve, un'azienda e una trattativa) con i campi al posto giusto e senza duplicati. In amoCRM e Kommo l'importazione vera e propria richiede pochi minuti: la procedura guidata integrata accetta file Excel e CSV, associa le colonne ai campi e salta i duplicati. Il tempo se ne va nella preparazione della tabella, ed è lì che si nascondono i problemi. Qui sotto: come preparare il file, usare la procedura guidata, evitare gli errori comuni e fare lo stesso inviando il file a un assistente IA come Kai.</p>
+
+<section class="tldr" aria-label="In breve">
+  <h2>In breve</h2>
+  <ul>
+    <li>Una riga, un cliente. Intestazioni nella prima riga, niente celle unite, totali o codici colore.</li>
+    <li>Telefoni in un unico formato con il prefisso internazionale, un numero per cella, altrimenti il CRM non vede i duplicati.</li>
+    <li>Aggiungi le colonne «Fonte» e «Tag» prima di importare: il tag ti permette di ritrovare, e annullare, l'intera importazione.</li>
+    <li>Prima un file di prova da 10 righe, poi il database completo.</li>
+    <li>Una tabella pulita si importa in 10 minuti; una disordinata richiede un'ora di pulizia. Kai: il file in chat, controllo della mappatura, conferma.</li>
+  </ul>
+</section>
+
+<h2>Passo 1. Pulisci il foglio di calcolo</h2>
+<p>La procedura guidata fa esattamente ciò che vede nel file, quindi una tabella in ordine è l'80% del lavoro. Segui l'elenco:</p>
+<ul>
+  <li><strong>Struttura.</strong> Un solo foglio, intestazioni nella prima riga, una riga per cliente. Elimina celle unite, righe «Totale», righe vuote e intestazioni decorative; i colori non vengono importati, quindi se un colore indica uno stato, trasformalo in una colonna.</li>
+  <li><strong>Colonne.</strong> Minimo: Nome, Telefono, Email, Azienda. Utili: Ruolo, Fonte, Responsabile, Commento; per le trattative, Importo e Fase. Dividi subito «Mario Rossi, Rossi Srl» in due colonne; il CRM non lo farà.</li>
+  <li><strong>Telefoni.</strong> Un unico formato internazionale (+1…, +44…), senza spazi, parentesi o «int. 12»; due numeri significano due colonne. Excel trasforma i numeri lunghi in 7,9E+10, quindi imposta le celle come testo prima di incollare.</li>
+  <li><strong>Email e numeri.</strong> Email in minuscolo. Importi solo in cifre, senza simboli di valuta o separatori delle migliaia. Date in un unico formato.</li>
+  <li><strong>Duplicati.</strong> Trova telefoni ed email ripetuti in Excel (formattazione condizionale → valori duplicati) e decidi quale record tenere: la procedura guidata salta i duplicati ma non sa scegliere quello migliore.</li>
+  <li><strong>Due colonne di servizio.</strong> «Fonte» (ad esempio «Base 2024») e «Tag» con un valore come <kbd>import-2026-10</kbd>. Tra un mese non ricorderai da dove arrivano duemila contatti; il tag li trova in un secondo.</li>
+</ul>
+
+<h2>Passo 2. Importa con la procedura guidata di amoCRM o Kommo</h2>
+<p>In entrambi i sistemi l'importazione parte dagli elenchi (contatti, aziende o lead) con un pulsante di importazione che accetta .xlsx e .csv; verifica la posizione esatta nel centro assistenza del tuo CRM. La logica della procedura è la stessa:</p>
+<ol>
+  <li><strong>Carica il file e controlla l'anteprima.</strong> La procedura mostra le prime righe e ti chiede di associare ogni colonna a un campo del CRM, standard o personalizzato. Se un campo non esiste ancora, crealo prima nella scheda (il suo tipo non si potrà cambiare in seguito).</li>
+  <li><strong>Scegli cosa creare.</strong> Solo contatti; contatti e aziende; contatti con trattative. Per le trattative scegli pipeline e fase e assicurati che i nomi delle fasi coincidano con il CRM lettera per lettera.</li>
+  <li><strong>Imposta la regola per i duplicati.</strong> Quando un telefono o un'email coincide con una scheda esistente: salta, aggiorna o crea nuovo. Un primo caricamento pulito di solito salta; l'aggiornamento di un database in uso aggiorna.</li>
+  <li><strong>Lancia un file di prova da 10 righe.</strong> Apri qualche scheda: il telefono è nel campo telefono, non in una nota; i nomi non si sono fusi; tag e fonte ci sono.</li>
+  <li><strong>Controlla il risultato.</strong> Il numero di record corrisponde alla tabella, un filtro per il tag dell'importazione mostra lo stesso numero, e la ricerca di un telefono a caso trova esattamente una scheda.</li>
+</ol>
+<div class="note warn">Non esiste un annullamento in un clic: puoi solo ritrovare i record ed eliminarli in blocco, cosa difficile senza un tag di importazione.</div>
+
+<h2>Errori comuni nel trasferire un database</h2>
+<ul>
+  <li><strong>Formati dei telefoni misti.</strong> «(916) 123-4567» e «+19161234567» per il CRM sono numeri diversi, quindi i duplicati passano e due commerciali chiamano lo stesso cliente.</li>
+  <li><strong>Mappatura sbagliata.</strong> «Commento» finisce in «Ruolo», il nome nel campo azienda; se ne accorgono solo l'anteprima e il file di prova.</li>
+  <li><strong>Trattative senza contatti.</strong> Mille schede nella pipeline e nessuno da chiamare. Un contatto e la sua trattativa devono venire dalla stessa riga.</li>
+  <li><strong>Un solo responsabile per tutto il database.</strong> Tutto finisce sul titolare dell'account. Aggiungi una colonna «Responsabile» con i nomi scritti esattamente come nel CRM.</li>
+  <li><strong>Nessuna fonte.</strong> Nel giro di un mese il vecchio database si confonde con i nuovi lead e il report per canale non ha più senso.</li>
+  <li><strong>Contatti morti accanto a quelli vivi.</strong> Clienti in silenzio da tre anni intasano ricerca e statistiche; dagli un tag a parte o lasciali fuori.</li>
+</ul>
+
+<h2>Con Kai basta un messaggio e un file</h2>
+<p>Kai è un assistente IA che configura amoCRM e Kommo da un messaggio in chat, nel bot Telegram <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> o nella <a href="https://app.aii-crm.com/chat?lang=en">chat web</a>, collegato tramite OAuth 2.0 in un clic, senza chiavi né password. Invii il file Excel o CSV in chat; Kai riconosce le colonne («Budget» → importo della trattativa, «Tel.» → telefono), mostra la mappatura completa tra colonne e campi, trova i duplicati per telefono ed email e ti chiede cosa farne; i campi mancanti li crea. Dopo il tuo «ok» tutto viene caricato tramite l'API ufficiale, con un report: contatti, aziende e trattative create, duplicati saltati.</p>
+<pre>Ecco il database clienti in Excel. Caricalo in Kommo come contatti e aziende, salta i duplicati per telefono, metti a tutti il tag «base-2026», fonte «Fiera».</pre>
+<pre>Nel file, «Budget» è l'importo della trattativa e «Stato» è la fase nella pipeline «Vendite». Crea le trattative con i contatti; il responsabile è nella colonna «Commerciale».</pre>
+<pre>Mostrami di nuovo la mappatura e sposta «Commento» nella nota della trattativa, non del contatto.</pre>
+<p>Limiti onesti. Kai mette ordine in una tabella disordinata, ma quale di due record tenere lo decidi tu: ti mostra le coppie e chiede. Un database molto grande è meglio caricarlo a parti. Trasferire cronologia e attività da un altro CRM, o collegare il database al software di contabilità, è lavoro da integratore. L'importazione è inclusa in tutti i piani di Kai; la prova dura 3 giorni, senza carta, con le funzioni di Start.</p>
+
+<h2>A mano, con un integratore o con Kai</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Criterio</th><th>Procedura guidata di importazione del CRM</th><th>Integratore</th><th>Kai</th></tr></thead>
+  <tbody>
+    <tr><td>Ideale per</td><td>Tabella pulita, un solo tipo di record</td><td>Migrazione da un altro CRM con cronologia; dati nel software di contabilità</td><td>Qualsiasi tabella; contatti, aziende e trattative da un solo file</td></tr>
+    <tr><td>Cosa fai tu</td><td>Prepari il file, associ le colonne, controlli</td><td>Scrivi una specifica, approvi il risultato</td><td>Invii il file, controlli la mappatura, confermi</td></tr>
+    <tr><td>Tempo</td><td>10 minuti se pulita, un'ora se disordinata</td><td>Giorni o settimane</td><td>Una conversazione</td></tr>
+    <tr><td>Costo</td><td>Incluso nell'abbonamento al CRM</td><td>Secondo il preventivo del fornitore</td><td>Da €29/mese, 3 giorni gratis</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>Posso importare trattative e contatti insieme da un solo file?</h3>
+    <p>Sì. Sia in amoCRM sia in Kommo la procedura guidata crea da una riga un contatto e la trattativa collegata: indicale le colonne con importo, pipeline e fase. Kai fa lo stesso; basta dirgli quali colonne appartengono alla trattativa.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Come rileva i duplicati il CRM durante l'importazione?</h3>
+    <p>Confrontando il telefono o l'email con le schede esistenti: per questo i telefoni nel file devono avere un unico formato con il prefisso internazionale. «(916) 123-4567» e «+19161234567» per il CRM sono numeri diversi.</p>
+  </div>
+  <div class="faq-item">
+    <h3>E se l'importazione è andata male?</h3>
+    <p>Se ogni record ha ricevuto un tag di importazione, filtra per quel tag, selezionali in blocco ed eliminali o correggili. Senza tag dovrai cercare a mano in tutto il database: ecco perché si parte da un file di prova da 10 righe.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Cosa succede al mio file quando lo invio a Kai?</h3>
+    <p>Il file serve solo a leggere le colonne e caricare i dati nel CRM tramite l'API ufficiale. Il tuo database clienti vive nel tuo CRM; Kai non memorizza i dati di contatti o trattative. Il CRM si collega via OAuth 2.0 senza password; l'accesso si può revocare in qualsiasi momento dalle impostazioni del CRM.</p>
+  </div>
+</div>
+
+<h2>E adesso?</h2>
+<p>Apri il foglio di calcolo, porta i telefoni a un unico formato e aggiungi le colonne «Fonte» e «Tag»: questi sono i 10 minuti. Poi la procedura guidata di importazione del CRM, oppure il file nella chat di Kai. Stai configurando tutto il CRM? Parti dalla <a href="https://aii-crm.com/guides/it/crm-setup-without-integrator-checklist.html">checklist in 12 punti</a>.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Prova su Telegram</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Apri la chat web</a>
+</div>
+
+<p class="author">Autore: Team Kai · Aggiornato il <time datetime="2026-10-26">26 ottobre 2026</time> · I passi della procedura guidata sono descritti in modo generale; verifica i nomi esatti dei menu nel centro assistenza del tuo CRM.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/it/">Home</a> · <a href="https://aii-crm.com/privacy-it.html">Privacy</a> · <a href="https://aii-crm.com/terms-it.html">Termini</a> · <a href="https://aii-crm.com/guides/en/import-contacts-excel-amocrm-kommo.html">Versione inglese</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/it/import-contacts-excel-amocrm-kommo.html#article",
+      "headline": "Come importare il database clienti da Excel in amoCRM o Kommo in 10 minuti",
+      "description": "Come preparare il foglio di calcolo (colonne, duplicati, formati dei telefoni), la procedura guidata di importazione di amoCRM e Kommo, gli errori comuni e la strada con Kai: invii il file, controlli la mappatura, confermi.",
+      "inLanguage": "it",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "mainEntityOfPage": "https://aii-crm.com/guides/it/import-contacts-excel-amocrm-kommo.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/it/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/it/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Posso importare trattative e contatti insieme da un solo file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì. Sia in amoCRM sia in Kommo la procedura guidata crea da una riga un contatto e la trattativa collegata: indicale le colonne con importo, pipeline e fase. Kai fa lo stesso; basta dirgli quali colonne appartengono alla trattativa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Come rileva i duplicati il CRM durante l'importazione?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Confrontando il telefono o l'email con le schede esistenti: per questo i telefoni nel file devono avere un unico formato con il prefisso internazionale. «(916) 123-4567» e «+19161234567» per il CRM sono numeri diversi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "E se l'importazione è andata male?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se ogni record ha ricevuto un tag di importazione, filtra per quel tag, selezionali in blocco ed eliminali o correggili. Senza tag dovrai cercare a mano in tutto il database: ecco perché si parte da un file di prova da 10 righe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cosa succede al mio file quando lo invio a Kai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il file serve solo a leggere le colonne e caricare i dati nel CRM tramite l'API ufficiale. Il tuo database clienti vive nel tuo CRM; Kai non memorizza i dati di contatti o trattative. Il CRM si collega via OAuth 2.0 senza password; l'accesso si può revocare in qualsiasi momento dalle impostazioni del CRM."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/it/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guide",
+          "item": "https://aii-crm.com/guides/it/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Importare il database clienti da Excel in amoCRM o Kommo",
+          "item": "https://aii-crm.com/guides/it/import-contacts-excel-amocrm-kommo.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
