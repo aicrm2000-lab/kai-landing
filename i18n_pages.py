@@ -379,6 +379,25 @@ def prep_policy_en(h: str, kind: str) -> str:
     return h
 
 
+def set_policy_og(h: str, kind: str, code: str) -> str:
+    """Open Graph политики из её (уже переведённых) <title> и description; прежние og-теги заменяются"""
+    h = re.sub(r'<meta (?:property="og:[a-z_:]+"|name="twitter:[a-z]+") content="[^"]*">\n?', "", h)
+    t = re.search(r"<title>(.*?)</title>", h, re.S)
+    d = re.search(r'<meta name="description" content="([^"]*)"', h)
+    if not t or not d:
+        return h
+    url = BASE + policy_path(kind)(code)
+    og = (f'<meta property="og:type" content="website">\n<meta property="og:site_name" content="Kai">\n'
+          f'<meta property="og:url" content="{url}">\n<meta property="og:locale" content="{LOCALES[code]}">\n'
+          f'<meta property="og:title" content="{attr_q(t.group(1).strip())}">\n<meta property="og:description" content="{d.group(1)}">\n'
+          f'<meta property="og:image" content="{BASE}og-image-v5.png">\n<meta name="twitter:card" content="summary_large_image">\n')
+    return re.sub(r'(<link rel="canonical" href="[^"]+">\n)', lambda m: m.group(1) + og, h, count=1)
+
+
+def attr_q(v: str) -> str:
+    return v.replace('"', "&quot;")
+
+
 def relink_policy(h: str, kind: str, code: str) -> str:
     h = h.replace('<html lang="en">', f'<html lang="{code}">', 1)
     h = h.replace('href="index.html#pricing"', f'href="{code}/#pricing"').replace('href="index.html"', f'href="{code}/"')
@@ -390,7 +409,7 @@ def relink_policy(h: str, kind: str, code: str) -> str:
     h = re.sub(r'<link rel="alternate" hreflang="[^"]+" href="[^"]+">\n?', "", h)
     h = re.sub(r'(<link rel="canonical" href="[^"]+">\n?)', lambda m: m.group(1) + hreflang_block(policy_path(kind)) + "\n", h, count=1)
     h = h.replace("var LANG=document.documentElement.lang||'ru';", f"var LANG='{code}';")
-    return h
+    return set_policy_og(h, kind, code)
 
 
 def policy_en(kind: str) -> str:
@@ -567,7 +586,7 @@ def build_all(codes=None) -> list:
         for code in ("ru", "en"):
             fp = os.path.join(HERE, policy_path(kind)(code))
             h = io.open(fp, encoding="utf-8").read()
-            io.open(fp, "w", encoding="utf-8", newline="\n").write(set_hreflang(h, policy_path(kind)))
+            io.open(fp, "w", encoding="utf-8", newline="\n").write(set_policy_og(set_hreflang(h, policy_path(kind)), kind, code))
     skipped = [c for c in available_langs() if c not in codes]
     if skipped:
         print("not ready (dictionary incomplete), not built:", ", ".join(skipped))

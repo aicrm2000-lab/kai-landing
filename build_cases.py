@@ -189,7 +189,7 @@ def page(lang: str, d=None) -> str:
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{self_url}">
 {i18n_pages.hreflang_block(i18n_pages.cases_path)}
-<meta property="og:type" content="article"><meta property="og:site_name" content="Kai"><meta property="og:url" content="{self_url}">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Kai"><meta property="og:url" content="{self_url}"><meta property="og:locale" content="{i18n_pages.LOCALES[lang]}">
 <meta property="og:title" content="{e(L['h1'])}"><meta property="og:description" content="{e(L['desc'])}"><meta property="og:image" content="{BASE}og-image-v5.png">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{e(L['h1'])}"><meta name="twitter:description" content="{e(L['desc'])}"><meta name="twitter:image" content="{BASE}og-image-v5.png">
 <link rel="icon" href="{FAVICON}">

@@ -77,6 +77,7 @@ def index_page(lang: str, guides: list, d=None) -> str:
 <meta name="keywords" content="{html.escape(L["keywords"])}">
 <link rel="canonical" href="{self_url}">
 {i18n_pages.hreflang_block(i18n_pages.guides_index_path)}
+<meta property="og:type" content="website"><meta property="og:site_name" content="Kai"><meta property="og:locale" content="{i18n_pages.LOCALES[lang]}">
 <meta property="og:title" content="{html.escape(t)}"><meta property="og:description" content="{html.escape(dsc)}"><meta property="og:image" content="{BASE}og-image.png"><meta property="og:url" content="{self_url}">
 <link rel="icon" href="{FAVICON}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap">
