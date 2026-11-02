@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automações no Kommo sem programador: guia 2026</title>
+<meta name="description" content="Pipeline Digital e Salesbot no Kommo: o que você mesmo pode configurar, 3 cenários passo a passo, os limites e como o Kai faz o mesmo a partir de uma mensagem no chat.">
+<meta name="keywords" content="Pipeline Digital ou Salesbot no Kommo: qual é a diferença e em qual plano está incluído, Como enviar uma notificação no Telegram quando um lead é ganho no Kommo sem programador">
+<link rel="canonical" href="https://aii-crm.com/guides/pt/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/kommo-automation-no-developer.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:title" content="Automações no Kommo sem programador: guia 2026">
+<meta property="og:description" content="Pipeline Digital e Salesbot: o que você mesmo pode configurar, três cenários passo a passo, os limites e como o Kai faz o mesmo a partir de uma mensagem no chat.">
+<meta property="og:url" content="https://aii-crm.com/guides/pt/kommo-automation-no-developer.html">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.hdr{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.hdr-in{max-width:760px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;flex:none}
+.hdr nav{margin-left:auto;display:flex;gap:16px;font-size:14px}
+.hdr nav a{color:var(--muted);text-decoration:none}
+.hdr nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:24px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:16px}
+.crumbs a{color:var(--muted);text-decoration:none}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.2;margin:0 0 12px;font-weight:800;letter-spacing:-.01em}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.lead{font-size:19px;color:var(--ink)}
+h2{color:var(--ink);font-size:24px;margin:40px 0 12px;font-weight:700;line-height:1.25}
+h3{color:var(--ink);font-size:18px;margin:24px 0 8px;font-weight:700}
+p{margin:0 0 14px}
+ol,ul{padding-left:22px;margin:0 0 14px}
+li{margin:6px 0}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin:20px 0}
+.tldr h2{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-2)}
+.tldr ul{margin:0}
+code,.path,.msg{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.path{font-size:14.5px;color:var(--ink);background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px}
+.msg{background:var(--bg-1);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;margin:14px 0;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word}
+.msg small{display:block;font-family:'Manrope',system-ui,sans-serif;color:var(--muted);font-size:13px;margin-bottom:6px}
+.tbl{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15px}
+th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+.faq h3{margin-top:22px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px}
+.btn-p{background:var(--accent);color:#fff}
+.btn-s{border:1px solid var(--border);color:var(--ink);background:var(--bg-2)}
+.note{color:var(--muted);font-size:15px}
+.author{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/pt/kommo-automation-no-developer.html#article",
+      "headline": "Automações no Kommo sem programador (2026)",
+      "description": "Pipeline Digital e Salesbot no Kommo: o que você mesmo pode configurar, três cenários passo a passo, os limites e como o Kai faz o mesmo a partir de uma mensagem no chat.",
+      "datePublished": "2026-09-24",
+      "dateModified": "2026-09-24",
+      "inLanguage": "pt",
+      "mainEntityOfPage": "https://aii-crm.com/guides/pt/kommo-automation-no-developer.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/pt/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/pt/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Preciso de um programador para configurar o Pipeline Digital no Kommo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. Os gatilhos do Pipeline Digital e os fluxos do Salesbot são montados com cliques na interface do Kommo. Um programador só é necessário para widgets sob medida ou webhooks complexos para sistemas externos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual é a diferença entre o Salesbot e os gatilhos do Pipeline Digital?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Um gatilho é uma única ação disparada por um evento de etapa: tarefa, tag, e-mail, webhook. O Salesbot é um fluxo de vários passos, com mensagens ao cliente, pausas, condições e as mesmas ações dentro dele. O Salesbot não está incluído no plano Base."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O Kommo tem um gatilho de “cliente não respondeu”?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não como gatilho separado. O silêncio é tratado com um passo Pause no Salesbot (esperar uma mensagem, com timer de até 8.760 horas) ou com uma tarefa do Pipeline Digital com atraso: In 1 day, In 3 days, End of the week."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como enviar uma notificação no Telegram quando um lead é ganho?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nativamente: Send internal message (só para usuários do Kommo), Send webhook para o seu próprio bot ou para um conector, ou um widget do Kommo Marketplace. O Kai conecta um canal de leads para o Telegram a partir de uma descrição no chat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O mesmo funciona no amoCRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, o Kommo é a versão internacional do amoCRM. No amoCRM o caminho é Leads (Сделки) → Setup (Настроить) → Add trigger embaixo da etapa → Create task. O Kai trabalha com os dois CRMs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O Kai substitui um integrador?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para regras padrão como tarefas, tags, mudanças de etapa, notificações e integrações com Telegram, Slack ou Google Sheets, sim. Para lógica complexa com widgets sob medida e muitos sistemas externos, um integrador ainda é a escolha certa."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/pt/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guias",
+          "item": "https://aii-crm.com/guides/pt/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Automações no Kommo sem programador",
+          "item": "https://aii-crm.com/guides/pt/kommo-automation-no-developer.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="https://aii-crm.com/pt/" aria-label="Kai — início">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav>
+      <a href="https://aii-crm.com/pt/">Site</a>
+      <a href="https://t.me/aiicrm_bot">Bot no Telegram</a>
+      <a href="https://aii-crm.com/guides/en/kommo-automation-no-developer.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Trilha de navegação"><a href="https://aii-crm.com/pt/">Kai</a> › <a href="https://aii-crm.com/guides/pt/">Guias</a> › Automações no Kommo</nav>
+
+<h1>Automações no Kommo sem programador (2026)</h1>
+<p class="meta">Equipe Kai · Atualizado em 24 de setembro de 2026</p>
+
+<p class="lead">A maior parte da automação do dia a dia no Kommo dispensa programador: no Pipeline Digital você associa um gatilho a uma etapa (tarefa, tag, mudança de etapa, e-mail, webhook), e no Salesbot monta um fluxo com blocos prontos. Os três cenários mais comuns — uma tarefa ao mudar de etapa, um lembrete quando o cliente some e uma notificação no Telegram de lead ganho — levam 10–30 minutos cada com as ferramentas nativas. Se você prefere não aprender o construtor, descreva a regra em palavras simples e o Kai configura tudo pela API oficial do Kommo.</p>
+
+<div class="tldr">
+<h2>Resumo</h2>
+<ul>
+<li>O Pipeline Digital fica em <span class="path">Leads → Automate</span>; cada etapa oferece 12 tipos de gatilho e 5 opções de atraso: Immediately, End of the day, In 1 day, In 3 days, End of the week.</li>
+<li>Salesbot: construtor de fluxos, sem limite de passos, timer de Pause de até 8.760 horas; dispara com uma nova mensagem, com a entrada do lead em uma etapa, com a troca de responsável ou por agendamento. Não está no plano Base.</li>
+<li>Não existe a ação nativa “postar em um grupo do Telegram”: as opções são uma mensagem interna para um colega, um webhook ou um widget do Marketplace.</li>
+<li>Um integrador normalmente leva 3–5 semanas. Kai: uma mensagem no chat, a partir de €29/mês, 3 dias grátis, sem cartão.</li>
+</ul>
+</div>
+
+<h2>O que são o Pipeline Digital e o Salesbot</h2>
+<p>O <strong>Pipeline Digital</strong> (Digital Pipeline) é a automação ligada às etapas do funil. Embaixo de cada etapa do quadro você pendura uma regra: “quando um lead chegar aqui, faça X”. Uma regra pode esperar, checar uma condição (tag, responsável, valor de campo) e executar uma ação.</p>
+<p>O <strong>Salesbot</strong> é um construtor de fluxos com vários passos. Ele faz tudo o que os gatilhos fazem e ainda conversa com o cliente nos chats: mensagens com botões, espera por resposta, ramificações, tarefas, webhooks. Ele é iniciado como gatilho do Pipeline Digital ou por eventos de chat. Os nomes de menu abaixo seguem a ajuda oficial do Kommo em inglês.</p>
+
+<h2>O que você mesmo pode configurar</h2>
+<p>Gatilhos do Pipeline Digital, segundo a ajuda oficial: Salesbot, Add task, Create lead, Send email, Send webhook, Change lead stage, Add tags, Complete tasks, Generate form, Change lead's user, Change field, Delete files. Cada gatilho aceita condições por usuário responsável, tags e campos; marque <em>Apply the trigger to all leads already in this stage</em>, senão a regra vale só para os leads novos.</p>
+<p>Os blocos do Salesbot se dividem em passos de conversa (Message, Condition, Pause, Validation, Send internal message) e ações (Add task, Change lead status, Manage tags, Set field, Change responsible user, Send email, Send webhook, Widget, Round Robin). Os modelos prontos facilitam o começo.</p>
+
+<h2>Cenário 1. Uma tarefa para o vendedor quando a etapa muda</h2>
+<h3>Na mão, no Kommo</h3>
+<ol>
+<li>Abra <span class="path">Leads → Automate</span>.</li>
+<li>Embaixo da etapa desejada, clique em “+” → <span class="path">Add trigger → Add task</span>.</li>
+<li>Preencha o texto da tarefa, o tipo, o usuário responsável e o prazo (Immediately, End of the day, In 1 day, In 3 days, End of the week).</li>
+<li>Adicione uma condição, se precisar (por exemplo, só leads com a tag “Quente”), e salve. Teste primeiro em um lead.</li>
+</ol>
+<p class="note">O mesmo no amoCRM: <span class="path">Leads (Сделки) → Setup (Настроить)</span> → “Add trigger” embaixo da etapa → “Create task”.</p>
+<h3>Com o Kai</h3>
+<div class="msg"><small>Mensagem no bot do Telegram ou no chat web</small>Quando um lead passar para a etapa “Proposta enviada”, crie uma tarefa para o responsável: “Confirmar que o cliente recebeu a proposta”, com prazo até o fim do dia. Só para leads com a tag “Quente”.</div>
+<p>O Kai pergunta se a etapa tem outro nome, mostra o plano e cria o gatilho pela API; o relatório fica no histórico do chat.</p>
+
+<h2>Cenário 2. Um lembrete quando o cliente some</h2>
+<h3>Na mão, no Kommo</h3>
+<p>O Kommo não tem um gatilho específico de “cliente não respondeu”, então há dois caminhos.</p>
+<ol>
+<li><strong>Simples, sem Salesbot.</strong> Na etapa “Proposta enviada”, adicione um gatilho Add task com prazo In 1 day: “Sem resposta — ligar para o cliente”. Se o cliente responder antes, o vendedor fecha a tarefa.</li>
+<li><strong>Preciso, com Salesbot.</strong> <span class="path">Settings → Communication tools → Salesbots → Create a new bot</span>. Sequência: Message (texto de follow-up) → Pause esperando uma mensagem do cliente, com timer (por exemplo, 24 horas) → Add task para o vendedor. Depois adicione um gatilho Salesbot na etapa do Pipeline Digital e teste as ramificações em um chat de teste.</li>
+</ol>
+<h3>Com o Kai</h3>
+<div class="msg"><small>Mensagem para o Kai</small>Se um lead ficar em “Proposta enviada” por mais de um dia sem atividade, crie uma tarefa para o responsável “Cliente sumiu, ligar de novo” e me avise no Telegram.</div>
+<p>O Kai configura a tarefa e a notificação, e ainda acompanha o funil 24/7, apontando os leads parados no relatório diário. Um fluxo de conversa com o cliente continua sendo território do Salesbot: o Kai rascunha os passos, você monta os blocos.</p>
+
+<h2>Cenário 3. Uma notificação no Telegram quando um lead é ganho</h2>
+<h3>Na mão, no Kommo</h3>
+<ol>
+<li><strong>Dentro do Kommo.</strong> Um Salesbot disparado quando o lead entra em Closed – won, com um passo Send internal message. Só o usuário ou a equipe selecionados veem a mensagem, dentro do Kommo, e não em um chat externo do Telegram.</li>
+<li><strong>Via webhook.</strong> <span class="path">Add trigger → Send webhook</span> na etapa de ganho; o seu próprio bot do Telegram ou um conector (Albato, ApiX-Drive, Make, n8n, Zapier) formata a mensagem para o grupo.</li>
+<li><strong>Via widget.</strong> O Kommo Marketplace tem widgets de terceiros para notificações no Telegram; o preço é definido por cada desenvolvedor.</li>
+</ol>
+<h3>Com o Kai</h3>
+<div class="msg"><small>Mensagem para o Kai</small>Configure notificações: quando um lead for ganho, publique no grupo do Telegram da equipe de vendas o nome do lead, o valor e o responsável.</div>
+<p>O Kai conecta integrações de leads com Telegram, Slack, Google Sheets e webhooks sem conector intermediário e não armazena os dados dos leads.</p>
+
+<h2>Limites que você só descobre depois</h2>
+<ul>
+<li>O Salesbot não está no plano Base (segundo a página de preços do Kommo no momento em que este texto foi escrito); o Pipeline Digital está em todos os planos.</li>
+<li>Os atrasos dos gatilhos vêm de um conjunto fixo; “em 2 horas” exige uma pausa do Salesbot.</li>
+<li>Os gatilhos reagem a eventos de etapa, não ao comportamento do cliente. As condições cobrem só usuário responsável, tags e campos.</li>
+<li>Sem a caixa “aplicar aos leads que já estão nesta etapa”, a regra ignora os leads atuais — o motivo mais comum do “não acontece nada”.</li>
+<li>Depois de 5–7 gatilhos, ninguém lembra o que está pendurado onde. A auditoria do funil do Kai existe justamente para achar essas sobreposições.</li>
+</ul>
+
+<h2>Comparação: você mesmo, integrador, conector, Kai</h2>
+<div class="tbl">
+<table>
+<thead><tr><th></th><th>Você mesmo no Kommo</th><th>Integrador</th><th>Conector no-code</th><th>Kai</th></tr></thead>
+<tbody>
+<tr><td>Tempo</td><td>10–30 min por cenário</td><td>Normalmente 3–5 semanas</td><td>Horas por integração</td><td>Minutos por cenário</td></tr>
+<tr><td>Custo</td><td>Incluído no plano do Kommo</td><td>Valor do projeto, varia conforme o mercado</td><td>Assinatura do conector</td><td>A partir de €29/mês</td></tr>
+<tr><td>Conhecimento necessário</td><td>Aprender o construtor</td><td>Escrever um briefing</td><td>Entender webhooks e campos</td><td>Descrever o negócio em palavras</td></tr>
+<tr><td>Quem mantém</td><td>Você</td><td>Integrador, por contrato</td><td>Você</td><td>O Kai monitora 24/7 e reporta no chat</td></tr>
+<tr><td>Ideal para</td><td>1–3 regras simples</td><td>Lógica complexa, muitos sistemas</td><td>Ligações entre serviços</td><td>Regras e integrações padrão</td></tr>
+</tbody>
+</table>
+</div>
+
+<section class="faq">
+<h2>FAQ</h2>
+<h3>Preciso de um programador para configurar o Pipeline Digital no Kommo?</h3>
+<p>Não. Os gatilhos do Pipeline Digital e os fluxos do Salesbot são montados com cliques na interface do Kommo. Um programador só é necessário para widgets sob medida ou webhooks complexos para sistemas externos.</p>
+<h3>Qual é a diferença entre o Salesbot e os gatilhos do Pipeline Digital?</h3>
+<p>Um gatilho é uma única ação disparada por um evento de etapa: tarefa, tag, e-mail, webhook. O Salesbot é um fluxo de vários passos, com mensagens ao cliente, pausas, condições e as mesmas ações dentro dele. O Salesbot não está incluído no plano Base.</p>
+<h3>O Kommo tem um gatilho de “cliente não respondeu”?</h3>
+<p>Não como gatilho separado. O silêncio é tratado com um passo Pause no Salesbot (esperar uma mensagem, com timer de até 8.760 horas) ou com uma tarefa do Pipeline Digital com atraso: In 1 day, In 3 days, End of the week.</p>
+<h3>Como enviar uma notificação no Telegram quando um lead é ganho?</h3>
+<p>Nativamente: Send internal message (só para usuários do Kommo), Send webhook para o seu próprio bot ou para um conector, ou um widget do Kommo Marketplace. O Kai conecta um canal de leads para o Telegram a partir de uma descrição no chat.</p>
+<h3>O mesmo funciona no amoCRM?</h3>
+<p>Sim, o Kommo é a versão internacional do amoCRM. No amoCRM o caminho é Leads (Сделки) → Setup (Настроить) → “Add trigger” embaixo da etapa → “Create task”. O Kai trabalha com os dois CRMs, além do Bitrix24 e de CRMs próprios com documentação de API.</p>
+<h3>O Kai substitui um integrador?</h3>
+<p>Para regras padrão como tarefas, tags, mudanças de etapa, notificações e integrações com Telegram, Slack ou Google Sheets, sim. Para lógica complexa com widgets sob medida e muitos sistemas externos, um integrador ainda é a escolha certa; o Kai pelo menos prepara o briefing em PDF.</p>
+</section>
+
+<h2>Próximos passos</h2>
+<p>Conecte o Kommo ao Kai em um clique via OAuth (widget no Kommo Marketplace, sem chaves de API) e descreva sua primeira regra com suas palavras. Três dias grátis, sem cartão.</p>
+<div class="cta">
+<a class="btn btn-p" href="https://t.me/aiicrm_bot">Testar no Telegram</a>
+<a class="btn btn-s" href="https://app.aii-crm.com/chat?lang=en">Abrir o chat web</a>
+</div>
+
+<p class="author">Autor: Equipe Kai · Atualizado em 24/09/2026 · <a href="https://aii-crm.com/guides/kommo-automation-no-developer.html" hreflang="ru">Ler em russo</a></p>
+</article>
+</main>
+</body>
+</html>

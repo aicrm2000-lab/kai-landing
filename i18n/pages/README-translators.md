@@ -70,6 +70,8 @@ pages needs one key only.
    missing key and re-run until both are 0. "unchanged" lists long strings identical to English — fine only if they are
    genuinely untranslatable.
 4. Do not modify any other file, do not run git, do not build pages.
+5. Several translators work at the same time. Keep temporary helper scripts and backups only in your own folder
+   (for example scratchpad/<lang>_<chunk>/), never under a shared name in a shared folder.
 
 ## Continuing after an interruption
 

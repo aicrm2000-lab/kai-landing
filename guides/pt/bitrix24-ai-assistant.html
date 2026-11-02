@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bitrix24 com assistente de IA: o que dá para configurar sem programador (beta) | Kai</title>
+<meta name="description" content="Como conectar o Bitrix24 ao assistente de IA Kai por um webhook de entrada, o que ele configura (funis, etapas, campos, leads, contatos, empresas, tarefas, análises), o que ainda não faz (robôs, widgets) e quando você ainda precisa de um integrador.">
+<meta name="keywords" content="Configuração do Bitrix24 com assistente de IA">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/pt/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/bitrix24-ai-assistant.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/pt/bitrix24-ai-assistant.html">
+<meta property="og:title" content="Bitrix24 com assistente de IA: o que dá para configurar sem programador (beta)">
+<meta property="og:description" content="O limite honesto do beta: estrutura, dados, tarefas e análises, sim; robôs e widgets dentro do Bitrix24, ainda não. Conexão, exemplos de mensagens, quando você precisa de um integrador.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-10-26">
+<meta property="article:modified_time" content="2026-10-26">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bitrix24 com assistente de IA: o que dá para configurar sem programador (beta)">
+<meta name="twitter:description" content="O limite honesto do beta: estrutura, dados, tarefas e análises, sim; robôs e widgets dentro do Bitrix24, ainda não. Conexão, exemplos de mensagens, quando você precisa de um integrador.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/pt/" aria-label="Kai — início">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Navegação">
+      <a href="https://aii-crm.com/pt/">Site</a>
+      <a href="https://t.me/aiicrm_bot">Bot no Telegram</a>
+      <a href="https://aii-crm.com/guides/en/bitrix24-ai-assistant.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Trilha de navegação">
+  <a href="https://aii-crm.com/pt/">Kai</a> › <a href="https://aii-crm.com/guides/pt/">Guias</a> › Assistente de IA para Bitrix24
+</nav>
+
+<h1>Bitrix24 com assistente de IA: o que dá para configurar sem programador</h1>
+<p class="meta">Atualizado em 26 de outubro de 2026 · Equipe Kai · 6 min de leitura</p>
+
+<p class="lead">Um assistente de IA para o Bitrix24 é um chat em que você descreve o seu processo de vendas em palavras e ele cria funis, etapas, campos, leads e tarefas no seu portal pela API REST oficial. Para o Bitrix24 isso ainda é um beta: estrutura, dados, tarefas e análises funcionam; robôs e widgets, ainda não. Este guia traça a linha com franqueza: o que você já pode entregar hoje a um assistente como o Kai, o que é melhor fazer à mão no Bitrix24 e onde um integrador ainda é necessário.</p>
+
+<section class="tldr" aria-label="Resumo">
+  <h2>Resumo</h2>
+  <ul>
+    <li>A conexão é feita por um webhook de entrada do Bitrix24, não por OAuth como no amoCRM e no Kommo. A URL do webhook é uma chave de acesso: trate-a como uma senha; para revogar, exclua o webhook.</li>
+    <li>Funciona: funis e etapas, campos, leads, contatos, empresas, tarefas com prazo, análise do funil, especificação em PDF.</li>
+    <li>Ainda não: robôs e outras automações dentro do Bitrix24, widgets no cartão do lead.</li>
+    <li>As notificações sobre os eventos principais chegam ao chat do Kai pelo webhook de saída do Bitrix24.</li>
+    <li>Se robôs são a sua necessidade principal, é mais justo esperar o fim do beta ou usar amoCRM/Kommo, onde tudo funciona.</li>
+  </ul>
+</section>
+
+<h2>O que "beta" significa e por que isso importa no Bitrix24</h2>
+<p>O Bitrix24 é mais do que um CRM: ele também reúne tarefas, drive, chats, processos de negócio e sites. O assistente trabalha só com a parte de CRM e com as tarefas. "Beta" significa que o cenário principal funciona (descreva o processo → receba um funil com campos, leads e tarefas), mas parte do que o Kai faz no amoCRM e no Kommo ainda não foi portada, antes de tudo as automações dentro do Bitrix24. Se você precisa de estrutura e ordem nos dados, conecte agora; se precisa de robôs, leia primeiro a seção de limites.</p>
+
+<h2>Conexão em 5 minutos: o webhook de entrada</h2>
+<p>No amoCRM e no Kommo, o Kai se conecta por OAuth 2.0 em um clique, e nenhuma senha ou chave troca de mãos. O Bitrix24 usa um webhook de entrada para um serviço externo que não está publicado no seu Market. Os passos:</p>
+<ol>
+  <li>No seu portal Bitrix24, abra a seção de desenvolvedores e crie um <strong>webhook de entrada</strong>; confira a localização exata na central de ajuda do Bitrix24.</li>
+  <li>Dê ao webhook permissões para <strong>CRM</strong> e <strong>tarefas</strong>. É o mínimo de que o assistente precisa; as outras seções podem ficar desmarcadas.</li>
+  <li>Copie a URL do webhook e envie para o chat do Kai: o bot do Telegram <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> ou o <a href="https://app.aii-crm.com/chat?lang=en">chat web</a>.</li>
+  <li>O Kai verifica o acesso e mostra o que vê: funis, etapas, campos, o número de leads e contatos. Agora você pode descrever o seu processo.</li>
+</ol>
+<div class="note warn">A URL de um webhook de entrada abre acesso ao CRM sem login nem senha. Não a publique nem a encaminhe para chats em grupo. Para revogar o acesso, exclua o webhook no Bitrix24.</div>
+
+<h2>O que o Kai já configura no Bitrix24</h2>
+<ul>
+  <li><strong>Funis e etapas.</strong> Funis de leads que espelham o seu processo: 5–7 etapas de trabalho, cada uma delas uma ação verificável do vendedor.</li>
+  <li><strong>Campos.</strong> Campos personalizados em leads, contatos e empresas: texto, número, lista, data, valor monetário. Listas para tudo o que vai entrar em relatório.</li>
+  <li><strong>Leads, contatos, empresas.</strong> Criados a partir de uma mensagem ou de um áudio: "adicione o lead 'Silva, cozinha' de 12.000, contato Silva, telefone…".</li>
+  <li><strong>Tarefas com prazo.</strong> Uma tarefa no lead com data de vencimento direto do chat, inclusive uma para cada lead aberto que ainda não tenha.</li>
+  <li><strong>Análise do funil.</strong> Leads por etapa, onde eles travam, os motivos de perda mais frequentes.</li>
+  <li><strong>Especificação em PDF.</strong> O plano aprovado vira uma especificação técnica para a sua equipe ou para o integrador que vai montar os robôs.</li>
+  <li><strong>Notificações sobre os eventos principais.</strong> O Bitrix24 as envia pelo seu webhook de saída e o Kai as entrega no chat, por exemplo sobre um novo lead.</li>
+</ul>
+<p>Toda ação passa pela API REST oficial do Bitrix24 e aparece no portal como se um administrador a tivesse feito à mão, então tudo o que foi criado fica no seu portal, continue você usando o assistente ou não.</p>
+
+<h2>O que o Kai ainda não faz no Bitrix24, e o que fazer no lugar</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Necessidade</th><th>Status no Kai</th><th>O que fazer agora</th></tr></thead>
+  <tbody>
+    <tr><td>Robôs nas etapas: tarefas automáticas, troca de responsável, e-mails</td><td>Não</td><td>Monte-os no construtor de robôs do Bitrix24 à mão ou com um integrador; a especificação do Kai é a lista de regras.</td></tr>
+    <tr><td>Outras automações dentro do Bitrix24 (processos de negócio, gatilhos)</td><td>Não</td><td>No mesmo lugar; descreva as regras no chat do Kai e leve-as para a especificação.</td></tr>
+    <tr><td>Widgets e aplicativos no cartão do lead</td><td>Não</td><td>Bitrix24 Market.</td></tr>
+    <tr><td>Regras evento → ação do lado do Kai, como no amoCRM/Kommo</td><td>Só notificações sobre os eventos principais</td><td>Para tarefas automáticas por evento, use os robôs do Bitrix24.</td></tr>
+    <tr><td>Telefonia, canais abertos, sites e lojas do Bitrix24</td><td>Não é trabalho do assistente</td><td>Configurações do Bitrix24 ou um parceiro.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>O resumo honesto: hoje o Kai para Bitrix24 é uma ferramenta de "estrutura e ordem", não de "automação". Para amoCRM e Kommo, é as duas coisas.</p>
+
+<h2>Quando você ainda precisa de um integrador</h2>
+<ul>
+  <li>Você precisa de robôs e processos de negócio; por enquanto, esse é o limite do beta.</li>
+  <li>Integrações com software de contabilidade, telefonia, estoque ou um site com lógica fora do padrão.</li>
+  <li>Migração de outro CRM com histórico de conversas, tarefas e arquivos.</li>
+  <li>Vários departamentos com processos diferentes e permissões a separar por papel.</li>
+</ul>
+<p>O Kai ajuda aqui também: ele percorre o processo com você, faz as perguntas que um integrador faz na primeira reunião e gera uma especificação em PDF, o que deixa a conversa com o fornecedor mais curta e mais barata.</p>
+
+<h2>Com o Kai é uma mensagem</h2>
+<p>Depois que o webhook está conectado, uma conversa com o Kai não é diferente de uma sobre o amoCRM: você descreve o negócio, ele faz perguntas de esclarecimento com opções de resposta, mostra um plano, cria tudo pela API depois da sua confirmação e envia um relatório. Alterações posteriores são outra mensagem. Exemplos:</p>
+<pre>Configure um funil no Bitrix24 para vendas B2B de equipamentos: Nova solicitação → Qualificado → Proposta enviada → Negociação → Contrato → Pago. Campos do lead: Origem (lista), Orçamento (valor monetário), Data da proposta (data). Para cada lead aberto sem tarefa, crie uma tarefa "próximo passo" com prazo para amanhã.</pre>
+<pre>Mostre quantos leads estão em cada etapa e onde eles estão parados há mais de duas semanas.</pre>
+<pre>Prepare uma especificação em PDF para o integrador: quais robôs são necessários nas etapas "Proposta enviada" e "Contrato" e o que eles devem fazer.</pre>
+<p>Os planos são os mesmos do amoCRM e do Kommo: Start, €29/mês para um CRM; Pro, €59/mês, até três CRMs, papéis e integrações; Max, €119/mês, até dez CRMs, prioridade e personalizações. Os primeiros 3 dias são grátis, sem cartão, cerca de 25 requisições com os recursos do Start: o suficiente para testar no seu próprio portal. O Kai fala inglês e russo.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>O Kai se conecta ao Bitrix24 por OAuth, como no amoCRM?</h3>
+    <p>Não. O Bitrix24 é conectado por um webhook de entrada que você cria no seu portal com permissões para CRM e tarefas. A URL do webhook é uma chave de acesso, então trate-a como uma senha; para revogar o acesso, exclua o webhook no Bitrix24. amoCRM e Kommo se conectam por OAuth 2.0 em um clique, sem chaves.</p>
+  </div>
+  <div class="faq-item">
+    <h3>O Kai consegue configurar robôs no Bitrix24?</h3>
+    <p>Ainda não. Robôs, outras automações e widgets dentro do Bitrix24 não são criados; esse é o limite principal do beta. O Kai configura a estrutura, os dados e as tarefas e gera uma especificação em PDF, e você monta os robôs no construtor do Bitrix24 sozinho ou com um integrador.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Vou receber notificações sobre eventos do Bitrix24?</h3>
+    <p>Sim, sobre os eventos principais: o Bitrix24 os envia pelo seu webhook de saída e o Kai os entrega no chat. Regras completas evento → ação do lado do Kai, como no amoCRM e no Kommo, ainda não estão disponíveis para o Bitrix24.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Devo conectar o Bitrix24 ao Kai agora ou esperar?</h3>
+    <p>Se você precisa de estrutura (funis, etapas, campos), ordem nos dados, tarefas e análises, conecte agora: funciona, e 3 dias grátis sem cartão bastam para testar no seu portal. Se as automações dentro do Bitrix24 são a sua necessidade principal, é mais justo esperar o fim do beta ou usar amoCRM/Kommo, onde as regras já funcionam.</p>
+  </div>
+</div>
+
+<h2>Próximos passos</h2>
+<p>Crie um webhook de entrada com permissões para CRM e tarefas, envie a URL ao Kai e peça para ele mostrar o que vê. Se a sua dor é estrutura e ordem nos dados, uma noite resolve. Se são robôs, releia primeiro a tabela de limites.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Testar no Telegram</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Abrir chat web</a>
+</div>
+
+<p class="author">Autor: Equipe Kai · Atualizado em <time datetime="2026-10-26">26 de outubro de 2026</time> · As capacidades e os limites do beta estão descritos conforme a data de publicação; o Kai informa o status atual no chat.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/pt/">Início</a> · <a href="https://aii-crm.com/privacy-pt.html">Privacidade</a> · <a href="https://aii-crm.com/terms-pt.html">Termos</a> · <a href="https://aii-crm.com/guides/en/bitrix24-ai-assistant.html">Versão em inglês</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/pt/bitrix24-ai-assistant.html#article",
+      "headline": "Bitrix24 com assistente de IA: o que dá para configurar sem programador",
+      "description": "Como conectar o Bitrix24 ao assistente de IA Kai por um webhook de entrada, o que ele configura (funis, etapas, campos, leads, contatos, empresas, tarefas, análises), o que ainda não faz (robôs, widgets) e quando você ainda precisa de um integrador.",
+      "inLanguage": "pt",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "mainEntityOfPage": "https://aii-crm.com/guides/pt/bitrix24-ai-assistant.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/pt/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/pt/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "O Kai se conecta ao Bitrix24 por OAuth, como no amoCRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. O Bitrix24 é conectado por um webhook de entrada que você cria no seu portal com permissões para CRM e tarefas. A URL do webhook é uma chave de acesso, então trate-a como uma senha; para revogar o acesso, exclua o webhook no Bitrix24. amoCRM e Kommo se conectam por OAuth 2.0 em um clique, sem chaves."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O Kai consegue configurar robôs no Bitrix24?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ainda não. Robôs, outras automações e widgets dentro do Bitrix24 não são criados; esse é o limite principal do beta. O Kai configura a estrutura, os dados e as tarefas e gera uma especificação em PDF, e você monta os robôs no construtor do Bitrix24 sozinho ou com um integrador."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vou receber notificações sobre eventos do Bitrix24?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, sobre os eventos principais: o Bitrix24 os envia pelo seu webhook de saída e o Kai os entrega no chat. Regras completas evento → ação do lado do Kai, como no amoCRM e no Kommo, ainda não estão disponíveis para o Bitrix24."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Devo conectar o Bitrix24 ao Kai agora ou esperar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se você precisa de estrutura (funis, etapas, campos), ordem nos dados, tarefas e análises, conecte agora: funciona, e 3 dias grátis sem cartão bastam para testar no seu portal. Se as automações dentro do Bitrix24 são a sua necessidade principal, é mais justo esperar o fim do beta ou usar amoCRM/Kommo, onde as regras já funcionam."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/pt/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guias",
+          "item": "https://aii-crm.com/guides/pt/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Bitrix24 com assistente de IA: o que dá para configurar sem programador",
+          "item": "https://aii-crm.com/guides/pt/bitrix24-ai-assistant.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

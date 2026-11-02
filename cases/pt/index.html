@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<title>Exemplos: o CRM antes e depois de uma mensagem para o Kai | Kai</title>
+<meta name="description" content="Quatro situações típicas no amoCRM e no Kommo: como era o funil, a mensagem enviada ao Kai, o que o Kai fez e como o CRM ficou depois. Ações reais, sem integrador.">
+<meta name="keywords" content="exemplos de configuração do amoCRM, exemplos de configuração do Kommo, funil de vendas antes e depois, exemplo de automação de CRM, assistente de IA para amoCRM, IA para Kommo, configurar CRM sem integrador, Kai CRM, CRM para clínica odontológica, Kommo para imobiliária, CRM para escola on-line, como configurar funil no Kommo, automação de vendas no amoCRM, CRM para reformas">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aii-crm.com/cases/pt/">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/cases/">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/cases/en/">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/cases/de/">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/cases/pt/">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/cases/en/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Kai"><meta property="og:url" content="https://aii-crm.com/cases/pt/">
+<meta property="og:title" content="Antes → depois: amoCRM e Kommo configurados com uma mensagem"><meta property="og:description" content="Quatro situações típicas no amoCRM e no Kommo: como era o funil, a mensagem enviada ao Kai, o que o Kai fez e como o CRM ficou depois. Ações reais, sem integrador."><meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Antes → depois: amoCRM e Kommo configurados com uma mensagem"><meta name="twitter:description" content="Quatro situações típicas no amoCRM e no Kommo: como era o funil, a mensagem enviada ao Kai, o que o Kai fez e como o CRM ficou depois. Ações reais, sem integrador."><meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B0A14'/><path d='M16 6.5a9.5 9.5 0 1 0 9.5 9.5' stroke='%237C5CFF' stroke-width='4' stroke-linecap='round' fill='none'/><circle cx='23.4' cy='8.6' r='2.6' fill='%23A78BFA'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0;--bad:#FF7B93;--warn:#F5C451;--mono:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 'Manrope',system-ui,sans-serif;padding:0 16px 64px}
+.wrap{max-width:860px;margin:0 auto}header{display:flex;align-items:center;gap:12px;padding:22px 0;border-bottom:1px solid var(--border)}
+header a{color:var(--ink);text-decoration:none;font-weight:700}header .brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:700}header .brand svg{flex:0 0 28px}header nav{margin-left:auto;display:flex;gap:18px;font-size:14px}header nav a{color:var(--muted);font-weight:500}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin:40px 0 12px;text-wrap:balance}
+.lead{color:var(--text);max-width:64ch}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}.toc a{font:600 13px var(--mono);color:var(--accent-2);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:6px 12px}.toc a:hover{border-color:var(--accent)}
+.case{margin-top:44px;border:1px solid var(--border);border-radius:18px;background:var(--bg-1);padding:22px;scroll-margin-top:16px}
+.case .top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}.badge{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}.badge.crm{color:var(--accent-2);border-color:rgba(124,92,255,.45)}
+.case h2{margin:0 0 6px;font-size:clamp(21px,3.2vw,26px);line-height:1.25;color:var(--ink);letter-spacing:-.01em;text-wrap:balance}
+.case p{margin:6px 0}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.col{border:1px solid var(--border);border-radius:14px;padding:14px;background:var(--bg)}
+.col h3{margin:0 0 10px;font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.col.before h3{color:var(--bad)}.col.after h3{color:var(--good)}.col h3 i{width:8px;height:8px;border-radius:50%;background:currentColor;display:inline-block}
+.board{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.board span{font-size:13px;font-weight:600;color:var(--ink);background:var(--bg-2);border:1px solid var(--border);border-radius:8px;padding:6px 9px}.board em{font-style:normal;color:var(--muted);font-size:12px}
+.col.after .board span{border-color:rgba(67,224,160,.35)}
+.k{margin:12px 0 4px;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.list{margin:0;padding:0;list-style:none;font-size:14px}.list li{padding:5px 0;border-top:1px solid var(--border);display:flex;gap:8px;align-items:baseline}.list li:first-child{border-top:0}
+.list b{color:var(--ink);font-weight:600}.list small{color:var(--muted);font-size:12px}.list .stamp{font:600 10px var(--mono);color:var(--warn);border:1px solid rgba(245,196,81,.5);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.list.none li{color:var(--muted);font-style:italic}.list.pain li::before{content:'–';color:var(--bad)}.list.gain li::before{content:'✓';color:var(--good);font-weight:700}
+.rule{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;font-size:14px}.rule b{color:var(--ink);font-weight:600}.rule span::before{content:'→ ';color:var(--accent-2)}
+.chat{margin:16px 0;display:grid;gap:10px}.msg{max-width:92%;border-radius:16px;padding:12px 14px;font-size:15px;line-height:1.5}
+.msg.me{justify-self:end;background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.45);color:var(--ink);border-bottom-right-radius:6px}
+.msg.kai{justify-self:start;background:var(--bg-2);border:1px solid var(--border);border-bottom-left-radius:6px}.msg .who{display:block;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.msg.kai .ok{color:var(--good);font-weight:700}
+.did{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}.did span{font:500 12px var(--mono);color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:4px 8px}.did span b{color:var(--accent-2);font-weight:600}
+.time{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--bg-2);border:1px solid var(--border);font-size:14px;color:var(--text)}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.btn{display:inline-block;padding:11px 16px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;font-size:14px}.btn.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}
+button.btn{cursor:pointer;border:1px solid var(--border);font:inherit;font-weight:700;font-size:14px}
+.cta{margin-top:40px;padding:22px;border-radius:16px;background:var(--bg-2);border:1px solid var(--border)}.cta b{color:var(--ink)}.cta a{display:inline-block;margin:10px 10px 0 0;padding:12px 18px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+.cta a.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}footer{margin-top:40px;color:var(--muted);font-size:13px}footer a{color:var(--muted)}
+.more{margin-top:28px}.more a{color:var(--accent-2)}
+@media (max-width:700px){.ba{grid-template-columns:1fr}.case{padding:16px;border-radius:14px}.msg{max-width:100%}body{font-size:16px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Antes → depois: amoCRM e Kommo configurados com uma mensagem", "description": "Quatro situações típicas no amoCRM e no Kommo: como era o funil, a mensagem enviada ao Kai, o que o Kai fez e como o CRM ficou depois. Ações reais, sem integrador.", "url": "https://aii-crm.com/cases/pt/", "inLanguage": "pt", "datePublished": "2026-10-27", "dateModified": "2026-11-02", "author": {"@type": "Organization", "name": "Kai"}, "publisher": {"@type": "Organization", "name": "Kai", "url": "https://aii-crm.com/"}, "isPartOf": {"@type": "WebSite", "name": "Kai", "url": "https://aii-crm.com/"}, "hasPart": [{"@type": "HowTo", "name": "Metade das solicitações se perdia entre a ligação e o agendamento", "url": "https://aii-crm.com/cases/pt/#dental-amocrm", "step": [{"@type": "HowToStep", "text": "Crie um funil “Pacientes novos”: Solicitação → Contato feito → Agendado → Consulta confirmada → Atendimento → Plano de tratamento. Campos do lead: Serviço (lista: clínica geral, prótese, implantes, odontopediatria), Dentista, Data da consulta, Valor do plano. A Data da consulta é obrigatória na etapa “Agendado”. Regras: nova solicitação — tarefa para a recepção retornar em até 15 minutos; lead movido para “Agendado” — tarefa na véspera para confirmar a consulta; sem movimento em “Contato feito” por 2 dias — tarefa “ligar de novo”."}]}, {"@type": "HowTo", "name": "Orçamento e bairro iam digitados no nome do lead", "url": "https://aii-crm.com/cases/pt/#realty-kommo", "step": [{"@type": "HowToStep", "text": "No Kommo, crie um funil “Compradores”: Solicitação → Qualificação → Seleção → Visita → Reserva → Contrato. Campos: Tipo de imóvel (lista: studio, 1 quarto, 2 quartos, 3+ quartos, casa), Orçamento (número), Bairro, Forma de pagamento (financiamento, à vista, parcelado). Orçamento e Bairro obrigatórios na etapa “Qualificação”. Regras: nova solicitação — tarefa para retornar em até 15 minutos; lead em “Seleção” — tarefa para amanhã para agendar a visita; sem movimento depois de “Visita” por 3 dias — tarefa “pedir a decisão”. Motivos de perda: comprou em outro lugar, caro demais, mudou de ideia, sem resposta."}]}, {"@type": "HowTo", "name": "O funil existia, mas os leads ficavam meses em “Medição”", "url": "https://aii-crm.com/cases/pt/#renovation-audit-amocrm", "step": [{"@type": "HowToStep", "text": "Faça uma auditoria do funil “Venda por contrato”. Depois corrija: torne “Valor do orçamento” obrigatório na etapa “Orçamento”, adicione motivos de perda (caro demais, escolheu outra empresa, adiou, sem resposta) e a regra: sem movimento em “Medição” por 5 dias — tarefa para o mestre de obras “enviar o orçamento”. E me mostre o painel do funil."}]}, {"@type": "HowTo", "name": "As inscrições ficavam numa planilha, e a data-limite do preço era lembrada de cabeça", "url": "https://aii-crm.com/cases/pt/#courses-kommo", "step": [{"@type": "HowToStep", "text": "No Kommo, crie um funil “Venda de cursos”: Inscrição → Qualificação → Reunião agendada → Reunião realizada → Cobrança enviada → Pagamento. Campos: Produto (lista), Plano (lista: básico, com mentor, VIP), Turma, Parcelamento (sim/não). Regras: Inscrição — tarefa para escrever e oferecer uma reunião de diagnóstico; “Cobrança enviada” — tarefa para amanhã para lembrar da data-limite do preço; “Pagamento” — tag “aluno” e notificação no Telegram para a equipe de vendas."}]}]}</script>
+</head>
+<body><div class="wrap">
+<header><a class="brand" href="../../pt/" aria-label="Kai — home"><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg><span>Kai</span></a><nav><a href="../../guides/pt/">Guias</a><a href="../../pt/#pricing">Planos</a><a href="https://aii-crm.com/cases/en/" hreflang="en">EN</a></nav></header>
+<h1>Antes → depois: amoCRM e Kommo configurados com uma mensagem</h1>
+<p class="lead">Cada exemplo é um cenário típico que as pessoas trazem para o Kai: um funil para tudo, campos nas notas, tarefas de cabeça. Abaixo: a mensagem que as pessoas escrevem para o Kai, o que ele faz no CRM e o resultado. Sem números de clientes aqui, só a configuração e o tempo.</p>
+<div class="toc"><a href="#dental-amocrm">amoCRM · Clínica odontológica</a><a href="#realty-kommo">Kommo · Imobiliária</a><a href="#renovation-audit-amocrm">amoCRM · Reforma de apartamentos</a><a href="#courses-kommo">Kommo · Escola on-line</a></div>
+
+<article class="case" id="dental-amocrm">
+  <div class="top"><span class="badge crm">amoCRM</span><span class="badge">Clínica odontológica</span></div>
+  <h2>Metade das solicitações se perdia entre a ligação e o agendamento</h2>
+  <p>Um único funil “Principal” para tudo: solicitações do site, do Instagram e do telefone caem em “Novo”, depois em “Em andamento” e “Fechado”. O dentista e a data da consulta ficam nas notas, e ninguém lembra o paciente da consulta.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Antes</h3>
+      <div class="k">Etapas do funil</div><div class="board"><span>Novo</span><em>→</em><span>Em andamento</span><em>→</em><span>Fechado</span></div>
+      <div class="k">Campos do lead</div><ul class="list none"><li>sem campos — tudo nas notas</li></ul>
+      <div class="k">Regras</div><ul class="list none"><li>sem regras — tudo de cabeça</li></ul>
+      <div class="k">O que dava errado</div><ul class="list pain"><li>sem a etapa “Contato feito” — não dá para saber quem já recebeu retorno</li><li>data da consulta numa nota, a recepção procura no olho</li><li>as consultas não são confirmadas — os pacientes faltam</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Depois</h3>
+      <div class="k">Etapas do funil</div><div class="board"><span>Solicitação</span><em>→</em><span>Contato feito</span><em>→</em><span>Agendado</span><em>→</em><span>Consulta confirmada</span><em>→</em><span>Atendimento</span><em>→</em><span>Plano de tratamento</span></div>
+      <div class="k">Campos do lead</div><ul class="list"><li><b>Serviço</b><small>lista</small></li><li><b>Dentista</b></li><li><b>Data da consulta</b><span class="stamp">obrigatório em “Agendado”</span></li><li><b>Valor do plano</b><small>número</small></li></ul>
+      <div class="k">Regras</div><div class="rule"><b>Nova solicitação</b><span>tarefa “retornar a ligação” em 15 minutos</span><b>Movido para “Agendado”</b><span>tarefa na véspera: confirmar a consulta</span><b>“Contato feito” sem movimento por 2 dias</b><span>tarefa “ligar de novo”</span></div>
+      <div class="k">O que mudou</div><ul class="list gain"><li>toda solicitação recebe uma ligação nos primeiros 15 minutos — por regra, não pela memória da recepção</li><li>não dá para pular a data da consulta: sem ela o lead não passa para “Agendado”</li><li>a tarefa de confirmação aparece na véspera — menos faltas</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Mensagem para o Kai</span>Crie um funil “Pacientes novos”: Solicitação → Contato feito → Agendado → Consulta confirmada → Atendimento → Plano de tratamento. Campos do lead: Serviço (lista: clínica geral, prótese, implantes, odontopediatria), Dentista, Data da consulta, Valor do plano. A Data da consulta é obrigatória na etapa “Agendado”. Regras: nova solicitação — tarefa para a recepção retornar em até 15 minutos; lead movido para “Agendado” — tarefa na véspera para confirmar a consulta; sem movimento em “Contato feito” por 2 dias — tarefa “ligar de novo”.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Pronto.</span> Funil “Pacientes novos” criado, 6 etapas. Adicionei 4 campos, e “Data da consulta” é obrigatória em “Agendado”. Três regras ativas: retorno em até 15 minutos, confirmação da consulta na véspera, nova ligação após 2 dias. As etapas de sistema “Ganho” e “Perdido” ficaram intactas.</div>
+  </div>
+  <div class="k">O que o Kai fez</div><div class="did"><span>criar funil</span><span>criar campo <b>×4</b></span><span>tornar campo obrigatório</span><span>criar regra <b>×3</b></span></div>
+  <div class="time">Uma mensagem, cerca de dois minutos. Um integrador faz o mesmo em 2–5 dias úteis.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Crie um funil “Pacientes novos”: Solicitação → Contato feito → Agendado → Consulta confirmada → Atendimento → Plano de tratamento. Campos do lead: Serviço (lista: clínica geral, prótese, implantes, odontopediatria), Dentista, Data da consulta, Valor do plano. A Data da consulta é obrigatória na etapa “Agendado”. Regras: nova solicitação — tarefa para a recepção retornar em até 15 minutos; lead movido para “Agendado” — tarefa na véspera para confirmar a consulta; sem movimento em “Contato feito” por 2 dias — tarefa “ligar de novo”.">Copiar a mensagem</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Repita no seu chat</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Abrir no Telegram</a></div>
+</article>
+<article class="case" id="realty-kommo">
+  <div class="top"><span class="badge crm">Kommo</span><span class="badge">Imobiliária</span></div>
+  <h2>Orçamento e bairro iam digitados no nome do lead</h2>
+  <p>Todos os leads em “Entrada”, sem etapas. Orçamento, bairro e tipo de imóvel digitados no nome do lead: “João, 2 quartos, até 90 mil, centro”. A seleção de imóveis é enviada e esquecida, ninguém faz o follow-up depois da visita.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Antes</h3>
+      <div class="k">Etapas do funil</div><div class="board"><span>Entrada</span><em>→</em><span>Em atendimento</span><em>→</em><span>Negócio</span></div>
+      <div class="k">Campos do lead</div><ul class="list none"><li>sem campos — tudo nas notas</li></ul>
+      <div class="k">Regras</div><ul class="list none"><li>sem regras — tudo de cabeça</li></ul>
+      <div class="k">O que dava errado</div><ul class="list pain"><li>não dá para filtrar por orçamento ou bairro — é tudo texto</li><li>os leads travam depois da visita, sem próximo passo</li><li>sem motivos de perda — não se sabe por que os compradores desistem</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Depois</h3>
+      <div class="k">Etapas do funil</div><div class="board"><span>Solicitação</span><em>→</em><span>Qualificação</span><em>→</em><span>Seleção</span><em>→</em><span>Visita</span><em>→</em><span>Reserva</span><em>→</em><span>Contrato</span></div>
+      <div class="k">Campos do lead</div><ul class="list"><li><b>Tipo de imóvel</b><small>lista</small></li><li><b>Orçamento</b><span class="stamp">número · obrigatório em “Qualificação”</span></li><li><b>Bairro</b><span class="stamp">obrigatório em “Qualificação”</span></li><li><b>Forma de pagamento</b><small>lista</small></li></ul>
+      <div class="k">Regras</div><div class="rule"><b>Nova solicitação</b><span>tarefa “retornar a ligação” em 15 minutos</span><b>Movido para “Seleção”</b><span>tarefa para amanhã: agendar a visita</span><b>“Visita” sem movimento por 3 dias</b><span>tarefa “pedir a decisão”</span></div>
+      <div class="k">O que mudou</div><ul class="list gain"><li>filtro “2 quartos até 90.000 no centro” em um segundo, pelos campos</li><li>toda visita ganha um próximo passo e um prazo</li><li>perdas com motivo: você vê onde perde — no preço ou na agilidade</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Mensagem para o Kai</span>No Kommo, crie um funil “Compradores”: Solicitação → Qualificação → Seleção → Visita → Reserva → Contrato. Campos: Tipo de imóvel (lista: studio, 1 quarto, 2 quartos, 3+ quartos, casa), Orçamento (número), Bairro, Forma de pagamento (financiamento, à vista, parcelado). Orçamento e Bairro obrigatórios na etapa “Qualificação”. Regras: nova solicitação — tarefa para retornar em até 15 minutos; lead em “Seleção” — tarefa para amanhã para agendar a visita; sem movimento depois de “Visita” por 3 dias — tarefa “pedir a decisão”. Motivos de perda: comprou em outro lugar, caro demais, mudou de ideia, sem resposta.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Pronto.</span> Funil “Compradores”, 6 etapas. Campos: Tipo de imóvel, Orçamento, Bairro, Forma de pagamento; Orçamento e Bairro são obrigatórios em “Qualificação”. Três regras ativas e quatro motivos de perda adicionados — agora a análise de perdas vai funcionar.</div>
+  </div>
+  <div class="k">O que o Kai fez</div><div class="did"><span>criar funil</span><span>criar campo <b>×4</b></span><span>tornar campo obrigatório <b>×2</b></span><span>criar regra <b>×3</b></span><span>motivos de perda</span></div>
+  <div class="time">Uma mensagem, cerca de dois minutos. Campos, etapas e regras entram no Kommo pela API, sem widgets.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="No Kommo, crie um funil “Compradores”: Solicitação → Qualificação → Seleção → Visita → Reserva → Contrato. Campos: Tipo de imóvel (lista: studio, 1 quarto, 2 quartos, 3+ quartos, casa), Orçamento (número), Bairro, Forma de pagamento (financiamento, à vista, parcelado). Orçamento e Bairro obrigatórios na etapa “Qualificação”. Regras: nova solicitação — tarefa para retornar em até 15 minutos; lead em “Seleção” — tarefa para amanhã para agendar a visita; sem movimento depois de “Visita” por 3 dias — tarefa “pedir a decisão”. Motivos de perda: comprou em outro lugar, caro demais, mudou de ideia, sem resposta.">Copiar a mensagem</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Repita no seu chat</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Abrir no Telegram</a></div>
+</article>
+<article class="case" id="renovation-audit-amocrm">
+  <div class="top"><span class="badge crm">amoCRM</span><span class="badge">Reforma de apartamentos</span></div>
+  <h2>O funil existia, mas os leads ficavam meses em “Medição”</h2>
+  <p>O funil “Venda por contrato” foi montado há tempos, mas os orçamentos saem quando alguém lembra, os valores ficam vazios e não há motivos de perda — o relatório do funil fica em branco. O dono não vê onde o dinheiro está travado.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Antes</h3>
+      <div class="k">Etapas do funil</div><div class="board"><span>Solicitação</span><em>→</em><span>Qualificação</span><em>→</em><span>Medição</span><em>→</em><span>Orçamento</span><em>→</em><span>Contrato</span><em>→</em><span>Sinal</span></div>
+      <div class="k">Campos do lead</div><ul class="list"><li><b>Tipo de serviço</b></li><li><b>Área, m²</b></li><li><b>Orçamento</b></li><li><b>Valor do orçamento</b><small>vazio em 8 de cada 10 leads</small></li></ul>
+      <div class="k">Regras</div><ul class="list none"><li>sem regras — tudo de cabeça</li></ul>
+      <div class="k">O que dava errado</div><ul class="list pain"><li>23 leads parados há mais de duas semanas em “Medição”</li><li>valor do orçamento vazio — impossível prever a receita</li><li>sem motivos de perda, não dá para saber por que os clientes desistem</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Depois</h3>
+      <div class="k">Etapas do funil</div><div class="board"><span>Solicitação</span><em>→</em><span>Qualificação</span><em>→</em><span>Medição</span><em>→</em><span>Orçamento</span><em>→</em><span>Contrato</span><em>→</em><span>Sinal</span></div>
+      <div class="k">Campos do lead</div><ul class="list"><li><b>Tipo de serviço</b></li><li><b>Área, m²</b></li><li><b>Orçamento</b></li><li><b>Valor do orçamento</b><span class="stamp">obrigatório em “Orçamento”</span></li></ul>
+      <div class="k">Regras</div><div class="rule"><b>“Medição” sem movimento por 5 dias</b><span>tarefa para o mestre de obras “enviar o orçamento”</span></div>
+      <div class="k">O que mudou</div><ul class="list gain"><li>os orçamentos não travam mais: após 5 dias aparece uma tarefa com responsável</li><li>o valor do orçamento é obrigatório — a previsão de receita sai dos campos</li><li>perdas com motivo e o painel do funil quando quiser, com uma palavra: “dashboard”</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Mensagem para o Kai</span>Faça uma auditoria do funil “Venda por contrato”. Depois corrija: torne “Valor do orçamento” obrigatório na etapa “Orçamento”, adicione motivos de perda (caro demais, escolheu outra empresa, adiou, sem resposta) e a regra: sem movimento em “Medição” por 5 dias — tarefa para o mestre de obras “enviar o orçamento”. E me mostre o painel do funil.</div>
+    <div class="msg kai"><span class="who">Kai</span>Auditoria: 23 leads estão em “Medição” há mais de 14 dias, “Valor do orçamento” está vazio em 80% dos leads, não há motivos de perda nem automações. Corrigido: o campo é obrigatório em “Orçamento”, 4 motivos de perda adicionados, a regra de 5 dias está ativa. Painel: 61 abertos, 23 em “Medição” (gargalo), 9 ganhos este mês, 4 perdidos.</div>
+  </div>
+  <div class="k">O que o Kai fez</div><div class="did"><span>auditoria do funil</span><span>tornar campo obrigatório</span><span>motivos de perda</span><span>criar regra</span><span>painel</span></div>
+  <div class="time">Auditoria, correções e resumo — uma mensagem. O Kai não apagou nada: os leads e as etapas existentes continuaram lá.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Faça uma auditoria do funil “Venda por contrato”. Depois corrija: torne “Valor do orçamento” obrigatório na etapa “Orçamento”, adicione motivos de perda (caro demais, escolheu outra empresa, adiou, sem resposta) e a regra: sem movimento em “Medição” por 5 dias — tarefa para o mestre de obras “enviar o orçamento”. E me mostre o painel do funil.">Copiar a mensagem</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Repita no seu chat</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Abrir no Telegram</a></div>
+</article>
+<article class="case" id="courses-kommo">
+  <div class="top"><span class="badge crm">Kommo</span><span class="badge">Escola on-line</span></div>
+  <h2>As inscrições ficavam numa planilha, e a data-limite do preço era lembrada de cabeça</h2>
+  <p>As inscrições da landing page caem numa planilha, e os vendedores separam tudo à mão. As turmas se misturam, a cobrança é enviada — e o lembrete fica esquecido. A equipe só fica sabendo do pagamento pelo financeiro um dia depois.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Antes</h3>
+      <div class="k">Etapas do funil</div><div class="board"><span>Lead</span><em>→</em><span>Pagamento</span></div>
+      <div class="k">Campos do lead</div><ul class="list none"><li>sem campos — tudo nas notas</li></ul>
+      <div class="k">Regras</div><ul class="list none"><li>sem regras — tudo de cabeça</li></ul>
+      <div class="k">O que dava errado</div><ul class="list pain"><li>nada entre “Lead” e “Pagamento” — não se sabe quem está em qual etapa</li><li>sem os campos Produto e Turma — as listas são montadas à mão</li><li>os pagamentos são vistos com atraso, e as boas-vindas e o acesso atrasam</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Depois</h3>
+      <div class="k">Etapas do funil</div><div class="board"><span>Inscrição</span><em>→</em><span>Qualificação</span><em>→</em><span>Reunião agendada</span><em>→</em><span>Reunião realizada</span><em>→</em><span>Cobrança enviada</span><em>→</em><span>Pagamento</span></div>
+      <div class="k">Campos do lead</div><ul class="list"><li><b>Produto</b><small>lista</small></li><li><b>Plano</b><small>lista</small></li><li><b>Turma</b></li><li><b>Parcelamento</b><small>sim/não</small></li></ul>
+      <div class="k">Regras</div><div class="rule"><b>Inscrição</b><span>tarefa: escrever e oferecer uma reunião de diagnóstico</span><b>“Cobrança enviada”</b><span>tarefa para amanhã: lembrar da data-limite do preço</span><b>“Pagamento”</b><span>tag “aluno” + notificação no Telegram</span></div>
+      <div class="k">O que mudou</div><ul class="list gain"><li>toda inscrição recebe um primeiro contato — a tarefa é criada automaticamente</li><li>o lembrete da data-limite do preço é agendado sozinho para o dia seguinte</li><li>a equipe vê o pagamento na hora, no Telegram, sem depender do financeiro</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Mensagem para o Kai</span>No Kommo, crie um funil “Venda de cursos”: Inscrição → Qualificação → Reunião agendada → Reunião realizada → Cobrança enviada → Pagamento. Campos: Produto (lista), Plano (lista: básico, com mentor, VIP), Turma, Parcelamento (sim/não). Regras: Inscrição — tarefa para escrever e oferecer uma reunião de diagnóstico; “Cobrança enviada” — tarefa para amanhã para lembrar da data-limite do preço; “Pagamento” — tag “aluno” e notificação no Telegram para a equipe de vendas.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Pronto.</span> Funil “Venda de cursos”, 6 etapas, 4 campos. Regras ativas: tarefa na inscrição, lembrete da data-limite no dia seguinte à cobrança, tag “aluno” e notificação no Telegram no pagamento. Os colegas assinam as notificações por um link na página da conta.</div>
+  </div>
+  <div class="k">O que o Kai fez</div><div class="did"><span>criar funil</span><span>criar campo <b>×4</b></span><span>criar regra <b>×3</b></span><span>tag</span></div>
+  <div class="time">Uma mensagem. As notificações no Telegram já vêm no Kai, sem Zapier nem webhooks.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="No Kommo, crie um funil “Venda de cursos”: Inscrição → Qualificação → Reunião agendada → Reunião realizada → Cobrança enviada → Pagamento. Campos: Produto (lista), Plano (lista: básico, com mentor, VIP), Turma, Parcelamento (sim/não). Regras: Inscrição — tarefa para escrever e oferecer uma reunião de diagnóstico; “Cobrança enviada” — tarefa para amanhã para lembrar da data-limite do preço; “Pagamento” — tag “aluno” e notificação no Telegram para a equipe de vendas.">Copiar a mensagem</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Repita no seu chat</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Abrir no Telegram</a></div>
+</article>
+<p class="more"><a href="../../guides/pt/">Guias passo a passo de amoCRM e Kommo →</a></p>
+<div class="cta"><b>Quer o mesmo? Escreva para o Kai com suas palavras — ele esclarece os detalhes e configura tudo.</b><br><a href="https://t.me/aiicrm_bot">Testar no Telegram</a><a class="alt" href="https://app.aii-crm.com/chat?lang=en">Abrir chat web</a></div>
+<footer>© 2026 Kai · <a href="../../privacy-pt.html">Privacidade</a></footer>
+</div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){ b.addEventListener('click', function(){ var t=b.getAttribute('data-copy'), done=function(){ var o=b.textContent; b.textContent="Copiado"; setTimeout(function(){ b.textContent=o; },1500); };
+  if(navigator.clipboard) navigator.clipboard.writeText(t).then(done); else { var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} ta.remove(); done(); } }); });
+</script>
+</body></html>

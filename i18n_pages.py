@@ -336,8 +336,16 @@ def prep_guide_en(h: str, slug: str) -> str:
 def relink_guide(h: str, slug: str, code: str) -> str:
     h = h.replace('<html lang="en">', f'<html lang="{code}">', 1)
     h = re.sub(r'<link rel="alternate" hreflang="[^"]+" href="[^"]+">\n?', "", h)
+    keep = {}
+
+    def _keep(m):   # явные ссылки на русскую версию (hreflang="ru") не трогаем
+        keep[f"\x00{len(keep)}\x00"] = m.group(0)
+        return f"\x00{len(keep) - 1}\x00"
+    h = re.sub(rf'href="{re.escape(BASE)}guides/[a-z0-9-]+\.html" hreflang="ru"', _keep, h)
     h = h.replace(f"{BASE}guides/en/", f"{BASE}guides/{code}/")
     h = re.sub(rf'{re.escape(BASE)}guides/([a-z0-9-]+)\.html', rf"{BASE}guides/{code}/\1.html", h)   # русские кросс-ссылки
+    for k, v in keep.items():
+        h = h.replace(k, v)
     h = h.replace(f'{BASE}guides/"', f'{BASE}guides/{code}/"')
     h = h.replace(f'{BASE}en/"', f'{BASE}{code}/"').replace(f'{BASE}"', f'{BASE}{code}/"')
     h = h.replace(f"{BASE}cases/en/", f"{BASE}cases/{code}/").replace(f'{BASE}cases/"', f'{BASE}cases/{code}/"')

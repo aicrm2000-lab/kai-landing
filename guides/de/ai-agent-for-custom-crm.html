@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KI-Agent für ein eigenes CRM: Anbindung per API, ohne das System neu zu schreiben | Kai</title>
+<meta name="description" content="Was ein KI-Agent braucht, um mit deinem eigenen (Custom-, Inhouse-)CRM zu arbeiten: eine REST API mit JSON, Auth per OAuth 2.0 / API-Key / Bearer und eine Connector-Spezifikation. Drei Wege der Anbindung, was der Agent danach kann, die Grenzen und das Sicherheitsmodell – am Beispiel von Kai.">
+<meta name="keywords" content="KI-Agent an eigenes CRM anbinden, KI-Assistent für Inhouse-CRM, selbstentwickeltes CRM KI-Integration, CRM REST API KI-Agent, Custom CRM KI, eigenes CRM per API, KI für selbstgeschriebenes CRM, CRM-Anbindung ohne Entwickler, individuelle CRM-Software KI-Assistent, HubSpot KI-Agent, Pipedrive KI-Agent, EspoCRM KI, KI-Automatisierung eigenes CRM">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai team">
+<link rel="canonical" href="https://aii-crm.com/guides/de/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/ai-agent-for-custom-crm.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/de/ai-agent-for-custom-crm.html">
+<meta property="og:title" content="So verbindest du einen KI-Agenten per API mit deinem eigenen CRM">
+<meta property="og:description" content="Ein eigenes CRM mit REST API lässt sich ohne Neuentwicklung an einen KI-Agenten anbinden: die API-Adresse, die Auth-Methode, eine Pipeline-Liste – und dann Pipelines, Deals, Aufgaben und Automatisierungen in normalen Worten. Was du brauchst, wie die Anbindung läuft, wo die Grenzen sind.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-11-01">
+<meta property="article:modified_time" content="2026-11-01">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="So verbindest du einen KI-Agenten per API mit deinem eigenen CRM">
+<meta name="twitter:description" content="Ein eigenes CRM mit REST API lässt sich ohne Neuentwicklung an einen KI-Agenten anbinden: die API-Adresse, die Auth-Methode, eine Pipeline-Liste – und dann Pipelines, Deals, Aufgaben und Automatisierungen in normalen Worten. Was du brauchst, wie die Anbindung läuft, wo die Grenzen sind.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/de/" aria-label="Kai — Startseite">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Navigation">
+      <a href="https://aii-crm.com/de/">Website</a>
+      <a href="https://t.me/aiicrm_bot">Telegram-Bot</a>
+      <a href="https://aii-crm.com/guides/en/ai-agent-for-custom-crm.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Breadcrumb-Navigation">
+  <a href="https://aii-crm.com/de/">Kai</a> › <a href="https://aii-crm.com/guides/de/">Guides</a> › KI-Agent für ein eigenes CRM
+</nav>
+
+<h1>So verbindest du einen KI-Agenten per API mit deinem eigenen (Inhouse-)CRM – ohne das System neu zu schreiben</h1>
+<p class="meta">Aktualisiert am 1. November 2026 · Kai-Team · 8 Min. Lesezeit</p>
+
+<p class="lead">Viele Unternehmen betreiben ein eigenes CRM: geschrieben für ihren Prozess, gehostet auf dem eigenen Server, und kein fertiger „KI-Assistent für amoCRM“ passt dazu. Dafür musst du das System nicht neu schreiben. Hat das CRM eine REST API, die in JSON antwortet, verbindet sich ein KI-Agent damit genauso wie mit einem Standardsystem: Du beschreibst, wo die API liegt, wie man sich autorisiert und welche Anfrage was tut, und danach richtest du Pipelines ein, legst Aufgaben und Automatisierungen an – in normalen Worten im Chat. Dieser Guide zeigt, was du brauchst, wie es in Kai funktioniert und wo die Grenzen liegen.</p>
+
+<section class="tldr" aria-label="Kurz gesagt">
+  <h2>Kurz gesagt / TL;DR</h2>
+  <ul>
+    <li>Drei Dinge sind nötig: eine https-API-Adresse auf einem öffentlichen Host, eine Auth-Methode (OAuth 2.0, API-Key, Bearer oder Basic) und ein Endpunkt für die Pipeline-Liste. Alles andere ist optional.</li>
+    <li>Die Anbindung läuft über eine Connector-Spezifikation: ein JSON, das Kai aus deiner Doku entwirft oder Schritt für Schritt im Chat aufbaut. Kein Code nötig.</li>
+    <li>Danach arbeitet der Agent mit deinem CRM wie mit amoCRM: Pipelines und Phasen, Deals, Kontakte, Unternehmen, Aufgaben, Notizen, Felder, Analysen; Ereignisse aus deinem CRM speisen Regeln „Ereignis → Aktion“.</li>
+    <li>Probier es zuerst mit Kai Sandbox CRM – einem Test-CRM auf Kais Seite, das genauso angebunden wird wie ein echtes.</li>
+    <li>Sicherheit: nur https, Anfragen nur an den Host deiner API, verschlüsselte Secrets, Templates ohne Code, Größen- und Rate-Limits.</li>
+    <li>Die Anbindung eines eigenen CRM gibt es im Tarif Max (€119/Monat). Das System zu besprechen und die Spezifikation zu entwerfen ist kostenlos.</li>
+  </ul>
+</section>
+
+<h2>Was „eigenes CRM“ für einen KI-Agenten bedeutet</h2>
+<p>„Eigenes“ heißt hier jedes CRM, das nicht auf der Liste der fertigen Integrationen steht: ein Inhouse-System auf Laravel oder Django, ein Custom-Aufbau auf einem Open-Source-CRM wie EspoCRM oder SuiteCRM, ein internes Portal mit Vertriebsmodul oder ein CRM wie HubSpot oder Pipedrive. Dem Agenten ist egal, worin es geschrieben ist. Er braucht drei Dinge: wohin er Anfragen schickt, wie er beweist, dass er du ist, und welche Anfrage was tut. In Kai ist all das eine Connector-Spezifikation – ein JSON von ein paar Dutzend Zeilen. Fertige Spezifikationen für HubSpot, Pipedrive und EspoCRM liegen schon in der <a href="https://app.aii-crm.com/docs/custom-crm?lang=en">Doku</a>: einfügen, Token eintragen, abschicken.</p>
+
+<h2>Was du vor der Anbindung brauchst</h2>
+<ul>
+  <li><strong>Die Basis-URL der API</strong> – nur https und nur ein öffentlicher Host. Kai lehnt lokale Adressen, private Netzwerke und Cloud-Metadaten-Adressen ab, damit niemand über den Agenten fremde Infrastruktur erreicht.</li>
+  <li><strong>Autorisierung</strong> auf einem dieser Wege: OAuth 2.0 (Authorization Code mit PKCE oder Client Credentials), ein Bearer-Token, ein API-Key im Header oder Basic Auth. Das deckt ab, was die meisten Inhouse-APIs können.</li>
+  <li><strong>Ein Endpunkt für Pipelines mit Phasen</strong> – die einzige Pflichtoperation. Deals, Kontakte, Aufgaben, Notizen, Felder, Nutzer sind optional: Beschreibst du sie, kann der Agent sie nutzen; lässt du sie weg, sagt er ehrlich, dass die Operation für dieses CRM nicht verfügbar ist, und nennt dir, was du ergänzen musst.</li>
+  <li><strong>JSON-Antworten.</strong> Der Connector akzeptiert kein XML und kein HTML.</li>
+  <li><strong>Jemand, der das System kennt.</strong> Kai entwirft die Spezifikation aus einer Beschreibung, aber die Feldnamen sollte jemand prüfen, der den Code oder die Doku gesehen hat.</li>
+</ul>
+
+<h2>Drei Wege der Anbindung</h2>
+<ol>
+  <li><strong>Sandbox.</strong> Im Kai-Chat – Telegram oder Browser – tippe auf „🔗 Connect CRM“ → „🔧 My own CRM via API“ → „🧪 Try Kai Sandbox CRM“. Kai startet auf seiner Seite ein kleines Test-CRM mit Pipelines, Deals, Aufgaben und signierten Ereignissen und bindet es genauso an wie ein echtes eigenes CRM. Alles Folgende funktioniert auch dort – der schnellste Weg zu sehen, was der Agent mit deinem System macht, bevor du eine Zeile der Spezifikation schreibst.</li>
+  <li><strong>Aus der Doku.</strong> Füge ein paar Absätze mit der Beschreibung deiner API in den Chat ein oder hänge eine Datei an – Kai entwirft die Spezifikation, du prüfst die Feldnamen und schickst sie zurück.</li>
+  <li><strong>Schritt für Schritt.</strong> Der Button „🧩 Build the spec step by step“: Kai fragt nach der API-Adresse, der Auth-Methode und zwei Pfaden – Pipelines und Deals –, ruft sie selbst auf und liest die Feldnamen aus den echten Antworten. Kein JSON zu schreiben; bei OAuth 2.0 werden die Felder direkt nach deiner Autorisierung gelesen.</li>
+</ol>
+<p>Ein fertiges JSON kannst du als Text oder als .json-Datei schicken. Vor dem Speichern validiert Kai die Spezifikation – https, öffentlicher Host, Platzhalter, Secrets – und sagt dir genau, was zu korrigieren ist. Bei OAuth 2.0 erscheint dann ein Button „Authorize“ für die Seite deines CRM; bei den anderen Methoden ruft Kai sofort die Pipeline-Liste auf und zeigt, was er sieht. Zwischen mehreren CRMs wechselst du mit <kbd>/accounts</kbd>.</p>
+<div class="note">Eine minimale Spezifikation besteht aus Name, Basis-URL, Auth-Block und einer Operation <kbd>pipelines.list</kbd> mit den Pfaden zu den Antwortfeldern. Das reicht, um zu verbinden und deine Pipelines zu sehen; der Rest lässt sich später ergänzen. Vorlage und Beispiele stehen in der <a href="https://app.aii-crm.com/docs/custom-crm?lang=en">Kai-Doku</a>.</div>
+
+<h2>Was der Agent nach der Anbindung kann</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Operation</th><th>Was Kai tut</th><th>Was in der Spezifikation zu beschreiben ist</th></tr></thead>
+  <tbody>
+    <tr><td>Pipelines und Phasen</td><td>Listet, erstellt, benennt um, fügt Phasen hinzu; unterscheidet Phasen „gewonnen“ und „verloren“</td><td>pipelines.list – Pflicht; create, update, add_stage – optional</td></tr>
+    <tr><td>Deals</td><td>Sucht, erstellt, aktualisiert, verschiebt zwischen Phasen, verknüpft Kontakte und Unternehmen</td><td>leads.list, leads.search, leads.create, leads.update</td></tr>
+    <tr><td>Kontakte und Unternehmen</td><td>Erstellt und aktualisiert aus einer Text- oder Sprachnachricht</td><td>contacts.*, companies.*</td></tr>
+    <tr><td>Aufgaben</td><td>Erstellt mit Fälligkeitsdatum am Deal, schließt ab; liest die Liste für Deal-Gesundheit und Meeting-Briefings</td><td>tasks.create, tasks.complete, tasks.list</td></tr>
+    <tr><td>Notizen und Tags</td><td>Fügt Notizen hinzu, setzt Tags</td><td>notes.create, notes.list, tags.*</td></tr>
+    <tr><td>Felder</td><td>Erstellt Felder an Deals, Kontakten und Unternehmen: Text, Zahl, Liste, Datum; setzt Werte</td><td>fields.*</td></tr>
+    <tr><td>Pipeline-Analysen</td><td>Wie viele Deals in jeder Phase liegen und wo sie hängen bleiben</td><td>Daten aus leads.list</td></tr>
+    <tr><td>Automatisierungen</td><td>Regeln „Ereignis → Aktion“: Dein CRM schickt ein Ereignis an Kais Webhook, Kai legt eine Aufgabe an, schreibt eine Notiz, benachrichtigt den Chat</td><td>Der Block events in der Spezifikation + ein Webhook aus deinem CRM, HMAC-Signatur optional</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Platzhalter wie <kbd>{{name}}</kbd> in Pfaden und Request-Bodys werden aus den Parametern der Aktion gefüllt, <kbd>{{secret.token}}</kbd> aus den Secrets dieses Connectors. Antwortpfade sind punktgetrennt: <kbd>data.items</kbd>, <kbd>result.0.id</kbd>. Der Agent baut Anfragen nur aus dem, was du beschrieben hast: kein Code, kein Zugriff auf irgendetwas anderes.</p>
+
+<h2>Sicherheit: Was der Agent mit deinem System nicht tun kann</h2>
+<ul>
+  <li>Nur https und nur öffentliche Hosts: Adressen werden sowohl beim Speichern der Spezifikation als auch vor jeder Anfrage geprüft – DNS wird erneut aufgelöst.</li>
+  <li>Anfragen gehen nur an den Host der Basis-URL: Pfade in der Spezifikation sind relativ, absolute URLs und Redirects sind verboten.</li>
+  <li>Templates sind kein Code: nur Platzhalter. Sie haben keinen Zugriff auf Kais Umgebung, Datenbank oder andere Nutzer.</li>
+  <li>Secrets werden verschlüsselt gespeichert, nie geloggt und aus Fehlermeldungen entfernt.</li>
+  <li>Limits: Spezifikation bis 64 KB, Request-Body bis 256 KB, Antwort bis 1 MB, 15 Sekunden Timeout, 60 Aufrufe pro Minute und Connector.</li>
+  <li>OAuth 2.0: ein signierter State mit 15 Minuten Gültigkeit, PKCE, eine feste Redirect-URI; der Code wird nur auf Kais Server gegen ein Token getauscht.</li>
+</ul>
+<p>Du kannst den Zugriff jederzeit widerrufen – lösche das Token oder den Key auf Seiten deines CRM, und die nächste Anfrage des Agenten geht einfach nicht mehr durch.</p>
+
+<h2>Grenzen: Was du nicht bekommst</h2>
+<ul>
+  <li>Widgets oder Buttons in deinem CRM: Der Agent lebt im Chat und arbeitet über die API; er fügt der Oberfläche des Systems nichts hinzu.</li>
+  <li>Operationen, die nicht in der Spezifikation stehen: Kai rät keine Endpunkte, er bittet dich, sie zu beschreiben.</li>
+  <li>APIs ohne JSON, mit nicht standardmäßiger Request-Signatur oder nur innerhalb eines privaten Netzwerks erreichbar – hier ist zuerst ein Entwickler nötig.</li>
+</ul>
+
+<h2>Wann du einen Entwickler brauchst</h2>
+<ul>
+  <li>Das CRM hat keine API – sie muss geschrieben werden. Das Minimum: Listen für Pipelines und Deals; der Rest Schritt für Schritt.</li>
+  <li>Es gibt eine API, aber nur im lokalen Netzwerk – du brauchst einen öffentlichen https-Endpunkt mit Autorisierung.</li>
+  <li>Du willst Ereignisse aus dem CRM für Automatisierungen – das CRM muss einen Webhook an Kais Adresse senden: ein POST mit JSON.</li>
+</ul>
+<p>In allen anderen Fällen ist kein Entwickler nötig: Kai entwirft die Spezifikation, die Person, die das System kennt, prüft sie.</p>
+
+<h2>Mit Kai reicht eine Nachricht</h2>
+<p>Nach der Anbindung unterscheidet sich das Gespräch über dein CRM nicht von einem über amoCRM: Du beschreibst, was du brauchst, Kai stellt Rückfragen, zeigt einen Plan, setzt um und schickt einen Bericht. Beispiele:</p>
+<pre>Zeig die Pipelines in meinem CRM und wie viele Deals in jeder Phase liegen.</pre>
+<pre>Lege den Deal „Peters, Küche“ für 3.500 in der Pipeline „Vertrieb“ an, Kontakt Peters, Telefon +1 555 000-0000, und eine Aufgabe „zurückrufen“ für morgen.</pre>
+<pre>Wenn ein Deal in die Phase „Vertrag“ wechselt – lege die Aufgabe „Rechnung stellen“ für den Verantwortlichen an und schreib mir im Chat.</pre>
+<p>Die Anbindung eines eigenen CRM gibt es im Tarif Max: €119/Monat, bis zu 10 CRM-Konten, Priority-Support. Das System zu besprechen, einen Entwurf der Spezifikation anzufordern und Fragen zu stellen ist kostenlos – in der Testphase und in jedem Tarif. Kai spricht Englisch und Russisch.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>Mein CRM ist selbst entwickelt, hat eine API, aber keine Doku. Funktioniert das?</h3>
+    <p>Ja. Schick Beispiele für Anfragen und Antworten oder ein Stück Controller-Code – Kai entwirft die Spezifikation. Oder baue sie Schritt für Schritt: Gib Adresse, Auth-Methode und die Pfade zu Pipelines und Deals an; Kai ruft sie auf und liest die Feldnamen selbst aus den Antworten.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Ist es sicher, einem KI-Agenten Zugriff auf mein eigenes CRM zu geben?</h3>
+    <p>Der Zugriff ist auf das beschränkt, was die Spezifikation beschreibt: Anfragen nur an deinen Host und nur über https, Templates ohne Code, verschlüsselte Secrets, Größen- und Rate-Limits. Um den Zugriff zu widerrufen, löschst du das Token oder den Key auf deiner Seite.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Was kostet die Anbindung meines eigenen CRM?</h3>
+    <p>Das ist der Tarif Max – €119/Monat, bis zu 10 CRM-Konten, Priority-Support. Besprechung und Entwurf der Spezifikation sind kostenlos. Der Bau des CRM selbst oder seiner API ist nicht Teil des Tarifs.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Zählen HubSpot, Pipedrive oder EspoCRM auch?</h3>
+    <p>Ja. Für den Agenten sind sie dieselben „eigenen CRMs“ per API: Fertige Spezifikationen dafür liegen in der Kai-Doku, du brauchst nur ein Token oder einen API-Key.</p>
+  </div>
+</div>
+
+<h2>Nächste Schritte</h2>
+<p>Öffne den Kai-Chat, tippe auf „Connect CRM“ → „My own CRM via API“ und starte mit der Sandbox oder schick deine Doku. Hat das System eine REST API, wird es an einem Abend zu einem CRM, das du mit Worten steuerst.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">In Telegram testen</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Web-Chat öffnen</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/docs/custom-crm?lang=en">Doku: eigenes CRM per API</a>
+</div>
+
+<p class="author">Autor: Kai-Team · Aktualisiert am <time datetime="2026-11-01">1. November 2026</time> · Funktionen zum Veröffentlichungsdatum; der aktuelle Stand und die Vorlage der Spezifikation stehen im Chat und in der Doku.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/de/">Startseite</a> · <a href="https://aii-crm.com/privacy-de.html">Datenschutz</a> · <a href="https://aii-crm.com/terms-de.html">Nutzungsbedingungen</a> · <a href="https://aii-crm.com/guides/en/ai-agent-for-custom-crm.html">Englische Version</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/de/ai-agent-for-custom-crm.html#article",
+      "headline": "So verbindest du einen KI-Agenten per API mit deinem eigenen (Inhouse-)CRM – ohne das System neu zu schreiben",
+      "description": "Was ein KI-Agent braucht, um mit deinem eigenen (Custom-, Inhouse-)CRM zu arbeiten: eine REST API mit JSON, Auth per OAuth 2.0 / API-Key / Bearer und eine Connector-Spezifikation. Drei Wege der Anbindung, was der Agent danach kann, die Grenzen und das Sicherheitsmodell – am Beispiel von Kai.",
+      "inLanguage": "de",
+      "datePublished": "2026-11-01",
+      "dateModified": "2026-11-01",
+      "mainEntityOfPage": "https://aii-crm.com/guides/de/ai-agent-for-custom-crm.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/de/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/de/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mein CRM ist selbst entwickelt, hat eine API, aber keine Doku. Funktioniert das?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Schick Beispiele für Anfragen und Antworten oder ein Stück Controller-Code – Kai entwirft die Spezifikation. Oder baue sie Schritt für Schritt: Gib Adresse, Auth-Methode und die Pfade zu Pipelines und Deals an; Kai ruft sie auf und liest die Feldnamen selbst aus den Antworten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist es sicher, einem KI-Agenten Zugriff auf mein eigenes CRM zu geben?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der Zugriff ist auf das beschränkt, was die Spezifikation beschreibt: Anfragen nur an deinen Host und nur über https, Templates ohne Code, verschlüsselte Secrets, Größen- und Rate-Limits. Um den Zugriff zu widerrufen, löschst du das Token oder den Key auf deiner Seite."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was kostet die Anbindung meines eigenen CRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Das ist der Tarif Max – €119/Monat, bis zu 10 CRM-Konten, Priority-Support. Besprechung und Entwurf der Spezifikation sind kostenlos. Der Bau des CRM selbst oder seiner API ist nicht Teil des Tarifs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Zählen HubSpot, Pipedrive oder EspoCRM auch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Für den Agenten sind sie dieselben „eigenen CRMs“ per API: Fertige Spezifikationen dafür liegen in der Kai-Doku, du brauchst nur ein Token oder einen API-Key."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://aii-crm.com/guides/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "So verbindest du einen KI-Agenten per API mit deinem eigenen CRM",
+          "item": "https://aii-crm.com/guides/de/ai-agent-for-custom-crm.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

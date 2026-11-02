@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Configuração do funil de vendas no amoCRM sem programador (2026) | Kai</title>
+<meta name="description" content="Passo a passo: etapas do funil, campos personalizados e campos obrigatórios no amoCRM em Leads → Setup, erros comuns e como fazer o mesmo com uma mensagem para o Kai.">
+<meta name="keywords" content="como configurar funil de vendas e campos obrigatórios no amoCRM ou no Kommo sem programador, existe assistente de IA que configura funis do amoCRM / Kommo por mensagem no chat">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/pt/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/pt/amocrm-pipeline-setup.html">
+<meta property="og:title" content="Como configurar um funil de vendas no amoCRM sem programador (2026)">
+<meta property="og:description" content="Etapas, campos, campos obrigatórios, erros comuns. O caminho manual pela interface do amoCRM e o caminho de uma mensagem só com o Kai.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-09-24">
+<meta property="article:modified_time" content="2026-09-24">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Como configurar um funil de vendas no amoCRM sem programador (2026)">
+<meta name="twitter:description" content="Etapas, campos, campos obrigatórios, erros comuns. Na mão, pela interface do amoCRM, ou com uma mensagem para o Kai.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/pt/" aria-label="Kai — início">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Navegação">
+      <a href="https://aii-crm.com/pt/">Site</a>
+      <a href="https://t.me/aiicrm_bot">Bot no Telegram</a>
+      <a href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Trilha de navegação">
+  <a href="https://aii-crm.com/pt/">Kai</a> › <a href="https://aii-crm.com/guides/pt/">Guias</a> › Funil no amoCRM
+</nav>
+
+<h1>Como configurar um funil de vendas no amoCRM sem programador</h1>
+<p class="meta">Atualizado em 24 de setembro de 2026 · Equipe Kai · 6 min de leitura</p>
+
+<p class="lead">Você mesmo monta um funil de vendas no amoCRM em 1–2 horas: as etapas são editadas em <kbd>Leads → Setup</kbd> (<kbd>Сделки → Настроить</kbd> na interface em russo), os campos são adicionados a partir do cartão do lead em <kbd>Setup → Add field</kbd>, e nessas mesmas configurações um campo passa a ser obrigatório nas etapas escolhidas. Não precisa de programador: bastam direitos de administrador e um mapa de etapas bem pensado. Ou envie esse mesmo mapa em uma mensagem para um assistente de IA como o Kai, que monta tudo pela API oficial.</p>
+
+<section class="tldr" aria-label="Resumo">
+  <h2>Resumo</h2>
+  <ul>
+    <li>5–7 etapas de trabalho costumam bastar. Cada etapa é uma ação verificável do vendedor, não um estado do cliente.</li>
+    <li>As etapas de sistema “Ganho” e “Perdido” não podem ser excluídas, só renomeadas.</li>
+    <li>O tipo de um campo não pode ser alterado depois, e excluir um campo apaga os dados dele. Planeje os campos antes de chegarem os leads reais.</li>
+    <li>Campos obrigatórios por etapa estão disponíveis a partir do plano “Advanced” do amoCRM; só um administrador pode editar campos.</li>
+    <li>Na mão: 1–2 horas. Integrador: normalmente 3–5 semanas e cerca de €1.500–4.000. Kai: uma conversa no chat, a partir de €29/mês, 3 dias grátis.</li>
+  </ul>
+</section>
+
+<h2>Passo 0. Desenhe o funil antes de abrir o amoCRM</h2>
+<p>A maioria dos CRMs “quebrados” tem etapas inventadas na hora. Anote o caminho do cliente, do primeiro contato até o dinheiro, e mantenha só os pontos em que o vendedor faz algo verificável. Exemplo para uma loja de cozinhas planejadas:</p>
+<pre>Nova solicitação → Qualificado → Visita técnica agendada → Proposta enviada → Contrato e sinal → Em produção → Instalado</pre>
+<p>Ao lado de cada etapa, anote o que o vendedor precisa saber para fazer o lead avançar. Essas anotações são os seus campos: “Origem” no início, “Orçamento” antes da proposta, “Motivo de perda” no fechamento.</p>
+
+<h2>Passo 1. Crie o funil e as etapas na interface do amoCRM</h2>
+<ol>
+  <li>Abra <kbd>Leads</kbd> (<kbd>Сделки</kbd>) e clique em <kbd>Setup</kbd> (<kbd>Настроить</kbd>) no canto superior direito.</li>
+  <li>Adicione uma etapa com <kbd>+</kbd>. Clique em uma etapa para renomeá-la ou mudar a cor; arraste para reordenar.</li>
+  <li>Para remover uma etapa, tire os leads dela e arraste-a para a lixeira no canto inferior direito.</li>
+  <li>As etapas de sistema “Ganho” e “Perdido” não podem ser excluídas, só renomeadas, por exemplo para “Pago” e “Recusado”.</li>
+  <li>Para um segundo funil (recompras, parceiros), clique no nome do funil atual no canto superior esquerdo e adicione outro. Misturar primeiras vendas e recompras deixa a conversão por etapa sem sentido.</li>
+</ol>
+<div class="note warn">Um funil só pode ser excluído depois que todos os leads dele, inclusive os fechados, forem movidos ou excluídos, e ele não pode ser restaurado.</div>
+
+<h2>Passo 2. Adicione campos ao cartão do lead</h2>
+<ol>
+  <li>Abra qualquer lead. Contatos e empresas têm campos próprios, configurados da mesma forma a partir dos cartões deles.</li>
+  <li>Clique em <kbd>Setup</kbd> e depois em <kbd>Add field</kbd>; escolha um tipo e um nome.</li>
+  <li>Tipos principais: lista, multisseleção, texto, área de texto, número, data, caixa de seleção, aniversário. Use listas para “Origem” e “Motivo de perda”: texto livre não entra em relatório.</li>
+  <li>Agrupe os campos em abas com o <kbd>+</kbd> ao lado de “Files”.</li>
+</ol>
+<p>Um conjunto mínimo: “Origem” (lista), “Orçamento” (número), “Data do próximo contato” (data), “Motivo de perda” (lista). Não duplique o que o amoCRM já tem: valor do lead, usuário responsável, dados de contato.</p>
+<div class="note warn">O tipo de um campo não pode ser alterado depois de criado, e excluir um campo apaga os dados dele sem volta.</div>
+
+<h2>Passo 3. Torne os campos-chave obrigatórios em etapas específicas</h2>
+<p>Nas configurações do campo, escolha as etapas de um ou de vários funis em que ele é obrigatório; o lead não avança enquanto o campo não for preenchido. Pelo mapa do passo 0:</p>
+<ul>
+  <li>“Origem” para sair de “Nova solicitação”;</li>
+  <li>“Orçamento” antes de “Proposta enviada”;</li>
+  <li>“Motivo de perda” ao mover para “Perdido”.</li>
+</ul>
+<p>Fique em um ou dois campos obrigatórios por etapa; passando disso, as pessoas começam a digitar traços. Disponível a partir do plano “Advanced”, só para administradores.</p>
+
+<h2>Passo 4. Passe três leads de teste pelo funil</h2>
+<p>Crie três leads — “comprou”, “recusou”, “travou na visita técnica” — e leve cada um pelas etapas. Confira se os campos obrigatórios bloqueiam a mudança de etapa, se a análise mostra a conversão por etapa e se o lead travado tem uma tarefa. Depois exclua os três.</p>
+
+<h2>O caminho com o Kai: o mesmo mapa em uma mensagem</h2>
+<p>O Kai é um assistente de IA que configura o amoCRM e o Kommo a partir de uma mensagem no chat. Conecte o CRM por OAuth em um clique pelo widget do marketplace do amoCRM e depois escreva para o bot do Telegram <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> ou no <a href="https://app.aii-crm.com/chat?lang=en">chat web</a> (uma conta, um histórico). O mapa do passo 0 em forma de mensagem:</p>
+<pre>Configure um funil para uma loja de cozinhas planejadas.
+Etapas: Nova solicitação → Qualificado → Visita técnica agendada → Proposta enviada → Contrato e sinal → Em produção → Instalado.
+Campos do lead: Origem (lista: site, marketplace, indicação, Instagram), Orçamento (número), Data da visita técnica (data), Motivo de perda (lista).
+Origem obrigatória para sair de “Nova solicitação”, Orçamento antes de “Proposta enviada”, Motivo de perda ao perder o lead.
+Quando um lead chegar a “Visita técnica agendada”, crie uma tarefa para o projetista um dia antes da visita.</pre>
+<p>O Kai faz algumas perguntas para esclarecer (por exemplo, se as recompras precisam de um funil próprio), mostra um plano e, depois que você confirma, cria tudo pela API oficial e envia um relatório. Mudanças futuras são só mais uma mensagem, digitada ou falada. Limites, sendo honestos: campos obrigatórios exigem um plano do amoCRM que tenha esse recurso, e o Kai confere o seu processo em vez de inventá-lo.</p>
+
+<h2>Erros comuns ao configurar um funil</h2>
+<ul>
+  <li><strong>Estados em vez de ações.</strong> “Em andamento”, “Pensando”: os leads ficam ali por meses. Uma etapa responde à pergunta “o que o vendedor já fez”.</li>
+  <li><strong>Etapas demais.</strong> Passando de dez, a conversão fica ilegível e os leads avançam no achismo.</li>
+  <li><strong>Um funil para tudo.</strong> Primeiras vendas, recompras e vendas por parceiros têm ciclos diferentes.</li>
+  <li><strong>Só campos opcionais.</strong> Uma “Origem” opcional fica vazia em poucas semanas, e você nunca descobre quais anúncios dão retorno.</li>
+  <li><strong>Sem “Motivo de perda”.</strong> O relatório de leads perdidos vira um número com o qual não dá para fazer nada.</li>
+</ul>
+
+<h2>E se você usa o Kommo?</h2>
+<p>A mesma lógica; os caminhos abaixo são da interface em inglês. Funil: <kbd>Pipelines → Add pipeline</kbd>; etapas: <kbd>… → Edit Pipeline → Add stage</kbd>, clique para renomear, arraste para reordenar. Só etapas e funis vazios podem ser excluídos, e o primeiro funil nunca. “Incoming Leads” pode ser desativada, mas não excluída; “Closed-Won” e “Closed-Lost” podem ser renomeadas. Campos: abra um lead, aba <kbd>Setup</kbd>, <kbd>+ Add field</kbd>; a obrigatoriedade por etapa fica no mesmo lugar. Só com papel de administrador, em todos os planos do Kommo. O Kai se conecta da mesma forma.</p>
+
+<h2>Comparação: na mão, com integrador ou com o Kai</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Critério</th><th>Manual</th><th>Integrador</th><th>Kai</th></tr></thead>
+  <tbody>
+    <tr><td>Tempo</td><td>1–2 horas para um funil simples</td><td>Normalmente 3–5 semanas</td><td>Uma conversa: perguntas → plano → configuração</td></tr>
+    <tr><td>Custo</td><td>Grátis, só o seu tempo</td><td>Normalmente €1.500–4.000</td><td>A partir de €29/mês, 3 dias grátis, sem cartão</td></tr>
+    <tr><td>Quem precisa participar</td><td>Administrador do amoCRM</td><td>Um responsável do seu lado e uma especificação</td><td>Administrador do amoCRM para o OAuth</td></tr>
+    <tr><td>Mudanças depois</td><td>Clicar tudo de novo</td><td>Nova especificação, nova fatura</td><td>Mais uma mensagem no chat</td></tr>
+    <tr><td>Ideal para</td><td>Um funil, uma dúzia de campos</td><td>Integrações sob medida: contabilidade, telefonia, estoque</td><td>Funis, campos, automações, integrações via API sem código</td></tr>
+  </tbody>
+</table>
+</div>
+<p>amoAI, o agente de IA do Kommo, conectores no-code (Albato, ApiX-Drive, Make, Zapier, n8n) e chatbots como o Salebot cobrem tarefas vizinhas: conversas com clientes e sincronização de dados. Nenhum deles desenha suas etapas e campos; o passo 0 continua com você.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>Quantas etapas deve ter um funil no amoCRM?</h3>
+    <p>Normalmente 5–7 etapas de trabalho, mais as duas de sistema, cada uma sendo uma ação verificável do vendedor. Mais de dez costuma significar que dois processos estão dividindo o mesmo funil.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Um campo pode ser obrigatório em apenas uma etapa?</h3>
+    <p>Sim: nas configurações do campo você escolhe as etapas de um ou de vários funis. Disponível a partir do plano “Advanced”; quem configura é um administrador.</p>
+  </div>
+  <div class="faq-item">
+    <h3>O que acontece com os leads se eu excluir uma etapa ou um funil?</h3>
+    <p>Mova os leads primeiro. Uma etapa é excluída arrastando-a para a lixeira; um funil, só depois que todos os leads, inclusive os fechados, saírem dele, e ele não pode ser restaurado.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Preciso de um programador para configurar o amoCRM?</h3>
+    <p>Não para funis, campos, campos obrigatórios e automações básicas. Um programador ou integrador é necessário para integrações fora do padrão: sistema de contabilidade, site sob medida, APIs de telefonia incomuns.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Como o Kai acessa o amoCRM, e isso é seguro?</h3>
+    <p>Pelo OAuth oficial do amoCRM/Kommo: aprovação em um clique, sem compartilhar senhas nem chaves de API. Os tokens ficam criptografados, o Kai não armazena os dados dos leads e o acesso pode ser revogado nas configurações do CRM a qualquer momento. A empresa é registrada na Polônia (UE).</p>
+  </div>
+  <div class="faq-item">
+    <h3>Quanto custa o Kai, e tem teste grátis?</h3>
+    <p>Start, €29/mês (~100 requisições); Pro, €59/mês (~500); Max, €119/mês (uso justo, prioridade e personalizações). Os primeiros 3 dias são grátis, sem cartão. Pague com cartão, Apple Pay, Google Pay, Telegram Stars ou USDT.</p>
+  </div>
+</div>
+
+<h2>Próximos passos</h2>
+<p>Já tem o mapa de etapas no papel? Abra <kbd>Leads → Setup</kbd> e monte tudo em uma noite. Prefere que alguém faça as perguntas certas e configure pela API? Descreva seu negócio para o Kai em uma mensagem.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Testar no Telegram</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Abrir chat web</a>
+</div>
+
+<p class="author">Autor: Equipe Kai · Atualizado em <time datetime="2026-09-24">24 de setembro de 2026</time> · Caminhos conferidos nas centrais de ajuda oficiais do amoCRM e do Kommo.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/pt/">Início</a> · <a href="https://aii-crm.com/privacy-pt.html">Privacidade</a> · <a href="https://aii-crm.com/terms-pt.html">Termos</a> · <a href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">Versão em inglês</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/pt/amocrm-pipeline-setup.html#article",
+      "headline": "Como configurar um funil de vendas no amoCRM sem programador",
+      "description": "Passo a passo: etapas do funil, campos personalizados e campos obrigatórios no amoCRM em Leads → Setup, erros comuns e como fazer o mesmo com uma mensagem para o Kai.",
+      "inLanguage": "pt",
+      "datePublished": "2026-09-24",
+      "dateModified": "2026-09-24",
+      "mainEntityOfPage": "https://aii-crm.com/guides/pt/amocrm-pipeline-setup.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/pt/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/pt/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quantas etapas deve ter um funil no amoCRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Normalmente 5–7 etapas de trabalho, mais as duas de sistema, cada uma sendo uma ação verificável do vendedor. Mais de dez costuma significar que dois processos estão dividindo o mesmo funil."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Um campo pode ser obrigatório em apenas uma etapa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim: nas configurações do campo você escolhe as etapas de um ou de vários funis. Disponível a partir do plano “Advanced”; quem configura é um administrador."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que acontece com os leads se eu excluir uma etapa ou um funil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mova os leads primeiro. Uma etapa é excluída arrastando-a para a lixeira; um funil, só depois que todos os leads, inclusive os fechados, saírem dele, e ele não pode ser restaurado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso de um programador para configurar o amoCRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não para funis, campos, campos obrigatórios e automações básicas. Um programador ou integrador é necessário para integrações fora do padrão: sistema de contabilidade, site sob medida, APIs de telefonia incomuns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como o Kai acessa o amoCRM, e isso é seguro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pelo OAuth oficial do amoCRM/Kommo: aprovação em um clique, sem compartilhar senhas nem chaves de API. Os tokens ficam criptografados, o Kai não armazena os dados dos leads e o acesso pode ser revogado nas configurações do CRM a qualquer momento. A empresa é registrada na Polônia (UE)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto custa o Kai, e tem teste grátis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start, €29/mês (~100 requisições); Pro, €59/mês (~500); Max, €119/mês (uso justo, prioridade e personalizações). Os primeiros 3 dias são grátis, sem cartão. Pague com cartão, Apple Pay, Google Pay, Telegram Stars ou USDT."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/pt/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guias",
+          "item": "https://aii-crm.com/guides/pt/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Configuração do funil de vendas no amoCRM sem programador",
+          "item": "https://aii-crm.com/guides/pt/amocrm-pipeline-setup.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
