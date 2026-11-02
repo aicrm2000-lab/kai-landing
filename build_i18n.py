@@ -7,7 +7,7 @@ build_en.py. Для остальных языков словарь i18n/<lang>.j
 data-ny-en и имена действий data-act-en. Атрибуты data-ru/data-en убираются (переключения на странице нет, страница
 легче), html lang=<lang>, data-page-lang, title/description/keywords/OG, canonical /<lang>/, hreflang остаётся общим
 из исходника, JSON-LD (описание, featureList, FAQ) и inLanguage на языке, ссылки в app с ?lang=en (Kai говорит RU/EN),
-политики и гайды — английские, под подзаголовком hero — фраза про языки Kai. Строки без перевода остаются английскими
+политики, гайды и кейсы — на языке страницы (если собраны через i18n_pages.py, иначе английские), под подзаголовком hero — фраза про языки Kai. Строки без перевода остаются английскими
 и считаются; перевод с другим набором HTML-тегов или цифр отбрасывается (fallback EN) и тоже считается.
 Запуск: py -3.12 build_i18n.py [de fr …] (без аргументов — все словари в i18n/, кроме source.json)."""
 import io
@@ -152,11 +152,13 @@ def build(code: str) -> str:
     for prop in ("og:image", "twitter:image"):
         html = re.sub(rf'(<meta (?:property|name)="{prop}" content=")(?!https?:)([^"]+)"',
                       lambda m: f'{m.group(1)}{BASE}{m.group(2)}"', html)
-    for p in ("privacy", "terms", "refund"):   # политики и гайды — английские
-        html = html.replace(f'href="../{p}.html"', f'href="../{p}-en.html"')
-        html = html.replace(f"'{p}-en.html' : '{p}.html'", f"'../{p}-en.html' : '../{p}.html'")
-        html = html.replace(f"href='{p}-en.html'", f"href='../{p}-en.html'").replace(f"href='{p}.html'", f"href='../{p}-en.html'")
-    html = html.replace('href="../guides/"', 'href="../guides/en/"')
+    # политики, гайды и кейсы — на языке страницы, если для него собраны страницы второго уровня (i18n/pages/<lang>.json), иначе английские
+    pg = code if os.path.exists(os.path.join(HERE, "i18n", "pages", f"{code}.json")) else "en"
+    for p in ("privacy", "terms", "refund"):
+        html = html.replace(f'href="../{p}.html"', f'href="../{p}-{pg}.html"')
+        html = html.replace(f"'{p}-en.html' : '{p}.html'", f"'../{p}-{pg}.html' : '../{p}-{pg}.html'")
+        html = html.replace(f"href='{p}-en.html'", f"href='../{p}-{pg}.html'").replace(f"href='{p}.html'", f"href='../{p}-{pg}.html'")
+    html = html.replace('href="../guides/"', f'href="../guides/{pg}/"').replace('href="../cases/"', f'href="../cases/{pg}/"')
     for _p in ("account", "login", "signup", "chat", "docs/custom-crm"):   # Kai говорит по-английски и по-русски
         html = html.replace(f'app.aii-crm.com/{_p}?lang=ru"', f'app.aii-crm.com/{_p}?lang=en"')
     html = localized_jsonld(html, d, code)
