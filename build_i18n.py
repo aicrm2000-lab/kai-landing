@@ -153,7 +153,8 @@ def build(code: str) -> str:
         html = re.sub(rf'(<meta (?:property|name)="{prop}" content=")(?!https?:)([^"]+)"',
                       lambda m: f'{m.group(1)}{BASE}{m.group(2)}"', html)
     # политики, гайды и кейсы — на языке страницы, если для него собраны страницы второго уровня (i18n/pages/<lang>.json), иначе английские
-    pg = code if os.path.exists(os.path.join(HERE, "i18n", "pages", f"{code}.json")) else "en"
+    import i18n_pages
+    pg = code if i18n_pages.is_ready(code) else "en"
     for p in ("privacy", "terms", "refund"):
         html = html.replace(f'href="../{p}.html"', f'href="../{p}-{pg}.html"')
         html = html.replace(f"'{p}-en.html' : '{p}.html'", f"'../{p}-{pg}.html' : '../{p}-{pg}.html'")

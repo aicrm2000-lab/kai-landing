@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-"""Сборка страницы «Примеры: было → стало»: cases/index.html (RU) и cases/en/index.html (EN) из cases_data.py.
+"""Сборка страницы «Примеры: было → стало»: cases/index.html (RU), cases/en/index.html (EN) из cases_data.py; cases/<lang>/ на
+остальных языках собирает i18n_pages.build через page(lang, d) со словарём i18n/pages/<lang>.json.
 
 Запуск: py -3.12 build_cases.py && py -3.12 build_guides.py   (sitemap добавляет cases/ сам build_guides)
 Стиль — как у гайдов (те же переменные, Manrope + JetBrains Mono), без зависимостей; каждый пример: типовая картина
@@ -85,15 +86,36 @@ def e(s: str) -> str:
     return html.escape(s, quote=True)
 
 
-def case_html(c: dict, lang: str) -> str:
-    L = T[lang]
+def localize(o, lang: str, d):
+    """копия данных с ключом lang: английские строки через словарь (i18n_pages.Dict), без перевода — английский"""
+    if isinstance(o, dict):
+        if "ru" in o and "en" in o:
+            return {**o, lang: _tr(o["en"], d)}
+        return {k: localize(v, lang, d) for k, v in o.items()}
+    if isinstance(o, list):
+        return [localize(v, lang, d) for v in o]
+    return o
+
+
+def _tr(v, d):
+    if isinstance(v, str):
+        return d.t(v) if v.strip() else v
+    if isinstance(v, list):
+        return [_tr(x, d) for x in v]
+    if isinstance(v, tuple):
+        return tuple(_tr(x, d) for x in v)
+    return v
+
+
+
+def case_html(c: dict, lang: str, L: dict, labels: dict, ok: str) -> str:
     b, a = c["before"], c["after"]
     stages = lambda arr: '<div class="board">' + '<em>→</em>'.join(f"<span>{e(s)}</span>" for s in arr) + "</div>"
 
-    def fields(arr):
+    def fields(arr, en_arr):   # «обязательное» — по английской пометке, чтобы штамп работал на любом языке
         if not arr:
             return f'<ul class="list none"><li>{e(L["none_fields"])}</li></ul>'
-        return '<ul class="list">' + "".join(f"<li><b>{e(n)}</b>" + (f'<span class="stamp">{e(note)}</span>' if note and ("обяз" in note or "required" in note) else (f"<small>{e(note)}</small>" if note else "")) + "</li>" for n, note in arr) + "</ul>"
+        return '<ul class="list">' + "".join(f"<li><b>{e(n)}</b>" + (f'<span class="stamp">{e(note)}</span>' if note and ("обяз" in en_note or "required" in en_note) else (f"<small>{e(note)}</small>" if note else "")) + "</li>" for (n, note), (_, en_note) in zip(arr, en_arr)) + "</ul>"
 
     def rules(arr):
         if not arr:
@@ -102,9 +124,9 @@ def case_html(c: dict, lang: str) -> str:
 
     pains = '<ul class="list pain">' + "".join(f"<li>{e(p)}</li>" for p in b["pains"][lang]) + "</ul>"
     gains = '<ul class="list gain">' + "".join(f"<li>{e(g)}</li>" for g in a["gains"][lang]) + "</ul>"
-    did = '<div class="did">' + "".join(f"<span>{e(ACTION_LABELS[n][lang])}{f' <b>×{k}</b>' if k > 1 else ''}</span>" for n, k in c["actions"]) + "</div>"
-    reply = e(c["reply"][lang]).replace("Готово.", '<span class="ok">Готово.</span>', 1).replace("Done.", '<span class="ok">Done.</span>', 1)
-    chat = f"https://app.aii-crm.com/chat?lang={lang}"
+    did = '<div class="did">' + "".join(f"<span>{e(labels[n][lang])}{f' <b>×{k}</b>' if k > 1 else ''}</span>" for n, k in c["actions"]) + "</div>"
+    reply = e(c["reply"][lang]).replace(e(ok), f'<span class="ok">{e(ok)}</span>', 1)
+    chat = "https://app.aii-crm.com/chat?lang=" + ("ru" if lang == "ru" else "en")
     return f"""
 <article class="case" id="{c['id']}">
   <div class="top"><span class="badge crm">{e(c['crm'])}</span><span class="badge">{e(c['kind'][lang])}</span></div>
@@ -113,13 +135,13 @@ def case_html(c: dict, lang: str) -> str:
   <div class="ba">
     <div class="col before"><h3><i></i>{e(L['before'])}</h3>
       <div class="k">{e(L['stages'])}</div>{stages(b['stages'][lang])}
-      <div class="k">{e(L['fields'])}</div>{fields(b['fields'][lang])}
+      <div class="k">{e(L['fields'])}</div>{fields(b['fields'][lang], b['fields']['en'])}
       <div class="k">{e(L['rules'])}</div>{rules(b['rules'][lang])}
       <div class="k">{e(L['pains'])}</div>{pains}
     </div>
     <div class="col after"><h3><i></i>{e(L['after'])}</h3>
       <div class="k">{e(L['stages'])}</div>{stages(a['stages'][lang])}
-      <div class="k">{e(L['fields'])}</div>{fields(a['fields'][lang])}
+      <div class="k">{e(L['fields'])}</div>{fields(a['fields'][lang], a['fields']['en'])}
       <div class="k">{e(L['rules'])}</div>{rules(a['rules'][lang])}
       <div class="k">{e(L['gains'])}</div>{gains}
     </div>
@@ -134,18 +156,28 @@ def case_html(c: dict, lang: str) -> str:
 </article>"""
 
 
-def page(lang: str) -> str:
-    L, ru = T[lang], lang == "ru"
-    self_url = BASE + ("cases/" if ru else "cases/en/")
-    alt_ru, alt_en = BASE + "cases/", BASE + "cases/en/"
+def page(lang: str, d=None) -> str:
+    """страница примеров: ru/en — из T и CASES, другие языки — через словарь d (i18n_pages.Dict)"""
+    import i18n_pages
+    ru, en = lang == "ru", lang == "en"
+    if lang in T:
+        L, cases, labels = T[lang], CASES, ACTION_LABELS
+    else:
+        L = {k: d.t(v) for k, v in T["en"].items()}
+        cases, labels = localize(CASES, lang, d), localize(ACTION_LABELS, lang, d)
+    ok = "Готово." if ru else "Done." if en else d.t("Done.")
+    self_url = BASE + i18n_pages.cases_path(lang)
     up = "../" if ru else "../../"
-    guides = up + ("guides/" if ru else "guides/en/")
-    chat = f"https://app.aii-crm.com/chat?lang={lang}"
-    toc = '<div class="toc">' + "".join(f'<a href="#{c["id"]}">{e(c["crm"])} · {e(c["kind"][lang])}</a>' for c in CASES) + "</div>"
+    home = up if ru else f"{up}{lang}/"
+    guides = up + i18n_pages.guides_index_path(lang)
+    privacy = up + i18n_pages.policy_path("privacy")(lang)
+    switch = f'<a href="{BASE}cases/en/">EN</a>' if ru else f'<a href="{BASE}cases/">RU</a>' if en else f'<a href="{BASE}cases/en/" hreflang="en">EN</a>'
+    chat = "https://app.aii-crm.com/chat?lang=" + ("ru" if ru else "en")
+    toc = '<div class="toc">' + "".join(f'<a href="#{c["id"]}">{e(c["crm"])} · {e(c["kind"][lang])}</a>' for c in cases) + "</div>"
     ld = {"@context": "https://schema.org", "@type": "Article", "headline": L["h1"], "description": L["desc"], "url": self_url, "inLanguage": lang,
           "datePublished": "2026-10-27", "dateModified": TODAY, "author": {"@type": "Organization", "name": "Kai"}, "publisher": {"@type": "Organization", "name": "Kai", "url": BASE},
           "isPartOf": {"@type": "WebSite", "name": "Kai", "url": BASE},
-          "hasPart": [{"@type": "HowTo", "name": c["title"][lang], "url": self_url + "#" + c["id"], "step": [{"@type": "HowToStep", "text": c["message"][lang]}]} for c in CASES]}
+          "hasPart": [{"@type": "HowTo", "name": c["title"][lang], "url": self_url + "#" + c["id"], "step": [{"@type": "HowToStep", "text": c["message"][lang]}]} for c in cases]}
     return f"""<!doctype html>
 <html lang="{lang}">
 <head>
@@ -156,7 +188,7 @@ def page(lang: str) -> str:
 <meta name="keywords" content="{e(L['keywords'])}">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{self_url}">
-<link rel="alternate" hreflang="ru" href="{alt_ru}"><link rel="alternate" hreflang="en" href="{alt_en}"><link rel="alternate" hreflang="x-default" href="{alt_ru}">
+{i18n_pages.hreflang_block(i18n_pages.cases_path)}
 <meta property="og:type" content="article"><meta property="og:site_name" content="Kai"><meta property="og:url" content="{self_url}">
 <meta property="og:title" content="{e(L['h1'])}"><meta property="og:description" content="{e(L['desc'])}"><meta property="og:image" content="{BASE}og-image-v5.png">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{e(L['h1'])}"><meta name="twitter:description" content="{e(L['desc'])}"><meta name="twitter:image" content="{BASE}og-image-v5.png">
@@ -173,14 +205,14 @@ html.hw .badge.crm{{border-color:rgba(255,122,26,.45)}}html.hw .msg.me{{backgrou
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body><div class="wrap">
-<header><a class="brand" href="{up}" aria-label="Kai — {'на главную' if ru else 'home'}">{MARK}<span>Kai</span></a><nav><a href="{guides}">{e(L['nav_guides'])}</a><a href="{up}#pricing">{e(L['nav_plans'])}</a><a href="{alt_en if ru else alt_ru}">{'EN' if ru else 'RU'}</a></nav></header>
+<header><a class="brand" href="{home}" aria-label="Kai — {'на главную' if ru else 'home'}">{MARK}<span>Kai</span></a><nav><a href="{guides}">{e(L['nav_guides'])}</a><a href="{home}#pricing">{e(L['nav_plans'])}</a>{switch}</nav></header>
 <h1>{e(L['h1'])}</h1>
 <p class="lead">{e(L['lead'])}</p>
 {toc}
-{''.join(case_html(c, lang) for c in CASES)}
+{''.join(case_html(c, lang, L, labels, ok) for c in cases)}
 <p class="more"><a href="{guides}">{e(L['more'])}</a></p>
 <div class="cta"><b>{e(L['cta_b'])}</b><br><a href="https://t.me/aiicrm_bot">{e(L['cta_tg'])}</a><a class="alt" href="{chat}">{e(L['cta_chat'])}</a></div>
-<footer>© 2026 Kai · <a href="{up}privacy{'' if ru else '-en'}.html">{e(L['privacy'])}</a></footer>
+<footer>© 2026 Kai · <a href="{privacy}">{e(L['privacy'])}</a></footer>
 </div>
 <script>
 document.querySelectorAll('[data-copy]').forEach(function(b){{ b.addEventListener('click', function(){{ var t=b.getAttribute('data-copy'), done=function(){{ var o=b.textContent; b.textContent={json.dumps(L['copied'], ensure_ascii=False)}; setTimeout(function(){{ b.textContent=o; }},1500); }};
