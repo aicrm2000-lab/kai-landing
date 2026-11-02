@@ -3976,7 +3976,7 @@ html.ny .chat-launcher::before {
 /* ─── SEASONS (Halloween html.hw, New Year html.ny): copy variants + toggles ─── */
 (function(){
   var h=document.documentElement,k=h.classList.contains('hw')?'hw':h.classList.contains('ny')?'ny':'',L=h.lang||'ru',en=L!=='ru',U=(window.KAI_L10N&&window.KAI_L10N.ui)||null;
-  function swap(){document.querySelectorAll('[data-'+k+'-ru]').forEach(function(el){
+  function swap(){document.querySelectorAll('[data-'+k+'-en]').forEach(function(el){   /* -en is on every page; language pages drop the -ru attributes */
     if(el.getAttribute('data-'+k+'-done')==='1')return;el.setAttribute('data-'+k+'-done','1');
     var v=el.getAttribute('data-'+k+'-'+L)||el.getAttribute('data-'+k+'-'+(en?'en':'ru'))||el.getAttribute('data-'+k+'-ru');
     if(el.hasAttribute('data-ru'))el.setAttribute('data-ru',el.getAttribute('data-'+k+'-ru'));   /* the RU/EN switch re-renders from these */
