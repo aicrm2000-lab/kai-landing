@@ -95,7 +95,7 @@ def main() -> None:
     io.open(os.path.join(HERE, "guides", "index.html"), "w", encoding="utf-8", newline="\n").write(index_page("ru", guides))
     io.open(os.path.join(HERE, "guides", "en", "index.html"), "w", encoding="utf-8", newline="\n").write(index_page("en", guides))
     # sitemap: главная, /en/, политики, гайды
-    urls = [("", "1.0", "weekly"), ("en/", "0.9", "weekly"), ("de/", "0.9", "weekly"), ("fr/", "0.9", "weekly"), ("es/", "0.9", "weekly"), ("pl/", "0.9", "weekly"), ("pt/", "0.9", "weekly"), ("it/", "0.9", "weekly"), ("guides/", "0.8", "weekly"), ("guides/en/", "0.8", "weekly"), ("cases/", "0.9", "monthly"), ("cases/en/", "0.9", "monthly")]
+    urls = [("", "1.0", "weekly"), ("en/", "0.9", "weekly"), ("de/", "0.9", "weekly"), ("fr/", "0.9", "weekly"), ("es/", "0.9", "weekly"), ("pl/", "0.9", "weekly"), ("pt/", "0.9", "weekly"), ("it/", "0.9", "weekly"), ("tr/", "0.9", "weekly"), ("be/", "0.9", "weekly"), ("uk/", "0.9", "weekly"), ("ro/", "0.9", "weekly"), ("guides/", "0.8", "weekly"), ("guides/en/", "0.8", "weekly"), ("cases/", "0.9", "monthly"), ("cases/en/", "0.9", "monthly")]
     urls += [(f"guides/{g['slug']}.html", "0.8", "monthly") for g in guides] + [(f"guides/en/{g['slug']}.html", "0.8", "monthly") for g in guides]
     urls += [(p, "0.3", "monthly") for p in ("privacy.html", "privacy-en.html", "terms.html", "terms-en.html", "refund.html", "refund-en.html")]
     body = "".join(f"  <url>\n    <loc>{BASE}{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n    <changefreq>{c}</changefreq>\n    <priority>{p}</priority>\n  </url>\n" for u, p, c in urls)

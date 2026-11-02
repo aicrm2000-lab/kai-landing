@@ -177,7 +177,7 @@ def build(code: str) -> str:
     body = re.sub(r"<(script|style)\b[\s\S]*?</\1>", " ", html[html.find("<body"):])
     body = re.sub(r'<ul class="lang-list"[\s\S]*?</ul>', " ", body)   # «Русский» в меню языков — не забытый русский
     text = re.sub(r'<(?:[^>"]|"[^"]*")*>', "\x00", body)
-    left_ru = [t.strip() for t in text.split("\x00") if re.search(r"[А-Яа-яЁё]", t)]
+    left_ru = [] if code in ("uk", "be") else [t.strip() for t in text.split("\x00") if re.search(r"[А-Яа-яЁё]", t)]   # кириллица у uk/be своя
     print(f"{code}/index.html: {len(html) // 1024} KB, missing: {len(set(d.missing))}, rejected: {len(set(d.rejected))}, "
           f"Russian text nodes left: {len(left_ru)}, actions: {n_actions}")
     for t in sorted(set(d.rejected))[:6]:
