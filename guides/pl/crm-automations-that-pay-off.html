@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7 automatyzacji CRM, które zwracają się w pierwszym miesiącu | Kai</title>
+<meta name="description" content="Zadanie przy zmianie etapu, przypomnienie o braku odpowiedzi, alert o utkniętej transakcji, powiadomienie o nowym leadzie na czacie zespołu, obowiązkowe źródła i powody przegranej, cotygodniowe podsumowanie lejka, webhook do twoich narzędzi: jaki problem rozwiązuje każda z nich, gdzie działa i jak włączyć ją jednym zdaniem w Kai.">
+<meta name="keywords" content="Pomysły na automatyzację CRM dla małego działu sprzedaży">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/pl/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/crm-automations-that-pay-off.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/crm-automations-that-pay-off.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/pl/crm-automations-that-pay-off.html">
+<meta property="og:title" content="7 automatyzacji CRM, które zwracają się w pierwszym miesiącu">
+<meta property="og:description" content="Siedem reguł zdarzenie → akcja dla małego działu sprzedaży: problem, reguła, gdzie działa (w samym CRM czy po stronie Kai) i zdanie, które ją włącza.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-10-26">
+<meta property="article:modified_time" content="2026-10-26">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="7 automatyzacji CRM, które zwracają się w pierwszym miesiącu">
+<meta name="twitter:description" content="Siedem reguł zdarzenie → akcja dla małego działu sprzedaży: problem, reguła, gdzie działa (w samym CRM czy po stronie Kai) i zdanie, które ją włącza.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/pl/" aria-label="Kai — strona główna">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Nawigacja">
+      <a href="https://aii-crm.com/pl/">Strona</a>
+      <a href="https://t.me/aiicrm_bot">Bot w Telegramie</a>
+      <a href="https://aii-crm.com/guides/en/crm-automations-that-pay-off.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Ścieżka nawigacji">
+  <a href="https://aii-crm.com/pl/">Kai</a> › <a href="https://aii-crm.com/guides/pl/">Poradniki</a> › 7 automatyzacji CRM
+</nav>
+
+<h1>7 automatyzacji CRM, które zwracają się w pierwszym miesiącu</h1>
+<p class="meta">Aktualizacja: 26 października 2026 · Zespół Kai · 6 min czytania</p>
+
+<p class="lead">Automatyzacja CRM to reguła zdarzenie → akcja, która działa bez udziału handlowca: transakcja trafia na etap i pojawia się zadanie, klient milknie i odpala się przypomnienie. Dobra automatyzacja łata konkretną dziurę, przez którą wyciekają pieniądze: zapomniane zgłoszenia, utknięte transakcje, raport bez powodów przegranej. Oto siedem reguł, które w małym dziale sprzedaży zwykle zwracają się już w pierwszym miesiącu, gdzie każda z nich działa i jakim zdaniem włączysz ją w Kai.</p>
+
+<section class="tldr" aria-label="W skrócie">
+  <h2>W skrócie</h2>
+  <ul>
+    <li>Zacznij od dwóch reguł: zadania przy zmianie etapu i przypomnienia o braku odpowiedzi.</li>
+    <li>Reguła powinna zmieścić się w jednym zdaniu; jeśli potrzebuje diagramu, to już proces biznesowy.</li>
+    <li>Część reguł działa w samym CRM (Digital Pipeline, roboty Bitrix24), część po stronie Kai.</li>
+    <li>W Kai reguły zdarzeń są w planie Pro (€59/mies.); 3-dniowy okres próbny działa na funkcjach Start.</li>
+  </ul>
+</section>
+
+<h2>Siedem reguł na start</h2>
+
+<h3>1. Zadanie, gdy transakcja trafia na etap</h3>
+<p><strong>Problem.</strong> Handlowiec przesuwa transakcję na „Oferta wysłana” i nikt nie oddzwania.<br>
+<strong>Reguła.</strong> Transakcja trafia na etap X → zadanie „oddzwonić” dla odpowiedzialnego z terminem 2 dni; po jednej regule na każdy etap roboczy.<br>
+<strong>Gdzie działa.</strong> amoCRM i Kommo: Digital Pipeline w planach, które go obejmują; Bitrix24: roboty. Kai: reguła po jego stronie, która nasłuchuje zdarzeń CRM i tworzy zadanie przez API.</p>
+<pre>Gdy transakcja przechodzi na „Oferta wysłana”, ustaw zadanie „oddzwonić” z terminem 2 dni.</pre>
+
+<h3>2. Przypomnienie o braku odpowiedzi</h3>
+<p><strong>Problem.</strong> Klient pisze, handlowiec jest na spotkaniu, a czterdzieści minut później klient pisze już do konkurencji.<br>
+<strong>Reguła.</strong> Brak odpowiedzi przez N minut → zadanie do transakcji lub powiadomienie.<br>
+<strong>Gdzie działa.</strong> W samym CRM: chatboty (Salesbot w Kommo) z podłączonymi komunikatorami. Kai: „brak odpowiedzi przez 30 minut → zadanie do transakcji”, gdy rozmowa idzie przez CRM.</p>
+<pre>Jeśli klient czeka na odpowiedź 30 minut, ustaw zadanie do transakcji i powiadom mnie.</pre>
+
+<h3>3. Alert o utkniętej transakcji</h3>
+<p><strong>Problem.</strong> Etap „Namyśla się”, 37 dni bez ruchu, a transakcja wciąż liczy się jako żywa.<br>
+<strong>Reguła.</strong> Brak ruchu przez N dni → zadanie „zaktualizuj status” lub powiadomienie.<br>
+<strong>Gdzie działa.</strong> Częściowo w samym CRM (filtry „bez zadań”, timery Digital Pipeline), najczęściej na oko. Kai: reguła po jego stronie plus codzienna kontrola zdrowia lejka, która pokazuje, gdzie gromadzą się transakcje.</p>
+<pre>Transakcja bez ruchu przez 14 dni → zadanie dla handlowca „zaktualizuj status” i powiadom mnie.</pre>
+
+<h3>4. Powiadomienie o nowym leadzie na czacie zespołu</h3>
+<p><strong>Problem.</strong> Zgłoszenie przychodzi o 7 wieczorem, a ktoś je zauważa o 10 rano; wygrywa ten, kto odpowie pierwszy.<br>
+<strong>Reguła.</strong> Nowa transakcja → wiadomość w Telegramie z imieniem, telefonem i źródłem.<br>
+<strong>Gdzie działa.</strong> CRM ma powiadomienia w aplikacji; komunikator zespołu wymaga konektora albo asystenta. Kai wysyła je prosto na czat, bez osobnego bota i tokenów; plan Pro dodaje Telegram, Slack, Discord i Google Sheets.</p>
+<pre>Nowa transakcja w lejku „Strona WWW” → powiadom mnie w Telegramie: imię, telefon, źródło.</pre>
+
+<h3>5. Źródło i powód przegranej zawsze wypełnione</h3>
+<p><strong>Problem.</strong> Po miesiącu większość transakcji ma puste „Źródło”, a przegrane nie mają powodu.<br>
+<strong>Reguła.</strong> Bez źródła nie da się wyjść z pierwszego etapu, bez powodu przegranej nie da się zamknąć transakcji jako przegranej.<br>
+<strong>Gdzie działa.</strong> W samym CRM: pola wymagane na etapach (dostępność zależy od planu CRM); formularze i komunikatory często same ustawiają źródło. Kai tworzy listy, ustawia pola jako wymagane, a jego codzienna kontrola zdrowia lejka znajduje transakcje bez powodu i naprawia listy jednym kliknięciem.</p>
+<pre>Ustaw „Źródło” jako wymagane przy wyjściu z „Nowe zgłoszenie”, a „Powód przegranej” jako wymagany przy zamknięciu. Powody: za drogo, wybrał konkurencję, brak odpowiedzi.</pre>
+
+<h3>6. Cotygodniowe podsumowanie lejka</h3>
+<p><strong>Problem.</strong> Raport składa się ręcznie w piątek wieczorem, a w poniedziałek jest już nieaktualny.<br>
+<strong>Reguła.</strong> Raz w tygodniu → transakcje na etapach, gdzie utykają, powody przegranej, transakcje bez zadań.<br>
+<strong>Gdzie działa.</strong> Dashboardy CRM, które otwierasz sam. Kai codziennie sprawdza zdrowie lejka, wystawia ocenę A–D i wysyła cotygodniowe podsumowanie na czat; jeśli wszystko gra, milczy, a kontrola nie zużywa zapytań.</p>
+<pre>Włącz cotygodniowe podsumowanie zdrowia lejka na tym czacie.</pre>
+
+<h3>7. Webhook do zewnętrznego narzędzia</h3>
+<p><strong>Problem.</strong> Transakcja wygrana, a ktoś ręcznie przepisuje zamówienie do arkusza wysyłek.<br>
+<strong>Reguła.</strong> Transakcja przechodzi na „Opłacone” → dane transakcji idą webhookiem do twojego serwisu lub do Google Sheets.<br>
+<strong>Gdzie działa.</strong> CRM potrafi wysłać webhook, ale coś musi go odebrać. W Kai wiersz w Google Sheets to integracja z planu Pro; webhook do własnego serwisu i łańcuchy kroków to rozwiązanie na zamówienie w planie Max, stałe €30 za scenariusz.</p>
+<pre>Gdy transakcja przejdzie na „Opłacone”, wyślij webhook na https://example.com/hook z nazwą transakcji, kwotą i telefonem.</pre>
+
+<h2>Gdzie żyją reguły: w CRM czy w Kai</h2>
+<p>Digital Pipeline i roboty żyją w samym CRM: konfiguruje się je tam i działają tak długo, jak płacisz za CRM, ale wymagają planu z automatyzacjami i czasu na klikanie. Reguły Kai żyją po stronie Kai: Kai nasłuchuje zdarzeń CRM przez webhook i działa przez API, więc włączasz je i zmieniasz jednym zdaniem, ale nie widać ich w Digital Pipeline i działają, dopóki twoja subskrypcja jest aktywna. Wszystko, co zdążyły utworzyć w CRM, zostaje na zawsze.</p>
+<div class="note warn">W przypadku Bitrix24 Kai jest w becie: bez robotów wewnątrz Bitrix24, tylko powiadomienia o głównych zdarzeniach przez webhook wychodzący. Jeśli automatyzacje w samym Bitrix24 to twoja główna potrzeba, ustaw roboty ręcznie albo z integratorem.</div>
+
+<h2>Z Kai to jedna wiadomość</h2>
+<p>Kai to asystent AI, który konfiguruje amoCRM i Kommo na podstawie wiadomości na czacie, w bocie w Telegramie <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> lub w <a href="https://app.aii-crm.com/chat?lang=en">czacie webowym</a>, a podłącza się przez OAuth 2.0 jednym kliknięciem. Każde zdanie powyżej to gotowa reguła, a kilka możesz wysłać w jednej wiadomości:</p>
+<pre>Włącz trzy reguły w lejku „Sprzedaż”: przejście na „Oferta wysłana” → zadanie „oddzwonić” za 2 dni; brak odpowiedzi przez 30 minut → zadanie do transakcji; nowa transakcja → powiadom mnie w Telegramie.</pre>
+<pre>Pokaż wszystkie moje automatyzacje i usuń duplikaty.</pre>
+<p>Kai dopytuje (kto dostaje zadanie, jeśli transakcja nie ma odpowiedzialnego), pokazuje plan, po twoim potwierdzeniu tworzy reguły i wysyła raport; jeśli w lejku brakuje powodów przegranej lub źródeł, mówi o tym.</p>
+<p>Uczciwe ograniczenia: reguły zdarzeń, role i standardowe integracje są w planie Pro (€59/mies.); webhook do własnego serwisu to plan Max (€119/mies.). Jeśli chcesz mieć w CRM reguły, które przetrwają subskrypcję, skonfiguruj ręcznie Digital Pipeline (ścieżki w Kommo opisujemy w <a href="https://aii-crm.com/guides/pl/kommo-automation-no-developer.html">osobnym poradniku</a>). Telefonia, programy księgowe i scenariusze obejmujące kilka systemów to zadanie dla integratora.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>Czym reguły Kai różnią się od Digital Pipeline w amoCRM i Kommo?</h3>
+    <p>Digital Pipeline żyje w samym CRM i konfiguruje się go tam, w planach, które go obejmują. Reguły Kai żyją po stronie Kai i działają przez API, więc włączasz je jednym zdaniem i działają, dopóki subskrypcja jest aktywna. Wszystko, co utworzono w CRM, zostaje.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Ilu automatyzacji potrzebuje mały dział sprzedaży?</h3>
+    <p>Na start dwóch–trzech: zadania przy zmianie etapu, przypomnienia o braku odpowiedzi i powiadomienia o nowym leadzie. Resztę dodawaj, gdy cotygodniowe podsumowanie pokaże dziurę; ponad dziesięć reguł w jednym lejku oznacza, że trzeba przemyśleć proces.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Czy do włączenia automatyzacji w Kai potrzebuję planu Pro?</h3>
+    <p>Tak. Reguły zdarzeń, role i standardowe integracje (Telegram, Slack, Discord, Google Sheets) są w planie Pro za €59/mies.; 3-dniowy okres próbny działa na funkcjach Start. Webhook do własnego serwisu i łańcuchy kroków to plan Max za €119/mies.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Co stanie się z regułami, jeśli odłączę Kai?</h3>
+    <p>Działają po stronie Kai, więc po odłączeniu przestają działać; wszystko, co już utworzono w CRM, zostaje. Jeśli chcesz mieć reguły w samym CRM, użyj Digital Pipeline albo robotów Bitrix24, ręcznie lub z integratorem.</p>
+  </div>
+</div>
+
+<h2>Co dalej</h2>
+<p>Wybierz dwie reguły (prawie zawsze dwie pierwsze) i włącz je jeszcze dziś, w Digital Pipeline albo jednym zdaniem na czacie z Kai. Najpierw automatyzuj to, co przypomina człowiekowi, a dopiero potem to, co wykonuje za niego pracę; autoodpowiedzi i masowe wysyłki mogą poczekać. Po tygodniu otwórz podsumowanie i policz zadania.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Wypróbuj w Telegramie</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Otwórz czat webowy</a>
+</div>
+
+<p class="author">Autor: Zespół Kai · Aktualizacja: <time datetime="2026-10-26">26 października 2026</time> · Szczegóły planów i dostępność funkcji sprawdzaj na aktualnych stronach amoCRM, Kommo i Bitrix24.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/pl/">Strona główna</a> · <a href="https://aii-crm.com/privacy-pl.html">Prywatność</a> · <a href="https://aii-crm.com/terms-pl.html">Regulamin</a> · <a href="https://aii-crm.com/guides/en/crm-automations-that-pay-off.html">Wersja angielska</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/pl/crm-automations-that-pay-off.html#article",
+      "headline": "7 automatyzacji CRM, które zwracają się w pierwszym miesiącu",
+      "description": "Zadanie przy zmianie etapu, przypomnienie o braku odpowiedzi, alert o utkniętej transakcji, powiadomienie o nowym leadzie na czacie zespołu, obowiązkowe źródła i powody przegranej, cotygodniowe podsumowanie lejka, webhook do twoich narzędzi: jaki problem rozwiązuje każda z nich, gdzie działa i jak włączyć ją jednym zdaniem w Kai.",
+      "inLanguage": "pl",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "mainEntityOfPage": "https://aii-crm.com/guides/pl/crm-automations-that-pay-off.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/pl/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/pl/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Czym reguły Kai różnią się od Digital Pipeline w amoCRM i Kommo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Digital Pipeline żyje w samym CRM i konfiguruje się go tam, w planach, które go obejmują. Reguły Kai żyją po stronie Kai i działają przez API, więc włączasz je jednym zdaniem i działają, dopóki subskrypcja jest aktywna. Wszystko, co utworzono w CRM, zostaje."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ilu automatyzacji potrzebuje mały dział sprzedaży?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Na start dwóch–trzech: zadania przy zmianie etapu, przypomnienia o braku odpowiedzi i powiadomienia o nowym leadzie. Resztę dodawaj, gdy cotygodniowe podsumowanie pokaże dziurę; ponad dziesięć reguł w jednym lejku oznacza, że trzeba przemyśleć proces."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy do włączenia automatyzacji w Kai potrzebuję planu Pro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Reguły zdarzeń, role i standardowe integracje (Telegram, Slack, Discord, Google Sheets) są w planie Pro za €59/mies.; 3-dniowy okres próbny działa na funkcjach Start. Webhook do własnego serwisu i łańcuchy kroków to plan Max za €119/mies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Co stanie się z regułami, jeśli odłączę Kai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Działają po stronie Kai, więc po odłączeniu przestają działać; wszystko, co już utworzono w CRM, zostaje. Jeśli chcesz mieć reguły w samym CRM, użyj Digital Pipeline albo robotów Bitrix24, ręcznie lub z integratorem."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Poradniki",
+          "item": "https://aii-crm.com/guides/pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "7 automatyzacji CRM, które zwracają się w pierwszym miesiącu",
+          "item": "https://aii-crm.com/guides/pl/crm-automations-that-pay-off.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

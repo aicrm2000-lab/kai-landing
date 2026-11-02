@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI agent Kommo vs Copilot vs Salesbot vs Kai: porównanie 2026</title>
+<meta name="description" content="AI agent i Copilot w Kommo kontra Salesbot, Albato/Make/n8n, Wazzup/Umnico i asystent Kai w 2026: które narzędzie do jakiego zadania, ścieżki w interfejsie, koszt i czas.">
+<meta name="keywords" content="AI agent Kommo vs Copilot vs Salesbot: którego potrzebuję do konfiguracji lejka i automatyzacji w CRM?, Ile kosztuje wdrożenie Kommo: partner wdrożeniowy czy asystent AI taki jak Kai, i ile to trwa?">
+<link rel="canonical" href="https://aii-crm.com/guides/pl/kommo-ai-tools-compared.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/kommo-ai-tools-compared.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/kommo-ai-tools-compared.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/kommo-ai-tools-compared.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/kommo-ai-tools-compared.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/kommo-ai-tools-compared.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/kommo-ai-tools-compared.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/kommo-ai-tools-compared.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/kommo-ai-tools-compared.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:title" content="AI agent Kommo vs Copilot vs Salesbot vs Kai: porównanie 2026">
+<meta property="og:description" content="Wbudowane AI w Kommo, Salesbot, konektory Albato/Make/n8n, huby czatów Wazzup/Umnico i asystent Kai: tabela zadanie po zadaniu z kosztem i czasem.">
+<meta property="og:url" content="https://aii-crm.com/guides/pl/kommo-ai-tools-compared.html">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+a:hover{color:var(--ink)}
+.header{max-width:760px;margin:0 auto;padding:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;flex:none}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:8px 16px 56px}
+h1{color:var(--ink);font-size:clamp(28px,5.2vw,38px);line-height:1.15;font-weight:800;letter-spacing:-.01em;margin:16px 0 12px}
+h2{color:var(--ink);font-size:24px;line-height:1.25;font-weight:700;margin:40px 0 12px}
+h3{color:var(--ink);font-size:19px;line-height:1.3;font-weight:700;margin:26px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{color:var(--muted);font-size:14px;margin:0 0 20px}
+.tldr{background:var(--bg-1);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:18px}
+.tldr ul{margin:0}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+strong{color:var(--ink)}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:12px;margin:16px 0;background:var(--bg-1)}
+table{border-collapse:collapse;width:100%;min-width:660px;font-size:15px;line-height:1.45}
+th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:none}
+td:first-child{color:var(--ink);font-weight:600}
+pre{background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:16px;overflow-x:auto;font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:14px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:12px 0 20px}
+code{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink);white-space:nowrap}
+.path{color:var(--ink)}
+.label{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--good);margin-right:6px}
+.faq h3{margin-top:22px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 8px}
+.btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2);color:#fff}
+.btn-secondary{border:1px solid var(--border);color:var(--ink);background:var(--bg-1)}
+.author{color:var(--muted);font-size:14px;border-top:1px solid var(--border);padding-top:16px;margin-top:40px}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/pl/kommo-ai-tools-compared.html#article",
+      "mainEntityOfPage": "https://aii-crm.com/guides/pl/kommo-ai-tools-compared.html",
+      "headline": "AI agent Kommo, Copilot, Salesbot czy Kai: czego potrzebujesz",
+      "description": "AI agent i Copilot w Kommo kontra Salesbot, Albato/Make/n8n, Wazzup/Umnico i asystent Kai w 2026: które narzędzie do jakiego zadania, ścieżki w interfejsie, koszt i czas.",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "datePublished": "2026-09-24",
+      "dateModified": "2026-09-24",
+      "inLanguage": "pl",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/pl/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/pl/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Czy Kai zastępuje wbudowanego AI agenta Kommo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nie, robią co innego: AI agent Kommo rozmawia z klientami na czatach i kwalifikuje leady; Kai konfiguruje sam CRM: lejki, pola, automatyzacje, integracje, analitykę. Kai buduje lejek, a AI agent prowadzi w nim rozmowy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy z Kai nadal potrzebuję Albato, Make albo n8n?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nie w typowych przypadkach: w planie Pro Kai sam łączy zdarzenia leadów z Telegramem, Slackiem, Discordem i Google Sheets; w planie Max buduje własny webhook za stałe €30. Konektory wygrywają przy długich, wieloetapowych scenariuszach obejmujących wiele serwisów."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czego potrzebuję, żeby podłączyć Kai do Kommo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Widżet Kai jest w Kommo Marketplace: jedno kliknięcie przez OAuth, bez kluczy API. Potem rozmawiasz z Kai w bocie w Telegramie @aiicrm_bot albo na czacie webowym; oba kanały dzielą jedno konto i historię."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ile kosztuje Kai i czy jest okres próbny?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start €29/mies. (około 100 zapytań, 1 konto CRM), Pro €59/mies. (około 500 zapytań, do 3 kont, automatyzacje, standardowe integracje), Max €119/mies. (zapytania w ramach fair use, do 10 kont, prace na zamówienie za stałe €30 każda). Pierwsze 3 dni za darmo, bez karty. Płatność kartą, Apple Pay, Google Pay, Telegram Stars lub USDT."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy dawanie asystentowi dostępu do CRM jest bezpieczne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dostęp idzie przez OAuth, tokeny są przechowywane w postaci zaszyfrowanej, a Kai nie przechowuje danych twoich leadów. Firma jest zarejestrowana w Polsce (UE). Dostęp cofniesz w każdej chwili w ustawieniach integracji Kommo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A jeśli używam amoCRM zamiast Kommo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak samo: widżet Kai jest też w marketplace amoCRM, z OAuth jednym kliknięciem. Wbudowany w amoCRM amoAI to odpowiednik Copilota z Kommo: pomaga w interfejsie, ale nie zbuduje lejka z opisu biznesu. Działają też Bitrix24 i własne CRM-y z dokumentacją API."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Poradniki",
+          "item": "https://aii-crm.com/guides/pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI agent Kommo, Copilot, Salesbot czy Kai",
+          "item": "https://aii-crm.com/guides/pl/kommo-ai-tools-compared.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="https://aii-crm.com/pl/" aria-label="Kai — strona główna">
+    <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+    <span>Kai</span>
+  </a>
+  <nav class="nav">
+    <a href="https://aii-crm.com/pl/">Strona główna</a>
+    <a href="https://aii-crm.com/guides/pl/">Poradniki</a>
+    <a href="https://t.me/aiicrm_bot">Bot w Telegramie</a>
+    <a href="https://aii-crm.com/guides/en/kommo-ai-tools-compared.html" hreflang="en">EN</a>
+  </nav>
+</header>
+
+<main>
+<article>
+<h1>AI agent Kommo, Copilot, Salesbot czy Kai: czego potrzebujesz</h1>
+<p class="meta">Aktualizacja: 24 września 2026 · Zespół Kai · 6 min czytania</p>
+
+<p class="lead">Wbudowany AI agent i Copilot w Kommo odpowiadają klientom na czatach i pomagają handlowcom w karcie leada; Salesbot i Digital Pipeline pozwalają wyklikać automatyzacje; Albato, Make i n8n przenoszą dane między aplikacjami; Wazzup i Umnico wprowadzają komunikatory do CRM. Żadne z nich nie zbuduje lejka, pól i automatyzacji na podstawie opisu twojego biznesu: to zadanie dla ciebie (ręcznie), dla partnera wdrożeniowego (3–5 tygodni) albo dla Kai (jedna wiadomość na czacie).</p>
+
+<section class="tldr" aria-label="W skrócie">
+<h2>W skrócie</h2>
+<ul>
+  <li><strong>AI agent Kommo</strong> wymaga planu Advanced lub wyższego i zużywa kredyty AI za każdą odpowiedź; rozmawia z klientami, nie konfiguruje CRM.</li>
+  <li><strong>Copilot</strong> jest w każdym planie, także Base: odpowiada na pytania o Kommo, podpowiada wartości pustych pól, streszcza czaty.</li>
+  <li><strong>Salesbot i 12 triggerów Digital Pipeline</strong> (zadanie, tag, zmiana etapu, webhook, zmiana pola…) są w cenie, w Leads → Automate.</li>
+  <li><strong>Partner:</strong> zwykle 3–5 tygodni (w Rosji typowa wycena to 150–400 tys. RUB). <strong>Kai:</strong> od €29/mies., 3 dni za darmo, bez karty, cały lejek w jednej rozmowie.</li>
+  <li>Kai wykonuje 60+ akcji przez API Kommo i amoCRM: lejki, pola, automatyzacje, integracje, audyt z autonaprawą, lead scoring, specyfikacja w PDF.</li>
+</ul>
+</section>
+
+<h2>Co naprawdę robi każde narzędzie</h2>
+<p><strong>AI agent Kommo</strong> to wirtualny pracownik do czatów, tworzony w <span class="path">AI agents → AI agent list → Add a new agent</span>, z zakładkami na źródła wiedzy, produkty, do 20 akcji (Set field, zmiany etapu…) i personę. Odpowiada 24/7, kwalifikuje leady, umawia wizyty. Plan Advanced lub wyższy; każda odpowiedź zużywa kredyty AI.</p>
+<p><strong>Kommo Copilot</strong> to pomocnik w aplikacji: odpowiada na pytania „jak to zrobić w Kommo”, wypełnia puste pola na podstawie czatów, pisze podsumowania i szkice odpowiedzi. Pomaga, ale nie buduje lejków.</p>
+<p><strong>Salesbot i Digital Pipeline</strong> to natywny kreator no-code: boty z bloków, triggery na etapach. Bez dodatkowych kosztów, ale sześć etapów z pięcioma automatyzacjami to praca na cały wieczór.</p>
+<p><strong>Albato, ApiX-Drive, Make, Zapier, n8n</strong> przenoszą dane między Kommo, twoją stroną, arkuszami i kontami reklamowymi. Nie tworzą struktury CRM; cena zwykle rośnie z liczbą operacji, n8n można hostować samemu.</p>
+<p><strong>Wazzup, Umnico</strong> to huby czatów: podłączają WhatsAppa, Telegrama i Instagrama i wrzucają rozmowy do karty leada — nic więcej.</p>
+<p><strong>Kai</strong> konfiguruje CRM na podstawie wiadomości. Opisz biznes w bocie w Telegramie <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> albo na <a href="https://app.aii-crm.com/chat?lang=en">czacie webowym</a>; Kai zada pytania doprecyzowujące, uzgodni plan i wdroży go przez API: lejki, pola z wymagalnością na etapach, automatyzacje, integracje, audyt, lead scoring, specyfikacja w PDF. Kommo podłącza się przez widżet z Marketplace jednym kliknięciem, bez kluczy.</p>
+<p><strong>Partner wdrożeniowy</strong> robi to samo ręcznie i szkoli zespół: warto, gdy procesy są nietypowe albo potrzebujesz człowieka pod telefonem.</p>
+
+<h2>Zadanie po zadaniu: kto co obsługuje</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Zadanie</th><th>AI agent Kommo / Copilot</th><th>Salesbot + Digital Pipeline</th><th>Albato / Make / n8n</th><th>Wazzup / Umnico</th><th>Kai</th></tr></thead>
+<tbody>
+<tr><td>Lejek i etapy</td><td>Nie (AI agent tylko przesuwa leady między etapami)</td><td>Nie, budowane ręcznie</td><td>Nie</td><td>Nie</td><td>Tak, z opisu biznesu</td></tr>
+<tr><td>Własne pola i wymagalność</td><td>Copilot podpowiada wartości, nie tworzy pól</td><td>Nie</td><td>Wypełnia istniejące pola</td><td>Nie</td><td>Tak, z typami i regułami na etapach</td></tr>
+<tr><td>Automatyzacje w CRM</td><td>AI agent: do 20 akcji na czacie</td><td>Tak, klikając na etapach</td><td>Częściowo, przez API</td><td>Nie</td><td>Tak: trigger → zadanie, tag, etap, powiadomienie</td></tr>
+<tr><td>Integracje zewnętrzne</td><td>Ograniczona lista</td><td>Webhook, e-mail</td><td>Tak, setki aplikacji</td><td>Tylko komunikatory</td><td>Telegram, Slack, Discord, Sheets, webhook</td></tr>
+<tr><td>Analityka lejka</td><td>Analityk AI w planie Pro</td><td>Standardowe raporty Kommo</td><td>Eksport do BI</td><td>Statystyki czatów</td><td>Konwersja etapów, odpływ, audyt 24/7</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Krok po kroku: ręcznie i z Kai</h2>
+<p>Ścieżki w interfejsie są zgodne z oficjalnym centrum pomocy Kommo.</p>
+
+<h3>Krok 1. Lejek i etapy</h3>
+<p><span class="label">Ręcznie</span> <span class="path">Leads → menu „⋯” w prawym górnym rogu → Edit pipeline → Add stage → Save</span>. Closed-won i Closed-lost można przemianować, ale nie usunąć.</p>
+<p><span class="label">Kai</span> Jedna wiadomość tworzy lejek, pole, automatyzację i integrację:</p>
+<pre>Skonfiguruj lejek dla firmy remontowej: Zgłoszenie → Pomiar → Kosztorys → Umowa → Prace → Płatność.
+Ustaw pole liczbowe „Powierzchnia, m²” jako wymagane od etapu „Kosztorys”.
+Jeśli lead stoi w „Pomiar” ponad 3 dni, daj zadanie odpowiedzialnemu i dodaj tag „zaległy”.
+Gdy lead przejdzie do „Umowa”, napisz na czacie działu sprzedaży w Telegramie.</pre>
+
+<h3>Krok 2. Pola i wymagalność</h3>
+<p><span class="label">Ręcznie</span> Otwórz dowolny lead → zakładka <span class="path">Setup</span> → <span class="path">+ Add field</span> → wybierz typ i nazwę. Żeby pole było obowiązkowe, kliknij <span class="path">Optional</span> w ustawieniach pola i wybierz etap, od którego ma być wymagane → Save.</p>
+<p><span class="label">Kai</span> „Dodaj pole liczbowe «Budżet», wymagane od etapu Kosztorys.” Kai najpierw sprawdzi, czy nie ma już podobnego pola.</p>
+
+<h3>Krok 3. Automatyzacje</h3>
+<p><span class="label">Ręcznie</span> <span class="path">Leads → Automate → „+” pod etapem</span> → wybierz trigger (Add Task, Add Tags, Change Lead Stage, Send Webhook, Change Field, Send Email, Salesbot) i warunki. Boty: <span class="path">Settings → Communication tools → Salesbots → Create a new bot</span>.</p>
+<p><span class="label">Kai</span> Słowami: „Jeśli lead przez dzień nie ma otwartego zadania, utwórz dla odpowiedzialnego zadanie «Oddzwonić».” Dostępne od planu Pro.</p>
+
+<h3>Krok 4. Integracje i czaty</h3>
+<p><span class="label">Ręcznie</span> Wazzup lub Umnico instalujesz z Kommo Marketplace i podłączasz komunikatory do kart leadów. Albato, Make czy n8n wymagają własnego konta i scenariusza „zdarzenie w Kommo → akcja w aplikacji”, budowanego krok po kroku.</p>
+<p><span class="label">Kai</span> „Gdy lead przejdzie do etapu Umowa, napisz na Slacku i dodaj wiersz w Google Sheets.” Telegram, Slack, Discord i Sheets są w planie Pro; własny webhook to plan Max, stałe €30. Kai nie jest hubem czatów: komunikatory nadal podłącza się przez Wazzup, Umnico lub Kommo.</p>
+
+<h3>Krok 5. Analityka</h3>
+<p><span class="label">Ręcznie</span> Raporty Kommo pokazują konwersję; gdzie i dlaczego tracisz leady, musisz ustalić ręcznie.</p>
+<p><span class="label">Kai</span> „Pokaż konwersję etapów z ostatnich 30 dni i największy odpływ.” Do tego codzienny audyt: leady bez zadań, przeterminowane etapy, puste pola wymagane — naprawiane automatycznie i raportowane na czacie.</p>
+
+<h2>Koszt i czas: ręcznie, partner, Kai</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Kryterium</th><th>Ręcznie</th><th>Partner wdrożeniowy</th><th>Kai</th></tr></thead>
+<tbody>
+<tr><td>Czas do działającego lejka</td><td>Od wieczoru do tygodnia</td><td>Zwykle 3–5 tygodni</td><td>Jedna rozmowa: plan, potem zmiany przez API w kilka minut</td></tr>
+<tr><td>Koszt</td><td>Plan Kommo plus twój czas</td><td>Zależnie od regionu; w Rosji typowo 150–400 tys. RUB</td><td>Start €29, Pro €59, Max €119/mies.; 3 dni za darmo, bez karty</td></tr>
+<tr><td>Kto poznaje twój biznes</td><td>Użytkownik</td><td>Analityk na rozmowach</td><td>Kai zadaje pytania i uzgadnia plan przed zmianami</td></tr>
+<tr><td>Co dostajesz</td><td>To, na co starczyło ci czasu</td><td>Lejek, pola, boty, szkolenie, dokumentacja</td><td>Lejek, pola, automatyzacje, integracje, specyfikacja w PDF, audyt 24/7</td></tr>
+<tr><td>Dla kogo</td><td>1–3 handlowców, prosty proces</td><td>Nietypowe procesy, połączenia z księgowością/telefonią, człowiek pod telefonem</td><td>MŚP ze standardowymi lub średnio złożonymi procesami</td></tr>
+</tbody>
+</table>
+</div>
+
+<section class="faq">
+<h2>FAQ</h2>
+<h3>Czy Kai zastępuje wbudowanego AI agenta Kommo?</h3>
+<p>Nie, robią co innego: AI agent Kommo rozmawia z klientami na czatach i kwalifikuje leady; Kai konfiguruje sam CRM: lejki, pola, automatyzacje, integracje, analitykę. Kai buduje lejek, a AI agent prowadzi w nim rozmowy.</p>
+<h3>Czy z Kai nadal potrzebuję Albato, Make albo n8n?</h3>
+<p>Nie w typowych przypadkach: w planie Pro Kai sam łączy zdarzenia leadów z Telegramem, Slackiem, Discordem i Google Sheets; w planie Max buduje własny webhook za stałe €30. Konektory wygrywają przy długich, wieloetapowych scenariuszach obejmujących wiele serwisów.</p>
+<h3>Czego potrzebuję, żeby podłączyć Kai do Kommo?</h3>
+<p>Widżet Kai jest w Kommo Marketplace: jedno kliknięcie przez OAuth, bez kluczy API. Potem rozmawiasz z Kai w bocie w Telegramie <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> albo na czacie webowym; oba kanały dzielą jedno konto i historię.</p>
+<h3>Ile kosztuje Kai i czy jest okres próbny?</h3>
+<p>Start €29/mies. (około 100 zapytań, 1 konto CRM), Pro €59/mies. (około 500 zapytań, do 3 kont, automatyzacje, standardowe integracje), Max €119/mies. (zapytania w ramach fair use, do 10 kont, prace na zamówienie za stałe €30 każda). Pierwsze 3 dni za darmo, bez karty. Płatność kartą, Apple Pay, Google Pay, Telegram Stars lub USDT.</p>
+<h3>Czy dawanie asystentowi dostępu do CRM jest bezpieczne?</h3>
+<p>Dostęp idzie przez OAuth, tokeny są przechowywane w postaci zaszyfrowanej, a Kai nie przechowuje danych twoich leadów. Firma jest zarejestrowana w Polsce (UE). Dostęp cofniesz w każdej chwili w ustawieniach integracji Kommo.</p>
+<h3>A jeśli używam amoCRM zamiast Kommo?</h3>
+<p>Tak samo: widżet Kai jest też w marketplace amoCRM, z OAuth jednym kliknięciem. Wbudowany w amoCRM amoAI to odpowiednik Copilota z Kommo: pomaga w interfejsie, ale nie zbuduje lejka z opisu biznesu. Działają też Bitrix24 i własne CRM-y z dokumentacją API.</p>
+</section>
+
+<h2>Co dalej</h2>
+<p>Opisz swój proces w jednej wiadomości: Kai zada 3–5 pytań, pokaże plan i skonfiguruje Kommo lub amoCRM. Pierwsze 3 dni za darmo, bez karty.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Wypróbuj w Telegramie</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Otwórz czat webowy</a>
+</div>
+
+<p class="author">Autor: Zespół Kai · Aktualizacja: 24.09.2026 · Ścieżki w interfejsie Kommo sprawdzone w support.kommo.com w dniu publikacji; ceny narzędzi zewnętrznych sprawdzaj na ich stronach.</p>
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Konfiguracja lejka sprzedaży w amoCRM bez programisty (2026) | Kai</title>
+<meta name="description" content="Krok po kroku: etapy lejka, własne pola i pola wymagane w amoCRM przez Leads → Setup, typowe błędy i jak zrobić to samo jedną wiadomością do Kai.">
+<meta name="keywords" content="jak skonfigurować lejek sprzedaży i pola wymagane w amoCRM lub Kommo bez programisty, czy jest asystent AI, który konfiguruje lejki w amoCRM / Kommo na podstawie wiadomości na czacie">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/pl/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/pl/amocrm-pipeline-setup.html">
+<meta property="og:title" content="Jak skonfigurować lejek sprzedaży w amoCRM bez programisty (2026)">
+<meta property="og:description" content="Etapy, pola, pola wymagane, typowe błędy. Ścieżka ręczna przez interfejs amoCRM i ścieżka z Kai — w jednej wiadomości.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-09-24">
+<meta property="article:modified_time" content="2026-09-24">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jak skonfigurować lejek sprzedaży w amoCRM bez programisty (2026)">
+<meta name="twitter:description" content="Etapy, pola, pola wymagane, typowe błędy. Ręcznie w interfejsie amoCRM albo jedną wiadomością do Kai.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/pl/" aria-label="Kai — strona główna">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Nawigacja">
+      <a href="https://aii-crm.com/pl/">Strona</a>
+      <a href="https://t.me/aiicrm_bot">Bot w Telegramie</a>
+      <a href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Ścieżka nawigacji">
+  <a href="https://aii-crm.com/pl/">Kai</a> › <a href="https://aii-crm.com/guides/pl/">Poradniki</a> › Lejek w amoCRM
+</nav>
+
+<h1>Jak skonfigurować lejek sprzedaży w amoCRM bez programisty</h1>
+<p class="meta">Aktualizacja: 24 września 2026 · Zespół Kai · 6 min czytania</p>
+
+<p class="lead">Lejek sprzedaży w amoCRM zbudujesz sam w 1–2 godziny: etapy edytuje się w <kbd>Leads → Setup</kbd> (<kbd>Сделки → Настроить</kbd> w rosyjskim interfejsie), pola dodaje się z karty leada przez <kbd>Setup → Add field</kbd>, a w tych samych ustawieniach pole staje się wymagane na wybranych etapach. Programista nie jest potrzebny: wystarczą uprawnienia administratora i przemyślana mapa etapów. Możesz też wysłać tę samą mapę jedną wiadomością do asystenta AI, takiego jak Kai, który zbuduje lejek przez oficjalne API.</p>
+
+<section class="tldr" aria-label="W skrócie">
+  <h2>W skrócie</h2>
+  <ul>
+    <li>Zwykle wystarczy 5–7 etapów roboczych. Każdy etap to jedno sprawdzalne działanie handlowca, a nie stan klienta.</li>
+    <li>Etapów systemowych „Wygrane” i „Przegrane” nie da się usunąć, można tylko zmienić ich nazwy.</li>
+    <li>Typu pola nie można później zmienić, a usunięcie pola kasuje jego dane. Zaplanuj pola, zanim pojawią się prawdziwe transakcje.</li>
+    <li>Pola wymagane na etapach są dostępne w amoCRM od planu „Advanced” wzwyż; pola może edytować tylko administrator.</li>
+    <li>Ręcznie: 1–2 godziny. Integrator: zwykle 3–5 tygodni i około €1 500–4 000. Kai: jedna rozmowa na czacie, od €29/mies., 3 dni za darmo.</li>
+  </ul>
+</section>
+
+<h2>Krok 0. Naszkicuj lejek, zanim otworzysz amoCRM</h2>
+<p>Większość „zepsutych” CRM-ów ma etapy wymyślane na bieżąco. Rozpisz drogę klienta od zgłoszenia do pieniędzy i zostaw tylko punkty, w których handlowiec robi coś, co da się sprawdzić. Przykład dla studia kuchni na wymiar:</p>
+<pre>Nowe zgłoszenie → Kwalifikacja → Pomiar umówiony → Wycena wysłana → Umowa i zaliczka → W produkcji → Zamontowano</pre>
+<p>Przy każdym etapie zapisz, co handlowiec musi wiedzieć, żeby przesunąć transakcję dalej. Te notatki to twoje pola: „Źródło” na starcie, „Budżet” przed wyceną, „Powód przegranej” przy zamknięciu.</p>
+
+<h2>Krok 1. Utwórz lejek i etapy w interfejsie amoCRM</h2>
+<ol>
+  <li>Otwórz <kbd>Leads</kbd> (<kbd>Сделки</kbd>) i kliknij <kbd>Setup</kbd> (<kbd>Настроить</kbd>) w prawym górnym rogu.</li>
+  <li>Dodaj etap przyciskiem <kbd>+</kbd>. Kliknij etap, żeby zmienić jego nazwę lub kolor; przeciągnij, żeby zmienić kolejność.</li>
+  <li>Żeby usunąć etap, przenieś z niego transakcje i przeciągnij go do kosza w prawym dolnym rogu.</li>
+  <li>Etapów systemowych „Wygrane” i „Przegrane” nie da się usunąć, można tylko zmienić ich nazwy, np. na „Opłacone” i „Odmowa”.</li>
+  <li>Drugi lejek (ponowne zamówienia, partnerzy) dodasz, klikając nazwę bieżącego lejka w lewym górnym rogu. Gdy pierwsze i powtórne sprzedaże są wymieszane, konwersja między etapami traci sens.</li>
+</ol>
+<div class="note warn">Lejek można usunąć dopiero wtedy, gdy wszystkie transakcje w nim, także zamknięte, zostaną przeniesione lub usunięte — i nie da się go potem przywrócić.</div>
+
+<h2>Krok 2. Dodaj pola do karty leada</h2>
+<ol>
+  <li>Otwórz dowolny lead. Kontakty i firmy mają własne pola, które ustawia się w ich kartach w ten sam sposób.</li>
+  <li>Kliknij <kbd>Setup</kbd>, potem <kbd>Add field</kbd>; wybierz typ i nazwę.</li>
+  <li>Podstawowe typy: lista, wielokrotny wybór, tekst, obszar tekstowy, liczba, data, pole wyboru, urodziny. Dla „Źródła” i „Powodu przegranej” używaj list: z dowolnego tekstu nie zbudujesz raportu.</li>
+  <li>Pola grupujesz w zakładki przyciskiem <kbd>+</kbd> obok zakładki „Files”.</li>
+</ol>
+<p>Minimalny zestaw: „Źródło” (lista), „Budżet” (liczba), „Data następnego kontaktu” (data), „Powód przegranej” (lista). Nie dubluj tego, co amoCRM już ma: kwoty transakcji, osoby odpowiedzialnej, danych kontaktowych.</p>
+<div class="note warn">Typu pola nie zmienisz po jego utworzeniu, a usunięcie pola bezpowrotnie kasuje jego dane.</div>
+
+<h2>Krok 3. Ustaw kluczowe pola jako wymagane na konkretnych etapach</h2>
+<p>W ustawieniach pola wybierz etapy jednego lub kilku lejków, na których ma być wymagane; transakcja nie pójdzie dalej, dopóki pole nie zostanie wypełnione. Z mapy z kroku 0:</p>
+<ul>
+  <li>„Źródło” — żeby wyjść z „Nowe zgłoszenie”;</li>
+  <li>„Budżet” — przed „Wycena wysłana”;</li>
+  <li>„Powód przegranej” — przy przejściu do „Przegrane”.</li>
+</ul>
+<p>Poprzestań na jednym–dwóch polach wymaganych na etap; przy większej liczbie ludzie zaczynają wpisywać myślniki. Dostępne od planu „Advanced” wzwyż, tylko dla administratorów.</p>
+
+<h2>Krok 4. Przepuść przez lejek trzy testowe transakcje</h2>
+<p>Utwórz trzy transakcje — „kupił”, „odmówił”, „utknął na pomiarze” — i przeprowadź każdą przez etapy. Sprawdź, czy pola wymagane blokują przejście, analityka pokazuje konwersję między etapami, a utknięta transakcja ma zadanie. Potem je usuń.</p>
+
+<h2>Ścieżka z Kai: ta sama mapa w jednej wiadomości</h2>
+<p>Kai to asystent AI, który konfiguruje amoCRM i Kommo na podstawie wiadomości na czacie. Podłącz CRM przez OAuth jednym kliknięciem z widżetu w marketplace amoCRM, a potem napisz do bota w Telegramie <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> albo na <a href="https://app.aii-crm.com/chat?lang=en">czacie webowym</a> (jedno konto, jedna historia). Mapa z kroku 0 jako wiadomość:</p>
+<pre>Skonfiguruj lejek dla studia kuchni na wymiar.
+Etapy: Nowe zgłoszenie → Kwalifikacja → Pomiar umówiony → Wycena wysłana → Umowa i zaliczka → W produkcji → Zamontowano.
+Pola leada: Źródło (lista: strona, marketplace, polecenie, Instagram), Budżet (liczba), Data pomiaru (data), Powód przegranej (lista).
+Źródło wymagane, żeby wyjść z „Nowe zgłoszenie”, Budżet przed „Wycena wysłana”, Powód przegranej przy przejściu do „Przegrane”.
+Gdy transakcja trafi do „Pomiar umówiony”, utwórz zadanie dla pomiarowca na dzień przed pomiarem.</pre>
+<p>Kai zada kilka pytań doprecyzowujących (np. czy ponowne zamówienia potrzebują osobnego lejka), pokaże plan i po twoim potwierdzeniu utworzy wszystko przez oficjalne API, a potem wyśle raport. Kolejne zmiany to następna wiadomość, pisana lub nagrana głosem. Uczciwie o ograniczeniach: pola wymagane działają tylko w planie amoCRM, który je obejmuje, a Kai sprawdza twój proces, zamiast go wymyślać.</p>
+
+<h2>Typowe błędy przy konfiguracji lejka</h2>
+<ul>
+  <li><strong>Stany zamiast działań.</strong> „W toku”, „Namyśla się”: transakcje wiszą tam miesiącami. Etap odpowiada na pytanie „co zrobił handlowiec”.</li>
+  <li><strong>Za dużo etapów.</strong> Powyżej dziesięciu konwersji nie da się odczytać, a transakcje przesuwa się na wyczucie.</li>
+  <li><strong>Jeden lejek na wszystko.</strong> Pierwsza sprzedaż, sprzedaż powtórna i sprzedaż przez partnerów mają różne cykle.</li>
+  <li><strong>Same pola opcjonalne.</strong> Opcjonalne „Źródło” po kilku tygodniach jest puste; nigdy się nie dowiesz, które reklamy się zwracają.</li>
+  <li><strong>Brak „Powodu przegranej”.</strong> Raport przegranych transakcji staje się liczbą, z którą nic nie zrobisz.</li>
+</ul>
+
+<h2>A jeśli korzystasz z Kommo?</h2>
+<p>Ta sama logika, angielski interfejs. Lejek: <kbd>Pipelines → Add pipeline</kbd>; etapy: <kbd>… → Edit Pipeline → Add stage</kbd>, kliknięcie zmienia nazwę, przeciąganie — kolejność. Usunąć można tylko puste etapy i lejki, a pierwszego lejka nigdy. „Incoming Leads” można wyłączyć, ale nie usunąć; „Closed-Won” i „Closed-Lost” można przemianować. Pola: otwórz lead, zakładka <kbd>Setup</kbd>, <kbd>+ Add field</kbd>, wymagalność na etapach ustawiasz w tym samym miejscu. Tylko rola administratora, w każdym planie Kommo. Kai podłącza się tak samo.</p>
+
+<h2>Porównanie: ręcznie, integrator czy Kai</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Kryterium</th><th>Ręcznie</th><th>Integrator</th><th>Kai</th></tr></thead>
+  <tbody>
+    <tr><td>Czas</td><td>1–2 godziny na prosty lejek</td><td>Zwykle 3–5 tygodni</td><td>Jedna rozmowa: pytania → plan → konfiguracja</td></tr>
+    <tr><td>Koszt</td><td>Za darmo, kosztem twojego czasu</td><td>Zwykle €1 500–4 000</td><td>Od €29/mies., 3 dni za darmo, bez karty</td></tr>
+    <tr><td>Kto jest potrzebny</td><td>Administrator amoCRM</td><td>Osoba odpowiedzialna po twojej stronie plus specyfikacja</td><td>Administrator amoCRM do OAuth</td></tr>
+    <tr><td>Późniejsze zmiany</td><td>Przeklikać wszystko od nowa</td><td>Nowa specyfikacja, nowa faktura</td><td>Kolejna wiadomość na czacie</td></tr>
+    <tr><td>Najlepsze dla</td><td>Jeden lejek, kilkanaście pól</td><td>Niestandardowe integracje: księgowość, telefonia, magazyn</td><td>Lejki, pola, automatyzacje, integracje przez API bez kodu</td></tr>
+  </tbody>
+</table>
+</div>
+<p>amoAI, AI agent w Kommo, konektory no-code (Albato, ApiX-Drive, Make, Zapier, n8n) i chatboty takie jak Salebot zajmują się sąsiednimi zadaniami: rozmowami z klientami i synchronizacją danych. Żaden z nich nie zaprojektuje twoich etapów i pól; krok 0 zostaje po twojej stronie.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>Ile etapów powinien mieć lejek w amoCRM?</h3>
+    <p>Zwykle 5–7 etapów roboczych plus dwa systemowe, każdy to sprawdzalne działanie handlowca. Więcej niż dziesięć zwykle oznacza, że dwa procesy dzielą jeden lejek.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Czy pole może być wymagane tylko na jednym etapie?</h3>
+    <p>Tak: w ustawieniach pola wybierasz etapy jednego lub kilku lejków. Dostępne od planu „Advanced” wzwyż; ustawia to administrator.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Co się stanie z transakcjami, jeśli usunę etap albo lejek?</h3>
+    <p>Najpierw przenieś transakcje. Etap usuwa się, przeciągając go do kosza; lejek — dopiero gdy nie ma w nim żadnej transakcji, także zamkniętej, i nie da się go potem przywrócić.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Czy do konfiguracji amoCRM potrzebuję programisty?</h3>
+    <p>Nie do lejków, pól, pól wymaganych i podstawowych automatyzacji. Programista albo integrator jest potrzebny przy niestandardowych połączeniach: program księgowy, strona na zamówienie, nietypowe API telefonii.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Jak Kai uzyskuje dostęp do amoCRM i czy to bezpieczne?</h3>
+    <p>Przez oficjalny OAuth amoCRM/Kommo: zgoda jednym kliknięciem, bez udostępniania haseł i kluczy API. Tokeny są przechowywane w postaci zaszyfrowanej, Kai nie przechowuje danych transakcji, a dostęp możesz w każdej chwili cofnąć w ustawieniach CRM. Firma jest zarejestrowana w Polsce (UE).</p>
+  </div>
+  <div class="faq-item">
+    <h3>Ile kosztuje Kai i czy jest darmowy okres próbny?</h3>
+    <p>Start €29/mies. (~100 zapytań), Pro €59/mies. (~500), Max €119/mies. (fair use, priorytet i prace na zamówienie). Pierwsze 3 dni za darmo, bez karty. Płatność kartą, Apple Pay, Google Pay, Telegram Stars lub USDT.</p>
+  </div>
+</div>
+
+<h2>Co dalej</h2>
+<p>Masz już mapę etapów na papierze? Otwórz <kbd>Leads → Setup</kbd> i zbuduj lejek w jeden wieczór. Wolisz, żeby ktoś zadał właściwe pytania i zrobił to przez API? Opisz swój biznes Kai w jednej wiadomości.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Wypróbuj w Telegramie</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Otwórz czat webowy</a>
+</div>
+
+<p class="author">Autor: Zespół Kai · Aktualizacja: <time datetime="2026-09-24">24 września 2026</time> · Ścieżki sprawdzone w oficjalnych centrach pomocy amoCRM i Kommo.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/pl/">Strona główna</a> · <a href="https://aii-crm.com/privacy-pl.html">Prywatność</a> · <a href="https://aii-crm.com/terms-pl.html">Regulamin</a> · <a href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">Wersja angielska</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/pl/amocrm-pipeline-setup.html#article",
+      "headline": "Jak skonfigurować lejek sprzedaży w amoCRM bez programisty",
+      "description": "Krok po kroku: etapy lejka, własne pola i pola wymagane w amoCRM przez Leads → Setup, typowe błędy i jak zrobić to samo jedną wiadomością do Kai.",
+      "inLanguage": "pl",
+      "datePublished": "2026-09-24",
+      "dateModified": "2026-09-24",
+      "mainEntityOfPage": "https://aii-crm.com/guides/pl/amocrm-pipeline-setup.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/pl/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/pl/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ile etapów powinien mieć lejek w amoCRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zwykle 5–7 etapów roboczych plus dwa systemowe, każdy to sprawdzalne działanie handlowca. Więcej niż dziesięć zwykle oznacza, że dwa procesy dzielą jeden lejek."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy pole może być wymagane tylko na jednym etapie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak: w ustawieniach pola wybierasz etapy jednego lub kilku lejków. Dostępne od planu „Advanced” wzwyż; ustawia to administrator."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Co się stanie z transakcjami, jeśli usunę etap albo lejek?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Najpierw przenieś transakcje. Etap usuwa się, przeciągając go do kosza; lejek — dopiero gdy nie ma w nim żadnej transakcji, także zamkniętej, i nie da się go potem przywrócić."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy do konfiguracji amoCRM potrzebuję programisty?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nie do lejków, pól, pól wymaganych i podstawowych automatyzacji. Programista albo integrator jest potrzebny przy niestandardowych połączeniach: program księgowy, strona na zamówienie, nietypowe API telefonii."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak Kai uzyskuje dostęp do amoCRM i czy to bezpieczne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Przez oficjalny OAuth amoCRM/Kommo: zgoda jednym kliknięciem, bez udostępniania haseł i kluczy API. Tokeny są przechowywane w postaci zaszyfrowanej, Kai nie przechowuje danych transakcji, a dostęp możesz w każdej chwili cofnąć w ustawieniach CRM. Firma jest zarejestrowana w Polsce (UE)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ile kosztuje Kai i czy jest darmowy okres próbny?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start €29/mies. (~100 zapytań), Pro €59/mies. (~500), Max €119/mies. (fair use, priorytet i prace na zamówienie). Pierwsze 3 dni za darmo, bez karty. Płatność kartą, Apple Pay, Google Pay, Telegram Stars lub USDT."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Poradniki",
+          "item": "https://aii-crm.com/guides/pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Konfiguracja lejka sprzedaży w amoCRM bez programisty",
+          "item": "https://aii-crm.com/guides/pl/amocrm-pipeline-setup.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Konfiguracja CRM bez integratora: checklista w 12 punktach | Kai</title>
+<meta name="description" content="Dwanaście rzeczy, których potrzebuje działający CRM: etapy odzwierciedlające realny proces, pola wymagane, źródła, powody przegranej, zadanie w każdej otwartej transakcji, odpowiedzialny za każdą transakcję, duplikaty, import, pierwsze automatyzacje, wdrożenie zespołu, cotygodniowy przegląd — i kiedy integrator to jednak właściwy wybór.">
+<meta name="keywords" content="Konfiguracja CRM bez konsultanta">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/pl/crm-setup-without-integrator-checklist.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/crm-setup-without-integrator-checklist.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/crm-setup-without-integrator-checklist.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/crm-setup-without-integrator-checklist.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/crm-setup-without-integrator-checklist.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/crm-setup-without-integrator-checklist.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/crm-setup-without-integrator-checklist.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/crm-setup-without-integrator-checklist.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/crm-setup-without-integrator-checklist.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/pl/crm-setup-without-integrator-checklist.html">
+<meta property="og:title" content="Konfiguracja CRM bez integratora: checklista w 12 punktach">
+<meta property="og:description" content="Projekt, dane, nawyk: 12 sprawdzalnych punktów dla amoCRM, Kommo i Bitrix24, ręcznie albo jedną wiadomością do Kai. Plus uczciwy punkt o integratorach.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-10-26">
+<meta property="article:modified_time" content="2026-10-26">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Konfiguracja CRM bez integratora: checklista w 12 punktach">
+<meta name="twitter:description" content="Projekt, dane, nawyk: 12 sprawdzalnych punktów dla amoCRM, Kommo i Bitrix24, ręcznie albo jedną wiadomością do Kai. Plus uczciwy punkt o integratorach.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/pl/" aria-label="Kai — strona główna">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Nawigacja">
+      <a href="https://aii-crm.com/pl/">Strona</a>
+      <a href="https://t.me/aiicrm_bot">Bot w Telegramie</a>
+      <a href="https://aii-crm.com/guides/en/crm-setup-without-integrator-checklist.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Ścieżka nawigacji">
+  <a href="https://aii-crm.com/pl/">Kai</a> › <a href="https://aii-crm.com/guides/pl/">Poradniki</a> › Checklista konfiguracji CRM
+</nav>
+
+<h1>Konfiguracja CRM bez integratora: checklista w 12 punktach</h1>
+<p class="meta">Aktualizacja: 26 października 2026 · Zespół Kai · 7 min czytania</p>
+
+<p class="lead">Konfiguracja CRM bez integratora oznacza, że właściciel lub szef sprzedaży doprowadza system do stanu, w którym handlowcy naprawdę w nim pracują, a raporty mówią prawdę. W małej firmie z jednym czy dwoma lejkami to wykonalne: amoCRM, Kommo i Bitrix24 są zaprojektowane dla administratora bez kodu, a rutynę (pola, etapy, zadania, import) można oddać asystentowi AI, takiemu jak Kai. Poniżej dwanaście punktów do sprawdzenia przed startem, niezależnie od tego, kto klika; jeśli kontrola nie przechodzi, punkt nie jest zrobiony.</p>
+
+<section class="tldr" aria-label="W skrócie">
+  <h2>W skrócie</h2>
+  <ul>
+    <li>Punkty 1–4 (etapy, pola, źródła, powody przegranej) to projekt.</li>
+    <li>Punkty 5–8 (zadania, odpowiedzialni, duplikaty, import) to porządek w danych.</li>
+    <li>Punkty 9–11 (automatyzacje, wdrożenie, cotygodniowy przegląd) to nawyk zespołu.</li>
+    <li>Punkt 12: kiedy integrator jest jednak potrzebny.</li>
+    <li>Jeden–dwa wieczory na projekt, dzień na dane, trzy–cztery tygodnie na nawyk.</li>
+  </ul>
+</section>
+
+<h2>Projekt: punkty 1–4</h2>
+
+<h3>1. Etapy odzwierciedlają realny proces</h3>
+<p>Zapisz drogę klienta od zgłoszenia do pieniędzy i zostaw tylko te punkty, w których handlowiec robi coś sprawdzalnego: „Zakwalifikowany”, „Oferta wysłana”, „Umowa podpisana”. Etapy-stany („Namyśla się”, „W toku”) to główne źródło utkniętych transakcji. Wystarczy 5–7 etapów roboczych; pierwsza i powtórna sprzedaż idą do osobnych lejków.<br>
+<strong>Kontrola:</strong> nazwa etapu mówi, co handlowiec już zrobił.</p>
+
+<h3>2. Pola wymagane — tylko te niezbędne</h3>
+<p>Twórz pole tylko wtedy, gdy trafia do raportu lub wpływa na decyzję; wszystko, z czego robisz raporty, to lista, a nie dowolny tekst. Najwyżej jedno–dwa pola wymagane na etap, inaczej handlowcy zaczną wpisywać kreski; typu pola nie da się później zmienić.<br>
+<strong>Kontrola:</strong> na starcie nie więcej niż dziesięć pól, każde ze znanym zastosowaniem.</p>
+
+<h3>3. Źródła to lista</h3>
+<p>Strona WWW, reklama, polecenie, marketplace, zimny telefon: lista 5–8 pozycji, ustawiana przy wejściu i wymagana do wyjścia z pierwszego etapu. Formularze i komunikatory często wypełniają ją automatycznie.<br>
+<strong>Kontrola:</strong> ani jednej transakcji bez źródła w ostatnim tygodniu.</p>
+
+<h3>4. Powody przegranej to lista 5–7 pozycji</h3>
+<p>„Za drogo”, „wybrał konkurencję”, „brak odpowiedzi”, „już nieaktualne”, „nie nasz klient”. Wymagane przy zamknięciu transakcji jako przegranej; bez tego raport przegranych to tylko liczba.<br>
+<strong>Kontrola:</strong> miesięczny raport przegranych transakcji czyta się jasno i podpowiada, co zmienić.</p>
+
+<h2>Dane: punkty 5–8</h2>
+
+<h3>5. Każda otwarta transakcja ma zadanie</h3>
+<p>Transakcja bez zadania to transakcja bez przyszłości. Zasada zespołu: zamykasz zadanie, ustawiasz następne, nawet jeśli to „zadzwonić za miesiąc”.<br>
+<strong>Kontrola:</strong> filtr „transakcje bez zadań” jest pusty na koniec dnia.</p>
+
+<h3>6. Każda transakcja ma jednego odpowiedzialnego</h3>
+<p>Żadnych „wspólnych” transakcji i żadnych przypisanych do właściciela konta. Ustalcie, jak rozdzielane są nowe zgłoszenia: po kolei, według linii produktowej lub regionu.<br>
+<strong>Kontrola:</strong> żadnych otwartych transakcji na administratorze ani na osobach, które odeszły.</p>
+
+<h3>7. Duplikaty pod kontrolą</h3>
+<p>Jeden klient, jedna karta. Przed utworzeniem kontaktu szukaj po telefonie; telefony w jednym formacie z kodem kraju; duplikaty się scala, a nie usuwa.<br>
+<strong>Kontrola:</strong> wyszukanie dziesięciu losowych numerów znajduje po jednej karcie.</p>
+
+<h3>8. Baza zaimportowana z tagiem</h3>
+<p>Przenieś starą bazę po punktach 1–4, inaczej będziesz poprawiać pola. Przygotuj tabelę, zrób test na 10 wierszach, otaguj każdy rekord i ustaw źródło; szczegóły w <a href="https://aii-crm.com/guides/pl/import-contacts-excel-amocrm-kommo.html">poradniku o imporcie z Excela</a>.<br>
+<strong>Kontrola:</strong> liczba rekordów zgadza się z tabelą, a filtr po tagu pokazuje tę samą liczbę.</p>
+
+<h2>Nawyk: punkty 9–11</h2>
+
+<h3>9. Pierwsze dwie automatyzacje są włączone</h3>
+<p>Zadanie, gdy transakcja trafia na etap, i przypomnienie o milczącym kliencie lub utkniętej transakcji. W samym CRM to Digital Pipeline (amoCRM, Kommo) albo roboty (Bitrix24); w Kai — reguły po jego stronie, włączane jednym zdaniem. Pięć kolejnych reguł znajdziesz w <a href="https://aii-crm.com/guides/pl/crm-automations-that-pay-off.html">poradniku o automatyzacjach</a>.<br>
+<strong>Kontrola:</strong> testowa transakcja przeniesiona na etap dostała zadanie bez twojego udziału.</p>
+
+<h3>10. Zespół wdrożony w 30 minut</h3>
+<p>Jednostronicowa procedura (SOP): co wpisywać w które pole, kiedy przesuwać transakcję, co robić z przegraną. Pokaż to na żywej transakcji, nie na slajdach. Pierwszy tydzień: codzienna dziesięciominutowa kontrola transakcji bez zadań, bez źródła lub na złym etapie.<br>
+<strong>Kontrola:</strong> każdy handlowiec przeprowadził jedną transakcję od zgłoszenia do zamknięcia.</p>
+
+<h3>11. Cotygodniowy przegląd lejka</h3>
+<p>Dwadzieścia minut tygodniowo: transakcje na etapach, miejsca, w których utknęły, powody przegranej, transakcje bez zadań. Naprawiaj jedną rzecz na tydzień. Kai robi tę kontrolę codziennie: ocenia lejek w skali A–D, wysyła cotygodniowe podsumowanie na czat i naprawia powody przegranej i źródła jednym kliknięciem.<br>
+<strong>Kontrola:</strong> cykliczne spotkanie w kalendarzu, które odbyło się trzy razy z rzędu.</p>
+
+<h2>Punkt 12. Kiedy integrator jest jednak potrzebny</h2>
+<p>Ta checklista obejmuje jeden–dwa lejki w małym zespole. Integratora potrzebujesz, jeśli spełniony jest którykolwiek z warunków:</p>
+<ul>
+  <li>Połączenia z programem księgowym, telefonią, systemem magazynowym lub stroną WWW na zamówienie.</li>
+  <li>Migracja z innego CRM z historią, zadaniami i plikami.</li>
+  <li>Kilka działów z różnymi procesami i prawami dostępu.</li>
+  <li>Procesy biznesowe i roboty w Bitrix24; asystenci tacy jak Kai jeszcze ich nie konfigurują.</li>
+  <li>Nikt nie ma dwóch wolnych wieczorów albo nikt nie będzie pilnował porządku po starcie.</li>
+</ul>
+<p>Przyjdź ze specyfikacją: etapami, polami, źródłami, powodami przegranej i regułami z punktów 1–9. Kai może przygotować ją w PDF na podstawie uzgodnionego planu, co oszczędza pierwsze spotkania.</p>
+
+<h2>Z Kai to jedna wiadomość</h2>
+<p>Kai to asystent AI, który konfiguruje amoCRM i Kommo (Bitrix24 w becie) na podstawie wiadomości na czacie, w bocie w Telegramie <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> lub w <a href="https://app.aii-crm.com/chat?lang=en">czacie webowym</a>, a podłącza się przez OAuth 2.0 jednym kliknięciem. Punkty 1–9 zajmują jedną rozmowę: pytania doprecyzowujące z opcjami odpowiedzi, plan, a potem wszystko jest tworzone przez oficjalne API i Kai wysyła raport.</p>
+<pre>Mam pracownię mebli na zamówienie, 3 handlowców, zgłoszenia ze strony i z Instagrama. Skonfiguruj amoCRM według checklisty: etapy pod proces, pola z regułami wymagalności, źródła, powody przegranej, zadanie w każdej otwartej transakcji.</pre>
+<pre>Sprawdź mój lejek: ile transakcji nie ma zadania, źródła i odpowiedzialnego, i zaproponuj, co naprawić najpierw.</pre>
+<pre>Przygotuj specyfikację w PDF na podstawie uzgodnionego planu dla integratora, który robi połączenie z księgowością.</pre>
+<p>Uczciwe ograniczenia. Kai wskazuje dziury w procesie, ale to, jak sprzedajesz, pozostaje twoją decyzją. Dyscypliny wdrożenia i przeglądów (punkty 10–11) nie da się zautomatyzować. Automatyzacje zdarzeń są w planie Pro (€59/mies.); Start za €29/mies. obejmuje strukturę, pola, zadania i import; pierwsze 3 dni są darmowe, bez karty, około 25 zapytań. W Bitrix24 roboty i widżety nie są jeszcze konfigurowane.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>Ile trwa samodzielna konfiguracja CRM?</h3>
+    <p>Jeden lejek, mały zespół: jeden–dwa wieczory na zaprojektowanie etapów i pól, dzień na import i porządki, trzy–cztery tygodnie, żeby zespół wyrobił nawyk. Asystent taki jak Kai zdejmuje z ciebie część klikania; projekt procesu i szkolenie zostają po twojej stronie.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Od czego zacząć, jeśli mam już CRM, ale panuje w nim bałagan?</h3>
+    <p>Od punktów 1, 4 i 5: dopasuj etapy do realnego procesu, dodaj powody przegranej i ustaw zadanie w każdej otwartej transakcji. Potem zamknij transakcje bez ruchu od ponad trzech miesięcy z uczciwym powodem przegranej i dopiero wtedy włącz automatyzacje.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Które punkty checklisty można oddać asystentowi AI?</h3>
+    <p>Wszystko, co polega na tworzeniu i konfigurowaniu: etapy, pola i reguły wymagalności, listy źródeł i powodów przegranej, zadania w transakcjach, import ze sprawdzaniem duplikatów, pierwsze automatyzacje, cotygodniowe podsumowanie. Decyzje o procesie, wdrożenie zespołu i dyscyplina przeglądów zostają po twojej stronie.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Czym różni się checklista dla amoCRM, Kommo i Bitrix24?</h3>
+    <p>Logika jest ta sama; różnią się interfejs i plany: pola wymagane na etapach nie są dostępne w każdym planie amoCRM, ale są w każdym planie Kommo, a automatyzacje w samym CRM to Digital Pipeline albo roboty Bitrix24. Kai w pełni obsługuje amoCRM i Kommo; Bitrix24 jest w becie, bez robotów i widżetów.</p>
+  </div>
+</div>
+
+<h2>Co dalej</h2>
+<p>Wydrukuj dwanaście punktów i jeszcze dziś wieczorem przejdź pierwsze cztery na papierze: to jest projekt. Reszta to kliknięcia w twoim CRM albo jedna wiadomość do Kai.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Wypróbuj w Telegramie</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Otwórz czat webowy</a>
+</div>
+
+<p class="author">Autor: Zespół Kai · Aktualizacja: <time datetime="2026-10-26">26 października 2026</time> · Punkty checklisty są takie same dla amoCRM, Kommo i Bitrix24; ścieżki w interfejsie sprawdzaj w centrum pomocy swojego CRM.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/pl/">Strona główna</a> · <a href="https://aii-crm.com/privacy-pl.html">Prywatność</a> · <a href="https://aii-crm.com/terms-pl.html">Regulamin</a> · <a href="https://aii-crm.com/guides/en/crm-setup-without-integrator-checklist.html">Wersja angielska</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/pl/crm-setup-without-integrator-checklist.html#article",
+      "headline": "Konfiguracja CRM bez integratora: checklista w 12 punktach",
+      "description": "Dwanaście rzeczy, których potrzebuje działający CRM: etapy odzwierciedlające realny proces, pola wymagane, źródła, powody przegranej, zadanie w każdej otwartej transakcji, odpowiedzialny za każdą transakcję, duplikaty, import, pierwsze automatyzacje, wdrożenie zespołu, cotygodniowy przegląd — i kiedy integrator to jednak właściwy wybór.",
+      "inLanguage": "pl",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "mainEntityOfPage": "https://aii-crm.com/guides/pl/crm-setup-without-integrator-checklist.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/pl/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/pl/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ile trwa samodzielna konfiguracja CRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jeden lejek, mały zespół: jeden–dwa wieczory na zaprojektowanie etapów i pól, dzień na import i porządki, trzy–cztery tygodnie, żeby zespół wyrobił nawyk. Asystent taki jak Kai zdejmuje z ciebie część klikania; projekt procesu i szkolenie zostają po twojej stronie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Od czego zacząć, jeśli mam już CRM, ale panuje w nim bałagan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Od punktów 1, 4 i 5: dopasuj etapy do realnego procesu, dodaj powody przegranej i ustaw zadanie w każdej otwartej transakcji. Potem zamknij transakcje bez ruchu od ponad trzech miesięcy z uczciwym powodem przegranej i dopiero wtedy włącz automatyzacje."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Które punkty checklisty można oddać asystentowi AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wszystko, co polega na tworzeniu i konfigurowaniu: etapy, pola i reguły wymagalności, listy źródeł i powodów przegranej, zadania w transakcjach, import ze sprawdzaniem duplikatów, pierwsze automatyzacje, cotygodniowe podsumowanie. Decyzje o procesie, wdrożenie zespołu i dyscyplina przeglądów zostają po twojej stronie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czym różni się checklista dla amoCRM, Kommo i Bitrix24?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Logika jest ta sama; różnią się interfejs i plany: pola wymagane na etapach nie są dostępne w każdym planie amoCRM, ale są w każdym planie Kommo, a automatyzacje w samym CRM to Digital Pipeline albo roboty Bitrix24. Kai w pełni obsługuje amoCRM i Kommo; Bitrix24 jest w becie, bez robotów i widżetów."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Poradniki",
+          "item": "https://aii-crm.com/guides/pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Konfiguracja CRM bez integratora: checklista w 12 punktach",
+          "item": "https://aii-crm.com/guides/pl/crm-setup-without-integrator-checklist.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
