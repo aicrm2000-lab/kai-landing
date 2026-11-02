@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent AI pentru un CRM personalizat: cum îl conectezi prin API fără să rescrii sistemul | Kai</title>
+<meta name="description" content="De ce are nevoie un agent AI ca să lucreze cu CRM-ul tău propriu (personalizat, dezvoltat intern): un REST API cu JSON, autentificare OAuth 2.0 / cheie API / bearer și o specificație de conector. Trei moduri de conectare, ce poate face agentul după aceea, limitele și modelul de securitate — pe exemplul Kai.">
+<meta name="keywords" content="conectare agent AI la CRM personalizat, asistent AI pentru CRM intern, integrare AI cu CRM propriu, CRM dezvoltat intern cu AI, CRM la comandă cu AI, agent AI prin REST API, CRM propriu prin API, integrare CRM prin API, automatizare CRM cu AI, CRM personalizat, CRM self-hosted, HubSpot, Pipedrive, EspoCRM">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai team">
+<link rel="canonical" href="https://aii-crm.com/guides/ro/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/guides/it/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/guides/tr/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/guides/be/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="uk" href="https://aii-crm.com/guides/uk/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="ro" href="https://aii-crm.com/guides/ro/ai-agent-for-custom-crm.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/ai-agent-for-custom-crm.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/ro/ai-agent-for-custom-crm.html">
+<meta property="og:title" content="Cum conectezi un agent AI la un CRM personalizat prin API-ul lui">
+<meta property="og:description" content="Un CRM personalizat cu REST API se conectează la un agent AI fără rescriere: adresa API-ului, metoda de autentificare, lista pipeline-urilor — apoi pipeline-uri, tranzacții, sarcini și automatizări în cuvinte simple. De ce ai nevoie, cum te conectezi, unde sunt limitele.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-11-01">
+<meta property="article:modified_time" content="2026-11-01">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cum conectezi un agent AI la un CRM personalizat prin API-ul lui">
+<meta name="twitter:description" content="Un CRM personalizat cu REST API se conectează la un agent AI fără rescriere: adresa API-ului, metoda de autentificare, lista pipeline-urilor — apoi pipeline-uri, tranzacții, sarcini și automatizări în cuvinte simple. De ce ai nevoie, cum te conectezi, unde sunt limitele.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/ro/" aria-label="Kai — pagina principală">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Navigare">
+      <a href="https://aii-crm.com/ro/">Site</a>
+      <a href="https://t.me/aiicrm_bot">Bot Telegram</a>
+      <a href="https://aii-crm.com/guides/en/ai-agent-for-custom-crm.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Fir de navigare">
+  <a href="https://aii-crm.com/ro/">Kai</a> › <a href="https://aii-crm.com/guides/ro/">Ghiduri</a> › Agent AI pentru un CRM personalizat
+</nav>
+
+<h1>Cum conectezi un agent AI la un CRM personalizat (dezvoltat intern) prin API — fără să rescrii sistemul</h1>
+<p class="meta">Actualizat pe 1 noiembrie 2026 · Echipa Kai · 8 min de citit</p>
+
+<p class="lead">Multe companii lucrează într-un CRM propriu: scris pentru procesul lor, găzduit pe serverul lor, iar niciun „asistent AI pentru amoCRM” gata făcut nu i se potrivește. Pentru asta nu trebuie să rescrii sistemul. Dacă CRM-ul are un REST API care răspunde în JSON, un agent AI se conectează la el la fel ca la un CRM standard: descrii unde se află API-ul, cum se face autorizarea și ce cerere face ce, apoi configurezi pipeline-uri, creezi sarcini și automatizări în cuvinte simple, într-un chat. Ghidul acoperă de ce ai nevoie, cum funcționează în Kai și unde sunt limitele.</p>
+
+<section class="tldr" aria-label="Pe scurt">
+  <h2>Pe scurt / TL;DR</h2>
+  <ul>
+    <li>Ai nevoie de trei lucruri: o adresă API https pe un host public, o metodă de autentificare (OAuth 2.0, cheie API, bearer sau basic) și un endpoint pentru lista pipeline-urilor. Restul e opțional.</li>
+    <li>Te conectezi cu o specificație de conector: un JSON pe care Kai îl schițează din documentația ta sau îl construiește pas cu pas în chat. Fără cod de scris.</li>
+    <li>După aceea agentul lucrează cu CRM-ul tău ca și cu amoCRM: pipeline-uri și etape, tranzacții, contacte, companii, sarcini, note, câmpuri, analiză; evenimentele din CRM-ul tău alimentează regulile „eveniment → acțiune”.</li>
+    <li>Încearcă mai întâi pe Kai Sandbox CRM — un CRM de test pe partea lui Kai, care se conectează exact ca unul real.</li>
+    <li>Securitate: doar https, cereri doar către host-ul API-ului tău, secrete criptate, șabloane fără cod, limite de mărime și de frecvență.</li>
+    <li>Conectarea propriului CRM e disponibilă pe planul Max (€119/lună). Discutarea sistemului și schițarea specificației sunt gratuite.</li>
+  </ul>
+</section>
+
+<h2>Ce înseamnă „CRM-ul tău propriu” pentru un agent AI</h2>
+<p>„Propriu” înseamnă aici orice CRM care nu e pe lista integrărilor gata făcute: un sistem intern pe Laravel sau Django, o versiune adaptată a unui CRM open-source precum EspoCRM sau SuiteCRM, un portal intern cu modul de vânzări sau un CRM ca HubSpot ori Pipedrive. Agentului nu-i pasă în ce e scris sistemul. Are nevoie de trei lucruri: unde să trimită cererile, cum să dovedească că ești tu și ce cerere face ce. În Kai toate acestea formează o specificație de conector — un JSON de câteva zeci de rânduri. Specificații gata făcute pentru HubSpot, Pipedrive și EspoCRM sunt deja în <a href="https://app.aii-crm.com/docs/custom-crm?lang=en">documentație</a>: le lipești, pui tokenul tău, trimiți.</p>
+
+<h2>Ce îți trebuie înainte de conectare</h2>
+<ul>
+  <li><strong>URL-ul de bază al API-ului</strong> — doar https și doar un host public. Kai respinge adresele locale, rețelele private și adresele de metadate cloud, ca nimeni să nu poată ajunge prin agent la infrastructura altcuiva.</li>
+  <li><strong>Autorizarea</strong>, într-unul dintre aceste moduri: OAuth 2.0 (authorization code cu PKCE sau client credentials), un token bearer, o cheie API într-un header sau basic auth. Asta acoperă ce știu majoritatea API-urilor interne.</li>
+  <li><strong>Un endpoint pentru pipeline-uri cu etape</strong> — singura operațiune obligatorie. Tranzacțiile, contactele, sarcinile, notele, câmpurile și utilizatorii sunt opționale: descrie-le și agentul le poate folosi; lasă-le deoparte și îți va spune sincer că operațiunea nu e disponibilă pentru acest CRM și ce trebuie adăugat.</li>
+  <li><strong>Răspunsuri JSON.</strong> Conectorul nu acceptă XML sau HTML.</li>
+  <li><strong>Cineva care cunoaște sistemul.</strong> Kai schițează specificația pe baza unei descrieri, dar numele câmpurilor trebuie verificate de un om care a văzut codul sau documentația.</li>
+</ul>
+
+<h2>Trei moduri de conectare</h2>
+<ol>
+  <li><strong>Sandbox.</strong> În chatul Kai — în Telegram sau în browser — apasă „🔗 Connect CRM” → „🔧 My own CRM via API” → „🧪 Try Kai Sandbox CRM”. Kai pornește pe partea lui un mic CRM de test, cu pipeline-uri, tranzacții, sarcini și evenimente semnate, și îl conectează exact ca pe un CRM personalizat real. Tot ce urmează funcționează și acolo — cel mai rapid mod de a vedea ce va face agentul cu sistemul tău înainte să scrii un rând din specificație.</li>
+  <li><strong>Din documentație.</strong> Lipește în chat câteva paragrafe care descriu API-ul tău sau atașează un fișier — Kai schițează specificația, tu verifici numele câmpurilor și o trimiți înapoi.</li>
+  <li><strong>Pas cu pas.</strong> Butonul „🧩 Build the spec step by step”: Kai cere adresa API-ului, metoda de autentificare și două căi — pentru pipeline-uri și pentru tranzacții —, le apelează singur și citește numele câmpurilor din răspunsurile reale. Fără JSON de scris; cu OAuth 2.0 câmpurile sunt citite imediat după autorizare.</li>
+</ol>
+<p>Un JSON gata făcut poate fi trimis ca text sau ca fișier .json. Înainte de salvare, Kai validează specificația — https, host public, placeholdere, secrete — și îți spune exact ce trebuie corectat. Pentru OAuth 2.0 apare apoi un buton „Authorize” pentru partea CRM-ului tău; pentru celelalte metode Kai apelează imediat lista pipeline-urilor și îți arată ce vede. Comuți între mai multe CRM-uri cu <kbd>/accounts</kbd>.</p>
+<div class="note">O specificație minimă înseamnă un nume, URL-ul de bază, blocul de autentificare și o singură operațiune <kbd>pipelines.list</kbd>, cu căile către câmpurile din răspuns. E suficient ca să te conectezi și să-ți vezi pipeline-urile; restul se poate adăuga mai târziu. Șablonul și exemplele sunt în <a href="https://app.aii-crm.com/docs/custom-crm?lang=en">documentația Kai</a>.</div>
+
+<h2>Ce poate face agentul după conectare</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Operațiune</th><th>Ce face Kai</th><th>Ce descrii în specificație</th></tr></thead>
+  <tbody>
+    <tr><td>Pipeline-uri și etape</td><td>Listează, creează, redenumește, adaugă etape; deosebește etapele „câștigat” și „pierdut”</td><td>pipelines.list — obligatoriu; create, update, add_stage — opțional</td></tr>
+    <tr><td>Tranzacții</td><td>Caută, creează, actualizează, mută între etape, leagă contacte și companii</td><td>leads.list, leads.search, leads.create, leads.update</td></tr>
+    <tr><td>Contacte și companii</td><td>Creează și actualizează dintr-un mesaj text sau vocal</td><td>contacts.*, companies.*</td></tr>
+    <tr><td>Sarcini</td><td>Creează sarcini cu termen pe o tranzacție, le închide; citește lista pentru sănătatea tranzacțiilor și pentru brieful întâlnirilor</td><td>tasks.create, tasks.complete, tasks.list</td></tr>
+    <tr><td>Note și etichete</td><td>Adaugă note, aplică etichete</td><td>notes.create, notes.list, tags.*</td></tr>
+    <tr><td>Câmpuri</td><td>Creează câmpuri pentru tranzacții, contacte și companii: text, număr, listă, dată; setează valori</td><td>fields.*</td></tr>
+    <tr><td>Analiza pipeline-ului</td><td>Câte tranzacții stau pe fiecare etapă și unde se blochează</td><td>Date din leads.list</td></tr>
+    <tr><td>Automatizări</td><td>Reguli „eveniment → acțiune”: CRM-ul tău trimite un eveniment la webhook-ul lui Kai, iar Kai creează o sarcină, scrie o notă, anunță în chat</td><td>Blocul events din specificație + un webhook din CRM-ul tău, semnătură HMAC opțională</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Placeholderele precum <kbd>{{name}}</kbd> din căi și din corpul cererilor se completează din parametrii acțiunii, iar <kbd>{{secret.token}}</kbd> — din secretele acestui conector. Căile din răspuns se scriu cu puncte: <kbd>data.items</kbd>, <kbd>result.0.id</kbd>. Agentul construiește cereri doar din ce ai descris: fără cod, fără acces la altceva.</p>
+
+<h2>Securitate: ce nu poate face agentul sistemului tău</h2>
+<ul>
+  <li>Doar https și doar host-uri publice: adresele sunt verificate atât la salvarea specificației, cât și înaintea fiecărei cereri — DNS-ul se rezolvă din nou.</li>
+  <li>Cererile merg doar către host-ul URL-ului de bază: căile din specificație sunt relative, iar URL-urile absolute și redirecționările sunt interzise.</li>
+  <li>Șabloanele nu sunt cod: doar placeholdere. Nu au acces la mediul lui Kai, la baza de date sau la alți utilizatori.</li>
+  <li>Secretele sunt stocate criptat, nu ajung niciodată în loguri și sunt mascate în mesajele de eroare.</li>
+  <li>Limite: specificația până la 64 KB, corpul cererii până la 256 KB, răspunsul până la 1 MB, timeout de 15 secunde, 60 de apeluri pe minut per conector.</li>
+  <li>OAuth 2.0: un state semnat, valabil 15 minute, PKCE, un redirect URI fix; codul se schimbă pe token doar pe serverul lui Kai.</li>
+</ul>
+<p>Poți revoca accesul oricând — șterge tokenul sau cheia pe partea CRM-ului tău, iar următoarea cerere a agentului pur și simplu nu va mai trece.</p>
+
+<h2>Limite: ce nu vei primi</h2>
+<ul>
+  <li>Widgeturi sau butoane în CRM-ul tău: agentul trăiește în chat și lucrează prin API; nu adaugă nimic în interfața sistemului.</li>
+  <li>Operațiuni care nu sunt în specificație: Kai nu ghicește endpointurile, îți cere să le descrii.</li>
+  <li>API-uri fără JSON, cu o semnătură nestandard a cererilor sau accesibile doar dintr-o rețea privată — aici e nevoie mai întâi de un programator.</li>
+</ul>
+
+<h2>Când ai nevoie de un programator</h2>
+<ul>
+  <li>CRM-ul nu are API — trebuie scris. Minimul: listele de pipeline-uri și de tranzacții; restul, pas cu pas.</li>
+  <li>Există un API, dar doar în rețeaua locală — ai nevoie de un endpoint https public, cu autorizare.</li>
+  <li>Vrei evenimente din CRM pentru automatizări — CRM-ul trebuie să trimită un webhook la adresa lui Kai: un singur POST cu JSON.</li>
+</ul>
+<p>În toate celelalte cazuri nu e nevoie de programator: Kai schițează specificația, iar omul care cunoaște sistemul o verifică.</p>
+
+<h2>Cu Kai e un singur mesaj</h2>
+<p>După conectare, o discuție despre CRM-ul tău nu diferă de una despre amoCRM: descrii de ce ai nevoie, Kai pune întrebări suplimentare, arată un plan, îl execută și trimite un raport. Exemple:</p>
+<pre>Arată pipeline-urile din CRM-ul meu și câte tranzacții stau pe fiecare etapă.</pre>
+<pre>Creează tranzacția „Petrescu, bucătărie” de 3.500 în pipeline-ul „Vânzări”, contactul Petrescu, telefon +1 555 000-0000, și o sarcină „sună înapoi” pentru mâine.</pre>
+<pre>Când o tranzacție trece la etapa „Contract” — creează pentru responsabil sarcina „emite factura” și scrie-mi în chat.</pre>
+<p>Conectarea propriului CRM e disponibilă pe planul Max: €119/lună, până la 10 conturi CRM, suport prioritar. Discutarea sistemului, cererea unei schițe de specificație și întrebările sunt gratuite — în perioada de probă și pe orice plan. Kai vorbește engleză și rusă.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>CRM-ul meu e dezvoltat intern, are API, dar nu are documentație. Va funcționa?</h3>
+    <p>Da. Trimite exemple de cereri și răspunsuri sau o bucată din codul controllerului — Kai schițează specificația. Sau construiește-o pas cu pas: dă adresa, metoda de autentificare și căile către pipeline-uri și tranzacții; Kai le apelează și citește singur numele câmpurilor din răspunsuri.</p>
+  </div>
+  <div class="faq-item">
+    <h3>E sigur să dai unui agent AI acces la CRM-ul tău propriu?</h3>
+    <p>Accesul se limitează la ce descrie specificația: cereri doar către host-ul tău și doar prin https, șabloane fără cod, secrete criptate, limite de mărime și de frecvență. Ca să revoci accesul, șterge tokenul sau cheia pe partea ta.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Cât costă conectarea propriului CRM?</h3>
+    <p>Este planul Max — €119/lună, până la 10 conturi CRM, suport prioritar. Discuția și schița specificației sunt gratuite. Dezvoltarea CRM-ului în sine sau a API-ului său nu face parte din plan.</p>
+  </div>
+  <div class="faq-item">
+    <h3>HubSpot, Pipedrive sau EspoCRM intră și ele aici?</h3>
+    <p>Da. Pentru agent sunt aceleași „CRM-uri proprii” prin API: specificațiile gata făcute pentru ele sunt în documentația Kai, ai nevoie doar de un token sau de o cheie API.</p>
+  </div>
+</div>
+
+<h2>Ce urmează</h2>
+<p>Deschide chatul Kai, apasă „Connect CRM” → „My own CRM via API” și începe cu sandboxul sau trimite documentația. Dacă sistemul are un REST API, într-o singură seară devine un CRM pe care îl conduci prin cuvinte.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Încearcă în Telegram</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Deschide chatul web</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/docs/custom-crm?lang=en">Documentație: CRM-ul tău propriu prin API</a>
+</div>
+
+<p class="author">Autor: Echipa Kai · Actualizat pe <time datetime="2026-11-01">1 noiembrie 2026</time> · Capacitățile sunt descrise la data publicării; statusul actual și șablonul specificației sunt în chat și în documentație.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/ro/">Acasă</a> · <a href="https://aii-crm.com/privacy-ro.html">Confidențialitate</a> · <a href="https://aii-crm.com/terms-ro.html">Termeni</a> · <a href="https://aii-crm.com/guides/en/ai-agent-for-custom-crm.html">Versiunea în engleză</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/ro/ai-agent-for-custom-crm.html#article",
+      "headline": "Cum conectezi un agent AI la un CRM personalizat (dezvoltat intern) prin API — fără să rescrii sistemul",
+      "description": "De ce are nevoie un agent AI ca să lucreze cu CRM-ul tău propriu (personalizat, dezvoltat intern): un REST API cu JSON, autentificare OAuth 2.0 / cheie API / bearer și o specificație de conector. Trei moduri de conectare, ce poate face agentul după aceea, limitele și modelul de securitate — pe exemplul Kai.",
+      "inLanguage": "ro",
+      "datePublished": "2026-11-01",
+      "dateModified": "2026-11-01",
+      "mainEntityOfPage": "https://aii-crm.com/guides/ro/ai-agent-for-custom-crm.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/ro/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/ro/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "CRM-ul meu e dezvoltat intern, are API, dar nu are documentație. Va funcționa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. Trimite exemple de cereri și răspunsuri sau o bucată din codul controllerului — Kai schițează specificația. Sau construiește-o pas cu pas: dă adresa, metoda de autentificare și căile către pipeline-uri și tranzacții; Kai le apelează și citește singur numele câmpurilor din răspunsuri."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "E sigur să dai unui agent AI acces la CRM-ul tău propriu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Accesul se limitează la ce descrie specificația: cereri doar către host-ul tău și doar prin https, șabloane fără cod, secrete criptate, limite de mărime și de frecvență. Ca să revoci accesul, șterge tokenul sau cheia pe partea ta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cât costă conectarea propriului CRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Este planul Max — €119/lună, până la 10 conturi CRM, suport prioritar. Discuția și schița specificației sunt gratuite. Dezvoltarea CRM-ului în sine sau a API-ului său nu face parte din plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "HubSpot, Pipedrive sau EspoCRM intră și ele aici?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. Pentru agent sunt aceleași „CRM-uri proprii” prin API: specificațiile gata făcute pentru ele sunt în documentația Kai, ai nevoie doar de un token sau de o cheie API."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/ro/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ghiduri",
+          "item": "https://aii-crm.com/guides/ro/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cum conectezi un agent AI la un CRM personalizat prin API-ul lui",
+          "item": "https://aii-crm.com/guides/ro/ai-agent-for-custom-crm.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

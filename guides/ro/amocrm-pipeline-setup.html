@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Configurarea pipeline-ului de vânzări în amoCRM fără programator (2026) | Kai</title>
+<meta name="description" content="Pas cu pas: etapele pipeline-ului, câmpuri personalizate și câmpuri obligatorii în amoCRM prin Leads → Setup, greșeli frecvente și cum faci același lucru cu un singur mesaj către Kai.">
+<meta name="keywords" content="cum configurez o pâlnie de vânzări (pipeline) și câmpuri obligatorii în amoCRM sau Kommo fără programator, există un asistent AI care configurează pipeline-urile amoCRM / Kommo dintr-un mesaj în chat">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/ro/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/guides/it/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/guides/tr/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/guides/be/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="uk" href="https://aii-crm.com/guides/uk/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="ro" href="https://aii-crm.com/guides/ro/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/ro/amocrm-pipeline-setup.html">
+<meta property="og:title" content="Cum configurezi un pipeline de vânzări în amoCRM fără programator (2026)">
+<meta property="og:description" content="Etape, câmpuri, câmpuri obligatorii, greșeli frecvente. Calea manuală prin interfața amoCRM și calea cu un singur mesaj către Kai.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-09-24">
+<meta property="article:modified_time" content="2026-09-24">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cum configurezi un pipeline de vânzări în amoCRM fără programator (2026)">
+<meta name="twitter:description" content="Etape, câmpuri, câmpuri obligatorii, greșeli frecvente. Manual, în interfața amoCRM, sau cu un singur mesaj către Kai.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/ro/" aria-label="Kai — pagina principală">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Navigare">
+      <a href="https://aii-crm.com/ro/">Site</a>
+      <a href="https://t.me/aiicrm_bot">Bot Telegram</a>
+      <a href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Fir de navigare">
+  <a href="https://aii-crm.com/ro/">Kai</a> › <a href="https://aii-crm.com/guides/ro/">Ghiduri</a> › Pipeline amoCRM
+</nav>
+
+<h1>Cum configurezi un pipeline de vânzări în amoCRM fără programator</h1>
+<p class="meta">Actualizat pe 24 septembrie 2026 · Echipa Kai · 6 min de citit</p>
+
+<p class="lead">Poți construi singur un pipeline de vânzări în amoCRM în 1–2 ore: etapele se editează în <kbd>Leads → Setup</kbd> (<kbd>Сделки → Настроить</kbd> în interfața în rusă), câmpurile se adaugă din fișa unui lead prin <kbd>Setup → Add field</kbd>, iar din aceleași setări faci un câmp obligatoriu la etapele alese. Nu ai nevoie de programator: îți ajung drepturile de administrator și o hartă a etapelor bine gândită. Sau trimiți aceeași hartă într-un singur mesaj unui asistent AI precum Kai, care o construiește prin API-ul oficial.</p>
+
+<section class="tldr" aria-label="Pe scurt">
+  <h2>Pe scurt</h2>
+  <ul>
+    <li>De obicei ajung 5–7 etape de lucru. Fiecare etapă este o acțiune verificabilă a managerului, nu o stare a clientului.</li>
+    <li>Etapele de sistem „Câștigat” și „Pierdut” nu pot fi șterse, doar redenumite.</li>
+    <li>Tipul unui câmp nu mai poate fi schimbat ulterior, iar ștergerea câmpului îi șterge și datele. Gândește-ți câmpurile înainte să apară tranzacțiile reale.</li>
+    <li>Câmpurile obligatorii pe etape sunt disponibile în amoCRM începând cu planul „Advanced”; doar un administrator poate edita câmpurile.</li>
+    <li>Manual: 1–2 ore. Integrator: de obicei 3–5 săptămâni și aproximativ €1.500–4.000. Kai: o singură conversație în chat, de la €29/lună, 3 zile gratuit.</li>
+  </ul>
+</section>
+
+<h2>Pasul 0. Schițează pipeline-ul înainte să deschizi amoCRM</h2>
+<p>Majoritatea CRM-urilor „stricate” au etape inventate din mers. Notează drumul clientului de la prima solicitare până la bani și păstrează doar punctele în care managerul face ceva verificabil. Exemplu pentru un atelier de bucătării la comandă:</p>
+<pre>Solicitare nouă → Calificat → Măsurători programate → Ofertă trimisă → Contract și avans → În producție → Montat</pre>
+<p>Lângă fiecare etapă, notează ce trebuie să știe managerul ca să mute tranzacția mai departe. Notițele astea sunt câmpurile tale: „Sursă” la început, „Buget” înainte de ofertă, „Motiv de pierdere” la închidere.</p>
+
+<h2>Pasul 1. Creează pipeline-ul și etapele în interfața amoCRM</h2>
+<ol>
+  <li>Deschide <kbd>Leads</kbd> (<kbd>Сделки</kbd>) și apasă <kbd>Setup</kbd> (<kbd>Настроить</kbd>) în colțul din dreapta sus.</li>
+  <li>Adaugă o etapă cu <kbd>+</kbd>. Apasă pe o etapă ca s-o redenumești sau să-i schimbi culoarea; trage-o ca să schimbi ordinea.</li>
+  <li>Ca să ștergi o etapă, mută tranzacțiile din ea și trage-o în coșul din colțul din dreapta jos.</li>
+  <li>Etapele de sistem „Câștigat” și „Pierdut” nu pot fi șterse, doar redenumite, de exemplu în „Plătit” și „Refuzat”.</li>
+  <li>Pentru un al doilea pipeline (comenzi repetate, parteneri), apasă pe numele pipeline-ului curent din colțul din stânga sus și adaugă unul nou. Dacă amesteci vânzările noi cu cele repetate, conversia pe etape nu mai spune nimic.</li>
+</ol>
+<div class="note warn">Un pipeline poate fi șters doar după ce toate tranzacțiile din el, inclusiv cele închise, au fost mutate sau șterse, iar după ștergere nu mai poate fi restaurat.</div>
+
+<h2>Pasul 2. Adaugă câmpuri în fișa lead-ului</h2>
+<ol>
+  <li>Deschide orice lead. Contactele și companiile au propriile câmpuri, pe care le configurezi la fel, din fișele lor.</li>
+  <li>Apasă <kbd>Setup</kbd>, apoi <kbd>Add field</kbd>; alege un tip și un nume.</li>
+  <li>Tipuri de bază: listă, selecție multiplă, text, zonă de text, număr, dată, bifă, zi de naștere. Folosește liste pentru „Sursă” și „Motiv de pierdere”: din text liber nu poți scoate rapoarte.</li>
+  <li>Grupează câmpurile în file cu <kbd>+</kbd> de lângă fila „Files”.</li>
+</ol>
+<p>Un set minim: „Sursă” (listă), „Buget” (număr), „Data următorului contact” (dată), „Motiv de pierdere” (listă). Nu dubla ce are deja amoCRM: valoarea tranzacției, utilizatorul responsabil, datele de contact.</p>
+<div class="note warn">Tipul unui câmp nu mai poate fi schimbat după creare, iar ștergerea unui câmp îi șterge datele definitiv, fără cale de întoarcere.</div>
+
+<h2>Pasul 3. Fă câmpurile-cheie obligatorii la anumite etape</h2>
+<p>În setările câmpului, alegi etapele dintr-unul sau mai multe pipeline-uri la care e obligatoriu; tranzacția nu poate merge mai departe până nu e completat. Din harta de la pasul 0:</p>
+<ul>
+  <li>„Sursă” — ca să iasă din „Solicitare nouă”;</li>
+  <li>„Buget” — înainte de „Ofertă trimisă”;</li>
+  <li>„Motiv de pierdere” — la trecerea în „Pierdut”.</li>
+</ul>
+<p>Oprește-te la unul sau două câmpuri obligatorii pe etapă; peste atât, oamenii încep să scrie liniuțe. Disponibil începând cu planul „Advanced”, doar pentru administratori.</p>
+
+<h2>Pasul 4. Trece trei tranzacții de test prin pipeline</h2>
+<p>Creează trei tranzacții — „a cumpărat”, „a refuzat”, „blocat la măsurători” — și trece-le pe fiecare prin etape. Verifică dacă câmpurile obligatorii blochează mutarea, dacă analiza arată conversia pe etape și dacă tranzacția blocată are o sarcină. Apoi șterge-le.</p>
+
+<h2>Calea Kai: aceeași hartă într-un singur mesaj</h2>
+<p>Kai este un asistent AI care configurează amoCRM și Kommo dintr-un mesaj în chat. Conectezi CRM-ul prin OAuth cu un singur clic, din widgetul din marketplace-ul amoCRM, apoi îi scrii botului de Telegram <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> sau în <a href="https://app.aii-crm.com/chat?lang=en">chatul web</a> (un singur cont, un singur istoric). Harta de la pasul 0, sub formă de mesaj:</p>
+<pre>Configurează un pipeline pentru un atelier de bucătării la comandă.
+Etape: Solicitare nouă → Calificat → Măsurători programate → Ofertă trimisă → Contract și avans → În producție → Montat.
+Câmpuri lead: Sursă (listă: site, marketplace, recomandare, Instagram), Buget (număr), Data măsurătorilor (dată), Motiv de pierdere (listă).
+Sursa e obligatorie ca să iasă din „Solicitare nouă”, Bugetul — înainte de „Ofertă trimisă”, Motivul de pierdere — la pierdere.
+Când o tranzacție ajunge la „Măsurători programate”, creează o sarcină pentru măsurător cu o zi înainte de vizită.</pre>
+<p>Kai pune câteva întrebări de clarificare (de exemplu, dacă pentru comenzile repetate e nevoie de un pipeline separat), îți arată un plan și, după ce confirmi, creează totul prin API-ul oficial și îți trimite un raport. Modificările ulterioare înseamnă încă un mesaj, scris sau vocal. Limite oneste: câmpurile obligatorii cer un plan amoCRM care le include, iar Kai îți verifică procesul, nu ți-l inventează.</p>
+
+<h2>Greșeli frecvente la configurarea unui pipeline</h2>
+<ul>
+  <li><strong>Stări în loc de acțiuni.</strong> „În lucru”, „Se gândește”: tranzacțiile stau acolo luni întregi. O etapă răspunde la întrebarea „ce a făcut managerul”.</li>
+  <li><strong>Prea multe etape.</strong> Peste zece, conversia nu mai poate fi citită, iar tranzacțiile se mută după intuiție.</li>
+  <li><strong>Un singur pipeline pentru tot.</strong> Vânzările noi, cele repetate și cele prin parteneri au cicluri diferite.</li>
+  <li><strong>Doar câmpuri opționale.</strong> Un câmp „Sursă” opțional rămâne gol în câteva săptămâni și nu afli niciodată care reclame aduc bani.</li>
+  <li><strong>Fără „Motiv de pierdere”.</strong> Raportul tranzacțiilor pierdute devine o cifră cu care nu poți face nimic.</li>
+</ul>
+
+<h2>Și dacă folosești Kommo?</h2>
+<p>Aceeași logică, interfață în engleză. Pipeline: <kbd>Pipelines → Add pipeline</kbd>; etape: <kbd>… → Edit Pipeline → Add stage</kbd>, clic ca să redenumești, tragi ca să reordonezi. Se pot șterge doar etapele și pipeline-urile goale, niciodată primul pipeline. „Incoming Leads” poate fi dezactivată, dar nu ștearsă; „Closed-Won” și „Closed-Lost” pot fi redenumite. Câmpuri: deschizi un lead, fila <kbd>Setup</kbd>, <kbd>+ Add field</kbd>; obligativitatea pe etape se setează în același loc. Doar pentru rolul de administrator, pe orice plan Kommo. Kai se conectează la fel.</p>
+
+<h2>Comparație: manual, integrator sau Kai</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Criteriu</th><th>Manual</th><th>Integrator</th><th>Kai</th></tr></thead>
+  <tbody>
+    <tr><td>Timp</td><td>1–2 ore pentru un pipeline simplu</td><td>De obicei 3–5 săptămâni</td><td>O singură conversație: întrebări → plan → configurare</td></tr>
+    <tr><td>Cost</td><td>Gratuit, din timpul tău</td><td>De obicei €1.500–4.000</td><td>De la €29/lună, 3 zile gratuit, fără card</td></tr>
+    <tr><td>De cine e nevoie</td><td>Administrator amoCRM</td><td>Un responsabil din partea ta plus o specificație</td><td>Administrator amoCRM pentru OAuth</td></tr>
+    <tr><td>Modificări ulterioare</td><td>Treci din nou prin setări</td><td>Specificație nouă, factură nouă</td><td>Încă un mesaj în chat</td></tr>
+    <tr><td>Potrivit pentru</td><td>Un pipeline, vreo duzină de câmpuri</td><td>Integrări personalizate: contabilitate, telefonie, stocuri</td><td>Pipeline-uri, câmpuri, automatizări, integrări API fără cod</td></tr>
+  </tbody>
+</table>
+</div>
+<p>amoAI, agentul AI din Kommo, conectorii no-code (Albato, ApiX-Drive, Make, Zapier, n8n) și chatboții precum Salebot acoperă sarcini învecinate: conversațiile cu clienții și sincronizarea datelor. Niciunul nu-ți proiectează etapele și câmpurile; pasul 0 rămâne la tine.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>Câte etape ar trebui să aibă un pipeline în amoCRM?</h3>
+    <p>De obicei 5–7 etape de lucru plus cele două de sistem, fiecare fiind o acțiune verificabilă a managerului. Mai mult de zece înseamnă, de regulă, că două procese împart același pipeline.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Poate fi un câmp obligatoriu doar la o singură etapă?</h3>
+    <p>Da: în setările câmpului alegi etapele dintr-unul sau mai multe pipeline-uri. Disponibil începând cu planul „Advanced”; îl configurează un administrator.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Ce se întâmplă cu tranzacțiile dacă șterg o etapă sau un pipeline?</h3>
+    <p>Mută mai întâi tranzacțiile. O etapă se șterge trăgând-o în coș; un pipeline — doar după ce toate tranzacțiile, inclusiv cele închise, au fost scoase din el, iar apoi nu mai poate fi restaurat.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Am nevoie de un programator ca să configurez amoCRM?</h3>
+    <p>Nu pentru pipeline-uri, câmpuri, câmpuri obligatorii și automatizări de bază. Un programator sau un integrator e necesar pentru legături nestandard: programe de contabilitate, un site făcut la comandă, API-uri de telefonie neobișnuite.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Cum accesează Kai amoCRM și este sigur?</h3>
+    <p>Prin OAuth-ul oficial amoCRM/Kommo: aprobare cu un singur clic, fără să dai parole sau chei API. Tokenurile sunt stocate criptat, Kai nu stochează datele tranzacțiilor, iar accesul poate fi revocat oricând din setările CRM-ului. Compania este înregistrată în Polonia (UE).</p>
+  </div>
+  <div class="faq-item">
+    <h3>Cât costă Kai și există o perioadă de probă gratuită?</h3>
+    <p>Start €29/lună (~100 de cereri), Pro €59/lună (~500), Max €119/lună (utilizare rezonabilă, prioritate și personalizări). Primele 3 zile sunt gratuite, fără card. Plătești cu cardul, Apple Pay, Google Pay, Telegram Stars sau USDT.</p>
+  </div>
+</div>
+
+<h2>Ce urmează</h2>
+<p>Ai harta etapelor pe hârtie? Deschide <kbd>Leads → Setup</kbd> și construiește-o într-o seară. Preferi să-ți pună cineva întrebările potrivite și să facă totul prin API? Descrie-i lui Kai afacerea ta într-un singur mesaj.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Încearcă în Telegram</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Deschide chatul web</a>
+</div>
+
+<p class="author">Autor: Echipa Kai · Actualizat pe <time datetime="2026-09-24">24 septembrie 2026</time> · Căile din interfață au fost verificate în centrele de ajutor oficiale amoCRM și Kommo.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/ro/">Acasă</a> · <a href="https://aii-crm.com/privacy-ro.html">Confidențialitate</a> · <a href="https://aii-crm.com/terms-ro.html">Termeni</a> · <a href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">Versiunea în engleză</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/ro/amocrm-pipeline-setup.html#article",
+      "headline": "Cum configurezi un pipeline de vânzări în amoCRM fără programator",
+      "description": "Pas cu pas: etapele pipeline-ului, câmpuri personalizate și câmpuri obligatorii în amoCRM prin Leads → Setup, greșeli frecvente și cum faci același lucru cu un singur mesaj către Kai.",
+      "inLanguage": "ro",
+      "datePublished": "2026-09-24",
+      "dateModified": "2026-09-24",
+      "mainEntityOfPage": "https://aii-crm.com/guides/ro/amocrm-pipeline-setup.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/ro/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/ro/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Câte etape ar trebui să aibă un pipeline în amoCRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "De obicei 5–7 etape de lucru plus cele două de sistem, fiecare fiind o acțiune verificabilă a managerului. Mai mult de zece înseamnă, de regulă, că două procese împart același pipeline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Poate fi un câmp obligatoriu doar la o singură etapă?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da: în setările câmpului alegi etapele dintr-unul sau mai multe pipeline-uri. Disponibil începând cu planul „Advanced”; îl configurează un administrator."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ce se întâmplă cu tranzacțiile dacă șterg o etapă sau un pipeline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mută mai întâi tranzacțiile. O etapă se șterge trăgând-o în coș; un pipeline — doar după ce toate tranzacțiile, inclusiv cele închise, au fost scoase din el, iar apoi nu mai poate fi restaurat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Am nevoie de un programator ca să configurez amoCRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nu pentru pipeline-uri, câmpuri, câmpuri obligatorii și automatizări de bază. Un programator sau un integrator e necesar pentru legături nestandard: programe de contabilitate, un site făcut la comandă, API-uri de telefonie neobișnuite."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cum accesează Kai amoCRM și este sigur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prin OAuth-ul oficial amoCRM/Kommo: aprobare cu un singur clic, fără să dai parole sau chei API. Tokenurile sunt stocate criptat, Kai nu stochează datele tranzacțiilor, iar accesul poate fi revocat oricând din setările CRM-ului. Compania este înregistrată în Polonia (UE)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cât costă Kai și există o perioadă de probă gratuită?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start €29/lună (~100 de cereri), Pro €59/lună (~500), Max €119/lună (utilizare rezonabilă, prioritate și personalizări). Primele 3 zile sunt gratuite, fără card. Plătești cu cardul, Apple Pay, Google Pay, Telegram Stars sau USDT."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/ro/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ghiduri",
+          "item": "https://aii-crm.com/guides/ro/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Configurarea pipeline-ului de vânzări în amoCRM fără programator",
+          "item": "https://aii-crm.com/guides/ro/amocrm-pipeline-setup.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

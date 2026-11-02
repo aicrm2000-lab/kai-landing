@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<title>Exemple: CRM-ul înainte și după un singur mesaj către Kai | Kai</title>
+<meta name="description" content="Patru situații tipice în amoCRM și Kommo: cum arăta pipeline-ul, mesajul trimis lui Kai, ce a făcut Kai și cum arată CRM-ul după. Acțiuni reale, fără integrator.">
+<meta name="keywords" content="exemple configurare amoCRM, exemple configurare Kommo, pipeline de vânzări înainte și după, pâlnie de vânzări CRM, exemplu automatizare CRM, asistent AI pentru amoCRM, AI pentru Kommo, configurare CRM fără integrator, Kai CRM, CRM pentru clinică dentară, CRM agenție imobiliară Kommo, CRM pentru școală online, automatizare vânzări CRM">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aii-crm.com/cases/ro/">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/cases/">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/cases/en/">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/cases/de/">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/cases/fr/">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/cases/es/">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/cases/pl/">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/cases/pt/">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/cases/it/">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/cases/tr/">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/cases/be/">
+<link rel="alternate" hreflang="uk" href="https://aii-crm.com/cases/uk/">
+<link rel="alternate" hreflang="ro" href="https://aii-crm.com/cases/ro/">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/cases/en/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Kai"><meta property="og:url" content="https://aii-crm.com/cases/ro/">
+<meta property="og:title" content="Înainte → după: amoCRM și Kommo configurate cu un singur mesaj"><meta property="og:description" content="Patru situații tipice în amoCRM și Kommo: cum arăta pipeline-ul, mesajul trimis lui Kai, ce a făcut Kai și cum arată CRM-ul după. Acțiuni reale, fără integrator."><meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Înainte → după: amoCRM și Kommo configurate cu un singur mesaj"><meta name="twitter:description" content="Patru situații tipice în amoCRM și Kommo: cum arăta pipeline-ul, mesajul trimis lui Kai, ce a făcut Kai și cum arată CRM-ul după. Acțiuni reale, fără integrator."><meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B0A14'/><path d='M16 6.5a9.5 9.5 0 1 0 9.5 9.5' stroke='%237C5CFF' stroke-width='4' stroke-linecap='round' fill='none'/><circle cx='23.4' cy='8.6' r='2.6' fill='%23A78BFA'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0;--bad:#FF7B93;--warn:#F5C451;--mono:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 'Manrope',system-ui,sans-serif;padding:0 16px 64px}
+.wrap{max-width:860px;margin:0 auto}header{display:flex;align-items:center;gap:12px;padding:22px 0;border-bottom:1px solid var(--border)}
+header a{color:var(--ink);text-decoration:none;font-weight:700}header .brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:700}header .brand svg{flex:0 0 28px}header nav{margin-left:auto;display:flex;gap:18px;font-size:14px}header nav a{color:var(--muted);font-weight:500}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin:40px 0 12px;text-wrap:balance}
+.lead{color:var(--text);max-width:64ch}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}.toc a{font:600 13px var(--mono);color:var(--accent-2);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:6px 12px}.toc a:hover{border-color:var(--accent)}
+.case{margin-top:44px;border:1px solid var(--border);border-radius:18px;background:var(--bg-1);padding:22px;scroll-margin-top:16px}
+.case .top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}.badge{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}.badge.crm{color:var(--accent-2);border-color:rgba(124,92,255,.45)}
+.case h2{margin:0 0 6px;font-size:clamp(21px,3.2vw,26px);line-height:1.25;color:var(--ink);letter-spacing:-.01em;text-wrap:balance}
+.case p{margin:6px 0}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.col{border:1px solid var(--border);border-radius:14px;padding:14px;background:var(--bg)}
+.col h3{margin:0 0 10px;font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.col.before h3{color:var(--bad)}.col.after h3{color:var(--good)}.col h3 i{width:8px;height:8px;border-radius:50%;background:currentColor;display:inline-block}
+.board{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.board span{font-size:13px;font-weight:600;color:var(--ink);background:var(--bg-2);border:1px solid var(--border);border-radius:8px;padding:6px 9px}.board em{font-style:normal;color:var(--muted);font-size:12px}
+.col.after .board span{border-color:rgba(67,224,160,.35)}
+.k{margin:12px 0 4px;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.list{margin:0;padding:0;list-style:none;font-size:14px}.list li{padding:5px 0;border-top:1px solid var(--border);display:flex;gap:8px;align-items:baseline}.list li:first-child{border-top:0}
+.list b{color:var(--ink);font-weight:600}.list small{color:var(--muted);font-size:12px}.list .stamp{font:600 10px var(--mono);color:var(--warn);border:1px solid rgba(245,196,81,.5);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.list.none li{color:var(--muted);font-style:italic}.list.pain li::before{content:'–';color:var(--bad)}.list.gain li::before{content:'✓';color:var(--good);font-weight:700}
+.rule{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;font-size:14px}.rule b{color:var(--ink);font-weight:600}.rule span::before{content:'→ ';color:var(--accent-2)}
+.chat{margin:16px 0;display:grid;gap:10px}.msg{max-width:92%;border-radius:16px;padding:12px 14px;font-size:15px;line-height:1.5}
+.msg.me{justify-self:end;background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.45);color:var(--ink);border-bottom-right-radius:6px}
+.msg.kai{justify-self:start;background:var(--bg-2);border:1px solid var(--border);border-bottom-left-radius:6px}.msg .who{display:block;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.msg.kai .ok{color:var(--good);font-weight:700}
+.did{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}.did span{font:500 12px var(--mono);color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:4px 8px}.did span b{color:var(--accent-2);font-weight:600}
+.time{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--bg-2);border:1px solid var(--border);font-size:14px;color:var(--text)}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.btn{display:inline-block;padding:11px 16px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;font-size:14px}.btn.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}
+button.btn{cursor:pointer;border:1px solid var(--border);font:inherit;font-weight:700;font-size:14px}
+.cta{margin-top:40px;padding:22px;border-radius:16px;background:var(--bg-2);border:1px solid var(--border)}.cta b{color:var(--ink)}.cta a{display:inline-block;margin:10px 10px 0 0;padding:12px 18px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+.cta a.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}footer{margin-top:40px;color:var(--muted);font-size:13px}footer a{color:var(--muted)}
+.more{margin-top:28px}.more a{color:var(--accent-2)}
+@media (max-width:700px){.ba{grid-template-columns:1fr}.case{padding:16px;border-radius:14px}.msg{max-width:100%}body{font-size:16px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Înainte → după: amoCRM și Kommo configurate cu un singur mesaj", "description": "Patru situații tipice în amoCRM și Kommo: cum arăta pipeline-ul, mesajul trimis lui Kai, ce a făcut Kai și cum arată CRM-ul după. Acțiuni reale, fără integrator.", "url": "https://aii-crm.com/cases/ro/", "inLanguage": "ro", "datePublished": "2026-10-27", "dateModified": "2026-11-02", "author": {"@type": "Organization", "name": "Kai"}, "publisher": {"@type": "Organization", "name": "Kai", "url": "https://aii-crm.com/"}, "isPartOf": {"@type": "WebSite", "name": "Kai", "url": "https://aii-crm.com/"}, "hasPart": [{"@type": "HowTo", "name": "Jumătate din solicitări se pierdeau între apel și programare", "url": "https://aii-crm.com/cases/ro/#dental-amocrm", "step": [{"@type": "HowToStep", "text": "Creează un pipeline „Pacienți noi”: Solicitare → Contactat → Programat → Vizită confirmată → Consultație → Plan de tratament. Câmpuri pentru tranzacție: Serviciu (listă: terapie, protetică, implanturi, pediatrie), Medic, Data vizitei, Valoare plan. Data vizitei e obligatorie la etapa „Programat”. Reguli: solicitare nouă — sarcină pentru recepție să sune înapoi în 15 minute; tranzacție mutată în „Programat” — sarcină cu o zi înainte pentru confirmarea vizitei; nicio mișcare în „Contactat” timp de 2 zile — sarcina „sună din nou”."}]}, {"@type": "HowTo", "name": "Bugetul și cartierul erau scrise în numele tranzacției", "url": "https://aii-crm.com/cases/ro/#realty-kommo", "step": [{"@type": "HowToStep", "text": "În Kommo creează un pipeline „Cumpărători”: Solicitare → Calificare → Selecție → Vizionare → Rezervare → Contract. Câmpuri: Tip proprietate (listă: garsonieră, 1 dormitor, 2 dormitoare, 3+ dormitoare, casă), Buget (număr), Cartier, Mod de plată (credit ipotecar, numerar, rate). Bugetul și Cartierul sunt obligatorii la „Calificare”. Reguli: solicitare nouă — sarcină să suni înapoi în 15 minute; tranzacție în „Selecție” — sarcină pentru mâine să programezi o vizionare; nicio mișcare după „Vizionare” timp de 3 zile — sarcina „cere decizia”. Motive de pierdere: a cumpărat în altă parte, prea scump, s-a răzgândit, nu răspunde."}]}, {"@type": "HowTo", "name": "Pipeline-ul exista, dar tranzacțiile stăteau luni întregi în „Măsurători”", "url": "https://aii-crm.com/cases/ro/#renovation-audit-amocrm", "step": [{"@type": "HowToStep", "text": "Fă un audit al pipeline-ului „Vânzare contract”. Apoi repară-l: fă „Valoare deviz” obligatoriu la etapa „Deviz”, adaugă motive de pierdere (prea scump, a ales pe altcineva, a amânat, nu răspunde), regulă: nicio mișcare în „Măsurători” timp de 5 zile — sarcină pentru șeful de șantier „trimite devizul”. Și arată-mi dashboardul pipeline-ului."}]}, {"@type": "HowTo", "name": "Înscrierile stăteau într-un tabel, iar de termenele de preț se amintea din memorie", "url": "https://aii-crm.com/cases/ro/#courses-kommo", "step": [{"@type": "HowToStep", "text": "În Kommo creează un pipeline „Vânzare curs”: Înscriere → Calificare → Apel programat → Apel efectuat → Factură trimisă → Plată. Câmpuri: Produs (listă), Plan (listă: de bază, cu mentor, VIP), Grupă, Rate (da/nu). Reguli: Înscriere — sarcină să scrii și să propui un apel de diagnostic; „Factură trimisă” — sarcină pentru mâine să amintești de termenul prețului; „Plată” — eticheta „student” și o notificare în Telegram pentru echipa de vânzări."}]}]}</script>
+</head>
+<body><div class="wrap">
+<header><a class="brand" href="../../ro/" aria-label="Kai — home"><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg><span>Kai</span></a><nav><a href="../../guides/ro/">Ghiduri</a><a href="../../ro/#pricing">Planuri</a><a href="https://aii-crm.com/cases/en/" hreflang="en">EN</a></nav></header>
+<h1>Înainte → după: amoCRM și Kommo configurate cu un singur mesaj</h1>
+<p class="lead">Fiecare exemplu e o situație tipică cu care oamenii vin la Kai: un singur pipeline pentru tot, câmpuri în notițe, sarcini din memorie. Mai jos: mesajul pe care oamenii i-l scriu lui Kai, ce face el în CRM și rezultatul. Fără cifrele clienților, doar configurarea și timpul.</p>
+<div class="toc"><a href="#dental-amocrm">amoCRM · Clinică dentară</a><a href="#realty-kommo">Kommo · Agenție imobiliară</a><a href="#renovation-audit-amocrm">amoCRM · Renovare apartamente</a><a href="#courses-kommo">Kommo · Școală online</a></div>
+
+<article class="case" id="dental-amocrm">
+  <div class="top"><span class="badge crm">amoCRM</span><span class="badge">Clinică dentară</span></div>
+  <h2>Jumătate din solicitări se pierdeau între apel și programare</h2>
+  <p>Un singur pipeline „Principal” pentru tot: solicitările de pe site, din Instagram și de la telefon ajung în „Noi”, apoi în „În lucru” și „Închis”. Medicul și data vizitei stau în notițe, nimeni nu le amintește pacienților de vizită.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Înainte</h3>
+      <div class="k">Etapele pipeline-ului</div><div class="board"><span>Noi</span><em>→</em><span>În lucru</span><em>→</em><span>Închis</span></div>
+      <div class="k">Câmpuri tranzacție</div><ul class="list none"><li>fără câmpuri — totul în notițe</li></ul>
+      <div class="k">Reguli</div><ul class="list none"><li>fără reguli — totul din memorie</li></ul>
+      <div class="k">Ce nu mergea</div><ul class="list pain"><li>nicio etapă „Contactat” — nu e clar pe cine s-a sunat înapoi</li><li>data vizitei e într-o notiță, recepția o caută din ochi</li><li>vizitele nu sunt confirmate — pacienții nu vin</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>După</h3>
+      <div class="k">Etapele pipeline-ului</div><div class="board"><span>Solicitare</span><em>→</em><span>Contactat</span><em>→</em><span>Programat</span><em>→</em><span>Vizită confirmată</span><em>→</em><span>Consultație</span><em>→</em><span>Plan de tratament</span></div>
+      <div class="k">Câmpuri tranzacție</div><ul class="list"><li><b>Serviciu</b><small>listă</small></li><li><b>Medic</b></li><li><b>Data vizitei</b><span class="stamp">obligatorie la „Programat”</span></li><li><b>Valoare plan</b><small>număr</small></li></ul>
+      <div class="k">Reguli</div><div class="rule"><b>Solicitare nouă</b><span>sarcina „sună înapoi” în 15 minute</span><b>Trecere în „Programat”</b><span>sarcină cu o zi înainte: confirmă vizita</span><b>„Contactat” fără mișcare 2 zile</b><span>sarcina „sună din nou”</span></div>
+      <div class="k">Ce s-a schimbat</div><ul class="list gain"><li>fiecare solicitare primește un apel în primele 15 minute — o regulă, nu memoria recepției</li><li>data vizitei nu poate fi sărită: fără ea, tranzacția nu trece în „Programat”</li><li>sarcina de confirmare apare cu o zi înainte — mai puține neprezentări</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Mesaj către Kai</span>Creează un pipeline „Pacienți noi”: Solicitare → Contactat → Programat → Vizită confirmată → Consultație → Plan de tratament. Câmpuri pentru tranzacție: Serviciu (listă: terapie, protetică, implanturi, pediatrie), Medic, Data vizitei, Valoare plan. Data vizitei e obligatorie la etapa „Programat”. Reguli: solicitare nouă — sarcină pentru recepție să sune înapoi în 15 minute; tranzacție mutată în „Programat” — sarcină cu o zi înainte pentru confirmarea vizitei; nicio mișcare în „Contactat” timp de 2 zile — sarcina „sună din nou”.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Gata.</span> Pipeline-ul „Pacienți noi” a fost creat, 6 etape. Am adăugat 4 câmpuri, „Data vizitei” e obligatorie la „Programat”. Trei reguli sunt active: sună înapoi în 15 minute, confirmă vizita cu o zi înainte, sună din nou după 2 zile. Etapele de sistem „Câștigat” și „Pierdut” au rămas neatinse.</div>
+  </div>
+  <div class="k">Ce a făcut Kai</div><div class="did"><span>creare pipeline</span><span>creare câmp <b>×4</b></span><span>câmp obligatoriu</span><span>creare regulă <b>×3</b></span></div>
+  <div class="time">Un mesaj, aproximativ două minute. Un integrator face același lucru în 2–5 zile lucrătoare.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Creează un pipeline „Pacienți noi”: Solicitare → Contactat → Programat → Vizită confirmată → Consultație → Plan de tratament. Câmpuri pentru tranzacție: Serviciu (listă: terapie, protetică, implanturi, pediatrie), Medic, Data vizitei, Valoare plan. Data vizitei e obligatorie la etapa „Programat”. Reguli: solicitare nouă — sarcină pentru recepție să sune înapoi în 15 minute; tranzacție mutată în „Programat” — sarcină cu o zi înainte pentru confirmarea vizitei; nicio mișcare în „Contactat” timp de 2 zile — sarcina „sună din nou”.">Copiază mesajul</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Repetă-l în chatul tău</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Deschide în Telegram</a></div>
+</article>
+<article class="case" id="realty-kommo">
+  <div class="top"><span class="badge crm">Kommo</span><span class="badge">Agenție imobiliară</span></div>
+  <h2>Bugetul și cartierul erau scrise în numele tranzacției</h2>
+  <p>Toate lead-urile în „Intrări”, fără etape. Bugetul, cartierul și tipul proprietății scrise în numele tranzacției: „Ion, 2 dormitoare, până la 90k, centru”. O selecție se trimite și se uită, nimeni nu revine după o vizionare.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Înainte</h3>
+      <div class="k">Etapele pipeline-ului</div><div class="board"><span>Intrări</span><em>→</em><span>În lucru</span><em>→</em><span>Tranzacție</span></div>
+      <div class="k">Câmpuri tranzacție</div><ul class="list none"><li>fără câmpuri — totul în notițe</li></ul>
+      <div class="k">Reguli</div><ul class="list none"><li>fără reguli — totul din memorie</li></ul>
+      <div class="k">Ce nu mergea</div><ul class="list pain"><li>nicio filtrare după buget sau cartier — totul e text</li><li>tranzacțiile se blochează după vizionare, fără un pas următor</li><li>fără motive de pierdere — nu e clar de ce pleacă cumpărătorii</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>După</h3>
+      <div class="k">Etapele pipeline-ului</div><div class="board"><span>Solicitare</span><em>→</em><span>Calificare</span><em>→</em><span>Selecție</span><em>→</em><span>Vizionare</span><em>→</em><span>Rezervare</span><em>→</em><span>Contract</span></div>
+      <div class="k">Câmpuri tranzacție</div><ul class="list"><li><b>Tip proprietate</b><small>listă</small></li><li><b>Buget</b><span class="stamp">număr · obligatoriu la „Calificare”</span></li><li><b>Cartier</b><span class="stamp">obligatoriu la „Calificare”</span></li><li><b>Mod de plată</b><small>listă</small></li></ul>
+      <div class="k">Reguli</div><div class="rule"><b>Solicitare nouă</b><span>sarcina „sună înapoi” în 15 minute</span><b>Trecere în „Selecție”</b><span>sarcină pentru mâine: programează o vizionare</span><b>„Vizionare” fără mișcare 3 zile</b><span>sarcina „cere decizia”</span></div>
+      <div class="k">Ce s-a schimbat</div><ul class="list gain"><li>filtrul „2 dormitoare până la 90.000, centru” într-o secundă, după câmpuri</li><li>fiecare vizionare primește un pas următor și un termen</li><li>pierderi cu motive: vezi unde pierzi — la preț sau la viteză</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Mesaj către Kai</span>În Kommo creează un pipeline „Cumpărători”: Solicitare → Calificare → Selecție → Vizionare → Rezervare → Contract. Câmpuri: Tip proprietate (listă: garsonieră, 1 dormitor, 2 dormitoare, 3+ dormitoare, casă), Buget (număr), Cartier, Mod de plată (credit ipotecar, numerar, rate). Bugetul și Cartierul sunt obligatorii la „Calificare”. Reguli: solicitare nouă — sarcină să suni înapoi în 15 minute; tranzacție în „Selecție” — sarcină pentru mâine să programezi o vizionare; nicio mișcare după „Vizionare” timp de 3 zile — sarcina „cere decizia”. Motive de pierdere: a cumpărat în altă parte, prea scump, s-a răzgândit, nu răspunde.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Gata.</span> Pipeline-ul „Cumpărători”, 6 etape. Câmpuri: Tip proprietate, Buget, Cartier, Mod de plată; Bugetul și Cartierul sunt obligatorii la „Calificare”. Trei reguli sunt active, patru motive de pierdere adăugate — de acum analiza pierderilor are date.</div>
+  </div>
+  <div class="k">Ce a făcut Kai</div><div class="did"><span>creare pipeline</span><span>creare câmp <b>×4</b></span><span>câmp obligatoriu <b>×2</b></span><span>creare regulă <b>×3</b></span><span>motive de pierdere</span></div>
+  <div class="time">Un mesaj, aproximativ două minute. Câmpurile, etapele și regulile ajung în Kommo prin API, fără widgeturi.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="În Kommo creează un pipeline „Cumpărători”: Solicitare → Calificare → Selecție → Vizionare → Rezervare → Contract. Câmpuri: Tip proprietate (listă: garsonieră, 1 dormitor, 2 dormitoare, 3+ dormitoare, casă), Buget (număr), Cartier, Mod de plată (credit ipotecar, numerar, rate). Bugetul și Cartierul sunt obligatorii la „Calificare”. Reguli: solicitare nouă — sarcină să suni înapoi în 15 minute; tranzacție în „Selecție” — sarcină pentru mâine să programezi o vizionare; nicio mișcare după „Vizionare” timp de 3 zile — sarcina „cere decizia”. Motive de pierdere: a cumpărat în altă parte, prea scump, s-a răzgândit, nu răspunde.">Copiază mesajul</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Repetă-l în chatul tău</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Deschide în Telegram</a></div>
+</article>
+<article class="case" id="renovation-audit-amocrm">
+  <div class="top"><span class="badge crm">amoCRM</span><span class="badge">Renovare apartamente</span></div>
+  <h2>Pipeline-ul exista, dar tranzacțiile stăteau luni întregi în „Măsurători”</h2>
+  <p>Pipeline-ul „Vânzare contract” a fost configurat demult, dar devizele pleacă atunci când își amintește cineva, sumele sunt goale, motive de pierdere nu există — raportul pe pipeline e gol. Proprietarul nu vede unde stau blocați banii.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Înainte</h3>
+      <div class="k">Etapele pipeline-ului</div><div class="board"><span>Solicitare</span><em>→</em><span>Calificare</span><em>→</em><span>Măsurători</span><em>→</em><span>Deviz</span><em>→</em><span>Contract</span><em>→</em><span>Avans</span></div>
+      <div class="k">Câmpuri tranzacție</div><ul class="list"><li><b>Tip lucrări</b></li><li><b>Suprafață, m²</b></li><li><b>Buget</b></li><li><b>Valoare deviz</b><small>gol în 8 din 10 tranzacții</small></li></ul>
+      <div class="k">Reguli</div><ul class="list none"><li>fără reguli — totul din memorie</li></ul>
+      <div class="k">Ce nu mergea</div><ul class="list pain"><li>23 de tranzacții stau de peste două săptămâni în „Măsurători”</li><li>valoarea devizului e goală — prognoza veniturilor e imposibilă</li><li>fără motive de pierdere nu poți spune de ce pleacă clienții</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>După</h3>
+      <div class="k">Etapele pipeline-ului</div><div class="board"><span>Solicitare</span><em>→</em><span>Calificare</span><em>→</em><span>Măsurători</span><em>→</em><span>Deviz</span><em>→</em><span>Contract</span><em>→</em><span>Avans</span></div>
+      <div class="k">Câmpuri tranzacție</div><ul class="list"><li><b>Tip lucrări</b></li><li><b>Suprafață, m²</b></li><li><b>Buget</b></li><li><b>Valoare deviz</b><span class="stamp">obligatoriu la „Deviz”</span></li></ul>
+      <div class="k">Reguli</div><div class="rule"><b>„Măsurători” fără mișcare 5 zile</b><span>sarcină pentru șeful de șantier: „trimite devizul”</span></div>
+      <div class="k">Ce s-a schimbat</div><ul class="list gain"><li>devizele nu mai stau blocate: după 5 zile apare o sarcină cu un responsabil</li><li>valoarea devizului e obligatorie — prognoza veniturilor se calculează din câmpuri</li><li>pierderi cu motive, un dashboard oricând cu un singur cuvânt: „dashboard”</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Mesaj către Kai</span>Fă un audit al pipeline-ului „Vânzare contract”. Apoi repară-l: fă „Valoare deviz” obligatoriu la etapa „Deviz”, adaugă motive de pierdere (prea scump, a ales pe altcineva, a amânat, nu răspunde), regulă: nicio mișcare în „Măsurători” timp de 5 zile — sarcină pentru șeful de șantier „trimite devizul”. Și arată-mi dashboardul pipeline-ului.</div>
+    <div class="msg kai"><span class="who">Kai</span>Audit: 23 de tranzacții stau în „Măsurători” de peste 14 zile, „Valoare deviz” e gol în 80% din tranzacții, nu există motive de pierdere, nici automatizări. Reparat: câmpul e obligatoriu la „Deviz”, 4 motive de pierdere adăugate, regula de 5 zile e activă. Dashboard: 61 deschise, 23 în „Măsurători” (blocaj), 9 câștigate luna asta, 4 pierdute.</div>
+  </div>
+  <div class="k">Ce a făcut Kai</div><div class="did"><span>audit pipeline</span><span>câmp obligatoriu</span><span>motive de pierdere</span><span>creare regulă</span><span>dashboard</span></div>
+  <div class="time">Audit, reparații și rezumat — un singur mesaj. Kai n-a șters nimic: tranzacțiile și etapele existente au rămas.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Fă un audit al pipeline-ului „Vânzare contract”. Apoi repară-l: fă „Valoare deviz” obligatoriu la etapa „Deviz”, adaugă motive de pierdere (prea scump, a ales pe altcineva, a amânat, nu răspunde), regulă: nicio mișcare în „Măsurători” timp de 5 zile — sarcină pentru șeful de șantier „trimite devizul”. Și arată-mi dashboardul pipeline-ului.">Copiază mesajul</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Repetă-l în chatul tău</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Deschide în Telegram</a></div>
+</article>
+<article class="case" id="courses-kommo">
+  <div class="top"><span class="badge crm">Kommo</span><span class="badge">Școală online</span></div>
+  <h2>Înscrierile stăteau într-un tabel, iar de termenele de preț se amintea din memorie</h2>
+  <p>Înscrierile de pe landing page ajung într-un tabel, iar managerii le sortează de mână. Grupele se amestecă, se trimite o factură — și reamintirea e uitată. Echipa află de o plată de la contabilitate abia a doua zi.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Înainte</h3>
+      <div class="k">Etapele pipeline-ului</div><div class="board"><span>Lead</span><em>→</em><span>Plată</span></div>
+      <div class="k">Câmpuri tranzacție</div><ul class="list none"><li>fără câmpuri — totul în notițe</li></ul>
+      <div class="k">Reguli</div><ul class="list none"><li>fără reguli — totul din memorie</li></ul>
+      <div class="k">Ce nu mergea</div><ul class="list pain"><li>nimic între „Lead” și „Plată” — nu e clar cine la ce pas e</li><li>fără câmpurile Produs și Grupă — listele se fac de mână</li><li>plățile se observă târziu, mesajul de bun venit și accesul întârzie</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>După</h3>
+      <div class="k">Etapele pipeline-ului</div><div class="board"><span>Înscriere</span><em>→</em><span>Calificare</span><em>→</em><span>Apel programat</span><em>→</em><span>Apel efectuat</span><em>→</em><span>Factură trimisă</span><em>→</em><span>Plată</span></div>
+      <div class="k">Câmpuri tranzacție</div><ul class="list"><li><b>Produs</b><small>listă</small></li><li><b>Plan</b><small>listă</small></li><li><b>Grupă</b></li><li><b>Rate</b><small>da/nu</small></li></ul>
+      <div class="k">Reguli</div><div class="rule"><b>Înscriere</b><span>sarcină: scrie și propune un apel de diagnostic</span><b>„Factură trimisă”</b><span>sarcină pentru mâine: amintește de termenul prețului</span><b>„Plată”</b><span>eticheta „student” + notificare în Telegram</span></div>
+      <div class="k">Ce s-a schimbat</div><ul class="list gain"><li>fiecare înscriere primește un prim contact — sarcina se creează automat</li><li>reamintirea despre termenul prețului se programează singură pentru a doua zi</li><li>echipa vede plata imediat, în Telegram, fără contabilitate</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Mesaj către Kai</span>În Kommo creează un pipeline „Vânzare curs”: Înscriere → Calificare → Apel programat → Apel efectuat → Factură trimisă → Plată. Câmpuri: Produs (listă), Plan (listă: de bază, cu mentor, VIP), Grupă, Rate (da/nu). Reguli: Înscriere — sarcină să scrii și să propui un apel de diagnostic; „Factură trimisă” — sarcină pentru mâine să amintești de termenul prețului; „Plată” — eticheta „student” și o notificare în Telegram pentru echipa de vânzări.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Gata.</span> Pipeline-ul „Vânzare curs”, 6 etape, 4 câmpuri. Regulile sunt active: o sarcină la înscriere, o reamintire despre termen a doua zi după factură, eticheta „student” și o notificare în Telegram la plată. Colegii se abonează la notificări printr-un link din pagina contului.</div>
+  </div>
+  <div class="k">Ce a făcut Kai</div><div class="did"><span>creare pipeline</span><span>creare câmp <b>×4</b></span><span>creare regulă <b>×3</b></span><span>etichetă</span></div>
+  <div class="time">Un singur mesaj. Notificările în Telegram sunt integrate în Kai, fără Zapier sau webhook-uri.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="În Kommo creează un pipeline „Vânzare curs”: Înscriere → Calificare → Apel programat → Apel efectuat → Factură trimisă → Plată. Câmpuri: Produs (listă), Plan (listă: de bază, cu mentor, VIP), Grupă, Rate (da/nu). Reguli: Înscriere — sarcină să scrii și să propui un apel de diagnostic; „Factură trimisă” — sarcină pentru mâine să amintești de termenul prețului; „Plată” — eticheta „student” și o notificare în Telegram pentru echipa de vânzări.">Copiază mesajul</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Repetă-l în chatul tău</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Deschide în Telegram</a></div>
+</article>
+<p class="more"><a href="../../guides/ro/">Ghiduri pas cu pas pentru amoCRM și Kommo →</a></p>
+<div class="cta"><b>Vrei la fel? Scrie-i lui Kai în cuvintele tale — clarifică detaliile și configurează totul.</b><br><a href="https://t.me/aiicrm_bot">Încearcă în Telegram</a><a class="alt" href="https://app.aii-crm.com/chat?lang=en">Deschide chatul web</a></div>
+<footer>© 2026 Kai · <a href="../../privacy-ro.html">Confidențialitate</a></footer>
+</div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){ b.addEventListener('click', function(){ var t=b.getAttribute('data-copy'), done=function(){ var o=b.textContent; b.textContent="Copiat"; setTimeout(function(){ b.textContent=o; },1500); };
+  if(navigator.clipboard) navigator.clipboard.writeText(t).then(done); else { var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} ta.remove(); done(); } }); });
+</script>
+</body></html>

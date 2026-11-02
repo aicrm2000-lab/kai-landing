@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Importă baza de clienți din Excel în amoCRM sau Kommo în 10 minute (2026) | Kai</title>
+<meta name="description" content="Pregătirea tabelului (coloane, duplicate, formatul telefoanelor), instrumentul de import integrat în amoCRM și Kommo, greșeli frecvente și calea Kai: trimiți fișierul, verifici maparea, confirmi.">
+<meta name="keywords" content="import contacte din Excel în Kommo">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/ro/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/guides/it/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/guides/tr/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/guides/be/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="uk" href="https://aii-crm.com/guides/uk/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="ro" href="https://aii-crm.com/guides/ro/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/import-contacts-excel-amocrm-kommo.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/ro/import-contacts-excel-amocrm-kommo.html">
+<meta property="og:title" content="Importă baza de clienți din Excel în amoCRM sau Kommo în 10 minute">
+<meta property="og:description" content="Cum pregătești tabelul, cum rulezi importul fără duplicate și cum repari lucrurile când ceva merge prost. Manual sau cu un singur fișier trimis lui Kai.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-10-26">
+<meta property="article:modified_time" content="2026-10-26">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Importă baza de clienți din Excel în amoCRM sau Kommo în 10 minute">
+<meta name="twitter:description" content="Cum pregătești tabelul, cum rulezi importul fără duplicate și cum repari lucrurile când ceva merge prost. Manual sau cu un singur fișier trimis lui Kai.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/ro/" aria-label="Kai — pagina principală">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Navigare">
+      <a href="https://aii-crm.com/ro/">Site</a>
+      <a href="https://t.me/aiicrm_bot">Bot Telegram</a>
+      <a href="https://aii-crm.com/guides/en/import-contacts-excel-amocrm-kommo.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Fir de navigare">
+  <a href="https://aii-crm.com/ro/">Kai</a> › <a href="https://aii-crm.com/guides/ro/">Ghiduri</a> › Import din Excel
+</nav>
+
+<h1>Cum imporți baza de clienți din Excel în amoCRM sau Kommo în 10 minute</h1>
+<p class="meta">Actualizat pe 26 octombrie 2026 · Echipa Kai · 6 min de citit</p>
+
+<p class="lead">Importul unei baze de clienți din Excel într-un CRM înseamnă să încarci un tabel astfel încât fiecare rând să devină un contact (și, dacă e nevoie, o companie și o tranzacție), cu câmpurile la locul lor și fără duplicate. În amoCRM și Kommo importul propriu-zis durează câteva minute: instrumentul integrat acceptă Excel și CSV, mapează coloanele pe câmpuri și sare peste duplicate. Timpul se duce pe pregătirea tabelului și tocmai acolo se ascund problemele. Mai jos: cum pregătești fișierul, cum rulezi importul, cum eviți greșelile frecvente și cum faci același lucru trimițând fișierul unui asistent AI precum Kai.</p>
+
+<section class="tldr" aria-label="Pe scurt">
+  <h2>Pe scurt</h2>
+  <ul>
+    <li>Un rând, un client. Antetele în primul rând, fără celule îmbinate, totaluri sau coduri de culoare.</li>
+    <li>Telefoanele într-un singur format, cu prefixul țării, câte un număr pe celulă, altfel CRM-ul nu prinde duplicatele.</li>
+    <li>Adaugă coloanele „Sursă” și „Etichetă” înainte de import: eticheta te ajută să găsești — și să anulezi — tot importul.</li>
+    <li>Mai întâi un fișier de test cu 10 rânduri, apoi baza completă.</li>
+    <li>Un tabel curat se importă în 10 minute; unul dezordonat cere o oră de curățenie. Kai: fișierul în chat, verificarea mapării, confirmare.</li>
+  </ul>
+</section>
+
+<h2>Pasul 1. Curăță tabelul</h2>
+<p>Instrumentul de import face exact ce vede în fișier, așa că un tabel ordonat înseamnă 80% din treabă. Parcurge lista:</p>
+<ul>
+  <li><strong>Structura.</strong> O singură foaie, antetele în primul rând, câte un rând pentru fiecare client. Elimină celulele îmbinate, rândurile „Total”, rândurile goale și bannerele; culorile nu se importă, așa că, dacă o culoare înseamnă un status, transform-o în coloană.</li>
+  <li><strong>Coloanele.</strong> Minimum: Nume, Telefon, Email, Companie. Utile: Funcție, Sursă, Responsabil, Comentariu; pentru tranzacții, Sumă și Etapă. Împarte „Ion Popescu, Acme SRL” în două coloane de pe acum; CRM-ul n-o va face.</li>
+  <li><strong>Telefoanele.</strong> Un singur format internațional (+1…, +44…), fără spații, paranteze sau „int. 12”; două numere înseamnă două coloane. Excel transformă numerele lungi în 7.9E+10, așa că setează celulele ca text înainte să lipești datele.</li>
+  <li><strong>Emailuri și cifre.</strong> Emailurile cu litere mici. Sumele doar în cifre, fără simboluri de monedă sau separatoare de mii. Datele într-un singur format.</li>
+  <li><strong>Duplicate.</strong> Găsește telefoanele și emailurile repetate în Excel (formatare condiționată → valori duplicate) și decide care înregistrare rămâne: importul sare peste duplicate, dar nu o poate alege pe cea mai bună.</li>
+  <li><strong>Două coloane de serviciu.</strong> „Sursă” (de exemplu, „Baza 2024”) și „Etichetă”, cu o valoare precum <kbd>import-2026-10</kbd>. Peste o lună nu-ți vei mai aminti de unde au venit două mii de contacte; eticheta le găsește într-o secundă.</li>
+</ul>
+
+<h2>Pasul 2. Importul cu instrumentul integrat din amoCRM sau Kommo</h2>
+<p>În ambele sisteme importul pornește din liste (contacte, companii sau lead-uri), cu un buton de import care acceptă .xlsx și .csv; locul exact îl verifici în centrul de ajutor al CRM-ului tău. Logica e aceeași:</p>
+<ol>
+  <li><strong>Încarcă fișierul și verifică previzualizarea.</strong> Instrumentul arată primele rânduri și îți cere să potrivești fiecare coloană cu un câmp din CRM, standard sau personalizat. Dacă un câmp nu există încă, creează-l mai întâi în fișă (tipul lui nu mai poate fi schimbat ulterior).</li>
+  <li><strong>Alege ce se creează.</strong> Doar contacte; contacte și companii; contacte cu tranzacții. Pentru tranzacții, alege pipeline-ul și etapa și asigură-te că denumirile etapelor coincid literă cu literă cu cele din CRM.</li>
+  <li><strong>Setează regula pentru duplicate.</strong> Când un telefon sau un email coincide cu o fișă existentă: sari peste, actualizează sau creează una nouă. La o primă încărcare curată, de obicei sari peste; când reîmprospătezi o bază activă, actualizezi.</li>
+  <li><strong>Rulează un fișier de test cu 10 rânduri.</strong> Deschide câteva fișe: telefonul e în câmpul de telefon, nu într-o notă; numele nu s-au lipit între ele; eticheta și sursa sunt acolo.</li>
+  <li><strong>Verifică rezultatul.</strong> Numărul de înregistrări coincide cu tabelul, un filtru după eticheta importului arată același număr, iar căutarea unui telefon la întâmplare găsește exact o fișă.</li>
+</ol>
+<div class="note warn">Nu există anulare dintr-un clic: poți doar să găsești înregistrările și să le ștergi în masă, ceea ce e greu fără o etichetă de import.</div>
+
+<h2>Greșeli frecvente la mutarea unei baze</h2>
+<ul>
+  <li><strong>Formate de telefon amestecate.</strong> „(916) 123-4567” și „+19161234567” sunt numere diferite pentru CRM, așa că duplicatele trec și doi manageri sună același client.</li>
+  <li><strong>Mapare greșită.</strong> „Comentariu” ajunge în „Funcție”, numele în câmpul companiei; doar previzualizarea și fișierul de test prind asta.</li>
+  <li><strong>Tranzacții fără contacte.</strong> O mie de fișe în pipeline și nimeni de sunat. Un contact și tranzacția lui ar trebui să vină din același rând.</li>
+  <li><strong>Un singur responsabil pentru toată baza.</strong> Totul atârnă pe proprietarul contului. Adaugă o coloană „Responsabil”, cu numele scrise exact ca în CRM.</li>
+  <li><strong>Fără sursă.</strong> În decurs de o lună, baza veche se amestecă cu lead-urile noi, iar raportul pe canale nu mai are sens.</li>
+  <li><strong>Contacte moarte lângă cele vii.</strong> Clienții care tac de trei ani aglomerează căutarea și statisticile; dă-le o etichetă separată sau lasă-i deoparte.</li>
+</ul>
+
+<h2>Cu Kai e un singur mesaj și un singur fișier</h2>
+<p>Kai este un asistent AI care configurează amoCRM și Kommo dintr-un mesaj în chat, în botul de Telegram <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> sau în <a href="https://app.aii-crm.com/chat?lang=en">chatul web</a>, conectat prin OAuth 2.0 cu un singur clic, fără chei sau parole. Trimiți fișierul Excel sau CSV în chat; Kai recunoaște coloanele („Buget” → valoarea tranzacției, „Tel.” → telefon), îți arată toată maparea coloană → câmp, găsește duplicatele după telefon și email și te întreabă ce să facă cu ele; câmpurile care lipsesc le creează. După „ok”-ul tău, totul se încarcă prin API-ul oficial, cu un raport: contacte, companii și tranzacții create, duplicate omise.</p>
+<pre>Iată baza de clienți în Excel. Încarc-o în Kommo ca contacte și companii, sari peste duplicatele după telefon, pune-le tuturor eticheta „baza-2026”, sursa „Târg”.</pre>
+<pre>În fișier, „Buget” e suma tranzacției, iar „Status” e etapa din pipeline-ul „Vânzări”. Creează tranzacții cu contacte; responsabilul e în coloana „Manager”.</pre>
+<pre>Arată-mi din nou maparea și mută „Comentariu” în nota tranzacției, nu a contactului.</pre>
+<p>Limite oneste. Kai descurcă un tabel dezordonat, dar care dintre două înregistrări rămâne decizi tu: îți arată perechile și te întreabă. O bază foarte mare e mai bine s-o încarci pe bucăți. Mutarea istoricului și a sarcinilor dintr-un alt CRM sau legarea bazei de un program de contabilitate e treaba unui integrator. Importul e inclus în toate planurile Kai; perioada de probă e de 3 zile, fără card, cu funcțiile planului Start.</p>
+
+<h2>Manual, cu un integrator sau cu Kai</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Criteriu</th><th>Instrumentul de import din CRM</th><th>Integrator</th><th>Kai</th></tr></thead>
+  <tbody>
+    <tr><td>Potrivit pentru</td><td>Tabel curat, un singur tip de înregistrare</td><td>Migrare din alt CRM cu istoric; date în programul de contabilitate</td><td>Orice tabel; contacte, companii și tranzacții dintr-un singur fișier</td></tr>
+    <tr><td>Ce faci tu</td><td>Pregătești fișierul, potrivești coloanele, verifici</td><td>Scrii o specificație, recepționezi rezultatul</td><td>Trimiți fișierul, verifici maparea, confirmi</td></tr>
+    <tr><td>Timp</td><td>10 minute dacă e curat, o oră dacă e dezordonat</td><td>Zile sau săptămâni</td><td>O singură conversație</td></tr>
+    <tr><td>Cost</td><td>Inclus în abonamentul CRM</td><td>Conform ofertei contractorului</td><td>De la €29/lună, 3 zile gratuit</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>Pot importa tranzacții împreună cu contactele dintr-un singur fișier?</h3>
+    <p>Da. Atât în amoCRM, cât și în Kommo, instrumentul de import creează dintr-un rând un contact și tranzacția legată de el: indică-i coloanele cu suma, pipeline-ul și etapa. Kai face la fel; spune-i doar care coloane țin de tranzacție.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Cum detectează CRM-ul duplicatele la import?</h3>
+    <p>Comparând telefonul sau emailul cu fișele existente — de aceea telefoanele din fișier trebuie să aibă același format, cu prefixul țării: „(916) 123-4567” și „+19161234567” sunt numere diferite pentru CRM.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Ce fac dacă importul a ieșit prost?</h3>
+    <p>Dacă fiecare înregistrare a primit o etichetă de import, filtrează după ea, selectează-le în masă și șterge-le sau corectează-le. Fără etichetă vei căuta manual prin toată baza — de aceea primul pas e un fișier de test cu 10 rânduri.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Ce se întâmplă cu fișierul meu când îl trimit lui Kai?</h3>
+    <p>Fișierul e folosit doar ca să se citească coloanele și să se încarce datele în CRM prin API-ul oficial. Baza ta de clienți stă în CRM-ul tău; Kai nu stochează datele contactelor sau ale tranzacțiilor. CRM-ul se conectează prin OAuth 2.0, fără parole; accesul poate fi revocat oricând din setările CRM-ului.</p>
+  </div>
+</div>
+
+<h2>Ce urmează</h2>
+<p>Deschide tabelul, adu telefoanele la un singur format și adaugă coloanele „Sursă” și „Etichetă”: astea sunt cele 10 minute. Apoi instrumentul de import din CRM sau fișierul în chatul cu Kai. Configurezi tot CRM-ul? Începe cu <a href="https://aii-crm.com/guides/ro/crm-setup-without-integrator-checklist.html">lista de verificare în 12 puncte</a>.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Încearcă în Telegram</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Deschide chatul web</a>
+</div>
+
+<p class="author">Autor: Echipa Kai · Actualizat pe <time datetime="2026-10-26">26 octombrie 2026</time> · Pașii importului sunt descriși generic; verifică denumirile exacte din meniu în centrul de ajutor al CRM-ului tău.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/ro/">Acasă</a> · <a href="https://aii-crm.com/privacy-ro.html">Confidențialitate</a> · <a href="https://aii-crm.com/terms-ro.html">Termeni</a> · <a href="https://aii-crm.com/guides/en/import-contacts-excel-amocrm-kommo.html">Versiunea în engleză</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/ro/import-contacts-excel-amocrm-kommo.html#article",
+      "headline": "Cum imporți baza de clienți din Excel în amoCRM sau Kommo în 10 minute",
+      "description": "Pregătirea tabelului (coloane, duplicate, formatul telefoanelor), instrumentul de import integrat în amoCRM și Kommo, greșeli frecvente și calea Kai: trimiți fișierul, verifici maparea, confirmi.",
+      "inLanguage": "ro",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "mainEntityOfPage": "https://aii-crm.com/guides/ro/import-contacts-excel-amocrm-kommo.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/ro/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/ro/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Pot importa tranzacții împreună cu contactele dintr-un singur fișier?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. Atât în amoCRM, cât și în Kommo, instrumentul de import creează dintr-un rând un contact și tranzacția legată de el: indică-i coloanele cu suma, pipeline-ul și etapa. Kai face la fel; spune-i doar care coloane țin de tranzacție."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cum detectează CRM-ul duplicatele la import?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Comparând telefonul sau emailul cu fișele existente — de aceea telefoanele din fișier trebuie să aibă același format, cu prefixul țării: „(916) 123-4567” și „+19161234567” sunt numere diferite pentru CRM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ce fac dacă importul a ieșit prost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dacă fiecare înregistrare a primit o etichetă de import, filtrează după ea, selectează-le în masă și șterge-le sau corectează-le. Fără etichetă vei căuta manual prin toată baza — de aceea primul pas e un fișier de test cu 10 rânduri."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ce se întâmplă cu fișierul meu când îl trimit lui Kai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fișierul e folosit doar ca să se citească coloanele și să se încarce datele în CRM prin API-ul oficial. Baza ta de clienți stă în CRM-ul tău; Kai nu stochează datele contactelor sau ale tranzacțiilor. CRM-ul se conectează prin OAuth 2.0, fără parole; accesul poate fi revocat oricând din setările CRM-ului."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/ro/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ghiduri",
+          "item": "https://aii-crm.com/guides/ro/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Importă baza de clienți din Excel în amoCRM sau Kommo",
+          "item": "https://aii-crm.com/guides/ro/import-contacts-excel-amocrm-kommo.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

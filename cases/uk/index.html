@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<title>Приклади: CRM до і після одного повідомлення Kai | Kai</title>
+<meta name="description" content="Чотири типові ситуації в amoCRM і Kommo: якою була воронка, яке повідомлення надіслали Kai, що зробив Kai і як CRM виглядає після. Реальні дії, без інтегратора.">
+<meta name="keywords" content="приклади налаштування amoCRM, приклади налаштування Kommo, воронка продажів до і після, приклад автоматизації CRM, ШІ-асистент для amoCRM, штучний інтелект для Kommo, налаштування CRM без інтегратора, Kai CRM, CRM для стоматології, Kommo для агенції нерухомості, CRM для онлайн-школи, як налаштувати воронку в amoCRM">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aii-crm.com/cases/uk/">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/cases/">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/cases/en/">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/cases/de/">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/cases/fr/">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/cases/es/">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/cases/pl/">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/cases/pt/">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/cases/it/">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/cases/tr/">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/cases/be/">
+<link rel="alternate" hreflang="uk" href="https://aii-crm.com/cases/uk/">
+<link rel="alternate" hreflang="ro" href="https://aii-crm.com/cases/ro/">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/cases/en/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Kai"><meta property="og:url" content="https://aii-crm.com/cases/uk/">
+<meta property="og:title" content="Було → стало: amoCRM і Kommo, налаштовані одним повідомленням"><meta property="og:description" content="Чотири типові ситуації в amoCRM і Kommo: якою була воронка, яке повідомлення надіслали Kai, що зробив Kai і як CRM виглядає після. Реальні дії, без інтегратора."><meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Було → стало: amoCRM і Kommo, налаштовані одним повідомленням"><meta name="twitter:description" content="Чотири типові ситуації в amoCRM і Kommo: якою була воронка, яке повідомлення надіслали Kai, що зробив Kai і як CRM виглядає після. Реальні дії, без інтегратора."><meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B0A14'/><path d='M16 6.5a9.5 9.5 0 1 0 9.5 9.5' stroke='%237C5CFF' stroke-width='4' stroke-linecap='round' fill='none'/><circle cx='23.4' cy='8.6' r='2.6' fill='%23A78BFA'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0;--bad:#FF7B93;--warn:#F5C451;--mono:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 'Manrope',system-ui,sans-serif;padding:0 16px 64px}
+.wrap{max-width:860px;margin:0 auto}header{display:flex;align-items:center;gap:12px;padding:22px 0;border-bottom:1px solid var(--border)}
+header a{color:var(--ink);text-decoration:none;font-weight:700}header .brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:700}header .brand svg{flex:0 0 28px}header nav{margin-left:auto;display:flex;gap:18px;font-size:14px}header nav a{color:var(--muted);font-weight:500}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin:40px 0 12px;text-wrap:balance}
+.lead{color:var(--text);max-width:64ch}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}.toc a{font:600 13px var(--mono);color:var(--accent-2);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:6px 12px}.toc a:hover{border-color:var(--accent)}
+.case{margin-top:44px;border:1px solid var(--border);border-radius:18px;background:var(--bg-1);padding:22px;scroll-margin-top:16px}
+.case .top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}.badge{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}.badge.crm{color:var(--accent-2);border-color:rgba(124,92,255,.45)}
+.case h2{margin:0 0 6px;font-size:clamp(21px,3.2vw,26px);line-height:1.25;color:var(--ink);letter-spacing:-.01em;text-wrap:balance}
+.case p{margin:6px 0}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.col{border:1px solid var(--border);border-radius:14px;padding:14px;background:var(--bg)}
+.col h3{margin:0 0 10px;font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.col.before h3{color:var(--bad)}.col.after h3{color:var(--good)}.col h3 i{width:8px;height:8px;border-radius:50%;background:currentColor;display:inline-block}
+.board{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.board span{font-size:13px;font-weight:600;color:var(--ink);background:var(--bg-2);border:1px solid var(--border);border-radius:8px;padding:6px 9px}.board em{font-style:normal;color:var(--muted);font-size:12px}
+.col.after .board span{border-color:rgba(67,224,160,.35)}
+.k{margin:12px 0 4px;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.list{margin:0;padding:0;list-style:none;font-size:14px}.list li{padding:5px 0;border-top:1px solid var(--border);display:flex;gap:8px;align-items:baseline}.list li:first-child{border-top:0}
+.list b{color:var(--ink);font-weight:600}.list small{color:var(--muted);font-size:12px}.list .stamp{font:600 10px var(--mono);color:var(--warn);border:1px solid rgba(245,196,81,.5);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.list.none li{color:var(--muted);font-style:italic}.list.pain li::before{content:'–';color:var(--bad)}.list.gain li::before{content:'✓';color:var(--good);font-weight:700}
+.rule{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;font-size:14px}.rule b{color:var(--ink);font-weight:600}.rule span::before{content:'→ ';color:var(--accent-2)}
+.chat{margin:16px 0;display:grid;gap:10px}.msg{max-width:92%;border-radius:16px;padding:12px 14px;font-size:15px;line-height:1.5}
+.msg.me{justify-self:end;background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.45);color:var(--ink);border-bottom-right-radius:6px}
+.msg.kai{justify-self:start;background:var(--bg-2);border:1px solid var(--border);border-bottom-left-radius:6px}.msg .who{display:block;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.msg.kai .ok{color:var(--good);font-weight:700}
+.did{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}.did span{font:500 12px var(--mono);color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:4px 8px}.did span b{color:var(--accent-2);font-weight:600}
+.time{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--bg-2);border:1px solid var(--border);font-size:14px;color:var(--text)}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.btn{display:inline-block;padding:11px 16px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;font-size:14px}.btn.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}
+button.btn{cursor:pointer;border:1px solid var(--border);font:inherit;font-weight:700;font-size:14px}
+.cta{margin-top:40px;padding:22px;border-radius:16px;background:var(--bg-2);border:1px solid var(--border)}.cta b{color:var(--ink)}.cta a{display:inline-block;margin:10px 10px 0 0;padding:12px 18px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+.cta a.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}footer{margin-top:40px;color:var(--muted);font-size:13px}footer a{color:var(--muted)}
+.more{margin-top:28px}.more a{color:var(--accent-2)}
+@media (max-width:700px){.ba{grid-template-columns:1fr}.case{padding:16px;border-radius:14px}.msg{max-width:100%}body{font-size:16px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Було → стало: amoCRM і Kommo, налаштовані одним повідомленням", "description": "Чотири типові ситуації в amoCRM і Kommo: якою була воронка, яке повідомлення надіслали Kai, що зробив Kai і як CRM виглядає після. Реальні дії, без інтегратора.", "url": "https://aii-crm.com/cases/uk/", "inLanguage": "uk", "datePublished": "2026-10-27", "dateModified": "2026-11-02", "author": {"@type": "Organization", "name": "Kai"}, "publisher": {"@type": "Organization", "name": "Kai", "url": "https://aii-crm.com/"}, "isPartOf": {"@type": "WebSite", "name": "Kai", "url": "https://aii-crm.com/"}, "hasPart": [{"@type": "HowTo", "name": "Половина заявок губилася між дзвінком і записом", "url": "https://aii-crm.com/cases/uk/#dental-amocrm", "step": [{"@type": "HowToStep", "text": "Створи воронку «Нові пацієнти»: Заявка → Додзвін → Запис → Візит підтверджено → Прийом → План лікування. Поля угоди: Напрямок (список: терапія, ортопедія, імплантація, дитяча), Лікар, Дата візиту, Сума плану. Дата візиту обов’язкова на етапі «Запис». Правила: нова заявка — задача адміністратору передзвонити протягом 15 хвилин; угода перейшла в «Запис» — задача напередодні підтвердити візит; на «Додзвоні» немає руху 2 дні — задача «передзвонити ще раз»."}]}, {"@type": "HowTo", "name": "Бюджет і район писали в назві угоди", "url": "https://aii-crm.com/cases/uk/#realty-kommo", "step": [{"@type": "HowToStep", "text": "У Kommo створи воронку «Покупці»: Заявка → Кваліфікація → Підбірка → Показ → Бронь → Договір. Поля: Тип об’єкта (список: студія, 1к, 2к, 3к+, будинок), Бюджет (число), Район, Спосіб оплати (іпотека, готівка, розстрочка). Бюджет і Район обов’язкові на «Кваліфікації». Правила: нова заявка — задача передзвонити протягом 15 хвилин; угода на «Підбірці» — задача на завтра призначити показ; після «Показу» немає руху 3 дні — задача «дізнатися рішення». Причини відмови: купив деінде, дорого, передумав, не додзвонилися."}]}, {"@type": "HowTo", "name": "Воронка була, але угоди місяцями висіли на «Замірі»", "url": "https://aii-crm.com/cases/uk/#renovation-audit-amocrm", "step": [{"@type": "HowToStep", "text": "Проведи аудит воронки «Продаж договору». Потім виправ: зроби поле «Сума кошторису» обов’язковим на етапі «Кошторис», додай причини відмови (дорого, обрали інших, відклали ремонт, не додзвонилися), правило: на «Замірі» немає руху 5 днів — задача виконробу «надіслати кошторис». І покажи дашборд по воронці."}]}, {"@type": "HowTo", "name": "Реєстрації жили в таблиці, про дедлайн ціни нагадували з пам’яті", "url": "https://aii-crm.com/cases/uk/#courses-kommo", "step": [{"@type": "HowToStep", "text": "У Kommo створи воронку «Продаж курсу»: Реєстрація → Кваліфікація → Дзвінок призначено → Дзвінок відбувся → Рахунок виставлено → Оплата. Поля: Продукт (список), Тариф (список: базовий, з куратором, VIP), Потік, Розстрочка (так/ні). Правила: Реєстрація — задача написати і запропонувати діагностичний дзвінок; «Рахунок виставлено» — задача на завтра нагадати про дедлайн ціни; «Оплата» — тег «студент» і сповіщення в Telegram відділу продажів."}]}]}</script>
+</head>
+<body><div class="wrap">
+<header><a class="brand" href="../../uk/" aria-label="Kai — home"><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg><span>Kai</span></a><nav><a href="../../guides/uk/">Гайди</a><a href="../../uk/#pricing">Тарифи</a><a href="https://aii-crm.com/cases/en/" hreflang="en">EN</a></nav></header>
+<h1>Було → стало: amoCRM і Kommo, налаштовані одним повідомленням</h1>
+<p class="lead">Кожен приклад — типова картина, з якою приходять до Kai: одна воронка на все, поля в примітках, задачі з пам’яті. Нижче — повідомлення, яке пишуть Kai, що він робить у CRM, і результат. Цифр клієнтів тут немає — лише налаштування і час.</p>
+<div class="toc"><a href="#dental-amocrm">amoCRM · Стоматологія</a><a href="#realty-kommo">Kommo · Агенція нерухомості</a><a href="#renovation-audit-amocrm">amoCRM · Ремонт квартир</a><a href="#courses-kommo">Kommo · Онлайн-школа</a></div>
+
+<article class="case" id="dental-amocrm">
+  <div class="top"><span class="badge crm">amoCRM</span><span class="badge">Стоматологія</span></div>
+  <h2>Половина заявок губилася між дзвінком і записом</h2>
+  <p>Одна воронка «Основна» на все: заявки з сайту, Instagram і дзвінки падають у «Нові», далі «У роботі» і «Закрито». Лікар і дата візиту — у примітках, нагадати про візит нікому.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Було</h3>
+      <div class="k">Етапи воронки</div><div class="board"><span>Нові</span><em>→</em><span>У роботі</span><em>→</em><span>Закрито</span></div>
+      <div class="k">Поля угоди</div><ul class="list none"><li>полів немає — усе в примітках</li></ul>
+      <div class="k">Правила</div><ul class="list none"><li>правил немає — усе з пам’яті</li></ul>
+      <div class="k">Що ламалося</div><ul class="list pain"><li>немає етапу «Додзвін» — незрозуміло, кому вже передзвонили</li><li>дата візиту в примітці, адміністратор шукає її очима</li><li>візити ніхто не підтверджує — пацієнти не приходять</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Стало</h3>
+      <div class="k">Етапи воронки</div><div class="board"><span>Заявка</span><em>→</em><span>Додзвін</span><em>→</em><span>Запис</span><em>→</em><span>Візит підтверджено</span><em>→</em><span>Прийом</span><em>→</em><span>План лікування</span></div>
+      <div class="k">Поля угоди</div><ul class="list"><li><b>Напрямок</b><small>список</small></li><li><b>Лікар</b></li><li><b>Дата візиту</b><span class="stamp">обов’язкове на «Записі»</span></li><li><b>Сума плану</b><small>число</small></li></ul>
+      <div class="k">Правила</div><div class="rule"><b>Нова заявка</b><span>задача «передзвонити» за 15 хвилин</span><b>Перехід у «Запис»</b><span>задача напередодні: підтвердити візит</span><b>«Додзвін» без руху 2 дні</b><span>задача «передзвонити ще раз»</span></div>
+      <div class="k">Що змінилося</div><ul class="list gain"><li>кожній заявці дзвонять у перші 15 хвилин — за правилом, а не з пам’яті адміністратора</li><li>дату візиту не пропустиш: без неї угода не перейде в «Запис»</li><li>напередодні з’являється задача підтвердити візит — менше неявок</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Повідомлення Kai</span>Створи воронку «Нові пацієнти»: Заявка → Додзвін → Запис → Візит підтверджено → Прийом → План лікування. Поля угоди: Напрямок (список: терапія, ортопедія, імплантація, дитяча), Лікар, Дата візиту, Сума плану. Дата візиту обов’язкова на етапі «Запис». Правила: нова заявка — задача адміністратору передзвонити протягом 15 хвилин; угода перейшла в «Запис» — задача напередодні підтвердити візит; на «Додзвоні» немає руху 2 дні — задача «передзвонити ще раз».</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Готово.</span> Воронку «Нові пацієнти» створено, 6 етапів. Додав 4 поля, «Дата візиту» обов’язкова на «Записі». Увімкнено три правила: передзвонити протягом 15 хвилин, підтвердити візит напередодні, передзвонити ще раз через 2 дні. Системні етапи «Виграно» і «Програно» не чіпав.</div>
+  </div>
+  <div class="k">Що зробив Kai</div><div class="did"><span>створити воронку</span><span>створити поле <b>×4</b></span><span>зробити поле обов’язковим</span><span>створити правило <b>×3</b></span></div>
+  <div class="time">Одне повідомлення, близько двох хвилин. Інтегратор робить те саме за 2–5 робочих днів.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Створи воронку «Нові пацієнти»: Заявка → Додзвін → Запис → Візит підтверджено → Прийом → План лікування. Поля угоди: Напрямок (список: терапія, ортопедія, імплантація, дитяча), Лікар, Дата візиту, Сума плану. Дата візиту обов’язкова на етапі «Запис». Правила: нова заявка — задача адміністратору передзвонити протягом 15 хвилин; угода перейшла в «Запис» — задача напередодні підтвердити візит; на «Додзвоні» немає руху 2 дні — задача «передзвонити ще раз».">Скопіювати повідомлення</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Повтори у своєму чаті</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Відкрити в Telegram</a></div>
+</article>
+<article class="case" id="realty-kommo">
+  <div class="top"><span class="badge crm">Kommo</span><span class="badge">Агенція нерухомості</span></div>
+  <h2>Бюджет і район писали в назві угоди</h2>
+  <p>Усі ліди у «Вхідних», етапів немає. Бюджет, район і тип об’єкта — у назві угоди: «Іван, 2к, до 90 тис., центр». Підбірку надіслали й забули, після показу ніхто не передзвонює.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Було</h3>
+      <div class="k">Етапи воронки</div><div class="board"><span>Вхідні</span><em>→</em><span>У роботі</span><em>→</em><span>Угода</span></div>
+      <div class="k">Поля угоди</div><ul class="list none"><li>полів немає — усе в примітках</li></ul>
+      <div class="k">Правила</div><ul class="list none"><li>правил немає — усе з пам’яті</li></ul>
+      <div class="k">Що ламалося</div><ul class="list pain"><li>не відфільтруєш за бюджетом чи районом — усе текстом</li><li>після показу угоди зависають без наступного кроку</li><li>немає причин відмови — незрозуміло, чому йдуть покупці</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Стало</h3>
+      <div class="k">Етапи воронки</div><div class="board"><span>Заявка</span><em>→</em><span>Кваліфікація</span><em>→</em><span>Підбірка</span><em>→</em><span>Показ</span><em>→</em><span>Бронь</span><em>→</em><span>Договір</span></div>
+      <div class="k">Поля угоди</div><ul class="list"><li><b>Тип об’єкта</b><small>список</small></li><li><b>Бюджет</b><span class="stamp">число · обов’язкове на «Кваліфікації»</span></li><li><b>Район</b><span class="stamp">обов’язкове на «Кваліфікації»</span></li><li><b>Спосіб оплати</b><small>список</small></li></ul>
+      <div class="k">Правила</div><div class="rule"><b>Нова заявка</b><span>задача «передзвонити» за 15 хвилин</span><b>Перехід у «Підбірку»</b><span>задача на завтра: призначити показ</span><b>«Показ» без руху 3 дні</b><span>задача «дізнатися рішення»</span></div>
+      <div class="k">Що змінилося</div><ul class="list gain"><li>фільтр «2к до 90 000 у центрі» — за секунду, за полями</li><li>після кожного показу є наступний крок і термін</li><li>відмови з причинами: видно, де втрачаєш — на ціні чи на швидкості</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Повідомлення Kai</span>У Kommo створи воронку «Покупці»: Заявка → Кваліфікація → Підбірка → Показ → Бронь → Договір. Поля: Тип об’єкта (список: студія, 1к, 2к, 3к+, будинок), Бюджет (число), Район, Спосіб оплати (іпотека, готівка, розстрочка). Бюджет і Район обов’язкові на «Кваліфікації». Правила: нова заявка — задача передзвонити протягом 15 хвилин; угода на «Підбірці» — задача на завтра призначити показ; після «Показу» немає руху 3 дні — задача «дізнатися рішення». Причини відмови: купив деінде, дорого, передумав, не додзвонилися.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Готово.</span> Воронка «Покупці», 6 етапів. Поля: Тип об’єкта, Бюджет, Район, Спосіб оплати; Бюджет і Район обов’язкові на «Кваліфікації». Три правила увімкнено, чотири причини відмови додано — тепер аналітика відмов рахуватиметься.</div>
+  </div>
+  <div class="k">Що зробив Kai</div><div class="did"><span>створити воронку</span><span>створити поле <b>×4</b></span><span>зробити поле обов’язковим <b>×2</b></span><span>створити правило <b>×3</b></span><span>причини відмови</span></div>
+  <div class="time">Одне повідомлення, близько двох хвилин. Поля, етапи і правила — у Kommo через API, без віджетів.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="У Kommo створи воронку «Покупці»: Заявка → Кваліфікація → Підбірка → Показ → Бронь → Договір. Поля: Тип об’єкта (список: студія, 1к, 2к, 3к+, будинок), Бюджет (число), Район, Спосіб оплати (іпотека, готівка, розстрочка). Бюджет і Район обов’язкові на «Кваліфікації». Правила: нова заявка — задача передзвонити протягом 15 хвилин; угода на «Підбірці» — задача на завтра призначити показ; після «Показу» немає руху 3 дні — задача «дізнатися рішення». Причини відмови: купив деінде, дорого, передумав, не додзвонилися.">Скопіювати повідомлення</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Повтори у своєму чаті</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Відкрити в Telegram</a></div>
+</article>
+<article class="case" id="renovation-audit-amocrm">
+  <div class="top"><span class="badge crm">amoCRM</span><span class="badge">Ремонт квартир</span></div>
+  <h2>Воронка була, але угоди місяцями висіли на «Замірі»</h2>
+  <p>Воронку «Продаж договору» налаштували давно, але кошторис надсилають, коли згадають, суми не заповнені, причин відмови немає — звіт по воронці порожній. Власник не бачить, де застрягли гроші.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Було</h3>
+      <div class="k">Етапи воронки</div><div class="board"><span>Заявка</span><em>→</em><span>Кваліфікація</span><em>→</em><span>Замір</span><em>→</em><span>Кошторис</span><em>→</em><span>Договір</span><em>→</em><span>Аванс</span></div>
+      <div class="k">Поля угоди</div><ul class="list"><li><b>Тип робіт</b></li><li><b>Площа, м²</b></li><li><b>Бюджет</b></li><li><b>Сума кошторису</b><small>порожнє у 8 з 10 угод</small></li></ul>
+      <div class="k">Правила</div><ul class="list none"><li>правил немає — усе з пам’яті</li></ul>
+      <div class="k">Що ламалося</div><ul class="list pain"><li>23 угоди понад два тижні без руху на «Замірі»</li><li>сума кошторису не заповнена — прогноз виручки неможливий</li><li>без причин відмови не зрозуміти, чому йдуть клієнти</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Стало</h3>
+      <div class="k">Етапи воронки</div><div class="board"><span>Заявка</span><em>→</em><span>Кваліфікація</span><em>→</em><span>Замір</span><em>→</em><span>Кошторис</span><em>→</em><span>Договір</span><em>→</em><span>Аванс</span></div>
+      <div class="k">Поля угоди</div><ul class="list"><li><b>Тип робіт</b></li><li><b>Площа, м²</b></li><li><b>Бюджет</b></li><li><b>Сума кошторису</b><span class="stamp">обов’язкове на «Кошторисі»</span></li></ul>
+      <div class="k">Правила</div><div class="rule"><b>«Замір» без руху 5 днів</b><span>задача виконробу «надіслати кошторис»</span></div>
+      <div class="k">Що змінилося</div><ul class="list gain"><li>кошторис більше не зависає: через 5 днів з’являється задача з відповідальним</li><li>сума кошторису обов’язкова — прогноз виручки рахується за полями</li><li>відмови з причинами, дашборд будь-коли одним словом: «дашборд»</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Повідомлення Kai</span>Проведи аудит воронки «Продаж договору». Потім виправ: зроби поле «Сума кошторису» обов’язковим на етапі «Кошторис», додай причини відмови (дорого, обрали інших, відклали ремонт, не додзвонилися), правило: на «Замірі» немає руху 5 днів — задача виконробу «надіслати кошторис». І покажи дашборд по воронці.</div>
+    <div class="msg kai"><span class="who">Kai</span>Аудит: 23 угоди стоять на «Замірі» довше 14 днів, «Сума кошторису» порожня у 80% угод, причин відмови немає, автоматизацій немає. Виправив: поле обов’язкове на «Кошторисі», додано 4 причини відмови, правило на 5 днів увімкнено. Дашборд: відкритих 61, на «Замірі» 23 (вузьке місце), виграно за місяць 9, програно 4.</div>
+  </div>
+  <div class="k">Що зробив Kai</div><div class="did"><span>аудит воронки</span><span>зробити поле обов’язковим</span><span>причини відмови</span><span>створити правило</span><span>дашборд</span></div>
+  <div class="time">Аудит, виправлення і зведення — одне повідомлення. Kai нічого не видаляв: наявні угоди й етапи залишилися.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Проведи аудит воронки «Продаж договору». Потім виправ: зроби поле «Сума кошторису» обов’язковим на етапі «Кошторис», додай причини відмови (дорого, обрали інших, відклали ремонт, не додзвонилися), правило: на «Замірі» немає руху 5 днів — задача виконробу «надіслати кошторис». І покажи дашборд по воронці.">Скопіювати повідомлення</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Повтори у своєму чаті</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Відкрити в Telegram</a></div>
+</article>
+<article class="case" id="courses-kommo">
+  <div class="top"><span class="badge crm">Kommo</span><span class="badge">Онлайн-школа</span></div>
+  <h2>Реєстрації жили в таблиці, про дедлайн ціни нагадували з пам’яті</h2>
+  <p>Реєстрації з лендингу падають у таблицю, менеджери розбирають їх вручну. Потоки плутають, рахунок виставили — і забули нагадати. Про оплату відділ дізнається від бухгалтерії через день.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Було</h3>
+      <div class="k">Етапи воронки</div><div class="board"><span>Лід</span><em>→</em><span>Оплата</span></div>
+      <div class="k">Поля угоди</div><ul class="list none"><li>полів немає — усе в примітках</li></ul>
+      <div class="k">Правила</div><ul class="list none"><li>правил немає — усе з пам’яті</li></ul>
+      <div class="k">Що ламалося</div><ul class="list pain"><li>між «Лід» і «Оплата» нічого — незрозуміло, хто на якому кроці</li><li>немає полів Продукт і Потік — списки збирають вручну</li><li>про оплату дізнаються пізно, привітання й доступ затримуються</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Стало</h3>
+      <div class="k">Етапи воронки</div><div class="board"><span>Реєстрація</span><em>→</em><span>Кваліфікація</span><em>→</em><span>Дзвінок призначено</span><em>→</em><span>Дзвінок відбувся</span><em>→</em><span>Рахунок виставлено</span><em>→</em><span>Оплата</span></div>
+      <div class="k">Поля угоди</div><ul class="list"><li><b>Продукт</b><small>список</small></li><li><b>Тариф</b><small>список</small></li><li><b>Потік</b></li><li><b>Розстрочка</b><small>так/ні</small></li></ul>
+      <div class="k">Правила</div><div class="rule"><b>Реєстрація</b><span>задача: написати і запропонувати діагностику</span><b>«Рахунок виставлено»</b><span>задача на завтра: нагадати про дедлайн ціни</span><b>«Оплата»</b><span>тег «студент» + сповіщення в Telegram</span></div>
+      <div class="k">Що змінилося</div><ul class="list gain"><li>кожна реєстрація отримує перший контакт — задача ставиться сама</li><li>нагадування про дедлайн ціни саме ставиться на наступний день</li><li>відділ одразу бачить оплату — у Telegram, без бухгалтерії</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Повідомлення Kai</span>У Kommo створи воронку «Продаж курсу»: Реєстрація → Кваліфікація → Дзвінок призначено → Дзвінок відбувся → Рахунок виставлено → Оплата. Поля: Продукт (список), Тариф (список: базовий, з куратором, VIP), Потік, Розстрочка (так/ні). Правила: Реєстрація — задача написати і запропонувати діагностичний дзвінок; «Рахунок виставлено» — задача на завтра нагадати про дедлайн ціни; «Оплата» — тег «студент» і сповіщення в Telegram відділу продажів.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Готово.</span> Воронка «Продаж курсу», 6 етапів, 4 поля. Правила увімкнено: задача при реєстрації, нагадування про дедлайн наступного дня після рахунку, тег «студент» і сповіщення в Telegram при оплаті. Колеги підписуються на сповіщення за посиланням із кабінету.</div>
+  </div>
+  <div class="k">Що зробив Kai</div><div class="did"><span>створити воронку</span><span>створити поле <b>×4</b></span><span>створити правило <b>×3</b></span><span>тег</span></div>
+  <div class="time">Одне повідомлення. Сповіщення в Telegram вбудовані в Kai — без Zapier і вебхуків.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="У Kommo створи воронку «Продаж курсу»: Реєстрація → Кваліфікація → Дзвінок призначено → Дзвінок відбувся → Рахунок виставлено → Оплата. Поля: Продукт (список), Тариф (список: базовий, з куратором, VIP), Потік, Розстрочка (так/ні). Правила: Реєстрація — задача написати і запропонувати діагностичний дзвінок; «Рахунок виставлено» — задача на завтра нагадати про дедлайн ціни; «Оплата» — тег «студент» і сповіщення в Telegram відділу продажів.">Скопіювати повідомлення</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Повтори у своєму чаті</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Відкрити в Telegram</a></div>
+</article>
+<p class="more"><a href="../../guides/uk/">Покрокові гайди з amoCRM і Kommo →</a></p>
+<div class="cta"><b>Хочеш так само? Напиши Kai своїми словами — він уточнить деталі й налаштує.</b><br><a href="https://t.me/aiicrm_bot">Спробувати в Telegram</a><a class="alt" href="https://app.aii-crm.com/chat?lang=en">Відкрити веб-чат</a></div>
+<footer>© 2026 Kai · <a href="../../privacy-uk.html">Конфіденційність</a></footer>
+</div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){ b.addEventListener('click', function(){ var t=b.getAttribute('data-copy'), done=function(){ var o=b.textContent; b.textContent="Скопійовано"; setTimeout(function(){ b.textContent=o; },1500); };
+  if(navigator.clipboard) navigator.clipboard.writeText(t).then(done); else { var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} ta.remove(); done(); } }); });
+</script>
+</body></html>

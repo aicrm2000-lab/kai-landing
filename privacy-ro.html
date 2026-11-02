@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://ai-crm-bot-production.up.railway.app; connect-src 'self' https://ai-crm-bot-production.up.railway.app; base-uri 'self'; form-action 'self'">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Politica de confidențialitate — Kai</title>
+<meta name="description" content="Politica de confidențialitate a Kai, un asistent AI care configurează contul dumneavoastră CRM printr-un bot Telegram. Ce date colectăm, în ce scop, cât timp le păstrăm și cum le puteți șterge.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://aii-crm.com/privacy-ro.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/privacy.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/privacy-en.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/privacy-de.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/privacy-fr.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/privacy-es.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/privacy-pl.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/privacy-pt.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/privacy-it.html">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/privacy-tr.html">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/privacy-be.html">
+<link rel="alternate" hreflang="uk" href="https://aii-crm.com/privacy-uk.html">
+<link rel="alternate" hreflang="ro" href="https://aii-crm.com/privacy-ro.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/privacy-en.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B0A14'/><path d='M16 6.5a9.5 9.5 0 1 0 9.5 9.5' stroke='%237C5CFF' stroke-width='4' stroke-linecap='round' fill='none'/><circle cx='23.4' cy='8.6' r='2.6' fill='%23A78BFA'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0B0A14;
+  --bg-1:    #100E20;
+  --bg-2:    #171332;
+  --border:  #241D45;
+  --accent:  #7C5CFF;
+  --accent-2:#A78BFA;
+  --ink:     #F4F2FF;
+  --text:    #CBC5E4;
+  --muted:   #8B83AC;
+  --dim:     #615A82;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent-2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(11,10,20,0.9);
+  backdrop-filter: blur(20px);
+}
+.nav-inner {
+  max-width: 800px; margin: 0 auto;
+  height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-size: 17px; font-weight: 600; color: var(--ink); }
+.nav-right { display: flex; gap: 18px; align-items: center; }
+.nav-back, .nav-lang { font-size: 13px; color: var(--muted); }
+.nav-lang { border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px; }
+.nav-lang:hover { border-color: var(--accent); color: var(--ink); text-decoration: none; }
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 24px 80px;
+}
+h1 {
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.subtitle { font-size: 14px; color: var(--dim); margin-bottom: 48px; }
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 48px;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+p { margin-bottom: 14px; }
+ul, ol { margin-bottom: 14px; padding-left: 24px; }
+li { margin-bottom: 6px; }
+li::marker { color: var(--dim); }
+strong { color: var(--ink); font-weight: 600; }
+code {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 13px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+.highlight {
+  background: rgba(124,92,255,0.08);
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+  font-size: 14px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  font-size: 14px;
+}
+th, td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+th {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.table-wrap { overflow-x: auto; }
+.footer {
+  max-width: 800px; margin: 0 auto;
+  padding: 0 24px 60px;
+  font-size: 13px;
+}
+@media (max-width: 640px) {
+  .container { padding: 90px 18px 60px; }
+  th, td { padding: 8px 10px; }
+}
+
+/* ─── COOKIE BANNER ─── */
+.cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: var(--bg-1);
+  border-top: 1px solid var(--border);
+  padding: 16px 24px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; flex-wrap: wrap;
+  font-size: 13px; color: var(--text);
+  transform: translateY(100%);
+  transition: transform .4s ease;
+}
+.cookie-banner.visible { transform: translateY(0); }
+.cookie-banner a { color: var(--accent-2); }
+.cookie-btns { display: flex; gap: 8px; flex-shrink: 0; }
+.cookie-btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 12px; font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.cookie-btn:hover { opacity: .85; }
+.cookie-btn-accept { background: var(--accent); color: #fff; border: 1px solid transparent; }
+.cookie-btn-decline { background: var(--bg-2); border: 1px solid var(--border); color: var(--ink); }
+@media (max-width: 640px) {
+  .cookie-banner { font-size: 12px; padding: 14px 16px; gap: 12px; }
+  .cookie-btns { width: 100%; }
+  .cookie-btn { flex: 1; }
+}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+<script>(function(){var q=location.search;
+if(q.indexOf('lang=en')!==-1)return;
+var saved=null;try{saved=localStorage.getItem('kai_lang');}catch(e){}
+if(saved==='ru')location.replace('privacy.html');})();</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="ro/" class="nav-logo">Kai</a>
+    <div class="nav-right">
+      <a href="https://aii-crm.com/privacy-en.html" class="nav-lang">EN</a>
+      <a href="ro/" class="nav-back">← Înapoi la pagina principală</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+<h1>Politica de confidențialitate</h1>
+<p class="subtitle">Ultima actualizare: 20 august 2026 · Versiunea 3.0 · <a href="https://aii-crm.com/privacy-en.html">Versiunea în engleză</a></p>
+<p class="subtitle">Această traducere este oferită pentru comoditate. În cazul unor diferențe față de textul în limba engleză, prevalează versiunea în limba engleză.</p>
+
+<h2>1. Cine suntem</h2>
+<p>Kai este un asistent AI care configurează și gestionează contul CRM al utilizatorului conform instrucțiunilor acestuia, transmise prin botul Telegram <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a> („Serviciul”). Operatorul de date pentru prelucrarea descrisă în prezenta Politică este <strong>Tsikhan Varabyou</strong>, care administrează Serviciul („noi”).</p>
+<p>Ne puteți contacta în legătură cu orice aspect al prezentei Politici la <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> sau prin Telegram, la <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a>. Soluționăm cererile privind protecția datelor prin aceleași canale prin care furnizăm Serviciul — nu este necesar un portal sau un formular separat.</p>
+
+<h2>2. Domeniul de aplicare</h2>
+<p>Prezenta Politică se aplică datelor cu caracter personal prelucrate atunci când interacționați cu botul, conectați la acesta contul dumneavoastră CRM sau plătiți un abonament. Ea nu reglementează platforma CRM pe care alegeți să o conectați, Telegram în sine sau orice alt serviciu pe care îl utilizați alături de Kai — fiecare dintre acestea are propriile condiții de confidențialitate.</p>
+<p>Politica este elaborată în cadrul Regulamentului general privind protecția datelor al UE (RGPD). Dacă utilizați Serviciul din afara Uniunii Europene, beneficiați de protecții echivalente în măsura prevăzută de legislația privind protecția datelor aplicabilă în jurisdicția dumneavoastră; nicio prevedere a prezentei Politici nu limitează drepturile pe care vi le conferă această legislație, iar trimiterile la articolele RGPD trebuie citite împreună cu prevederile locale corespunzătoare.</p>
+
+<h2>3. Datele pe care le prelucrăm și proveniența acestora</h2>
+<p>Păstrăm în mod deliberat un volum redus de date: Serviciul prelucrează doar ceea ce este necesar pentru a executa instrucțiunile dumneavoastră în contul CRM. Concret:</p>
+<div class="table-wrap">
+<table>
+  <tr><th>Categorie</th><th>Detalii</th><th>Sursă</th></tr>
+  <tr>
+    <td>Date de conectare la CRM</td>
+    <td>Tokenurile de acces și de reîmprospătare OAuth 2.0 (stocate criptat) și adresa contului dumneavoastră (subdomeniul) pe platforma CRM pe care alegeți să o conectați</td>
+    <td>Platforma CRM, atunci când autorizați conectarea</td>
+  </tr>
+  <tr>
+    <td>Identitatea Telegram</td>
+    <td>ID-ul dumneavoastră de utilizator Telegram și numele de utilizator</td>
+    <td>Telegram, atunci când porniți botul</td>
+  </tr>
+  <tr>
+    <td>Conținutul trimis botului</td>
+    <td>Mesaje text, mesaje vocale, capturi de ecran și alte imagini, precum și fișierele Excel/CSV pe care le încărcați pentru import</td>
+    <td>Dumneavoastră</td>
+  </tr>
+  <tr>
+    <td>Date de lucru din CRM</td>
+    <td>Obiectele pe care Serviciul le citește sau le creează în contul dumneavoastră CRM la cererea dumneavoastră (pipeline-uri, etape, câmpuri, contacte, sarcini, automatizări) și planurile generate pe baza răspunsurilor dumneavoastră</td>
+    <td>Dumneavoastră; contul dumneavoastră CRM</td>
+  </tr>
+  <tr>
+    <td>Date de facturare</td>
+    <td>Starea abonamentului și confirmările de plată. Nu primim și nu stocăm niciodată numerele complete ale cardurilor — datele cardului sunt gestionate integral de furnizorul de plăți</td>
+    <td>Furnizorii de plăți</td>
+  </tr>
+  <tr>
+    <td>Analiza traficului pe site</td>
+    <td>Un cookie propriu (first-party) <code>kai_vid</code> — un identificator pseudonimizat al vizitei (durată de viață de un an) — împreună cu paginile vizualizate, sursa de trimitere și limba. <strong>Se setează numai după ce v-ați dat consimțământul</strong> prin bannerul de cookie-uri; dacă ați ales „Doar necesare” sau nu ați ales încă, analiza nu pornește și nu se trimite nimic. Este utilizat exclusiv pentru statisticile proprii ale site-ului; nu sunt integrate servicii de analiză ale terților, iar datele nu sunt divulgate nimănui. Temeiul juridic este consimțământul (art. 6 alin. (1) lit. (a) din RGPD), pe care îl puteți retrage oricând prin linkul „Setări cookie” din subsolul site-ului</td>
+    <td>Browserul dumneavoastră — după ce v-ați dat consimțământul pentru analiză</td>
+  </tr>
+  <tr>
+    <td>Stocare strict necesară</td>
+    <td>Opțiunea dumneavoastră privind cookie-urile (<code>kai_cookie_consent</code>) și limba site-ului selectată (<code>kai_lang</code>) sunt păstrate în localStorage al browserului. Acestea sunt înregistrări strict necesare: rețin propriile dumneavoastră preferințe, nu sunt utilizate niciodată pentru urmărire și nu sunt transmise niciodată, astfel încât nu necesită consimțământ</td>
+    <td>Browserul dumneavoastră</td>
+  </tr>
+</table>
+</div>
+<div class="highlight">
+  Nu vă solicităm, nu primim și nu stocăm niciodată datele de autentificare sau parola dumneavoastră din CRM. Accesul la contul dumneavoastră CRM funcționează exclusiv prin OAuth 2.0, prin API-ul oficial al platformei, și îl puteți revoca în orice moment din setările de integrare ale platformei CRM — tokenul este invalidat imediat.
+</div>
+
+<h2>4. Scopurile și temeiul juridic al prelucrării</h2>
+<p>În temeiul articolului 6 din RGPD (și al dispozițiilor corespunzătoare din alte legi aplicabile privind protecția datelor), fiecare operațiune de prelucrare se întemeiază pe unul dintre următoarele temeiuri:</p>
+<ul>
+  <li><strong>Executarea unui contract</strong> (art. 6 alin. (1) lit. (b)) — conectarea contului dumneavoastră CRM, interpretarea mesajelor dumneavoastră, executarea acțiunilor în CRM pe care le solicitați, importul fișierelor pe care le încărcați și gestionarea abonamentului dumneavoastră. Acesta este nucleul Serviciului: fără această prelucrare, Kai nu poate face ceea ce îi cereți.</li>
+  <li><strong>Interesul legitim</strong> (art. 6 alin. (1) lit. (f)) — păstrarea jurnalelor tehnice necesare pentru diagnosticarea defecțiunilor, prevenirea utilizării abuzive a botului și securizarea Serviciului. Înregistrăm minimul necesar acestor scopuri și nu folosim jurnalele pentru crearea de profiluri.</li>
+  <li><strong>Consimțământul</strong> (art. 6 alin. (1) lit. (a)) — orice prelucrare cu adevărat opțională, cum ar fi anunțurile despre produs trimise prin bot. Vă puteți retrage consimțământul oricând, fără ca acest lucru să afecteze Serviciul.</li>
+</ul>
+<p>Nu vindem date cu caracter personal, nu le divulgăm în scopuri publicitare și nu le folosim pentru antrenarea propriilor noastre modele sau a modelelor altor persoane.</p>
+
+<h2>5. Destinatarii și transferurile internaționale</h2>
+<p>Kai recurge la un număr restrâns de persoane împuternicite, grupate pe categorii, fiecare primind doar ceea ce îi este necesar pentru funcția sa:</p>
+<div class="table-wrap">
+<table>
+  <tr><th>Categorie</th><th>Ce primește</th><th>Scop</th></tr>
+  <tr>
+    <td>Platforma CRM pe care o conectați</td>
+    <td>Apelurile API necesare pentru executarea instrucțiunilor dumneavoastră în cont, efectuate prin API-ul oficial al platformei</td>
+    <td>Citirea și scrierea obiectelor CRM pe care le-ați solicitat</td>
+  </tr>
+  <tr>
+    <td>Furnizori AI (OpenAI, Anthropic)</td>
+    <td>Textul solicitărilor dumneavoastră și, pentru mesajele vocale, înregistrarea audio în vederea transcrierii. Tokenurile OAuth și datele dumneavoastră de autentificare nu sunt incluse niciodată în aceste apeluri</td>
+    <td>Înțelegerea mesajelor dumneavoastră și generarea de răspunsuri și planuri</td>
+  </tr>
+  <tr>
+    <td>Furnizori de plăți (procesarea cardurilor, Telegram Stars, plăți cripto în USDT)</td>
+    <td>Datele de care are nevoie fiecare furnizor pentru a procesa plata dumneavoastră</td>
+    <td>Facturarea abonamentului. Datele cardului rămân la procesator; noi vedem doar confirmarea</td>
+  </tr>
+</table>
+</div>
+<p>Unii dintre acești furnizori își desfășoară activitatea în afara Spațiului Economic European. Atunci când datele cu caracter personal sunt transferate în afara SEE, transferul este protejat prin clauzele contractuale standard ale Comisiei Europene sau printr-un mecanism de transfer legal echivalent menținut de furnizor. Pentru utilizatorii din afara UE, transferurile se efectuează în conformitate cu legislația privind protecția datelor aplicabilă în jurisdicția dumneavoastră.</p>
+
+<h2>6. Cât timp păstrăm datele</h2>
+<ul>
+  <li><strong>Tokenurile OAuth</strong> — până când deconectați integrarea sau vă ștergeți datele; tokenurile revocate sunt invalidate imediat și eliminate.</li>
+  <li><strong>Istoricul conversațiilor și planurile generate</strong> — cât timp contul dumneavoastră în bot este activ, pentru ca contextul să se păstreze între sesiuni; se șterg la cerere.</li>
+  <li><strong>Fișierele încărcate (Excel/CSV, imagini)</strong> — doar atât cât este necesar pentru finalizarea operațiunii solicitate (de exemplu, un import), după care sunt șterse.</li>
+  <li><strong>Mesajele vocale</strong> — sunt trimise spre transcriere și nu sunt păstrate după obținerea transcrierii text.</li>
+  <li><strong>Evidențele de facturare</strong> — pe perioada impusă de legislația contabilă și fiscală care ni se aplică.</li>
+  <li><strong>Jurnalele tehnice</strong> — pentru o perioadă scurtă, glisantă, suficientă pentru securitate și depanare, după care sunt suprascrise.</li>
+</ul>
+
+<h2>7. Drepturile dumneavoastră</h2>
+<p>În temeiul RGPD — și, pentru utilizatorii din alte regiuni, în temeiul legislației privind protecția datelor aplicabile în jurisdicția dumneavoastră — aveți dreptul, în orice moment:</p>
+<ol>
+  <li><strong>Să accesați</strong> datele cu caracter personal pe care le deținem despre dumneavoastră și să primiți o copie a acestora;</li>
+  <li><strong>Să obțineți rectificarea</strong> datelor inexacte;</li>
+  <li><strong>Să obțineți ștergerea</strong> datelor dumneavoastră — scriindu-ne la <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> sau folosind comanda <code>/delete</code> din bot;</li>
+  <li><strong>Să primiți</strong> datele dumneavoastră într-un format portabil, care poate fi citit automat;</li>
+  <li><strong>Să vă opuneți</strong> prelucrării întemeiate pe interesul legitim;</li>
+  <li><strong>Să depuneți o plângere</strong> la o autoritate de supraveghere — pentru rezidenții SEE, autoritatea pentru protecția datelor din statul membru al dumneavoastră; în alte cazuri, organismul desemnat de legislația locală.</li>
+</ol>
+<div class="highlight">
+  Atunci când solicitați ștergerea, eliminăm istoricul conversațiilor, tokenurile OAuth, planurile generate și legătura dintre contul dumneavoastră Telegram și contul CRM. Obiectele deja create în contul dumneavoastră CRM (pipeline-uri, câmpuri, contacte etc.) aparțin acelui cont și rămân acolo — le gestionați direct prin platforma CRM.
+</div>
+<p>Revocarea accesului la CRM nu necesită deloc să ne contactați: dezactivați conexiunea din setările platformei CRM, iar Serviciul pierde accesul instantaneu.</p>
+
+<h2>8. Securitate</h2>
+<p>Tokenurile OAuth sunt stocate criptat. Transmisiile dintre bot, serverele noastre, platforma CRM și fiecare persoană împuternicită utilizează TLS. Accesul la datele de producție este limitat la operator și nu este acordat terților, cu excepția persoanelor împuternicite enumerate mai sus. Aplicăm principiul reducerii la minimum a datelor: Serviciul nu solicită permisiuni CRM pe care nu le folosește și nu copiază baza de date CRM pe serverele noastre — lucrează cu datele dumneavoastră în interiorul contului dumneavoastră, la instrucțiunea dumneavoastră.</p>
+
+<h2>9. Copii</h2>
+<p>Serviciul este un instrument profesional și nu se adresează persoanelor sub 16 ani. Nu prelucrăm în mod conștient datele minorilor; dacă considerați că un minor a utilizat Serviciul, contactați-ne și vom șterge datele asociate.</p>
+
+<h2>10. Modificări ale prezentei Politici</h2>
+<p>Atunci când modificăm în mod substanțial prezenta Politică, îi vom notifica pe utilizatorii activi prin bot și vom actualiza versiunea și data din partea de sus a acestei pagini. Versiunea actuală este întotdeauna disponibilă la această adresă. Continuarea utilizării Serviciului după intrarea în vigoare a unei modificări constituie acceptarea Politicii actualizate.</p>
+
+<h2>11. Contact</h2>
+<ul>
+  <li>E-mail: <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a></li>
+  <li>Telegram: <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a></li>
+</ul>
+
+</div>
+
+<div class="footer">
+  <a href="#" id="cookieSettings" style="color:var(--muted)">Setări cookie</a> · <a href="ro/" style="color:var(--muted)">← Înapoi la pagina principală</a> · <a href="https://aii-crm.com/privacy-en.html" style="color:var(--muted)">Versiunea în engleză</a>
+</div>
+
+<div class="cookie-banner" id="cookieBanner">
+  <span>Folosim cookie-uri pentru analiza traficului pe site. Nimic nu se stochează fără acordul dumneavoastră — site-ul funcționează perfect și fără ele. Consultați <a href="privacy-ro.html">Politica de confidențialitate</a>.</span>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button>
+    <button class="cookie-btn cookie-btn-decline" id="cookieDecline">Doar necesare</button>
+  </div>
+</div>
+
+<script>
+/* ─── COOKIE CONSENT ─── */
+(function() {
+  var KEY = 'kai_cookie_consent';
+  var banner = document.getElementById('cookieBanner');
+  function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function write(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+  function show() { banner.classList.add('visible'); }
+  function hide() { banner.classList.remove('visible'); }
+  window.kaiConsent = read();
+  document.getElementById('cookieAccept').addEventListener('click', function() {
+    write('accepted'); window.kaiConsent = 'accepted'; hide();
+    if (window.kaiAnalyticsStart) window.kaiAnalyticsStart();
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function() {
+    write('declined'); window.kaiConsent = 'declined'; hide();
+    if (window.kaiAnalyticsStop) window.kaiAnalyticsStop();
+  });
+  var settings = document.getElementById('cookieSettings');
+  if (settings) settings.addEventListener('click', function(e) { e.preventDefault(); show(); });
+  if (!window.kaiConsent) setTimeout(show, 1000);
+})();
+</script>
+
+<!-- ─── FIRST-PARTY ANALYTICS ─── -->
+<script>
+(function(){
+  var V='', on=false;
+  function vid(){
+    try{
+      var m=document.cookie.match(/(?:^|; )kai_vid=([a-f0-9-]+)/);
+      var v=m?m[1]:(localStorage.getItem('kai_vid')||'');
+      if(!v){v=(crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random().toString(16).slice(2));}
+      localStorage.setItem('kai_vid',v);
+      document.cookie='kai_vid='+v+'; max-age=31536000; path=/; SameSite=Lax';
+      return v;
+    }catch(e){return '';}
+  }
+  function forget(){
+    try{localStorage.removeItem('kai_vid');}catch(e){}
+    try{document.cookie='kai_vid=; max-age=0; path=/; SameSite=Lax';}catch(e){}
+  }
+  var LANG='ro';
+  window.kaiTrack=function(ev){
+    if(!on) return;
+    try{navigator.sendBeacon('https://ai-crm-bot-production.up.railway.app/track',
+      JSON.stringify({vid:V,event:ev,path:location.pathname+location.hash,
+                      ref:document.referrer,lang:LANG}));}catch(e){}
+  };
+  window.kaiAnalyticsStart=function(){ if(on) return; V=vid(); on=true; kaiTrack('pageview'); };
+  window.kaiAnalyticsStop=function(){ on=false; V=''; forget(); };
+
+  if(window.kaiConsent==='accepted') window.kaiAnalyticsStart();
+  else if(window.kaiConsent==='declined') forget();
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('t.me/aiicrm_bot') !== -1) kaiTrack('tg_click');
+    else if (href.indexOf('/chat') !== -1 && href.indexOf('railway.app') !== -1) kaiTrack('webchat_open');
+  }, true);
+})();
+</script>
+
+</body>
+</html>

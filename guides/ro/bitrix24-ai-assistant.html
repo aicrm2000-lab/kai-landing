@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bitrix24 cu asistent AI: ce poți configura fără programator (beta) | Kai</title>
+<meta name="description" content="Cum conectezi Bitrix24 la asistentul AI Kai printr-un webhook de intrare, ce configurează (pipeline-uri, etape, câmpuri, tranzacții, contacte, companii, sarcini, analiză), ce nu face încă (roboți, widgeturi) și când ai totuși nevoie de un integrator.">
+<meta name="keywords" content="asistent AI pentru Bitrix24, configurare CRM cu AI, configurare CRM fără programator, pipeline și etape în CRM, câmpuri personalizate CRM, webhook de intrare, REST API CRM, automatizare CRM, roboți CRM, integrator CRM, chatbot pentru CRM, specificație tehnică CRM, analiza pâlniei de vânzări">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/ro/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/guides/it/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/guides/tr/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/guides/be/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="uk" href="https://aii-crm.com/guides/uk/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="ro" href="https://aii-crm.com/guides/ro/bitrix24-ai-assistant.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/bitrix24-ai-assistant.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/ro/bitrix24-ai-assistant.html">
+<meta property="og:title" content="Bitrix24 cu asistent AI: ce poți configura fără programator (beta)">
+<meta property="og:description" content="Granița sinceră a versiunii beta: structură, date, sarcini și analiză — da; roboți și widgeturi în Bitrix24 — încă nu. Conectarea, exemple de mesaje, când ai nevoie de un integrator.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-10-26">
+<meta property="article:modified_time" content="2026-10-26">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bitrix24 cu asistent AI: ce poți configura fără programator (beta)">
+<meta name="twitter:description" content="Granița sinceră a versiunii beta: structură, date, sarcini și analiză — da; roboți și widgeturi în Bitrix24 — încă nu. Conectarea, exemple de mesaje, când ai nevoie de un integrator.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/ro/" aria-label="Kai — pagina principală">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Navigare">
+      <a href="https://aii-crm.com/ro/">Site</a>
+      <a href="https://t.me/aiicrm_bot">Bot Telegram</a>
+      <a href="https://aii-crm.com/guides/en/bitrix24-ai-assistant.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Fir de navigare">
+  <a href="https://aii-crm.com/ro/">Kai</a> › <a href="https://aii-crm.com/guides/ro/">Ghiduri</a> › Asistent AI pentru Bitrix24
+</nav>
+
+<h1>Bitrix24 cu asistent AI: ce poți configura fără programator</h1>
+<p class="meta">Actualizat pe 26 octombrie 2026 · Echipa Kai · 6 min de citit</p>
+
+<p class="lead">Un asistent AI pentru Bitrix24 este un chat în care îți descrii în cuvinte procesul de vânzări, iar el creează pipeline-uri, etape, câmpuri, tranzacții și sarcini în portalul tău prin REST API-ul oficial. Pentru Bitrix24 aceasta e încă o versiune beta: structura, datele, sarcinile și analiza funcționează; roboții și widgeturile, încă nu. Ghidul trasează sincer granița: ce poți delega azi unui asistent precum Kai, ce e mai bine să faci manual în Bitrix24 și unde e încă nevoie de un integrator.</p>
+
+<section class="tldr" aria-label="Pe scurt">
+  <h2>Pe scurt</h2>
+  <ul>
+    <li>Conectarea se face printr-un webhook de intrare din Bitrix24, nu prin OAuth, ca la amoCRM și Kommo. URL-ul webhook-ului e o cheie de acces: tratează-l ca pe o parolă; revoci accesul ștergând webhook-ul.</li>
+    <li>Funcționează: pipeline-uri și etape, câmpuri, tranzacții, contacte, companii, sarcini cu termene, analiza pâlniei de vânzări, specificație în PDF.</li>
+    <li>Încă nu: roboți și alte automatizări în Bitrix24, widgeturi în fișa tranzacției.</li>
+    <li>Notificările despre evenimentele principale ajung în chatul Kai prin webhook-ul de ieșire al Bitrix24.</li>
+    <li>Dacă ai nevoie în primul rând de roboți, e mai corect să aștepți finalul versiunii beta sau să folosești amoCRM/Kommo, unde totul funcționează.</li>
+  </ul>
+</section>
+
+<h2>Ce înseamnă „beta” și de ce contează pentru Bitrix24</h2>
+<p>Bitrix24 e mai mult decât un CRM: are și sarcini, un drive, chaturi, procese de business și site-uri. Asistentul lucrează doar cu partea de CRM și cu sarcinile. „Beta” înseamnă că scenariul de bază funcționează (descrii procesul → primești un pipeline cu câmpuri, tranzacții și sarcini), dar o parte din ce face Kai pentru amoCRM și Kommo nu a fost încă portată, în primul rând automatizările din Bitrix24. Dacă ai nevoie de structură și de ordine în date, conectează-te acum; dacă ai nevoie de roboți, citește mai întâi secțiunea despre limite.</p>
+
+<h2>Conectare în 5 minute: webhook-ul de intrare</h2>
+<p>La amoCRM și Kommo, Kai se conectează prin OAuth 2.0 cu un singur clic și nu se transmit parole sau chei. Bitrix24 folosește un webhook de intrare pentru serviciile externe care nu sunt publicate în Market-ul său. Pașii:</p>
+<ol>
+  <li>În portalul tău Bitrix24 deschide secțiunea pentru dezvoltatori și creează un <strong>webhook de intrare</strong>; locul exact îl găsești în centrul de ajutor Bitrix24.</li>
+  <li>Dă webhook-ului permisiuni pentru <strong>CRM</strong> și <strong>sarcini</strong>. E minimul de care are nevoie asistentul; celelalte secțiuni pot rămâne nebifate.</li>
+  <li>Copiază URL-ul webhook-ului și trimite-l în chatul Kai: botul de Telegram <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> sau <a href="https://app.aii-crm.com/chat?lang=en">chatul web</a>.</li>
+  <li>Kai verifică accesul și îți arată ce vede: pipeline-uri, etape, câmpuri, numărul de tranzacții și de contacte. Acum îți poți descrie procesul.</li>
+</ol>
+<div class="note warn">URL-ul unui webhook de intrare deschide accesul la CRM fără login și parolă. Nu-l publica și nu-l trimite în chaturi de grup. Ca să revoci accesul, șterge webhook-ul din Bitrix24.</div>
+
+<h2>Ce configurează Kai deja în Bitrix24</h2>
+<ul>
+  <li><strong>Pipeline-uri și etape.</strong> Pipeline-uri de tranzacții care reflectă procesul tău: 5–7 etape de lucru, fiecare corespunzând unei acțiuni verificabile a managerului.</li>
+  <li><strong>Câmpuri.</strong> Câmpuri personalizate pentru tranzacții, contacte și companii: text, număr, listă, dată, bani. Liste pentru tot ce vei urmări în rapoarte.</li>
+  <li><strong>Tranzacții, contacte, companii.</strong> Create dintr-un mesaj text sau vocal: „adaugă tranzacția «Popescu, bucătărie» de 12.000, contactul Popescu, telefon…”.</li>
+  <li><strong>Sarcini cu termene.</strong> O sarcină cu termen pe o tranzacție, direct din chat, inclusiv câte una pentru fiecare tranzacție deschisă care nu are niciuna.</li>
+  <li><strong>Analiza pâlniei de vânzări.</strong> Tranzacții pe etape, unde se blochează, cele mai frecvente motive de pierdere.</li>
+  <li><strong>Specificație în PDF.</strong> Planul aprobat devine o specificație tehnică pentru echipa ta sau pentru integratorul care va construi roboții.</li>
+  <li><strong>Notificări despre evenimentele principale.</strong> Bitrix24 le trimite prin webhook-ul de ieșire, iar Kai le livrează în chat, de exemplu pe cea despre o tranzacție nouă.</li>
+</ul>
+<p>Fiecare acțiune trece prin REST API-ul oficial Bitrix24 și apare în portal ca și cum ar fi făcut-o manual un administrator, așa că tot ce s-a creat rămâne în portalul tău, indiferent dacă mai folosești sau nu asistentul.</p>
+
+<h2>Ce nu face încă Kai în Bitrix24 și ce să faci în schimb</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Ce trebuie făcut</th><th>Status în Kai</th><th>Ce faci acum</th></tr></thead>
+  <tbody>
+    <tr><td>Roboți pe etape: sarcini automate, schimbarea responsabilului, emailuri</td><td>Nu</td><td>Construiește-i în designerul de roboți Bitrix24, manual sau cu un integrator; specificația de la Kai îți dă lista de reguli.</td></tr>
+    <tr><td>Alte automatizări în Bitrix24 (procese de business, declanșatoare)</td><td>Nu</td><td>Tot acolo; descrie regulile în chatul Kai și trece-le în specificație.</td></tr>
+    <tr><td>Widgeturi și aplicații în fișa tranzacției</td><td>Nu</td><td>Din Bitrix24 Market.</td></tr>
+    <tr><td>Reguli „eveniment → acțiune” pe partea lui Kai, ca la amoCRM/Kommo</td><td>Doar notificări despre evenimentele principale</td><td>Pentru sarcini automate declanșate de evenimente, folosește roboții Bitrix24.</td></tr>
+    <tr><td>Telefonie, canale deschise, site-uri și magazine Bitrix24</td><td>Nu e treaba asistentului</td><td>Setările Bitrix24 sau un partener.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Concluzia sinceră: azi, Kai pentru Bitrix24 e un instrument de „structură și ordine”, nu unul de „automatizare”. Pentru amoCRM și Kommo e amândouă.</p>
+
+<h2>Când ai totuși nevoie de un integrator</h2>
+<ul>
+  <li>Ai nevoie de roboți și de procese de business; deocamdată aceasta e limita versiunii beta.</li>
+  <li>Legături cu programe de contabilitate, telefonie, depozit sau un site cu logică nestandard.</li>
+  <li>Migrare dintr-un alt CRM, cu istoricul conversațiilor, sarcini și fișiere.</li>
+  <li>Mai multe departamente cu procese și permisiuni diferite, care trebuie separate pe roluri.</li>
+</ul>
+<p>Kai ajută și aici: parcurge procesul împreună cu tine, pune întrebările pe care un integrator le pune la prima întâlnire și produce o specificație în PDF, ceea ce face discuția cu executantul mai scurtă și mai ieftină.</p>
+
+<h2>Cu Kai e un singur mesaj</h2>
+<p>După ce webhook-ul e conectat, o conversație cu Kai nu diferă de una despre amoCRM: descrii afacerea, el pune întrebări de clarificare cu variante de răspuns, arată un plan, creează totul prin API după ce confirmi și trimite un raport. Modificările ulterioare înseamnă doar încă un mesaj. Exemple:</p>
+<pre>Configurează în Bitrix24 un pipeline pentru vânzări B2B de echipamente: Solicitare nouă → Calificat → Ofertă trimisă → Negociere → Contract → Plătit. Câmpuri pe tranzacție: Sursă (listă), Buget (bani), Data ofertei (dată). Pentru fiecare tranzacție deschisă fără sarcină, creează o sarcină „următorul pas” cu termen mâine.</pre>
+<pre>Arată câte tranzacții stau pe fiecare etapă și unde sunt blocate de mai mult de două săptămâni.</pre>
+<pre>Pregătește pentru integrator o specificație în PDF: ce roboți sunt necesari la etapele „Ofertă trimisă” și „Contract” și ce trebuie să facă.</pre>
+<p>Planurile sunt aceleași ca pentru amoCRM și Kommo: Start €29/lună pentru un CRM; Pro €59/lună, până la trei CRM-uri, roluri și integrări; Max €119/lună, până la zece CRM-uri, prioritate și dezvoltări personalizate. Primele 3 zile sunt gratuite, fără card, cu aproximativ 25 de cereri pe funcțiile Start: suficient ca să-l testezi pe propriul portal. Kai vorbește engleză și rusă.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>Kai se conectează la Bitrix24 prin OAuth, ca la amoCRM?</h3>
+    <p>Nu. Bitrix24 se conectează printr-un webhook de intrare pe care îl creezi în portalul tău, cu permisiuni pentru CRM și sarcini. URL-ul webhook-ului e o cheie de acces, așa că tratează-l ca pe o parolă; ca să revoci accesul, șterge webhook-ul din Bitrix24. amoCRM și Kommo se conectează prin OAuth 2.0 cu un singur clic, fără chei.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Poate Kai să configureze roboți în Bitrix24?</h3>
+    <p>Încă nu. Roboții, alte automatizări și widgeturile din Bitrix24 nu sunt create; aceasta e principala limită a versiunii beta. Kai configurează structura, datele și sarcinile și produce o specificație în PDF, iar roboții îi construiești în designerul Bitrix24, singur sau cu un integrator.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Voi primi notificări despre evenimentele din Bitrix24?</h3>
+    <p>Da, despre evenimentele principale: Bitrix24 le trimite prin webhook-ul de ieșire, iar Kai le livrează în chat. Regulile complete „eveniment → acțiune” pe partea lui Kai, ca la amoCRM și Kommo, nu sunt încă disponibile pentru Bitrix24.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Să conectez Bitrix24 la Kai acum sau să aștept?</h3>
+    <p>Dacă ai nevoie de structură (pipeline-uri, etape, câmpuri), ordine în date, sarcini și analiză, conectează-l acum: funcționează, iar 3 zile gratuite fără card ajung ca să-l testezi pe portalul tău. Dacă ai nevoie în primul rând de automatizări în Bitrix24, e mai corect să aștepți finalul versiunii beta sau să folosești amoCRM/Kommo, unde regulile funcționează deja.</p>
+  </div>
+</div>
+
+<h2>Ce urmează</h2>
+<p>Creează un webhook de intrare cu permisiuni pentru CRM și sarcini, trimite URL-ul lui Kai și cere-i să-ți arate ce vede. Dacă problema ta e structura și ordinea în date, o rezolvi într-o seară. Dacă sunt roboții, recitește mai întâi tabelul cu limite.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Încearcă în Telegram</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Deschide chatul web</a>
+</div>
+
+<p class="author">Autor: Echipa Kai · Actualizat pe <time datetime="2026-10-26">26 octombrie 2026</time> · Capacitățile și limitele versiunii beta sunt descrise la data publicării; statusul actual ți-l spune Kai în chat.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/ro/">Acasă</a> · <a href="https://aii-crm.com/privacy-ro.html">Confidențialitate</a> · <a href="https://aii-crm.com/terms-ro.html">Termeni</a> · <a href="https://aii-crm.com/guides/en/bitrix24-ai-assistant.html">Versiunea în engleză</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/ro/bitrix24-ai-assistant.html#article",
+      "headline": "Bitrix24 cu asistent AI: ce poți configura fără programator",
+      "description": "Cum conectezi Bitrix24 la asistentul AI Kai printr-un webhook de intrare, ce configurează (pipeline-uri, etape, câmpuri, tranzacții, contacte, companii, sarcini, analiză), ce nu face încă (roboți, widgeturi) și când ai totuși nevoie de un integrator.",
+      "inLanguage": "ro",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "mainEntityOfPage": "https://aii-crm.com/guides/ro/bitrix24-ai-assistant.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/ro/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/ro/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kai se conectează la Bitrix24 prin OAuth, ca la amoCRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nu. Bitrix24 se conectează printr-un webhook de intrare pe care îl creezi în portalul tău, cu permisiuni pentru CRM și sarcini. URL-ul webhook-ului e o cheie de acces, așa că tratează-l ca pe o parolă; ca să revoci accesul, șterge webhook-ul din Bitrix24. amoCRM și Kommo se conectează prin OAuth 2.0 cu un singur clic, fără chei."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Poate Kai să configureze roboți în Bitrix24?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Încă nu. Roboții, alte automatizări și widgeturile din Bitrix24 nu sunt create; aceasta e principala limită a versiunii beta. Kai configurează structura, datele și sarcinile și produce o specificație în PDF, iar roboții îi construiești în designerul Bitrix24, singur sau cu un integrator."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Voi primi notificări despre evenimentele din Bitrix24?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da, despre evenimentele principale: Bitrix24 le trimite prin webhook-ul de ieșire, iar Kai le livrează în chat. Regulile complete „eveniment → acțiune” pe partea lui Kai, ca la amoCRM și Kommo, nu sunt încă disponibile pentru Bitrix24."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Să conectez Bitrix24 la Kai acum sau să aștept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dacă ai nevoie de structură (pipeline-uri, etape, câmpuri), ordine în date, sarcini și analiză, conectează-l acum: funcționează, iar 3 zile gratuite fără card ajung ca să-l testezi pe portalul tău. Dacă ai nevoie în primul rând de automatizări în Bitrix24, e mai corect să aștepți finalul versiunii beta sau să folosești amoCRM/Kommo, unde regulile funcționează deja."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/ro/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ghiduri",
+          "item": "https://aii-crm.com/guides/ro/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Bitrix24 cu asistent AI: ce poți configura fără programator",
+          "item": "https://aii-crm.com/guides/ro/bitrix24-ai-assistant.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automatizări în Kommo fără programator: ghid 2026</title>
+<meta name="description" content="Digital Pipeline și Salesbot în Kommo: ce poți configura singur, 3 scenarii pas cu pas, limitele și cum face Kai același lucru dintr-un singur mesaj în chat.">
+<meta name="keywords" content="Kommo Digital Pipeline vs Salesbot: care e diferența și în ce plan e inclus, Cum trimit o notificare în Telegram când un lead e câștigat în Kommo fără programator">
+<link rel="canonical" href="https://aii-crm.com/guides/ro/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/guides/it/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/guides/tr/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/guides/be/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="uk" href="https://aii-crm.com/guides/uk/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="ro" href="https://aii-crm.com/guides/ro/kommo-automation-no-developer.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/kommo-automation-no-developer.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:title" content="Automatizări în Kommo fără programator: ghid 2026">
+<meta property="og:description" content="Digital Pipeline și Salesbot: ce poți configura singur, trei scenarii pas cu pas, limitele și cum face Kai același lucru dintr-un singur mesaj în chat.">
+<meta property="og:url" content="https://aii-crm.com/guides/ro/kommo-automation-no-developer.html">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.hdr{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.hdr-in{max-width:760px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;flex:none}
+.hdr nav{margin-left:auto;display:flex;gap:16px;font-size:14px}
+.hdr nav a{color:var(--muted);text-decoration:none}
+.hdr nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:24px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:16px}
+.crumbs a{color:var(--muted);text-decoration:none}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.2;margin:0 0 12px;font-weight:800;letter-spacing:-.01em}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.lead{font-size:19px;color:var(--ink)}
+h2{color:var(--ink);font-size:24px;margin:40px 0 12px;font-weight:700;line-height:1.25}
+h3{color:var(--ink);font-size:18px;margin:24px 0 8px;font-weight:700}
+p{margin:0 0 14px}
+ol,ul{padding-left:22px;margin:0 0 14px}
+li{margin:6px 0}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin:20px 0}
+.tldr h2{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-2)}
+.tldr ul{margin:0}
+code,.path,.msg{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.path{font-size:14.5px;color:var(--ink);background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px}
+.msg{background:var(--bg-1);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;margin:14px 0;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word}
+.msg small{display:block;font-family:'Manrope',system-ui,sans-serif;color:var(--muted);font-size:13px;margin-bottom:6px}
+.tbl{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15px}
+th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+.faq h3{margin-top:22px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px}
+.btn-p{background:var(--accent);color:#fff}
+.btn-s{border:1px solid var(--border);color:var(--ink);background:var(--bg-2)}
+.note{color:var(--muted);font-size:15px}
+.author{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/ro/kommo-automation-no-developer.html#article",
+      "headline": "Automatizări în Kommo fără programator (2026)",
+      "description": "Digital Pipeline și Salesbot în Kommo: ce poți configura singur, trei scenarii pas cu pas, limitele și cum face Kai același lucru dintr-un singur mesaj în chat.",
+      "datePublished": "2026-09-24",
+      "dateModified": "2026-09-24",
+      "inLanguage": "ro",
+      "mainEntityOfPage": "https://aii-crm.com/guides/ro/kommo-automation-no-developer.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/ro/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/ro/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Am nevoie de un programator ca să configurez Digital Pipeline în Kommo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nu. Declanșatoarele Digital Pipeline și fluxurile Salesbot se construiesc din clicuri în interfața Kommo. Un programator e necesar doar pentru widgeturi personalizate sau webhook-uri complexe către sisteme externe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Care e diferența dintre Salesbot și declanșatoarele Digital Pipeline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un declanșator este o singură acțiune lansată de un eveniment de etapă: sarcină, etichetă, email, webhook. Salesbot este un flux în mai mulți pași, cu mesaje către client, pauze, condiții și aceleași acțiuni în interior. Salesbot nu e inclus în planul Base."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are Kommo un declanșator „clientul nu a răspuns”?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nu ca declanșator separat. Tăcerea se tratează cu un pas Pause în Salesbot (așteptarea unui mesaj, cu un temporizator de până la 8.760 de ore) sau cu o sarcină amânată în Digital Pipeline: In 1 day, In 3 days, End of the week."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cum trimit o notificare în Telegram când un lead e câștigat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nativ: Send internal message (doar pentru utilizatorii Kommo), Send webhook către propriul bot sau către un conector, ori un widget din Kommo Marketplace. Kai conectează un canal lead → Telegram pe baza unei descrieri în chat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Funcționează la fel și în amoCRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da, Kommo este versiunea internațională a amoCRM. În amoCRM calea este Leads (Сделки) → Setup (Настроить) → Add trigger sub etapă → Create task. Kai lucrează cu ambele CRM-uri."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Înlocuiește Kai un integrator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pentru reguli standard — sarcini, etichete, mutări între etape, notificări și integrări cu Telegram, Slack sau Google Sheets — da. Pentru logică complexă, cu widgeturi personalizate și multe sisteme externe, un integrator rămâne alegerea corectă."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/ro/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ghiduri",
+          "item": "https://aii-crm.com/guides/ro/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Automatizări în Kommo fără programator",
+          "item": "https://aii-crm.com/guides/ro/kommo-automation-no-developer.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="https://aii-crm.com/ro/" aria-label="Kai — pagina principală">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav>
+      <a href="https://aii-crm.com/ro/">Site</a>
+      <a href="https://t.me/aiicrm_bot">Bot Telegram</a>
+      <a href="https://aii-crm.com/guides/en/kommo-automation-no-developer.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Fir de navigare"><a href="https://aii-crm.com/ro/">Kai</a> › <a href="https://aii-crm.com/guides/ro/">Ghiduri</a> › Automatizări Kommo</nav>
+
+<h1>Automatizări în Kommo fără programator (2026)</h1>
+<p class="meta">Echipa Kai · Actualizat pe 24 septembrie 2026</p>
+
+<p class="lead">Majoritatea automatizărilor de zi cu zi din Kommo nu cer programator: în Digital Pipeline atașezi un declanșator unei etape (sarcină, etichetă, schimbare de etapă, email, webhook), iar în Salesbot asamblezi un flux din blocuri gata făcute. Cele mai frecvente trei scenarii — o sarcină la schimbarea etapei, o reamintire când clientul tace și o notificare în Telegram pentru un lead câștigat — durează câte 10–30 de minute cu instrumentele integrate. Dacă nu vrei să înveți constructorul, descrie regula în cuvinte simple, iar Kai o configurează prin API-ul oficial Kommo.</p>
+
+<div class="tldr">
+<h2>Pe scurt</h2>
+<ul>
+<li>Digital Pipeline se află în <span class="path">Leads → Automate</span>; fiecare etapă oferă 12 tipuri de declanșatoare și 5 întârzieri: Immediately, End of the day, In 1 day, In 3 days, End of the week.</li>
+<li>Salesbot: constructor de fluxuri, fără limită de pași, temporizator Pause de până la 8.760 de ore; pornește la un mesaj nou, la intrarea unui lead într-o etapă, la schimbarea responsabilului sau după un program. Nu e inclus în planul Base.</li>
+<li>Nu există o acțiune nativă „postează într-un grup de Telegram”: ai la dispoziție un mesaj intern către un coleg, un webhook sau un widget din Marketplace.</li>
+<li>Un integrator are nevoie de obicei de 3–5 săptămâni. Kai: un singur mesaj în chat, de la €29/lună, 3 zile gratuit, fără card.</li>
+</ul>
+</div>
+
+<h2>Ce sunt Digital Pipeline și Salesbot</h2>
+<p><strong>Digital Pipeline</strong> înseamnă automatizări legate de etapele pipeline-ului. Sub fiecare etapă de pe tablă agăți o regulă: „când un lead ajunge aici, fă X”. O regulă poate aștepta, poate verifica o condiție (etichetă, responsabil, valoarea unui câmp) și poate executa o acțiune.</p>
+<p><strong>Salesbot</strong> este un constructor de fluxuri în mai mulți pași. Face tot ce fac declanșatoarele și, în plus, vorbește cu clientul în chat: mesaje cu butoane, așteptarea unui răspuns, ramificații, sarcini, webhook-uri. Pornește ca declanșator din Digital Pipeline sau la evenimente din chat. Denumirile din meniu de mai jos urmează ajutorul oficial Kommo.</p>
+
+<h2>Ce poți configura singur</h2>
+<p>Declanșatoarele Digital Pipeline, conform ajutorului oficial: Salesbot, Add task, Create lead, Send email, Send webhook, Change lead stage, Add tags, Complete tasks, Generate form, Change lead's user, Change field, Delete files. Fiecare declanșator acceptă condiții după utilizatorul responsabil, etichete și câmpuri; bifează <em>Apply the trigger to all leads already in this stage</em>, altfel regula se aplică doar lead-urilor noi.</p>
+<p>Blocurile Salesbot se împart în pași de conversație (Message, Condition, Pause, Validation, Send internal message) și acțiuni (Add task, Change lead status, Manage tags, Set field, Change responsible user, Send email, Send webhook, Widget, Round Robin). Cu șabloanele începi mai ușor.</p>
+
+<h2>Scenariul 1. O sarcină pentru manager la schimbarea etapei</h2>
+<h3>Manual, în Kommo</h3>
+<ol>
+<li>Deschide <span class="path">Leads → Automate</span>.</li>
+<li>Sub etapa de care ai nevoie, apasă „+” → <span class="path">Add trigger → Add task</span>.</li>
+<li>Completează textul sarcinii, tipul, utilizatorul responsabil și termenul (Immediately, End of the day, In 1 day, In 3 days, End of the week).</li>
+<li>Adaugă o condiție dacă e nevoie (de exemplu, doar lead-urile cu eticheta „Fierbinte”) și salvează. Testează mai întâi pe un singur lead.</li>
+</ol>
+<p class="note">Același lucru în amoCRM: <span class="path">Leads (Сделки) → Setup (Настроить)</span> → „Add trigger” sub etapă → „Create task”.</p>
+<h3>Cu Kai</h3>
+<div class="msg"><small>Mesaj în botul de Telegram sau în chatul web</small>Când un lead trece în etapa „Ofertă trimisă”, creează o sarcină pentru responsabil: „Verifică dacă clientul a primit oferta”, cu termen până la sfârșitul zilei. Doar pentru lead-urile cu eticheta „Fierbinte”.</div>
+<p>Kai întreabă dacă etapa se numește altfel, îți arată planul și creează declanșatorul prin API; raportul rămâne în istoricul chatului.</p>
+
+<h2>Scenariul 2. O reamintire când clientul tace</h2>
+<h3>Manual, în Kommo</h3>
+<p>Kommo nu are un declanșator dedicat „clientul nu a răspuns”, așa că există două căi.</p>
+<ol>
+<li><strong>Simplu, fără Salesbot.</strong> Pe etapa „Ofertă trimisă” adaugă un declanșator Add task cu termen In 1 day: „Niciun răspuns — sună clientul”. Dacă clientul răspunde mai devreme, managerul închide sarcina.</li>
+<li><strong>Precis, cu Salesbot.</strong> <span class="path">Settings → Communication tools → Salesbots → Create a new bot</span>. Lanțul: Message (textul de follow-up) → Pause, cu așteptarea unui mesaj primit și un temporizator (de exemplu, 24 de ore) → Add task pentru manager. Apoi adaugă un declanșator Salesbot pe etapă în Digital Pipeline și testează ramificațiile într-un chat de test.</li>
+</ol>
+<h3>Cu Kai</h3>
+<div class="msg"><small>Mesaj către Kai</small>Dacă un lead stă în „Ofertă trimisă” mai mult de o zi fără activitate, creează o sarcină pentru responsabil „Clientul tace, sună-l înapoi” și scrie-mi în Telegram.</div>
+<p>Kai configurează sarcina și notificarea și urmărește pipeline-ul 24/7, semnalând în raportul zilnic lead-urile blocate. Un flux de conversație cu clientul rămâne teritoriul Salesbot: Kai schițează pașii, tu asamblezi blocurile.</p>
+
+<h2>Scenariul 3. O notificare în Telegram când un lead e câștigat</h2>
+<h3>Manual, în Kommo</h3>
+<ol>
+<li><strong>În interiorul Kommo.</strong> Un Salesbot lansat când lead-ul intră în Closed – won, cu un pas Send internal message. Mesajul îl vede doar utilizatorul sau echipa selectată, în Kommo, nu într-un chat extern de Telegram.</li>
+<li><strong>Prin webhook.</strong> <span class="path">Add trigger → Send webhook</span> pe etapa de câștig; propriul tău bot de Telegram sau un conector (Albato, ApiX-Drive, Make, n8n, Zapier) formatează mesajul pentru grup.</li>
+<li><strong>Printr-un widget.</strong> Kommo Marketplace listează widgeturi terțe pentru notificări în Telegram; prețul îl stabilește fiecare dezvoltator.</li>
+</ol>
+<h3>Cu Kai</h3>
+<div class="msg"><small>Mesaj către Kai</small>Configurează notificările: când un lead e câștigat, postează în grupul de Telegram al echipei de vânzări numele lead-ului, suma și responsabilul.</div>
+<p>Kai conectează integrări lead → Telegram, Slack, Google Sheets și webhook fără un conector intermediar și nu stochează datele lead-urilor.</p>
+
+<h2>Limite pe care le descoperi mai târziu</h2>
+<ul>
+<li>Salesbot nu e inclus în planul Base (conform paginii de prețuri Kommo la momentul scrierii); Digital Pipeline e inclus în toate planurile.</li>
+<li>Întârzierile declanșatoarelor vin dintr-un set fix; „peste 2 ore” cere o pauză în Salesbot.</li>
+<li>Declanșatoarele reacționează la evenimentele etapei, nu la comportamentul clientului. Condițiile acoperă doar utilizatorul responsabil, etichetele și câmpurile.</li>
+<li>Fără bifa „apply to leads already in this stage”, regula ignoră lead-urile existente — motivul obișnuit pentru „nu se întâmplă nimic”.</li>
+<li>După 5–7 declanșatoare nimeni nu mai ține minte ce e agățat și unde. Auditul pipeline-ului din Kai există tocmai ca să găsească aceste suprapuneri.</li>
+</ul>
+
+<h2>Comparație: singur, integrator, conector, Kai</h2>
+<div class="tbl">
+<table>
+<thead><tr><th></th><th>Singur în Kommo</th><th>Integrator</th><th>Conector no-code</th><th>Kai</th></tr></thead>
+<tbody>
+<tr><td>Timp</td><td>10–30 min per scenariu</td><td>De obicei 3–5 săptămâni</td><td>Ore pentru fiecare legătură</td><td>Minute per scenariu</td></tr>
+<tr><td>Cost</td><td>Inclus în planul Kommo</td><td>Onorariu pe proiect, variază după piață</td><td>Abonament la conector</td><td>De la €29/lună</td></tr>
+<tr><td>Ce trebuie să știi</td><td>Să înveți constructorul</td><td>Să scrii un brief</td><td>Să înțelegi webhook-urile și câmpurile</td><td>Să descrii afacerea în cuvinte</td></tr>
+<tr><td>Cine se ocupă de întreținere</td><td>Tu</td><td>Integratorul, prin contract</td><td>Tu</td><td>Kai monitorizează 24/7 și raportează în chat</td></tr>
+<tr><td>Potrivit pentru</td><td>1–3 reguli simple</td><td>Logică complexă, multe sisteme</td><td>Legături între servicii</td><td>Reguli și integrări standard</td></tr>
+</tbody>
+</table>
+</div>
+
+<section class="faq">
+<h2>FAQ</h2>
+<h3>Am nevoie de un programator ca să configurez Digital Pipeline în Kommo?</h3>
+<p>Nu. Declanșatoarele Digital Pipeline și fluxurile Salesbot se construiesc din clicuri în interfața Kommo. Un programator e necesar doar pentru widgeturi personalizate sau webhook-uri complexe către sisteme externe.</p>
+<h3>Care e diferența dintre Salesbot și declanșatoarele Digital Pipeline?</h3>
+<p>Un declanșator este o singură acțiune lansată de un eveniment de etapă: sarcină, etichetă, email, webhook. Salesbot este un flux în mai mulți pași, cu mesaje către client, pauze, condiții și aceleași acțiuni în interior. Salesbot nu e inclus în planul Base.</p>
+<h3>Are Kommo un declanșator „clientul nu a răspuns”?</h3>
+<p>Nu ca declanșator separat. Tăcerea se tratează cu un pas Pause în Salesbot (așteptarea unui mesaj, cu un temporizator de până la 8.760 de ore) sau cu o sarcină amânată în Digital Pipeline: In 1 day, In 3 days, End of the week.</p>
+<h3>Cum trimit o notificare în Telegram când un lead e câștigat?</h3>
+<p>Nativ: Send internal message (doar pentru utilizatorii Kommo), Send webhook către propriul bot sau către un conector, ori un widget din Kommo Marketplace. Kai conectează un canal lead → Telegram pe baza unei descrieri în chat.</p>
+<h3>Funcționează la fel și în amoCRM?</h3>
+<p>Da, Kommo este versiunea internațională a amoCRM. În amoCRM calea este Leads (Сделки) → Setup (Настроить) → „Add trigger” sub etapă → „Create task”. Kai lucrează cu ambele CRM-uri, plus Bitrix24 și CRM-uri personalizate cu documentație API.</p>
+<h3>Înlocuiește Kai un integrator?</h3>
+<p>Pentru reguli standard — sarcini, etichete, mutări între etape, notificări și integrări cu Telegram, Slack sau Google Sheets — da. Pentru logică complexă, cu widgeturi personalizate și multe sisteme externe, un integrator rămâne alegerea corectă; Kai îți pregătește măcar brief-ul în PDF.</p>
+</section>
+
+<h2>Ce urmează</h2>
+<p>Conectează Kommo la Kai cu un singur clic prin OAuth (widgetul e listat în Kommo Marketplace, fără chei API) și descrie-ți prima regulă în cuvintele tale. Trei zile gratuit, fără card.</p>
+<div class="cta">
+<a class="btn btn-p" href="https://t.me/aiicrm_bot">Încearcă în Telegram</a>
+<a class="btn btn-s" href="https://app.aii-crm.com/chat?lang=en">Deschide chatul web</a>
+</div>
+
+<p class="author">Autor: Echipa Kai · Actualizat pe 24.09.2026 · <a href="https://aii-crm.com/guides/kommo-automation-no-developer.html" hreflang="ru">Citește în rusă</a></p>
+</article>
+</main>
+</body>
+</html>

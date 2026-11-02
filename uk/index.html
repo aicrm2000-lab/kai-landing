@@ -3948,9 +3948,9 @@ html.ny .chat-launcher::before {
       <ul>
         <li><a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Telegram</a></li>
         <li><a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Підтримка</a></li>
-        <li><a href="../guides/en/">Гайди: amoCRM, Kommo, Bitrix24, власна CRM</a></li>
+        <li><a href="../guides/uk/">Гайди: amoCRM, Kommo, Bitrix24, власна CRM</a></li>
         <li><a href="https://app.aii-crm.com/docs/custom-crm?lang=en" target="_blank" rel="noopener">Власна CRM через API: документація</a></li>
-        <li><a href="../cases/en/">Приклади: було → стало</a></li>
+        <li><a href="../cases/uk/">Приклади: було → стало</a></li>
       </ul>
     </div>
   </div>
@@ -3958,9 +3958,9 @@ html.ny .chat-launcher::before {
     <div class="footer-bottom">
       <span data-ny-en="© 2026 Kai. Налаштування CRM без програмістів і без мішури." data-hw-en="© 2026 Kai. Налаштування CRM без програмістів і без нечисті.">© 2026 Kai. Налаштування CRM без програмістів.</span>
       <div style="display:flex;flex-wrap:wrap;gap:8px 20px;">
-        <a href="../privacy-en.html" class="privacy-link">Конфіденційність</a>
-        <a href="../terms-en.html">Умови використання</a>
-        <a href="../refund-en.html" class="refund-link">Повернення коштів</a>
+        <a href="../privacy-uk.html" class="privacy-link">Конфіденційність</a>
+        <a href="../terms-uk.html">Умови використання</a>
+        <a href="../refund-uk.html" class="refund-link">Повернення коштів</a>
         <a href="#" id="cookieSettings">Налаштування cookie</a>
       </div>
     </div>
@@ -3969,7 +3969,7 @@ html.ny .chat-launcher::before {
 
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner">
-  <span data-ny-en="Святкове печиво: cookie лише для аналітики сайту. Без твоєї згоди нічого не зберігається — сайт працює і без них. Детальніше в <a href='../privacy-en.html'>Політиці конфіденційності</a>." data-hw-en="Геловінські смаколики: cookie лише для аналітики сайту. Без твоєї згоди нічого не зберігається — сайт працює і без них. Детальніше в <a href='../privacy-en.html'>Політиці конфіденційності</a>.">Ми використовуємо cookie для аналітики сайту. Без твоєї згоди нічого не зберігається — сайт працює і без них. Детальніше в <a href='../privacy-en.html'>Політиці конфіденційності</a>.</span>
+  <span data-ny-en="Святкове печиво: cookie лише для аналітики сайту. Без твоєї згоди нічого не зберігається — сайт працює і без них. Детальніше в <a href='../privacy-uk.html'>Політиці конфіденційності</a>." data-hw-en="Геловінські смаколики: cookie лише для аналітики сайту. Без твоєї згоди нічого не зберігається — сайт працює і без них. Детальніше в <a href='../privacy-uk.html'>Політиці конфіденційності</a>.">Ми використовуємо cookie для аналітики сайту. Без твоєї згоди нічого не зберігається — сайт працює і без них. Детальніше в <a href='../privacy-uk.html'>Політиці конфіденційності</a>.</span>
   <div class="cookie-btns">
     <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Прийняти</button>
     <button class="cookie-btn cookie-btn-decline" id="cookieDecline">Лише необхідні</button>
@@ -4706,11 +4706,11 @@ function applyLang(lang) {
     if (h != null) el.href = h;
   });
   var pl = document.querySelector('.privacy-link');
-  if (pl) pl.href = lang === 'en' ? '../privacy-en.html' : '../privacy-en.html';
+  if (pl) pl.href = lang === 'en' ? '../privacy-uk.html' : '../privacy-uk.html';
   var tl = document.querySelector('a[href*="terms"]');
-  if (tl) tl.href = lang === 'en' ? '../terms-en.html' : '../terms-en.html';
+  if (tl) tl.href = lang === 'en' ? '../terms-uk.html' : '../terms-uk.html';
   var rl = document.querySelector('.refund-link');
-  if (rl) rl.href = lang === 'en' ? '../refund-en.html' : '../refund-en.html';
+  if (rl) rl.href = lang === 'en' ? '../refund-uk.html' : '../refund-uk.html';
   document.querySelectorAll('.chat-link').forEach(function(cl) {
     cl.href = 'https://app.aii-crm.com/chat?lang=' + (lang === 'en' ? 'en' : 'ru');
   });
