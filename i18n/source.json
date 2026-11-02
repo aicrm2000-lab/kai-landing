@@ -1,0 +1,3002 @@
+{
+ "_note": "Keys to translate: every item's 'en' (the 'ru' is only context). Keep HTML tags, entities and attribute values exactly as in 'en'. Keep numbers, prices, product names (Kai, amoCRM, Kommo, Bitrix24, Telegram, OAuth, API, PDF, Excel).",
+ "items": [
+  {
+   "en": "Features",
+   "ru": "Возможности",
+   "where": "data-en"
+  },
+  {
+   "en": "How it works",
+   "ru": "Как работает",
+   "where": "data-en"
+  },
+  {
+   "en": "API",
+   "ru": "API",
+   "where": "data-en"
+  },
+  {
+   "en": "Plans",
+   "ru": "Тарифы",
+   "where": "data-en"
+  },
+  {
+   "en": "Web chat",
+   "ru": "Веб-чат",
+   "where": "data-en"
+  },
+  {
+   "en": "Support",
+   "ru": "Поддержка",
+   "where": "data-en"
+  },
+  {
+   "en": "Call Kai",
+   "ru": "Позвонить Kai",
+   "where": "data-en-title"
+  },
+  {
+   "en": "Connect CRM",
+   "ru": "Подключить CRM",
+   "where": "data-en"
+  },
+  {
+   "en": "Sign in",
+   "ru": "Войти",
+   "where": "data-en"
+  },
+  {
+   "en": "Sign up",
+   "ru": "Регистрация",
+   "where": "data-en"
+  },
+  {
+   "en": "My account",
+   "ru": "Личный кабинет",
+   "where": "data-en"
+  },
+  {
+   "en": "“I’ll call back” — loss reason #1",
+   "ru": "«я перезвоню» — причина отказа №1",
+   "where": "data-en"
+  },
+  {
+   "en": "loss reasons live in the CRM — you see where deals die",
+   "ru": "причины отказа в CRM — видно, где теряете",
+   "where": "data-en"
+  },
+  {
+   "en": "“I’ll log it later” = never",
+   "ru": "«потом занесу в CRM» = никогда",
+   "where": "data-en"
+  },
+  {
+   "en": "a deal is created from a message or a voice note",
+   "ru": "сделка создаётся из сообщения или голосового",
+   "where": "data-en"
+  },
+  {
+   "en": "a spreadsheet is not a CRM, sorry",
+   "ru": "экселька — это не CRM, прости",
+   "where": "data-en"
+  },
+  {
+   "en": "I import your Excel data into the CRM",
+   "ru": "базу из Excel переношу в CRM сам",
+   "where": "data-en"
+  },
+  {
+   "en": "type a word — the logo will spell it",
+   "ru": "напечатайте слово — логотип его соберёт",
+   "where": "data-en"
+  },
+  {
+   "en": "tap the logo",
+   "ru": "нажмите на логотип",
+   "where": "data-en"
+  },
+  {
+   "en": "ghost deals: haunting the pipeline since last year",
+   "ru": "сделки-призраки: висят в воронке с прошлого года",
+   "where": "data-en"
+  },
+  {
+   "en": "rule “no movement for 14 days → task for the rep”, no séance needed",
+   "ru": "правило «нет движения 14 дней → задача менеджеру», без спиритизма",
+   "where": "data-en"
+  },
+  {
+   "en": "a client base like a haunted house: everyone’s heard of it, nobody’s seen it",
+   "ru": "база клиентов как дом с привидениями: все слышали, никто не видел",
+   "where": "data-en"
+  },
+  {
+   "en": "Kai shows who is really in the CRM and what happens to them",
+   "ru": "Kai показывает, кто реально в CRM и что с ними происходит",
+   "where": "data-en"
+  },
+  {
+   "en": "zombie leads: rising from “lost” every quarter",
+   "ru": "зомби-лиды: каждый квартал встают из «отказа»",
+   "where": "data-en"
+  },
+  {
+   "en": "every deal gets a source and a loss reason — nothing left to rise",
+   "ru": "у каждой сделки источник и причина отказа — некому восставать",
+   "where": "data-en"
+  },
+  {
+   "en": "the vampire rep: sucks hours into reports",
+   "ru": "менеджер-вампир: высасывает время на отчёты",
+   "where": "data-en"
+  },
+  {
+   "en": "a pipeline report in one chat message, even at midnight",
+   "ru": "отчёт по воронке — одной фразой в чате, хоть в полночь",
+   "where": "data-en"
+  },
+  {
+   "en": "scarier than Halloween: a pipeline with no stages",
+   "ru": "страшнее Хеллоуина только воронка без этапов",
+   "where": "data-en"
+  },
+  {
+   "en": "stages for your process in one message",
+   "ru": "этапы под твой процесс за одно сообщение",
+   "where": "data-en"
+  },
+  {
+   "en": "cobwebs in the CRM: fields nobody has filled since 2023",
+   "ru": "паутина в CRM: поля, которые никто не заполняет с 2023",
+   "where": "data-en"
+  },
+  {
+   "en": "Kai finds the empty fields and clears the clutter",
+   "ru": "Kai находит пустые поля и убирает лишнее",
+   "where": "data-en"
+  },
+  {
+   "en": "year-end review: the CRM has numbers, not answers",
+   "ru": "итоги года: цифры в CRM есть, выводов нет",
+   "where": "data-en"
+  },
+  {
+   "en": "a year’s pipeline report in one chat message",
+   "ru": "отчёт по воронке за год — одной фразой в чате",
+   "where": "data-en"
+  },
+  {
+   "en": "“we’ll close it after the holidays” deals hang till March",
+   "ru": "сделки «закроем после праздников» висят до марта",
+   "where": "data-en"
+  },
+  {
+   "en": "the rule “no movement for 14 days → task for the rep” takes no holidays",
+   "ru": "правило «нет движения 14 дней → задача менеджеру» не уходит на каникулы",
+   "where": "data-en"
+  },
+  {
+   "en": "a new pipeline from January 1st — like a gym membership",
+   "ru": "новая воронка с 1 января — как абонемент в зал",
+   "where": "data-en"
+  },
+  {
+   "en": "stages for your process in one message, no membership needed",
+   "ru": "этапы под твой процесс за одно сообщение, без абонемента",
+   "where": "data-en"
+  },
+  {
+   "en": "leads from the office party live in phone notes",
+   "ru": "лиды с корпоративов — в заметках телефона",
+   "where": "data-en"
+  },
+  {
+   "en": "a contact and a deal created from a message or a voice note",
+   "ru": "контакт и сделка создаются из сообщения или голосового",
+   "where": "data-en"
+  },
+  {
+   "en": "the team’s on holiday, nobody’s left to set up the CRM",
+   "ru": "менеджеры на каникулах, CRM настраивать некому",
+   "where": "data-en"
+  },
+  {
+   "en": "Kai is around on the 31st and the 1st — in browser and Telegram",
+   "ru": "Kai на связи и 31-го, и 1-го — в браузере и Telegram",
+   "where": "data-en"
+  },
+  {
+   "en": "CRM fields like a string of lights: half of them dead",
+   "ru": "поля в CRM как гирлянда: половина не горит",
+   "where": "data-en"
+  },
+  {
+   "en": "a lead with no source — a receipt with no total",
+   "ru": "лид без источника — как чек без суммы",
+   "where": "data-en"
+  },
+  {
+   "en": "lead sources set up for you",
+   "ru": "источники лидов заведу за тебя",
+   "where": "data-en"
+  },
+  {
+   "en": "a deal with no task — a deal with no future",
+   "ru": "сделка без задачи — сделка без будущего",
+   "where": "data-en"
+  },
+  {
+   "en": "an auto-task at every pipeline stage",
+   "ru": "автозадача на каждом этапе воронки",
+   "where": "data-en"
+  },
+  {
+   "en": "the rep quit — the data stayed",
+   "ru": "менеджер ушёл — база осталась",
+   "where": "data-en"
+  },
+  {
+   "en": "deal health: what was dropped, what is next",
+   "ru": "здоровье сделки: что брошено и что дальше",
+   "where": "data-en"
+  },
+  {
+   "en": "“the client is thinking” — where deals live forever",
+   "ru": "«клиент думает» — этап, где сделки живут вечно",
+   "where": "data-en"
+  },
+  {
+   "en": "the audit shows where deals get stuck",
+   "ru": "аудит покажет, где сделки застряли",
+   "where": "data-en"
+  },
+  {
+   "en": "a pipeline with no stages is just a list",
+   "ru": "воронка без этапов — просто список",
+   "where": "data-en"
+  },
+  {
+   "en": "stages built around your process",
+   "ru": "этапы под твой процесс, а не по шаблону",
+   "where": "data-en"
+  },
+  {
+   "en": "a hot lead goes cold over the weekend",
+   "ru": "горячий лид остыл за выходные",
+   "where": "data-en"
+  },
+  {
+   "en": "no reply for 30 minutes — a task on the deal",
+   "ru": "нет ответа 30 минут — задача по сделке",
+   "where": "data-en"
+  },
+  {
+   "en": "if it’s all in your head, it’s not a system",
+   "ru": "если всё в голове — это не система",
+   "where": "data-en"
+  },
+  {
+   "en": "the spec as a PDF, the SOP in your chat",
+   "ru": "ТЗ — в PDF, регламент — в чате, а не в голове",
+   "where": "data-en"
+  },
+  {
+   "en": "a quarterly report shouldn’t take a week",
+   "ru": "отчёт за квартал не должен собираться неделю",
+   "where": "data-en"
+  },
+  {
+   "en": "pipeline analytics in one message",
+   "ru": "аналитика воронки — одним сообщением",
+   "where": "data-en"
+  },
+  {
+   "en": "a duplicate contact = a double call",
+   "ru": "дубль контакта = двойной звонок клиенту",
+   "where": "data-en"
+  },
+  {
+   "en": "duplicates caught before a contact is created",
+   "ru": "дубли ловлю до создания контакта",
+   "where": "data-en"
+  },
+  {
+   "en": "“remind me tomorrow” is how deals get lost",
+   "ru": "«напомни завтра» — так теряются сделки",
+   "where": "data-en"
+  },
+  {
+   "en": "a task with a deadline, straight from chat",
+   "ru": "задача со сроком — прямо из чата",
+   "where": "data-en"
+  },
+  {
+   "en": "a CRM without automations is just a notebook",
+   "ru": "CRM без автоматизаций — просто блокнот",
+   "where": "data-en"
+  },
+  {
+   "en": "event rules and Telegram alerts",
+   "ru": "правила по событиям и уведомления в Telegram",
+   "where": "data-en"
+  },
+  {
+   "en": "Works in your browser and Telegram — no install",
+   "ru": "Работает в браузере и Telegram — без установки",
+   "where": "data-en"
+  },
+  {
+   "en": "Works in your browser and Telegram — no install, no spells",
+   "ru": "Работает в браузере и Telegram — без установки и без заклинаний",
+   "where": "data-hw-en"
+  },
+  {
+   "en": "Works in your browser and Telegram — no install, no assembly required",
+   "ru": "Работает в браузере и Telegram — без установки, подарок без сборки",
+   "where": "data-ny-en"
+  },
+  {
+   "en": "Set up your <span class='a'>CRM</span><br>without developers",
+   "ru": "Настройка <span class='a'>CRM</span><br>без программистов",
+   "where": "data-en"
+  },
+  {
+   "en": "Kai is an AI assistant that sets up your CRM from a&nbsp;plain-language message in Telegram or right in your&nbsp;browser. It asks the right questions, builds a&nbsp;plan for your business and configures the CRM automatically.",
+   "ru": "Kai&nbsp;— AI-ассистент, который настраивает твою CRM по&nbsp;сообщению в&nbsp;обычном чате: в&nbsp;Telegram или прямо в&nbsp;браузере. Задаёт правильные вопросы, строит план под&nbsp;твой бизнес и&nbsp;настраивает CRM автоматически.",
+   "where": "data-en"
+  },
+  {
+   "en": "Try for free",
+   "ru": "Попробовать бесплатно",
+   "where": "data-en"
+  },
+  {
+   "en": "Try in browser",
+   "ru": "Попробовать в браузере",
+   "where": "data-en"
+  },
+  {
+   "en": "You need an account in your CRM — most systems offer a free trial. Supported CRMs are listed <a href='#crm'>below</a>.",
+   "ru": "Нужен аккаунт в твоей CRM — у большинства систем есть бесплатный пробный период. Какие CRM поддерживаются — <a href='#crm'>ниже</a>.",
+   "where": "data-en"
+  },
+  {
+   "en": "Close",
+   "ru": "Закрыть",
+   "where": "data-en-label"
+  },
+  {
+   "en": "Connecting",
+   "ru": "Соединяем",
+   "where": "data-en"
+  },
+  {
+   "en": "Coming soon",
+   "ru": "Скоро на связи",
+   "where": "data-en"
+  },
+  {
+   "en": "Calling Kai — coming soon",
+   "ru": "Звонок Kai — скоро",
+   "where": "data-en"
+  },
+  {
+   "en": "Soon you will be able to talk to Kai — right in the browser and in Telegram: describe your business out loud, Kai asks questions and sets up the CRM during the call. Kai already understands voice messages — in the chat on this site and in Telegram.",
+   "ru": "Скоро с Kai можно будет поговорить голосом — прямо в браузере и в Telegram: рассказываете о бизнесе вслух, он задаёт вопросы и настраивает CRM во время разговора. А голосовые сообщения Kai понимает уже сейчас — в чате на сайте и в Telegram.",
+   "where": "data-en"
+  },
+  {
+   "en": "Record a voice note in the site chat",
+   "ru": "Записать голосовое в чате на сайте",
+   "where": "data-en"
+  },
+  {
+   "en": "or send a voice note in Telegram",
+   "ru": "или отправить голосовое в Telegram",
+   "where": "data-en"
+  },
+  {
+   "en": "Connect your CRM in 1 click — OAuth, no keys",
+   "ru": "Подключи CRM за 1 клик — OAuth без ключей",
+   "where": "data-en"
+  },
+  {
+   "en": "Connect your CRM in 1 click before dark — OAuth, no keys",
+   "ru": "Подключи CRM за 1 клик, пока не стемнело — OAuth без ключей",
+   "where": "data-hw-en"
+  },
+  {
+   "en": "Connect your CRM in 1 click while everyone’s on holiday — OAuth, no keys",
+   "ru": "Подключи CRM за 1 клик, пока все на каникулах — OAuth без ключей",
+   "where": "data-ny-en"
+  },
+  {
+   "en": "We integrate with",
+   "ru": "Работаем с",
+   "where": "data-en"
+  },
+  {
+   "en": "Bitrix24 — beta: connect it with a webhook in the bot",
+   "ru": "Bitrix24 — бета: подключение по вебхуку в боте",
+   "where": "data-en-title"
+  },
+  {
+   "en": "Beta",
+   "ru": "Бета",
+   "where": "data-en"
+  },
+  {
+   "en": "Your own CRM: custom, in-house or any other with a REST API — via a connector spec",
+   "ru": "Своя CRM: самописная, кастомная или любая с REST API — по спецификации коннектора",
+   "where": "data-en-title"
+  },
+  {
+   "en": "Your own CRM",
+   "ru": "Своя CRM",
+   "where": "data-en"
+  },
+  {
+   "en": "via API",
+   "ru": "по API",
+   "where": "data-en"
+  },
+  {
+   "en": "Official Kommo Partner",
+   "ru": "Официальный партнёр Kommo",
+   "where": "data-en"
+  },
+  {
+   "en": "How the magic works",
+   "ru": "Как это колдует",
+   "where": "data-hw-en"
+  },
+  {
+   "en": "How the magic happens",
+   "ru": "Как творится чудо",
+   "where": "data-ny-en"
+  },
+  {
+   "en": "Three steps<br>to a ready CRM",
+   "ru": "Три шага<br>до готовой CRM",
+   "where": "data-en"
+  },
+  {
+   "en": "No need to&nbsp;figure out settings or hire an&nbsp;integrator anymore.",
+   "ru": "Больше не&nbsp;нужно разбираться в&nbsp;настройках или нанимать интегратора.",
+   "where": "data-en"
+  },
+  {
+   "en": "Scripted demo · nothing is sent",
+   "ru": "Демо по сценарию · ничего не отправляется",
+   "where": "data-en"
+  },
+  {
+   "en": "Pick a business:",
+   "ru": "Выбери бизнес:",
+   "where": "data-en"
+  },
+  {
+   "en": "Dental clinic",
+   "ru": "Стоматология",
+   "where": "data-en"
+  },
+  {
+   "en": "Real estate",
+   "ru": "Недвижимость",
+   "where": "data-en"
+  },
+  {
+   "en": "Online store",
+   "ru": "Интернет-магазин",
+   "where": "data-en"
+  },
+  {
+   "en": "Renovation",
+   "ru": "Ремонт квартир",
+   "where": "data-en"
+  },
+  {
+   "en": "Car service",
+   "ru": "Автосервис",
+   "where": "data-en"
+  },
+  {
+   "en": "Beauty salon",
+   "ru": "Салон красоты",
+   "where": "data-en"
+  },
+  {
+   "en": "Online school",
+   "ru": "Онлайн-школа",
+   "where": "data-en"
+  },
+  {
+   "en": "We run a dental clinic. Leads come from the site and Instagram, and half of them get lost.",
+   "ru": "У нас стоматология. Заявки идут с сайта и из Instagram, половина теряется.",
+   "where": "data-en"
+  },
+  {
+   "en": "How many new patient requests a month?",
+   "ru": "Сколько первичных обращений в месяц?",
+   "where": "data-en"
+  },
+  {
+   "en": "up to 50",
+   "ru": "до 50",
+   "where": "data-en"
+  },
+  {
+   "en": "over 150",
+   "ru": "больше 150",
+   "where": "data-en"
+  },
+  {
+   "en": "The plan is ready:",
+   "ru": "План готов:",
+   "where": "data-en"
+  },
+  {
+   "en": "pipeline “New patients”",
+   "ru": "воронка «Первичные пациенты»",
+   "where": "data-en"
+  },
+  {
+   "en": "6 stages built around your process",
+   "ru": "6 этапов под твой процесс",
+   "where": "data-en"
+  },
+  {
+   "en": "4 deal fields",
+   "ru": "4 поля сделки",
+   "where": "data-en"
+  },
+  {
+   "en": "2 rules that create tasks on events",
+   "ru": "2 правила: задачи по событиям",
+   "where": "data-en"
+  },
+  {
+   "en": "Implement",
+   "ru": "Реализовать",
+   "where": "data-en"
+  },
+  {
+   "en": "Done. 1 pipeline, 6 stages and 4 fields are created in the CRM. 2 Kai rules now create tasks on events.",
+   "ru": "Готово. В CRM созданы 1 воронка, 6 этапов и 4 поля. 2 правила Kai уже ставят задачи по событиям.",
+   "where": "data-en"
+  },
+  {
+   "en": "New patients",
+   "ru": "Первичные пациенты",
+   "where": "data-en"
+  },
+  {
+   "en": "Request",
+   "ru": "Заявка",
+   "where": "data-en"
+  },
+  {
+   "en": "Anna, implant",
+   "ru": "Анна, имплант",
+   "where": "data-en"
+  },
+  {
+   "en": "Call back · 15 min",
+   "ru": "Перезвонить · 15 мин",
+   "where": "data-en"
+  },
+  {
+   "en": "Reached",
+   "ru": "Дозвон",
+   "where": "data-en"
+  },
+  {
+   "en": "Booked",
+   "ru": "Запись",
+   "where": "data-en"
+  },
+  {
+   "en": "Visit confirmed",
+   "ru": "Визит подтверждён",
+   "where": "data-en"
+  },
+  {
+   "en": "Appointment",
+   "ru": "Приём",
+   "where": "data-en"
+  },
+  {
+   "en": "Treatment plan",
+   "ru": "План лечения",
+   "where": "data-en"
+  },
+  {
+   "en": "Deal fields",
+   "ru": "Поля сделки",
+   "where": "data-en"
+  },
+  {
+   "en": "Service",
+   "ru": "Направление",
+   "where": "data-en"
+  },
+  {
+   "en": "Doctor",
+   "ru": "Врач",
+   "where": "data-en"
+  },
+  {
+   "en": "Appointment date",
+   "ru": "Дата приёма",
+   "where": "data-en"
+  },
+  {
+   "en": "Plan amount",
+   "ru": "Сумма плана",
+   "where": "data-en"
+  },
+  {
+   "en": "Kai rules",
+   "ru": "Правила Kai",
+   "where": "data-en"
+  },
+  {
+   "en": "New request → task: call back within 15 minutes",
+   "ru": "Новая заявка → задача: перезвонить за 15 минут",
+   "where": "data-en"
+  },
+  {
+   "en": "Booked → task: confirm the visit the day before",
+   "ru": "Записан на приём → задача: подтвердить визит накануне",
+   "where": "data-en"
+  },
+  {
+   "en": "A real-estate agency. Leads are expensive, and agents call back a day later.",
+   "ru": "Агентство недвижимости. Лиды дорогие, а агенты перезванивают через сутки.",
+   "where": "data-en"
+  },
+  {
+   "en": "How do requests reach the agents?",
+   "ru": "Как заявки попадают к агентам?",
+   "where": "data-en"
+  },
+  {
+   "en": "agents take them",
+   "ru": "берут сами",
+   "where": "data-en"
+  },
+  {
+   "en": "via a call center",
+   "ru": "через колл-центр",
+   "where": "data-en"
+  },
+  {
+   "en": "round robin",
+   "ru": "по очереди",
+   "where": "data-en"
+  },
+  {
+   "en": "pipeline “Buyers”",
+   "ru": "воронка «Покупатели»",
+   "where": "data-en"
+  },
+  {
+   "en": "Buyers",
+   "ru": "Покупатели",
+   "where": "data-en"
+  },
+  {
+   "en": "2-bedroom, downtown",
+   "ru": "2-комнатная, центр",
+   "where": "data-en"
+  },
+  {
+   "en": "Qualified",
+   "ru": "Квалификация",
+   "where": "data-en"
+  },
+  {
+   "en": "Shortlist",
+   "ru": "Подборка",
+   "where": "data-en"
+  },
+  {
+   "en": "Viewing",
+   "ru": "Показ",
+   "where": "data-en"
+  },
+  {
+   "en": "Reserved",
+   "ru": "Бронь",
+   "where": "data-en"
+  },
+  {
+   "en": "Contract",
+   "ru": "Договор",
+   "where": "data-en"
+  },
+  {
+   "en": "Property type",
+   "ru": "Тип объекта",
+   "where": "data-en"
+  },
+  {
+   "en": "Budget",
+   "ru": "Бюджет",
+   "where": "data-en"
+  },
+  {
+   "en": "District",
+   "ru": "Район",
+   "where": "data-en"
+  },
+  {
+   "en": "Payment method",
+   "ru": "Способ покупки",
+   "where": "data-en"
+  },
+  {
+   "en": "Shortlist sent → task for tomorrow: book a viewing",
+   "ru": "Подборка отправлена → задача на завтра: назначить показ",
+   "where": "data-en"
+  },
+  {
+   "en": "An online store. Orders from the site and social media live in different windows.",
+   "ru": "Интернет-магазин. Заказы с сайта и соцсетей живут в разных окнах.",
+   "where": "data-en"
+  },
+  {
+   "en": "Who confirms the orders?",
+   "ru": "Кто подтверждает заказы?",
+   "where": "data-en"
+  },
+  {
+   "en": "one person",
+   "ru": "один человек",
+   "where": "data-en"
+  },
+  {
+   "en": "2–3 reps",
+   "ru": "2–3 менеджера",
+   "where": "data-en"
+  },
+  {
+   "en": "pipeline “Website orders”",
+   "ru": "воронка «Заказы с сайта»",
+   "where": "data-en"
+  },
+  {
+   "en": "Website orders",
+   "ru": "Заказы с сайта",
+   "where": "data-en"
+  },
+  {
+   "en": "Order",
+   "ru": "Заказ",
+   "where": "data-en"
+  },
+  {
+   "en": "Order #1042",
+   "ru": "Заказ №1042",
+   "where": "data-en"
+  },
+  {
+   "en": "Confirm the order",
+   "ru": "Подтвердить заказ",
+   "where": "data-en"
+  },
+  {
+   "en": "Confirmed",
+   "ru": "Подтверждён",
+   "where": "data-en"
+  },
+  {
+   "en": "Paid",
+   "ru": "Оплачен",
+   "where": "data-en"
+  },
+  {
+   "en": "Packed",
+   "ru": "Собран",
+   "where": "data-en"
+  },
+  {
+   "en": "Shipping",
+   "ru": "В доставке",
+   "where": "data-en"
+  },
+  {
+   "en": "Delivered",
+   "ru": "Доставлен",
+   "where": "data-en"
+  },
+  {
+   "en": "Sales channel",
+   "ru": "Канал продажи",
+   "where": "data-en"
+  },
+  {
+   "en": "Carrier",
+   "ru": "Служба доставки",
+   "where": "data-en"
+  },
+  {
+   "en": "Tracking number",
+   "ru": "Трек-номер",
+   "where": "data-en"
+  },
+  {
+   "en": "New order → task: confirm the order",
+   "ru": "Новый заказ → задача: подтвердить заказ",
+   "where": "data-en"
+  },
+  {
+   "en": "Order confirmed → task for tomorrow: check the payment",
+   "ru": "Заказ подтверждён → задача на завтра: проверить оплату",
+   "where": "data-en"
+  },
+  {
+   "en": "We renovate apartments. We send the estimate, then silence: nobody follows up.",
+   "ru": "Делаем ремонт квартир. Смету отправили — и тишина, никто не дожимает.",
+   "where": "data-en"
+  },
+  {
+   "en": "Who talks to the client?",
+   "ru": "Кто общается с клиентом?",
+   "where": "data-en"
+  },
+  {
+   "en": "sales rep and foreman",
+   "ru": "менеджер и прораб",
+   "where": "data-en"
+  },
+  {
+   "en": "plus a surveyor",
+   "ru": "ещё и замерщик",
+   "where": "data-en"
+  },
+  {
+   "en": "pipeline “Contract sales”",
+   "ru": "воронка «Продажа договора»",
+   "where": "data-en"
+  },
+  {
+   "en": "Contract sales",
+   "ru": "Продажа договора",
+   "where": "data-en"
+  },
+  {
+   "en": "Renovation, 54 m²",
+   "ru": "Ремонт, 54 м²",
+   "where": "data-en"
+  },
+  {
+   "en": "Call today",
+   "ru": "Позвонить сегодня",
+   "where": "data-en"
+  },
+  {
+   "en": "Site visit",
+   "ru": "Замер",
+   "where": "data-en"
+  },
+  {
+   "en": "Estimate",
+   "ru": "Смета",
+   "where": "data-en"
+  },
+  {
+   "en": "Deposit",
+   "ru": "Аванс",
+   "where": "data-en"
+  },
+  {
+   "en": "Work type",
+   "ru": "Тип работ",
+   "where": "data-en"
+  },
+  {
+   "en": "Area, m²",
+   "ru": "Площадь, м²",
+   "where": "data-en"
+  },
+  {
+   "en": "Estimate total",
+   "ru": "Сумма по смете",
+   "where": "data-en"
+  },
+  {
+   "en": "New request → task: qualify and offer a site visit",
+   "ru": "Новая заявка → задача: выяснить объект и предложить замер",
+   "where": "data-en"
+  },
+  {
+   "en": "Site visit done → task: send the estimate within 2 days",
+   "ru": "Замер проведён → задача: отправить смету за 2 дня",
+   "where": "data-en"
+  },
+  {
+   "en": "A car service. Customers book and do not show up, the bay sits idle.",
+   "ru": "Автосервис. Клиенты записываются и не приезжают, пост простаивает.",
+   "where": "data-en"
+  },
+  {
+   "en": "How many cars a month go through the service?",
+   "ru": "Сколько машин в месяц проходит через сервис?",
+   "where": "data-en"
+  },
+  {
+   "en": "up to 100",
+   "ru": "до 100",
+   "where": "data-en"
+  },
+  {
+   "en": "over 300",
+   "ru": "больше 300",
+   "where": "data-en"
+  },
+  {
+   "en": "pipeline “Booking and intake”",
+   "ru": "воронка «Запись и заезд»",
+   "where": "data-en"
+  },
+  {
+   "en": "Booking and intake",
+   "ru": "Запись и заезд",
+   "where": "data-en"
+  },
+  {
+   "en": "Kia Rio, service",
+   "ru": "Kia Rio, ТО",
+   "where": "data-en"
+  },
+  {
+   "en": "Offer a slot",
+   "ru": "Предложить окно",
+   "where": "data-en"
+  },
+  {
+   "en": "Car received",
+   "ru": "Приём авто",
+   "where": "data-en"
+  },
+  {
+   "en": "Diagnostics",
+   "ru": "Диагностика",
+   "where": "data-en"
+  },
+  {
+   "en": "Work done",
+   "ru": "Работы выполнены",
+   "where": "data-en"
+  },
+  {
+   "en": "Make and model",
+   "ru": "Марка и модель",
+   "where": "data-en"
+  },
+  {
+   "en": "Plate number",
+   "ru": "Госномер",
+   "where": "data-en"
+  },
+  {
+   "en": "Service type",
+   "ru": "Тип услуги",
+   "where": "data-en"
+  },
+  {
+   "en": "Booking date",
+   "ru": "Дата записи",
+   "where": "data-en"
+  },
+  {
+   "en": "New request → task: ask about the car and offer a slot",
+   "ru": "Новое обращение → задача: уточнить авто и предложить окно",
+   "where": "data-en"
+  },
+  {
+   "en": "Booked → task: remind the customer the day before",
+   "ru": "Запись оформлена → задача: напомнить о записи накануне",
+   "where": "data-en"
+  },
+  {
+   "en": "A beauty salon. Requests from Instagram get lost in direct messages.",
+   "ru": "Салон красоты. Заявки из Instagram теряются в директе.",
+   "where": "data-en"
+  },
+  {
+   "en": "How many visits a month?",
+   "ru": "Сколько визитов в месяц?",
+   "where": "data-en"
+  },
+  {
+   "en": "up to 200",
+   "ru": "до 200",
+   "where": "data-en"
+  },
+  {
+   "en": "over 500",
+   "ru": "больше 500",
+   "where": "data-en"
+  },
+  {
+   "en": "pipeline “New clients”",
+   "ru": "воронка «Новые клиенты»",
+   "where": "data-en"
+  },
+  {
+   "en": "New clients",
+   "ru": "Новые клиенты",
+   "where": "data-en"
+  },
+  {
+   "en": "Maria, manicure",
+   "ru": "Мария, маникюр",
+   "where": "data-en"
+  },
+  {
+   "en": "Reply · 10 min",
+   "ru": "Ответить · 10 мин",
+   "where": "data-en"
+  },
+  {
+   "en": "Service done",
+   "ru": "Услуга оказана",
+   "where": "data-en"
+  },
+  {
+   "en": "Rebooked",
+   "ru": "Повторная запись",
+   "where": "data-en"
+  },
+  {
+   "en": "Service category",
+   "ru": "Категория услуги",
+   "where": "data-en"
+  },
+  {
+   "en": "Specialist",
+   "ru": "Мастер",
+   "where": "data-en"
+  },
+  {
+   "en": "Visit date",
+   "ru": "Дата визита",
+   "where": "data-en"
+  },
+  {
+   "en": "Visit amount",
+   "ru": "Сумма визита",
+   "where": "data-en"
+  },
+  {
+   "en": "New request → task: reply within 10 minutes and offer slots",
+   "ru": "Новая заявка → задача: ответить за 10 минут и предложить окна",
+   "where": "data-en"
+  },
+  {
+   "en": "Service done → task: offer the next visit",
+   "ru": "Услуга оказана → задача: предложить следующий визит",
+   "where": "data-en"
+  },
+  {
+   "en": "An online school. Hundreds of sign-ups after a webinar, the managers cannot keep up.",
+   "ru": "Онлайн-школа. После вебинара сотни регистраций, менеджеры не успевают.",
+   "where": "data-en"
+  },
+  {
+   "en": "Do you sell through launches or evergreen?",
+   "ru": "Продаёте запусками или постоянно?",
+   "where": "data-en"
+  },
+  {
+   "en": "pipeline “Course sales”",
+   "ru": "воронка «Продажа курса»",
+   "where": "data-en"
+  },
+  {
+   "en": "Course sales",
+   "ru": "Продажа курса",
+   "where": "data-en"
+  },
+  {
+   "en": "Sign-up",
+   "ru": "Регистрация",
+   "where": "data-en"
+  },
+  {
+   "en": "Olga, “Design” course",
+   "ru": "Ольга, курс «Дизайн»",
+   "where": "data-en"
+  },
+  {
+   "en": "Message · diagnostic",
+   "ru": "Написать · диагностика",
+   "where": "data-en"
+  },
+  {
+   "en": "Call booked",
+   "ru": "Созвон назначен",
+   "where": "data-en"
+  },
+  {
+   "en": "Call done",
+   "ru": "Созвон проведён",
+   "where": "data-en"
+  },
+  {
+   "en": "Invoice sent",
+   "ru": "Счёт выставлен",
+   "where": "data-en"
+  },
+  {
+   "en": "Product",
+   "ru": "Продукт",
+   "where": "data-en"
+  },
+  {
+   "en": "Plan",
+   "ru": "Тариф",
+   "where": "data-en"
+  },
+  {
+   "en": "Cohort",
+   "ru": "Поток",
+   "where": "data-en"
+  },
+  {
+   "en": "Instalments",
+   "ru": "Рассрочка",
+   "where": "data-en"
+  },
+  {
+   "en": "Sign-up → task: message and offer a diagnostic call",
+   "ru": "Регистрация → задача: написать и предложить диагностику",
+   "where": "data-en"
+  },
+  {
+   "en": "Invoice sent → task for tomorrow: remind about the price deadline",
+   "ru": "Счёт выставлен → задача на завтра: напомнить о дедлайне цены",
+   "where": "data-en"
+  },
+  {
+   "en": "The real Kai asks more questions and builds the plan around your process.",
+   "ru": "Настоящий Kai задаёт больше вопросов и строит план под твой процесс.",
+   "where": "data-en"
+  },
+  {
+   "en": "Another business",
+   "ru": "Другой бизнес",
+   "where": "data-en"
+  },
+  {
+   "en": "Do this in my CRM",
+   "ru": "Сделать так в моей CRM",
+   "where": "data-en"
+  },
+  {
+   "en": "Describe your business",
+   "ru": "Расскажи про бизнес",
+   "where": "data-en"
+  },
+  {
+   "en": "Kai asks clarifying questions with answer options. Respond by pressing a button or voice — no need to think.",
+   "ru": "Kai задаёт уточняющие вопросы с вариантами ответов. Отвечай нажатием кнопки или голосом — не нужно ничего придумывать.",
+   "where": "data-en"
+  },
+  {
+   "en": "Approve the plan",
+   "ru": "Согласуй план",
+   "where": "data-en"
+  },
+  {
+   "en": "Get a detailed plan: pipelines, fields, stages, auto-tasks. Edit if needed — then confirm with one button.",
+   "ru": "Получаешь детальный план: воронки, поля, этапы, автозадачи. Правишь если нужно — затем подтверждаешь одной кнопкой.",
+   "where": "data-en"
+  },
+  {
+   "en": "Done — CRM is configured",
+   "ru": "Готово — CRM настроена",
+   "where": "data-en"
+  },
+  {
+   "en": "Done — CRM configured, ghosts banished",
+   "ru": "Готово — CRM настроена, призраки изгнаны",
+   "where": "data-hw-en"
+  },
+  {
+   "en": "Done — CRM configured, time to celebrate",
+   "ru": "Готово — CRM настроена, можно к столу",
+   "where": "data-ny-en"
+  },
+  {
+   "en": "Press 'Implement' — Kai creates everything in your CRM account in seconds via official API.",
+   "ru": "Нажимаешь «Реализовать» — Kai создаёт всё в твоём CRM-аккаунте за секунды через официальный API.",
+   "where": "data-en"
+  },
+  {
+   "en": "Spells",
+   "ru": "Заклинания",
+   "where": "data-hw-en"
+  },
+  {
+   "en": "Under the tree",
+   "ru": "Что под ёлкой",
+   "where": "data-ny-en"
+  },
+  {
+   "en": "Kai is an analyst<br>who thinks with you",
+   "ru": "Kai — это аналитик,<br>который думает с тобой",
+   "where": "data-en"
+  },
+  {
+   "en": "Not a&nbsp;template bot with a&nbsp;survey. A&nbsp;real dialog with an&nbsp;expert who then implements everything.",
+   "ru": "Не&nbsp;шаблонный бот с&nbsp;анкетой. Живой диалог с&nbsp;экспертом, который потом всё реализует сам.",
+   "where": "data-en"
+  },
+  {
+   "en": "Demo data",
+   "ru": "Демо-данные",
+   "where": "data-en"
+  },
+  {
+   "en": "I checked the “Sales” pipeline and found 4 issues. Two are fixed with one tap, two with one message.",
+   "ru": "Проверил воронку «Продажи». Нашёл 4 проблемы: две чиню кнопкой, две — по сообщению.",
+   "where": "data-en"
+  },
+  {
+   "en": "pipeline health",
+   "ru": "здоровье воронки",
+   "where": "data-en"
+  },
+  {
+   "en": "Critical",
+   "ru": "Критично",
+   "where": "data-en"
+  },
+  {
+   "en": "No loss reasons",
+   "ru": "Нет причин отказа",
+   "where": "data-en"
+  },
+  {
+   "en": "Deals are closed as lost with no reason, so you can’t see where you lose them.",
+   "ru": "Сделки закрываются без объяснения — не видно, где ты теряешь.",
+   "where": "data-en"
+  },
+  {
+   "en": "5 loss reasons created",
+   "ru": "Создано 5 причин отказа",
+   "where": "data-en"
+  },
+  {
+   "en": "Fix",
+   "ru": "Починить",
+   "where": "data-en"
+  },
+  {
+   "en": "Important",
+   "ru": "Важно",
+   "where": "data-en"
+  },
+  {
+   "en": "No lead sources",
+   "ru": "Нет источников лидов",
+   "where": "data-en"
+  },
+  {
+   "en": "You cannot tell which channel brings customers.",
+   "ru": "Непонятно, какой канал приводит клиентов.",
+   "where": "data-en"
+  },
+  {
+   "en": "5 lead sources created",
+   "ru": "Заведено 5 источников лидов",
+   "where": "data-en"
+  },
+  {
+   "en": "62% of open deals sit at “Thinking”",
+   "ru": "62% открытых сделок стоят на этапе «Думает»",
+   "where": "data-en"
+  },
+  {
+   "en": "A bottleneck: deals enter the stage and do not leave it.",
+   "ru": "Узкое место: сделки заходят на этап и не выходят.",
+   "where": "data-en"
+  },
+  {
+   "en": "Kai set a rule: a deal enters the stage → a task for the rep, due in 2 days. The bottleneck clears once deals move.",
+   "ru": "Kai поставил правило: сделка пришла на этап → задача менеджеру на 2 дня. Узкое место уйдёт, когда сделки сдвинутся.",
+   "where": "data-en"
+  },
+  {
+   "en": "Ask Kai",
+   "ru": "Попросить Kai",
+   "where": "data-en"
+  },
+  {
+   "en": "No automations",
+   "ru": "Нет автоматизаций",
+   "where": "data-en"
+  },
+  {
+   "en": "Everything depends on what the reps remember.",
+   "ru": "Всё держится на памяти менеджеров.",
+   "where": "data-en"
+  },
+  {
+   "en": "Kai set a rule: no reply for 30 minutes → a task on the deal",
+   "ru": "Kai поставил правило: нет ответа 30 минут → задача по сделке",
+   "where": "data-en"
+  },
+  {
+   "en": "Cleared: the rule above is your first automation",
+   "ru": "Снято: правило выше стало первой автоматизацией",
+   "where": "data-en"
+  },
+  {
+   "en": "This is how the audit and the check-up look in the chat: findings, buttons, a grade. Your own pipeline will show your own numbers.",
+   "ru": "Так выглядят аудит и чек-ап в чате: находки, кнопки, оценка. На твоей воронке цифры будут твои.",
+   "where": "data-en"
+  },
+  {
+   "en": "Grade B. The bottleneck clears once deals move: the rule is already in place. In your CRM it takes one chat message.",
+   "ru": "Оценка B. Узкое место уйдёт, когда сделки сдвинутся: правило уже стоит. В твоей CRM это один запрос в чате.",
+   "where": "data-en"
+  },
+  {
+   "en": "Start over",
+   "ru": "Сначала",
+   "where": "data-en"
+  },
+  {
+   "en": "Audit my pipeline",
+   "ru": "Проверить мою воронку",
+   "where": "data-en"
+  },
+  {
+   "en": "Consults like an expert",
+   "ru": "Консультирует как эксперт",
+   "where": "data-en"
+  },
+  {
+   "en": "Asks the right questions, suggests options, adjusts the plan. Interactive dialog with answer variants — respond with a button click.",
+   "ru": "Задаёт правильные вопросы, предлагает варианты, корректирует план. Живой диалог с вариантами ответов — отвечайте нажатием кнопки.",
+   "where": "data-en"
+  },
+  {
+   "en": "Configures CRM automatically",
+   "ru": "Настраивает CRM автоматически",
+   "where": "data-en"
+  },
+  {
+   "en": "Creates pipelines, fields, stages, tasks, contacts via official API. Click 'Implement' — Kai does everything in seconds.",
+   "ru": "Создаёт воронки, поля, этапы, задачи, контакты через официальный API. Нажимаешь «Реализовать» — Kai всё делает за секунды.",
+   "where": "data-en"
+  },
+  {
+   "en": "Generates specs in PDF",
+   "ru": "Генерирует ТЗ в PDF",
+   "where": "data-en"
+  },
+  {
+   "en": "The agreed plan becomes a professional document — technical specifications for your team or integrator.",
+   "ru": "Согласованный план превращается в профессиональный документ — техническое задание для твоей команды или интегратора.",
+   "where": "data-en"
+  },
+  {
+   "en": "Understands voice messages",
+   "ru": "Понимает голосовые",
+   "where": "data-en"
+  },
+  {
+   "en": "Send a voice message — Kai recognizes speech and responds. Dictate tasks without typing.",
+   "ru": "Отправь голосовое — Kai распознает речь и ответит. Диктуй задачи, не набирая текст.",
+   "where": "data-en"
+  },
+  {
+   "en": "Or call Kai",
+   "ru": "Или позвоните Kai",
+   "where": "data-en"
+  },
+  {
+   "en": "Checks your CRM every day",
+   "ru": "Каждый день проверяет CRM",
+   "where": "data-en"
+  },
+  {
+   "en": "Kai checks your funnel daily: conversion drop, piling deals, new issues — you get an alert, advice and one-tap fix buttons. After the fix, it shows the improvement in numbers.",
+   "ru": "Kai каждый день сам проверяет воронку: упала конверсия, копятся сделки, появились проблемы — пришлёт сигнал, совет и кнопки починки. А после починки покажет рост цифрами.",
+   "where": "data-en"
+  },
+  {
+   "en": "Works without Telegram",
+   "ru": "Работает и без Telegram",
+   "where": "data-en"
+  },
+  {
+   "en": "Full-featured browser chat: OAuth CRM connect, card payment, notifications — no Telegram needed. Have Telegram? Link it in one click — one account across both.",
+   "ru": "Полноценный чат в браузере: подключение CRM по OAuth, оплата картой, уведомления — всё без Telegram. А если Telegram есть — свяжи в один клик, аккаунт общий в обоих каналах.",
+   "where": "data-en"
+  },
+  {
+   "en": "Funnel audit + auto-healing",
+   "ru": "Аудит воронки + авто-лечение",
+   "where": "data-en"
+  },
+  {
+   "en": "Finds problems — missing loss reasons, sources, automations, bottlenecks, low conversion. Loss reasons and sources are fixed with one button; automations are added with one message.",
+   "ru": "Находит проблемы — нет причин отказа, источников, автоматизаций, узкие места, низкая конверсия. Причины и источники чинит одной кнопкой, автоматизации добавляет по сообщению.",
+   "where": "data-en"
+  },
+  {
+   "en": "Drop-off analytics",
+   "ru": "Аналитика drop-off",
+   "where": "data-en"
+  },
+  {
+   "en": "Shows where deals leak across pipeline stages and for which loss reasons. Clear what to fix first.",
+   "ru": "Показывает, где теряются сделки по этапам воронки и по каким причинам отказа. Видно, что чинить в первую очередь.",
+   "where": "data-en"
+  },
+  {
+   "en": "Lead scoring",
+   "ru": "Лид-скоринг",
+   "where": "data-en"
+  },
+  {
+   "en": "&laquo;Who to call first&raquo;: scores deals, gives direct links and writes the score into a CRM field automatically.",
+   "ru": "«Кому звонить первым»: оценивает сделки, даёт прямые ссылки и записывает оценку в поле CRM автоматически.",
+   "where": "data-en"
+  },
+  {
+   "en": "Funnel check-up",
+   "ru": "Чек-ап воронки",
+   "where": "data-en"
+  },
+  {
+   "en": "Funnel health summary with an A–D grade and weekly auto-delivery right to the chat. Stay on the pulse.",
+   "ru": "Сводка здоровья воронки с оценкой A–D и еженедельной авто-доставкой прямо в чат. Держи руку на пульсе.",
+   "where": "data-en"
+  },
+  {
+   "en": "SOP — auto playbook",
+   "ru": "SOP — авто-регламент",
+   "where": "data-en"
+  },
+  {
+   "en": "Automatically builds a funnel-maintenance playbook — how to run it so it doesn't degrade. A ready SOP for the team.",
+   "ru": "Автоматически формирует регламент поддержки воронки — как её вести, чтобы не деградировала. Готовый SOP для команды.",
+   "where": "data-en"
+  },
+  {
+   "en": "Smart Excel import",
+   "ru": "Умный импорт базы из Excel",
+   "where": "data-en"
+  },
+  {
+   "en": "Recognizes columns (budget → deal value), deduplicates and maps fields transparently — you see the full mapping before import.",
+   "ru": "Распознаёт колонки (бюджет → цена сделки), дедуплицирует и прозрачно сопоставляет поля — ты видишь весь маппинг перед импортом.",
+   "where": "data-en"
+  },
+  {
+   "en": "Deeper discovery",
+   "ru": "Discovery-консультация глубже",
+   "where": "data-en"
+  },
+  {
+   "en": "Digs into bottlenecks and the customer lifecycle, turning it into the right pipeline stages. Not a survey — real diagnostics.",
+   "ru": "Копает узкие места и жизненный цикл клиента, превращая его в правильные этапы воронки. Не анкета — настоящая диагностика.",
+   "where": "data-en"
+  },
+  {
+   "en": "Multi-account &amp; multi-admin",
+   "ru": "Мультиаккаунт и мульти-админ",
+   "where": "data-en"
+  },
+  {
+   "en": "Multiple accounts and admins on one CRM — without duplicating automations. Work as a team on one funnel.",
+   "ru": "Несколько аккаунтов и админов на одну CRM — без задвоения автоматизаций. Работай командой над одной воронкой.",
+   "where": "data-en"
+  },
+  {
+   "en": "Meeting prep",
+   "ru": "Подготовка к встрече",
+   "where": "data-en"
+  },
+  {
+   "en": "Kai builds a one-message deal brief: stage, budget, contact with phone, open tasks, latest notes and 3 smart questions to ask.",
+   "ru": "Kai собирает бриф по сделке одним сообщением: этап, бюджет, контакт с телефоном, незакрытые задачи, последние договорённости и 3 умных вопроса клиенту.",
+   "where": "data-en"
+  },
+  {
+   "en": "Deal health check",
+   "ru": "Здоровье сделки",
+   "where": "data-en"
+  },
+  {
+   "en": "Instant diagnosis of any deal: is there a next step, is the client going cold, and one concrete fix to apply right now.",
+   "ru": "Мгновенный диагноз любой сделки: есть ли следующий шаг, не остывает ли клиент, что сделать прямо сейчас.",
+   "where": "data-en"
+  },
+  {
+   "en": "Client memory",
+   "ru": "Память о клиенте",
+   "where": "data-en"
+  },
+  {
+   "en": "Kai remembers each client's context and keeps it organised across your CRMs: niche, agreements, open tasks.",
+   "ru": "Kai помнит контекст каждого клиента и раскладывает его по CRM-системам: ниша, договорённости, незакрытые задачи.",
+   "where": "data-en"
+  },
+  {
+   "en": "Full control",
+   "ru": "Полный контроль",
+   "where": "data-en"
+  },
+  {
+   "en": "Full CRM management<br>via chat",
+   "ru": "Полное управление CRM<br>через чат",
+   "where": "data-en"
+  },
+  {
+   "en": "65 actions via your CRM's official API — in Telegram or in your browser, no code, no integrators.",
+   "ru": "65 действий через официальный API твоей CRM — в&nbsp;Telegram или в&nbsp;браузере, без кода и&nbsp;интеграторов.",
+   "where": "data-en"
+  },
+  {
+   "en": "Before",
+   "ru": "До",
+   "where": "data-en"
+  },
+  {
+   "en": "Drag the slider: the same pipeline before and after one conversation with Kai",
+   "ru": "Тяните ползунок: одна и та же воронка до и после одного разговора с Kai",
+   "where": "data-en"
+  },
+  {
+   "en": "After Kai",
+   "ru": "После Kai",
+   "where": "data-en"
+  },
+  {
+   "en": "New",
+   "ru": "Новые",
+   "where": "data-en"
+  },
+  {
+   "en": "Ivan P.",
+   "ru": "Иван П.",
+   "where": "data-en"
+  },
+  {
+   "en": "no task",
+   "ru": "нет задачи",
+   "where": "data-en"
+  },
+  {
+   "en": "Daisy LLC",
+   "ru": "ООО «Ромашка»",
+   "where": "data-en"
+  },
+  {
+   "en": "New (2)",
+   "ru": "Новые (2)",
+   "where": "data-en"
+  },
+  {
+   "en": "Call back???",
+   "ru": "Перезвонить???",
+   "where": "data-en"
+  },
+  {
+   "en": "Olga V.",
+   "ru": "Ольга В.",
+   "where": "data-en"
+  },
+  {
+   "en": "Thinking",
+   "ru": "Думает",
+   "where": "data-en"
+  },
+  {
+   "en": "Anna S.",
+   "ru": "Анна С.",
+   "where": "data-en"
+  },
+  {
+   "en": "37 days",
+   "ru": "37 дней",
+   "where": "data-en"
+  },
+  {
+   "en": "Office Plus",
+   "ru": "Офис Плюс",
+   "where": "data-en"
+  },
+  {
+   "en": "Kitchens Pro",
+   "ru": "Кухни-Про",
+   "where": "data-en"
+  },
+  {
+   "en": "Thinking — old",
+   "ru": "Думает — старые",
+   "where": "data-en"
+  },
+  {
+   "en": "Nord Furniture",
+   "ru": "Мебель Норд",
+   "where": "data-en"
+  },
+  {
+   "en": "Build House",
+   "ru": "Строй-Дом",
+   "where": "data-en"
+  },
+  {
+   "en": "No answer",
+   "ru": "Не ответил",
+   "where": "data-en"
+  },
+  {
+   "en": "Pyotr K.",
+   "ru": "Пётр К.",
+   "where": "data-en"
+  },
+  {
+   "en": "task: today",
+   "ru": "задача: сегодня",
+   "where": "data-en"
+  },
+  {
+   "en": "task: tomorrow",
+   "ru": "задача: завтра",
+   "where": "data-en"
+  },
+  {
+   "en": "Proposal sent",
+   "ru": "КП отправлено",
+   "where": "data-en"
+  },
+  {
+   "en": "task: in 2 days",
+   "ru": "задача: через 2 дня",
+   "where": "data-en"
+  },
+  {
+   "en": "Negotiation",
+   "ru": "Переговоры",
+   "where": "data-en"
+  },
+  {
+   "en": "task: sign",
+   "ru": "задача: подписать",
+   "where": "data-en"
+  },
+  {
+   "en": "Payment",
+   "ru": "Оплата",
+   "where": "data-en"
+  },
+  {
+   "en": "Before / after Kai",
+   "ru": "До / после Kai",
+   "where": "data-en-label"
+  },
+  {
+   "en": "Demo data. Left: duplicate stages, deals without tasks and “Thinking” for 37 days. Right: stages built around the process, every deal has a next step.",
+   "ru": "Демо-данные. Слева: дубли этапов, сделки без задач и «Думает» на 37 дней. Справа: этапы под процесс, у каждой сделки следующий шаг.",
+   "where": "data-en"
+  },
+  {
+   "en": "Show “before”",
+   "ru": "Показать «до»",
+   "where": "data-en"
+  },
+  {
+   "en": "Show “after”",
+   "ru": "Показать «после»",
+   "where": "data-en"
+  },
+  {
+   "en": "Pipelines and stages",
+   "ru": "Воронки и этапы",
+   "where": "data-en"
+  },
+  {
+   "en": "Creates, renames, and deletes pipelines. Adds stages with colors from the CRM palette, reorders and groups by sales logic.",
+   "ru": "Создаёт, переименовывает и удаляет воронки. Добавляет этапы с цветами из палитры CRM, меняет порядок и группирует по логике продаж.",
+   "where": "data-en"
+  },
+  {
+   "en": "Fields and entities",
+   "ru": "Поля и сущности",
+   "where": "data-en"
+  },
+  {
+   "en": "Adds custom fields (text, number, list, date, numeric/monetary) to deals, contacts, and companies. Makes fields required, sets values.",
+   "ru": "Добавляет кастомные поля (текст, число, список, дата, числовые/денежные) в сделки, контакты и компании. Делает поля обязательными, задаёт значения.",
+   "where": "data-en"
+  },
+  {
+   "en": "Deals, contacts, companies",
+   "ru": "Сделки, контакты, компании",
+   "where": "data-en"
+  },
+  {
+   "en": "Creates deals with budgets, contacts with phone and email, companies. Links entities, moves deals through stages.",
+   "ru": "Создаёт сделки с бюджетом, контакты с телефоном и email, компании. Связывает сущности между собой, перемещает сделки по этапам.",
+   "where": "data-en"
+  },
+  {
+   "en": "Tasks and automations",
+   "ru": "Задачи и автоматизации",
+   "where": "data-en"
+  },
+  {
+   "en": "Creates tasks (call, meeting, email) with deadlines. Sets up event → action automations, notifications and webhooks.",
+   "ru": "Создаёт задачи (звонок, встреча, письмо) с дедлайном. Настраивает автоматизации «событие → действие», уведомления и вебхуки.",
+   "where": "data-en"
+  },
+  {
+   "en": "Tags, notes, analytics",
+   "ru": "Теги, примечания, аналитика",
+   "where": "data-en"
+  },
+  {
+   "en": "Creates and applies tags. Adds notes to deals. Shows analytics: pipelines, fields, users, account activity.",
+   "ru": "Создаёт и применяет теги. Добавляет примечания к сделкам. Показывает статистику: воронки, поля, пользователи, активность аккаунта.",
+   "where": "data-en"
+  },
+  {
+   "en": "API actions",
+   "ru": "API-действия",
+   "where": "data-en"
+  },
+  {
+   "en": "Available<br>API actions",
+   "ru": "Доступные<br>API-действия",
+   "where": "data-en"
+  },
+  {
+   "en": "Kai uses your CRM's official API. All operations are performed securely without your passwords.",
+   "ru": "Kai использует официальный API твоей CRM. Все операции выполняются безопасно и&nbsp;без твоих паролей.",
+   "where": "data-en"
+  },
+  {
+   "en": "Phrase → action → reply",
+   "ru": "Фраза → действие → ответ",
+   "where": "data-en"
+  },
+  {
+   "en": "Example replies · nothing is sent",
+   "ru": "Примеры ответов · ничего не отправляется",
+   "where": "data-en"
+  },
+  {
+   "en": "Previous",
+   "ru": "Назад",
+   "where": "data-en-label"
+  },
+  {
+   "en": "Next",
+   "ru": "Дальше",
+   "where": "data-en-label"
+  },
+  {
+   "en": "Tap any action in the list below to see the phrase that triggers it.",
+   "ru": "Нажмите любое действие в списке ниже, чтобы увидеть фразу, которая его запускает.",
+   "where": "data-en"
+  },
+  {
+   "en": "All examples",
+   "ru": "Все примеры",
+   "where": "data-en"
+  },
+  {
+   "en": "Create a “Sales” pipeline with stages request, proposal, contract, payment",
+   "ru": "Создай воронку «Продажи» с этапами заявка, КП, договор, оплата",
+   "where": "data-en"
+  },
+  {
+   "en": "Created the “Sales” pipeline: 4 stages.",
+   "ru": "Создал воронку «Продажи»: 4 этапа.",
+   "where": "data-en"
+  },
+  {
+   "en": "Add a “Site visit” stage to the “Sales” pipeline",
+   "ru": "Добавь этап «Замер» в воронку «Продажи»",
+   "where": "data-en"
+  },
+  {
+   "en": "Stage “Site visit” added to the “Sales” pipeline.",
+   "ru": "Этап «Замер» добавлен в воронку «Продажи».",
+   "where": "data-en"
+  },
+  {
+   "en": "Add a numeric “Budget” field to deals",
+   "ru": "Сделай в сделках числовое поле «Бюджет»",
+   "where": "data-en"
+  },
+  {
+   "en": "Field “Budget” (number) created for deals.",
+   "ru": "Поле «Бюджет» (число) создано в сделках.",
+   "where": "data-en"
+  },
+  {
+   "en": "Make “Source” required at the “Contract” stage",
+   "ru": "Поле «Источник» обязательно на этапе «Договор»",
+   "where": "data-en"
+  },
+  {
+   "en": "“Source” is now required at the “Contract” stage.",
+   "ru": "Поле «Источник» теперь обязательно на этапе «Договор».",
+   "where": "data-en"
+  },
+  {
+   "en": "Create a deal “Ivanov, kitchen” for 250 000",
+   "ru": "Заведи сделку «Иванов, кухня» на 250 000",
+   "where": "data-en"
+  },
+  {
+   "en": "Deal created at the “Request” stage.",
+   "ru": "Сделка создана на этапе «Заявка».",
+   "where": "data-en"
+  },
+  {
+   "en": "Set a task on “Ivanov, kitchen”: call the client tomorrow",
+   "ru": "Поставь задачу по сделке «Иванов, кухня»: позвонить клиенту завтра",
+   "where": "data-en"
+  },
+  {
+   "en": "Task created: call, due tomorrow, linked to the deal.",
+   "ru": "Задача создана: звонок, срок — завтра, привязана к сделке.",
+   "where": "data-en"
+  },
+  {
+   "en": "When a deal moves to “Proposal sent”, set a task “call back” due in 2 days",
+   "ru": "Когда сделка переходит в «КП отправлено» — задача «перезвонить» через 2 дня",
+   "where": "data-en"
+  },
+  {
+   "en": "Rule added: move to “Proposal sent” → a task due in 2 days.",
+   "ru": "Правило добавлено: переход в «КП отправлено» → задача со сроком 2 дня.",
+   "where": "data-en"
+  },
+  {
+   "en": "If a customer waits 30 minutes for a reply, set a task on the deal",
+   "ru": "Если клиенту не ответили 30 минут — задача по сделке",
+   "where": "data-en"
+  },
+  {
+   "en": "Rule added: no reply for 30 minutes → a task on the deal.",
+   "ru": "Правило добавлено: нет ответа 30 минут → задача по сделке.",
+   "where": "data-en"
+  },
+  {
+   "en": "Check the “Sales” pipeline",
+   "ru": "Проверь воронку «Продажи»",
+   "where": "data-en"
+  },
+  {
+   "en": "Found 3 issues: no loss reasons, no sources, 62% of deals at “Thinking”. Two are fixed with one tap.",
+   "ru": "Нашёл 3 проблемы: нет причин отказа, нет источников, 62% сделок на этапе «Думает». Две чиню кнопкой.",
+   "where": "data-en"
+  },
+  {
+   "en": "Where do deals get lost?",
+   "ru": "Где теряются сделки?",
+   "where": "data-en"
+  },
+  {
+   "en": "Most deals sit at “Thinking”: 62% of open ones. Conversion to contract is 18%.",
+   "ru": "Больше всего сделок стоит на «Думает»: 62% открытых. Конверсия в договор 18%.",
+   "where": "data-en"
+  },
+  {
+   "en": "Who should I call first?",
+   "ru": "Кому звонить первым?",
+   "where": "data-en"
+  },
+  {
+   "en": "Top 5 hot leads: “Office Plus” 84, “Kitchens Pro” 79, … Write the scores to the field?",
+   "ru": "Топ-5 горячих: «Офис Плюс» 84, «Кухни-Про» 79, … Записать оценки в поле?",
+   "where": "data-en"
+  },
+  {
+   "en": "A sales-team SOP for this pipeline",
+   "ru": "Регламент для отдела продаж по этой воронке",
+   "where": "data-en"
+  },
+  {
+   "en": "generate_SOP",
+   "ru": "регламент_SOP",
+   "where": "data-en"
+  },
+  {
+   "en": "Done: a daily, weekly and monthly routine with accents from the audit findings.",
+   "ru": "Готово: ежедневный, недельный и месячный регламент с акцентами по находкам аудита.",
+   "where": "data-en"
+  },
+  {
+   "en": "(sends clients.xlsx)",
+   "ru": "(присылает файл clients.xlsx)",
+   "where": "data-en"
+  },
+  {
+   "en": "Looks like a client base: 120 contacts with a phone or email. I can import them and skip duplicates by phone.",
+   "ru": "Похоже на базу клиентов: 120 контактов с телефоном или email. Могу импортировать, дубли по телефону пропущу.",
+   "where": "data-en"
+  },
+  {
+   "en": "Notify me here about every new deal",
+   "ru": "Сообщай мне сюда о каждой новой сделке",
+   "where": "data-en"
+  },
+  {
+   "en": "⚡️ Automation #12 is on: New deal — notification in Kai. It arrives right here, in this chat — no separate bot or tokens.",
+   "ru": "⚡️ Автоматизация №12 включена: Новая сделка — уведомление в Kai. Придёт сюда, в этот чат — без отдельного бота и токенов.",
+   "where": "data-en"
+  },
+  {
+   "en": "<span class='dot'></span>generate_SOP",
+   "ru": "<span class='dot'></span>регламент_SOP",
+   "where": "data-en"
+  },
+  {
+   "en": "Input features",
+   "ru": "Возможности ввода",
+   "where": "data-en"
+  },
+  {
+   "en": "<span class='dot'></span>generate_spec_PDF",
+   "ru": "<span class='dot'></span>генерация_ТЗ_PDF",
+   "where": "data-en"
+  },
+  {
+   "en": "<span class='dot'></span>import_pipeline_Excel",
+   "ru": "<span class='dot'></span>импорт_воронки_из_Excel",
+   "where": "data-en"
+  },
+  {
+   "en": "actions available",
+   "ru": "действий доступно",
+   "where": "data-en"
+  },
+  {
+   "en": "Available",
+   "ru": "Доступно",
+   "where": "data-en"
+  },
+  {
+   "en": "In progress",
+   "ru": "В разработке",
+   "where": "data-en"
+  },
+  {
+   "en": "Preview · in development",
+   "ru": "Превью · в разработке",
+   "where": "data-en"
+  },
+  {
+   "en": "Preview · brewing in the cauldron",
+   "ru": "Превью · варится в котле",
+   "where": "data-hw-en"
+  },
+  {
+   "en": "Preview · Santa’s workshop",
+   "ru": "Превью · мастерская Деда Мороза",
+   "where": "data-ny-en"
+  },
+  {
+   "en": "The Kai agent office",
+   "ru": "Офис агентов Kai",
+   "where": "data-en"
+  },
+  {
+   "en": "A team of AI assistants works inside your CRM and reports on one screen. This is a mock-up: tap an event, see who takes it, and tell us whether you want it.",
+   "ru": "Команда ИИ-помощников работает в твоей CRM и отчитывается на одном экране. Это макет: нажми событие, посмотри, кто его берёт, и скажи, нужно ли тебе такое.",
+   "where": "data-en"
+  },
+  {
+   "en": "Mock-up · not built yet",
+   "ru": "Макет · функции ещё нет",
+   "where": "data-en"
+  },
+  {
+   "en": "of 5 on duty",
+   "ru": "на посту из 5",
+   "where": "data-en"
+  },
+  {
+   "en": "actions today",
+   "ru": "действий сегодня",
+   "where": "data-en"
+  },
+  {
+   "en": "waiting for approval",
+   "ru": "ждут одобрения",
+   "where": "data-en"
+  },
+  {
+   "en": "CRM Doctor",
+   "ru": "Доктор CRM",
+   "where": "data-en"
+  },
+  {
+   "en": "checks the pipeline daily and proposes fixes",
+   "ru": "раз в день проверяет воронку и предлагает починку",
+   "where": "data-en"
+  },
+  {
+   "en": "on duty",
+   "ru": "на посту",
+   "where": "data-en"
+  },
+  {
+   "en": "waiting for data 3 of 20",
+   "ru": "ждёт данных 3 из 20",
+   "where": "data-en"
+  },
+  {
+   "en": "Lead scorer",
+   "ru": "Скоринг лидов",
+   "where": "data-en"
+  },
+  {
+   "en": "scores new leads and fills the field",
+   "ru": "оценивает новые заявки и заполняет поле",
+   "where": "data-en"
+  },
+  {
+   "en": "Reply watch",
+   "ru": "Контроль ответов",
+   "where": "data-en"
+  },
+  {
+   "en": "a customer is waiting — sets a task",
+   "ru": "клиент ждёт ответа — ставит задачу",
+   "where": "data-en"
+  },
+  {
+   "en": "Deal summaries",
+   "ru": "Резюме сделок",
+   "where": "data-en"
+  },
+  {
+   "en": "writes chat summaries into the deal card",
+   "ru": "пишет итоги переписки в карточку сделки",
+   "where": "data-en"
+  },
+  {
+   "en": "Loss analyst",
+   "ru": "Аналитик потерь",
+   "where": "data-en"
+  },
+  {
+   "en": "reviews lost deals and proposes rules",
+   "ru": "разбирает проигранные сделки, предлагает правила",
+   "where": "data-en"
+  },
+  {
+   "en": "CRM events — tap to hand one to an agent",
+   "ru": "События в CRM — нажмите, чтобы отдать агенту",
+   "where": "data-en"
+  },
+  {
+   "en": "New lead: Igor, 60 m² renovation",
+   "ru": "Новая заявка: Игорь, ремонт 60 м²",
+   "where": "data-en"
+  },
+  {
+   "en": "No reply for 30 minutes: deal “Anna, implant”",
+   "ru": "Клиент не отвечает 30 минут: сделка «Анна, имплант»",
+   "where": "data-en"
+  },
+  {
+   "en": "Deal moved to “Contract”: “Office Plus”",
+   "ru": "Сделка перешла на этап «Договор»: «Офис Плюс»",
+   "where": "data-en"
+  },
+  {
+   "en": "Deal lost with no reason: “Nord Furniture”",
+   "ru": "Сделка проиграна без причины: «Мебель Норд»",
+   "where": "data-en"
+  },
+  {
+   "en": "Feed",
+   "ru": "Лента",
+   "where": "data-en"
+  },
+  {
+   "en": "score 78/100, a hot lead; the “Lead score” field is filled",
+   "ru": "оценка 78/100, горячий лид; поле «Оценка лида» заполнено",
+   "where": "data-en"
+  },
+  {
+   "en": "task “Call Anna back” created, due today",
+   "ru": "задача «Перезвонить Анне» поставлена, срок сегодня",
+   "where": "data-en"
+  },
+  {
+   "en": "written to the card: amount and dates agreed, delivery still open",
+   "ru": "в карточку записано: сумма и срок согласованы, открыт вопрос по доставке",
+   "where": "data-en"
+  },
+  {
+   "en": "cause: price, compared with a competitor (quote from the chat is in the card). Proposed rule: proposal unanswered for 2 days → task “clarify the budget”",
+   "ru": "причина: цена, сравнивали с конкурентом (цитата из переписки в карточке). Предлагаю правило: КП без ответа 2 дня → задача «уточнить бюджет»",
+   "where": "data-en"
+  },
+  {
+   "en": "Approve",
+   "ru": "Одобрить",
+   "where": "data-en"
+  },
+  {
+   "en": "Reject",
+   "ru": "Отклонить",
+   "where": "data-en"
+  },
+  {
+   "en": "Office",
+   "ru": "Офис",
+   "where": "data-en"
+  },
+  {
+   "en": "rule added: version 2, one-tap rollback",
+   "ru": "правило добавлено: версия 2, откат одной кнопкой",
+   "where": "data-en"
+  },
+  {
+   "en": "rejected; this proposal will not come back for 60 days",
+   "ru": "отклонено; это предложение не повторится 60 дней",
+   "where": "data-en"
+  },
+  {
+   "en": "Nothing yet — tap an event.",
+   "ru": "Пока пусто — нажмите событие.",
+   "where": "data-en"
+  },
+  {
+   "en": "The real office does not exist yet. The button opens the bot: we put you on the early list and ask which agent you need. We build it once enough people want it.",
+   "ru": "Настоящего «Офиса» ещё нет. Кнопка ведёт в бота: запишем тебя первым и спросим, какой агент нужен. Строим, когда наберётся достаточно желающих.",
+   "where": "data-en"
+  },
+  {
+   "en": "I want this office",
+   "ru": "Хочу такой офис",
+   "where": "data-en"
+  },
+  {
+   "en": "Comparison",
+   "ru": "Сравнение",
+   "where": "data-en"
+  },
+  {
+   "en": "Kai vs other ways to set up a CRM",
+   "ru": "Kai против других способов настроить CRM",
+   "where": "data-en"
+  },
+  {
+   "en": "Honestly: every route has its place. Kai covers the most common case — a working CRM in minutes, not a weeks-long project.",
+   "ru": "Честно: у каждого пути есть место. Kai закрывает самый частый случай — когда нужна рабочая CRM за минуты, а не проект на недели.",
+   "where": "data-en"
+  },
+  {
+   "en": "The table scrolls sideways",
+   "ru": "Таблица листается вбок",
+   "where": "data-en"
+  },
+  {
+   "en": "Task",
+   "ru": "Задача",
+   "where": "data-en"
+  },
+  {
+   "en": "By yourself",
+   "ru": "Своими руками",
+   "where": "data-en"
+  },
+  {
+   "en": "Integrator",
+   "ru": "Интегратор",
+   "where": "data-en"
+  },
+  {
+   "en": "Built-in CRM AI",
+   "ru": "Встроенный AI в CRM",
+   "where": "data-en"
+  },
+  {
+   "en": "Pipeline, stages, fields",
+   "ru": "Воронка, этапы, поля",
+   "where": "data-en"
+  },
+  {
+   "en": "Hours in settings, easy to get required fields wrong",
+   "ru": "Часы в настройках, легко ошибиться с обязательными полями",
+   "where": "data-en"
+  },
+  {
+   "en": "Done from a spec, usually 1–3 weeks",
+   "ru": "Делает по ТЗ, обычно 1–3 недели",
+   "where": "data-en"
+  },
+  {
+   "en": "Suggests and writes texts, does not create settings",
+   "ru": "Подсказывает и пишет тексты, настройки не создаёт",
+   "where": "data-en"
+  },
+  {
+   "en": "One message — pipeline and fields created via the API",
+   "ru": "Одно сообщение — воронка и поля созданы через API",
+   "where": "data-en"
+  },
+  {
+   "en": "Automations and integrations",
+   "ru": "Автоматизации и интеграции",
+   "where": "data-en"
+  },
+  {
+   "en": "Digital Pipeline / Salesbot by hand, connectors separately",
+   "ru": "Digital Pipeline / Salesbot вручную, коннекторы отдельно",
+   "where": "data-en"
+  },
+  {
+   "en": "Turnkey, but every change is a new invoice",
+   "ru": "Под ключ, но каждая правка — новый счёт",
+   "where": "data-en"
+  },
+  {
+   "en": "Only inside its own CRM",
+   "ru": "Только внутри своей CRM",
+   "where": "data-en"
+  },
+  {
+   "en": "Trigger → action by description; deal → Telegram, Sheets, webhook",
+   "ru": "Триггер → действие описанием; сделка → Telegram, Sheets, вебхук",
+   "where": "data-en"
+  },
+  {
+   "en": "Funnel audit and analytics",
+   "ru": "Аудит и аналитика воронки",
+   "where": "data-en"
+  },
+  {
+   "en": "CRM reports, conclusions are yours",
+   "ru": "Отчёты CRM, выводы — свои",
+   "where": "data-en"
+  },
+  {
+   "en": "One-off, within the project",
+   "ru": "Разово, в рамках проекта",
+   "where": "data-en"
+  },
+  {
+   "en": "Finds bottlenecks and tells you how to clear them; checks every day",
+   "ru": "Находит узкие места и подсказывает, как их убрать; проверяет каждый день",
+   "where": "data-en"
+  },
+  {
+   "en": "Time to result",
+   "ru": "Время до результата",
+   "where": "data-en"
+  },
+  {
+   "en": "Days",
+   "ru": "Дни",
+   "where": "data-en"
+  },
+  {
+   "en": "Weeks",
+   "ru": "Недели",
+   "where": "data-en"
+  },
+  {
+   "en": "Instant, but by hand",
+   "ru": "Сразу, но руками",
+   "where": "data-en"
+  },
+  {
+   "en": "Minutes",
+   "ru": "Минуты",
+   "where": "data-en"
+  },
+  {
+   "en": "Price",
+   "ru": "Цена",
+   "where": "data-en"
+  },
+  {
+   "en": "Your time",
+   "ru": "Ваше время",
+   "where": "data-en"
+  },
+  {
+   "en": "Project from hundreds of euros, changes billed separately",
+   "ru": "Проект от сотен евро, правки отдельно",
+   "where": "data-en"
+  },
+  {
+   "en": "Included in the CRM plan",
+   "ru": "В подписке CRM",
+   "where": "data-en"
+  },
+  {
+   "en": "From €29/mo (automations from €59), 3 days free",
+   "ru": "От €29/мес (автоматизации — от €59), 3 дня бесплатно",
+   "where": "data-en"
+  },
+  {
+   "en": "Integrator and built-in assistant timings and prices are typical benchmarks, not promises — check with a specific vendor.",
+   "ru": "Сроки и цены интеграторов и встроенных помощников — типичные ориентиры, а не обещания; проверяйте у конкретного подрядчика.",
+   "where": "data-en"
+  },
+  {
+   "en": "Pick the plan for your stage",
+   "ru": "Выбери план под свой этап",
+   "where": "data-en"
+  },
+  {
+   "en": "Pick a plan: no tricks, only treats",
+   "ru": "Выбери план: без гадостей, только сладости",
+   "where": "data-hw-en"
+  },
+  {
+   "en": "Pick a plan — a gift to your future self",
+   "ru": "Выбери план — подарок себе на год вперёд",
+   "where": "data-ny-en"
+  },
+  {
+   "en": "First 3 days free — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).",
+   "ru": "Первые 3 дня — бесплатно, отсчёт идёт с подключения CRM. Оплата картой, Telegram Stars или криптой (USDT).",
+   "where": "data-en"
+  },
+  {
+   "en": "/mo",
+   "ru": "/мес",
+   "where": "data-en"
+  },
+  {
+   "en": "Set up your CRM by talking",
+   "ru": "Настройка CRM разговором",
+   "where": "data-en"
+  },
+  {
+   "en": "3 days free",
+   "ru": "3 дня бесплатно",
+   "where": "data-en"
+  },
+  {
+   "en": "3 days free, no sacrifices",
+   "ru": "3 дня бесплатно, без жертвоприношений",
+   "where": "data-hw-en"
+  },
+  {
+   "en": "3 days free — our gift",
+   "ru": "3 дня бесплатно — наш подарок",
+   "where": "data-ny-en"
+  },
+  {
+   "en": "Consultation & spec (PDF)",
+   "ru": "Консультация и ТЗ в PDF",
+   "where": "data-en"
+  },
+  {
+   "en": "Pipelines, stages, custom fields",
+   "ru": "Воронки, этапы, кастомные поля",
+   "where": "data-en"
+  },
+  {
+   "en": "Leads, contacts, companies",
+   "ru": "Сделки, контакты, компании",
+   "where": "data-en"
+  },
+  {
+   "en": "Tasks, tags, notes",
+   "ru": "Задачи, теги, примечания",
+   "where": "data-en"
+  },
+  {
+   "en": "Loss reasons & lead sources",
+   "ru": "Причины отказа и источники",
+   "where": "data-en"
+  },
+  {
+   "en": "Import from Excel/CSV",
+   "ru": "Импорт базы из Excel/CSV",
+   "where": "data-en"
+  },
+  {
+   "en": "Voice messages & screenshots",
+   "ru": "Голосовые и скриншоты",
+   "where": "data-en"
+  },
+  {
+   "en": "Account map (PDF)",
+   "ru": "Карта аккаунта в PDF",
+   "where": "data-en"
+  },
+  {
+   "en": "~100 requests/mo",
+   "ru": "~100 запросов/мес",
+   "where": "data-en"
+  },
+  {
+   "en": "1 CRM account",
+   "ru": "1 CRM-аккаунт",
+   "where": "data-en"
+  },
+  {
+   "en": "Automations",
+   "ru": "Автоматизации",
+   "where": "data-en"
+  },
+  {
+   "en": "Custom integrations",
+   "ru": "Кастомные доработки",
+   "where": "data-en"
+  },
+  {
+   "en": "Choose",
+   "ru": "Оформить",
+   "where": "data-en"
+  },
+  {
+   "en": "Popular",
+   "ru": "Хит",
+   "where": "data-en"
+  },
+  {
+   "en": "Scary popular",
+   "ru": "Жуть как популярно",
+   "where": "data-hw-en"
+  },
+  {
+   "en": "Season’s pick",
+   "ru": "Хит сезона",
+   "where": "data-ny-en"
+  },
+  {
+   "en": "+ automation & management",
+   "ru": "+ автоматизации и управление",
+   "where": "data-en"
+  },
+  {
+   "en": "Trial runs on Start features",
+   "ru": "Пробный период — на функциях Start",
+   "where": "data-en"
+  },
+  {
+   "en": "Everything in Start, plus:",
+   "ru": "Всё из Start, плюс:",
+   "where": "data-en"
+  },
+  {
+   "en": "Event-based CRM automations",
+   "ru": "Автоматизации по событиям CRM",
+   "where": "data-en"
+  },
+  {
+   "en": "Users & roles",
+   "ru": "Пользователи и роли",
+   "where": "data-en"
+  },
+  {
+   "en": "CRM marketplace widgets",
+   "ru": "Виджеты маркетплейса CRM",
+   "where": "data-en"
+  },
+  {
+   "en": "Sales skills: meeting brief, deal health",
+   "ru": "Sales-скиллы: бриф к встрече, здоровье сделки",
+   "where": "data-en"
+  },
+  {
+   "en": "Standard integrations (Telegram, Slack, Discord, Sheets)",
+   "ru": "Стандартные интеграции (Telegram, Slack, Discord, Sheets)",
+   "where": "data-en"
+  },
+  {
+   "en": "~500 requests/mo",
+   "ru": "~500 запросов/мес",
+   "where": "data-en"
+  },
+  {
+   "en": "Up to 3 CRM accounts",
+   "ru": "До 3 CRM-аккаунтов",
+   "where": "data-en"
+  },
+  {
+   "en": "+ priority & custom work",
+   "ru": "+ приоритет и доработки",
+   "where": "data-en"
+  },
+  {
+   "en": "Everything in Pro, plus:",
+   "ru": "Всё из Pro, плюс:",
+   "where": "data-en"
+  },
+  {
+   "en": "Priority support",
+   "ru": "Приоритетная поддержка",
+   "where": "data-en"
+  },
+  {
+   "en": "Extended client memory",
+   "ru": "Расширенная память о клиентах",
+   "where": "data-en"
+  },
+  {
+   "en": "Custom builds tailored to your business",
+   "ru": "Кастомные доработки под твой бизнес",
+   "where": "data-en"
+  },
+  {
+   "en": "+€30 per build (flat)",
+   "ru": "+€30 за доработку (фикс)",
+   "where": "data-en"
+  },
+  {
+   "en": "~1,600 requests/mo",
+   "ru": "~1 600 запросов/мес",
+   "where": "data-en"
+  },
+  {
+   "en": "Your own CRM via API (custom, in-house)",
+   "ru": "Своя CRM по API (самописная, кастомная)",
+   "where": "data-en"
+  },
+  {
+   "en": "Up to 10 CRM accounts",
+   "ru": "До 10 CRM-аккаунтов",
+   "where": "data-en"
+  },
+  {
+   "en": "Custom integrations — tailored to your process",
+   "ru": "Кастомные интеграции — доработки под твой процесс",
+   "where": "data-en"
+  },
+  {
+   "en": "Max only",
+   "ru": "только Max",
+   "where": "data-en"
+  },
+  {
+   "en": "A non-standard integration or custom build (your own webhook, a link to an external service, a special scenario) is available on the Max plan only. Each build is a flat €30, no guesswork.",
+   "ru": "Нестандартная интеграция или доработка (свой вебхук, связка с внешним сервисом, особый сценарий) доступна только на тарифе Max. Каждая доработка — фиксированно €30, без «сколько попросят».",
+   "where": "data-en"
+  },
+  {
+   "en": "<b>Multi-step chains.</b> &laquo;Create a record in my service → send its id to Telegram&raquo; — up to 3 chained requests, with data passed between steps.",
+   "ru": "<b>Цепочки шагов.</b> «Создай запись в моём сервисе → пришли её id в Telegram» — до 3 запросов подряд, данные передаются между шагами.",
+   "where": "data-en"
+  },
+  {
+   "en": "<b>Full transparency.</b> Before switching it on, Kai shows exactly what will be sent — on a test deal, with secrets masked. The &laquo;Send test&raquo; button fires a trial request right away.",
+   "ru": "<b>Прозрачность.</b> Перед включением Kai показывает, что реально улетит — на тестовой сделке, с закрытыми секретами. Кнопка «Отправить тест» шлёт пробный запрос сразу.",
+   "where": "data-en"
+  },
+  {
+   "en": "<b>One-tap payment.</b> €30 per build — pay by card with a button right in the chat.",
+   "ru": "<b>Оплата в один тап.</b> €30 за доработку — кнопкой прямо в чате, картой.",
+   "where": "data-en"
+  },
+  {
+   "en": "your webhook",
+   "ru": "свой вебхук",
+   "where": "data-en"
+  },
+  {
+   "en": "Email",
+   "ru": "Email",
+   "where": "data-en"
+  },
+  {
+   "en": "any HTTP API",
+   "ru": "любой HTTP-API",
+   "where": "data-en"
+  },
+  {
+   "en": "Support that fixes things, not just replies",
+   "ru": "Поддержка, которая чинит, а не отписывается",
+   "where": "data-en"
+  },
+  {
+   "en": "all plans",
+   "ru": "на всех тарифах",
+   "where": "data-en"
+  },
+  {
+   "en": "Message the support bot — it takes your question or bug right in the chat. Bug reports go into an automated AI pipeline that reproduces the problem, prepares the fix and ships it, then notifies you that it is done.",
+   "ru": "Пиши в саппорт-бот — он принимает вопрос или баг прямо в чате. Сообщения о багах уходят в автоматический AI-конвейер: он воспроизводит проблему, готовит исправление и выкатывает его, а тебе приходит уведомление, что починили.",
+   "where": "data-en"
+  },
+  {
+   "en": "Frequently asked questions",
+   "ru": "Частые вопросы",
+   "where": "data-en"
+  },
+  {
+   "en": "Does Kai do anything on its own?",
+   "ru": "Kai что-то делает сам, без моих запросов?",
+   "where": "data-en"
+  },
+  {
+   "en": "Yes — it checks your funnel health daily. All good — it stays quiet. Something dropped — you get an alert, advice and fix buttons. Free, doesn't spend your requests.",
+   "ru": "Да — раз в день проверяет здоровье воронки. Если всё хорошо, молчит. Если что-то просело — пришлёт сигнал, совет и кнопки починки. Это бесплатно и не тратит твои запросы.",
+   "where": "data-en"
+  },
+  {
+   "en": "What if I run out of requests?",
+   "ru": "Что если кончатся запросы?",
+   "where": "data-en"
+  },
+  {
+   "en": "Top up or upgrade right in the bot (/plan). There is no daily cap on trial — just a 3-day budget, and the bot warns you when ~8 requests are left.",
+   "ru": "Докупишь пакет или поднимешь тариф прямо в боте (/plan). На пробном периоде дневного лимита нет — есть общий бюджет на 3 дня, и бот предупредит, когда останется ~8 запросов.",
+   "where": "data-en"
+  },
+  {
+   "en": "Can I change my plan?",
+   "ru": "Можно сменить тариф?",
+   "where": "data-en"
+  },
+  {
+   "en": "Yes, anytime — up or down.",
+   "ru": "Да, в любой момент — выше или ниже.",
+   "where": "data-en"
+  },
+  {
+   "en": "Do I need a CRM licence?",
+   "ru": "Нужна лицензия CRM?",
+   "where": "data-en"
+  },
+  {
+   "en": "Yes — Kai configures your CRM; the CRM licence is billed separately at their rates (the CRM has its own trial).",
+   "ru": "Да — Kai настраивает твою CRM, лицензия самой CRM оплачивается отдельно по её тарифам (у CRM свой пробный период).",
+   "where": "data-en"
+  },
+  {
+   "en": "How do I pay?",
+   "ru": "Как оплатить?",
+   "where": "data-en"
+  },
+  {
+   "en": "Card · Apple Pay · Google Pay (via Polar — a receipt/invoice arrives by e-mail) · Telegram Stars · crypto (USDT). Company invoice with VAT ID — via support, issued manually.",
+   "ru": "Карта · Apple Pay · Google Pay (через Polar — чек/инвойс приходит на e-mail) · Telegram Stars · крипта (USDT). Для РФ/СНГ — Stars или крипта; счёт в рублях на ООО/ИП пока не выставляем.",
+   "where": "data-en"
+  },
+  {
+   "en": "Will you auto-charge me?",
+   "ru": "Спишете сами при продлении?",
+   "where": "data-en"
+  },
+  {
+   "en": "Card plans renew automatically, but we remind you 7 days before — you can cancel right in the bot. Stars and crypto are one-off, no auto-charge.",
+   "ru": "Карта продлевается автоматически, но за 7 дней пришлём напоминание — отменить можно прямо в боте. Stars и крипта — разовые, без автосписания.",
+   "where": "data-en"
+  },
+  {
+   "en": "What is a 'request'?",
+   "ru": "Что такое «запрос»?",
+   "where": "data-en"
+  },
+  {
+   "en": "One message to the bot — 'create pipeline', 'add field', 'import contacts'.",
+   "ru": "Одно обращение к боту — «создай воронку», «добавь поле», «импортируй базу».",
+   "where": "data-en"
+  },
+  {
+   "en": "What if it's not for me?",
+   "ru": "А если не подойдёт?",
+   "where": "data-en"
+  },
+  {
+   "en": "First 3 days free, no card; the clock starts when you connect the CRM. The trial includes ~25 requests and Start-plan features. Try risk-free.",
+   "ru": "Первые 3 дня — бесплатно, без карты; отсчёт — с подключения CRM. В пробном периоде ~25 запросов и возможности тарифа Start. Попробуй без риска.",
+   "where": "data-en"
+  },
+  {
+   "en": "Who makes Kai and where is my data?",
+   "ru": "Кто делает Kai и где мои данные?",
+   "where": "data-en"
+  },
+  {
+   "en": "Kai is built by a small team from Poland (EU). CRM access is OAuth 2.0 only: we never see passwords, tokens are encrypted at rest. AI providers (OpenAI, Anthropic) receive only the text of your request — never tokens or your database. You can revoke access in the CRM settings anytime; /disconnect unlinks the CRM, and full data deletion is done on request via @aiicrm_support_bot. Details are in the privacy policy at the bottom of the page.",
+   "ru": "Kai делает небольшая команда из Польши (ЕС). Доступ к CRM — только OAuth 2.0: паролей не видим, токены шифруются при хранении. ИИ-провайдеры (OpenAI, Anthropic) получают только текст запроса — без токенов и базы. Доступ отзывается в настройках CRM в любой момент; /disconnect отвязывает CRM, полное удаление данных — по запросу в @aiicrm_support_bot. Подробности — в политике конфиденциальности внизу страницы.",
+   "where": "data-en"
+  },
+  {
+   "en": "Need a contract or a company invoice?",
+   "ru": "Нужен договор или счёт на компанию?",
+   "where": "data-en"
+  },
+  {
+   "en": "Card payments go through Polar (merchant of record) — a receipt/invoice arrives by e-mail. An invoice with your company details and VAT ID, a contract or a DPA — on request via support, prepared manually. A ruble invoice for a Russian legal entity is not available yet.",
+   "ru": "Оплата картой идёт через Polar (merchant of record) — чек/инвойс приходит на e-mail. Инвойс с реквизитами компании и VAT, договор или DPA — по запросу в поддержку, оформляем вручную. Счёт в рублях на ООО/ИП пока не выставляем.",
+   "where": "data-en"
+  },
+  {
+   "en": "Where do Kai's automations run?",
+   "ru": "Где работают автоматизации Kai?",
+   "where": "data-en"
+  },
+  {
+   "en": "Rules («deal moved — task», «no reply — notify me») live on Kai's side: it listens to CRM events via a webhook and performs the action through the CRM API. They don't appear in the CRM's own Digital Pipeline and run while your subscription is active. Everything already created in the CRM — pipelines, fields, tasks, contacts — stays forever.",
+   "ru": "Правила («сделка перешла — задача», «нет ответа — сообщи мне») живут на стороне Kai: он слушает события CRM по вебхуку и выполняет действие через её API. В Digital Pipeline самой CRM они не появляются и работают, пока активна подписка. Всё, что уже создано в CRM — воронки, поля, задачи, контакты — остаётся навсегда.",
+   "where": "data-en"
+  },
+  {
+   "en": "What does Kai do in Bitrix24?",
+   "ru": "Что Kai умеет в Bitrix24?",
+   "where": "data-en"
+  },
+  {
+   "en": "Beta: pipelines and stages, fields, deals, contacts, companies, tasks, analytics and specs. In-Bitrix24 automations (robots) and widgets are not there yet — if those are your main need, it's fairer to wait or use amoCRM/Kommo, where everything works.",
+   "ru": "Бета: воронки и этапы, поля, сделки, контакты, компании, задачи, аналитика и ТЗ. Автоматизаций внутри Bitrix24 (роботов) и виджетов пока нет — если они для тебя главное, честнее подождать или остаться на amoCRM/Kommo, где всё работает.",
+   "where": "data-en"
+  },
+  {
+   "en": "Does Kai work with a custom or in-house CRM?",
+   "ru": "Kai работает с самописной или кастомной CRM?",
+   "where": "data-en"
+  },
+  {
+   "en": "Yes, via its API. Your own CRM — custom, in-house or any other with a REST API — connects through a connector spec: the API address, the auth method (OAuth 2.0, API key, bearer or basic) and which endpoints do what. Kai drafts the spec from your docs or asks step by step, then works with it like with amoCRM: pipelines, deals, contacts, tasks, automations. Only the pipelines list is mandatory. Try it first on Kai Sandbox CRM. Connecting is on the Max plan; discussing and drafting the spec is free.",
+   "ru": "Да, по API. Своя CRM — самописная, кастомная или любая с REST API — подключается по спецификации коннектора: адрес API, авторизация (OAuth 2.0, API-ключ, bearer или basic) и какие эндпоинты за что отвечают. Kai соберёт черновик по твоей документации или спросит всё по шагам, а дальше работает с ней как с amoCRM: воронки, сделки, контакты, задачи, автоматизации. Обязателен только список воронок. Посмотреть заранее можно на песочнице Kai Sandbox CRM. Подключение — на тарифе Max, обсудить и составить спецификацию можно бесплатно.",
+   "where": "data-en"
+  },
+  {
+   "en": "Connect your CRM in 1 click",
+   "ru": "Подключи CRM за 1 клик",
+   "where": "data-en"
+  },
+  {
+   "en": "Click the button — the bot opens, pick your CRM, authorize via OAuth. No keys, no ZIP files.",
+   "ru": "Нажми кнопку — откроется бот, выбери свою CRM, авторизуйся через OAuth. Без ключей, без ZIP-файлов.",
+   "where": "data-en"
+  },
+  {
+   "en": "Connect in 1 click",
+   "ru": "Подключить за 1 клик",
+   "where": "data-en"
+  },
+  {
+   "en": "Pay by international card (Visa/Mastercard via Polar), Telegram Stars, or crypto (USDT). Prices are per bot owner; the CRM licence itself is billed separately.",
+   "ru": "Оплата международной картой (Visa/Mastercard через Polar; карты «Мир» не проходят), Telegram Stars или криптой (USDT). Цены указаны за пользователя-владельца бота; лицензия самой CRM оплачивается отдельно.",
+   "where": "data-en"
+  },
+  {
+   "en": "Start now",
+   "ru": "Начать сейчас",
+   "where": "data-en"
+  },
+  {
+   "en": "Consultation. Setup.<br><em>Done.</em>",
+   "ru": "Консультация. Настройка.<br><em>Готово.</em>",
+   "where": "data-en"
+  },
+  {
+   "en": "No fear. No developers.<br><em>Done.</em>",
+   "ru": "Без страха. Без программистов.<br><em>Готово.</em>",
+   "where": "data-hw-en"
+  },
+  {
+   "en": "Make a wish. Set it up.<br><em>Done.</em>",
+   "ru": "Загадать. Настроить.<br><em>Готово.</em>",
+   "where": "data-ny-en"
+  },
+  {
+   "en": "Open Kai in Telegram",
+   "ru": "Открыть Kai в Telegram",
+   "where": "data-en"
+  },
+  {
+   "en": "AI assistant for your CRM setup. Consults like an expert, implements like a developer — in your browser or Telegram.",
+   "ru": "AI-ассистент для настройки твоей CRM. Консультирует как эксперт, реализует как программист — в браузере или Telegram.",
+   "where": "data-en"
+  },
+  {
+   "en": "Try it",
+   "ru": "Попробовать",
+   "where": "data-en"
+  },
+  {
+   "en": "Account",
+   "ru": "Личный кабинет",
+   "where": "data-en"
+  },
+  {
+   "en": "Create account",
+   "ru": "Создать аккаунт",
+   "where": "data-en"
+  },
+  {
+   "en": "Resources",
+   "ru": "Ресурсы",
+   "where": "data-en"
+  },
+  {
+   "en": "Guides: amoCRM, Kommo, Bitrix24, custom CRM",
+   "ru": "Гайды: amoCRM, Kommo, Bitrix24, своя CRM",
+   "where": "data-en"
+  },
+  {
+   "en": "Your own CRM via API: docs",
+   "ru": "Своя CRM по API: документация",
+   "where": "data-en"
+  },
+  {
+   "en": "Examples: before → after",
+   "ru": "Примеры: было → стало",
+   "where": "data-en"
+  },
+  {
+   "en": "© 2026 Kai. CRM setup without developers.",
+   "ru": "© 2026 Kai. Настройка CRM без программистов.",
+   "where": "data-en"
+  },
+  {
+   "en": "© 2026 Kai. CRM setup without developers or ghouls.",
+   "ru": "© 2026 Kai. Настройка CRM без программистов и без нечисти.",
+   "where": "data-hw-en"
+  },
+  {
+   "en": "© 2026 Kai. CRM setup without developers or tinsel.",
+   "ru": "© 2026 Kai. Настройка CRM без программистов и без мишуры.",
+   "where": "data-ny-en"
+  },
+  {
+   "en": "Privacy policy",
+   "ru": "Политика конфиденциальности",
+   "where": "data-en"
+  },
+  {
+   "en": "Terms of service",
+   "ru": "Условия использования",
+   "where": "data-en"
+  },
+  {
+   "en": "Refund policy",
+   "ru": "Политика возврата",
+   "where": "data-en"
+  },
+  {
+   "en": "Cookie settings",
+   "ru": "Настройки cookie",
+   "where": "data-en"
+  },
+  {
+   "en": "We use cookies for site analytics. Nothing is stored without your consent — the site works fine without them. See our <a href='privacy-en.html'>Privacy Policy</a>.",
+   "ru": "Мы используем cookie для аналитики посещаемости. Без твоего согласия они не ставятся — сайт работает и без них. Подробнее в <a href='privacy.html'>Политике конфиденциальности</a>.",
+   "where": "data-en"
+  },
+  {
+   "en": "Halloween treats: cookies are for site analytics only. Nothing is stored without your consent — the site works fine without them. See our <a href='privacy.html'>Privacy Policy</a>.",
+   "ru": "Печеньки на Хеллоуин: cookie только для аналитики посещаемости. Без твоего согласия они не ставятся — сайт работает и без них. Подробнее в <a href='privacy.html'>Политике конфиденциальности</a>.",
+   "where": "data-hw-en"
+  },
+  {
+   "en": "Holiday cookies: for site analytics only. Nothing is stored without your consent — the site works fine without them. See our <a href='privacy-en.html'>Privacy Policy</a>.",
+   "ru": "Новогодние печеньки: cookie только для аналитики посещаемости. Без твоего согласия они не ставятся — сайт работает и без них. Подробнее в <a href='privacy.html'>Политике конфиденциальности</a>.",
+   "where": "data-ny-en"
+  },
+  {
+   "en": "Accept",
+   "ru": "Принять",
+   "where": "data-en"
+  },
+  {
+   "en": "Only necessary",
+   "ru": "Только необходимые",
+   "where": "data-en"
+  },
+  {
+   "en": "I can set up your CRM in minutes — tell me what you do?",
+   "ru": "Настрою CRM за пару минут — расскажешь, чем занимаешься?",
+   "where": "data-en"
+  },
+  {
+   "en": "Boo! I can set up your CRM in minutes — tell me what you do?",
+   "ru": "Бу! Настрою CRM за пару минут — расскажешь, чем занимаешься?",
+   "where": "data-hw-en"
+  },
+  {
+   "en": "Happy holidays! I can set up your CRM in minutes — tell me what you do?",
+   "ru": "С праздниками! Настрою CRM за пару минут — расскажешь, чем занимаешься?",
+   "where": "data-ny-en"
+  },
+  {
+   "en": "Close chat",
+   "ru": "Закрыть чат",
+   "where": "data-en-label"
+  }
+ ],
+ "meta": {
+  "title": "AI assistant that sets up amoCRM, Kommo, Bitrix24 and custom CRMs | Kai",
+  "description": "Kai sets up your CRM from a plain-language message in Telegram or your browser — amoCRM, Kommo, Bitrix24 or your own custom CRM via its API: pipelines, fields, tasks, automations, analytics. 65 actions. 3 days free, no card.",
+  "og_title": "Kai — AI assistant that sets up your CRM",
+  "og_description": "An AI assistant that configures your CRM from a chat message — in Telegram or in your browser.",
+  "keywords": "amoCRM, Kommo, Bitrix24, CRM setup, AI assistant, CRM automation, Telegram CRM bot, sales pipelines, amoCRM API, Kommo API, CRM without developers, custom CRM, in-house CRM, homegrown CRM, your own CRM via API, connect AI agent to custom CRM, AI assistant for in-house CRM, CRM REST API AI integration, bespoke CRM AI agent"
+ },
+ "ld": {
+  "description": "AI assistant that sets up your CRM from a chat message — in Telegram or in your browser: amoCRM, Kommo, Bitrix24 or your own custom CRM via its API. 65 actions: pipelines, fields, stages, deals, contacts, automations, analytics.",
+  "featureList": [
+   "AI consulting on your CRM structure",
+   "Sales pipelines and stages",
+   "Custom fields for deals, contacts and companies",
+   "Event-based CRM automations",
+   "Technical specification as a PDF",
+   "Voice message recognition",
+   "One-click OAuth connection",
+   "Your own (custom, in-house) CRM via REST API: OAuth 2.0, API key, bearer"
+  ],
+  "faq": [
+   [
+    "What can Kai do?",
+    "Kai is an AI assistant that sets up your CRM from a chat message — in Telegram or in your browser: it creates pipelines, fields, stages, deals, contacts, tasks and automations. 65 actions without developers."
+   ],
+   [
+    "Is it safe? Will you get access to my data?",
+    "Kai works through the official amoCRM/Kommo OAuth 2.0. We never see your password. You can revoke access at any time in your CRM settings."
+   ],
+   [
+    "How much does Kai cost?",
+    "Three plans: Start — €29/month (1 CRM), Pro — €59/month (3 CRMs), Max — €119/month (10 CRMs). The first 3 days are free."
+   ],
+   [
+    "Does Kai work with Kommo?",
+    "Yes, Kai supports both amoCRM and Kommo. The API is compatible, the connection goes through OAuth."
+   ],
+   [
+    "Does Kai work with Bitrix24?",
+    "Yes, in beta: Bitrix24 connects through an inbound webhook, Kai sets up pipelines, stages, fields, deals, contacts and tasks and runs the analytics. Automations inside Bitrix24 and widgets are not available yet. amoCRM and Kommo are fully supported."
+   ],
+   [
+    "Does Kai work with a custom or in-house CRM?",
+    "Yes, via its API. Your own CRM — custom, in-house or any other with a REST API — connects through a connector spec: the API address, the auth method (OAuth 2.0, API key, bearer or basic) and which endpoints do what. Kai drafts the spec from your docs or asks step by step, then works with it like with amoCRM: pipelines, deals, contacts, tasks, automations. Only the pipelines list is mandatory. Try it first on Kai Sandbox CRM. Connecting is on the Max plan; discussing and drafting the spec is free."
+   ],
+   [
+    "Can I try it for free?",
+    "Yes: 3 days free, no card, starting when you connect your CRM. The trial includes ~25 requests and Start-plan features."
+   ]
+  ]
+ },
+ "ui": {
+  "lang_name": "English",
+  "lang_label": "Language",
+  "kai_note": "Kai itself speaks English and Russian; this site is in English to help you find your way.",
+  "words": [
+   "KAI",
+   "CRM",
+   "Sales",
+   "Flow",
+   "Growth",
+   "Focus"
+  ],
+  "words_ny": [
+   "KAI",
+   "{year}",
+   "SNOW",
+   "MERRY",
+   "CHEERS",
+   "JOY",
+   "NOEL",
+   "FROST",
+   "GIFTS",
+   "JINGLE",
+   "COZY",
+   "SANTA"
+  ],
+  "theme_hw": "Halloween mode",
+  "theme_ny": "Holiday mode",
+  "turn_on": ": turn on",
+  "turn_off": ": turn off",
+  "actions_word": "actions"
+ }
+}

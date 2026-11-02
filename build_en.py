@@ -183,6 +183,7 @@ def main() -> None:
     n_ru = len(re.findall(r'data-ru="', html))
     # контроль: в теле не должно остаться русского текста вне скриптов, стилей и атрибутов
     body = re.sub(r"<(script|style)\b[\s\S]*?</\1>", " ", html[html.find("<body"):])
+    body = re.sub(r'<ul class="lang-list"[\s\S]*?</ul>', " ", body)   # названия языков в меню — на своих языках, это не «забытый русский»
     text = re.sub(r'<(?:[^>"]|"[^"]*")*>', "\x00", body)   # теги убираем с учётом «>» внутри значений атрибутов
     left = [t.strip() for t in text.split("\x00") if re.search(r"[А-Яа-яЁё]", t)]
     print(f"en/index.html: {len(html) // 1024} KB, data-ru attrs kept: {n_ru}, Russian text nodes left: {len(left)}, "

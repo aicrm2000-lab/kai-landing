@@ -15,6 +15,12 @@
 <link rel="canonical" href="https://aii-crm.com/en/">
 <link rel="alternate" hreflang="ru" href="https://aii-crm.com/">
 <link rel="alternate" hreflang="en" href="https://aii-crm.com/en/">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/de/">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/fr/">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/es/">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/pl/">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/pt/">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/it/">
 <link rel="alternate" hreflang="x-default" href="https://aii-crm.com/">
 
 <!-- Open Graph / Facebook -->
@@ -273,6 +279,29 @@ nav {
   background: var(--smoke);
 }
 .lang-btn:hover:not(.active) { color: var(--mist); }
+/* language menu: current flag + code, list of flags and native names; pages per language are static */
+.lang-menu { position: relative; margin-left: 22px; flex-shrink: 0; }
+.lang-cur {
+  display: inline-flex; align-items: center; gap: 7px; height: 30px; padding: 0 9px 0 8px;
+  border: 1px solid var(--smoke); border-radius: 8px; background: transparent; color: var(--mist);
+  font: 500 11px/1 var(--font); letter-spacing: .05em; cursor: pointer; transition: border-color .15s, color .15s;
+}
+.lang-cur:hover, .lang-menu.open .lang-cur { border-color: var(--accent); color: var(--paper); }
+.lang-chev { transition: transform .15s; opacity: .7; }
+.lang-menu.open .lang-chev { transform: rotate(180deg); }
+.flag { display: inline-block; width: 18px; height: 12px; border-radius: 2.5px; overflow: hidden; flex-shrink: 0; box-shadow: 0 0 0 1px rgba(255,255,255,.14); }
+.flag svg { display: block; width: 100%; height: 100%; }
+.lang-list {
+  position: absolute; top: calc(100% + 8px); right: 0; min-width: 176px; margin: 0; padding: 6px; list-style: none;
+  background: var(--bg-1); border: 1px solid var(--graphite); border-radius: 12px; box-shadow: 0 18px 50px rgba(0,0,0,.45); z-index: 120;
+}
+.lang-list a { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 8px; color: var(--mist); font-size: 13px; font-weight: 500; white-space: nowrap; text-decoration: none; }
+.lang-list a:hover { background: rgba(255,255,255,.06); color: var(--paper); }
+.lang-list li.on a { color: var(--paper); background: var(--accent-dim); }
+.lang-list li.on a::after { content: ''; margin-left: auto; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.mobile-menu-footer .lang-menu { margin-left: 0; }
+.mobile-menu-footer .lang-list { top: auto; bottom: calc(100% + 8px); right: auto; left: 0; }
+.hero-note-lang { display: block; margin-top: 6px; opacity: .8; }
 
 .nav-cta {
   margin-left: 10px;
@@ -310,7 +339,7 @@ html.signed-in .nav-acct, html.signed-in .mobile-menu-acct { display: inline-fle
 @media (max-width: 860px) {
   .nav-links { display: none; }
   .nav-inner .nav-call { margin: 0 10px 0 4px; }   /* air between the handset and «Connect CRM» */
-  .nav-inner .lang-toggle { display: none; }
+  .nav-inner .lang-toggle, .nav-inner .lang-menu { display: none; }
   .nav-inner .hw-toggle, .nav-inner .ny-toggle { display: none !important; }   /* phones: the toggles live in the menu */
   .nav-inner .nav-login { display: none; }
   .nav-cta { display: none; }
@@ -2673,7 +2702,7 @@ html.ny .section-label::before {
 }
 .ny-deco { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
 .ny-garland {
-  position: absolute; top: 56px; left: -20px; right: -20px; height: 44px; opacity: .85;
+  position: absolute; top: 66px; left: -20px; right: -20px; height: 44px; opacity: .85;   /* the nav is 60px: hang clear of it */
   background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 44'><path d='M0 4C40 34 120 34 160 4' fill='none' stroke='%232C3A62' stroke-width='1.4'/><rect x='26.7' y='17.5' width='3' height='3.5' rx='.6' fill='%235F6B92'/><rect x='60.6' y='24.7' width='3' height='3.5' rx='.6' fill='%235F6B92'/><rect x='96.4' y='24.7' width='3' height='3.5' rx='.6' fill='%235F6B92'/><rect x='130.3' y='17.5' width='3' height='3.5' rx='.6' fill='%235F6B92'/><ellipse cx='28.2' cy='25.5' rx='3.2' ry='4.2' fill='%23E8505B'/><ellipse cx='62.1' cy='32.7' rx='3.2' ry='4.2' fill='%23F5C451'/><ellipse cx='97.9' cy='32.7' rx='3.2' ry='4.2' fill='%238FD0FF'/><ellipse cx='131.8' cy='25.5' rx='3.2' ry='4.2' fill='%233FC48E'/></svg>") left top/160px 44px repeat-x;
 }
 .ny-garland i { position: absolute; inset: 0; background-repeat: repeat-x; background-size: 160px 44px; background-position: left top; animation: nyBlink 2.2s ease-in-out infinite alternate; }
@@ -2703,13 +2732,40 @@ html.ny .section-label::before {
   .ny-garland i, .ny-drift { animation: none; }
   html.ny .nav-logo::after, html.ny .footer-brand .logo::after { animation: none; }
 }
-@media (max-width: 640px) { .ny-garland { top: 50px; height: 36px; background-size: 130px 36px; } .ny-garland i { background-size: 130px 36px; } .ny-snow i:nth-child(3) { display: none; } }
+@media (max-width: 640px) { .ny-garland { top: 64px; height: 36px; background-size: 130px 36px; } .ny-garland i { background-size: 130px 36px; } .ny-snow i:nth-child(3) { display: none; } .hero .ny-gifts { display: none; } .ny-gifts { transform: scale(.75); transform-origin: bottom right; } }
+/* gifts (hero bottom-left, plans and CTA bottom-right), snow caps on «windows», Santa hat on the chat button */
+.ny-gifts { position: absolute; left: clamp(12px, 3vw, 56px); bottom: 14px; display: flex; align-items: flex-end; gap: 6px; z-index: 2; }
+.ny-gifts.r { left: auto; right: clamp(12px, 3vw, 56px); }
+.ny-gift { display: block; width: 44px; height: 44px; background: center/contain no-repeat; filter: drop-shadow(0 6px 10px rgba(0,0,0,.35)); }
+.ny-gift.g1 { width: 56px; height: 56px; background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='8' y='27' width='48' height='31' rx='3' fill='%23D9434E'/><rect x='4' y='19' width='56' height='12' rx='3' fill='%23F06873'/><rect x='27' y='19' width='10' height='39' fill='%23F5C451'/><rect x='4' y='23' width='56' height='4' fill='%23F5C451' fill-opacity='.85'/><path d='M32 19c-3-9-14-11-15-5 0 4 7 6 15 5zM32 19c3-9 14-11 15-5 0 4-7 6-15 5z' fill='%23F5C451'/><circle cx='32' cy='18' r='3.2' fill='%23F5C451'/></svg>"); transform: rotate(-4deg); }
+.ny-gift.g2 { background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='8' y='27' width='48' height='31' rx='3' fill='%2321A66D'/><rect x='4' y='19' width='56' height='12' rx='3' fill='%233FC48E'/><rect x='27' y='19' width='10' height='39' fill='%23CFEFFF'/><rect x='4' y='23' width='56' height='4' fill='%23CFEFFF' fill-opacity='.85'/><path d='M32 19c-3-9-14-11-15-5 0 4 7 6 15 5zM32 19c3-9 14-11 15-5 0 4-7 6-15 5z' fill='%23CFEFFF'/><circle cx='32' cy='18' r='3.2' fill='%23CFEFFF'/></svg>"); transform: rotate(3deg) translateY(2px); }
+.ny-gift.g3 { width: 36px; height: 36px; background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='8' y='27' width='48' height='31' rx='3' fill='%23F5C451'/><rect x='4' y='19' width='56' height='12' rx='3' fill='%23FFD97A'/><rect x='27' y='19' width='10' height='39' fill='%23E8505B'/><rect x='4' y='23' width='56' height='4' fill='%23E8505B' fill-opacity='.85'/><path d='M32 19c-3-9-14-11-15-5 0 4 7 6 15 5zM32 19c3-9 14-11 15-5 0 4-7 6-15 5z' fill='%23E8505B'/><circle cx='32' cy='18' r='3.2' fill='%23E8505B'/></svg>"); transform: rotate(-7deg); }
+.cta-band .ny-gifts { bottom: 10px; }
+html.ny .pricing { position: relative; }
+.pricing .ny-gifts { bottom: 22px; }
+html.ny .plan-card::before, html.ny .kd::before, html.ny .ka::before, html.ny .chat-panel::before, html.ny .cookie-banner::before {
+  content: ''; position: absolute; left: 8px; right: 8px; top: -7px; height: 16px; pointer-events: none; z-index: 3;
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 16'><path d='M0 9C10 2 20 2 30 8S50 12 60 7 85 1 100 7 125 13 140 9V16H0Z' fill='%23FFFFFF' fill-opacity='.93'/></svg>") left top/140px 16px repeat-x;
+  filter: drop-shadow(0 2px 2px rgba(120,160,220,.25));
+}
+html.ny .kd, html.ny .ka { position: relative; }
+html.ny .chat-panel::before { top: 0; left: 0; right: 0; }      /* overflow hidden: the snow sits just inside the top edge */
+html.ny .cookie-banner::before { top: -8px; left: 0; right: 0; }
+html.ny .chat-launcher::before {
+  content: ''; position: absolute; top: -13px; right: -7px; width: 34px; height: 30px; pointer-events: none; z-index: 2;
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 56'><path d='M6 40Q14 12 46 9Q40 26 46 40Z' fill='%23E0434F'/><circle cx='48' cy='9' r='6.5' fill='%23FFFFFF'/><rect x='2' y='37' width='50' height='12' rx='6' fill='%23FFFFFF'/></svg>") center/contain no-repeat; transform: rotate(16deg);
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.35));
+}
+@media (max-width: 900px) { .hero .ny-gifts { display: none; } }   /* the hero note sits low on narrow screens */
 </style>
 <script>(function(){try{if(new URLSearchParams(location.search).get('me')==='1')localStorage.setItem('kai_no_track','1');}catch(e){}})();</script>
 <script>(function(){try{if(/(?:^|;\s*)kai_in=1(?:;|$)/.test(document.cookie))document.documentElement.classList.add('signed-in');}catch(e){}})();</script>
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',S=[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]],act=null,apr=-1;S.forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});S.forEach(function(s){if(s[1]||act===s[0])h.setAttribute('data-'+s[0]+'-season','1');});if(!act)return;h.classList.add(act);var ICO={hw:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230C0A0E'/><path d='M15.5 7.2c-.2-1.6.6-3 2.3-3.6' stroke='%2375B04A' stroke-width='2.2' fill='none' stroke-linecap='round'/><ellipse cx='10' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='22' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='16' cy='18' rx='7' ry='9.6' fill='%23FF7A1A'/><path d='M10 15l3 3.6-3.8 1.3zM22 15l-3 3.6 3.8 1.3z' fill='%230C0A0E'/><path d='M9.2 22.6c2 2.6 4.3 3.9 6.8 3.9s4.8-1.3 6.8-3.9c-2.2.9-4.5 1.4-6.8 1.4s-4.6-.5-6.8-1.4z' fill='%230C0A0E'/></svg>",ny:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23070B19'/><path d='M16 7l5 7H11zM16 11l7 9H9zM16 16l9 10H7z' fill='%2321A66D'/><rect x='14.5' y='26' width='3' height='3' fill='%238A5A2B'/><path d='M16 2.5l1 2.3 2.3 1-2.3 1-1 2.3-1-2.3-2.3-1 2.3-1z' fill='%23F5C451'/></svg>"},i=document.querySelector('link[rel="icon"]');if(i&&ICO[act])i.setAttribute('href',ICO[act]);}catch(e){}})();</script>
+<script>/* языковые страницы статические: с главной без сохранённого выбора ведём по языку браузера; сохранённый выбор главнее; ?lang= и ru/en не трогаем */
+(function(){try{var L=['de','fr','es','pl','pt','it'],h=document.documentElement;if((h.getAttribute('data-page-lang')||'ru')!=='ru')return;if(new URLSearchParams(location.search).get('lang'))return;var st=null;try{st=localStorage.getItem('kai_lang');}catch(e){}var want=st&&L.indexOf(st)!==-1?st:null;if(!st){var list=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];for(var i=0;i<list.length&&!want;i++){var c=String(list[i]).toLowerCase().split('-')[0];if(c==='ru'||c==='en')break;if(L.indexOf(c)!==-1)want=c;}}if(want)location.replace('/'+want+'/'+location.search+location.hash);}catch(e){}})();</script>
 </head>
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" hidden aria-hidden="true" style="display:none"><symbol id="flag-ru" viewBox="0 0 60 40"><rect width='60' height='40' fill='#fff'/><rect y='13.3' width='60' height='13.4' fill='#0039A6'/><rect y='26.7' width='60' height='13.3' fill='#D52B1E'/></symbol><symbol id="flag-en" viewBox="0 0 60 40"><rect width='60' height='40' fill='#012169'/><path d='M0 0L60 40M60 0L0 40' stroke='#fff' stroke-width='8'/><path d='M0 0L60 40M60 0L0 40' stroke='#C8102E' stroke-width='3'/><path d='M30 0v40M0 20h60' stroke='#fff' stroke-width='12'/><path d='M30 0v40M0 20h60' stroke='#C8102E' stroke-width='6'/></symbol><symbol id="flag-de" viewBox="0 0 60 40"><rect width='60' height='13.4' fill='#000'/><rect y='13.3' width='60' height='13.4' fill='#DD0000'/><rect y='26.7' width='60' height='13.3' fill='#FFCE00'/></symbol><symbol id="flag-fr" viewBox="0 0 60 40"><rect width='20' height='40' fill='#0055A4'/><rect x='20' width='20' height='40' fill='#fff'/><rect x='40' width='20' height='40' fill='#EF4135'/></symbol><symbol id="flag-es" viewBox="0 0 60 40"><rect width='60' height='40' fill='#AA151B'/><rect y='10' width='60' height='20' fill='#F1BF00'/></symbol><symbol id="flag-pl" viewBox="0 0 60 40"><rect width='60' height='20' fill='#fff'/><rect y='20' width='60' height='20' fill='#DC143C'/></symbol><symbol id="flag-pt" viewBox="0 0 60 40"><rect width='60' height='40' fill='#009C3B'/><path d='M30 4L55 20 30 36 5 20z' fill='#FFDF00'/><circle cx='30' cy='20' r='8.5' fill='#002776'/></symbol><symbol id="flag-it" viewBox="0 0 60 40"><rect width='20' height='40' fill='#009246'/><rect x='20' width='20' height='40' fill='#fff'/><rect x='40' width='20' height='40' fill='#CE2B37'/></symbol></svg>
 <div class="hw-ghosts" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="ny-snow" aria-hidden="true"><i></i><i></i><i></i></div>
 
@@ -2731,10 +2787,7 @@ html.ny .section-label::before {
 <a href="https://app.aii-crm.com/login?lang=en" class="nav-login acct-link login-link" data-ru="Войти" data-en="Sign in">Sign in</a>
 <a href="https://app.aii-crm.com/signup?lang=en" class="nav-cta acct-link signup-link" data-ru="Регистрация" data-en="Sign up">Sign up</a>
 <a href="https://app.aii-crm.com/account?lang=en" class="nav-cta nav-acct acct-link" data-ru="Личный кабинет" data-en="My account">My account</a>
-    <div class="lang-toggle">
-      <button class="lang-btn active" data-lang="ru">RU</button>
-      <button class="lang-btn" data-lang="en">EN</button>
-    </div>
+    <div class="lang-menu"><button type="button" class="lang-cur" aria-haspopup="listbox" aria-expanded="false" aria-label="Language" data-ru-label="Язык" data-en-label="Language" title="Language" data-ru-title="Язык" data-en-title="Language"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-ru"/></svg></span><span class="lang-code">RU</span><svg class="lang-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><ul class="lang-list" role="listbox" hidden><li><a role="option" href="/" lang="ru" hreflang="ru" data-lang="ru"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-ru"/></svg></span><span>Русский</span></a></li><li><a role="option" href="/en/" lang="en" hreflang="en" data-lang="en"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-en"/></svg></span><span>English</span></a></li><li><a role="option" href="/de/" lang="de" hreflang="de" data-lang="de"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-de"/></svg></span><span>Deutsch</span></a></li><li><a role="option" href="/fr/" lang="fr" hreflang="fr" data-lang="fr"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-fr"/></svg></span><span>Français</span></a></li><li><a role="option" href="/es/" lang="es" hreflang="es" data-lang="es"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-es"/></svg></span><span>Español</span></a></li><li><a role="option" href="/pl/" lang="pl" hreflang="pl" data-lang="pl"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-pl"/></svg></span><span>Polski</span></a></li><li><a role="option" href="/pt/" lang="pt" hreflang="pt" data-lang="pt"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-pt"/></svg></span><span>Português</span></a></li><li><a role="option" href="/it/" lang="it" hreflang="it" data-lang="it"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-it"/></svg></span><span>Italiano</span></a></li></ul></div>
     <button type="button" class="hw-toggle" aria-pressed="true" title="Хеллоуин-режим: выключить"></button>
     <button type="button" class="ny-toggle" aria-pressed="false" title="Новогодний режим: включить"></button>
     <button class="burger" id="burger" aria-label="Menu">
@@ -2752,10 +2805,7 @@ html.ny .section-label::before {
   <button type="button" class="mm-call" data-call-kai="menu" aria-haspopup="dialog"><span class="bc-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.6 4-2 1.3a11 11 0 005.1 5.1l1.3-2 4 1.6v3a2 2 0 01-2.2 2A17 17 0 013 6.2 2 2 0 015 4z"/></svg></span><span data-ru="Позвонить Kai" data-en="Call Kai">Call Kai</span> <span class="bc-soon" data-ru="скоро" data-en="soon">soon</span></button>
   <a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" data-ru="Подключить CRM" data-en="Connect CRM">Connect CRM</a>
   <div class="mobile-menu-footer">
-    <div class="lang-toggle">
-      <button class="lang-btn active" data-lang="ru">RU</button>
-      <button class="lang-btn" data-lang="en">EN</button>
-    </div>
+    <div class="lang-menu"><button type="button" class="lang-cur" aria-haspopup="listbox" aria-expanded="false" aria-label="Language" data-ru-label="Язык" data-en-label="Language" title="Language" data-ru-title="Язык" data-en-title="Language"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-ru"/></svg></span><span class="lang-code">RU</span><svg class="lang-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><ul class="lang-list" role="listbox" hidden><li><a role="option" href="/" lang="ru" hreflang="ru" data-lang="ru"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-ru"/></svg></span><span>Русский</span></a></li><li><a role="option" href="/en/" lang="en" hreflang="en" data-lang="en"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-en"/></svg></span><span>English</span></a></li><li><a role="option" href="/de/" lang="de" hreflang="de" data-lang="de"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-de"/></svg></span><span>Deutsch</span></a></li><li><a role="option" href="/fr/" lang="fr" hreflang="fr" data-lang="fr"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-fr"/></svg></span><span>Français</span></a></li><li><a role="option" href="/es/" lang="es" hreflang="es" data-lang="es"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-es"/></svg></span><span>Español</span></a></li><li><a role="option" href="/pl/" lang="pl" hreflang="pl" data-lang="pl"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-pl"/></svg></span><span>Polski</span></a></li><li><a role="option" href="/pt/" lang="pt" hreflang="pt" data-lang="pt"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-pt"/></svg></span><span>Português</span></a></li><li><a role="option" href="/it/" lang="it" hreflang="it" data-lang="it"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-it"/></svg></span><span>Italiano</span></a></li></ul></div>
     <button type="button" class="hw-toggle" aria-pressed="true" title="Хеллоуин-режим: выключить"></button>
     <button type="button" class="ny-toggle" aria-pressed="false" title="Новогодний режим: включить"></button>
     <a href="https://app.aii-crm.com/login?lang=en" class="mobile-menu-login acct-link login-link" data-ru="Войти" data-en="Sign in">Sign in</a>
@@ -2771,7 +2821,7 @@ html.ny .section-label::before {
   <canvas id="kai" aria-hidden="true"></canvas>
   <div class="hero-frame"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
   <div class="hw-deco" aria-hidden="true"><span class="hw-web l"></span><span class="hw-web r"></span><span class="hw-fog"></span><span class="hw-spider"><i></i></span><div class="hw-bats"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div></div>
-  <div class="ny-deco" aria-hidden="true"><span class="ny-garland"><i></i><i></i></span><span class="ny-drift"></span></div>
+  <div class="ny-deco" aria-hidden="true"><span class="ny-garland"><i></i><i></i></span><span class="ny-drift"></span><span class="ny-gifts"><i class="ny-gift g1"></i><i class="ny-gift g2"></i><i class="ny-gift g3"></i></span></div>
 
   <div class="hero-logo-space" id="heroLogoSpace" aria-hidden="true"></div>
   <div class="hero-tag" id="heroTag" aria-hidden="true"></div>
@@ -3658,6 +3708,7 @@ html.ny .section-label::before {
 </section>
 
 <section class="pricing" id="pricing">
+  <div class="ny-deco" aria-hidden="true"><span class="ny-gifts r"><i class="ny-gift g3"></i><i class="ny-gift g1"></i></span></div>
   <div class="container">
     <p class="section-label reveal" data-ru="Тарифы" data-en="Plans">Plans</p>
     <h2 class="section-heading reveal reveal-delay-1" data-ny-ru="Выбери план — подарок себе на год вперёд" data-ny-en="Pick a plan — a gift to your future self" data-hw-ru="Выбери план: без гадостей, только сладости" data-hw-en="Pick a plan: no tricks, only treats" data-ru="Выбери план под свой этап" data-en="Pick the plan for your stage">Pick the plan for your stage</h2>
@@ -3834,7 +3885,7 @@ html.ny .section-label::before {
 <!-- CTA BAND -->
 <section class="cta-band" id="cta">
   <div class="hw-deco" aria-hidden="true"><span class="hw-web l"></span><span class="hw-web r"></span></div>
-  <div class="ny-deco" aria-hidden="true"><span class="ny-garland"><i></i><i></i></span></div>
+  <div class="ny-deco" aria-hidden="true"><span class="ny-garland"><i></i><i></i></span><span class="ny-gifts r"><i class="ny-gift g2"></i><i class="ny-gift g1"></i></span></div>
   <div class="cta-inner">
     <p class="section-label" style="justify-content:center;display:flex" data-ru="Начать сейчас" data-en="Start now">Start now</p>
     <h2 class="reveal" data-ny-ru="Загадать. Настроить.<br><em>Готово.</em>" data-ny-en="Make a wish. Set it up.<br><em>Done.</em>" data-hw-ru="Без страха. Без программистов.<br><em>Готово.</em>" data-hw-en="No fear. No developers.<br><em>Done.</em>" data-ru="Консультация. Настройка.<br><em>Готово.</em>" data-en="Consultation. Setup.<br><em>Done.</em>">Consultation. Setup.<br><em>Done.</em></h2>
@@ -3922,16 +3973,17 @@ html.ny .section-label::before {
 <script>
 /* ─── SEASONS (Halloween html.hw, New Year html.ny): copy variants + toggles ─── */
 (function(){
-  var h=document.documentElement,k=h.classList.contains('hw')?'hw':h.classList.contains('ny')?'ny':'',en=h.lang==='en';
+  var h=document.documentElement,k=h.classList.contains('hw')?'hw':h.classList.contains('ny')?'ny':'',L=h.lang||'ru',en=L!=='ru',U=(window.KAI_L10N&&window.KAI_L10N.ui)||null;
   function swap(){document.querySelectorAll('[data-'+k+'-ru]').forEach(function(el){
-    var ru=el.getAttribute('data-'+k+'-ru');if(el.getAttribute('data-ru')===ru)return;
-    el.setAttribute('data-ru',ru);
-    if(el.hasAttribute('data-'+k+'-en'))el.setAttribute('data-en',el.getAttribute('data-'+k+'-en'));
-    el.innerHTML=el.getAttribute(en?'data-en':'data-ru');});}
+    if(el.getAttribute('data-'+k+'-done')==='1')return;el.setAttribute('data-'+k+'-done','1');
+    var v=el.getAttribute('data-'+k+'-'+L)||el.getAttribute('data-'+k+'-'+(en?'en':'ru'))||el.getAttribute('data-'+k+'-ru');
+    if(el.hasAttribute('data-ru'))el.setAttribute('data-ru',el.getAttribute('data-'+k+'-ru'));   /* the RU/EN switch re-renders from these */
+    if(el.hasAttribute('data-en')&&el.hasAttribute('data-'+k+'-en'))el.setAttribute('data-en',el.getAttribute('data-'+k+'-en'));
+    el.innerHTML=v;});}
   if(k){swap();document.addEventListener('DOMContentLoaded',swap);}   /* the chat bubble is parsed after this script */
-  var T={hw:['Хеллоуин-режим','Halloween mode'],ny:['Новогодний режим','Holiday mode']};
+  var T={hw:['Хеллоуин-режим',U&&U.theme_hw||'Halloween mode'],ny:['Новогодний режим',U&&U.theme_ny||'Holiday mode']};
   Object.keys(T).forEach(function(key){var on=k===key;document.querySelectorAll('.'+key+'-toggle').forEach(function(b){
-    b.title=(en?T[key][1]:T[key][0])+(on?(en?': turn off':': выключить'):(en?': turn on':': включить'));
+    b.title=(en?T[key][1]:T[key][0])+(on?(en?(U&&U.turn_off||': turn off'):': выключить'):(en?(U&&U.turn_on||': turn on'):': включить'));
     b.setAttribute('aria-pressed',on?'true':'false');
     b.addEventListener('click',function(){var v=on?'0':'1';try{localStorage.setItem('kai_'+key,v);}catch(e){}try{document.cookie='kai_'+key+'='+v+';max-age=31536000;path=/;SameSite=Lax'+(/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'');}catch(e){}
       var u=new URL(location.href);if(u.searchParams.has(key)){u.searchParams.delete(key);location.href=u.href;}else location.reload();});});});
@@ -4249,7 +4301,7 @@ revealInView();addEventListener('load',revealInView);addEventListener('hashchang
   var screen = document.getElementById('acScreen'), q = root.querySelector('.ac-out-q'), a = root.querySelector('.ac-out-a'), r = root.querySelector('.ac-out-r');
   var cnt = root.querySelector('.ac-cnt'), pos = root.querySelector('.ac-pos'), reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var i = 0, timer = 0, byAct = {};
-  function lang(){ return document.documentElement.lang === 'en' ? 'en' : 'ru'; }
+  function lang(){ return document.documentElement.lang === 'ru' ? 'ru' : 'en'; }
   items.forEach(function(li, k){ byAct[li.getAttribute('data-act-ru')] = k; byAct[li.getAttribute('data-act-en')] = k; });
   /* badges that have an example open it on tap */
   [].forEach.call(document.querySelectorAll('#api .api-badge'), function(b){
@@ -4627,6 +4679,7 @@ function applyLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === lang);
   });
+  if (window.kaiLangMenuSync) kaiLangMenuSync(lang);
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-' + lang + ']').forEach(el => {
     const val = el.getAttribute('data-' + lang);
@@ -4668,6 +4721,25 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     applyLang(lang);
   });
 });
+
+/* ─── LANGUAGE MENU (flags + native names; every language is its own static page) ─── */
+(function(){
+  var menus=[].slice.call(document.querySelectorAll('.lang-menu'));if(!menus.length)return;
+  var page=document.documentElement.getAttribute('data-page-lang')||(document.documentElement.lang==='en'?'en':'ru');
+  function sync(code){menus.forEach(function(m){var cur=m.querySelector('.lang-cur');cur.querySelector('.lang-code').textContent=code.toUpperCase();
+    var u=cur.querySelector('use');if(u)u.setAttribute('href','#flag-'+code);
+    m.querySelectorAll('.lang-list a').forEach(function(a){var on=a.getAttribute('data-lang')===code;a.setAttribute('aria-current',on?'true':'false');a.parentNode.classList.toggle('on',on);});});}
+  window.kaiLangMenuSync=sync;sync(page);
+  function close(m){m.classList.remove('open');m.querySelector('.lang-cur').setAttribute('aria-expanded','false');m.querySelector('.lang-list').hidden=true;}
+  menus.forEach(function(m){var b=m.querySelector('.lang-cur'),l=m.querySelector('.lang-list');
+    b.addEventListener('click',function(e){e.stopPropagation();var open=!m.classList.contains('open');menus.forEach(close);
+      if(open){m.classList.add('open');b.setAttribute('aria-expanded','true');l.hidden=false;}});
+    l.addEventListener('click',function(e){var a=e.target.closest('a[data-lang]');if(!a)return;var code=a.getAttribute('data-lang');
+      try{localStorage.setItem('kai_lang',code);}catch(err){}
+      if(code===page||((code==='ru'||code==='en')&&page==='ru'&&code===currentLang)){e.preventDefault();close(m);}});});   /* already on this language */
+  document.addEventListener('click',function(){menus.forEach(close);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')menus.forEach(close);});
+})();
 
 /* ─── SHIMMER INDEX FOR API BADGES ─── */
 document.querySelectorAll('.api-badge').forEach((b, i) => {
@@ -4779,7 +4851,7 @@ window.addEventListener('scroll', () => {
   function localizeTip() {
     var el = document.getElementById('chatTipText');
     if (!el) return;
-    var val = el.getAttribute('data-' + (document.documentElement.lang === 'en' ? 'en' : 'ru'));
+    var val = el.getAttribute('data-' + (document.documentElement.lang === 'ru' ? 'ru' : 'en'));
     if (val != null) el.innerHTML = val;
   }
   function openPanel() {
@@ -4787,7 +4859,7 @@ window.addEventListener('scroll', () => {
     markNudged();
     if (!loaded) {
       var f = document.createElement('iframe');
-      f.src = CHAT_URL + (document.documentElement.lang === 'en' ? '?lang=en' : '?lang=ru') + (handoffCode ? '&h=' + encodeURIComponent(handoffCode) : '') + (document.documentElement.classList.contains('hw') ? '&hw=1' : '&hw=0') + (document.documentElement.classList.contains('ny') ? '&ny=1' : '&ny=0') + (window.kaiVid && window.kaiVid() ? '&v=' + encodeURIComponent(window.kaiVid()) : '');
+      f.src = CHAT_URL + (document.documentElement.lang === 'ru' ? '?lang=ru' : '?lang=en') + (handoffCode ? '&h=' + encodeURIComponent(handoffCode) : '') + (document.documentElement.classList.contains('hw') ? '&hw=1' : '&hw=0') + (document.documentElement.classList.contains('ny') ? '&ny=1' : '&ny=0') + (window.kaiVid && window.kaiVid() ? '&v=' + encodeURIComponent(window.kaiVid()) : '');
       handoffCode = null;
       f.title = 'Kai chat';
       f.setAttribute('allow', 'microphone; autoplay; clipboard-write');   /* voice notes and calls inside the chat */
@@ -4940,13 +5012,13 @@ window.addEventListener('scroll', () => {
   const ACC = _cssRGB('--accent-rgb', [124,92,255]), HI = _cssRGB('--accent-hi-rgb', [178,150,255]);
   const MONO = '800 %px "JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace';
   const rgba = (c,a) => 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + a + ')';
-  const lang = () => (document.documentElement.lang === 'en' ? 'en' : 'ru');
+  const lang = () => (document.documentElement.lang === 'ru' ? 'ru' : 'en');
   const SEASON=document.documentElement.classList.contains('hw')?'hw':document.documentElement.classList.contains('ny')?'ny':'';
   const HW=SEASON==='hw',NY=SEASON==='ny';
   const NYY=(()=>{const d=new Date();return String(d.getFullYear()+(d.getMonth()===11?1:0));})();   /* the coming year in December, the current one in January */
-  const getWords = () => lang() === 'en'
-    ? (HW ? ['BOO','KAI','SPOOKY','GHOST','PUMPKIN','31.10'] : NY ? ['KAI',NYY,'SNOW','MERRY','CHEERS','01.01'] : ['KAI','CRM','Sales','Flow','Growth','Focus'])
-    : (HW ? ['BOO','KAI','ЖУТЬ','ПРИЗРАК','ТЫКВА','31.10'] : NY ? ['KAI',NYY,'СНЕГ','ЁЛКА','ЧУДО','01.01'] : ['KAI','CRM','Продажи','Воронка','Процесс','Рост']);
+  const getWords = () => { const Lw=window.KAI_L10N; if(Lw&&!HW&&NY&&Lw.words_ny)return Lw.words_ny.map(w=>w==='{year}'?NYY:w); if(Lw&&!HW&&!NY&&Lw.words)return Lw.words; return lang() === 'en'
+    ? (HW ? ['BOO','KAI','SPOOKY','GHOST','PUMPKIN','31.10'] : NY ? ['KAI',NYY,'SNOW','MERRY','CHEERS','JOY','NOEL','FROST','GIFTS','JINGLE','COZY','SANTA'] : ['KAI','CRM','Sales','Flow','Growth','Focus'])
+    : (HW ? ['BOO','KAI','ЖУТЬ','ПРИЗРАК','ТЫКВА','31.10'] : NY ? ['KAI',NYY,'СНЕГ','ЁЛКА','ЧУДО','ПОДАРКИ','МОРОЗ','ИНЕЙ','КУРАНТЫ','ОЛИВЬЕ','СНЕЖОК','ЗИМА'] : ['KAI','CRM','Продажи','Воронка','Процесс','Рост']); };
   let W=0,H=0,DPR=1,t=0,cx=0,cy=0,baseCell=8;
   let run=true,rafId=0,seen=true;
   const P = { x:-999, y:-999, active:false, lastT:0 };
@@ -4975,13 +5047,22 @@ window.addEventListener('scroll', () => {
   function treeCells(){const R=48,o=document.createElement('canvas');o.width=o.height=R;const g=o.getContext('2d'),c=R/2;
     g.fillStyle='#fff';const tri=(ax,ay,hw,by)=>{g.beginPath();g.moveTo(ax,ay);g.lineTo(ax+hw,by);g.lineTo(ax-hw,by);g.closePath();g.fill();};
     tri(24,11,8,22);tri(24,17,12,31);tri(24,24,16,41);g.fillRect(21.5,41,5,4);
-    const ring=readCells(g,R,c);g.clearRect(0,0,R,R);
+    const ring=readCells(g,R,c);
+    /* baubles: a few interior cells turn into coloured ornaments (deterministic picks, kept apart) */
+    const baubles=[],cols=[[255,107,117],[255,214,102],[143,208,255],[255,255,255]];
+    for(let i=0;i<ring.length;i++){const q=ring[i],y=q.gy+c,w=Math.max(y>=11&&y<=22?(y-11)*8/11:0,y>=17&&y<=31?(y-17)*12/14:0,y>=24&&y<=41?(y-24)*16/17:0);
+      if(y<14||y>39||Math.abs(q.gx)>w-2.5)continue;
+      const hsh=(((q.gx+c)*73856093)^(y*19349663))>>>0;if(hsh%9!==0)continue;
+      if(baubles.some(b=>Math.abs(b.gx-q.gx)+Math.abs(b.gy-q.gy)<5))continue;
+      baubles.push({gx:q.gx,gy:q.gy,c:cols[baubles.length%cols.length]});ring.splice(i,1);i--;}
+    g.clearRect(0,0,R,R);
     g.beginPath();g.moveTo(24,1);g.lineTo(25.6,4.4);g.lineTo(29,6);g.lineTo(25.6,7.6);g.lineTo(24,11);g.lineTo(22.4,7.6);g.lineTo(19,6);g.lineTo(22.4,4.4);g.closePath();g.fill();
-    return {ring,dot:readCells(g,R,c),R};}
+    return {ring,dot:readCells(g,R,c),baubles,R};}
   const M=HW?pumpkinCells():NY?treeCells():markCells();
   const DOTC=_cssRGB('--mark-dot-rgb', HI);
   const particles=M.ring.map(c=>({dot:0,gx:c.gx,gy:c.gy,x:0,y:0,vx:0,vy:0,ph:Math.random()*6.28,wx:0,wy:0,init:0}))
-    .concat(M.dot.map(c=>({dot:1,gx:c.gx,gy:c.gy,x:0,y:0,vx:0,vy:0,ph:Math.random()*6.28,wx:0,wy:0,init:0})));
+    .concat(M.dot.map(c=>({dot:1,gx:c.gx,gy:c.gy,x:0,y:0,vx:0,vy:0,ph:Math.random()*6.28,wx:0,wy:0,init:0})))
+    .concat((M.baubles||[]).map(c=>({dot:2,c:c.c,gx:c.gx,gy:c.gy,x:0,y:0,vx:0,vy:0,ph:Math.random()*6.28,wx:0,wy:0,init:0})));   /* dot=2: ornaments, own colour */
 
   function textPoints(str,pxH,st){const m=document.createElement('canvas').getContext('2d');m.font=MONO.replace('%',pxH);
     const w=Math.ceil(m.measureText(str).width)+10,h=Math.ceil(pxH*1.35);const o=document.createElement('canvas');o.width=w;o.height=h;
@@ -5039,14 +5120,14 @@ window.addEventListener('scroll', () => {
     for(const p of particles){
       let TX,TY,sz=Math.max(2,baseCell*0.62);
       if(wordActive){TX=cx+p.wx*wScale;TY=cy+p.wy*wScale;sz*=1.25;}
-      else{TX=cx+p.gx*baseCell+(p.dot?bob2:0);TY=cy+p.gy*baseCell+(p.dot?bob:0);}
+      else{TX=cx+p.gx*baseCell+(p.dot?bob2:0);TY=cy+p.gy*baseCell+(p.dot?bob:0);if(p.dot===2)sz*=1.35;}
       const spk=wordActive?0.036:0.06;p.vx+=(TX-p.x)*spk;p.vy+=(TY-p.y)*spk;
       if(P.active&&!wordActive){const dx=p.x-P.x,dy=p.y-P.y,d2=dx*dx+dy*dy,R=150;
         if(d2<R*R){const d=Math.sqrt(d2)||1,fr=1-d/R;p.vx+=dx/d*fr*fr*7;p.vy+=dy/d*fr*fr*7;}}
       p.vx*=0.82;p.vy*=0.82;p.x+=p.vx;p.y+=p.vy;
       const shim=reduce?0.9:(0.6+0.4*Math.sin(t*2.2+p.ph));
-      const col=wordActive?HI:(p.dot?DOTC:ACC);
-      const al=wordActive?Math.min(1,0.95*shim):(p.dot?1:0.8)*shim;
+      const col=wordActive?HI:(p.dot===2?p.c:p.dot?DOTC:ACC);
+      const al=wordActive?Math.min(1,0.95*shim):p.dot===2?0.7+0.3*Math.abs(Math.sin(t*2.4+p.ph*2)):(p.dot?1:0.8)*shim;   /* ornaments twinkle on their own */
       ctx.fillStyle=rgba(col,al*flick);ctx.fillRect(Math.round(p.x-sz/2),Math.round(p.y-sz/2),Math.ceil(sz),Math.ceil(sz));
     }
     ctx.globalCompositeOperation='source-over';
