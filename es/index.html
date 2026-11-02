@@ -3948,9 +3948,9 @@ html.ny .chat-launcher::before {
       <ul>
         <li><a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Telegram</a></li>
         <li><a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Soporte</a></li>
-        <li><a href="../guides/en/">Guías: amoCRM, Kommo, Bitrix24, CRM a medida</a></li>
+        <li><a href="../guides/es/">Guías: amoCRM, Kommo, Bitrix24, CRM a medida</a></li>
         <li><a href="https://app.aii-crm.com/docs/custom-crm?lang=en" target="_blank" rel="noopener">Tu propio CRM vía API: documentación</a></li>
-        <li><a href="../cases/en/">Ejemplos: antes → después</a></li>
+        <li><a href="../cases/es/">Ejemplos: antes → después</a></li>
       </ul>
     </div>
   </div>
@@ -3958,9 +3958,9 @@ html.ny .chat-launcher::before {
     <div class="footer-bottom">
       <span data-ny-en="© 2026 Kai. Configuración de CRM sin programadores ni guirnaldas." data-hw-en="© 2026 Kai. Configuración de CRM sin programadores ni monstruos.">© 2026 Kai. Configuración de CRM sin programadores.</span>
       <div style="display:flex;flex-wrap:wrap;gap:8px 20px;">
-        <a href="../privacy-en.html" class="privacy-link">Privacidad</a>
-        <a href="../terms-en.html">Términos de servicio</a>
-        <a href="../refund-en.html" class="refund-link">Reembolsos</a>
+        <a href="../privacy-es.html" class="privacy-link">Privacidad</a>
+        <a href="../terms-es.html">Términos de servicio</a>
+        <a href="../refund-es.html" class="refund-link">Reembolsos</a>
         <a href="#" id="cookieSettings">Ajustes de cookies</a>
       </div>
     </div>
@@ -3969,7 +3969,7 @@ html.ny .chat-launcher::before {
 
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner">
-  <span data-ny-en="Galletas navideñas: solo para la analítica del sitio. No se guarda nada sin tu consentimiento; el sitio funciona bien sin ellas. Consulta nuestra <a href='../privacy-en.html'>Política de privacidad</a>." data-hw-en="Dulces de Halloween: las cookies son solo para la analítica del sitio. No se guarda nada sin tu consentimiento; el sitio funciona bien sin ellas. Consulta nuestra <a href='../privacy-en.html'>Política de privacidad</a>.">Usamos cookies para la analítica del sitio. No se guarda nada sin tu consentimiento; el sitio funciona bien sin ellas. Consulta nuestra <a href='../privacy-en.html'>Política de privacidad</a>.</span>
+  <span data-ny-en="Galletas navideñas: solo para la analítica del sitio. No se guarda nada sin tu consentimiento; el sitio funciona bien sin ellas. Consulta nuestra <a href='../privacy-es.html'>Política de privacidad</a>." data-hw-en="Dulces de Halloween: las cookies son solo para la analítica del sitio. No se guarda nada sin tu consentimiento; el sitio funciona bien sin ellas. Consulta nuestra <a href='../privacy-es.html'>Política de privacidad</a>.">Usamos cookies para la analítica del sitio. No se guarda nada sin tu consentimiento; el sitio funciona bien sin ellas. Consulta nuestra <a href='../privacy-es.html'>Política de privacidad</a>.</span>
   <div class="cookie-btns">
     <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Aceptar</button>
     <button class="cookie-btn cookie-btn-decline" id="cookieDecline">Solo necesarias</button>
@@ -4706,11 +4706,11 @@ function applyLang(lang) {
     if (h != null) el.href = h;
   });
   var pl = document.querySelector('.privacy-link');
-  if (pl) pl.href = lang === 'en' ? '../privacy-en.html' : '../privacy-en.html';
+  if (pl) pl.href = lang === 'en' ? '../privacy-es.html' : '../privacy-es.html';
   var tl = document.querySelector('a[href*="terms"]');
-  if (tl) tl.href = lang === 'en' ? '../terms-en.html' : '../terms-en.html';
+  if (tl) tl.href = lang === 'en' ? '../terms-es.html' : '../terms-es.html';
   var rl = document.querySelector('.refund-link');
-  if (rl) rl.href = lang === 'en' ? '../refund-en.html' : '../refund-en.html';
+  if (rl) rl.href = lang === 'en' ? '../refund-es.html' : '../refund-es.html';
   document.querySelectorAll('.chat-link').forEach(function(cl) {
     cl.href = 'https://app.aii-crm.com/chat?lang=' + (lang === 'en' ? 'en' : 'ru');
   });

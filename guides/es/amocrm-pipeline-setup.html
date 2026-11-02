@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo configurar el embudo de ventas en amoCRM sin programador (2026) | Kai</title>
+<meta name="description" content="Paso a paso: etapas del embudo, campos personalizados y campos obligatorios en amoCRM desde Leads → Setup, errores comunes y cómo hacer lo mismo con un solo mensaje a Kai.">
+<meta name="keywords" content="cómo configurar un embudo de ventas y campos obligatorios en amoCRM o Kommo sin programador, existe un asistente de IA que configure los embudos de amoCRM / Kommo desde un mensaje de chat">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/es/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/es/amocrm-pipeline-setup.html">
+<meta property="og:title" content="Cómo configurar un embudo de ventas en amoCRM sin programador (2026)">
+<meta property="og:description" content="Etapas, campos, campos obligatorios y errores comunes. El camino manual por la interfaz de amoCRM y el camino de un solo mensaje con Kai.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-09-24">
+<meta property="article:modified_time" content="2026-09-24">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cómo configurar un embudo de ventas en amoCRM sin programador (2026)">
+<meta name="twitter:description" content="Etapas, campos, campos obligatorios y errores comunes. A mano en la interfaz de amoCRM o con un solo mensaje a Kai.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/es/" aria-label="Kai: inicio">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Navegación">
+      <a href="https://aii-crm.com/es/">Sitio web</a>
+      <a href="https://t.me/aiicrm_bot">Bot de Telegram</a>
+      <a href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Ruta de navegación">
+  <a href="https://aii-crm.com/es/">Kai</a> › <a href="https://aii-crm.com/guides/es/">Guías</a> › Embudo en amoCRM
+</nav>
+
+<h1>Cómo configurar un embudo de ventas en amoCRM sin programador</h1>
+<p class="meta">Actualizado el 24 de septiembre de 2026 · Equipo Kai · 6 min de lectura</p>
+
+<p class="lead">Puedes montar un embudo de ventas en amoCRM tú mismo en 1–2 horas: las etapas se editan en <kbd>Leads → Setup</kbd> (<kbd>Сделки → Настроить</kbd> en la interfaz en ruso), los campos se añaden desde la ficha del lead con <kbd>Setup → Add field</kbd>, y en esos mismos ajustes un campo se vuelve obligatorio en las etapas que elijas. No hace falta programador: bastan permisos de administrador y un mapa de etapas bien pensado. O envía ese mismo mapa en un solo mensaje a un asistente de IA como Kai, que lo construye a través de la API oficial.</p>
+
+<section class="tldr" aria-label="En resumen">
+  <h2>En resumen</h2>
+  <ul>
+    <li>Normalmente bastan 5–7 etapas de trabajo. Cada etapa es una acción verificable del vendedor, no un estado del cliente.</li>
+    <li>Las etapas del sistema «Ganado» y «Perdido» no se pueden eliminar, solo renombrar.</li>
+    <li>El tipo de un campo no se puede cambiar después, y al eliminar un campo se borran sus datos. Planifica los campos antes de que lleguen leads reales.</li>
+    <li>Los campos obligatorios por etapa están disponibles a partir del plan «Advanced» de amoCRM; solo un administrador puede editar campos.</li>
+    <li>A mano: 1–2 horas. Integrador: normalmente 3–5 semanas y unos €1.500–4.000. Kai: una conversación de chat, desde €29/mes, 3 días gratis.</li>
+  </ul>
+</section>
+
+<h2>Paso 0. Dibuja el embudo antes de abrir amoCRM</h2>
+<p>La mayoría de los CRM «rotos» tienen etapas inventadas sobre la marcha. Escribe el camino del cliente desde la solicitud hasta el cobro y quédate solo con los puntos en los que el vendedor hace algo comprobable. Ejemplo para un estudio de cocinas a medida:</p>
+<pre>Nueva solicitud → Calificado → Visita técnica agendada → Propuesta enviada → Contrato y anticipo → En fabricación → Instalado</pre>
+<p>Junto a cada etapa, anota qué debe saber el vendedor para hacer avanzar el lead. Esas notas son tus campos: «Fuente» al principio, «Presupuesto» antes de la propuesta, «Motivo de pérdida» al cerrar.</p>
+
+<h2>Paso 1. Crea el embudo y las etapas en la interfaz de amoCRM</h2>
+<ol>
+  <li>Abre <kbd>Leads</kbd> (<kbd>Сделки</kbd>) y haz clic en <kbd>Setup</kbd> (<kbd>Настроить</kbd>) en la esquina superior derecha.</li>
+  <li>Añade una etapa con <kbd>+</kbd>. Haz clic en una etapa para renombrarla o cambiarle el color; arrástrala para cambiar el orden.</li>
+  <li>Para eliminar una etapa, saca sus leads y arrástrala a la papelera de la esquina inferior derecha.</li>
+  <li>Las etapas del sistema «Ganado» y «Perdido» no se pueden eliminar, solo renombrar, por ejemplo a «Pagado» y «Rechazado».</li>
+  <li>Para un segundo embudo (pedidos repetidos, socios), haz clic en el nombre del embudo actual en la esquina superior izquierda y añade uno. Mezclar primeras ventas y ventas repetidas deja sin sentido la conversión por etapa.</li>
+</ol>
+<div class="note warn">Un embudo solo se puede eliminar cuando todos sus leads, incluidos los cerrados, se han movido o eliminado, y después no se puede recuperar.</div>
+
+<h2>Paso 2. Añade campos a la ficha del lead</h2>
+<ol>
+  <li>Abre cualquier lead. Los contactos y las empresas tienen sus propios campos, que se configuran igual desde sus fichas.</li>
+  <li>Haz clic en <kbd>Setup</kbd> y luego en <kbd>Add field</kbd>; elige un tipo y un nombre.</li>
+  <li>Tipos principales: lista, selección múltiple, texto, área de texto, número, fecha, casilla, cumpleaños. Usa listas para «Fuente» y «Motivo de pérdida»: con texto libre no se pueden sacar informes.</li>
+  <li>Agrupa los campos en pestañas con el <kbd>+</kbd> que hay junto a «Files».</li>
+</ol>
+<p>Un conjunto mínimo: «Fuente» (lista), «Presupuesto» (número), «Fecha del próximo contacto» (fecha), «Motivo de pérdida» (lista). No dupliques lo que amoCRM ya tiene: importe del lead, usuario responsable, datos de contacto.</p>
+<div class="note warn">El tipo de un campo no se puede cambiar una vez creado, y al eliminar un campo sus datos se borran sin vuelta atrás.</div>
+
+<h2>Paso 3. Haz obligatorios los campos clave en etapas concretas</h2>
+<p>En los ajustes del campo, elige las etapas de uno o varios embudos en las que es obligatorio; el lead no avanza hasta que se completa. Según el mapa del paso 0:</p>
+<ul>
+  <li>«Fuente» para salir de «Nueva solicitud»;</li>
+  <li>«Presupuesto» antes de «Propuesta enviada»;</li>
+  <li>«Motivo de pérdida» al pasar a «Perdido».</li>
+</ul>
+<p>Quédate en uno o dos campos obligatorios por etapa; con más, la gente empieza a escribir guiones. Disponible a partir del plan «Advanced», solo para administradores.</p>
+
+<h2>Paso 4. Pasa tres leads de prueba por el embudo</h2>
+<p>Crea tres leads («compró», «rechazó», «atascado en la visita técnica») y llévalos por las etapas. Comprueba que los campos obligatorios bloquean el paso, que la analítica muestra la conversión por etapa y que el lead atascado tiene una tarea. Después, elimínalos.</p>
+
+<h2>El camino con Kai: el mismo mapa en un solo mensaje</h2>
+<p>Kai es un asistente de IA que configura amoCRM y Kommo desde un mensaje de chat. Conecta el CRM por OAuth en un clic desde el widget del marketplace de amoCRM y luego escribe al bot de Telegram <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> o al <a href="https://app.aii-crm.com/chat?lang=en">chat web</a> (una sola cuenta, un solo historial). El mapa del paso 0 como mensaje:</p>
+<pre>Configura un embudo para un estudio de cocinas a medida.
+Etapas: Nueva solicitud → Calificado → Visita técnica agendada → Propuesta enviada → Contrato y anticipo → En fabricación → Instalado.
+Campos del lead: Fuente (lista: sitio web, marketplace, recomendación, Instagram), Presupuesto (número), Fecha de la visita técnica (fecha), Motivo de pérdida (lista).
+Fuente obligatoria para salir de «Nueva solicitud», Presupuesto antes de «Propuesta enviada», Motivo de pérdida al perder el lead.
+Cuando un lead llegue a «Visita técnica agendada», crea una tarea para el técnico de medición un día antes de la visita.</pre>
+<p>Kai hace algunas preguntas aclaratorias (por ejemplo, si los pedidos repetidos necesitan su propio embudo), muestra un plan y, cuando confirmas, lo crea todo a través de la API oficial y envía un informe. Los cambios posteriores son otro mensaje, escrito o de voz. Límites honestos: los campos obligatorios requieren un plan de amoCRM que los incluya, y Kai revisa tu proceso en lugar de inventarlo.</p>
+
+<h2>Errores comunes al configurar un embudo</h2>
+<ul>
+  <li><strong>Estados en lugar de acciones.</strong> «En proceso», «Pensándolo»: los leads se quedan ahí durante meses. Una etapa responde a «qué ha hecho el vendedor».</li>
+  <li><strong>Demasiadas etapas.</strong> Pasadas las diez, la conversión es ilegible y los leads se mueven a ojo.</li>
+  <li><strong>Un solo embudo para todo.</strong> Las primeras ventas, las repetidas y las de socios tienen ciclos distintos.</li>
+  <li><strong>Solo campos opcionales.</strong> Una «Fuente» opcional queda vacía en pocas semanas y nunca sabrás qué anuncios rinden.</li>
+  <li><strong>Sin «Motivo de pérdida».</strong> El informe de leads perdidos se queda en una cifra con la que no puedes hacer nada.</li>
+</ul>
+
+<h2>¿Y si usas Kommo?</h2>
+<p>La misma lógica; las rutas, en la interfaz en inglés. Embudo: <kbd>Pipelines → Add pipeline</kbd>; etapas: <kbd>… → Edit Pipeline → Add stage</kbd>, clic para renombrar, arrastrar para reordenar. Solo se pueden eliminar etapas y embudos vacíos, y nunca el primer embudo. «Incoming Leads» se puede desactivar, pero no eliminar; «Closed-Won» y «Closed-Lost» se pueden renombrar. Campos: abre un lead, pestaña <kbd>Setup</kbd>, <kbd>+ Add field</kbd>; la obligatoriedad por etapa se configura en el mismo sitio. Solo con rol de administrador, en todos los planes de Kommo. Kai se conecta de la misma forma.</p>
+
+<h2>Comparativa: a mano, con integrador o con Kai</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Criterio</th><th>A mano</th><th>Integrador</th><th>Kai</th></tr></thead>
+  <tbody>
+    <tr><td>Tiempo</td><td>1–2 horas para un embudo sencillo</td><td>Normalmente 3–5 semanas</td><td>Una conversación: preguntas → plan → configuración</td></tr>
+    <tr><td>Precio</td><td>Gratis, con tu propio tiempo</td><td>Normalmente €1.500–4.000</td><td>Desde €29/mes, 3 días gratis, sin tarjeta</td></tr>
+    <tr><td>Quién hace falta</td><td>Administrador de amoCRM</td><td>Un responsable de tu lado y una especificación técnica</td><td>Administrador de amoCRM para el OAuth</td></tr>
+    <tr><td>Cambios posteriores</td><td>Volver a hacerlo todo con clics</td><td>Nueva especificación, nueva factura</td><td>Otro mensaje en el chat</td></tr>
+    <tr><td>Ideal para</td><td>Un embudo y una docena de campos</td><td>Integraciones a medida: contabilidad, telefonía, inventario</td><td>Embudos, campos, automatizaciones, integraciones por API sin código</td></tr>
+  </tbody>
+</table>
+</div>
+<p>amoAI, el agente de IA de Kommo, los conectores no-code (Albato, ApiX-Drive, Make, Zapier, n8n) y chatbots como Salebot cubren tareas vecinas: conversaciones con clientes y sincronización de datos. Ninguno diseña tus etapas y campos; el paso 0 sigue siendo cosa tuya.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>¿Cuántas etapas debe tener un embudo de amoCRM?</h3>
+    <p>Normalmente 5–7 etapas de trabajo más las dos del sistema, cada una con una acción verificable del vendedor. Más de diez suele significar que dos procesos comparten un mismo embudo.</p>
+  </div>
+  <div class="faq-item">
+    <h3>¿Puede un campo ser obligatorio en una sola etapa?</h3>
+    <p>Sí: en los ajustes del campo eliges las etapas de uno o varios embudos. Disponible a partir del plan «Advanced»; lo configura un administrador.</p>
+  </div>
+  <div class="faq-item">
+    <h3>¿Qué pasa con los leads si elimino una etapa o un embudo?</h3>
+    <p>Primero mueve los leads. Una etapa se elimina arrastrándola a la papelera; un embudo, solo cuando ya no queda ningún lead dentro, incluidos los cerrados, y no se puede recuperar.</p>
+  </div>
+  <div class="faq-item">
+    <h3>¿Necesito un programador para configurar amoCRM?</h3>
+    <p>No para embudos, campos, campos obligatorios y automatizaciones básicas. Un programador o un integrador hace falta para conexiones no estándar: software de contabilidad, un sitio web a medida, APIs de telefonía poco habituales.</p>
+  </div>
+  <div class="faq-item">
+    <h3>¿Cómo accede Kai a amoCRM y es seguro?</h3>
+    <p>A través del OAuth oficial de amoCRM/Kommo: aprobación en un clic, sin compartir contraseñas ni claves de API. Los tokens se guardan cifrados, Kai no almacena datos de los leads y el acceso se puede revocar en cualquier momento en los ajustes del CRM. La empresa está registrada en Polonia (UE).</p>
+  </div>
+  <div class="faq-item">
+    <h3>¿Cuánto cuesta Kai y hay prueba gratis?</h3>
+    <p>Start €29/mes (~100 consultas), Pro €59/mes (~500), Max €119/mes (uso razonable, prioridad y desarrollos a medida). Los primeros 3 días son gratis, sin tarjeta. Paga con tarjeta, Apple Pay, Google Pay, Telegram Stars o USDT.</p>
+  </div>
+</div>
+
+<h2>Qué hacer ahora</h2>
+<p>¿Ya tienes el mapa de etapas en papel? Abre <kbd>Leads → Setup</kbd> y móntalo en una tarde. ¿Prefieres que alguien te haga las preguntas correctas y lo haga por la API? Describe tu negocio a Kai en un solo mensaje.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Probar en Telegram</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Abrir el chat web</a>
+</div>
+
+<p class="author">Autor: Equipo Kai · Actualizado el <time datetime="2026-09-24">24 de septiembre de 2026</time> · Rutas comprobadas en los centros de ayuda oficiales de amoCRM y Kommo.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/es/">Inicio</a> · <a href="https://aii-crm.com/privacy-es.html">Privacidad</a> · <a href="https://aii-crm.com/terms-es.html">Términos</a> · <a href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">Versión en inglés</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/es/amocrm-pipeline-setup.html#article",
+      "headline": "Cómo configurar un embudo de ventas en amoCRM sin programador",
+      "description": "Paso a paso: etapas del embudo, campos personalizados y campos obligatorios en amoCRM desde Leads → Setup, errores comunes y cómo hacer lo mismo con un solo mensaje a Kai.",
+      "inLanguage": "es",
+      "datePublished": "2026-09-24",
+      "dateModified": "2026-09-24",
+      "mainEntityOfPage": "https://aii-crm.com/guides/es/amocrm-pipeline-setup.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/es/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/es/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuántas etapas debe tener un embudo de amoCRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Normalmente 5–7 etapas de trabajo más las dos del sistema, cada una con una acción verificable del vendedor. Más de diez suele significar que dos procesos comparten un mismo embudo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puede un campo ser obligatorio en una sola etapa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí: en los ajustes del campo eliges las etapas de uno o varios embudos. Disponible a partir del plan «Advanced»; lo configura un administrador."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa con los leads si elimino una etapa o un embudo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Primero mueve los leads. Una etapa se elimina arrastrándola a la papelera; un embudo, solo cuando ya no queda ningún lead dentro, incluidos los cerrados, y no se puede recuperar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Necesito un programador para configurar amoCRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No para embudos, campos, campos obligatorios y automatizaciones básicas. Un programador o un integrador hace falta para conexiones no estándar: software de contabilidad, un sitio web a medida, APIs de telefonía poco habituales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo accede Kai a amoCRM y es seguro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A través del OAuth oficial de amoCRM/Kommo: aprobación en un clic, sin compartir contraseñas ni claves de API. Los tokens se guardan cifrados, Kai no almacena datos de los leads y el acceso se puede revocar en cualquier momento en los ajustes del CRM. La empresa está registrada en Polonia (UE)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta Kai y hay prueba gratis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start €29/mes (~100 consultas), Pro €59/mes (~500), Max €119/mes (uso razonable, prioridad y desarrollos a medida). Los primeros 3 días son gratis, sin tarjeta. Paga con tarjeta, Apple Pay, Google Pay, Telegram Stars o USDT."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guías",
+          "item": "https://aii-crm.com/guides/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Configurar el embudo de ventas de amoCRM sin programador",
+          "item": "https://aii-crm.com/guides/es/amocrm-pipeline-setup.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

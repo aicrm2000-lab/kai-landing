@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://ai-crm-bot-production.up.railway.app; connect-src 'self' https://ai-crm-bot-production.up.railway.app; base-uri 'self'; form-action 'self'">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Conditions générales d’utilisation — Kai</title>
+<meta name="description" content="Conditions générales d’utilisation de Kai, assistant IA qui configure et gère le compte de l’utilisateur sur la plateforme CRM que celui-ci choisit de connecter, via l’API officielle de cette plateforme.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://aii-crm.com/terms-fr.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/terms.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/terms-en.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/terms-de.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/terms-fr.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/terms-es.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/terms-pt.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/terms-en.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B0A14'/><path d='M16 6.5a9.5 9.5 0 1 0 9.5 9.5' stroke='%237C5CFF' stroke-width='4' stroke-linecap='round' fill='none'/><circle cx='23.4' cy='8.6' r='2.6' fill='%23A78BFA'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0B0A14;
+  --bg-1:    #100E20;
+  --bg-2:    #171332;
+  --border:  #241D45;
+  --accent:  #7C5CFF;
+  --accent-2:#A78BFA;
+  --ink:     #F4F2FF;
+  --text:    #CBC5E4;
+  --muted:   #8B83AC;
+  --dim:     #615A82;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent-2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(11,10,20,0.9);
+  backdrop-filter: blur(20px);
+}
+.nav-inner {
+  max-width: 800px; margin: 0 auto;
+  height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-size: 17px; font-weight: 600; color: var(--ink); }
+.nav-right { display: flex; gap: 18px; align-items: center; }
+.nav-back, .nav-lang { font-size: 13px; color: var(--muted); }
+.nav-lang { border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px; }
+.nav-lang:hover { border-color: var(--accent); color: var(--ink); text-decoration: none; }
+.container { max-width: 800px; margin: 0 auto; padding: 100px 24px 80px; }
+h1 {
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.subtitle { font-size: 14px; color: var(--dim); margin-bottom: 48px; }
+h2 {
+  font-size: 20px; font-weight: 600; color: var(--ink);
+  margin-top: 48px; margin-bottom: 16px; letter-spacing: -0.01em;
+}
+h3 { font-size: 16px; font-weight: 600; color: var(--ink); margin-top: 28px; margin-bottom: 10px; }
+p { margin-bottom: 14px; }
+ul, ol { margin-bottom: 14px; padding-left: 24px; }
+li { margin-bottom: 6px; }
+li::marker { color: var(--dim); }
+strong { color: var(--ink); font-weight: 600; }
+code {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 13px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+.highlight {
+  background: rgba(124,92,255,0.08);
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+  font-size: 14px;
+}
+table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { font-weight: 600; color: var(--ink); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+.table-wrap { overflow-x: auto; }
+.footer { max-width: 800px; margin: 0 auto; padding: 0 24px 60px; font-size: 13px; }
+@media (max-width: 640px) {
+  .container { padding: 90px 18px 60px; }
+  th, td { padding: 8px 10px; }
+}
+
+/* ─── COOKIE BANNER ─── */
+.cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: var(--bg-1);
+  border-top: 1px solid var(--border);
+  padding: 16px 24px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; flex-wrap: wrap;
+  font-size: 13px; color: var(--text);
+  transform: translateY(100%);
+  transition: transform .4s ease;
+}
+.cookie-banner.visible { transform: translateY(0); }
+.cookie-banner a { color: var(--accent-2); }
+.cookie-btns { display: flex; gap: 8px; flex-shrink: 0; }
+.cookie-btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 12px; font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.cookie-btn:hover { opacity: .85; }
+.cookie-btn-accept { background: var(--accent); color: #fff; border: 1px solid transparent; }
+.cookie-btn-decline { background: var(--bg-2); border: 1px solid var(--border); color: var(--ink); }
+@media (max-width: 640px) {
+  .cookie-banner { font-size: 12px; padding: 14px 16px; gap: 12px; }
+  .cookie-btns { width: 100%; }
+  .cookie-btn { flex: 1; }
+}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+<script>(function(){var q=location.search;
+if(q.indexOf('lang=en')!==-1)return;
+var saved=null;try{saved=localStorage.getItem('kai_lang');}catch(e){}
+if(saved==='ru')location.replace('terms.html');})();</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="fr/" class="nav-logo">Kai</a>
+    <div class="nav-right">
+      <a href="https://aii-crm.com/terms-en.html" class="nav-lang">EN</a>
+      <a href="fr/" class="nav-back">← Retour à l’accueil</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+<h1>Conditions générales d’utilisation</h1>
+<p class="subtitle">Dernière mise à jour : 20 août 2026 · <a href="https://aii-crm.com/terms-en.html">Version anglaise</a></p>
+<p class="subtitle">Cette traduction est fournie à titre informatif. En cas de divergence avec le texte anglais, la version anglaise prévaut.</p>
+
+<p>Les présentes Conditions générales d’utilisation (les « Conditions ») constituent un accord juridiquement contraignant entre vous (l’« Utilisateur ») et l’administration du service Kai (l’« Administration », « nous »), qui régit l’accès au service d’IA Kai (le « Service »), disponible via le bot Telegram <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a> et le site web, ainsi que son utilisation.</p>
+
+<div class="highlight">
+  <strong>Acceptation des Conditions :</strong> En utilisant le Service (en envoyant votre premier message au Bot, en connectant un compte CRM ou en payant un abonnement), vous confirmez avoir pris connaissance des présentes Conditions, les accepter sans réserve et vous engager à les respecter. Si vous êtes en désaccord avec l’une quelconque de leurs dispositions, veuillez cesser d’utiliser le Service.
+</div>
+
+<h2>1. Description du Service</h2>
+
+<p>Kai est un assistant IA qui configure et gère le compte de l’Utilisateur sur la plateforme CRM que celui-ci choisit de connecter, via l’API officielle de cette plateforme, au moyen de l’interface Telegram. Le Service fournit :</p>
+
+<ul>
+  <li>Un conseil assisté par l’IA en matière de conception de la structure du CRM (pipelines, champs, étapes, automatisations).</li>
+  <li>L’exécution automatisée d’actions API dans le compte CRM connecté, pour le compte de l’Utilisateur : création, modification et suppression de pipelines, champs, étapes, transactions, contacts, entreprises, tâches, tags, webhooks et autres entités.</li>
+  <li>La génération de cahiers des charges (PDF) sur la base du plan convenu.</li>
+  <li>La reconnaissance des messages vocaux.</li>
+</ul>
+
+<p>Le Service fonctionne exclusivement via l’API officielle de la plateforme CRM connectée par l’Utilisateur et constitue un produit indépendant : il n’est ni un produit, ni un partenaire, ni une entité affiliée de l’exploitant d’une quelconque plateforme CRM.</p>
+<p>La licence ou l’abonnement à la plateforme CRM elle-même est acquis séparément par l’Utilisateur, aux tarifs propres à cette plateforme, et ne fait pas partie du Service.</p>
+
+<h2>2. Inscription et compte</h2>
+
+<h3>2.1. Accès</h3>
+<p>Aucune inscription distincte n’est requise pour utiliser le Service. Votre compte est créé automatiquement lors de votre première interaction avec le Bot, sur la base des données de votre profil Telegram (identifiant Telegram).</p>
+
+<h3>2.2. Connexion du CRM</h3>
+<p>Pour effectuer des actions API dans le compte CRM connecté, l’Utilisateur doit autoriser le Service au moyen du protocole OAuth 2.0 fourni par la plateforme CRM. L’Utilisateur peut révoquer cet accès à tout moment dans les paramètres d’intégration de la plateforme.</p>
+
+<h3>2.3. Conditions requises de l’Utilisateur</h3>
+<ul>
+  <li>Être âgé d’au moins 18 ans ou disposer de la pleine capacité juridique en vertu de la législation de votre juridiction.</li>
+  <li>Disposer du pouvoir de gérer le compte CRM auquel le Service est connecté (vous êtes l’administrateur du compte ou disposez de l’autorisation appropriée de l’administrateur).</li>
+  <li>Utiliser le Service conformément à la législation applicable et aux présentes Conditions.</li>
+</ul>
+
+<h2>3. Tarifs et paiement</h2>
+
+<h3>3.1. Formules d’abonnement</h3>
+<p>Le Service est fourni à titre onéreux. Les formules d’abonnement en vigueur, leurs prix et les fonctionnalités incluses sont publiés sur la <a href="fr/#pricing">page des tarifs</a> et sont susceptibles d’évoluer. Nous informerons les Utilisateurs de toute modification tarifaire au moins 14 jours à l’avance via le Bot.</p>
+
+<h3>3.2. Période d’essai</h3>
+<p>Les nouveaux utilisateurs bénéficient d’une période d’essai gratuite de 3 (trois) jours calendaires. À l’expiration de la période d’essai, l’accès aux fonctionnalités du Service est restreint jusqu’à la souscription d’un abonnement.</p>
+
+<h3>3.3. Moyens de paiement</h3>
+<p>Le paiement s’effectue d’avance pour la période choisie (30 jours). Les prix sont indiqués en euros (EUR). Les moyens de paiement disponibles comprennent : la carte bancaire (y compris les cartes Mir), Telegram Stars et la cryptomonnaie (USDT). La liste des moyens de paiement est susceptible d’être élargie.</p>
+
+<h3>3.4. Renouvellement et résiliation</h3>
+<p>En cas de paiement par un moyen à renouvellement automatique, l’abonnement est reconduit automatiquement pour la période suivante, au prix en vigueur, jusqu’à sa résiliation. En cas de paiement par un moyen ponctuel (Telegram Stars, USDT), l’accès est accordé pour la période payée et n’est pas reconduit automatiquement. Vous pouvez résilier à tout moment — à l’adresse <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a> ou via la gestion des abonnements de votre prestataire de paiement. Après la résiliation, l’accès est maintenu jusqu’à la fin de la période payée.</p>
+
+<h3>3.5. Remboursements</h3>
+<p>Les conditions de remboursement et de résiliation ainsi que les droits des consommateurs de l’UE sont exposés en détail dans une <a href="refund-fr.html">Politique de remboursement et de résiliation</a> distincte. En résumé : un remboursement est possible si vous nous contactez dans les 7 jours suivant le paiement et avez utilisé moins de 30 % du quota d’actions payé, ainsi qu’en cas de manquement substantiel de notre part ou de prélèvement erroné. Pour en faire la demande, écrivez à <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a>.</p>
+
+<h2>4. Utilisation acceptable</h2>
+
+<h3>4.1. Utilisation autorisée</h3>
+<p>L’Utilisateur peut utiliser le Service pour :</p>
+<ul>
+  <li>Configurer et gérer son propre compte sur la plateforme CRM connectée.</li>
+  <li>Obtenir des conseils assistés par l’IA sur la structure et la logique du CRM.</li>
+  <li>Générer des cahiers des charges.</li>
+  <li>Toute autre activité prévue par les fonctionnalités du Service.</li>
+</ul>
+
+<h3>4.2. Actions interdites</h3>
+<p>L’Utilisateur s’engage à <strong>ne pas</strong> :</p>
+<ul>
+  <li>Utiliser le Service pour accéder à des comptes CRM appartenant à des tiers sans leur consentement explicite.</li>
+  <li>Tenter d’accéder sans autorisation aux serveurs, aux bases de données ou au code source du Service.</li>
+  <li>Procéder à de l’ingénierie inverse, décompiler ou tenter de toute autre manière d’extraire le code source du Service.</li>
+  <li>Utiliser le Service à des fins de spam, d’hameçonnage ou d’autres activités frauduleuses.</li>
+  <li>Céder, revendre ou fournir à des tiers un accès au Service contre rémunération sans l’accord écrit de l’Administration.</li>
+  <li>Utiliser des moyens automatisés (bots, scripts) pour interagir en masse avec le Service.</li>
+  <li>Créer délibérément une charge excessive sur l’infrastructure du Service.</li>
+  <li>Utiliser le Service en violation de la législation applicable, des règles de la plateforme CRM connectée ou des présentes Conditions.</li>
+</ul>
+
+<div class="highlight">
+  <strong>Conséquences des violations :</strong> En cas de violation constatée, l’Administration se réserve le droit de restreindre l’accès au Service ou d’y mettre fin, sans préavis et sans remboursement.
+</div>
+
+<h2>5. Propriété intellectuelle</h2>
+
+<h3>5.1. Droits de l’Administration</h3>
+<p>Les droits exclusifs sur le Service, y compris, sans s’y limiter, les logiciels, algorithmes, modèles, interfaces, éléments graphiques, textes, logos et marques, appartiennent à l’Administration.</p>
+<p>Les présentes Conditions ne confèrent à l’Utilisateur aucun droit de propriété intellectuelle sur le Service, à l’exception d’un droit limité, non exclusif et révocable d’utiliser le Service conformément aux présentes Conditions.</p>
+
+<h3>5.2. Droits de l’Utilisateur sur ses données</h3>
+<p>L’Utilisateur conserve l’ensemble des droits sur les données téléversées ou créées au moyen du Service. Les objets CRM (pipelines, champs, transactions, etc.) créés par le Service à la demande de l’Utilisateur dans son compte CRM appartiennent à l’Utilisateur.</p>
+
+<h3>5.3. Cahiers des charges (PDF)</h3>
+<p>Les cahiers des charges générés sont des productions de l’IA fondées sur les données de l’Utilisateur. L’Utilisateur bénéficie d’un droit non exclusif et sans restriction d’utiliser les documents générés à des fins professionnelles.</p>
+
+<h2>6. Limitation de responsabilité</h2>
+
+<h3>6.1. Fourniture « en l’état »</h3>
+<p>Le Service est fourni « en l’état » et « selon disponibilité ». L’Administration ne garantit pas :</p>
+<ul>
+  <li>Le fonctionnement ininterrompu, exempt d’erreurs ou continu du Service.</li>
+  <li>Que les productions de l’IA répondront aux attentes de l’Utilisateur.</li>
+  <li>La compatibilité avec une configuration particulière de compte CRM.</li>
+  <li>La disponibilité du Service à un moment donné ou depuis une région donnée.</li>
+</ul>
+
+<h3>6.2. Limitation des dommages</h3>
+<p>Dans toute la mesure permise par la législation applicable, l’Administration ne saurait être tenue responsable :</p>
+<ul>
+  <li>Des dommages directs, indirects, accessoires, punitifs ou consécutifs, y compris le manque à gagner, la perte de données ou l’atteinte à la réputation, résultant de l’utilisation ou de l’impossibilité d’utiliser le Service.</li>
+  <li>Des actions ou erreurs du modèle d’IA, y compris des recommandations incorrectes ou des modifications non souhaitées du CRM.</li>
+  <li>Des interruptions causées par des actions de tiers (Telegram, la plateforme CRM connectée, les fournisseurs d’IA, les hébergeurs).</li>
+  <li>De la perte d’accès au compte CRM pour des raisons échappant au contrôle de l’Administration.</li>
+</ul>
+
+<div class="highlight">
+  <strong>Plafond de responsabilité :</strong> La responsabilité totale cumulée de l’Administration envers l’Utilisateur, au titre de toute réclamation, ne saurait excéder le montant effectivement payé par l’Utilisateur au cours des 3 (trois) derniers mois d’utilisation du Service.
+</div>
+
+<h3>6.3. Responsabilité de l’Utilisateur</h3>
+<p>L’Utilisateur est seul responsable :</p>
+<ul>
+  <li>Des décisions prises sur la base des recommandations de l’IA. Nous recommandons de vérifier le plan d’action avant d’appliquer des modifications au compte CRM.</li>
+  <li>De la sécurité de ses accès à Telegram et au compte CRM.</li>
+  <li>De l’utilisation licite du Service dans le cadre de ses activités professionnelles.</li>
+  <li>Des conséquences de l’octroi au Service d’un accès à son compte CRM.</li>
+</ul>
+
+<h2>7. Données à caractère personnel</h2>
+<p>Les données à caractère personnel sont traitées conformément à la <a href="privacy-fr.html">Politique de confidentialité</a>, qui fait partie intégrante des présentes Conditions.</p>
+<p>Résumé des données traitées :</p>
+<div class="table-wrap">
+<table>
+  <tr><th>Données</th><th>Finalité</th></tr>
+  <tr><td>Identifiant Telegram, nom, nom d’utilisateur</td><td>Identification et fourniture du Service</td></tr>
+  <tr><td>Messages texte et vocaux</td><td>Traitement des demandes, génération des réponses</td></tr>
+  <tr><td>Jetons OAuth de la plateforme CRM connectée</td><td>Autorisation des requêtes API vers le compte CRM</td></tr>
+</table>
+</div>
+<p>Kai ne demande ni ne conserve les identifiants de connexion au CRM. L’accès est accordé exclusivement via OAuth 2.0.</p>
+
+<h2>8. Services tiers</h2>
+<p>Le Service s’appuie sur des infrastructures et des API tierces. L’utilisation du Service implique l’acceptation des conditions des services concernés :</p>
+<ul>
+  <li><strong>Telegram</strong> — <a href="https://telegram.org/tos" target="_blank" rel="noopener">Conditions d’utilisation de Telegram</a></li>
+  <li><strong>La plateforme CRM que vous connectez</strong> — ses conditions d’utilisation sont publiées sur le site web de cette plateforme</li>
+  <li><strong>OpenAI</strong> — <a href="https://openai.com/policies/terms-of-use" target="_blank" rel="noopener">Conditions d’OpenAI</a></li>
+</ul>
+<p>L’Administration n’est pas responsable des actions, des politiques ou de la disponibilité de ces services.</p>
+
+<h2>9. Suspension et résiliation</h2>
+
+<h3>9.1. À l’initiative de l’Utilisateur</h3>
+<p>L’Utilisateur peut cesser d’utiliser le Service à tout moment en bloquant le Bot dans Telegram. Pour une suppression complète des données, utilisez la commande <code>/delete</code> ou envoyez une demande à <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a>.</p>
+
+<h3>9.2. À l’initiative de l’Administration</h3>
+<p>L’Administration peut suspendre l’accès de l’Utilisateur au Service ou y mettre fin :</p>
+<ul>
+  <li>En cas de violation des présentes Conditions.</li>
+  <li>En cas de détection d’une activité suspecte ou frauduleuse.</li>
+  <li>À la demande des autorités compétentes.</li>
+  <li>En cas d’arrêt du Service — moyennant un préavis d’au moins 30 jours.</li>
+</ul>
+
+<h2>10. Droit applicable et règlement des litiges</h2>
+
+<h3>10.1. Utilisateurs situés en Russie et dans les pays de la CEI</h3>
+<p>Les présentes Conditions sont régies et interprétées conformément au droit de la Fédération de Russie. Les litiges sont réglés conformément au droit russe applicable. Avant toute action en justice, les parties conviennent de rechercher un règlement amiable préalable du litige par l’envoi d’une réclamation écrite. Le délai de réponse est de 30 (trente) jours calendaires.</p>
+
+<h3>10.2. Utilisateurs situés dans l’UE, aux États-Unis, au Canada et dans d’autres juridictions</h3>
+<p>Pour les Utilisateurs situés hors de Russie et des pays de la CEI, les présentes Conditions sont régies par le droit du pays de résidence de l’Utilisateur dans la mesure requise par la législation applicable en matière de protection des consommateurs. Les litiges sont portés devant la juridiction compétente du lieu où se trouve l’Utilisateur. Les Utilisateurs de l’UE peuvent également recourir à la <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">plateforme européenne de règlement en ligne des litiges</a>.</p>
+
+<h3>10.3. Droits supplémentaires des Utilisateurs de l’UE</h3>
+<p>Si vous êtes un consommateur résidant dans l’Union européenne, aucune disposition des présentes Conditions ne limite les droits impératifs que vous confère la législation sur la protection des consommateurs de votre pays de résidence, y compris le droit de rétractation de 14 jours (le cas échéant).</p>
+
+<h2>11. Force majeure</h2>
+<p>L’Administration est exonérée de toute responsabilité en cas d’inexécution de ses obligations résultant d’un cas de force majeure, notamment, sans s’y limiter : catastrophes naturelles, actions ou inactions des pouvoirs publics, opérations militaires, cyberattaques, défaillances de services tiers (Telegram, la plateforme CRM connectée, les fournisseurs cloud), blocages d’adresses IP et autres circonstances échappant au contrôle raisonnable de l’Administration.</p>
+
+<h2>12. Modification des Conditions</h2>
+<p>L’Administration peut modifier unilatéralement les présentes Conditions. Nous informerons les Utilisateurs de toute modification substantielle via le Bot au moins 14 jours avant son entrée en vigueur. La poursuite de l’utilisation du Service après l’entrée en vigueur des modifications vaut acceptation des Conditions mises à jour.</p>
+<p>Si vous n’acceptez pas les modifications, veuillez cesser d’utiliser le Service avant leur entrée en vigueur.</p>
+
+<h2>13. Dispositions diverses</h2>
+
+<h3>13.1. Divisibilité</h3>
+<p>Si une disposition des présentes Conditions est déclarée nulle ou inapplicable par une juridiction compétente, les autres dispositions conservent leur plein effet.</p>
+
+<h3>13.2. Renonciation</h3>
+<p>Le fait pour l’Administration de ne pas exercer un droit prévu par les présentes Conditions ne vaut pas renonciation à ce droit.</p>
+
+<h3>13.3. Intégralité de l’accord</h3>
+<p>Les présentes Conditions, ainsi que la <a href="privacy-fr.html">Politique de confidentialité</a> et la <a href="refund-fr.html">Politique de remboursement et de résiliation</a>, constituent l’intégralité de l’accord entre l’Utilisateur et l’Administration concernant l’utilisation du Service.</p>
+
+<h2>14. Contact</h2>
+<p>Pour toute question relative aux présentes Conditions, veuillez nous contacter :</p>
+<ul>
+  <li>E-mail : <a href="mailto:ai.crm.2000@gmail.com">ai.crm.2000@gmail.com</a></li>
+  <li>Telegram : <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">@aiicrm_bot</a></li>
+</ul>
+
+</div>
+
+<div class="footer">
+  <a href="#" id="cookieSettings" style="color:var(--muted)">Gérer les cookies</a> · <a href="fr/" style="color:var(--muted)">← Retour à l’accueil</a> · <a href="https://aii-crm.com/terms-en.html" style="color:var(--muted)">Version anglaise</a>
+</div>
+
+<div class="cookie-banner" id="cookieBanner">
+  <span>Nous utilisons des cookies pour la mesure d’audience du site. Rien n’est stocké sans votre consentement — le site fonctionne très bien sans. Consultez notre <a href="privacy-fr.html">politique de confidentialité</a>.</span>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accepter</button>
+    <button class="cookie-btn cookie-btn-decline" id="cookieDecline">Essentiels seulement</button>
+  </div>
+</div>
+
+<script>
+/* ─── COOKIE CONSENT ─── */
+(function() {
+  var KEY = 'kai_cookie_consent';
+  var banner = document.getElementById('cookieBanner');
+  function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function write(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+  function show() { banner.classList.add('visible'); }
+  function hide() { banner.classList.remove('visible'); }
+  window.kaiConsent = read();
+  document.getElementById('cookieAccept').addEventListener('click', function() {
+    write('accepted'); window.kaiConsent = 'accepted'; hide();
+    if (window.kaiAnalyticsStart) window.kaiAnalyticsStart();
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function() {
+    write('declined'); window.kaiConsent = 'declined'; hide();
+    if (window.kaiAnalyticsStop) window.kaiAnalyticsStop();
+  });
+  var settings = document.getElementById('cookieSettings');
+  if (settings) settings.addEventListener('click', function(e) { e.preventDefault(); show(); });
+  if (!window.kaiConsent) setTimeout(show, 1000);
+})();
+</script>
+
+<!-- ─── FIRST-PARTY ANALYTICS ─── -->
+<script>
+(function(){
+  var V='', on=false;
+  function vid(){
+    try{
+      var m=document.cookie.match(/(?:^|; )kai_vid=([a-f0-9-]+)/);
+      var v=m?m[1]:(localStorage.getItem('kai_vid')||'');
+      if(!v){v=(crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random().toString(16).slice(2));}
+      localStorage.setItem('kai_vid',v);
+      document.cookie='kai_vid='+v+'; max-age=31536000; path=/; SameSite=Lax';
+      return v;
+    }catch(e){return '';}
+  }
+  function forget(){
+    try{localStorage.removeItem('kai_vid');}catch(e){}
+    try{document.cookie='kai_vid=; max-age=0; path=/; SameSite=Lax';}catch(e){}
+  }
+  var LANG='fr';
+  window.kaiTrack=function(ev){
+    if(!on) return;
+    try{navigator.sendBeacon('https://ai-crm-bot-production.up.railway.app/track',
+      JSON.stringify({vid:V,event:ev,path:location.pathname+location.hash,
+                      ref:document.referrer,lang:LANG}));}catch(e){}
+  };
+  window.kaiAnalyticsStart=function(){ if(on) return; V=vid(); on=true; kaiTrack('pageview'); };
+  window.kaiAnalyticsStop=function(){ on=false; V=''; forget(); };
+
+  if(window.kaiConsent==='accepted') window.kaiAnalyticsStart();
+  else if(window.kaiConsent==='declined') forget();
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('t.me/aiicrm_bot') !== -1) kaiTrack('tg_click');
+    else if (href.indexOf('/chat') !== -1 && href.indexOf('railway.app') !== -1) kaiTrack('webchat_open');
+  }, true);
+})();
+</script>
+
+</body>
+</html>

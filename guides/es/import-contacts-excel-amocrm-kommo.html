@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Importar tu base de clientes de Excel a amoCRM o Kommo en 10 minutos (2026) | Kai</title>
+<meta name="description" content="Cómo preparar la hoja de cálculo (columnas, duplicados, formatos de teléfono), el asistente de importación integrado de amoCRM y Kommo, los errores comunes y el camino con Kai: envía el archivo, revisa el mapeo y confirma.">
+<meta name="keywords" content="importar contactos a Kommo desde Excel">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/es/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/import-contacts-excel-amocrm-kommo.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/import-contacts-excel-amocrm-kommo.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/es/import-contacts-excel-amocrm-kommo.html">
+<meta property="og:title" content="Importa tu base de clientes de Excel a amoCRM o Kommo en 10 minutos">
+<meta property="og:description" content="Cómo preparar la hoja de cálculo, pasar el asistente de importación sin duplicados y arreglarlo cuando algo sale mal. A mano o con un solo archivo enviado a Kai.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-10-26">
+<meta property="article:modified_time" content="2026-10-26">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Importa tu base de clientes de Excel a amoCRM o Kommo en 10 minutos">
+<meta name="twitter:description" content="Cómo preparar la hoja de cálculo, pasar el asistente de importación sin duplicados y arreglarlo cuando algo sale mal. A mano o con un solo archivo enviado a Kai.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/es/" aria-label="Kai: inicio">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Navegación">
+      <a href="https://aii-crm.com/es/">Sitio web</a>
+      <a href="https://t.me/aiicrm_bot">Bot de Telegram</a>
+      <a href="https://aii-crm.com/guides/en/import-contacts-excel-amocrm-kommo.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Ruta de navegación">
+  <a href="https://aii-crm.com/es/">Kai</a> › <a href="https://aii-crm.com/guides/es/">Guías</a> › Importación desde Excel
+</nav>
+
+<h1>Cómo importar tu base de clientes de Excel a amoCRM o Kommo en 10 minutos</h1>
+<p class="meta">Actualizado el 26 de octubre de 2026 · Equipo Kai · 6 min de lectura</p>
+
+<p class="lead">Importar una base de clientes de Excel a un CRM significa cargar una hoja de cálculo de forma que cada fila se convierta en un contacto (y, si hace falta, en una empresa y un lead) con los campos en su sitio y sin duplicados. En amoCRM y Kommo la importación en sí lleva minutos: el asistente integrado acepta Excel y CSV, asigna las columnas a los campos y omite los duplicados. El tiempo se va en preparar la tabla, y ahí es donde se esconden los problemas. A continuación: cómo preparar el archivo, pasar el asistente, evitar los errores comunes y hacer lo mismo enviando el archivo a un asistente de IA como Kai.</p>
+
+<section class="tldr" aria-label="En resumen">
+  <h2>En resumen</h2>
+  <ul>
+    <li>Una fila, un cliente. Encabezados en la primera fila, sin celdas combinadas, totales ni códigos de colores.</li>
+    <li>Teléfonos en un solo formato con el prefijo del país y un número por celda; si no, el CRM no detecta los duplicados.</li>
+    <li>Añade las columnas «Fuente» y «Etiqueta» antes de importar: la etiqueta te permite encontrar, y revertir, toda la importación.</li>
+    <li>Primero un archivo de prueba de 10 filas, luego la base completa.</li>
+    <li>Una tabla limpia se importa en 10 minutos; una desordenada necesita una hora de limpieza. Kai: archivo en el chat, revisión del mapeo, confirmación.</li>
+  </ul>
+</section>
+
+<h2>Paso 1. Limpia la hoja de cálculo</h2>
+<p>El asistente hace exactamente lo que ve en el archivo, así que una tabla ordenada es el 80% del trabajo. Repasa la lista:</p>
+<ul>
+  <li><strong>Estructura.</strong> Una sola hoja, encabezados en la primera fila, una fila por cliente. Quita las celdas combinadas, las filas de «Total», las filas vacías y los rótulos; los colores no se importan, así que si un color indica un estado, conviértelo en una columna.</li>
+  <li><strong>Columnas.</strong> Mínimo: Nombre, Teléfono, Email, Empresa. Útiles: Cargo, Fuente, Responsable, Comentario; para los leads, Importe y Etapa. Separa «Juan Pérez, Acme S.A.» en dos columnas ahora; el CRM no lo hará.</li>
+  <li><strong>Teléfonos.</strong> Un único formato internacional (+1…, +44…), sin espacios, paréntesis ni «ext. 12»; dos números son dos columnas. Excel convierte los números largos en 7.9E+10, así que pon las celdas en formato texto antes de pegar.</li>
+  <li><strong>Email y números.</strong> Los emails, en minúsculas. Los importes, solo con dígitos, sin símbolos de moneda ni separadores de miles. Las fechas, en un solo formato.</li>
+  <li><strong>Duplicados.</strong> Busca teléfonos y emails repetidos en Excel (formato condicional → valores duplicados) y decide qué registro se queda: el asistente omite los duplicados, pero no sabe elegir el mejor.</li>
+  <li><strong>Dos columnas de servicio.</strong> «Fuente» (por ejemplo, «Base 2024») y «Etiqueta» con un valor como <kbd>import-2026-10</kbd>. Dentro de un mes no recordarás de dónde salieron dos mil contactos; la etiqueta los encuentra en un segundo.</li>
+</ul>
+
+<h2>Paso 2. Importa con el asistente integrado de amoCRM o Kommo</h2>
+<p>En ambos sistemas la importación empieza desde las vistas de lista (contactos, empresas o leads), con un botón de importación que acepta .xlsx y .csv; comprueba la ubicación exacta en el centro de ayuda de tu CRM. La lógica del asistente es la misma:</p>
+<ol>
+  <li><strong>Sube el archivo y revisa la vista previa.</strong> El asistente muestra las primeras filas y te pide que asignes cada columna a un campo del CRM, estándar o personalizado. Si un campo todavía no existe, créalo antes en la ficha (su tipo no se puede cambiar después).</li>
+  <li><strong>Elige qué crear.</strong> Solo contactos; contactos y empresas; contactos con leads. Para los leads, elige el embudo y la etapa, y asegúrate de que los nombres de las etapas coinciden con los del CRM letra por letra.</li>
+  <li><strong>Define la regla de duplicados.</strong> Cuando un teléfono o un email coincide con una ficha existente: omitir, actualizar o crear una nueva. En una primera carga limpia se suele omitir; al refrescar una base en uso, se actualiza.</li>
+  <li><strong>Prueba con un archivo de 10 filas.</strong> Abre algunas fichas: el teléfono está en el campo de teléfono, no en una nota; los nombres no se han juntado; la etiqueta y la fuente están ahí.</li>
+  <li><strong>Comprueba el resultado.</strong> El número de registros coincide con la tabla, un filtro por la etiqueta de importación muestra la misma cifra y la búsqueda de un teléfono al azar encuentra exactamente una ficha.</li>
+</ol>
+<div class="note warn">No hay un «deshacer» en un clic: solo puedes encontrar los registros y eliminarlos en bloque, algo difícil sin una etiqueta de importación.</div>
+
+<h2>Errores comunes al migrar una base</h2>
+<ul>
+  <li><strong>Formatos de teléfono mezclados.</strong> «(916) 123-4567» y «+19161234567» son números distintos para el CRM, así que los duplicados se cuelan y dos vendedores llaman al mismo cliente.</li>
+  <li><strong>Mapeo cruzado.</strong> «Comentario» acaba en «Cargo» y el nombre en el campo de empresa; solo la vista previa y el archivo de prueba lo detectan.</li>
+  <li><strong>Leads sin contactos.</strong> Mil fichas en el embudo y nadie a quien llamar. Un contacto y su lead deben salir de la misma fila.</li>
+  <li><strong>Un solo responsable para toda la base.</strong> Todo queda a cargo del propietario de la cuenta. Añade una columna «Responsable» con los nombres tal como aparecen en el CRM.</li>
+  <li><strong>Sin fuente.</strong> En un mes la base antigua se mezcla con los leads nuevos y el informe por canales deja de tener sentido.</li>
+  <li><strong>Contactos muertos junto a los vivos.</strong> Los clientes que llevan tres años sin dar señales ensucian las búsquedas y las estadísticas; ponles una etiqueta aparte o déjalos fuera.</li>
+</ul>
+
+<h2>Con Kai es un mensaje y un archivo</h2>
+<p>Kai es un asistente de IA que configura amoCRM y Kommo desde un mensaje de chat, en el bot de Telegram <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> o en el <a href="https://app.aii-crm.com/chat?lang=en">chat web</a>, conectado por OAuth 2.0 en un clic, sin claves ni contraseñas. Envías el archivo Excel o CSV al chat; Kai reconoce las columnas («Presupuesto» → valor del lead, «Tel.» → teléfono), muestra el mapeo completo de columnas a campos, encuentra los duplicados por teléfono y email y te pregunta qué hacer con ellos; los campos que faltan los crea él. Tras tu «ok», todo se carga a través de la API oficial, con un informe: contactos, empresas y leads creados, duplicados omitidos.</p>
+<pre>Aquí tienes la base de clientes en Excel. Cárgala en Kommo como contactos y empresas, omite los duplicados por teléfono y ponles a todos la etiqueta «base-2026» y la fuente «Feria».</pre>
+<pre>En el archivo, «Presupuesto» es el importe del lead y «Estado» es la etapa del embudo «Ventas». Crea leads con contactos; el responsable está en la columna «Vendedor».</pre>
+<pre>Muéstrame otra vez el mapeo y pasa «Comentario» a la nota del lead, no a la del contacto.</pre>
+<p>Límites honestos. Kai desenreda una tabla desordenada, pero cuál de dos registros se queda lo decides tú: te muestra los pares y pregunta. Una base muy grande es mejor cargarla por partes. Migrar el historial y las tareas desde otro CRM, o conectar la base con el software de contabilidad, es trabajo de un integrador. La importación está en todos los planes de Kai; la prueba es de 3 días, sin tarjeta, con las funciones de Start.</p>
+
+<h2>A mano, con un integrador o con Kai</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Criterio</th><th>Asistente de importación del CRM</th><th>Integrador</th><th>Kai</th></tr></thead>
+  <tbody>
+    <tr><td>Ideal para</td><td>Tabla limpia, un solo tipo de registro</td><td>Migración desde otro CRM con historial; datos en el software de contabilidad</td><td>Cualquier tabla; contactos, empresas y leads desde un solo archivo</td></tr>
+    <tr><td>Qué haces tú</td><td>Preparar el archivo, asignar columnas, comprobar</td><td>Redactar una especificación, aceptar el resultado</td><td>Enviar el archivo, revisar el mapeo, confirmar</td></tr>
+    <tr><td>Tiempo</td><td>10 minutos si está limpia, una hora si está desordenada</td><td>Días o semanas</td><td>Una conversación</td></tr>
+    <tr><td>Precio</td><td>Incluido en la suscripción del CRM</td><td>Según el presupuesto del contratista</td><td>Desde €29/mes, 3 días gratis</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>¿Puedo importar leads junto con contactos desde un solo archivo?</h3>
+    <p>Sí. Tanto en amoCRM como en Kommo, el asistente crea un contacto y su lead vinculado a partir de una fila: indícale las columnas con el importe, el embudo y la etapa. Kai hace lo mismo; solo dile qué columnas son del lead.</p>
+  </div>
+  <div class="faq-item">
+    <h3>¿Cómo detecta el CRM los duplicados durante la importación?</h3>
+    <p>Comparando el teléfono o el email con las fichas existentes; por eso los teléfonos del archivo deben compartir un mismo formato con el prefijo del país: «(916) 123-4567» y «+19161234567» son números distintos para el CRM.</p>
+  </div>
+  <div class="faq-item">
+    <h3>¿Y si la importación salió mal?</h3>
+    <p>Si cada registro recibió una etiqueta de importación, filtra por ella, selecciónalos en bloque y elimínalos o corrígelos. Sin etiqueta tendrás que revisar toda la base a mano; por eso primero va un archivo de prueba de 10 filas.</p>
+  </div>
+  <div class="faq-item">
+    <h3>¿Qué pasa con mi archivo cuando se lo envío a Kai?</h3>
+    <p>El archivo solo se usa para leer las columnas y cargar los datos en el CRM a través de la API oficial. Tu base de clientes vive en tu CRM; Kai no almacena datos de contactos ni de leads. El CRM se conecta por OAuth 2.0 sin contraseñas; el acceso se puede revocar en cualquier momento en los ajustes del CRM.</p>
+  </div>
+</div>
+
+<h2>Qué hacer ahora</h2>
+<p>Abre la hoja de cálculo, pon los teléfonos en un solo formato y añade las columnas «Fuente» y «Etiqueta»: esos son los 10 minutos. Después, el asistente de importación del CRM o el archivo en el chat de Kai. ¿Vas a configurar todo el CRM? Empieza por la <a href="https://aii-crm.com/guides/es/crm-setup-without-integrator-checklist.html">lista de comprobación de 12 puntos</a>.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Probar en Telegram</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Abrir el chat web</a>
+</div>
+
+<p class="author">Autor: Equipo Kai · Actualizado el <time datetime="2026-10-26">26 de octubre de 2026</time> · Los pasos del asistente se describen de forma general; comprueba los nombres exactos de los menús en el centro de ayuda de tu CRM.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/es/">Inicio</a> · <a href="https://aii-crm.com/privacy-es.html">Privacidad</a> · <a href="https://aii-crm.com/terms-es.html">Términos</a> · <a href="https://aii-crm.com/guides/en/import-contacts-excel-amocrm-kommo.html">Versión en inglés</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/es/import-contacts-excel-amocrm-kommo.html#article",
+      "headline": "Cómo importar tu base de clientes de Excel a amoCRM o Kommo en 10 minutos",
+      "description": "Cómo preparar la hoja de cálculo (columnas, duplicados, formatos de teléfono), el asistente de importación integrado de amoCRM y Kommo, los errores comunes y el camino con Kai: envía el archivo, revisa el mapeo y confirma.",
+      "inLanguage": "es",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "mainEntityOfPage": "https://aii-crm.com/guides/es/import-contacts-excel-amocrm-kommo.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/es/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/es/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Puedo importar leads junto con contactos desde un solo archivo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Tanto en amoCRM como en Kommo, el asistente crea un contacto y su lead vinculado a partir de una fila: indícale las columnas con el importe, el embudo y la etapa. Kai hace lo mismo; solo dile qué columnas son del lead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo detecta el CRM los duplicados durante la importación?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Comparando el teléfono o el email con las fichas existentes; por eso los teléfonos del archivo deben compartir un mismo formato con el prefijo del país: «(916) 123-4567» y «+19161234567» son números distintos para el CRM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Y si la importación salió mal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si cada registro recibió una etiqueta de importación, filtra por ella, selecciónalos en bloque y elimínalos o corrígelos. Sin etiqueta tendrás que revisar toda la base a mano; por eso primero va un archivo de prueba de 10 filas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa con mi archivo cuando se lo envío a Kai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El archivo solo se usa para leer las columnas y cargar los datos en el CRM a través de la API oficial. Tu base de clientes vive en tu CRM; Kai no almacena datos de contactos ni de leads. El CRM se conecta por OAuth 2.0 sin contraseñas; el acceso se puede revocar en cualquier momento en los ajustes del CRM."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guías",
+          "item": "https://aii-crm.com/guides/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Importar tu base de clientes de Excel a amoCRM o Kommo",
+          "item": "https://aii-crm.com/guides/es/import-contacts-excel-amocrm-kommo.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

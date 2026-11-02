@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<title>Exemples : le CRM avant et après un seul message à Kai | Kai</title>
+<meta name="description" content="Quatre situations typiques dans amoCRM et Kommo : le pipeline de départ, le message envoyé à Kai, ce que Kai a fait et le CRM obtenu. Des actions réelles, sans intégrateur.">
+<meta name="keywords" content="exemples de configuration amoCRM, exemples de configuration Kommo, pipeline de vente avant après, exemple d’automatisation CRM, assistant IA pour amoCRM, IA pour Kommo, configurer un CRM sans intégrateur, paramétrage CRM, Kai CRM, CRM cabinet dentaire, CRM agence immobilière Kommo, CRM école en ligne, CRM rénovation, motifs de perte CRM, automatisation des tâches CRM">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aii-crm.com/cases/fr/">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/cases/">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/cases/en/">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/cases/de/">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/cases/fr/">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/cases/es/">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/cases/pt/">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/cases/en/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Kai"><meta property="og:url" content="https://aii-crm.com/cases/fr/">
+<meta property="og:title" content="Avant → après : amoCRM et Kommo configurés en un seul message"><meta property="og:description" content="Quatre situations typiques dans amoCRM et Kommo : le pipeline de départ, le message envoyé à Kai, ce que Kai a fait et le CRM obtenu. Des actions réelles, sans intégrateur."><meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Avant → après : amoCRM et Kommo configurés en un seul message"><meta name="twitter:description" content="Quatre situations typiques dans amoCRM et Kommo : le pipeline de départ, le message envoyé à Kai, ce que Kai a fait et le CRM obtenu. Des actions réelles, sans intégrateur."><meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B0A14'/><path d='M16 6.5a9.5 9.5 0 1 0 9.5 9.5' stroke='%237C5CFF' stroke-width='4' stroke-linecap='round' fill='none'/><circle cx='23.4' cy='8.6' r='2.6' fill='%23A78BFA'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0;--bad:#FF7B93;--warn:#F5C451;--mono:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 'Manrope',system-ui,sans-serif;padding:0 16px 64px}
+.wrap{max-width:860px;margin:0 auto}header{display:flex;align-items:center;gap:12px;padding:22px 0;border-bottom:1px solid var(--border)}
+header a{color:var(--ink);text-decoration:none;font-weight:700}header .brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:700}header .brand svg{flex:0 0 28px}header nav{margin-left:auto;display:flex;gap:18px;font-size:14px}header nav a{color:var(--muted);font-weight:500}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin:40px 0 12px;text-wrap:balance}
+.lead{color:var(--text);max-width:64ch}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}.toc a{font:600 13px var(--mono);color:var(--accent-2);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:6px 12px}.toc a:hover{border-color:var(--accent)}
+.case{margin-top:44px;border:1px solid var(--border);border-radius:18px;background:var(--bg-1);padding:22px;scroll-margin-top:16px}
+.case .top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}.badge{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}.badge.crm{color:var(--accent-2);border-color:rgba(124,92,255,.45)}
+.case h2{margin:0 0 6px;font-size:clamp(21px,3.2vw,26px);line-height:1.25;color:var(--ink);letter-spacing:-.01em;text-wrap:balance}
+.case p{margin:6px 0}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.col{border:1px solid var(--border);border-radius:14px;padding:14px;background:var(--bg)}
+.col h3{margin:0 0 10px;font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.col.before h3{color:var(--bad)}.col.after h3{color:var(--good)}.col h3 i{width:8px;height:8px;border-radius:50%;background:currentColor;display:inline-block}
+.board{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.board span{font-size:13px;font-weight:600;color:var(--ink);background:var(--bg-2);border:1px solid var(--border);border-radius:8px;padding:6px 9px}.board em{font-style:normal;color:var(--muted);font-size:12px}
+.col.after .board span{border-color:rgba(67,224,160,.35)}
+.k{margin:12px 0 4px;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.list{margin:0;padding:0;list-style:none;font-size:14px}.list li{padding:5px 0;border-top:1px solid var(--border);display:flex;gap:8px;align-items:baseline}.list li:first-child{border-top:0}
+.list b{color:var(--ink);font-weight:600}.list small{color:var(--muted);font-size:12px}.list .stamp{font:600 10px var(--mono);color:var(--warn);border:1px solid rgba(245,196,81,.5);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.list.none li{color:var(--muted);font-style:italic}.list.pain li::before{content:'–';color:var(--bad)}.list.gain li::before{content:'✓';color:var(--good);font-weight:700}
+.rule{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;font-size:14px}.rule b{color:var(--ink);font-weight:600}.rule span::before{content:'→ ';color:var(--accent-2)}
+.chat{margin:16px 0;display:grid;gap:10px}.msg{max-width:92%;border-radius:16px;padding:12px 14px;font-size:15px;line-height:1.5}
+.msg.me{justify-self:end;background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.45);color:var(--ink);border-bottom-right-radius:6px}
+.msg.kai{justify-self:start;background:var(--bg-2);border:1px solid var(--border);border-bottom-left-radius:6px}.msg .who{display:block;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.msg.kai .ok{color:var(--good);font-weight:700}
+.did{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}.did span{font:500 12px var(--mono);color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:4px 8px}.did span b{color:var(--accent-2);font-weight:600}
+.time{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--bg-2);border:1px solid var(--border);font-size:14px;color:var(--text)}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.btn{display:inline-block;padding:11px 16px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;font-size:14px}.btn.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}
+button.btn{cursor:pointer;border:1px solid var(--border);font:inherit;font-weight:700;font-size:14px}
+.cta{margin-top:40px;padding:22px;border-radius:16px;background:var(--bg-2);border:1px solid var(--border)}.cta b{color:var(--ink)}.cta a{display:inline-block;margin:10px 10px 0 0;padding:12px 18px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+.cta a.alt{background:none;border:1px solid var(--border);color:var(--accent-2)}footer{margin-top:40px;color:var(--muted);font-size:13px}footer a{color:var(--muted)}
+.more{margin-top:28px}.more a{color:var(--accent-2)}
+@media (max-width:700px){.ba{grid-template-columns:1fr}.case{padding:16px;border-radius:14px}.msg{max-width:100%}body{font-size:16px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Avant → après : amoCRM et Kommo configurés en un seul message", "description": "Quatre situations typiques dans amoCRM et Kommo : le pipeline de départ, le message envoyé à Kai, ce que Kai a fait et le CRM obtenu. Des actions réelles, sans intégrateur.", "url": "https://aii-crm.com/cases/fr/", "inLanguage": "fr", "datePublished": "2026-10-27", "dateModified": "2026-11-02", "author": {"@type": "Organization", "name": "Kai"}, "publisher": {"@type": "Organization", "name": "Kai", "url": "https://aii-crm.com/"}, "isPartOf": {"@type": "WebSite", "name": "Kai", "url": "https://aii-crm.com/"}, "hasPart": [{"@type": "HowTo", "name": "La moitié des demandes se perdaient entre l’appel et la prise de rendez-vous", "url": "https://aii-crm.com/cases/fr/#dental-amocrm", "step": [{"@type": "HowToStep", "text": "Crée un pipeline « Nouveaux patients » : Demande → Contacté → RDV pris → Visite confirmée → Consultation → Plan de traitement. Champs de la transaction : Spécialité (liste : soins, prothèses, implants, pédiatrie), Praticien, Date de visite, Montant du plan. La date de visite est obligatoire à l’étape « RDV pris ». Règles : nouvelle demande — tâche pour l’accueil : rappeler sous 15 minutes ; transaction passée à « RDV pris » — tâche la veille pour confirmer la visite ; aucun mouvement en « Contacté » pendant 2 jours — tâche « rappeler à nouveau »."}]}, {"@type": "HowTo", "name": "Le budget et le quartier étaient saisis dans le nom de la transaction", "url": "https://aii-crm.com/cases/fr/#realty-kommo", "step": [{"@type": "HowToStep", "text": "Dans Kommo, crée un pipeline « Acheteurs » : Demande → Qualification → Sélection → Visite → Réservation → Contrat. Champs : Type de bien (liste : studio, 1 chambre, 2 chambres, 3 chambres et +, maison), Budget (nombre), Quartier, Mode de financement (crédit, comptant, paiement échelonné). Budget et Quartier sont obligatoires à l’étape « Qualification ». Règles : nouvelle demande — tâche : rappeler sous 15 minutes ; transaction en « Sélection » — tâche pour demain : planifier une visite ; aucun mouvement après « Visite » pendant 3 jours — tâche « demander la décision ». Motifs de perte : acheté ailleurs, trop cher, a changé d’avis, pas de réponse."}]}, {"@type": "HowTo", "name": "Le pipeline existait, mais les transactions restaient des mois en « Métré »", "url": "https://aii-crm.com/cases/fr/#renovation-audit-amocrm", "step": [{"@type": "HowToStep", "text": "Audite le pipeline « Vente du contrat ». Puis corrige-le : rends « Montant du devis » obligatoire à l’étape « Devis », ajoute des motifs de perte (trop cher, a choisi un concurrent, reporté, pas de réponse), et une règle : aucun mouvement en « Métré » pendant 5 jours — tâche pour le chef de chantier « envoyer le devis ». Et montre-moi le tableau de bord du pipeline."}]}, {"@type": "HowTo", "name": "Les inscriptions vivaient dans un tableur, les dates limites de tarif se rappelaient de mémoire", "url": "https://aii-crm.com/cases/fr/#courses-kommo", "step": [{"@type": "HowToStep", "text": "Dans Kommo, crée un pipeline « Vente de formation » : Inscription → Qualification → Appel planifié → Appel effectué → Facture envoyée → Paiement. Champs : Produit (liste), Formule (liste : basique, avec mentor, VIP), Session, Paiement échelonné (oui/non). Règles : Inscription — tâche : écrire et proposer un appel de diagnostic ; « Facture envoyée » — tâche pour demain : rappeler la date limite du tarif ; « Paiement » — tag « élève » et notification Telegram à l’équipe commerciale."}]}]}</script>
+</head>
+<body><div class="wrap">
+<header><a class="brand" href="../../fr/" aria-label="Kai — home"><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg><span>Kai</span></a><nav><a href="../../guides/fr/">Guides</a><a href="../../fr/#pricing">Tarifs</a><a href="https://aii-crm.com/cases/en/" hreflang="en">EN</a></nav></header>
+<h1>Avant → après : amoCRM et Kommo configurés en un seul message</h1>
+<p class="lead">Chaque exemple reprend une situation type que l’on confie à Kai : un seul pipeline pour tout, des champs dans les notes, des tâches de mémoire. Ci-dessous : le message écrit à Kai, ce qu’il fait dans le CRM et le résultat. Aucun chiffre client ici, seulement la configuration et le temps passé.</p>
+<div class="toc"><a href="#dental-amocrm">amoCRM · Cabinet dentaire</a><a href="#realty-kommo">Kommo · Agence immobilière</a><a href="#renovation-audit-amocrm">amoCRM · Rénovation d’appartements</a><a href="#courses-kommo">Kommo · École en ligne</a></div>
+
+<article class="case" id="dental-amocrm">
+  <div class="top"><span class="badge crm">amoCRM</span><span class="badge">Cabinet dentaire</span></div>
+  <h2>La moitié des demandes se perdaient entre l’appel et la prise de rendez-vous</h2>
+  <p>Un seul pipeline « Principal » pour tout : les demandes du site, d’Instagram et du téléphone arrivent dans « Nouveau », puis passent en « En cours » et « Clôturé ». Le praticien et la date de visite sont dans les notes, personne ne rappelle la visite au patient.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Avant</h3>
+      <div class="k">Étapes du pipeline</div><div class="board"><span>Nouveau</span><em>→</em><span>En cours</span><em>→</em><span>Clôturé</span></div>
+      <div class="k">Champs de la transaction</div><ul class="list none"><li>aucun champ — tout dans les notes</li></ul>
+      <div class="k">Règles</div><ul class="list none"><li>aucune règle — tout de mémoire</li></ul>
+      <div class="k">Ce qui coinçait</div><ul class="list pain"><li>pas d’étape « Contacté » — on ne sait pas qui a été rappelé</li><li>la date de visite est dans une note, l’accueil la cherche à l’œil</li><li>les visites ne sont pas confirmées — les patients ne viennent pas</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Après</h3>
+      <div class="k">Étapes du pipeline</div><div class="board"><span>Demande</span><em>→</em><span>Contacté</span><em>→</em><span>RDV pris</span><em>→</em><span>Visite confirmée</span><em>→</em><span>Consultation</span><em>→</em><span>Plan de traitement</span></div>
+      <div class="k">Champs de la transaction</div><ul class="list"><li><b>Spécialité</b><small>liste</small></li><li><b>Praticien</b></li><li><b>Date de visite</b><span class="stamp">obligatoire à « RDV pris »</span></li><li><b>Montant du plan</b><small>nombre</small></li></ul>
+      <div class="k">Règles</div><div class="rule"><b>Nouvelle demande</b><span>tâche « rappeler » sous 15 minutes</span><b>Passage à « RDV pris »</b><span>tâche la veille : confirmer la visite</span><b>« Contacté » sans mouvement pendant 2 jours</b><span>tâche « rappeler à nouveau »</span></div>
+      <div class="k">Ce qui a changé</div><ul class="list gain"><li>chaque demande reçoit un appel dans les 15 premières minutes — grâce à une règle, pas à la mémoire de l’accueil</li><li>impossible d’oublier la date de visite : sans elle, la transaction ne passe pas en « RDV pris »</li><li>une tâche de confirmation apparaît la veille — moins de rendez-vous manqués</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Message à Kai</span>Crée un pipeline « Nouveaux patients » : Demande → Contacté → RDV pris → Visite confirmée → Consultation → Plan de traitement. Champs de la transaction : Spécialité (liste : soins, prothèses, implants, pédiatrie), Praticien, Date de visite, Montant du plan. La date de visite est obligatoire à l’étape « RDV pris ». Règles : nouvelle demande — tâche pour l’accueil : rappeler sous 15 minutes ; transaction passée à « RDV pris » — tâche la veille pour confirmer la visite ; aucun mouvement en « Contacté » pendant 2 jours — tâche « rappeler à nouveau ».</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Terminé.</span> Pipeline « Nouveaux patients » créé, 6 étapes. 4 champs ajoutés, « Date de visite » est obligatoire à « RDV pris ». Trois règles sont actives : rappel sous 15 minutes, confirmation de la visite la veille, nouvel appel après 2 jours. Les étapes système « Gagné » et « Perdu » n’ont pas été touchées.</div>
+  </div>
+  <div class="k">Ce que Kai a fait</div><div class="did"><span>créer un pipeline</span><span>créer un champ <b>×4</b></span><span>rendre un champ obligatoire</span><span>créer une règle <b>×3</b></span></div>
+  <div class="time">Un message, environ deux minutes. Un intégrateur fait la même chose en 2–5 jours ouvrés.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Crée un pipeline « Nouveaux patients » : Demande → Contacté → RDV pris → Visite confirmée → Consultation → Plan de traitement. Champs de la transaction : Spécialité (liste : soins, prothèses, implants, pédiatrie), Praticien, Date de visite, Montant du plan. La date de visite est obligatoire à l’étape « RDV pris ». Règles : nouvelle demande — tâche pour l’accueil : rappeler sous 15 minutes ; transaction passée à « RDV pris » — tâche la veille pour confirmer la visite ; aucun mouvement en « Contacté » pendant 2 jours — tâche « rappeler à nouveau ».">Copier le message</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Répétez-le dans votre chat</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Ouvrir dans Telegram</a></div>
+</article>
+<article class="case" id="realty-kommo">
+  <div class="top"><span class="badge crm">Kommo</span><span class="badge">Agence immobilière</span></div>
+  <h2>Le budget et le quartier étaient saisis dans le nom de la transaction</h2>
+  <p>Tous les leads dans « Entrants », sans étapes. Budget, quartier et type de bien saisis dans le nom de la transaction : « Jean, 2 ch., jusqu’à 90 k, centre-ville ». Une sélection est envoyée puis oubliée, personne ne relance après une visite.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Avant</h3>
+      <div class="k">Étapes du pipeline</div><div class="board"><span>Entrants</span><em>→</em><span>En traitement</span><em>→</em><span>Vente</span></div>
+      <div class="k">Champs de la transaction</div><ul class="list none"><li>aucun champ — tout dans les notes</li></ul>
+      <div class="k">Règles</div><ul class="list none"><li>aucune règle — tout de mémoire</li></ul>
+      <div class="k">Ce qui coinçait</div><ul class="list pain"><li>aucun filtre par budget ou par quartier — tout est en texte libre</li><li>les transactions stagnent après une visite, sans prochaine étape</li><li>aucun motif de perte — impossible de savoir pourquoi les acheteurs partent</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Après</h3>
+      <div class="k">Étapes du pipeline</div><div class="board"><span>Demande</span><em>→</em><span>Qualification</span><em>→</em><span>Sélection</span><em>→</em><span>Visite</span><em>→</em><span>Réservation</span><em>→</em><span>Contrat</span></div>
+      <div class="k">Champs de la transaction</div><ul class="list"><li><b>Type de bien</b><small>liste</small></li><li><b>Budget</b><span class="stamp">nombre · obligatoire à « Qualification »</span></li><li><b>Quartier</b><span class="stamp">obligatoire à « Qualification »</span></li><li><b>Mode de financement</b><small>liste</small></li></ul>
+      <div class="k">Règles</div><div class="rule"><b>Nouvelle demande</b><span>tâche « rappeler » sous 15 minutes</span><b>Passage à « Sélection »</b><span>tâche pour demain : planifier une visite</span><b>« Visite » sans mouvement pendant 3 jours</b><span>tâche « demander la décision »</span></div>
+      <div class="k">Ce qui a changé</div><ul class="list gain"><li>le filtre « 2 ch. jusqu’à 90 000 centre-ville » en une seconde, grâce aux champs</li><li>chaque visite a une prochaine étape et une échéance</li><li>des pertes avec motif : vous voyez où vous perdez — sur le prix ou sur la réactivité</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Message à Kai</span>Dans Kommo, crée un pipeline « Acheteurs » : Demande → Qualification → Sélection → Visite → Réservation → Contrat. Champs : Type de bien (liste : studio, 1 chambre, 2 chambres, 3 chambres et +, maison), Budget (nombre), Quartier, Mode de financement (crédit, comptant, paiement échelonné). Budget et Quartier sont obligatoires à l’étape « Qualification ». Règles : nouvelle demande — tâche : rappeler sous 15 minutes ; transaction en « Sélection » — tâche pour demain : planifier une visite ; aucun mouvement après « Visite » pendant 3 jours — tâche « demander la décision ». Motifs de perte : acheté ailleurs, trop cher, a changé d’avis, pas de réponse.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Terminé.</span> Pipeline « Acheteurs », 6 étapes. Champs : Type de bien, Budget, Quartier, Mode de financement ; Budget et Quartier sont obligatoires à « Qualification ». Trois règles sont actives, quatre motifs de perte ajoutés — l’analyse des pertes fonctionne désormais.</div>
+  </div>
+  <div class="k">Ce que Kai a fait</div><div class="did"><span>créer un pipeline</span><span>créer un champ <b>×4</b></span><span>rendre un champ obligatoire <b>×2</b></span><span>créer une règle <b>×3</b></span><span>motifs de perte</span></div>
+  <div class="time">Un message, environ deux minutes. Champs, étapes et règles arrivent dans Kommo via l’API, sans widgets.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Dans Kommo, crée un pipeline « Acheteurs » : Demande → Qualification → Sélection → Visite → Réservation → Contrat. Champs : Type de bien (liste : studio, 1 chambre, 2 chambres, 3 chambres et +, maison), Budget (nombre), Quartier, Mode de financement (crédit, comptant, paiement échelonné). Budget et Quartier sont obligatoires à l’étape « Qualification ». Règles : nouvelle demande — tâche : rappeler sous 15 minutes ; transaction en « Sélection » — tâche pour demain : planifier une visite ; aucun mouvement après « Visite » pendant 3 jours — tâche « demander la décision ». Motifs de perte : acheté ailleurs, trop cher, a changé d’avis, pas de réponse.">Copier le message</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Répétez-le dans votre chat</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Ouvrir dans Telegram</a></div>
+</article>
+<article class="case" id="renovation-audit-amocrm">
+  <div class="top"><span class="badge crm">amoCRM</span><span class="badge">Rénovation d’appartements</span></div>
+  <h2>Le pipeline existait, mais les transactions restaient des mois en « Métré »</h2>
+  <p>Le pipeline « Vente du contrat » avait été créé il y a longtemps, mais les devis partent quand quelqu’un y pense, les montants sont vides, aucun motif de perte — le rapport du pipeline est vide. Le dirigeant ne voit pas où l’argent est bloqué.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Avant</h3>
+      <div class="k">Étapes du pipeline</div><div class="board"><span>Demande</span><em>→</em><span>Qualification</span><em>→</em><span>Métré</span><em>→</em><span>Devis</span><em>→</em><span>Contrat</span><em>→</em><span>Acompte</span></div>
+      <div class="k">Champs de la transaction</div><ul class="list"><li><b>Type de travaux</b></li><li><b>Surface, m²</b></li><li><b>Budget</b></li><li><b>Montant du devis</b><small>vide dans 8 transactions sur 10</small></li></ul>
+      <div class="k">Règles</div><ul class="list none"><li>aucune règle — tout de mémoire</li></ul>
+      <div class="k">Ce qui coinçait</div><ul class="list pain"><li>23 transactions immobiles depuis plus de deux semaines en « Métré »</li><li>montant du devis vide — impossible de prévoir le chiffre d’affaires</li><li>sans motifs de perte, impossible de savoir pourquoi les clients partent</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Après</h3>
+      <div class="k">Étapes du pipeline</div><div class="board"><span>Demande</span><em>→</em><span>Qualification</span><em>→</em><span>Métré</span><em>→</em><span>Devis</span><em>→</em><span>Contrat</span><em>→</em><span>Acompte</span></div>
+      <div class="k">Champs de la transaction</div><ul class="list"><li><b>Type de travaux</b></li><li><b>Surface, m²</b></li><li><b>Budget</b></li><li><b>Montant du devis</b><span class="stamp">obligatoire à « Devis »</span></li></ul>
+      <div class="k">Règles</div><div class="rule"><b>« Métré » sans mouvement pendant 5 jours</b><span>tâche pour le chef de chantier « envoyer le devis »</span></div>
+      <div class="k">Ce qui a changé</div><ul class="list gain"><li>les devis ne stagnent plus : au bout de 5 jours, une tâche avec un responsable apparaît</li><li>le montant du devis est obligatoire — la prévision du chiffre d’affaires se calcule à partir des champs</li><li>des pertes avec motif, et un tableau de bord à tout moment d’un seul mot : « dashboard »</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Message à Kai</span>Audite le pipeline « Vente du contrat ». Puis corrige-le : rends « Montant du devis » obligatoire à l’étape « Devis », ajoute des motifs de perte (trop cher, a choisi un concurrent, reporté, pas de réponse), et une règle : aucun mouvement en « Métré » pendant 5 jours — tâche pour le chef de chantier « envoyer le devis ». Et montre-moi le tableau de bord du pipeline.</div>
+    <div class="msg kai"><span class="who">Kai</span>Audit : 23 transactions sont en « Métré » depuis plus de 14 jours, « Montant du devis » est vide dans 80 % des transactions, aucun motif de perte, aucune automatisation. Corrigé : le champ est obligatoire à « Devis », 4 motifs de perte ajoutés, la règle des 5 jours est active. Tableau de bord : 61 ouvertes, 23 en « Métré » (goulot d’étranglement), 9 gagnées ce mois-ci, 4 perdues.</div>
+  </div>
+  <div class="k">Ce que Kai a fait</div><div class="did"><span>audit du pipeline</span><span>rendre un champ obligatoire</span><span>motifs de perte</span><span>créer une règle</span><span>tableau de bord</span></div>
+  <div class="time">Audit, corrections et synthèse — un seul message. Kai n’a rien supprimé : les transactions et étapes existantes sont restées en place.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Audite le pipeline « Vente du contrat ». Puis corrige-le : rends « Montant du devis » obligatoire à l’étape « Devis », ajoute des motifs de perte (trop cher, a choisi un concurrent, reporté, pas de réponse), et une règle : aucun mouvement en « Métré » pendant 5 jours — tâche pour le chef de chantier « envoyer le devis ». Et montre-moi le tableau de bord du pipeline.">Copier le message</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Répétez-le dans votre chat</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Ouvrir dans Telegram</a></div>
+</article>
+<article class="case" id="courses-kommo">
+  <div class="top"><span class="badge crm">Kommo</span><span class="badge">École en ligne</span></div>
+  <h2>Les inscriptions vivaient dans un tableur, les dates limites de tarif se rappelaient de mémoire</h2>
+  <p>Les inscriptions venues de la landing page arrivent dans un tableur, les commerciaux les trient à la main. Les sessions se mélangent, une facture part — et la relance est oubliée. L’équipe apprend un paiement par la comptabilité, un jour plus tard.</p>
+  <div class="ba">
+    <div class="col before"><h3><i></i>Avant</h3>
+      <div class="k">Étapes du pipeline</div><div class="board"><span>Lead</span><em>→</em><span>Paiement</span></div>
+      <div class="k">Champs de la transaction</div><ul class="list none"><li>aucun champ — tout dans les notes</li></ul>
+      <div class="k">Règles</div><ul class="list none"><li>aucune règle — tout de mémoire</li></ul>
+      <div class="k">Ce qui coinçait</div><ul class="list pain"><li>rien entre « Lead » et « Paiement » — impossible de savoir qui en est à quelle étape</li><li>pas de champs Produit et Session — les listes se font à la main</li><li>les paiements sont repérés tard, le message de bienvenue et les accès arrivent en retard</li></ul>
+    </div>
+    <div class="col after"><h3><i></i>Après</h3>
+      <div class="k">Étapes du pipeline</div><div class="board"><span>Inscription</span><em>→</em><span>Qualification</span><em>→</em><span>Appel planifié</span><em>→</em><span>Appel effectué</span><em>→</em><span>Facture envoyée</span><em>→</em><span>Paiement</span></div>
+      <div class="k">Champs de la transaction</div><ul class="list"><li><b>Produit</b><small>liste</small></li><li><b>Formule</b><small>liste</small></li><li><b>Session</b></li><li><b>Paiement échelonné</b><small>oui/non</small></li></ul>
+      <div class="k">Règles</div><div class="rule"><b>Inscription</b><span>tâche : écrire et proposer un appel de diagnostic</span><b>« Facture envoyée »</b><span>tâche pour demain : rappeler la date limite du tarif</span><b>« Paiement »</b><span>tag « élève » + notification Telegram</span></div>
+      <div class="k">Ce qui a changé</div><ul class="list gain"><li>chaque inscription reçoit un premier contact — la tâche se crée automatiquement</li><li>le rappel de date limite se programme tout seul pour le lendemain</li><li>l’équipe voit le paiement aussitôt, dans Telegram, sans passer par la comptabilité</li></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="msg me"><span class="who">Message à Kai</span>Dans Kommo, crée un pipeline « Vente de formation » : Inscription → Qualification → Appel planifié → Appel effectué → Facture envoyée → Paiement. Champs : Produit (liste), Formule (liste : basique, avec mentor, VIP), Session, Paiement échelonné (oui/non). Règles : Inscription — tâche : écrire et proposer un appel de diagnostic ; « Facture envoyée » — tâche pour demain : rappeler la date limite du tarif ; « Paiement » — tag « élève » et notification Telegram à l’équipe commerciale.</div>
+    <div class="msg kai"><span class="who">Kai</span><span class="ok">Terminé.</span> Pipeline « Vente de formation », 6 étapes, 4 champs. Règles actives : une tâche à l’inscription, un rappel de la date limite le lendemain de la facture, le tag « élève » et une notification Telegram au paiement. Les collègues s’abonnent aux notifications avec un lien depuis la page du compte.</div>
+  </div>
+  <div class="k">Ce que Kai a fait</div><div class="did"><span>créer un pipeline</span><span>créer un champ <b>×4</b></span><span>créer une règle <b>×3</b></span><span>tag</span></div>
+  <div class="time">Un seul message. Les notifications Telegram sont intégrées à Kai, sans Zapier ni webhooks.</div>
+  <div class="acts"><button class="btn alt" type="button" data-copy="Dans Kommo, crée un pipeline « Vente de formation » : Inscription → Qualification → Appel planifié → Appel effectué → Facture envoyée → Paiement. Champs : Produit (liste), Formule (liste : basique, avec mentor, VIP), Session, Paiement échelonné (oui/non). Règles : Inscription — tâche : écrire et proposer un appel de diagnostic ; « Facture envoyée » — tâche pour demain : rappeler la date limite du tarif ; « Paiement » — tag « élève » et notification Telegram à l’équipe commerciale.">Copier le message</button><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Répétez-le dans votre chat</a><a class="btn alt" href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Ouvrir dans Telegram</a></div>
+</article>
+<p class="more"><a href="../../guides/fr/">Guides pas à pas amoCRM et Kommo →</a></p>
+<div class="cta"><b>Vous voulez la même chose ? Écrivez à Kai avec vos propres mots — il précise les détails et configure le tout.</b><br><a href="https://t.me/aiicrm_bot">Essayer sur Telegram</a><a class="alt" href="https://app.aii-crm.com/chat?lang=en">Ouvrir le chat web</a></div>
+<footer>© 2026 Kai · <a href="../../privacy-fr.html">Confidentialité</a></footer>
+</div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){ b.addEventListener('click', function(){ var t=b.getAttribute('data-copy'), done=function(){ var o=b.textContent; b.textContent="Copié"; setTimeout(function(){ b.textContent=o; },1500); };
+  if(navigator.clipboard) navigator.clipboard.writeText(t).then(done); else { var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} ta.remove(); done(); } }); });
+</script>
+</body></html>
