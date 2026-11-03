@@ -191,6 +191,9 @@ def main() -> None:
     for t in left[:8]:
         print("   RU:", t[:70])
 
+    import seo_meta   # короткие title/description для выдачи (i18n/seo/<lang>.json)
+    seo_meta.apply()
+
 
 if __name__ == "__main__":
     main()

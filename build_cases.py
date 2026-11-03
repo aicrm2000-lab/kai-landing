@@ -228,6 +228,9 @@ def main() -> None:
     io.open(os.path.join(HERE, "cases", "en", "index.html"), "w", encoding="utf-8", newline="\n").write(page("en"))
     print(f"cases: {len(CASES)} × 2 языка")
 
+    import seo_meta   # короткие title/description для выдачи (i18n/seo/<lang>.json)
+    seo_meta.apply()
+
 
 if __name__ == "__main__":
     main()

@@ -195,6 +195,9 @@ def main() -> None:
     for code in codes:
         build(code)
 
+    import seo_meta   # короткие title/description для выдачи (i18n/seo/<lang>.json)
+    seo_meta.apply()
+
 
 if __name__ == "__main__":
     main()

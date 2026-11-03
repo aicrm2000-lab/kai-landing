@@ -1,0 +1,37 @@
+{
+ "en/": {
+  "title": "AI assistant for amoCRM, Kommo, Bitrix24 and custom CRMs | Kai",
+  "description": "Kai sets up your CRM from a chat message: amoCRM, Kommo, Bitrix24 or your own CRM via API. Pipelines, fields, tasks, automations. 3 days free."
+ },
+ "guides/en/": {
+  "title": "Guides: amoCRM, Kommo, Bitrix24 and custom CRM setup | Kai",
+  "description": "Step-by-step guides to pipelines, fields and automations in amoCRM, Kommo, Bitrix24 and custom CRMs: by hand, via an integrator or with Kai."
+ },
+ "cases/en/": {
+  "description": "Four amoCRM and Kommo examples: the pipeline before, one message to Kai, what it did and how the CRM looks after. No integrator."
+ },
+ "guides/en/import-contacts-excel-amocrm-kommo.html": {
+  "title": "Import clients from Excel into amoCRM or Kommo in 10 minutes | Kai",
+  "description": "How to prepare the spreadsheet, run the amoCRM and Kommo import wizard, avoid duplicates and errors, or just send the file to Kai in chat."
+ },
+ "guides/en/crm-automations-that-pay-off.html": {
+  "description": "7 CRM automations that pay off: stage tasks, no-reply reminders, stuck deals, team alerts, weekly digests. How to switch each on with one phrase in Kai."
+ },
+ "guides/en/bitrix24-ai-assistant.html": {
+  "title": "Bitrix24 with an AI assistant: setup without a developer | Kai",
+  "description": "How to connect Bitrix24 to Kai via an inbound webhook, what it sets up (pipelines, fields, deals, tasks, analytics) and when you still need an integrator."
+ },
+ "guides/en/ai-agent-for-custom-crm.html": {
+  "title": "AI agent for a custom CRM: connect it via API | Kai",
+  "description": "What an AI agent needs to work with your own CRM: a REST API, auth and a connector spec. Three ways to connect, what it can do, limits and security."
+ },
+ "guides/en/crm-setup-without-integrator-checklist.html": {
+  "description": "12 things a working CRM needs: stages, required fields, sources, loss reasons, tasks, duplicates, import, automations, onboarding, and when to hire help."
+ },
+ "privacy-en.html": {
+  "description": "Privacy Policy for Kai, the AI assistant that configures your CRM: what data we process, why, how long we keep it and how to delete it."
+ },
+ "terms-en.html": {
+  "description": "Terms of Service for Kai, the AI assistant that configures and manages your CRM account through the platform's official API."
+ }
+}
