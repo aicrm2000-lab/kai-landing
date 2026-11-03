@@ -587,8 +587,8 @@
   "Happy holidays! I can set up your CRM in minutes — tell me what you do?": "Sărbători fericite! Îți configurez CRM-ul în câteva minute — îmi spui cu ce te ocupi?",
   "Close chat": "Închide chatul",
   "Language": "Limbă",
-  "Pipedrive: personal API token or sign-in with Pipedrive in the bot": "Pipedrive: token API personal sau autentificare cu Pipedrive în bot",
-  "beta": "beta"
+  "beta": "beta",
+  "Pipedrive: install Kai into your Pipedrive in one click": "Pipedrive: instalează Kai în Pipedrive-ul tău cu un clic"
  },
  "meta": {
   "title": "Asistent AI care configurează amoCRM, Kommo, Bitrix24 și CRM-uri personalizate | Kai",

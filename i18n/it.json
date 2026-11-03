@@ -587,8 +587,8 @@
   "Boo! I can set up your CRM in minutes — tell me what you do?": "Bu! Posso configurare il tuo CRM in pochi minuti — mi racconti di cosa ti occupi?",
   "Happy holidays! I can set up your CRM in minutes — tell me what you do?": "Buone feste! Posso configurare il tuo CRM in pochi minuti — mi racconti di cosa ti occupi?",
   "Close chat": "Chiudi chat",
-  "Pipedrive: personal API token or sign-in with Pipedrive in the bot": "Pipedrive: token API personale o accesso con Pipedrive nel bot",
-  "beta": "beta"
+  "beta": "beta",
+  "Pipedrive: install Kai into your Pipedrive in one click": "Pipedrive: installa Kai nel tuo Pipedrive con un clic"
  },
  "meta": {
   "title": "Assistente IA che configura amoCRM, Kommo, Bitrix24 e CRM personalizzati | Kai",
