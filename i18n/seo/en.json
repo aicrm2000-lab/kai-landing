@@ -1,7 +1,7 @@
 {
  "en/": {
-  "title": "AI assistant for amoCRM, Kommo, Bitrix24 and custom CRMs | Kai",
-  "description": "Kai sets up your CRM from a chat message: amoCRM, Kommo, Bitrix24 or your own CRM via API. Pipelines, fields, tasks, automations. 3-day trial."
+  "title": "AI assistant for amoCRM, Kommo, Bitrix24, Pipedrive, custom CRM | Kai",
+  "description": "Kai sets up your CRM from a chat message: amoCRM, Kommo, Bitrix24, Pipedrive or your own CRM via API. Pipelines, fields, tasks, automations. 3-day trial."
  },
  "guides/en/": {
   "title": "Guides: amoCRM, Kommo, Bitrix24 and custom CRM setup | Kai",
@@ -33,5 +33,9 @@
  },
  "terms-en.html": {
   "description": "Terms of Service for Kai, the AI assistant that configures and manages your CRM account through the platform's official API."
+ },
+ "guides/en/pipedrive-ai-assistant.html": {
+  "title": "Pipedrive AI assistant: set up your CRM from a chat message | Kai",
+  "description": "Kai sets up Pipedrive from a chat message: pipelines, fields, deals, activities, analytics. Install link, what works in the beta, what does not yet."
  }
 }

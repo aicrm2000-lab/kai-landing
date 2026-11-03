@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Asistent AI pentru Pipedrive: configurare CRM dintr-un mesaj | Kai</title>
+<meta name="description" content="Kai configurează Pipedrive dintr-un mesaj în chat: pipeline-uri, câmpuri, tranzacții, activități, analiză. Link de instalare, ce merge în beta și ce nu încă.">
+<meta name="keywords" content="asistent AI pentru Pipedrive, AI pentru Pipedrive, configurare Pipedrive, configurare Pipedrive fără programator, cum configurez Pipedrive, pipeline Pipedrive, etape Pipedrive, câmpuri personalizate Pipedrive, tranzacții Pipedrive, activități Pipedrive, analiza pâlniei Pipedrive, Pipedrive API, bot Telegram pentru Pipedrive, integrare AI cu Pipedrive, configurare CRM cu AI">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/ro/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/guides/it/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/guides/tr/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/guides/be/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="uk" href="https://aii-crm.com/guides/uk/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="ro" href="https://aii-crm.com/guides/ro/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/pipedrive-ai-assistant.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/ro/pipedrive-ai-assistant.html">
+<meta property="og:title" content="Asistent AI pentru Pipedrive: configurează-ți CRM-ul dintr-un mesaj în chat">
+<meta property="og:description" content="Kai se instalează în Pipedrive printr-un link și configurează pipeline-uri, câmpuri, tranzacții și activități dintr-un mesaj în Telegram sau în browser. Ce funcționează în beta, ce nu încă, prețuri.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-11-03">
+<meta property="article:modified_time" content="2026-11-03">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Asistent AI pentru Pipedrive: configurează-ți CRM-ul dintr-un mesaj în chat">
+<meta name="twitter:description" content="Kai se instalează în Pipedrive printr-un link și configurează pipeline-uri, câmpuri, tranzacții și activități dintr-un mesaj în Telegram sau în browser. Ce funcționează în beta, ce nu încă, prețuri.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/ro/" aria-label="Kai — pagina principală">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Navigare">
+      <a href="https://aii-crm.com/ro/">Site</a>
+      <a href="https://t.me/aiicrm_bot">Bot Telegram</a>
+      <a href="https://aii-crm.com/guides/en/pipedrive-ai-assistant.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Fir de navigare">
+  <a href="https://aii-crm.com/ro/">Kai</a> › <a href="https://aii-crm.com/guides/ro/">Ghiduri</a> › Asistent AI pentru Pipedrive
+</nav>
+
+<h1>Asistent AI pentru Pipedrive: configurează-ți CRM-ul dintr-un mesaj în chat</h1>
+<p class="meta">Actualizat pe 3 noiembrie 2026 · Echipa Kai · 5 min de citit</p>
+
+<p class="lead">Un asistent AI pentru Pipedrive este un chat în care îți descrii procesul de vânzări în cuvinte simple, iar el îl construiește în Pipedrive prin API-ul oficial: pipeline-uri și etape, câmpuri, tranzacții, persoane, organizații, activități și notițe. Kai face asta în Telegram sau în browser. Suportul pentru Pipedrive e în beta: structura, datele, activitățile și analiza funcționează; automatizările pe evenimente din Pipedrive urmează.</p>
+
+<section class="tldr" aria-label="Pe scurt">
+  <h2>Pe scurt</h2>
+  <ul>
+    <li>Instalarea se face din linkul <a href="https://app.aii-crm.com/install/pipedrive">app.aii-crm.com/install/pipedrive</a>: Pipedrive îți cere permisiunea, apoi Kai leagă compania de contul tău din Telegram sau din chatul web.</li>
+    <li>Funcționează: pipeline-uri și etape, câmpuri pentru tranzacții, persoane și organizații, cu liste de opțiuni, tranzacții, persoane, organizații, activități, notițe, utilizatori, analiza pâlniei cu tranzacțiile câștigate și pierdute.</li>
+    <li>Încă nu: reguli pe evenimente din Pipedrive (automatizările și integrările Kai) și butoane sau panouri în interiorul Pipedrive.</li>
+    <li>Disponibil de la planul Start, €29 pe lună. Primele 3 zile sunt o perioadă de probă.</li>
+  </ul>
+</section>
+
+<h2>Cum conectezi Pipedrive la Kai</h2>
+<ol>
+  <li>Deschide <a href="https://app.aii-crm.com/install/pipedrive">linkul de instalare</a> și autentifică-te în Pipedrive, dacă ți se cere.</li>
+  <li>Pipedrive îți arată la ce date cere Kai acces. Apasă „Permite” (Allow).</li>
+  <li>Pe pagina „Kai is installed in Pipedrive” apasă „Open Kai in Telegram” (deschide Kai în Telegram) sau „Continue in the browser” (continuă în browser). Linkul funcționează o singură dată, timp de 30 de minute: leagă această companie din Pipedrive de contul tău Kai.</li>
+  <li>Kai confirmă conectarea și te întreabă ce să configureze.</li>
+</ol>
+<p>Încă două variante, direct în botul <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> sau în <a href="https://app.aii-crm.com/chat?lang=en">chatul web</a>: comanda <kbd>/connect</kbd> → „Pipedrive (beta)” → „Sign in with Pipedrive”, sau trimite un token API personal: Pipedrive → avatar → Personal preferences (preferințe personale) → fila API.</p>
+<div class="note warn">Conectarea cu Pipedrive folosește OAuth: Kai nu îți vede niciodată parola de Pipedrive. Un token API acționează în numele tău, așa că nu-l publica. Generează unul nou din aceleași setări, iar cel vechi nu mai funcționează.</div>
+
+<h2>Ce configurează Kai în Pipedrive</h2>
+<ul>
+  <li><strong>Pipeline-uri și etape.</strong> Un pipeline nou cu etape dintr-un singur mesaj; adaugi, redenumești sau ștergi o etapă.</li>
+  <li><strong>Câmpuri.</strong> Câmpuri personalizate pentru tranzacții, persoane și organizații, inclusiv liste de opțiuni, plus valorile lor într-o tranzacție.</li>
+  <li><strong>Tranzacții.</strong> Creare, mutare între etape, schimbarea valorii și a responsabilului, căutare; un link către fișa tranzacției în Pipedrive.</li>
+  <li><strong>Persoane și organizații.</strong> Le creează și le leagă de o tranzacție.</li>
+  <li><strong>Activități și notițe.</strong> O activitate cu termen pe o tranzacție și o notiță, direct din chat.</li>
+  <li><strong>Analiza pâlniei de vânzări.</strong> Tranzacții pe etape, tranzacții câștigate și pierdute, „sănătatea” unei anumite tranzacții.</li>
+</ul>
+<p>Fiecare acțiune trece prin API-ul oficial Pipedrive. Tot ce s-a creat rămâne în compania ta din Pipedrive, indiferent dacă mai folosești sau nu asistentul.</p>
+
+<h2>Ce nu face încă Kai în Pipedrive</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Ce trebuie făcut</th><th>Status în Kai</th><th>Ce faci acum</th></tr></thead>
+  <tbody>
+    <tr><td>Reguli pe evenimente: o tranzacție trece într-o etapă → o activitate, o notificare</td><td>După beta</td><td>Automatizările integrate din Pipedrive, dacă planul tău Pipedrive le include.</td></tr>
+    <tr><td>Integrări cu alte servicii declanșate de evenimente</td><td>După beta</td><td>Aplicații din Pipedrive Marketplace sau un programator.</td></tr>
+    <tr><td>Butoane și panouri Kai în interiorul Pipedrive</td><td>Încă nu</td><td>Lucrează cu Kai în chat: în Telegram sau în browser.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Concluzia sinceră: azi, Kai pentru Pipedrive configurează structura, ține datele în ordine, se ocupă de activități și analizează pâlnia. Automatizările pe evenimente funcționează deja pentru amoCRM și Kommo și vin în Pipedrive după beta.</p>
+
+<h2>Cu Kai e un singur mesaj</h2>
+<p>Descrii afacerea, Kai pune întrebări de clarificare, îți arată un plan, creează totul prin API după ce confirmi și îți trimite un raport. Exemple:</p>
+<pre>Creează în Pipedrive un pipeline pentru vânzări B2B: Lead nou → Calificat → Demo → Ofertă → Negociere → Contract. Adaugă la tranzacții un câmp numeric Buget și un câmp listă Sursă cu Site, Recomandare, Eveniment.</pre>
+<pre>Mută tranzacția „Alpha, 20 de licențe” în Negociere și adaugă o notiță: au cerut factură anuală.</pre>
+<pre>Câte tranzacții sunt în fiecare etapă a pipeline-ului și câte sunt câștigate și pierdute?</pre>
+<p>Planurile sunt aceleași ca pentru celelalte CRM-uri: Start €29 pe lună pentru un CRM, Pro €59 pentru până la trei CRM-uri, Max €119 pentru până la zece. Primele 3 zile sunt o perioadă de probă, fără card, cu aproximativ 25 de cereri pe funcțiile Start. Kai vorbește engleză și rusă.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>Există un asistent AI care configurează Pipedrive dintr-un mesaj în chat?</h3>
+    <p>Da, Kai. Îți descrii procesul de vânzări în cuvinte simple, în Telegram sau în browser, iar Kai creează în Pipedrive, prin API-ul oficial, pipeline-uri și etape, câmpuri, tranzacții, persoane, organizații, activități și notițe și analizează pâlnia. Suportul pentru Pipedrive e în beta.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Cum conectez Pipedrive la Kai?</h3>
+    <p>Deschide linkul de instalare app.aii-crm.com/install/pipedrive, permite accesul în Pipedrive, iar pe pagina „Kai is installed” apasă „Open Kai in Telegram” sau „Continue in the browser”. Încă două variante în bot: /connect → Pipedrive (beta) → „Sign in with Pipedrive” sau un token API personal din setările tale Pipedrive.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Poate Kai să creeze automatizări în Pipedrive?</h3>
+    <p>Încă nu. Regulile pe evenimente din Pipedrive (o tranzacție trece într-o etapă → o sarcină sau o notificare) și integrările declanșate de evenimente vin după beta. Azi Kai configurează structura, gestionează datele și activitățile și analizează pâlnia.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Ce plan îmi trebuie pentru Pipedrive?</h3>
+    <p>Orice plan începând cu Start, €29 pe lună pentru un CRM. Primele 3 zile sunt o perioadă de probă fără card, suficientă ca să testezi Kai pe propria ta companie din Pipedrive.</p>
+  </div>
+</div>
+
+<h2>Ce urmează</h2>
+<p>Deschide linkul de instalare, permite accesul și cere-i lui Kai să-ți arate pipeline-urile: într-un minut vezi asistentul lucrând cu compania ta.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://app.aii-crm.com/install/pipedrive">Instalează Kai în Pipedrive</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Deschide chatul web</a>
+</div>
+
+<p class="author">Autor: Echipa Kai · Actualizat pe <time datetime="2026-11-03">3 noiembrie 2026</time> · Capacitățile și limitele sunt descrise la data publicării; statusul actual ți-l spune Kai în chat.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/ro/">Acasă</a> · <a href="https://aii-crm.com/privacy-ro.html">Confidențialitate</a> · <a href="https://aii-crm.com/terms-ro.html">Termeni</a> · <a href="https://aii-crm.com/guides/en/pipedrive-ai-assistant.html">Versiunea în engleză</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/ro/pipedrive-ai-assistant.html#article",
+      "headline": "Asistent AI pentru Pipedrive: configurează-ți CRM-ul dintr-un mesaj în chat",
+      "description": "Cum configurează asistentul AI Kai Pipedrive-ul dintr-un mesaj în chat: pipeline-uri, etape, câmpuri, tranzacții, persoane, activități și analiză. Linkul de instalare, ce funcționează în beta și ce nu încă.",
+      "inLanguage": "ro",
+      "datePublished": "2026-11-03",
+      "dateModified": "2026-11-03",
+      "mainEntityOfPage": "https://aii-crm.com/guides/ro/pipedrive-ai-assistant.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/ro/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/ro/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Există un asistent AI care configurează Pipedrive dintr-un mesaj în chat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da, Kai. Îți descrii procesul de vânzări în cuvinte simple, în Telegram sau în browser, iar Kai creează în Pipedrive, prin API-ul oficial, pipeline-uri și etape, câmpuri, tranzacții, persoane, organizații, activități și notițe și analizează pâlnia. Suportul pentru Pipedrive e în beta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cum conectez Pipedrive la Kai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deschide linkul de instalare app.aii-crm.com/install/pipedrive, permite accesul în Pipedrive, iar pe pagina „Kai is installed” apasă „Open Kai in Telegram” sau „Continue in the browser”. Încă două variante în bot: /connect → Pipedrive (beta) → „Sign in with Pipedrive” sau un token API personal din setările tale Pipedrive."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Poate Kai să creeze automatizări în Pipedrive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Încă nu. Regulile pe evenimente din Pipedrive (o tranzacție trece într-o etapă → o sarcină sau o notificare) și integrările declanșate de evenimente vin după beta. Azi Kai configurează structura, gestionează datele și activitățile și analizează pâlnia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ce plan îmi trebuie pentru Pipedrive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Orice plan începând cu Start, €29 pe lună pentru un CRM. Primele 3 zile sunt o perioadă de probă fără card, suficientă ca să testezi Kai pe propria ta companie din Pipedrive."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/ro/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ghiduri",
+          "item": "https://aii-crm.com/guides/ro/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Asistent AI pentru Pipedrive: configurează-ți CRM-ul dintr-un mesaj în chat",
+          "item": "https://aii-crm.com/guides/ro/pipedrive-ai-assistant.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Assistant IA pour Pipedrive : configurer son CRM par chat | Kai</title>
+<meta name="description" content="Configurer Pipedrive par chat avec Kai : pipelines, champs, transactions, activités, analytique. Installation par lien, ce qui marche en bêta, ce qui manque.">
+<meta name="keywords" content="assistant IA pour Pipedrive, IA pour configurer Pipedrive, configurer Pipedrive sans développeur, paramétrage Pipedrive">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/fr/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/guides/it/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/guides/tr/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/guides/be/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="uk" href="https://aii-crm.com/guides/uk/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="ro" href="https://aii-crm.com/guides/ro/pipedrive-ai-assistant.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/pipedrive-ai-assistant.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/fr/pipedrive-ai-assistant.html">
+<meta property="og:title" content="Assistant IA pour Pipedrive : configurer votre CRM par message de chat">
+<meta property="og:description" content="Kai s’installe dans Pipedrive via un lien et configure pipelines, champs, transactions et activités à partir d’un message dans Telegram ou le navigateur. Ce qui fonctionne en bêta, ce qui ne fonctionne pas encore, les tarifs.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-11-03">
+<meta property="article:modified_time" content="2026-11-03">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Assistant IA pour Pipedrive : configurer votre CRM par message de chat">
+<meta name="twitter:description" content="Kai s’installe dans Pipedrive via un lien et configure pipelines, champs, transactions et activités à partir d’un message dans Telegram ou le navigateur. Ce qui fonctionne en bêta, ce qui ne fonctionne pas encore, les tarifs.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/fr/" aria-label="Kai — accueil">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Navigation">
+      <a href="https://aii-crm.com/fr/">Site web</a>
+      <a href="https://t.me/aiicrm_bot">Bot Telegram</a>
+      <a href="https://aii-crm.com/guides/en/pipedrive-ai-assistant.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Fil d’Ariane">
+  <a href="https://aii-crm.com/fr/">Kai</a> › <a href="https://aii-crm.com/guides/fr/">Guides</a> › Assistant IA pour Pipedrive
+</nav>
+
+<h1>Assistant IA pour Pipedrive : configurer votre CRM par message de chat</h1>
+<p class="meta">Mis à jour le 3 novembre 2026 · Équipe Kai · 5 min de lecture</p>
+
+<p class="lead">Un assistant IA pour Pipedrive, c’est un chat dans lequel vous décrivez votre processus de vente avec vos propres mots, et qui le construit dans Pipedrive via l’API officielle : pipelines et étapes, champs, transactions, personnes, organisations, activités et notes. Kai le fait dans Telegram ou dans le navigateur. La prise en charge de Pipedrive est en bêta : la structure, les données, les activités et l’analytique fonctionnent ; les automatisations sur les événements Pipedrive arrivent ensuite.</p>
+
+<section class="tldr" aria-label="En bref">
+  <h2>En bref</h2>
+  <ul>
+    <li>Installation via le lien <a href="https://app.aii-crm.com/install/pipedrive">app.aii-crm.com/install/pipedrive</a> : Pipedrive demande l’autorisation, puis Kai associe cette entreprise Pipedrive à votre compte dans Telegram ou le chat web.</li>
+    <li>Ce qui fonctionne : pipelines et étapes, champs de transaction, de personne et d’organisation avec listes d’options, transactions, personnes, organisations, activités, notes, utilisateurs, analytique du pipeline avec transactions gagnées et perdues.</li>
+    <li>Pas encore : les règles sur les événements Pipedrive (automatisations et intégrations de Kai) et les boutons ou panneaux dans Pipedrive.</li>
+    <li>Disponible à partir du forfait Start, €29 par mois. Les 3 premiers jours sont une période d’essai.</li>
+  </ul>
+</section>
+
+<h2>Comment connecter Pipedrive à Kai</h2>
+<ol>
+  <li>Ouvrez le <a href="https://app.aii-crm.com/install/pipedrive">lien d’installation</a> et connectez-vous à Pipedrive si on vous le demande.</li>
+  <li>Pipedrive indique à quelles données Kai demande l’accès. Autorisez l’accès.</li>
+  <li>Sur la page « Kai is installed in Pipedrive », cliquez sur « Open Kai in Telegram » ou « Continue in the browser ». Le lien ne fonctionne qu’une fois, pendant 30 minutes : il associe cette entreprise Pipedrive à votre compte Kai.</li>
+  <li>Kai confirme la connexion et demande ce qu’il faut configurer.</li>
+</ol>
+<p>Deux autres possibilités, directement dans le bot <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> ou le <a href="https://app.aii-crm.com/chat?lang=en">chat web</a> : la commande <kbd>/connect</kbd> → « Pipedrive (beta) » → « Sign in with Pipedrive », ou l’envoi d’un token API personnel : Pipedrive → avatar → Préférences personnelles (Personal preferences) → onglet API.</p>
+<div class="note warn">La connexion via Pipedrive utilise OAuth : Kai ne voit jamais votre mot de passe Pipedrive. Un token API agit en votre nom, ne le publiez donc pas. Régénérez-le dans les mêmes paramètres et l’ancien cesse de fonctionner.</div>
+
+<h2>Ce que Kai configure dans Pipedrive</h2>
+<ul>
+  <li><strong>Pipelines et étapes.</strong> Un nouveau pipeline avec ses étapes en un seul message ; ajouter, renommer ou supprimer une étape.</li>
+  <li><strong>Champs.</strong> Des champs personnalisés sur les transactions, les personnes et les organisations, y compris des listes d’options, et leurs valeurs sur une transaction.</li>
+  <li><strong>Transactions.</strong> Créer, déplacer d’une étape à l’autre, modifier le montant et le responsable, rechercher ; un lien vers la fiche de la transaction dans Pipedrive.</li>
+  <li><strong>Personnes et organisations.</strong> Les créer et les lier à une transaction.</li>
+  <li><strong>Activités et notes.</strong> Une activité avec échéance sur une transaction et une note, directement depuis le chat.</li>
+  <li><strong>Analytique du pipeline.</strong> Transactions par étape, transactions gagnées et perdues, la « santé » d’une transaction donnée.</li>
+</ul>
+<p>Chaque action passe par l’API officielle de Pipedrive. Tout ce qui est créé reste dans votre entreprise Pipedrive, que vous continuiez ou non à utiliser l’assistant.</p>
+
+<h2>Ce que Kai ne fait pas encore dans Pipedrive</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Besoin</th><th>Statut dans Kai</th><th>Que faire aujourd’hui</th></tr></thead>
+  <tbody>
+    <tr><td>Règles sur les événements : une transaction passe à une étape → une activité, une notification</td><td>Après la bêta</td><td>Les automatisations intégrées de Pipedrive, si votre forfait Pipedrive les inclut.</td></tr>
+    <tr><td>Intégrations événementielles avec d’autres services</td><td>Après la bêta</td><td>Applications du Pipedrive Marketplace ou un développeur.</td></tr>
+    <tr><td>Boutons et panneaux Kai dans Pipedrive</td><td>Pas encore</td><td>Travaillez avec Kai dans le chat : dans Telegram ou dans le navigateur.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Le bilan honnête : aujourd’hui, Kai pour Pipedrive configure la structure, garde les données en ordre, gère les activités et analyse le pipeline. Les automatisations événementielles fonctionnent déjà pour amoCRM et Kommo et arriveront sur Pipedrive après la bêta.</p>
+
+<h2>Avec Kai, un seul message suffit</h2>
+<p>Vous décrivez votre activité, Kai pose des questions de précision, montre un plan, crée tout via l’API après votre confirmation et envoie un rapport. Exemples :</p>
+<pre>Crée dans Pipedrive un pipeline pour la vente B2B : Nouveau lead → Qualifié → Démo → Proposition → Négociation → Contrat. Ajoute aux transactions un champ numérique Budget et un champ liste Source avec Site web, Recommandation, Événement.</pre>
+<pre>Déplace la transaction « Alpha, 20 licences » vers Négociation et ajoute une note : ils ont demandé une facture annuelle.</pre>
+<pre>Combien de transactions y a-t-il à chaque étape du pipeline, et combien sont gagnées et perdues ?</pre>
+<p>Les forfaits sont les mêmes que pour les autres CRM : Start à €29 par mois pour un CRM, Pro à €59 jusqu’à trois CRM, Max à €119 jusqu’à dix. Les 3 premiers jours sont une période d’essai, sans carte, avec environ 25 requêtes sur les fonctions Start. Kai parle anglais et russe.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>Existe-t-il un assistant IA qui configure Pipedrive à partir d’un message de chat ?</h3>
+    <p>Oui, Kai. Vous décrivez votre processus de vente avec vos propres mots dans Telegram ou le navigateur, et Kai crée dans Pipedrive, via l’API officielle, pipelines et étapes, champs, transactions, personnes, organisations, activités et notes, puis analyse le pipeline. La prise en charge de Pipedrive est en bêta.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Comment connecter Pipedrive à Kai ?</h3>
+    <p>Ouvrez le lien d’installation app.aii-crm.com/install/pipedrive, autorisez l’accès dans Pipedrive et, sur la page « Kai is installed », cliquez sur « Open Kai in Telegram » ou « Continue in the browser ». Deux autres possibilités dans le bot : /connect → Pipedrive (beta) → « Sign in with Pipedrive », ou un token API personnel issu de vos paramètres Pipedrive.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Kai peut-il créer des automatisations dans Pipedrive ?</h3>
+    <p>Pas encore. Les règles sur les événements Pipedrive (une transaction passe à une étape → une tâche ou une notification) et les intégrations événementielles arriveront après la bêta. Aujourd’hui, Kai configure la structure, gère les données et les activités et analyse le pipeline.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Quel forfait faut-il pour Pipedrive ?</h3>
+    <p>N’importe quel forfait à partir de Start, €29 par mois pour un CRM. Les 3 premiers jours sont une période d’essai sans carte, de quoi tester Kai sur votre propre entreprise Pipedrive.</p>
+  </div>
+</div>
+
+<h2>Et ensuite ?</h2>
+<p>Ouvrez le lien d’installation, autorisez l’accès et demandez à Kai d’afficher vos pipelines : en une minute, vous voyez l’assistant travailler avec votre entreprise.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://app.aii-crm.com/install/pipedrive">Installer Kai dans Pipedrive</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Ouvrir le chat web</a>
+</div>
+
+<p class="author">Auteur : Équipe Kai · Mis à jour le <time datetime="2026-11-03">3 novembre 2026</time> · Les fonctions et les limites sont décrites à la date de publication ; Kai indique le statut actuel dans le chat.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/fr/">Accueil</a> · <a href="https://aii-crm.com/privacy-fr.html">Confidentialité</a> · <a href="https://aii-crm.com/terms-fr.html">CGU</a> · <a href="https://aii-crm.com/guides/en/pipedrive-ai-assistant.html">Version anglaise</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/fr/pipedrive-ai-assistant.html#article",
+      "headline": "Assistant IA pour Pipedrive : configurer votre CRM par message de chat",
+      "description": "Comment l’assistant IA Kai configure Pipedrive à partir d’un message de chat : pipelines, étapes, champs, transactions, personnes, activités et analytique. Lien d’installation, ce qui fonctionne en bêta, ce qui ne fonctionne pas encore.",
+      "inLanguage": "fr",
+      "datePublished": "2026-11-03",
+      "dateModified": "2026-11-03",
+      "mainEntityOfPage": "https://aii-crm.com/guides/fr/pipedrive-ai-assistant.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/fr/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/fr/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Existe-t-il un assistant IA qui configure Pipedrive à partir d’un message de chat ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, Kai. Vous décrivez votre processus de vente avec vos propres mots dans Telegram ou le navigateur, et Kai crée dans Pipedrive, via l’API officielle, pipelines et étapes, champs, transactions, personnes, organisations, activités et notes, puis analyse le pipeline. La prise en charge de Pipedrive est en bêta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment connecter Pipedrive à Kai ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ouvrez le lien d’installation app.aii-crm.com/install/pipedrive, autorisez l’accès dans Pipedrive et, sur la page « Kai is installed », cliquez sur « Open Kai in Telegram » ou « Continue in the browser ». Deux autres possibilités dans le bot : /connect → Pipedrive (beta) → « Sign in with Pipedrive », ou un token API personnel issu de vos paramètres Pipedrive."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kai peut-il créer des automatisations dans Pipedrive ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pas encore. Les règles sur les événements Pipedrive (une transaction passe à une étape → une tâche ou une notification) et les intégrations événementielles arriveront après la bêta. Aujourd’hui, Kai configure la structure, gère les données et les activités et analyse le pipeline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quel forfait faut-il pour Pipedrive ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "N’importe quel forfait à partir de Start, €29 par mois pour un CRM. Les 3 premiers jours sont une période d’essai sans carte, de quoi tester Kai sur votre propre entreprise Pipedrive."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://aii-crm.com/guides/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Assistant IA pour Pipedrive : configurer votre CRM par message de chat",
+          "item": "https://aii-crm.com/guides/fr/pipedrive-ai-assistant.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

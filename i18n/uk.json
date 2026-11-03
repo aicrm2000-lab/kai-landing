@@ -588,17 +588,19 @@
   "Close chat": "Закрити чат",
   "Language": "Мова",
   "beta": "бета",
-  "Pipedrive: install Kai into your Pipedrive in one click": "Pipedrive: встанови Kai у свій Pipedrive одним кліком"
+  "Pipedrive: install Kai into your Pipedrive in one click": "Pipedrive: встанови Kai у свій Pipedrive одним кліком",
+  "Does Kai work with Pipedrive?": "Kai працює з Pipedrive?",
+  "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Event automations for Pipedrive are not there yet — they come after the beta.": "Так, у беті й з тарифу Start. Підключення — за посиланням для встановлення з Pipedrive, кнопкою «Увійти через Pipedrive» у боті або особистим API-токеном. Kai налаштовує воронки, етапи й поля, веде угоди, контакти, організації, задачі й нотатки та розбирає воронку. Автоматизацій за подіями для Pipedrive поки немає — вони з’являться після бети."
  },
  "meta": {
   "title": "ШІ-асистент, який налаштовує amoCRM, Kommo, Bitrix24 і власні CRM | Kai",
-  "description": "Kai налаштовує твою CRM за звичайним повідомленням у Telegram або в браузері — amoCRM, Kommo, Bitrix24 чи твоя власна CRM через її API: воронки, поля, задачі, автоматизації, аналітика. 65 дій. 3 дні пробного періоду, без картки.",
+  "description": "Kai налаштовує твою CRM за звичайним повідомленням у Telegram або в браузері — amoCRM, Kommo, Bitrix24, Pipedrive чи твоя власна CRM через її API: воронки, поля, задачі, автоматизації, аналітика. 65 дій. 3 дні пробного періоду, без картки.",
   "og_title": "Kai — ШІ-асистент, який налаштовує твою CRM",
   "og_description": "ШІ-асистент, який налаштовує твою CRM за повідомленням у чаті — у Telegram або в браузері.",
-  "keywords": "amoCRM, Kommo, Bitrix24, налаштування CRM, впровадження CRM, налаштувати CRM, налаштування amoCRM, налаштування Kommo, налаштування Bitrix24, ШІ-асистент для amoCRM, ШІ-асистент для Kommo, ШІ-асистент для Bitrix24, ШІ-агент для CRM, штучний інтелект для CRM, ШІ для CRM, автоматизація CRM, Telegram-бот для CRM, воронка продажів, воронки продажів, amoCRM API, Kommo API, CRM без програміста, CRM без інтегратора, власна CRM, самописна CRM, кастомна CRM, підключити ШІ до своєї CRM через API, ШІ-агент для власної CRM, інтеграція ШІ з CRM через REST API, ліцензія Kommo, AI assistant, CRM setup, custom CRM, AI agent for custom CRM"
+  "keywords": "amoCRM, Kommo, Bitrix24, налаштування CRM, впровадження CRM, налаштувати CRM, налаштування amoCRM, налаштування Kommo, налаштування Bitrix24, ШІ-асистент для amoCRM, ШІ-асистент для Kommo, ШІ-асистент для Bitrix24, ШІ-агент для CRM, штучний інтелект для CRM, ШІ для CRM, автоматизація CRM, Telegram-бот для CRM, воронка продажів, воронки продажів, amoCRM API, Kommo API, CRM без програміста, CRM без інтегратора, власна CRM, самописна CRM, кастомна CRM, підключити ШІ до своєї CRM через API, ШІ-агент для власної CRM, інтеграція ШІ з CRM через REST API, ліцензія Kommo, AI assistant, CRM setup, custom CRM, AI agent for custom CRM, Pipedrive, ШІ-асистент для Pipedrive, налаштування Pipedrive, Pipedrive без програміста"
  },
  "ld": {
-  "description": "ШІ-асистент, який налаштовує твою CRM за повідомленням у чаті — у Telegram або в браузері: amoCRM, Kommo, Bitrix24 чи твоя власна CRM через її API. 65 дій: воронки, поля, етапи, угоди, контакти, автоматизації, аналітика.",
+  "description": "ШІ-асистент, який налаштовує твою CRM за повідомленням у чаті — у Telegram або в браузері: amoCRM, Kommo, Bitrix24, Pipedrive чи твоя власна CRM через її API. 65 дій: воронки, поля, етапи, угоди, контакти, автоматизації, аналітика.",
   "featureList": [
    "ШІ-консультація щодо структури твоєї CRM",
    "Воронки продажів і етапи",
@@ -607,7 +609,8 @@
    "Технічне завдання у форматі PDF",
    "Розпізнавання голосових повідомлень",
    "Підключення через OAuth в один клік",
-   "Власна (кастомна, самописна) CRM через REST API: OAuth 2.0, API-ключ, bearer"
+   "Власна (кастомна, самописна) CRM через REST API: OAuth 2.0, API-ключ, bearer",
+   "Підключення Pipedrive (бета): воронки, угоди, задачі, аналітика"
   ],
   "faq": [
    [
@@ -629,6 +632,10 @@
    [
     "Kai працює з Bitrix24?",
     "Так: Bitrix24 підключається через вхідний вебхук, Kai налаштовує воронки, етапи, поля, угоди, контакти й задачі та веде аналітику. Автоматизації всередині Bitrix24 і віджети поки недоступні. amoCRM і Kommo підтримуються повністю."
+   ],
+   [
+    "Kai працює з Pipedrive?",
+    "Так, у беті й з тарифу Start. Підключення — за посиланням для встановлення з Pipedrive, кнопкою «Увійти через Pipedrive» у боті або особистим API-токеном. Kai налаштовує воронки, етапи й поля, веде угоди, контакти, організації, задачі й нотатки та розбирає воронку. Автоматизацій за подіями для Pipedrive поки немає — вони з’являться після бети."
    ],
    [
     "Kai працює з кастомною або самописною CRM?",

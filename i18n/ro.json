@@ -588,17 +588,19 @@
   "Close chat": "Închide chatul",
   "Language": "Limbă",
   "beta": "beta",
-  "Pipedrive: install Kai into your Pipedrive in one click": "Pipedrive: instalează Kai în Pipedrive-ul tău cu un clic"
+  "Pipedrive: install Kai into your Pipedrive in one click": "Pipedrive: instalează Kai în Pipedrive-ul tău cu un clic",
+  "Does Kai work with Pipedrive?": "Kai funcționează cu Pipedrive?",
+  "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Event automations for Pipedrive are not there yet — they come after the beta.": "Da, în beta, începând cu planul Start. Te conectezi prin linkul de instalare din Pipedrive, butonul „Sign in with Pipedrive” din bot sau un token API personal. Kai configurează pipeline-uri, etape și câmpuri, gestionează tranzacții, persoane, organizații, activități și notițe și analizează pâlnia. Automatizările pe evenimente pentru Pipedrive nu există încă — vin după beta."
  },
  "meta": {
   "title": "Asistent AI care configurează amoCRM, Kommo, Bitrix24 și CRM-uri personalizate | Kai",
-  "description": "Kai îți configurează CRM-ul dintr-un mesaj în limbaj obișnuit, în Telegram sau în browser — amoCRM, Kommo, Bitrix24 sau propriul tău CRM prin API: pipeline-uri, câmpuri, sarcini, automatizări, analiză. 65 de acțiuni. 3 zile de probă, fără card.",
+  "description": "Kai îți configurează CRM-ul dintr-un mesaj în limbaj obișnuit, în Telegram sau în browser — amoCRM, Kommo, Bitrix24, Pipedrive sau propriul tău CRM prin API: pipeline-uri, câmpuri, sarcini, automatizări, analiză. 65 de acțiuni. 3 zile de probă, fără card.",
   "og_title": "Kai — asistentul AI care îți configurează CRM-ul",
   "og_description": "Un asistent AI care îți configurează CRM-ul dintr-un mesaj în chat — în Telegram sau în browser.",
-  "keywords": "configurare CRM, configurare amoCRM, configurare Kommo, configurare Bitrix24, asistent AI pentru amoCRM, asistent AI pentru Kommo, asistent AI pentru Bitrix24, inteligență artificială pentru CRM, automatizare CRM, bot Telegram pentru CRM, pipeline de vânzări, pâlnie de vânzări, conectare AI la propriul CRM prin API, CRM fără programator, CRM personalizat, CRM propriu, CRM intern, CRM la comandă, agent AI pentru CRM personalizat, integrare AI CRM REST API, consultant CRM AI, implementare CRM, amoCRM, Kommo, Bitrix24, CRM setup, AI assistant, CRM automation, amoCRM API, Kommo API, custom CRM, in-house CRM"
+  "keywords": "configurare CRM, configurare amoCRM, configurare Kommo, configurare Bitrix24, asistent AI pentru amoCRM, asistent AI pentru Kommo, asistent AI pentru Bitrix24, inteligență artificială pentru CRM, automatizare CRM, bot Telegram pentru CRM, pipeline de vânzări, pâlnie de vânzări, conectare AI la propriul CRM prin API, CRM fără programator, CRM personalizat, CRM propriu, CRM intern, CRM la comandă, agent AI pentru CRM personalizat, integrare AI CRM REST API, consultant CRM AI, implementare CRM, amoCRM, Kommo, Bitrix24, CRM setup, AI assistant, CRM automation, amoCRM API, Kommo API, custom CRM, in-house CRM, Pipedrive, asistent AI pentru Pipedrive, configurare Pipedrive, Pipedrive fără programator"
  },
  "ld": {
-  "description": "Asistent AI care îți configurează CRM-ul dintr-un mesaj în chat — în Telegram sau în browser: amoCRM, Kommo, Bitrix24 sau propriul tău CRM prin API. 65 de acțiuni: pipeline-uri, câmpuri, etape, tranzacții, contacte, automatizări, analiză.",
+  "description": "Asistent AI care îți configurează CRM-ul dintr-un mesaj în chat — în Telegram sau în browser: amoCRM, Kommo, Bitrix24, Pipedrive sau propriul tău CRM prin API. 65 de acțiuni: pipeline-uri, câmpuri, etape, tranzacții, contacte, automatizări, analiză.",
   "featureList": [
    "Consultanță AI pentru structura CRM-ului tău",
    "Pipeline-uri de vânzări și etape",
@@ -607,7 +609,8 @@
    "Specificație tehnică în format PDF",
    "Recunoașterea mesajelor vocale",
    "Conectare OAuth cu un singur clic",
-   "CRM-ul tău propriu (personalizat, intern) prin REST API: OAuth 2.0, cheie API, bearer"
+   "CRM-ul tău propriu (personalizat, intern) prin REST API: OAuth 2.0, cheie API, bearer",
+   "Conectare Pipedrive (beta): pipeline-uri, tranzacții, activități, analiză"
   ],
   "faq": [
    [
@@ -629,6 +632,10 @@
    [
     "Kai funcționează cu Bitrix24?",
     "Da: Bitrix24 se conectează printr-un webhook de intrare, Kai configurează pipeline-uri, etape, câmpuri, tranzacții, contacte și sarcini și rulează analiza. Automatizările din interiorul Bitrix24 și widgeturile nu sunt disponibile încă. amoCRM și Kommo sunt acceptate complet."
+   ],
+   [
+    "Kai funcționează cu Pipedrive?",
+    "Da, în beta, începând cu planul Start. Te conectezi prin linkul de instalare din Pipedrive, butonul „Sign in with Pipedrive” din bot sau un token API personal. Kai configurează pipeline-uri, etape și câmpuri, gestionează tranzacții, persoane, organizații, activități și notițe și analizează pâlnia. Automatizările pe evenimente pentru Pipedrive nu există încă — vin după beta."
    ],
    [
     "Kai funcționează cu un CRM personalizat sau intern?",

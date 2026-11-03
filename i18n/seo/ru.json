@@ -1,7 +1,7 @@
 {
  "": {
-  "title": "AI-ассистент для amoCRM, Kommo, Bitrix24 и своей CRM | Kai",
-  "description": "Kai настраивает CRM по сообщению в чате: amoCRM, Kommo, Bitrix24 или свою CRM по API. Воронки, поля, задачи, автоматизации. 3 дня триала."
+  "title": "AI-ассистент для amoCRM, Kommo, Bitrix24, Pipedrive и своей CRM | Kai",
+  "description": "Kai настраивает CRM по сообщению в чате: amoCRM, Kommo, Bitrix24, Pipedrive или свою CRM по API. Воронки, поля, задачи, автоматизации. 3 дня триала."
  },
  "guides/": {
   "title": "Гайды по amoCRM, Kommo, Bitrix24 и своей CRM | Kai",
@@ -33,5 +33,9 @@
  },
  "terms.html": {
   "description": "Условия использования Kai — AI-ассистента, который настраивает CRM-аккаунт пользователя через официальный API платформы."
+ },
+ "guides/pipedrive-ai-assistant.html": {
+  "title": "ИИ-ассистент для Pipedrive: настройка CRM по сообщению в чате | Kai",
+  "description": "Kai настраивает Pipedrive по сообщению в чате: воронки, поля, сделки, задачи, аналитика. Установка по ссылке, что работает в бете и чего пока нет."
  }
 }

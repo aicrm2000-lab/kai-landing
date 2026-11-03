@@ -588,17 +588,19 @@
   "Happy holidays! I can set up your CRM in minutes — tell me what you do?": "¡Felices fiestas! Puedo configurar tu CRM en minutos. ¿Me cuentas a qué te dedicas?",
   "Close chat": "Cerrar chat",
   "beta": "beta",
-  "Pipedrive: install Kai into your Pipedrive in one click": "Pipedrive: instala Kai en tu Pipedrive con un clic"
+  "Pipedrive: install Kai into your Pipedrive in one click": "Pipedrive: instala Kai en tu Pipedrive con un clic",
+  "Does Kai work with Pipedrive?": "¿Kai funciona con Pipedrive?",
+  "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Event automations for Pipedrive are not there yet — they come after the beta.": "Sí, en beta, desde el plan Start. Se conecta con el enlace de instalación desde Pipedrive, con el botón «Sign in with Pipedrive» en el bot o con un token de API personal. Kai configura embudos, etapas y campos, gestiona tratos, personas, organizaciones, actividades y notas y analiza el embudo. Las automatizaciones por eventos para Pipedrive todavía no están disponibles: llegarán después de la beta."
  },
  "meta": {
   "title": "Asistente de IA que configura amoCRM, Kommo, Bitrix24 y CRM a medida | Kai",
-  "description": "Kai configura tu CRM a partir de un mensaje en lenguaje natural, en Telegram o en tu navegador. amoCRM, Kommo, Bitrix24 o tu propio CRM a medida a través de su API: embudos, campos, tareas, automatizaciones, analítica. 65 acciones. 3 días de prueba, sin tarjeta.",
+  "description": "Kai configura tu CRM a partir de un mensaje en lenguaje natural, en Telegram o en tu navegador. amoCRM, Kommo, Bitrix24, Pipedrive o tu propio CRM a medida a través de su API: embudos, campos, tareas, automatizaciones, analítica. 65 acciones. 3 días de prueba, sin tarjeta.",
   "og_title": "Kai: el asistente de IA que configura tu CRM",
   "og_description": "Un asistente de IA que configura tu CRM desde un mensaje de chat, en Telegram o en tu navegador.",
-  "keywords": "configurar CRM, configuración de CRM, asistente de IA para amoCRM, asistente de IA para Kommo, asistente de IA para Bitrix24, conectar IA a mi CRM por API, CRM sin programadores, automatización de CRM, bot de Telegram para CRM, embudos de ventas, agente IA para CRM propio, CRM a medida, CRM personalizado, CRM propio por API, integración de IA con API REST de CRM, inteligencia artificial para CRM, amoCRM, Kommo, Bitrix24, amoCRM API, Kommo API, CRM setup, AI assistant, custom CRM"
+  "keywords": "configurar CRM, configuración de CRM, asistente de IA para amoCRM, asistente de IA para Kommo, asistente de IA para Bitrix24, conectar IA a mi CRM por API, CRM sin programadores, automatización de CRM, bot de Telegram para CRM, embudos de ventas, agente IA para CRM propio, CRM a medida, CRM personalizado, CRM propio por API, integración de IA con API REST de CRM, inteligencia artificial para CRM, amoCRM, Kommo, Bitrix24, amoCRM API, Kommo API, CRM setup, AI assistant, custom CRM, Pipedrive, asistente de IA para Pipedrive, configurar Pipedrive, Pipedrive sin programador"
  },
  "ld": {
-  "description": "Asistente de IA que configura tu CRM desde un mensaje de chat, en Telegram o en tu navegador: amoCRM, Kommo, Bitrix24 o tu propio CRM a medida a través de su API. 65 acciones: embudos, campos, etapas, leads, contactos, automatizaciones, analítica.",
+  "description": "Asistente de IA que configura tu CRM desde un mensaje de chat, en Telegram o en tu navegador: amoCRM, Kommo, Bitrix24, Pipedrive o tu propio CRM a medida a través de su API. 65 acciones: embudos, campos, etapas, leads, contactos, automatizaciones, analítica.",
   "featureList": [
    "Consultoría de IA sobre la estructura de tu CRM",
    "Embudos de ventas y etapas",
@@ -607,7 +609,8 @@
    "Especificación técnica en PDF",
    "Reconocimiento de mensajes de voz",
    "Conexión por OAuth en un clic",
-   "Tu propio CRM (a medida, interno) vía API REST: OAuth 2.0, clave API, bearer"
+   "Tu propio CRM (a medida, interno) vía API REST: OAuth 2.0, clave API, bearer",
+   "Conexión con Pipedrive (beta): embudos, tratos, actividades, analítica"
   ],
   "faq": [
    [
@@ -629,6 +632,10 @@
    [
     "¿Kai funciona con Bitrix24?",
     "Sí: Bitrix24 se conecta mediante un webhook entrante; Kai configura embudos, etapas, campos, leads, contactos y tareas, y ejecuta la analítica. Las automatizaciones dentro de Bitrix24 y los widgets aún no están disponibles. amoCRM y Kommo tienen soporte completo."
+   ],
+   [
+    "¿Kai funciona con Pipedrive?",
+    "Sí, en beta, desde el plan Start. Se conecta con el enlace de instalación desde Pipedrive, con el botón «Sign in with Pipedrive» en el bot o con un token de API personal. Kai configura embudos, etapas y campos, gestiona tratos, personas, organizaciones, actividades y notas y analiza el embudo. Las automatizaciones por eventos para Pipedrive todavía no están disponibles: llegarán después de la beta."
    ],
    [
     "¿Kai funciona con un CRM propio o a medida?",

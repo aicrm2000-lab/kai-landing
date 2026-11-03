@@ -1,7 +1,7 @@
 {
  "pl/": {
-  "title": "Asystent AI do amoCRM, Kommo, Bitrix24 i własnego CRM | Kai",
-  "description": "Kai konfiguruje CRM na podstawie wiadomości na czacie: amoCRM, Kommo, Bitrix24 lub własny CRM przez API. Lejki, pola, zadania, automatyzacje. 3 dni próbne."
+  "title": "Asystent AI do amoCRM, Kommo, Bitrix24, Pipedrive i własnego CRM | Kai",
+  "description": "Kai konfiguruje CRM z wiadomości na czacie: amoCRM, Kommo, Bitrix24, Pipedrive lub własny CRM przez API. Lejki, pola, zadania, automatyzacje. 3 dni próbne."
  },
  "guides/pl/": {
   "title": "Poradniki: konfiguracja amoCRM, Kommo, Bitrix24 i własnego CRM | Kai",
@@ -30,6 +30,10 @@
  },
  "guides/pl/crm-setup-without-integrator-checklist.html": {
   "description": "Checklista CRM w 12 punktach: etapy, pola wymagane, źródła, powody przegranej, zadania, duplikaty, import, automatyzacje, szkolenie i kiedy wziąć integratora."
+ },
+ "guides/pl/pipedrive-ai-assistant.html": {
+  "title": "Asystent AI do Pipedrive: skonfiguruj CRM jedną wiadomością | Kai",
+  "description": "Kai konfiguruje Pipedrive z wiadomości na czacie: lejki, pola, transakcje, działania, analityka. Link instalacyjny, co działa w becie, a czego jeszcze nie."
  },
  "privacy-pl.html": {
   "description": "Polityka prywatności Kai — asystenta AI, który konfiguruje CRM Użytkownika: jakie dane zbieramy, w jakim celu, jak długo je przechowujemy i jak je usunąć."

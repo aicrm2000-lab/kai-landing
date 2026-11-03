@@ -6,9 +6,9 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://app.aii-crm.com https://ai-crm-bot-production.up.railway.app; connect-src 'self' https://app.aii-crm.com https://ai-crm-bot-production.up.railway.app; base-uri 'self'; form-action 'self'">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>AI-ассистент для amoCRM, Kommo, Bitrix24 и своей CRM | Kai</title>
-<meta name="description" content="Kai настраивает CRM по сообщению в чате: amoCRM, Kommo, Bitrix24 или свою CRM по API. Воронки, поля, задачи, автоматизации. 3 дня триала.">
-<meta name="keywords" content="amoCRM, Kommo, Битрикс24, Bitrix24, настройка CRM, AI ассистент, автоматизация CRM, Telegram бот CRM, воронки продаж, API amoCRM, CRM без программиста, настройка воронок, кастомные поля amoCRM, настройка Битрикс24, интеграция CRM, самописная CRM, кастомная CRM, своя CRM по API, подключить ИИ к своей CRM, ИИ-агент для самописной CRM, AI-агент для кастомной CRM, интеграция ИИ с CRM по API, custom CRM AI agent, in-house CRM AI assistant, Kai CRM, AI CRM bot">
+<title>AI-ассистент для amoCRM, Kommo, Bitrix24, Pipedrive и своей CRM | Kai</title>
+<meta name="description" content="Kai настраивает CRM по сообщению в чате: amoCRM, Kommo, Bitrix24, Pipedrive или свою CRM по API. Воронки, поля, задачи, автоматизации. 3 дня триала.">
+<meta name="keywords" content="amoCRM, Kommo, Битрикс24, Bitrix24, настройка CRM, AI ассистент, автоматизация CRM, Telegram бот CRM, воронки продаж, API amoCRM, CRM без программиста, настройка воронок, кастомные поля amoCRM, настройка Битрикс24, интеграция CRM, самописная CRM, кастомная CRM, своя CRM по API, подключить ИИ к своей CRM, ИИ-агент для самописной CRM, AI-агент для кастомной CRM, интеграция ИИ с CRM по API, custom CRM AI agent, in-house CRM AI assistant, Kai CRM, AI CRM bot, Pipedrive, ИИ-ассистент для Pipedrive, настройка Pipedrive, Pipedrive без программиста">
 <meta name="author" content="Kai">
 <meta name="robots" content="index, follow">
 <meta name="msvalidate.01" content="3AEC59F2EF8CCBE68D3A9EE892CA92DC" />
@@ -85,7 +85,7 @@
   "name": "Kai",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web, Telegram",
-  "description": "AI-ассистент, который настраивает CRM по сообщению в чате — в Telegram или в браузере: amoCRM, Kommo, Bitrix24 или своя самописная CRM по API. 65 действий: воронки, поля, этапы, сделки, контакты, автоматизации, аналитика.",
+  "description": "AI-ассистент, который настраивает CRM по сообщению в чате — в Telegram или в браузере: amoCRM, Kommo, Bitrix24, Pipedrive или своя самописная CRM по API. 65 действий: воронки, поля, этапы, сделки, контакты, автоматизации, аналитика.",
   "url": "https://aii-crm.com/",
   "offers": {
     "@type": "AggregateOffer",
@@ -102,7 +102,8 @@
     "Генерация технического задания в PDF",
     "Распознавание голосовых сообщений",
     "OAuth-подключение в 1 клик",
-    "Подключение своей (самописной) CRM по REST API: OAuth 2.0, API-ключ, bearer"
+    "Подключение своей (самописной) CRM по REST API: OAuth 2.0, API-ключ, bearer",
+    "Подключение Pipedrive (бета): воронки, сделки, задачи, аналитика"
   ],
   "screenshot": "https://aii-crm.com/og-image-v5.png",
   "creator": {
@@ -164,6 +165,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Да: Битрикс24 подключается по входящему вебхуку, Kai настраивает воронки, этапы, поля, сделки, контакты и задачи и считает аналитику. Автоматизаций внутри Битрикс24 и виджетов пока нет. Полностью поддерживаются amoCRM и Kommo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kai работает с Pipedrive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, в бете и с тарифа Start. Подключение — ссылкой установки из Pipedrive, кнопкой «Войти через Pipedrive» в боте или личным API-токеном. Kai настраивает воронки, этапы и поля, ведёт сделки, контакты, организации, задачи и заметки и разбирает воронку. Автоматизаций по событиям для Pipedrive пока нет — они появятся после беты."
       }
     },
     {
@@ -3900,6 +3909,10 @@ html.ny .chat-launcher::before {
       <div class="faq-item">
         <button class="faq-q" data-ru="Что Kai умеет в Bitrix24?" data-en="What does Kai do in Bitrix24?">Что Kai умеет в Bitrix24?</button>
         <div class="faq-a"><div class="faq-a-inner" data-ru="Воронки и этапы, поля, сделки, контакты, компании, задачи, аналитика и ТЗ. Автоматизаций внутри Bitrix24 (роботов) и виджетов пока нет — если они для тебя главное, честнее остаться на amoCRM/Kommo, где правила уже работают." data-en="Pipelines and stages, fields, deals, contacts, companies, tasks, analytics and specs. In-Bitrix24 automations (robots) and widgets are not there yet — if those are your main need, it's fairer to use amoCRM/Kommo, where the rules already work.">Воронки и этапы, поля, сделки, контакты, компании, задачи, аналитика и ТЗ. Автоматизаций внутри Bitrix24 (роботов) и виджетов пока нет — если они для тебя главное, честнее остаться на amoCRM/Kommo, где правила уже работают.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-ru="Kai работает с Pipedrive?" data-en="Does Kai work with Pipedrive?">Kai работает с Pipedrive?</button>
+        <div class="faq-a"><div class="faq-a-inner" data-ru="Да, в бете и с тарифа Start. Подключение — ссылкой установки из Pipedrive, кнопкой «Войти через Pipedrive» в боте или личным API-токеном. Kai настраивает воронки, этапы и поля, ведёт сделки, контакты, организации, задачи и заметки и разбирает воронку. Автоматизаций по событиям для Pipedrive пока нет — они появятся после беты." data-en="Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Event automations for Pipedrive are not there yet — they come after the beta.">Да, в бете и с тарифа Start. Подключение — ссылкой установки из Pipedrive, кнопкой «Войти через Pipedrive» в боте или личным API-токеном. Kai настраивает воронки, этапы и поля, ведёт сделки, контакты, организации, задачи и заметки и разбирает воронку. Автоматизаций по событиям для Pipedrive пока нет — они появятся после беты.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" data-ru="Kai работает с самописной или кастомной CRM?" data-en="Does Kai work with a custom or in-house CRM?">Kai работает с самописной или кастомной CRM?</button>

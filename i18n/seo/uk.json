@@ -1,7 +1,7 @@
 {
  "uk/": {
-  "title": "ШІ-асистент для amoCRM, Kommo, Bitrix24 і власної CRM | Kai",
-  "description": "Kai налаштовує твою CRM за повідомленням у чаті: amoCRM, Kommo, Bitrix24 або власну CRM через API. Воронки, поля, задачі, автоматизації. 3 дні пробного періоду."
+  "title": "ШІ-асистент для amoCRM, Kommo, Bitrix24, Pipedrive і власної CRM | Kai",
+  "description": "Kai налаштовує CRM через чат: amoCRM, Kommo, Bitrix24, Pipedrive або власну CRM через API. Воронки, поля, задачі, автоматизації. 3 дні пробного періоду."
  },
  "guides/uk/": {
   "title": "Гайди з налаштування amoCRM, Kommo, Bitrix24 і власної CRM | Kai",
@@ -30,6 +30,10 @@
  },
  "guides/uk/crm-setup-without-integrator-checklist.html": {
   "description": "Чек-лист налаштування CRM: етапи, обов’язкові поля, джерела, причини відмови, задачі, дублі, імпорт, автоматизації, навчання і коли потрібен інтегратор."
+ },
+ "guides/uk/pipedrive-ai-assistant.html": {
+  "title": "ШІ-асистент для Pipedrive: налаштування CRM у чаті | Kai",
+  "description": "Kai налаштовує Pipedrive за повідомленням у чаті: воронки, поля, угоди, задачі, аналітика. Встановлення за посиланням, що працює в беті і чого поки немає."
  },
  "privacy-uk.html": {
   "description": "Політика конфіденційності Kai — ШІ-асистента для налаштування CRM: які дані ми збираємо, з якою метою, скільки зберігаємо і як їх видалити."

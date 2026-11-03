@@ -588,17 +588,19 @@
   "Happy holidays! I can set up your CRM in minutes — tell me what you do?": "Wesołych świąt! Skonfiguruję twój CRM w kilka minut — powiesz, czym się zajmujesz?",
   "Close chat": "Zamknij czat",
   "beta": "beta",
-  "Pipedrive: install Kai into your Pipedrive in one click": "Pipedrive: zainstaluj Kai w swoim Pipedrive jednym kliknięciem"
+  "Pipedrive: install Kai into your Pipedrive in one click": "Pipedrive: zainstaluj Kai w swoim Pipedrive jednym kliknięciem",
+  "Does Kai work with Pipedrive?": "Czy Kai działa z Pipedrive?",
+  "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Event automations for Pipedrive are not there yet — they come after the beta.": "Tak, w becie, od planu Start. Podłączenie: link instalacyjny z Pipedrive, przycisk „Sign in with Pipedrive” w bocie albo osobisty token API. Kai konfiguruje lejki, etapy i pola, prowadzi transakcje, osoby, organizacje, działania i notatki oraz analizuje lejek. Automatyzacji na zdarzenia dla Pipedrive jeszcze nie ma — pojawią się po becie."
  },
  "meta": {
   "title": "Asystent AI, który konfiguruje amoCRM, Kommo, Bitrix24 i własne CRM-y | Kai",
-  "description": "Kai konfiguruje twój CRM na podstawie zwykłej wiadomości w Telegramie lub w przeglądarce — amoCRM, Kommo, Bitrix24 lub twój własny CRM przez jego API: lejki, pola, zadania, automatyzacje, analityka. 65 akcji. 3-dniowy okres próbny, bez karty.",
+  "description": "Kai konfiguruje twój CRM na podstawie zwykłej wiadomości w Telegramie lub w przeglądarce — amoCRM, Kommo, Bitrix24, Pipedrive lub twój własny CRM przez jego API: lejki, pola, zadania, automatyzacje, analityka. 65 akcji. 3-dniowy okres próbny, bez karty.",
   "og_title": "Kai — asystent AI, który konfiguruje twój CRM",
   "og_description": "Asystent AI, który konfiguruje twój CRM na podstawie wiadomości na czacie — w Telegramie lub w przeglądarce.",
-  "keywords": "amoCRM, Kommo, Bitrix24, konfiguracja CRM, wdrożenie CRM, ustawienie CRM, asystent AI do amoCRM, asystent AI do Kommo, asystent AI do Bitrix24, agent AI dla CRM, AI do CRM, sztuczna inteligencja CRM, automatyzacja CRM, bot CRM Telegram, lejek sprzedaży, lejki sprzedażowe, amoCRM API, Kommo API, CRM bez programisty, CRM bez integratora, własny CRM, autorski CRM, wewnętrzny CRM, podłączyć AI do własnego CRM przez API, agent AI do własnego CRM, integracja AI z CRM przez REST API, AI assistant, CRM setup, custom CRM, AI agent for custom CRM"
+  "keywords": "amoCRM, Kommo, Bitrix24, konfiguracja CRM, wdrożenie CRM, ustawienie CRM, asystent AI do amoCRM, asystent AI do Kommo, asystent AI do Bitrix24, agent AI dla CRM, AI do CRM, sztuczna inteligencja CRM, automatyzacja CRM, bot CRM Telegram, lejek sprzedaży, lejki sprzedażowe, amoCRM API, Kommo API, CRM bez programisty, CRM bez integratora, własny CRM, autorski CRM, wewnętrzny CRM, podłączyć AI do własnego CRM przez API, agent AI do własnego CRM, integracja AI z CRM przez REST API, AI assistant, CRM setup, custom CRM, AI agent for custom CRM, Pipedrive, asystent AI do Pipedrive, konfiguracja Pipedrive, Pipedrive bez programisty"
  },
  "ld": {
-  "description": "Asystent AI, który konfiguruje twój CRM na podstawie wiadomości na czacie — w Telegramie lub w przeglądarce: amoCRM, Kommo, Bitrix24 lub twój własny CRM przez jego API. 65 akcji: lejki, pola, etapy, transakcje, kontakty, automatyzacje, analityka.",
+  "description": "Asystent AI, który konfiguruje twój CRM na podstawie wiadomości na czacie — w Telegramie lub w przeglądarce: amoCRM, Kommo, Bitrix24, Pipedrive lub twój własny CRM przez jego API. 65 akcji: lejki, pola, etapy, transakcje, kontakty, automatyzacje, analityka.",
   "featureList": [
    "Konsultacja AI dotycząca struktury twojego CRM",
    "Lejki sprzedażowe i etapy",
@@ -607,7 +609,8 @@
    "Specyfikacja techniczna w PDF",
    "Rozpoznawanie wiadomości głosowych",
    "Podłączenie OAuth jednym kliknięciem",
-   "Twój własny (autorski, wewnętrzny) CRM przez REST API: OAuth 2.0, klucz API, bearer"
+   "Twój własny (autorski, wewnętrzny) CRM przez REST API: OAuth 2.0, klucz API, bearer",
+   "Podłączenie Pipedrive (beta): lejki, transakcje, działania, analityka"
   ],
   "faq": [
    [
@@ -629,6 +632,10 @@
    [
     "Czy Kai działa z Bitrix24?",
     "Tak: Bitrix24 łączy się przez webhook przychodzący, Kai konfiguruje lejki, etapy, pola, transakcje, kontakty i zadania oraz prowadzi analitykę. Automatyzacje wewnątrz Bitrix24 i widżety nie są jeszcze dostępne. amoCRM i Kommo są w pełni obsługiwane."
+   ],
+   [
+    "Czy Kai działa z Pipedrive?",
+    "Tak, w becie, od planu Start. Podłączenie: link instalacyjny z Pipedrive, przycisk „Sign in with Pipedrive” w bocie albo osobisty token API. Kai konfiguruje lejki, etapy i pola, prowadzi transakcje, osoby, organizacje, działania i notatki oraz analizuje lejek. Automatyzacji na zdarzenia dla Pipedrive jeszcze nie ma — pojawią się po becie."
    ],
    [
     "Czy Kai działa z własnym lub autorskim CRM?",

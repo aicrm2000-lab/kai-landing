@@ -1,7 +1,7 @@
 {
  "tr/": {
-  "title": "amoCRM, Kommo, Bitrix24 ve özel CRM için yapay zeka asistanı | Kai",
-  "description": "Kai, CRM'ini sohbetteki bir mesajla kurar: amoCRM, Kommo, Bitrix24 ya da API ile kendi CRM'in. Huniler, alanlar, görevler, otomasyonlar. 3 gün deneme."
+  "title": "amoCRM, Kommo, Bitrix24, Pipedrive ve özel CRM için AI asistanı | Kai",
+  "description": "Kai, CRM'ini sohbette bir mesajla kurar: amoCRM, Kommo, Bitrix24, Pipedrive veya API ile kendi CRM'in. Huniler, alanlar, görevler, otomasyonlar. 3 gün deneme."
  },
  "guides/tr/": {
   "title": "amoCRM, Kommo, Bitrix24 ve özel CRM kurulum rehberleri | Kai",
@@ -36,5 +36,9 @@
  },
  "terms-tr.html": {
   "description": "Kai Kullanım Koşulları: CRM hesabınızı platformun resmi API'si üzerinden yapılandıran ve yöneten yapay zeka asistanı."
+ },
+ "guides/tr/pipedrive-ai-assistant.html": {
+  "title": "Pipedrive yapay zeka asistanı: CRM'ini sohbet mesajıyla kur | Kai",
+  "description": "Kai, Pipedrive'ı bir sohbet mesajıyla kurar: huniler, alanlar, fırsatlar, aktiviteler, analitik. Kurulum bağlantısı, betada neler çalışıyor, neler henüz yok."
  }
 }

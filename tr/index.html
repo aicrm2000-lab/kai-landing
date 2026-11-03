@@ -7,9 +7,9 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://app.aii-crm.com https://ai-crm-bot-production.up.railway.app; connect-src 'self' https://app.aii-crm.com https://ai-crm-bot-production.up.railway.app; base-uri 'self'; form-action 'self'">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>amoCRM, Kommo, Bitrix24 ve özel CRM için yapay zeka asistanı | Kai</title>
-<meta name="description" content="Kai, CRM&#x27;ini sohbetteki bir mesajla kurar: amoCRM, Kommo, Bitrix24 ya da API ile kendi CRM&#x27;in. Huniler, alanlar, görevler, otomasyonlar. 3 gün deneme.">
-<meta name="keywords" content="amoCRM, Kommo, Bitrix24, CRM kurulumu, CRM kurma, CRM kurulum hizmeti, amoCRM için yapay zeka asistanı, Kommo için yapay zeka asistanı, Bitrix24 için yapay zeka asistanı, yapay zeka CRM asistanı, CRM otomasyonu, Telegram CRM botu, satış hunisi kurulumu, satış pipeline kurulumu, amoCRM API, Kommo API, yazılımcısız CRM, geliştiricisiz CRM, entegratörsüz CRM kurulumu, kendi CRM'im, şirket içi CRM, özel CRM, kendi CRM'ime yapay zeka bağlamak API, özel CRM için yapay zeka ajanı, CRM REST API yapay zeka entegrasyonu, AI assistant, CRM setup, custom CRM, AI agent for custom CRM">
+<title>amoCRM, Kommo, Bitrix24, Pipedrive ve özel CRM için AI asistanı | Kai</title>
+<meta name="description" content="Kai, CRM&#x27;ini sohbette bir mesajla kurar: amoCRM, Kommo, Bitrix24, Pipedrive veya API ile kendi CRM&#x27;in. Huniler, alanlar, görevler, otomasyonlar. 3 gün deneme.">
+<meta name="keywords" content="amoCRM, Kommo, Bitrix24, CRM kurulumu, CRM kurma, CRM kurulum hizmeti, amoCRM için yapay zeka asistanı, Kommo için yapay zeka asistanı, Bitrix24 için yapay zeka asistanı, yapay zeka CRM asistanı, CRM otomasyonu, Telegram CRM botu, satış hunisi kurulumu, satış pipeline kurulumu, amoCRM API, Kommo API, yazılımcısız CRM, geliştiricisiz CRM, entegratörsüz CRM kurulumu, kendi CRM'im, şirket içi CRM, özel CRM, kendi CRM'ime yapay zeka bağlamak API, özel CRM için yapay zeka ajanı, CRM REST API yapay zeka entegrasyonu, AI assistant, CRM setup, custom CRM, AI agent for custom CRM, Pipedrive, Pipedrive için yapay zeka asistanı, Pipedrive kurulumu, geliştiricisiz Pipedrive">
 <meta name="author" content="Kai">
 <meta name="robots" content="index, follow">
 <meta name="msvalidate.01" content="3AEC59F2EF8CCBE68D3A9EE892CA92DC" />
@@ -87,7 +87,7 @@
   "name": "Kai",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web, Telegram",
-  "description": "CRM'ini bir sohbet mesajıyla kuran yapay zeka asistanı — Telegram'da veya tarayıcında: amoCRM, Kommo, Bitrix24 ya da API'si üzerinden kendi özel CRM'in. 65 işlem: satış hunileri, alanlar, aşamalar, lead'ler, kişiler, otomasyonlar, analitik.",
+  "description": "CRM'ini bir sohbet mesajıyla kuran yapay zeka asistanı — Telegram'da veya tarayıcında: amoCRM, Kommo, Bitrix24, Pipedrive ya da API'si üzerinden kendi özel CRM'in. 65 işlem: satış hunileri, alanlar, aşamalar, lead'ler, kişiler, otomasyonlar, analitik.",
   "url": "https://aii-crm.com/",
   "offers": {
     "@type": "AggregateOffer",
@@ -104,7 +104,8 @@
     "PDF olarak teknik şartname",
     "Sesli mesaj tanıma",
     "Tek tıkla OAuth bağlantısı",
-    "REST API ile kendi (özel, şirket içi) CRM'in: OAuth 2.0, API anahtarı, bearer"
+    "REST API ile kendi (özel, şirket içi) CRM'in: OAuth 2.0, API anahtarı, bearer",
+    "Pipedrive bağlantısı (beta): satış hunileri, fırsatlar, aktiviteler, analitik"
   ],
   "screenshot": "https://aii-crm.com/og-image-v5.png",
   "creator": {
@@ -166,6 +167,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Evet: Bitrix24 gelen webhook ile bağlanır; Kai satış hunilerini, aşamaları, alanları, lead'leri, kişileri ve görevleri kurar ve analitiği çalıştırır. Bitrix24 içi otomasyonlar ve widget'lar henüz yok. amoCRM ve Kommo tam olarak destekleniyor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kai Pipedrive ile çalışıyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, beta aşamasında ve Start planından itibaren. Pipedrive kurulum bağlantısıyla, botta “Sign in with Pipedrive” düğmesiyle ya da kişisel API token'ıyla bağlanır. Kai satış hunilerini, aşamaları ve alanları kurar; fırsatları, kişileri, kuruluşları, aktiviteleri ve notları yönetir ve huniyi inceler. Pipedrive için olay bazlı otomasyonlar henüz yok — betadan sonra gelecek."
       }
     },
     {
@@ -3902,6 +3911,10 @@ html.ny .chat-launcher::before {
       <div class="faq-item">
         <button class="faq-q">Kai Bitrix24'te ne yapar?</button>
         <div class="faq-a"><div class="faq-a-inner">Huniler ve aşamalar, alanlar, lead'ler, kişiler, şirketler, görevler, analitik ve şartnameler. Bitrix24 içi otomasyonlar (robotlar) ve widget'lar henüz yok — asıl ihtiyacın bunlarsa kuralların zaten çalıştığı amoCRM/Kommo'yu kullanmak daha dürüst olur.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Kai Pipedrive ile çalışıyor mu?</button>
+        <div class="faq-a"><div class="faq-a-inner">Evet, beta aşamasında ve Start planından itibaren. Pipedrive kurulum bağlantısıyla, botta “Sign in with Pipedrive” düğmesiyle ya da kişisel API token'ıyla bağlanır. Kai satış hunilerini, aşamaları ve alanları kurar; fırsatları, kişileri, kuruluşları, aktiviteleri ve notları yönetir ve huniyi inceler. Pipedrive için olay bazlı otomasyonlar henüz yok — betadan sonra gelecek.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Kai özel ya da şirket içi bir CRM ile çalışır mı?</button>

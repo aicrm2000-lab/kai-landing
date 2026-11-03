@@ -1,7 +1,7 @@
 {
  "ro/": {
-  "title": "Asistent AI pentru amoCRM, Kommo, Bitrix24 și CRM personalizat | Kai",
-  "description": "Kai îți configurează CRM-ul dintr-un mesaj în chat: amoCRM, Kommo, Bitrix24 sau CRM-ul tău prin API. Pipeline-uri, câmpuri, automatizări. 3 zile de probă."
+  "title": "Asistent AI: amoCRM, Kommo, Bitrix24, Pipedrive și CRM propriu | Kai",
+  "description": "Kai îți configurează CRM-ul dintr-un mesaj: amoCRM, Kommo, Bitrix24, Pipedrive sau CRM-ul tău prin API. Pipeline-uri, câmpuri, automatizări. 3 zile de probă."
  },
  "guides/ro/": {
   "title": "Ghiduri de configurare amoCRM, Kommo, Bitrix24 și CRM propriu | Kai",
@@ -46,5 +46,9 @@
  },
  "refund-ro.html": {
   "description": "Politica de rambursare și anulare Kai: facturare, reînnoire, anulare, condiții de rambursare, drepturile consumatorilor din UE și cum solicitați o rambursare."
+ },
+ "guides/ro/pipedrive-ai-assistant.html": {
+  "title": "Asistent AI pentru Pipedrive: configurare CRM dintr-un mesaj | Kai",
+  "description": "Kai configurează Pipedrive dintr-un mesaj în chat: pipeline-uri, câmpuri, tranzacții, activități, analiză. Link de instalare, ce merge în beta și ce nu încă."
  }
 }

@@ -1,7 +1,7 @@
 {
  "fr/": {
-  "title": "Assistant IA pour amoCRM, Kommo, Bitrix24 et CRM sur mesure | Kai",
-  "description": "Kai configure votre CRM en un message : amoCRM, Kommo, Bitrix24 ou votre propre CRM via API. Pipelines, champs, tâches, automatisations. 3 jours d’essai."
+  "title": "Assistant IA pour amoCRM, Kommo, Bitrix24, Pipedrive, CRM maison | Kai",
+  "description": "Kai configure votre CRM par chat : amoCRM, Kommo, Bitrix24, Pipedrive ou un CRM maison via API. Pipelines, champs, tâches, automatisations. 3 jours d’essai."
  },
  "guides/fr/": {
   "title": "Guides : configurer amoCRM, Kommo, Bitrix24 et un CRM sur mesure | Kai",
@@ -48,5 +48,9 @@
  },
  "refund-fr.html": {
   "description": "Politique de remboursement et de résiliation de Kai : facturation, renouvellement, résiliation, conditions de remboursement, droits des consommateurs de l’UE."
+ },
+ "guides/fr/pipedrive-ai-assistant.html": {
+  "title": "Assistant IA pour Pipedrive : configurer son CRM par chat | Kai",
+  "description": "Configurer Pipedrive par chat avec Kai : pipelines, champs, transactions, activités, analytique. Installation par lien, ce qui marche en bêta, ce qui manque."
  }
 }
