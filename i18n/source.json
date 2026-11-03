@@ -432,6 +432,11 @@
    "where": "data-en"
   },
   {
+   "en": "Pipedrive: personal API token or sign-in with Pipedrive in the bot",
+   "ru": "Pipedrive: личный API-токен или вход через Pipedrive в боте",
+   "where": "data-en-title"
+  },
+  {
    "en": "Your own CRM: custom, in-house or any other with a REST API — via a connector spec",
    "ru": "Своя CRM: самописная, кастомная или любая с REST API — по спецификации коннектора",
    "where": "data-en-title"
