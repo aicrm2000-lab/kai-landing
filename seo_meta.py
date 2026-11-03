@@ -74,15 +74,25 @@ def esc(v: str) -> str:
     return html.escape(v, quote=True)
 
 
+SOURCE_PAGES = ("privacy-en.html", "terms-en.html", "refund-en.html")   # страницы-исходники переводов (i18n_pages.policy_en)
+ORIGINALS = os.path.join(SEO_DIR, "originals.json")
+
+
 def apply(quiet: bool = False) -> int:
-    """наложить короткие title/description на все существующие страницы из файлов i18n/seo/*.json"""
+    """наложить короткие title/description на все существующие страницы из файлов i18n/seo/*.json;
+    у страниц-исходников переводов исходные тексты сначала сохраняются в originals.json"""
     ov, n = load_overrides(), 0
+    orig = json.load(io.open(ORIGINALS, encoding="utf-8")) if os.path.exists(ORIGINALS) else {}
     for path, m in ov.items():
         fp = local(path)
         if not os.path.exists(fp):
             continue
         h = io.open(fp, encoding="utf-8").read()
         h0 = h
+        if path in SOURCE_PAGES and path not in orig:
+            t, d = read_meta(h)
+            orig[path] = {"title": t, "description": d}
+            io.open(ORIGINALS, "w", encoding="utf-8", newline="\n").write(json.dumps(orig, ensure_ascii=False, indent=1))
         if m.get("title"):
             h = re.sub(r"<title>.*?</title>", lambda _: f"<title>{esc(m['title'])}</title>", h, count=1, flags=re.S)
         if m.get("description"):

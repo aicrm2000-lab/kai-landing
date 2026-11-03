@@ -413,7 +413,17 @@ def relink_policy(h: str, kind: str, code: str) -> str:
 
 
 def policy_en(kind: str) -> str:
-    return io.open(os.path.join(HERE, f"{kind}-en.html"), encoding="utf-8").read()
+    """английская политика как исходник переводов — с исходными title/description (короткие для выдачи накладывает
+    seo_meta поверх файла, а ключи переводов от них не должны зависеть)"""
+    h = io.open(os.path.join(HERE, f"{kind}-en.html"), encoding="utf-8").read()
+    p = os.path.join(HERE, "i18n", "seo", "originals.json")
+    orig = json.load(io.open(p, encoding="utf-8")).get(f"{kind}-en.html") if os.path.exists(p) else None
+    if orig:
+        import html as _html
+        h = re.sub(r"<title>.*?</title>", lambda _: f"<title>{_html.escape(orig['title'], quote=False)}</title>", h, count=1, flags=re.S)
+        h = re.sub(r'(<meta name="description" content=")[^"]*(")', lambda m: m.group(1) + _html.escape(orig["description"], quote=False).replace('"', "&quot;") + m.group(2), h, count=1)
+    # Open Graph политики строит set_policy_og из переведённых title/description — в исходнике переводов он не нужен
+    return re.sub(r'<meta (?:property="og:[a-z_:]+"|name="twitter:[a-z]+") content="[^"]*">\n?', "", h)
 
 
 # ---------------------------------------------------------------- источник для переводчиков

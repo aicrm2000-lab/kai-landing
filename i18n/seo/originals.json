@@ -1,0 +1,14 @@
+{
+ "privacy-en.html": {
+  "title": "Privacy Policy — Kai",
+  "description": "Privacy Policy for Kai, an AI assistant that configures your CRM account through a Telegram bot. What we collect, why, how long we keep it, and how to delete it."
+ },
+ "terms-en.html": {
+  "title": "Terms of Service — Kai",
+  "description": "Terms of Service for Kai, an AI assistant that configures and manages the user's account on the CRM platform they choose to connect, via the platform's official API."
+ },
+ "refund-en.html": {
+  "title": "Refund & Cancellation Policy — Kai",
+  "description": "Refund and Cancellation Policy for Kai: billing model, renewal, cancellation, refund conditions, EU consumer rights, and how to request a refund."
+ }
+}

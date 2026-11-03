@@ -1,0 +1,50 @@
+{
+ "ro/": {
+  "title": "Asistent AI pentru amoCRM, Kommo, Bitrix24 și CRM personalizat | Kai",
+  "description": "Kai îți configurează CRM-ul dintr-un mesaj în chat: amoCRM, Kommo, Bitrix24 sau CRM-ul tău prin API. Pipeline-uri, câmpuri, automatizări. 3 zile gratuit."
+ },
+ "guides/ro/": {
+  "title": "Ghiduri de configurare amoCRM, Kommo, Bitrix24 și CRM propriu | Kai",
+  "description": "Ghiduri pas cu pas despre pipeline-uri, câmpuri și automatizări în amoCRM, Kommo, Bitrix24 și CRM-ul tău propriu: manual, prin integrator sau cu Kai."
+ },
+ "cases/ro/": {
+  "description": "Patru exemple din amoCRM și Kommo: pipeline-ul înainte, un mesaj către Kai, ce a făcut Kai și cum arată CRM-ul după. Fără integrator."
+ },
+ "guides/ro/amocrm-pipeline-setup.html": {
+  "title": "Pipeline de vânzări în amoCRM: configurare fără programator | Kai",
+  "description": "Pas cu pas: etapele pipeline-ului, câmpuri personalizate și obligatorii în amoCRM (Leads → Setup), greșeli frecvente și cum faci totul cu un mesaj către Kai."
+ },
+ "guides/ro/ai-assistant-for-amocrm.html": {
+  "description": "Patru tipuri de AI pentru amoCRM și Kommo: amoAI/Copilot, chatboți, conectori no-code, asistenți de configurare ca Kai. Cum alegi, prețuri, limite."
+ },
+ "guides/ro/kommo-ai-tools-compared.html": {
+  "description": "Agentul AI și Copilot din Kommo vs Salesbot, Albato/Make/n8n, Wazzup/Umnico și Kai în 2026: ce instrument alegi pentru fiecare sarcină, cost și timp."
+ },
+ "guides/ro/import-contacts-excel-amocrm-kommo.html": {
+  "title": "Import clienți din Excel în amoCRM sau Kommo în 10 minute | Kai",
+  "description": "Cum pregătești tabelul, folosești importul din amoCRM și Kommo, eviți duplicatele și erorile. Sau calea Kai: trimiți fișierul, verifici maparea, confirmi."
+ },
+ "guides/ro/crm-automations-that-pay-off.html": {
+  "description": "7 automatizări CRM care se amortizează: sarcini pe etape, reamintiri, tranzacții blocate, alerte în echipă, rezumat săptămânal. Le activezi cu o frază în Kai."
+ },
+ "guides/ro/bitrix24-ai-assistant.html": {
+  "title": "Bitrix24 cu asistent AI: configurare fără programator (beta) | Kai",
+  "description": "Cum conectezi Bitrix24 la Kai prin webhook de intrare, ce configurează (pipeline-uri, câmpuri, tranzacții, sarcini, analiză) și când ai nevoie de integrator."
+ },
+ "guides/ro/ai-agent-for-custom-crm.html": {
+  "title": "Agent AI pentru un CRM personalizat: conectare prin API | Kai",
+  "description": "Ce îi trebuie unui agent AI ca să lucreze cu CRM-ul tău: REST API, autentificare și o specificație de conector. Trei moduri de conectare, limite, securitate."
+ },
+ "guides/ro/crm-setup-without-integrator-checklist.html": {
+  "description": "12 lucruri pentru un CRM funcțional: etape, câmpuri obligatorii, motive de pierdere, sarcini, duplicate, import, automatizări și când ai nevoie de integrator."
+ },
+ "privacy-ro.html": {
+  "description": "Politica de confidențialitate Kai, asistentul AI care vă configurează CRM-ul: ce date colectăm, în ce scop, cât timp le păstrăm și cum le puteți șterge."
+ },
+ "terms-ro.html": {
+  "description": "Termenii și condițiile Kai, asistentul AI care configurează și gestionează contul dumneavoastră CRM prin API-ul oficial al platformei."
+ },
+ "refund-ro.html": {
+  "description": "Politica de rambursare și anulare Kai: facturare, reînnoire, anulare, condiții de rambursare, drepturile consumatorilor din UE și cum solicitați o rambursare."
+ }
+}

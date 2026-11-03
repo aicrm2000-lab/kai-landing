@@ -1,0 +1,40 @@
+{
+ "pl/": {
+  "title": "Asystent AI do amoCRM, Kommo, Bitrix24 i własnego CRM | Kai",
+  "description": "Kai konfiguruje CRM na podstawie wiadomości na czacie: amoCRM, Kommo, Bitrix24 lub własny CRM przez API. Lejki, pola, zadania, automatyzacje. 3 dni za darmo."
+ },
+ "guides/pl/": {
+  "title": "Poradniki: konfiguracja amoCRM, Kommo, Bitrix24 i własnego CRM | Kai",
+  "description": "Poradniki krok po kroku: lejki, pola i automatyzacje w amoCRM, Kommo, Bitrix24 i własnym CRM — ręcznie, przez integratora albo z Kai."
+ },
+ "guides/pl/ai-assistant-for-amocrm.html": {
+  "description": "Asystent AI do amoCRM i Kommo: amoAI/Copilot, chatboty, konektory no-code i asystenci konfiguracji jak Kai. Porównanie, ceny, ograniczenia i jak wybrać."
+ },
+ "guides/pl/kommo-ai-tools-compared.html": {
+  "description": "Narzędzia AI w Kommo 2026: AI agent i Copilot vs Salesbot, Albato/Make/n8n, Wazzup/Umnico i Kai. Które narzędzie do jakiego zadania, koszt i czas."
+ },
+ "guides/pl/import-contacts-excel-amocrm-kommo.html": {
+  "title": "Import bazy klientów z Excela do amoCRM lub Kommo w 10 minut | Kai",
+  "description": "Jak przygotować arkusz, użyć kreatora importu w amoCRM i Kommo, uniknąć duplikatów i błędów — albo po prostu wysłać plik do Kai na czacie."
+ },
+ "guides/pl/crm-automations-that-pay-off.html": {
+  "description": "7 automatyzacji CRM, które się zwracają: zadania na etapach, przypomnienia, utknięte transakcje, alerty, podsumowania. Każdą włączysz jednym zdaniem w Kai."
+ },
+ "guides/pl/bitrix24-ai-assistant.html": {
+  "title": "Bitrix24 z asystentem AI: konfiguracja bez programisty | Kai",
+  "description": "Jak podłączyć Bitrix24 do Kai przez webhook przychodzący, co konfiguruje (lejki, pola, transakcje, zadania, analityka) i kiedy potrzebny jest integrator."
+ },
+ "guides/pl/ai-agent-for-custom-crm.html": {
+  "title": "Agent AI dla własnego CRM: podłączenie przez API | Kai",
+  "description": "Agent AI dla własnego CRM: czego potrzebuje (REST API, autoryzacja, specyfikacja konektora), trzy sposoby podłączenia, możliwości, limity i bezpieczeństwo."
+ },
+ "guides/pl/crm-setup-without-integrator-checklist.html": {
+  "description": "Checklista CRM w 12 punktach: etapy, pola wymagane, źródła, powody przegranej, zadania, duplikaty, import, automatyzacje, szkolenie i kiedy wziąć integratora."
+ },
+ "privacy-pl.html": {
+  "description": "Polityka prywatności Kai — asystenta AI, który konfiguruje CRM Użytkownika: jakie dane zbieramy, w jakim celu, jak długo je przechowujemy i jak je usunąć."
+ },
+ "terms-pl.html": {
+  "description": "Regulamin Kai — asystenta AI, który konfiguruje konto CRM Użytkownika i nim zarządza za pośrednictwem oficjalnego API platformy."
+ }
+}

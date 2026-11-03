@@ -1,0 +1,40 @@
+{
+ "tr/": {
+  "title": "amoCRM, Kommo, Bitrix24 ve özel CRM için yapay zeka asistanı | Kai",
+  "description": "Kai, CRM'ini sohbetteki bir mesajla kurar: amoCRM, Kommo, Bitrix24 ya da API ile kendi CRM'in. Huniler, alanlar, görevler, otomasyonlar. 3 gün ücretsiz."
+ },
+ "guides/tr/": {
+  "title": "amoCRM, Kommo, Bitrix24 ve özel CRM kurulum rehberleri | Kai",
+  "description": "amoCRM, Kommo, Bitrix24 ve kendi CRM'inde satış hunileri, alanlar ve otomasyonlar için adım adım rehberler: elle, entegratörle ya da Kai ile."
+ },
+ "guides/tr/ai-assistant-for-amocrm.html": {
+  "description": "amoCRM ve Kommo için dört tür yapay zeka: amoAI/Copilot, sohbet botları, kodsuz bağlayıcılar, Kai gibi kurulum asistanları. Nasıl seçilir, fiyatlar, sınırlar."
+ },
+ "guides/tr/kommo-ai-tools-compared.html": {
+  "description": "Kommo AI ajanı ve Copilot, Salesbot, Albato/Make/n8n, Wazzup/Umnico ve Kai karşılaştırması (2026): hangi araç hangi işe uygun, maliyet ve süre."
+ },
+ "guides/tr/import-contacts-excel-amocrm-kommo.html": {
+  "title": "Excel'den amoCRM veya Kommo'ya müşteri aktarımı 10 dakikada | Kai",
+  "description": "Tabloyu hazırla, amoCRM ve Kommo içe aktarma sihirbazını kullan, mükerrer kayıt ve hatalardan kaçın ya da dosyayı Kai'ye gönder, eşlemeyi kontrol et, onayla."
+ },
+ "guides/tr/crm-automations-that-pay-off.html": {
+  "description": "Kendini amorti eden 7 CRM otomasyonu: aşama görevleri, yanıt hatırlatmaları, takılan lead'ler, ekip bildirimleri, haftalık özet. Kai'de tek cümleyle açılır."
+ },
+ "guides/tr/bitrix24-ai-assistant.html": {
+  "title": "Bitrix24 yapay zeka asistanı: geliştirici olmadan kurulum (beta) | Kai",
+  "description": "Bitrix24 gelen webhook ile Kai'ye nasıl bağlanır, neleri kurar (huniler, alanlar, fırsatlar, görevler, analitik) ve ne zaman yine de entegratör gerekir."
+ },
+ "guides/tr/ai-agent-for-custom-crm.html": {
+  "title": "Özel CRM için yapay zeka ajanı: API ile bağlantı | Kai",
+  "description": "Yapay zeka ajanının kendi CRM'inle çalışması için gerekenler: REST API, kimlik doğrulama ve bağlayıcı spesifikasyonu. Üç bağlantı yolu, sınırlar, güvenlik."
+ },
+ "guides/tr/crm-setup-without-integrator-checklist.html": {
+  "description": "Çalışan bir CRM için 12 madde: aşamalar, zorunlu alanlar, kayıp nedenleri, görevler, çift kayıtlar, içe aktarma, otomasyonlar ve ne zaman entegratör gerekir."
+ },
+ "privacy-tr.html": {
+  "description": "CRM'inizi yapılandıran yapay zeka asistanı Kai'nin Gizlilik Politikası: hangi verileri topladığımız, neden, ne kadar sakladığımız ve nasıl silebileceğiniz."
+ },
+ "terms-tr.html": {
+  "description": "Kai Kullanım Koşulları: CRM hesabınızı platformun resmi API'si üzerinden yapılandıran ve yöneten yapay zeka asistanı."
+ }
+}

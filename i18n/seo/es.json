@@ -1,0 +1,50 @@
+{
+ "es/": {
+  "title": "Asistente de IA para amoCRM, Kommo, Bitrix24 y CRM a medida | Kai",
+  "description": "Kai configura tu CRM con un mensaje en el chat: amoCRM, Kommo, Bitrix24 o tu CRM a medida vía API. Embudos, campos, tareas, automatizaciones. 3 días gratis."
+ },
+ "guides/es/": {
+  "title": "Guías: configurar amoCRM, Kommo, Bitrix24 y CRM a medida | Kai",
+  "description": "Guías paso a paso sobre embudos, campos y automatizaciones en amoCRM, Kommo, Bitrix24 y tu CRM a medida: a mano, con un integrador o con Kai."
+ },
+ "cases/es/": {
+  "description": "Cuatro casos de amoCRM y Kommo: el embudo antes, un mensaje a Kai, qué hizo y cómo queda el CRM después. Acciones reales, sin integrador."
+ },
+ "guides/es/amocrm-pipeline-setup.html": {
+  "title": "Configurar el embudo de ventas en amoCRM sin programador (2026) | Kai",
+  "description": "Paso a paso: etapas del embudo, campos personalizados y obligatorios en amoCRM (Leads → Setup), errores comunes y cómo hacerlo con un solo mensaje a Kai."
+ },
+ "guides/es/ai-assistant-for-amocrm.html": {
+  "description": "Cuatro tipos de IA para amoCRM y Kommo: amoAI/Copilot, chatbots, conectores no-code y asistentes como Kai. Cómo elegir, comparativa, precios y límites."
+ },
+ "guides/es/kommo-ai-tools-compared.html": {
+  "description": "Agente de IA y Copilot de Kommo frente a Salesbot, Albato/Make/n8n, Wazzup/Umnico y Kai en 2026: qué herramienta usar para cada tarea, precio y tiempo."
+ },
+ "guides/es/import-contacts-excel-amocrm-kommo.html": {
+  "title": "Importar clientes de Excel a amoCRM o Kommo en 10 minutos | Kai",
+  "description": "Cómo preparar la hoja de cálculo, usar el asistente de importación de amoCRM y Kommo, evitar duplicados y errores, o simplemente enviar el archivo a Kai."
+ },
+ "guides/es/crm-automations-that-pay-off.html": {
+  "description": "7 automatizaciones de CRM que se pagan solas: tareas por etapa, recordatorios, leads atascados, avisos, resumen semanal. Actívalas con una frase en Kai."
+ },
+ "guides/es/bitrix24-ai-assistant.html": {
+  "title": "Bitrix24 con asistente de IA: configuración sin programador | Kai",
+  "description": "Cómo conectar Bitrix24 a Kai con un webhook entrante, qué configura (embudos, campos, negociaciones, tareas, analítica) y cuándo necesitas un integrador."
+ },
+ "guides/es/ai-agent-for-custom-crm.html": {
+  "title": "Agente de IA para un CRM a medida: cómo conectarlo por API | Kai",
+  "description": "Qué necesita un agente de IA para trabajar con tu CRM: API REST, autenticación y especificación de conector. Tres formas de conectar, límites y seguridad."
+ },
+ "guides/es/crm-setup-without-integrator-checklist.html": {
+  "description": "Los 12 puntos de un CRM que funciona: etapas, campos obligatorios, motivos de pérdida, tareas, duplicados, automatizaciones y cuándo llamar a un integrador."
+ },
+ "privacy-es.html": {
+  "description": "Política de privacidad de Kai, el asistente de IA que configura su CRM: qué datos recopilamos, con qué fin, cuánto tiempo los conservamos y cómo suprimirlos."
+ },
+ "terms-es.html": {
+  "description": "Términos del servicio de Kai, el asistente de IA que configura y gestiona la cuenta de CRM del usuario a través de la API oficial de la plataforma."
+ },
+ "refund-es.html": {
+  "description": "Política de reembolsos y cancelación de Kai: facturación, renovación, condiciones de reembolso, derechos del consumidor en la UE y cómo solicitarlo."
+ }
+}
