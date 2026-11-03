@@ -22,7 +22,7 @@ def live(path: str) -> bool:
 
 
 def main() -> int:
-    waits = sys.argv[1:]
+    waits = [p.lstrip("/") for p in sys.argv[1:]]   # "/en/" и "en/" — одно и то же
     deadline = time.time() + 600
     while waits and time.time() < deadline:
         waits = [p for p in waits if not live(p)]
