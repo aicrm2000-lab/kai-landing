@@ -4,7 +4,10 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bitrix24 yapay zeka asistanı: geliştirici olmadan kurulum (beta) | Kai</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Bitrix24 yapay zeka asistanı: geliştirici olmadan kurulum | Kai</title>
 <meta name="description" content="Bitrix24 gelen webhook ile Kai&#x27;ye nasıl bağlanır, neleri kurar (huniler, alanlar, fırsatlar, görevler, analitik) ve ne zaman yine de entegratör gerekir.">
 <meta name="keywords" content="Bitrix24 yapay zeka asistanı kurulumu">
 <meta name="robots" content="index, follow">
@@ -29,14 +32,14 @@
 <meta property="og:locale:alternate" content="ru_RU">
 <meta property="og:site_name" content="Kai">
 <meta property="og:url" content="https://aii-crm.com/guides/tr/bitrix24-ai-assistant.html">
-<meta property="og:title" content="Yapay zeka asistanıyla Bitrix24: geliştirici olmadan neler kurulabilir (beta)">
-<meta property="og:description" content="Betanın dürüst sınırı: yapı, veri, görevler ve analitik — evet; Bitrix24 içinde robotlar ve widget'lar — henüz değil. Bağlantı, örnek mesajlar ve entegratöre ne zaman ihtiyaç duyulduğu.">
+<meta property="og:title" content="Yapay zeka asistanıyla Bitrix24: geliştirici olmadan neler kurulabilir">
+<meta property="og:description" content="Dürüst sınır: yapı, veri, görevler ve analitik — evet; Bitrix24 içinde robotlar ve widget'lar — henüz değil. Bağlantı, örnek mesajlar ve entegratöre ne zaman ihtiyaç duyulduğu.">
 <meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
 <meta property="article:published_time" content="2026-10-26">
 <meta property="article:modified_time" content="2026-10-26">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Yapay zeka asistanıyla Bitrix24: geliştirici olmadan neler kurulabilir (beta)">
-<meta name="twitter:description" content="Betanın dürüst sınırı: yapı, veri, görevler ve analitik — evet; Bitrix24 içinde robotlar ve widget'lar — henüz değil. Bağlantı, örnek mesajlar ve entegratöre ne zaman ihtiyaç duyulduğu.">
+<meta name="twitter:title" content="Yapay zeka asistanıyla Bitrix24: geliştirici olmadan neler kurulabilir">
+<meta name="twitter:description" content="Dürüst sınır: yapı, veri, görevler ve analitik — evet; Bitrix24 içinde robotlar ve widget'lar — henüz değil. Bağlantı, örnek mesajlar ve entegratöre ne zaman ihtiyaç duyulduğu.">
 <meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,7 +127,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <h1>Yapay zeka asistanıyla Bitrix24: geliştirici olmadan neler kurulabilir</h1>
 <p class="meta">Güncellendi: 26 Ekim 2026 · Kai Ekibi · 6 dk okuma</p>
 
-<p class="lead">Bitrix24 için yapay zeka asistanı, satış sürecini kelimelerle anlattığın ve onun da resmi REST API üzerinden portalında satış hunileri, aşamalar, alanlar, fırsatlar ve görevler oluşturduğu bir sohbettir. Bitrix24 için bu hâlâ beta: yapı, veri, görevler ve analitik çalışıyor; robotlar ve widget'lar henüz çalışmıyor. Bu rehber sınırı dürüstçe çiziyor: bugün Kai gibi bir asistana neyi devredebilirsin, neyi Bitrix24'te elle yapmak daha iyi ve nerede hâlâ entegratör gerekiyor.</p>
+<p class="lead">Bitrix24 için yapay zeka asistanı, satış sürecini kelimelerle anlattığın ve onun da resmi REST API üzerinden portalında satış hunileri, aşamalar, alanlar, fırsatlar ve görevler oluşturduğu bir sohbettir. Bitrix24'te yapı, veri, görevler ve analitik çalışıyor; robotlar ve widget'lar henüz oluşturulmuyor. Bu rehber sınırı dürüstçe çiziyor: bugün Kai gibi bir asistana neyi devredebilirsin, neyi Bitrix24'te elle yapmak daha iyi ve nerede hâlâ entegratör gerekiyor.</p>
 
 <section class="tldr" aria-label="Kısaca">
   <h2>Kısaca</h2>
@@ -133,12 +136,12 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
     <li>Çalışanlar: satış hunileri ve aşamalar, alanlar, fırsatlar, kişiler, şirketler, son tarihli görevler, huni analitiği, PDF şartname.</li>
     <li>Henüz yok: Bitrix24 içinde robotlar ve diğer otomasyonlar, fırsat kartında widget'lar.</li>
     <li>Ana olaylarla ilgili bildirimler, Bitrix24'ün giden webhook'u üzerinden Kai sohbetine ulaşır.</li>
-    <li>Ana ihtiyacın robotlarsa, betanın bitmesini beklemek ya da her şeyin çalıştığı amoCRM/Kommo'yu kullanmak daha doğru olur.</li>
+    <li>Ana ihtiyacın robotlarsa, şimdilik kuralların zaten çalıştığı amoCRM/Kommo'yu kullanmak daha doğru olur.</li>
   </ul>
 </section>
 
-<h2>"Beta" ne demek ve Bitrix24 için neden önemli</h2>
-<p>Bitrix24 bir CRM'den fazlasıdır: görevleri, dosya deposunu, sohbetleri, iş süreçlerini ve web sitelerini de barındırır. Asistan yalnızca CRM bölümü ve görevlerle çalışır. "Beta", temel senaryonun çalıştığı anlamına gelir (süreci anlat → alanları, fırsatları ve görevleriyle bir satış hunisi al), ama Kai'nin amoCRM ve Kommo için yaptıklarının bir kısmı, en başta da Bitrix24 içindeki otomasyonlar, henüz aktarılmadı. Yapıya ve verilerinde düzene ihtiyacın varsa şimdi bağla; robotlara ihtiyacın varsa önce sınırlar bölümünü oku.</p>
+<h2>Kai Bitrix24'te neler yapar, neleri henüz yapmaz</h2>
+<p>Bitrix24 bir CRM'den fazlasıdır: görevleri, dosya deposunu, sohbetleri, iş süreçlerini ve web sitelerini de barındırır. Asistan yalnızca CRM bölümü ve görevlerle çalışır. Temel senaryo çalışıyor (süreci anlat → alanları, fırsatları ve görevleriyle bir satış hunisi al), ama Kai'nin amoCRM ve Kommo için yaptıklarının bir kısmı, en başta da Bitrix24 içindeki otomasyonlar, Bitrix24 için henüz hazır değil. Yapıya ve verilerinde düzene ihtiyacın varsa şimdi bağla; robotlara ihtiyacın varsa önce sınırlar bölümünü oku.</p>
 
 <h2>5 dakikada bağlantı: gelen webhook</h2>
 <p>amoCRM ve Kommo'da Kai tek tıkla OAuth 2.0 ile bağlanır ve hiçbir şifre ya da anahtar el değiştirmez. Bitrix24'te ise, Market'inde yayımlanmamış harici bir servis için gelen webhook kullanılır. Adımlar:</p>
@@ -179,7 +182,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 
 <h2>Hâlâ entegratöre ihtiyaç duyduğun durumlar</h2>
 <ul>
-  <li>Robotlara ve iş süreçlerine ihtiyacın var; şimdilik bu, betanın sınırı.</li>
+  <li>Robotlara ve iş süreçlerine ihtiyacın var; Kai bunları Bitrix24'te henüz oluşturmuyor.</li>
   <li>Muhasebe yazılımı, telefoni, depo ya da standart dışı mantığa sahip bir web sitesiyle bağlantılar.</li>
   <li>Yazışma geçmişi, görevler ve dosyalarla birlikte başka bir CRM'den taşıma.</li>
   <li>Rollere göre ayrılması gereken, farklı süreç ve yetkilere sahip birkaç departman.</li>
@@ -191,7 +194,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <pre>Bitrix24'te B2B ekipman satışı için bir satış hunisi kur: Yeni talep → Nitelikli → Teklif gönderildi → Müzakere → Sözleşme → Ödendi. Fırsat alanları: Kaynak (liste), Bütçe (para), Teklif tarihi (tarih). Görevi olmayan her açık fırsat için yarın son tarihli bir "sonraki adım" görevi oluştur.</pre>
 <pre>Her aşamada kaç fırsat olduğunu ve nerelerde iki haftadan uzun süredir takılı kaldıklarını göster.</pre>
 <pre>Entegratör için PDF şartname hazırla: "Teklif gönderildi" ve "Sözleşme" aşamalarında hangi robotlar gerekli ve ne yapmalılar.</pre>
-<p>Planlar amoCRM ve Kommo ile aynı: Start €29/ay, tek CRM; Pro €59/ay, en fazla üç CRM, roller ve entegrasyonlar; Max €119/ay, en fazla on CRM, öncelik ve özel geliştirmeler. İlk 3 gün ücretsiz, kart gerekmez, Start özellikleriyle yaklaşık 25 istek: kendi portalında denemek için yeterli. Kai İngilizce ve Rusça konuşur.</p>
+<p>Planlar amoCRM ve Kommo ile aynı: Start €29/ay, tek CRM; Pro €59/ay, en fazla üç CRM, roller ve entegrasyonlar; Max €119/ay, en fazla on CRM, öncelik ve özel geliştirmeler. İlk 3 gün deneme süresi, kart gerekmez, Start özellikleriyle yaklaşık 25 istek: kendi portalında denemek için yeterli. Kai İngilizce ve Rusça konuşur.</p>
 
 <h2>FAQ</h2>
 <div class="faq">
@@ -201,7 +204,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   </div>
   <div class="faq-item">
     <h3>Kai, Bitrix24'te robot kurabilir mi?</h3>
-    <p>Henüz değil. Bitrix24 içinde robotlar, diğer otomasyonlar ve widget'lar oluşturulmaz; betanın ana sınırı budur. Kai yapıyı, verileri ve görevleri yapılandırır, PDF şartname hazırlar; robotları ise Bitrix24 tasarımcısında kendin ya da bir entegratörle kurarsın.</p>
+    <p>Henüz değil. Bitrix24 içinde robotlar, diğer otomasyonlar ve widget'lar oluşturulmaz; Bitrix24 için ana sınır budur. Kai yapıyı, verileri ve görevleri yapılandırır, PDF şartname hazırlar; robotları ise Bitrix24 tasarımcısında kendin ya da bir entegratörle kurarsın.</p>
   </div>
   <div class="faq-item">
     <h3>Bitrix24'ten olaylarla ilgili bildirim alacak mıyım?</h3>
@@ -209,7 +212,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   </div>
   <div class="faq-item">
     <h3>Bitrix24'ü Kai'ye şimdi mi bağlamalıyım, yoksa beklemeli miyim?</h3>
-    <p>Yapıya (satış hunileri, aşamalar, alanlar), verilerde düzene, görevlere ve analitiğe ihtiyacın varsa şimdi bağla: çalışıyor ve kartsız 3 günlük ücretsiz deneme kendi portalında test etmek için yeterli. Ana ihtiyacın Bitrix24 içindeki otomasyonlarsa, betanın bitmesini beklemek ya da kuralların zaten çalıştığı amoCRM/Kommo'yu kullanmak daha doğru olur.</p>
+    <p>Yapıya (satış hunileri, aşamalar, alanlar), verilerde düzene, görevlere ve analitiğe ihtiyacın varsa şimdi bağla: çalışıyor ve kartsız 3 günlük deneme kendi portalında test etmek için yeterli. Ana ihtiyacın Bitrix24 içindeki otomasyonlarsa, şimdilik kuralların zaten çalıştığı amoCRM/Kommo'yu kullanmak daha doğru olur.</p>
   </div>
 </div>
 
@@ -220,7 +223,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Web sohbetini aç</a>
 </div>
 
-<p class="author">Yazar: Kai Ekibi · Güncellendi: <time datetime="2026-10-26">26 Ekim 2026</time> · Beta özellikleri ve sınırları yayın tarihi itibarıyla anlatılmıştır; güncel durumu Kai sohbette bildirir.</p>
+<p class="author">Yazar: Kai Ekibi · Güncellendi: <time datetime="2026-10-26">26 Ekim 2026</time> · Özellikler ve sınırlar yayın tarihi itibarıyla anlatılmıştır; güncel durumu Kai sohbette bildirir.</p>
 </article>
 </main>
 
@@ -269,7 +272,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Kai, Bitrix24'te robot kurabilir mi?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Henüz değil. Bitrix24 içinde robotlar, diğer otomasyonlar ve widget'lar oluşturulmaz; betanın ana sınırı budur. Kai yapıyı, verileri ve görevleri yapılandırır, PDF şartname hazırlar; robotları ise Bitrix24 tasarımcısında kendin ya da bir entegratörle kurarsın."
+            "text": "Henüz değil. Bitrix24 içinde robotlar, diğer otomasyonlar ve widget'lar oluşturulmaz; Bitrix24 için ana sınır budur. Kai yapıyı, verileri ve görevleri yapılandırır, PDF şartname hazırlar; robotları ise Bitrix24 tasarımcısında kendin ya da bir entegratörle kurarsın."
           }
         },
         {
@@ -285,7 +288,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Bitrix24'ü Kai'ye şimdi mi bağlamalıyım, yoksa beklemeli miyim?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yapıya (satış hunileri, aşamalar, alanlar), verilerde düzene, görevlere ve analitiğe ihtiyacın varsa şimdi bağla: çalışıyor ve kartsız 3 günlük ücretsiz deneme kendi portalında test etmek için yeterli. Ana ihtiyacın Bitrix24 içindeki otomasyonlarsa, betanın bitmesini beklemek ya da kuralların zaten çalıştığı amoCRM/Kommo'yu kullanmak daha doğru olur."
+            "text": "Yapıya (satış hunileri, aşamalar, alanlar), verilerde düzene, görevlere ve analitiğe ihtiyacın varsa şimdi bağla: çalışıyor ve kartsız 3 günlük deneme kendi portalında test etmek için yeterli. Ana ihtiyacın Bitrix24 içindeki otomasyonlarsa, şimdilik kuralların zaten çalıştığı amoCRM/Kommo'yu kullanmak daha doğru olur."
           }
         }
       ]

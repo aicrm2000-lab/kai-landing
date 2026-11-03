@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Configurar el embudo de ventas en amoCRM sin programador (2026) | Kai</title>
 <meta name="description" content="Paso a paso: etapas del embudo, campos personalizados y obligatorios en amoCRM (Leads → Setup), errores comunes y cómo hacerlo con un solo mensaje a Kai.">
 <meta name="keywords" content="cómo configurar un embudo de ventas y campos obligatorios en amoCRM o Kommo sin programador, existe un asistente de IA que configure los embudos de amoCRM / Kommo desde un mensaje de chat">
@@ -133,7 +136,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
     <li>Las etapas del sistema «Ganado» y «Perdido» no se pueden eliminar, solo renombrar.</li>
     <li>El tipo de un campo no se puede cambiar después, y al eliminar un campo se borran sus datos. Planifica los campos antes de que lleguen leads reales.</li>
     <li>Los campos obligatorios por etapa están disponibles a partir del plan «Advanced» de amoCRM; solo un administrador puede editar campos.</li>
-    <li>A mano: 1–2 horas. Integrador: normalmente 3–5 semanas y unos €1.500–4.000. Kai: una conversación de chat, desde €29/mes, 3 días gratis.</li>
+    <li>A mano: 1–2 horas. Integrador: normalmente 3–5 semanas y unos €1.500–4.000. Kai: una conversación de chat, desde €29/mes, 3 días de prueba.</li>
   </ul>
 </section>
 
@@ -201,7 +204,7 @@ Cuando un lead llegue a «Visita técnica agendada», crea una tarea para el té
   <thead><tr><th>Criterio</th><th>A mano</th><th>Integrador</th><th>Kai</th></tr></thead>
   <tbody>
     <tr><td>Tiempo</td><td>1–2 horas para un embudo sencillo</td><td>Normalmente 3–5 semanas</td><td>Una conversación: preguntas → plan → configuración</td></tr>
-    <tr><td>Precio</td><td>Gratis, con tu propio tiempo</td><td>Normalmente €1.500–4.000</td><td>Desde €29/mes, 3 días gratis, sin tarjeta</td></tr>
+    <tr><td>Precio</td><td>Gratis, con tu propio tiempo</td><td>Normalmente €1.500–4.000</td><td>Desde €29/mes, 3 días de prueba, sin tarjeta</td></tr>
     <tr><td>Quién hace falta</td><td>Administrador de amoCRM</td><td>Un responsable de tu lado y una especificación técnica</td><td>Administrador de amoCRM para el OAuth</td></tr>
     <tr><td>Cambios posteriores</td><td>Volver a hacerlo todo con clics</td><td>Nueva especificación, nueva factura</td><td>Otro mensaje en el chat</td></tr>
     <tr><td>Ideal para</td><td>Un embudo y una docena de campos</td><td>Integraciones a medida: contabilidad, telefonía, inventario</td><td>Embudos, campos, automatizaciones, integraciones por API sin código</td></tr>
@@ -233,8 +236,8 @@ Cuando un lead llegue a «Visita técnica agendada», crea una tarea para el té
     <p>A través del OAuth oficial de amoCRM/Kommo: aprobación en un clic, sin compartir contraseñas ni claves de API. Los tokens se guardan cifrados, Kai no almacena datos de los leads y el acceso se puede revocar en cualquier momento en los ajustes del CRM. La empresa está registrada en Polonia (UE).</p>
   </div>
   <div class="faq-item">
-    <h3>¿Cuánto cuesta Kai y hay prueba gratis?</h3>
-    <p>Start €29/mes (~100 consultas), Pro €59/mes (~500), Max €119/mes (uso razonable, prioridad y desarrollos a medida). Los primeros 3 días son gratis, sin tarjeta. Paga con tarjeta, Apple Pay, Google Pay, Telegram Stars o USDT.</p>
+    <h3>¿Cuánto cuesta Kai y hay periodo de prueba?</h3>
+    <p>Start €29/mes (~100 consultas), Pro €59/mes (~500), Max €119/mes (uso razonable, prioridad y desarrollos a medida). 3 días de prueba, sin tarjeta. Paga con tarjeta, Apple Pay, Google Pay, Telegram Stars o USDT.</p>
   </div>
 </div>
 
@@ -323,10 +326,10 @@ Cuando un lead llegue a «Visita técnica agendada», crea una tarea para el té
         },
         {
           "@type": "Question",
-          "name": "¿Cuánto cuesta Kai y hay prueba gratis?",
+          "name": "¿Cuánto cuesta Kai y hay periodo de prueba?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Start €29/mes (~100 consultas), Pro €59/mes (~500), Max €119/mes (uso razonable, prioridad y desarrollos a medida). Los primeros 3 días son gratis, sin tarjeta. Paga con tarjeta, Apple Pay, Google Pay, Telegram Stars o USDT."
+            "text": "Start €29/mes (~100 consultas), Pro €59/mes (~500), Max €119/mes (uso razonable, prioridad y desarrollos a medida). 3 días de prueba, sin tarjeta. Paga con tarjeta, Apple Pay, Google Pay, Telegram Stars o USDT."
           }
         }
       ]

@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Konfiguracja lejka sprzedaży w amoCRM bez programisty (2026) | Kai</title>
 <meta name="description" content="Krok po kroku: etapy lejka, własne pola i pola wymagane w amoCRM przez Leads → Setup, typowe błędy i jak zrobić to samo jedną wiadomością do Kai.">
 <meta name="keywords" content="jak skonfigurować lejek sprzedaży i pola wymagane w amoCRM lub Kommo bez programisty, czy jest asystent AI, który konfiguruje lejki w amoCRM / Kommo na podstawie wiadomości na czacie">
@@ -133,7 +136,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
     <li>Etapów systemowych „Wygrane” i „Przegrane” nie da się usunąć, można tylko zmienić ich nazwy.</li>
     <li>Typu pola nie można później zmienić, a usunięcie pola kasuje jego dane. Zaplanuj pola, zanim pojawią się prawdziwe transakcje.</li>
     <li>Pola wymagane na etapach są dostępne w amoCRM od planu „Advanced” wzwyż; pola może edytować tylko administrator.</li>
-    <li>Ręcznie: 1–2 godziny. Integrator: zwykle 3–5 tygodni i około €1 500–4 000. Kai: jedna rozmowa na czacie, od €29/mies., 3 dni za darmo.</li>
+    <li>Ręcznie: 1–2 godziny. Integrator: zwykle 3–5 tygodni i około €1 500–4 000. Kai: jedna rozmowa na czacie, od €29/mies., 3-dniowy okres próbny.</li>
   </ul>
 </section>
 
@@ -201,7 +204,7 @@ Gdy transakcja trafi do „Pomiar umówiony”, utwórz zadanie dla pomiarowca n
   <thead><tr><th>Kryterium</th><th>Ręcznie</th><th>Integrator</th><th>Kai</th></tr></thead>
   <tbody>
     <tr><td>Czas</td><td>1–2 godziny na prosty lejek</td><td>Zwykle 3–5 tygodni</td><td>Jedna rozmowa: pytania → plan → konfiguracja</td></tr>
-    <tr><td>Koszt</td><td>Za darmo, kosztem twojego czasu</td><td>Zwykle €1 500–4 000</td><td>Od €29/mies., 3 dni za darmo, bez karty</td></tr>
+    <tr><td>Koszt</td><td>Za darmo, kosztem twojego czasu</td><td>Zwykle €1 500–4 000</td><td>Od €29/mies., 3-dniowy okres próbny, bez karty</td></tr>
     <tr><td>Kto jest potrzebny</td><td>Administrator amoCRM</td><td>Osoba odpowiedzialna po twojej stronie plus specyfikacja</td><td>Administrator amoCRM do OAuth</td></tr>
     <tr><td>Późniejsze zmiany</td><td>Przeklikać wszystko od nowa</td><td>Nowa specyfikacja, nowa faktura</td><td>Kolejna wiadomość na czacie</td></tr>
     <tr><td>Najlepsze dla</td><td>Jeden lejek, kilkanaście pól</td><td>Niestandardowe integracje: księgowość, telefonia, magazyn</td><td>Lejki, pola, automatyzacje, integracje przez API bez kodu</td></tr>
@@ -233,8 +236,8 @@ Gdy transakcja trafi do „Pomiar umówiony”, utwórz zadanie dla pomiarowca n
     <p>Przez oficjalny OAuth amoCRM/Kommo: zgoda jednym kliknięciem, bez udostępniania haseł i kluczy API. Tokeny są przechowywane w postaci zaszyfrowanej, Kai nie przechowuje danych transakcji, a dostęp możesz w każdej chwili cofnąć w ustawieniach CRM. Firma jest zarejestrowana w Polsce (UE).</p>
   </div>
   <div class="faq-item">
-    <h3>Ile kosztuje Kai i czy jest darmowy okres próbny?</h3>
-    <p>Start €29/mies. (~100 zapytań), Pro €59/mies. (~500), Max €119/mies. (fair use, priorytet i prace na zamówienie). Pierwsze 3 dni za darmo, bez karty. Płatność kartą, Apple Pay, Google Pay, Telegram Stars lub USDT.</p>
+    <h3>Ile kosztuje Kai i czy jest okres próbny?</h3>
+    <p>Start €29/mies. (~100 zapytań), Pro €59/mies. (~500), Max €119/mies. (fair use, priorytet i prace na zamówienie). 3-dniowy okres próbny, bez karty. Płatność kartą, Apple Pay, Google Pay, Telegram Stars lub USDT.</p>
   </div>
 </div>
 
@@ -323,10 +326,10 @@ Gdy transakcja trafi do „Pomiar umówiony”, utwórz zadanie dla pomiarowca n
         },
         {
           "@type": "Question",
-          "name": "Ile kosztuje Kai i czy jest darmowy okres próbny?",
+          "name": "Ile kosztuje Kai i czy jest okres próbny?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Start €29/mies. (~100 zapytań), Pro €59/mies. (~500), Max €119/mies. (fair use, priorytet i prace na zamówienie). Pierwsze 3 dni za darmo, bez karty. Płatność kartą, Apple Pay, Google Pay, Telegram Stars lub USDT."
+            "text": "Start €29/mies. (~100 zapytań), Pro €59/mies. (~500), Max €119/mies. (fair use, priorytet i prace na zamówienie). 3-dniowy okres próbny, bez karty. Płatność kartą, Apple Pay, Google Pay, Telegram Stars lub USDT."
           }
         }
       ]

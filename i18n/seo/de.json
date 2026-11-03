@@ -30,7 +30,7 @@
   "description": "7 CRM-Automatisierungen, die sich lohnen: Aufgaben je Phase, Erinnerungen, hängende Deals, Team-Alerts, Wochenbericht. Jede mit einem Satz in Kai einschalten."
  },
  "guides/de/bitrix24-ai-assistant.html": {
-  "title": "Bitrix24 mit KI-Assistent: Einrichtung ohne Entwickler (Beta) | Kai",
+  "title": "Bitrix24 mit KI-Assistent: Einrichtung ohne Entwickler | Kai",
   "description": "Bitrix24 per eingehendem Webhook mit Kai verbinden: was der KI-Assistent einrichtet (Pipelines, Felder, Deals, Aufgaben) und wann ein Integrator nötig ist."
  },
  "guides/de/ai-agent-for-custom-crm.html": {

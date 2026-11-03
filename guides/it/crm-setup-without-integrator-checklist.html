@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Configurare un CRM senza integratore: checklist in 12 punti | Kai</title>
 <meta name="description" content="Checklist CRM in 12 punti: fasi, campi obbligatori, fonti, motivi di perdita, attività, duplicati, import, automazioni e quando serve l&#x27;integratore.">
 <meta name="keywords" content="configurare un CRM senza consulente">
@@ -199,11 +202,11 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <p>Presentati con una specifica: le fasi, i campi, le fonti, i motivi di perdita e le regole dei punti 1–9. Kai può produrla in PDF dal piano concordato, e ti risparmi i primi incontri.</p>
 
 <h2>Con Kai basta un messaggio</h2>
-<p>Kai è un assistente IA che configura amoCRM e Kommo (Bitrix24 in beta) da un messaggio in chat, nel bot Telegram <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> o nella <a href="https://app.aii-crm.com/chat?lang=en">chat web</a>, e si collega tramite OAuth 2.0 con un clic. I punti 1–9 richiedono una sola conversazione: domande di chiarimento con opzioni di risposta, un piano, poi tutto viene creato tramite l'API ufficiale e ricevi un report.</p>
+<p>Kai è un assistente IA che configura amoCRM, Kommo e Bitrix24 da un messaggio in chat, nel bot Telegram <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> o nella <a href="https://app.aii-crm.com/chat?lang=en">chat web</a>, e si collega tramite OAuth 2.0 con un clic. I punti 1–9 richiedono una sola conversazione: domande di chiarimento con opzioni di risposta, un piano, poi tutto viene creato tramite l'API ufficiale e ricevi un report.</p>
 <pre>Ho uno studio di mobili su misura, 3 commerciali, richieste dal sito e da Instagram. Configura amoCRM secondo la checklist: fasi per il processo, campi con le regole di obbligatorietà, fonti, motivi di perdita, un'attività su ogni trattativa aperta.</pre>
 <pre>Controlla la mia pipeline: quante trattative sono senza attività, senza fonte e senza responsabile, e suggerisci cosa sistemare per primo.</pre>
 <pre>Dal piano concordato prepara una specifica in PDF per l'integratore che farà il collegamento con la contabilità.</pre>
-<p>Limiti, onestamente. Kai segnala i buchi nel processo, ma come vendi resta una tua decisione. La disciplina di formazione e revisione (punti 10–11) non si può automatizzare. Le automazioni sugli eventi sono in Pro (€59/mese); Start a €29/mese copre struttura, campi, attività e import; i primi 3 giorni sono gratis, senza carta, con circa 25 richieste. In Bitrix24 robot e widget non vengono ancora configurati.</p>
+<p>Limiti, onestamente. Kai segnala i buchi nel processo, ma come vendi resta una tua decisione. La disciplina di formazione e revisione (punti 10–11) non si può automatizzare. Le automazioni sugli eventi sono in Pro (€59/mese); Start a €29/mese copre struttura, campi, attività e import; i primi 3 giorni sono di prova, senza carta, con circa 25 richieste. In Bitrix24 robot e widget non vengono ancora configurati.</p>
 
 <h2>FAQ</h2>
 <div class="faq">
@@ -221,7 +224,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   </div>
   <div class="faq-item">
     <h3>In cosa cambia la checklist per amoCRM, Kommo e Bitrix24?</h3>
-    <p>La logica è la stessa; cambiano interfaccia e piani: i campi obbligatori per fase non ci sono in tutti i piani di amoCRM ma ci sono in tutti quelli di Kommo, e le automazioni interne al CRM sono la Digital Pipeline o i robot di Bitrix24. Kai supporta pienamente amoCRM e Kommo; Bitrix24 è in beta, senza robot e widget.</p>
+    <p>La logica è la stessa; cambiano interfaccia e piani: i campi obbligatori per fase non ci sono in tutti i piani di amoCRM ma ci sono in tutti quelli di Kommo, e le automazioni interne al CRM sono la Digital Pipeline o i robot di Bitrix24. Kai supporta amoCRM, Kommo e Bitrix24; in Bitrix24 senza robot e widget.</p>
   </div>
 </div>
 
@@ -297,7 +300,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "In cosa cambia la checklist per amoCRM, Kommo e Bitrix24?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "La logica è la stessa; cambiano interfaccia e piani: i campi obbligatori per fase non ci sono in tutti i piani di amoCRM ma ci sono in tutti quelli di Kommo, e le automazioni interne al CRM sono la Digital Pipeline o i robot di Bitrix24. Kai supporta pienamente amoCRM e Kommo; Bitrix24 è in beta, senza robot e widget."
+            "text": "La logica è la stessa; cambiano interfaccia e piani: i campi obbligatori per fase non ci sono in tutti i piani di amoCRM ma ci sono in tutti quelli di Kommo, e le automazioni interne al CRM sono la Digital Pipeline o i robot di Bitrix24. Kai supporta amoCRM, Kommo e Bitrix24; in Bitrix24 senza robot e widget."
           }
         }
       ]

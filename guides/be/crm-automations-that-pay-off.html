@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>7 аўтаматызацый CRM, якія акупляюцца ў першы месяц | Kai</title>
 <meta name="description" content="7 аўтаматызацый CRM, якія акупляюцца: задачы па этапах, напаміны, завіслыя здзелкі, апавяшчэнні, зводкі па варонцы. Як уключыць кожную адной фразай у Kai.">
 <meta name="keywords" content="якія аўтаматызацыі наладзіць у CRM, аўтаматызацыя CRM, аўтазадачы amoCRM, аўтаматызацыя Kommo, аўтаматызацыя аддзела продажаў, правілы ў CRM, Digital Pipeline, робаты ў CRM, напамін кліенту з CRM, апавяшчэнні пра лід у Telegram, вэбхук з CRM, CRM для малога бізнесу">
@@ -182,7 +185,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 
 <h2>Дзе жывуць правілы: у CRM або ў Kai</h2>
 <p>Digital Pipeline і робаты жывуць унутры CRM: наладжваюцца ў яе інтэрфейсе і працуюць, пакуль аплачана сама CRM, але патрабуюць тарыфу з аўтаматызацыямі і часу на клікі. Правілы Kai жывуць на яго баку: ён слухае падзеі CRM па вэбхуку і выконвае дзеянне праз API, таму яны ўключаюцца і змяняюцца адной фразай, але не з'яўляюцца ў Digital Pipeline і працуюць, пакуль актыўная падпіска. Усё, што яны стварылі ў CRM, застаецца назаўсёды.</p>
-<div class="note warn">Для Bitrix24 Kai пакуль у бэце: робатаў унутры Bitrix24 ён не стварае, ёсць толькі апавяшчэнні пра галоўныя падзеі праз выходны вэбхук. Калі аўтаматызацыі ўнутры Bitrix24 — тое, што табе патрэбна найперш, наладзь робатаў уручную або з інтэгратарам.</div>
+<div class="note warn">У Bitrix24 Kai пакуль не стварае робатаў — ёсць толькі апавяшчэнні пра галоўныя падзеі праз выходны вэбхук. Калі аўтаматызацыі ўнутры Bitrix24 — тое, што табе патрэбна найперш, наладзь робатаў уручную або з інтэгратарам.</div>
 
 <h2>З Kai гэта адно паведамленне</h2>
 <p>Kai — AI-асістэнт, які наладжвае amoCRM і Kommo па паведамленні ў чаце: у Telegram-боце <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> або ў <a href="https://app.aii-crm.com/chat?lang=en">вэб-чаце</a>; CRM падключаецца па OAuth 2.0 у адзін клік. Кожная фраза вышэй — гатовае правіла, і некалькі правіл можна ўключыць адным паведамленнем:</p>

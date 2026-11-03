@@ -4,7 +4,10 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bitrix24 et assistant IA : configurer sans développeur (bêta) | Kai</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Bitrix24 et assistant IA : configurer sans développeur | Kai</title>
 <meta name="description" content="Connecter Bitrix24 à Kai par webhook entrant : ce que l’assistant IA configure (pipelines, champs, transactions, tâches) et quand un intégrateur reste utile.">
 <meta name="keywords" content="Configurer Bitrix24 avec un assistant IA">
 <meta name="robots" content="index, follow">
@@ -29,14 +32,14 @@
 <meta property="og:locale:alternate" content="ru_RU">
 <meta property="og:site_name" content="Kai">
 <meta property="og:url" content="https://aii-crm.com/guides/fr/bitrix24-ai-assistant.html">
-<meta property="og:title" content="Bitrix24 avec un assistant IA : ce que vous pouvez configurer sans développeur (bêta)">
-<meta property="og:description" content="La limite honnête de la bêta : structure, données, tâches et analytique, oui ; robots et widgets dans Bitrix24, pas encore. Connexion, exemples de messages, quand faire appel à un intégrateur.">
+<meta property="og:title" content="Bitrix24 avec un assistant IA : ce que vous pouvez configurer sans développeur">
+<meta property="og:description" content="La limite honnête : structure, données, tâches et analytique, oui ; robots et widgets dans Bitrix24, pas encore. Connexion, exemples de messages, quand faire appel à un intégrateur.">
 <meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
 <meta property="article:published_time" content="2026-10-26">
 <meta property="article:modified_time" content="2026-10-26">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bitrix24 avec un assistant IA : ce que vous pouvez configurer sans développeur (bêta)">
-<meta name="twitter:description" content="La limite honnête de la bêta : structure, données, tâches et analytique, oui ; robots et widgets dans Bitrix24, pas encore. Connexion, exemples de messages, quand faire appel à un intégrateur.">
+<meta name="twitter:title" content="Bitrix24 avec un assistant IA : ce que vous pouvez configurer sans développeur">
+<meta name="twitter:description" content="La limite honnête : structure, données, tâches et analytique, oui ; robots et widgets dans Bitrix24, pas encore. Connexion, exemples de messages, quand faire appel à un intégrateur.">
 <meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,7 +127,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <h1>Bitrix24 avec un assistant IA : ce que vous pouvez configurer sans développeur</h1>
 <p class="meta">Mis à jour le 26 octobre 2026 · Équipe Kai · 6 min de lecture</p>
 
-<p class="lead">Un assistant IA pour Bitrix24, c’est un chat dans lequel vous décrivez votre processus de vente avec vos propres mots, et qui crée pipelines, étapes, champs, transactions et tâches dans votre portail via l’API REST officielle. Pour Bitrix24, c’est encore une bêta : la structure, les données, les tâches et l’analytique fonctionnent ; les robots et les widgets, pas encore. Ce guide trace honnêtement la frontière : ce que vous pouvez confier dès aujourd’hui à un assistant comme Kai, ce qu’il vaut mieux faire à la main dans Bitrix24 et là où un intégrateur reste nécessaire.</p>
+<p class="lead">Un assistant IA pour Bitrix24, c’est un chat dans lequel vous décrivez votre processus de vente avec vos propres mots, et qui crée pipelines, étapes, champs, transactions et tâches dans votre portail via l’API REST officielle. Dans Bitrix24, la structure, les données, les tâches et l’analytique fonctionnent ; les robots et les widgets ne sont pas encore créés. Ce guide trace honnêtement la frontière : ce que vous pouvez confier dès aujourd’hui à un assistant comme Kai, ce qu’il vaut mieux faire à la main dans Bitrix24 et là où un intégrateur reste nécessaire.</p>
 
 <section class="tldr" aria-label="En bref">
   <h2>En bref</h2>
@@ -133,12 +136,12 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
     <li>Ce qui fonctionne : pipelines et étapes, champs, transactions, contacts, entreprises, tâches avec échéance, analytique du pipeline, cahier des charges en PDF.</li>
     <li>Pas encore : les robots et autres automatisations internes à Bitrix24, les widgets dans la fiche de transaction.</li>
     <li>Les notifications sur les principaux événements arrivent dans le chat Kai via le webhook sortant de Bitrix24.</li>
-    <li>Si les robots sont votre besoin principal, mieux vaut attendre la fin de la bêta ou utiliser amoCRM/Kommo, où tout fonctionne.</li>
+    <li>Si les robots sont votre besoin principal, mieux vaut pour l’instant utiliser amoCRM/Kommo, où les règles fonctionnent déjà.</li>
   </ul>
 </section>
 
-<h2>Ce que signifie « bêta » et pourquoi c’est important pour Bitrix24</h2>
-<p>Bitrix24 est plus qu’un CRM : on y trouve aussi des tâches, un drive, des chats, des processus d’entreprise et des sites web. L’assistant ne travaille qu’avec la partie CRM et les tâches. « Bêta » signifie que le scénario principal fonctionne (décrire le processus → obtenir un pipeline avec champs, transactions et tâches), mais qu’une partie de ce que Kai fait pour amoCRM et Kommo n’est pas encore portée, avant tout les automatisations internes à Bitrix24. Si vous avez besoin de structure et d’ordre dans vos données, connectez-vous dès maintenant ; si vous avez besoin de robots, lisez d’abord la section sur les limites.</p>
+<h2>Ce que Kai fait dans Bitrix24, et ce qu’il ne fait pas encore</h2>
+<p>Bitrix24 est plus qu’un CRM : on y trouve aussi des tâches, un drive, des chats, des processus d’entreprise et des sites web. L’assistant ne travaille qu’avec la partie CRM et les tâches. Le scénario principal fonctionne (décrire le processus → obtenir un pipeline avec champs, transactions et tâches), mais une partie de ce que Kai fait pour amoCRM et Kommo n’est pas encore développée pour Bitrix24, avant tout les automatisations internes à Bitrix24. Si vous avez besoin de structure et d’ordre dans vos données, connectez-vous dès maintenant ; si vous avez besoin de robots, lisez d’abord la section sur les limites.</p>
 
 <h2>Connexion en 5 minutes : le webhook entrant</h2>
 <p>Avec amoCRM et Kommo, Kai se connecte via OAuth 2.0 en un clic, sans échange de mots de passe ni de clés. Bitrix24 utilise un webhook entrant pour les services externes non publiés sur son Market. Les étapes :</p>
@@ -179,7 +182,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 
 <h2>Quand un intégrateur reste nécessaire</h2>
 <ul>
-  <li>Vous avez besoin de robots et de processus d’entreprise ; pour l’instant, c’est la limite de la bêta.</li>
+  <li>Vous avez besoin de robots et de processus d’entreprise ; Kai ne les crée pas encore dans Bitrix24.</li>
   <li>Des liaisons avec un logiciel comptable, la téléphonie, un entrepôt ou un site web à la logique non standard.</li>
   <li>Une migration depuis un autre CRM avec l’historique des échanges, les tâches et les fichiers.</li>
   <li>Plusieurs services aux processus différents, avec des droits d’accès à séparer par rôle.</li>
@@ -191,7 +194,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <pre>Configure dans Bitrix24 un pipeline pour la vente d’équipements en B2B : Nouvelle demande → Qualifiée → Devis envoyé → Négociation → Contrat → Payé. Champs de la transaction : Source (liste), Budget (montant), Date du devis (date). Pour chaque transaction ouverte sans tâche, crée une tâche « prochaine étape » pour demain.</pre>
 <pre>Montre combien de transactions se trouvent à chaque étape et où elles sont bloquées depuis plus de deux semaines.</pre>
 <pre>Prépare un cahier des charges en PDF pour l’intégrateur : quels robots sont nécessaires aux étapes « Devis envoyé » et « Contrat », et ce qu’ils doivent faire.</pre>
-<p>Les forfaits sont les mêmes que pour amoCRM et Kommo : Start à €29/mois pour un CRM ; Pro à €59/mois, jusqu’à trois CRM, rôles et intégrations ; Max à €119/mois, jusqu’à dix CRM, priorité et développements sur mesure. Les 3 premiers jours sont gratuits, sans carte, avec environ 25 requêtes sur les fonctions Start : de quoi tester sur votre propre portail. Kai parle anglais et russe.</p>
+<p>Les forfaits sont les mêmes que pour amoCRM et Kommo : Start à €29/mois pour un CRM ; Pro à €59/mois, jusqu’à trois CRM, rôles et intégrations ; Max à €119/mois, jusqu’à dix CRM, priorité et développements sur mesure. Les 3 premiers jours sont une période d’essai, sans carte, avec environ 25 requêtes sur les fonctions Start : de quoi tester sur votre propre portail. Kai parle anglais et russe.</p>
 
 <h2>FAQ</h2>
 <div class="faq">
@@ -201,7 +204,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   </div>
   <div class="faq-item">
     <h3>Kai peut-il configurer des robots dans Bitrix24 ?</h3>
-    <p>Pas encore. Les robots, les autres automatisations et les widgets internes à Bitrix24 ne sont pas créés ; c’est la principale limite de la bêta. Kai configure la structure, les données et les tâches et produit un cahier des charges en PDF ; vous construisez les robots dans le concepteur de Bitrix24, vous-même ou avec un intégrateur.</p>
+    <p>Pas encore. Les robots, les autres automatisations et les widgets internes à Bitrix24 ne sont pas créés ; c’est la principale limite pour Bitrix24. Kai configure la structure, les données et les tâches et produit un cahier des charges en PDF ; vous construisez les robots dans le concepteur de Bitrix24, vous-même ou avec un intégrateur.</p>
   </div>
   <div class="faq-item">
     <h3>Recevrai-je des notifications sur les événements de Bitrix24 ?</h3>
@@ -209,7 +212,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   </div>
   <div class="faq-item">
     <h3>Faut-il connecter Bitrix24 à Kai maintenant ou attendre ?</h3>
-    <p>Si vous avez besoin de structure (pipelines, étapes, champs), d’ordre dans vos données, de tâches et d’analytique, connectez-le maintenant : cela fonctionne, et 3 jours gratuits sans carte suffisent pour tester sur votre portail. Si les automatisations internes à Bitrix24 sont votre besoin principal, mieux vaut attendre la fin de la bêta ou utiliser amoCRM/Kommo, où les règles fonctionnent déjà.</p>
+    <p>Si vous avez besoin de structure (pipelines, étapes, champs), d’ordre dans vos données, de tâches et d’analytique, connectez-le maintenant : cela fonctionne, et un essai de 3 jours sans carte suffit pour tester sur votre portail. Si les automatisations internes à Bitrix24 sont votre besoin principal, mieux vaut pour l’instant utiliser amoCRM/Kommo, où les règles fonctionnent déjà.</p>
   </div>
 </div>
 
@@ -220,7 +223,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Ouvrir le chat web</a>
 </div>
 
-<p class="author">Auteur : Équipe Kai · Mis à jour le <time datetime="2026-10-26">26 octobre 2026</time> · Les fonctions et les limites de la bêta sont décrites à la date de publication ; Kai indique le statut actuel dans le chat.</p>
+<p class="author">Auteur : Équipe Kai · Mis à jour le <time datetime="2026-10-26">26 octobre 2026</time> · Les fonctions et les limites sont décrites à la date de publication ; Kai indique le statut actuel dans le chat.</p>
 </article>
 </main>
 
@@ -269,7 +272,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Kai peut-il configurer des robots dans Bitrix24 ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Pas encore. Les robots, les autres automatisations et les widgets internes à Bitrix24 ne sont pas créés ; c’est la principale limite de la bêta. Kai configure la structure, les données et les tâches et produit un cahier des charges en PDF ; vous construisez les robots dans le concepteur de Bitrix24, vous-même ou avec un intégrateur."
+            "text": "Pas encore. Les robots, les autres automatisations et les widgets internes à Bitrix24 ne sont pas créés ; c’est la principale limite pour Bitrix24. Kai configure la structure, les données et les tâches et produit un cahier des charges en PDF ; vous construisez les robots dans le concepteur de Bitrix24, vous-même ou avec un intégrateur."
           }
         },
         {
@@ -285,7 +288,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Faut-il connecter Bitrix24 à Kai maintenant ou attendre ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Si vous avez besoin de structure (pipelines, étapes, champs), d’ordre dans vos données, de tâches et d’analytique, connectez-le maintenant : cela fonctionne, et 3 jours gratuits sans carte suffisent pour tester sur votre portail. Si les automatisations internes à Bitrix24 sont votre besoin principal, mieux vaut attendre la fin de la bêta ou utiliser amoCRM/Kommo, où les règles fonctionnent déjà."
+            "text": "Si vous avez besoin de structure (pipelines, étapes, champs), d’ordre dans vos données, de tâches et d’analytique, connectez-le maintenant : cela fonctionne, et un essai de 3 jours sans carte suffit pour tester sur votre portail. Si les automatisations internes à Bitrix24 sont votre besoin principal, mieux vaut pour l’instant utiliser amoCRM/Kommo, où les règles fonctionnent déjà."
           }
         }
       ]

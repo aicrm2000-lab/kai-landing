@@ -72,7 +72,7 @@
     "Works in your browser and Telegram — no install, no assembly required": "Працуе ў браўзеры і Telegram — без усталёўкі, падарунак без зборкі",
     "Set up your <span class='a'>CRM</span><br>without developers": "Наладка <span class='a'>CRM</span><br>без праграмістаў",
     "Kai is an AI assistant that sets up your CRM from a&nbsp;plain-language message in Telegram or right in your&nbsp;browser. It asks the right questions, builds a&nbsp;plan for your business and configures the CRM automatically.": "Kai — AI-асістэнт, які наладжвае тваю CRM па&nbsp;паведамленні ў звычайным чаце: у Telegram або проста ў&nbsp;браўзеры. Задае правільныя пытанні, будуе план пад&nbsp;твой бізнес і наладжвае CRM аўтаматычна.",
-    "Try for free": "Спрабуй бясплатна",
+    "Start your trial": "Пачні пробны перыяд",
     "Try in browser": "Спрабуй у браўзеры",
     "You need an account in your CRM — most systems offer a free trial. Supported CRMs are listed <a href='#crm'>below</a>.": "Патрэбны акаўнт у тваёй CRM — у большасці сістэм ёсць бясплатны пробны перыяд. Якія CRM падтрымліваюцца — <a href='#crm'>ніжэй</a>.",
     "Close": "Закрыць",
@@ -86,8 +86,8 @@
     "Connect your CRM in 1 click before dark — OAuth, no keys": "Падключы CRM за 1 клік, пакуль не сцямнела — OAuth без ключоў",
     "Connect your CRM in 1 click while everyone’s on holiday — OAuth, no keys": "Падключы CRM за 1 клік, пакуль усе на вакацыях — OAuth без ключоў",
     "We integrate with": "Працуем з",
-    "Bitrix24 — beta: connect it with a webhook in the bot": "Bitrix24 — бэта: падключэнне па вэбхуку ў боце",
-    "Beta": "Бэта",
+    "Bitrix24: connect it with a webhook in the bot": "Bitrix24: падключэнне па вэбхуку ў боце",
+    "via webhook": "па вэбхуку",
     "Your own CRM: custom, in-house or any other with a REST API — via a connector spec": "Свая CRM: самапісная, кастамная або любая з REST API — па спецыфікацыі канектара",
     "Your own CRM": "Свая CRM",
     "via API": "па API",
@@ -468,17 +468,17 @@
     "Your time": "Твой час",
     "Project from hundreds of euros, changes billed separately": "Праект ад сотняў еўра, праўкі асобна",
     "Included in the CRM plan": "У падпісцы CRM",
-    "From €29/mo (automations from €59), 3 days free": "Ад €29/мес (аўтаматызацыі — ад €59), 3 дні бясплатна",
+    "From €29/mo (automations from €59), 3-day trial": "Ад €29/мес (аўтаматызацыі — ад €59), 3 дні пробнага перыяду",
     "Integrator and built-in assistant timings and prices are typical benchmarks, not promises — check with a specific vendor.": "Тэрміны і цэны інтэгратараў і ўбудаваных памочнікаў — тыповыя арыенціры, а не абяцанні; удакладняй у канкрэтнага падрадчыка.",
     "Pick the plan for your stage": "Выберы план пад свой этап",
     "Pick a plan: no tricks, only treats": "Выберы план: без гадасцяў, толькі прысмакі",
     "Pick a plan — a gift to your future self": "Выберы план — падарунак сабе на год наперад",
-    "First 3 days free — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).": "Першыя 3 дні — бясплатна, адлік ідзе з падключэння CRM. Аплата карткай, Telegram Stars або крыптай (USDT).",
+    "3-day trial — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).": "Першыя 3 дні — пробны перыяд, адлік ідзе з падключэння CRM. Аплата карткай, Telegram Stars або крыптай (USDT).",
     "/mo": "/мес",
     "Set up your CRM by talking": "Наладка CRM размовай",
-    "3 days free": "3 дні бясплатна",
-    "3 days free, no sacrifices": "3 дні бясплатна, без ахвярапрынашэнняў",
-    "3 days free — our gift": "3 дні бясплатна — наш падарунак",
+    "3-day trial": "3 дні пробнага перыяду",
+    "3-day trial, no sacrifices": "3 дні пробнага перыяду, без ахвярапрынашэнняў",
+    "3-day trial — our gift": "3 дні пробнага перыяду — наш падарунак",
     "Consultation & spec (PDF)": "Кансультацыя і ТЗ у PDF",
     "Pipelines, stages, custom fields": "Варонкі, этапы, кастамныя палі",
     "Leads, contacts, companies": "Здзелкі, кантакты, кампаніі",
@@ -542,7 +542,7 @@
     "What is a 'request'?": "Што такое «запыт»?",
     "One message to the bot — 'create pipeline', 'add field', 'import contacts'.": "Адзін зварот да бота — «ствары варонку», «дадай поле», «імпартуй базу».",
     "What if it's not for me?": "А калі не падыдзе?",
-    "First 3 days free, no card; the clock starts when you connect the CRM. The trial includes ~25 requests and Start-plan features. Try risk-free.": "Першыя 3 дні — бясплатна, без карткі; адлік — з падключэння CRM. У пробным перыядзе ~25 запытаў і магчымасці тарыфу Start. Спрабуй без рызыкі.",
+    "3-day trial, no card; the clock starts when you connect the CRM. The trial includes ~25 requests and Start-plan features. Try risk-free.": "Першыя 3 дні — пробны перыяд, без карткі; адлік — з падключэння CRM. У пробным перыядзе ~25 запытаў і магчымасці тарыфу Start. Спрабуй без рызыкі.",
     "Who makes Kai and where is my data?": "Хто робіць Kai і дзе мае даныя?",
     "Kai is built by a small team from Poland (EU). CRM access is OAuth 2.0 only: we never see passwords, tokens are encrypted at rest. AI providers (OpenAI, Anthropic) receive only the text of your request — never tokens or your database. You can revoke access in the CRM settings anytime; /disconnect unlinks the CRM, and full data deletion is done on request via @aiicrm_support_bot. Details are in the privacy policy at the bottom of the page.": "Kai робіць невялікая каманда з Польшчы (ЕС). Доступ да CRM — толькі OAuth 2.0: пароляў не бачым, токены шыфруюцца пры захоўванні. ШІ-правайдары (OpenAI, Anthropic) атрымліваюць толькі тэкст запыту — без токенаў і базы. Доступ адклікаецца ў наладах CRM у любы момант; /disconnect адвязвае CRM, поўнае выдаленне даных — па запыце ў @aiicrm_support_bot. Падрабязнасці — у палітыцы прыватнасці ўнізе старонкі.",
     "Need a contract or a company invoice?": "Патрэбны дагавор або рахунак на кампанію?",
@@ -550,7 +550,7 @@
     "Where do Kai's automations run?": "Дзе працуюць аўтаматызацыі Kai?",
     "Rules («deal moved — task», «no reply — notify me») live on Kai's side: it listens to CRM events via a webhook and performs the action through the CRM API. They don't appear in the CRM's own Digital Pipeline and run while your subscription is active. Everything already created in the CRM — pipelines, fields, tasks, contacts — stays forever.": "Правілы («здзелка перайшла — задача», «няма адказу — паведамі мне») жывуць на баку Kai: ён слухае падзеі CRM па вэбхуку і выконвае дзеянне праз яе API. У Digital Pipeline самой CRM яны не з'яўляюцца і працуюць, пакуль актыўная падпіска. Усё, што ўжо створана ў CRM — варонкі, палі, задачы, кантакты — застаецца назаўсёды.",
     "What does Kai do in Bitrix24?": "Што Kai умее ў Bitrix24?",
-    "Beta: pipelines and stages, fields, deals, contacts, companies, tasks, analytics and specs. In-Bitrix24 automations (robots) and widgets are not there yet — if those are your main need, it's fairer to wait or use amoCRM/Kommo, where everything works.": "Бэта: варонкі і этапы, палі, здзелкі, кантакты, кампаніі, задачы, аналітыка і ТЗ. Аўтаматызацый унутры Bitrix24 (робатаў) і віджэтаў пакуль няма — калі яны для цябе галоўнае, шчырэй пачакаць або застацца на amoCRM/Kommo, дзе ўсё працуе.",
+    "Pipelines and stages, fields, deals, contacts, companies, tasks, analytics and specs. In-Bitrix24 automations (robots) and widgets are not there yet — if those are your main need, it's fairer to use amoCRM/Kommo, where the rules already work.": "Варонкі і этапы, палі, здзелкі, кантакты, кампаніі, задачы, аналітыка і ТЗ. Аўтаматызацый унутры Bitrix24 (робатаў) і віджэтаў пакуль няма — калі яны для цябе галоўнае, шчырэй застацца на amoCRM/Kommo, дзе правілы ўжо працуюць.",
     "Does Kai work with a custom or in-house CRM?": "Kai працуе з самапіснай або кастамнай CRM?",
     "Yes, via its API. Your own CRM — custom, in-house or any other with a REST API — connects through a connector spec: the API address, the auth method (OAuth 2.0, API key, bearer or basic) and which endpoints do what. Kai drafts the spec from your docs or asks step by step, then works with it like with amoCRM: pipelines, deals, contacts, tasks, automations. Only the pipelines list is mandatory. Try it first on Kai Sandbox CRM. Connecting is on the Max plan; discussing and drafting the spec is free.": "Так, па API. Свая CRM — самапісная, кастамная або любая з REST API — падключаецца па спецыфікацыі канектара: адрас API, аўтарызацыя (OAuth 2.0, API-ключ, bearer або basic) і якія эндпойнты за што адказваюць. Kai збярэ чарнавік па тваёй дакументацыі або спытае ўсё па кроках, а далей працуе з ёй як з amoCRM: варонкі, здзелкі, кантакты, задачы, аўтаматызацыі. Абавязковы толькі спіс варонак. Паглядзець загадзя можна на пясочніцы Kai Sandbox CRM. Падключэнне — на тарыфе Max, абмеркаваць і скласці спецыфікацыю можна бясплатна.",
     "Connect your CRM in 1 click": "Падключы CRM за 1 клік",
@@ -585,11 +585,12 @@
     "I can set up your CRM in minutes — tell me what you do?": "Наладжу CRM за пару хвілін — раскажаш, чым займаешся?",
     "Boo! I can set up your CRM in minutes — tell me what you do?": "Бу! Наладжу CRM за пару хвілін — раскажаш, чым займаешся?",
     "Happy holidays! I can set up your CRM in minutes — tell me what you do?": "Са святамі! Наладжу CRM за пару хвілін — раскажаш, чым займаешся?",
-    "Close chat": "Закрыць чат"
+    "Close chat": "Закрыць чат",
+    "Language": "Мова"
   },
   "meta": {
     "title": "AI-асістэнт, які наладжвае amoCRM, Kommo, Bitrix24 і кастамныя CRM | Kai",
-    "description": "Kai наладжвае тваю CRM па звычайным паведамленні ў Telegram або ў браўзеры — amoCRM, Kommo, Bitrix24 або твая ўласная CRM праз яе API: варонкі, палі, задачы, аўтаматызацыі, аналітыка. 65 дзеянняў. 3 дні бясплатна, без карткі.",
+    "description": "Kai наладжвае тваю CRM па звычайным паведамленні ў Telegram або ў браўзеры — amoCRM, Kommo, Bitrix24 або твая ўласная CRM праз яе API: варонкі, палі, задачы, аўтаматызацыі, аналітыка. 65 дзеянняў. 3 дні пробнага перыяду, без карткі.",
     "og_title": "Kai — AI-асістэнт, які наладжвае тваю CRM",
     "og_description": "AI-асістэнт, які наладжвае тваю CRM па паведамленні ў чаце — у Telegram або ў браўзеры.",
     "keywords": "amoCRM, Kommo, Bitrix24, наладка CRM, наладзіць CRM, налады CRM, укараненне CRM, ШІ-асістэнт для amoCRM, ШІ-асістэнт для Kommo, ШІ-асістэнт для Bitrix24, ШІ-агент для CRM, штучны інтэлект для CRM, аўтаматызацыя CRM, CRM-бот у Telegram, варонка продажаў, варонкі продажаў, amoCRM API, Kommo API, CRM без праграміста, CRM без інтэгратара, свая CRM, самапісная CRM, кастамная CRM, падключыць ШІ да сваёй CRM па API, ШІ-агент для ўласнай CRM, інтэграцыя ШІ з CRM праз REST API, AI assistant, CRM setup, custom CRM, AI agent for custom CRM"
@@ -617,7 +618,7 @@
       ],
       [
         "Колькі каштуе Kai?",
-        "Тры тарыфы: Start — €29/мес (1 CRM), Pro — €59/мес (3 CRM), Max — €119/мес (10 CRM). Першыя 3 дні бясплатна."
+        "Тры тарыфы: Start — €29/мес (1 CRM), Pro — €59/мес (3 CRM), Max — €119/мес (10 CRM). Першыя 3 дні — пробны перыяд."
       ],
       [
         "Kai працуе з Kommo?",
@@ -625,15 +626,15 @@
       ],
       [
         "Kai працуе з Bitrix24?",
-        "Так, у бэце: Bitrix24 падключаецца праз уваходны вэбхук, Kai наладжвае варонкі, этапы, палі, здзелкі, кантакты і задачы і вядзе аналітыку. Аўтаматызацыі ўнутры Bitrix24 і віджэты пакуль недаступныя. amoCRM і Kommo падтрымліваюцца поўнасцю."
+        "Так: Bitrix24 падключаецца праз уваходны вэбхук, Kai наладжвае варонкі, этапы, палі, здзелкі, кантакты і задачы і вядзе аналітыку. Аўтаматызацыі ўнутры Bitrix24 і віджэты пакуль недаступныя. amoCRM і Kommo падтрымліваюцца поўнасцю."
       ],
       [
         "Kai працуе з кастамнай або самапіснай CRM?",
         "Так, па API. Свая CRM — самапісная, кастамная або любая з REST API — падключаецца па спецыфікацыі канектара: адрас API, аўтарызацыя (OAuth 2.0, API-ключ, bearer або basic) і якія эндпойнты за што адказваюць. Kai збярэ чарнавік па тваёй дакументацыі або спытае ўсё па кроках, а далей працуе з ёй як з amoCRM: варонкі, здзелкі, кантакты, задачы, аўтаматызацыі. Абавязковы толькі спіс варонак. Паглядзець загадзя можна на пясочніцы Kai Sandbox CRM. Падключэнне — на тарыфе Max, абмеркаваць і скласці спецыфікацыю можна бясплатна."
       ],
       [
-        "Можна паспрабаваць бясплатна?",
-        "Так: 3 дні бясплатна, без карткі, адлік — з падключэння CRM. У пробны перыяд уваходзяць ~25 запытаў і магчымасці тарыфу Start."
+        "Ці ёсць пробны перыяд?",
+        "Так: 3 дні пробнага перыяду без карткі, адлік — з падключэння CRM. За гэты час даступныя ~25 запытаў і магчымасці тарыфу Start."
       ]
     ]
   },

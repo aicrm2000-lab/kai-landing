@@ -72,7 +72,7 @@
     "Works in your browser and Telegram — no install, no assembly required": "Tarayıcıda ve Telegram'da çalışır — kurulum yok, montaj gerekmez",
     "Set up your <span class='a'>CRM</span><br>without developers": "<span class='a'>CRM</span> kurulumu<br>yazılımcısız",
     "Kai is an AI assistant that sets up your CRM from a&nbsp;plain-language message in Telegram or right in your&nbsp;browser. It asks the right questions, builds a&nbsp;plan for your business and configures the CRM automatically.": "Kai, CRM'ini Telegram'da ya da doğrudan tarayıcında yazdığın sade bir&nbsp;mesajla kuran yapay zeka asistanı. Doğru soruları sorar, işine uygun bir&nbsp;plan çıkarır ve CRM'i otomatik olarak yapılandırır.",
-    "Try for free": "Ücretsiz dene",
+    "Start your trial": "Denemeyi başlat",
     "Try in browser": "Tarayıcıda dene",
     "You need an account in your CRM — most systems offer a free trial. Supported CRMs are listed <a href='#crm'>below</a>.": "CRM'inde bir hesabın olması gerekir — çoğu sistem ücretsiz deneme sunar. Desteklenen CRM'ler <a href='#crm'>aşağıda</a>.",
     "Close": "Kapat",
@@ -86,8 +86,8 @@
     "Connect your CRM in 1 click before dark — OAuth, no keys": "CRM'ini hava kararmadan 1 tıkla bağla — OAuth, anahtar yok",
     "Connect your CRM in 1 click while everyone’s on holiday — OAuth, no keys": "Herkes tatildeyken CRM'ini 1 tıkla bağla — OAuth, anahtar yok",
     "We integrate with": "Desteklenen CRM'ler",
-    "Bitrix24 — beta: connect it with a webhook in the bot": "Bitrix24 — beta: bottaki webhook ile bağla",
-    "Beta": "Beta",
+    "Bitrix24: connect it with a webhook in the bot": "Bitrix24: bottaki webhook ile bağla",
+    "via webhook": "webhook ile",
     "Your own CRM: custom, in-house or any other with a REST API — via a connector spec": "Kendi CRM'in: özel, şirket içi ya da REST API'si olan herhangi biri — bağlayıcı spesifikasyonu ile",
     "Your own CRM": "Kendi CRM'in",
     "via API": "API ile",
@@ -468,17 +468,17 @@
     "Your time": "Zamanın",
     "Project from hundreds of euros, changes billed separately": "Yüzlerce eurodan başlayan proje, değişiklikler ayrıca faturalanır",
     "Included in the CRM plan": "CRM planına dahil",
-    "From €29/mo (automations from €59), 3 days free": "€29/ay'dan itibaren (otomasyonlar €59'dan), 3 gün ücretsiz",
+    "From €29/mo (automations from €59), 3-day trial": "€29/ay'dan itibaren (otomasyonlar €59'dan), 3 günlük deneme",
     "Integrator and built-in assistant timings and prices are typical benchmarks, not promises — check with a specific vendor.": "Entegratör ve yerleşik asistan süreleri ile fiyatları tipik ortalamalardır, söz değil — belirli bir tedarikçiyle teyit et.",
     "Pick the plan for your stage": "Aşamana uygun planı seç",
     "Pick a plan: no tricks, only treats": "Bir plan seç: şaka yok, sadece şeker",
     "Pick a plan — a gift to your future self": "Bir plan seç — gelecekteki kendine hediye",
-    "First 3 days free — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).": "İlk 3 gün ücretsiz — süre CRM'ini bağladığında başlar. Kart, Telegram Stars ya da kripto (USDT) ile öde.",
+    "3-day trial — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).": "3 günlük deneme — süre CRM'ini bağladığında başlar. Kart, Telegram Stars ya da kripto (USDT) ile öde.",
     "/mo": "/ay",
     "Set up your CRM by talking": "CRM'ini konuşarak kur",
-    "3 days free": "3 gün ücretsiz",
-    "3 days free, no sacrifices": "3 gün ücretsiz, kurban yok",
-    "3 days free — our gift": "3 gün ücretsiz — hediyemiz",
+    "3-day trial": "3 günlük deneme",
+    "3-day trial, no sacrifices": "3 günlük deneme, kurban yok",
+    "3-day trial — our gift": "3 günlük deneme — hediyemiz",
     "Consultation & spec (PDF)": "Danışmanlık & şartname (PDF)",
     "Pipelines, stages, custom fields": "Huniler, aşamalar, özel alanlar",
     "Leads, contacts, companies": "Lead'ler, kişiler, şirketler",
@@ -542,7 +542,7 @@
     "What is a 'request'?": "'İstek' nedir?",
     "One message to the bot — 'create pipeline', 'add field', 'import contacts'.": "Bota gönderilen tek bir mesaj — 'huni oluştur', 'alan ekle', 'kişileri içe aktar'.",
     "What if it's not for me?": "Bana uygun değilse?",
-    "First 3 days free, no card; the clock starts when you connect the CRM. The trial includes ~25 requests and Start-plan features. Try risk-free.": "İlk 3 gün ücretsiz, kart yok; süre CRM'i bağladığında başlar. Deneme ~25 istek ve Start planı özelliklerini içerir. Risksiz dene.",
+    "3-day trial, no card; the clock starts when you connect the CRM. The trial includes ~25 requests and Start-plan features. Try risk-free.": "3 günlük deneme, kart yok; süre CRM'i bağladığında başlar. Deneme ~25 istek ve Start planı özelliklerini içerir. Risksiz dene.",
     "Who makes Kai and where is my data?": "Kai'yi kim yapıyor ve verilerim nerede?",
     "Kai is built by a small team from Poland (EU). CRM access is OAuth 2.0 only: we never see passwords, tokens are encrypted at rest. AI providers (OpenAI, Anthropic) receive only the text of your request — never tokens or your database. You can revoke access in the CRM settings anytime; /disconnect unlinks the CRM, and full data deletion is done on request via @aiicrm_support_bot. Details are in the privacy policy at the bottom of the page.": "Kai'yi Polonya'dan (AB) küçük bir ekip geliştiriyor. CRM erişimi yalnızca OAuth 2.0 ile: şifreleri hiç görmeyiz, token'lar şifreli saklanır. AI sağlayıcıları (OpenAI, Anthropic) yalnızca isteğinin metnini alır — token'ları ya da veritabanını asla. Erişimi CRM ayarlarından istediğin zaman iptal edebilirsin; /disconnect CRM bağlantısını kaldırır, verilerin tamamen silinmesi ise @aiicrm_support_bot üzerinden talep üzerine yapılır. Ayrıntılar sayfanın altındaki gizlilik politikasında.",
     "Need a contract or a company invoice?": "Sözleşme ya da şirket faturası mı gerekiyor?",
@@ -550,7 +550,7 @@
     "Where do Kai's automations run?": "Kai'nin otomasyonları nerede çalışır?",
     "Rules («deal moved — task», «no reply — notify me») live on Kai's side: it listens to CRM events via a webhook and performs the action through the CRM API. They don't appear in the CRM's own Digital Pipeline and run while your subscription is active. Everything already created in the CRM — pipelines, fields, tasks, contacts — stays forever.": "Kurallar («lead taşındı — görev», «yanıt yok — bana bildir») Kai tarafında yaşar: CRM olaylarını webhook ile dinler ve eylemi CRM API'si üzerinden gerçekleştirir. CRM'in kendi Digital Pipeline'ında görünmezler ve aboneliğin aktifken çalışırlar. CRM'de zaten oluşturulan her şey — huniler, alanlar, görevler, kişiler — sonsuza dek kalır.",
     "What does Kai do in Bitrix24?": "Kai Bitrix24'te ne yapar?",
-    "Beta: pipelines and stages, fields, deals, contacts, companies, tasks, analytics and specs. In-Bitrix24 automations (robots) and widgets are not there yet — if those are your main need, it's fairer to wait or use amoCRM/Kommo, where everything works.": "Beta: huniler ve aşamalar, alanlar, lead'ler, kişiler, şirketler, görevler, analitik ve şartnameler. Bitrix24 içi otomasyonlar (robotlar) ve widget'lar henüz yok — asıl ihtiyacın bunlarsa beklemek ya da her şeyin çalıştığı amoCRM/Kommo'yu kullanmak daha dürüst olur.",
+    "Pipelines and stages, fields, deals, contacts, companies, tasks, analytics and specs. In-Bitrix24 automations (robots) and widgets are not there yet — if those are your main need, it's fairer to use amoCRM/Kommo, where the rules already work.": "Huniler ve aşamalar, alanlar, lead'ler, kişiler, şirketler, görevler, analitik ve şartnameler. Bitrix24 içi otomasyonlar (robotlar) ve widget'lar henüz yok — asıl ihtiyacın bunlarsa kuralların zaten çalıştığı amoCRM/Kommo'yu kullanmak daha dürüst olur.",
     "Does Kai work with a custom or in-house CRM?": "Kai özel ya da şirket içi bir CRM ile çalışır mı?",
     "Yes, via its API. Your own CRM — custom, in-house or any other with a REST API — connects through a connector spec: the API address, the auth method (OAuth 2.0, API key, bearer or basic) and which endpoints do what. Kai drafts the spec from your docs or asks step by step, then works with it like with amoCRM: pipelines, deals, contacts, tasks, automations. Only the pipelines list is mandatory. Try it first on Kai Sandbox CRM. Connecting is on the Max plan; discussing and drafting the spec is free.": "Evet, API'si ile. Kendi CRM'in — özel, şirket içi ya da REST API'si olan herhangi biri — bir bağlayıcı spesifikasyonuyla bağlanır: API adresi, kimlik doğrulama yöntemi (OAuth 2.0, API anahtarı, bearer ya da basic) ve hangi endpoint'in ne yaptığı. Kai spesifikasyonu dokümanlarından taslaklar ya da adım adım sorar, sonra onunla amoCRM'deki gibi çalışır: huniler, lead'ler, kişiler, görevler, otomasyonlar. Yalnızca huni listesi zorunlu. Önce Kai Sandbox CRM üzerinde dene. Bağlama Max planında; spesifikasyonu konuşmak ve taslaklamak ücretsiz.",
     "Connect your CRM in 1 click": "CRM'ini 1 tıkla bağla",
@@ -585,11 +585,12 @@
     "I can set up your CRM in minutes — tell me what you do?": "CRM'ini dakikalar içinde kurabilirim — ne iş yaptığını anlatır mısın?",
     "Boo! I can set up your CRM in minutes — tell me what you do?": "Böö! CRM'ini dakikalar içinde kurabilirim — ne iş yaptığını anlatır mısın?",
     "Happy holidays! I can set up your CRM in minutes — tell me what you do?": "İyi bayramlar! CRM'ini dakikalar içinde kurabilirim — ne iş yaptığını anlatır mısın?",
-    "Close chat": "Sohbeti kapat"
+    "Close chat": "Sohbeti kapat",
+    "Language": "Dil"
   },
   "meta": {
     "title": "amoCRM, Kommo, Bitrix24 ve özel CRM'leri kuran yapay zeka asistanı | Kai",
-    "description": "Kai, CRM'ini Telegram'da veya tarayıcında yazdığın sade bir mesajla kurar — amoCRM, Kommo, Bitrix24 ya da API'si üzerinden kendi özel CRM'in: satış hunileri, alanlar, görevler, otomasyonlar, analitik. 65 işlem. 3 gün ücretsiz, kart gerekmez.",
+    "description": "Kai, CRM'ini Telegram'da veya tarayıcında yazdığın sade bir mesajla kurar — amoCRM, Kommo, Bitrix24 ya da API'si üzerinden kendi özel CRM'in: satış hunileri, alanlar, görevler, otomasyonlar, analitik. 65 işlem. 3 günlük deneme, kart gerekmez.",
     "og_title": "Kai — CRM'ini kuran yapay zeka asistanı",
     "og_description": "CRM'ini bir sohbet mesajıyla yapılandıran yapay zeka asistanı — Telegram'da veya tarayıcında.",
     "keywords": "amoCRM, Kommo, Bitrix24, CRM kurulumu, CRM kurma, CRM kurulum hizmeti, amoCRM için yapay zeka asistanı, Kommo için yapay zeka asistanı, Bitrix24 için yapay zeka asistanı, yapay zeka CRM asistanı, CRM otomasyonu, Telegram CRM botu, satış hunisi kurulumu, satış pipeline kurulumu, amoCRM API, Kommo API, yazılımcısız CRM, geliştiricisiz CRM, entegratörsüz CRM kurulumu, kendi CRM'im, şirket içi CRM, özel CRM, kendi CRM'ime yapay zeka bağlamak API, özel CRM için yapay zeka ajanı, CRM REST API yapay zeka entegrasyonu, AI assistant, CRM setup, custom CRM, AI agent for custom CRM"
@@ -617,7 +618,7 @@
       ],
       [
         "Kai ne kadar?",
-        "Üç plan: Start — €29/ay (1 CRM), Pro — €59/ay (3 CRM), Max — €119/ay (10 CRM). İlk 3 gün ücretsiz."
+        "Üç plan: Start — €29/ay (1 CRM), Pro — €59/ay (3 CRM), Max — €119/ay (10 CRM). İlk 3 gün deneme süresidir."
       ],
       [
         "Kai Kommo ile çalışıyor mu?",
@@ -625,15 +626,15 @@
       ],
       [
         "Kai Bitrix24 ile çalışıyor mu?",
-        "Evet, beta olarak: Bitrix24 gelen webhook ile bağlanır; Kai satış hunilerini, aşamaları, alanları, lead'leri, kişileri ve görevleri kurar ve analitiği çalıştırır. Bitrix24 içi otomasyonlar ve widget'lar henüz yok. amoCRM ve Kommo tam olarak destekleniyor."
+        "Evet: Bitrix24 gelen webhook ile bağlanır; Kai satış hunilerini, aşamaları, alanları, lead'leri, kişileri ve görevleri kurar ve analitiği çalıştırır. Bitrix24 içi otomasyonlar ve widget'lar henüz yok. amoCRM ve Kommo tam olarak destekleniyor."
       ],
       [
         "Kai özel ya da şirket içi bir CRM ile çalışır mı?",
         "Evet, API'si ile. Kendi CRM'in — özel, şirket içi ya da REST API'si olan herhangi biri — bir bağlayıcı spesifikasyonuyla bağlanır: API adresi, kimlik doğrulama yöntemi (OAuth 2.0, API anahtarı, bearer ya da basic) ve hangi endpoint'in ne yaptığı. Kai spesifikasyonu dokümanlarından taslaklar ya da adım adım sorar, sonra onunla amoCRM'deki gibi çalışır: huniler, lead'ler, kişiler, görevler, otomasyonlar. Yalnızca huni listesi zorunlu. Önce Kai Sandbox CRM üzerinde dene. Bağlama Max planında; spesifikasyonu konuşmak ve taslaklamak ücretsiz."
       ],
       [
-        "Ücretsiz deneyebilir miyim?",
-        "Evet: 3 gün ücretsiz, kart yok; süre CRM'ini bağladığında başlar. Deneme ~25 istek ve Start planı özelliklerini içerir."
+        "Deneme süresi var mı?",
+        "Evet: 3 günlük deneme, kart yok; süre CRM'ini bağladığında başlar. Deneme ~25 istek ve Start planı özelliklerini içerir."
       ]
     ]
   },

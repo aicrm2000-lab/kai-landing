@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Автоматизації в Kommo без програміста: гайд 2026</title>
 <meta name="description" content="Digital Pipeline і Salesbot у Kommo: що налаштувати самому, 3 сценарії крок за кроком, обмеження і як Kai робить те саме одним повідомленням у чаті.">
 <meta name="keywords" content="автоматизація Kommo, Digital Pipeline Kommo, Salesbot Kommo, різниця між Digital Pipeline і Salesbot, на якому тарифі Kommo є Salesbot, тригери Kommo, задача при зміні етапу Kommo, нагадування клієнту в Kommo, сповіщення в Telegram про виграну угоду Kommo, автоматизація Kommo без програміста, автоматизація amoCRM, ШІ-асистент для Kommo, Kai CRM">
@@ -219,7 +222,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <li>Digital Pipeline знаходиться в <span class="path">Leads → Automate</span>; на кожному етапі доступні 12 типів тригерів і 5 варіантів затримки: Immediately, End of the day, In 1 day, In 3 days, End of the week.</li>
 <li>Salesbot: конструктор сценаріїв без обмеження кроків, таймер Pause до 8 760 годин; запускається від нового повідомлення, переходу угоди на етап, зміни відповідального або за розкладом. На тарифі Base його немає.</li>
 <li>Вбудованої дії «надіслати в Telegram-групу» немає: є внутрішнє повідомлення колезі, вебхук або віджет із Marketplace.</li>
-<li>Інтегратору зазвичай потрібно 3–5 тижнів. Kai: одне повідомлення в чаті, від €29/міс, 3 дні безкоштовно, без картки.</li>
+<li>Інтегратору зазвичай потрібно 3–5 тижнів. Kai: одне повідомлення в чаті, від €29/міс, 3 дні пробного періоду, без картки.</li>
 </ul>
 </div>
 
@@ -306,7 +309,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 </section>
 
 <h2>Що далі</h2>
-<p>Підключи Kommo до Kai в один клік через OAuth (віджет є в Kommo Marketplace, без API-ключів) і опиши своє перше правило власними словами. Три дні безкоштовно, без картки.</p>
+<p>Підключи Kommo до Kai в один клік через OAuth (віджет є в Kommo Marketplace, без API-ключів) і опиши своє перше правило власними словами. Три дні пробного періоду, без картки.</p>
 <div class="cta">
 <a class="btn btn-p" href="https://t.me/aiicrm_bot">Спробувати в Telegram</a>
 <a class="btn btn-s" href="https://app.aii-crm.com/chat?lang=en">Відкрити веб-чат</a>

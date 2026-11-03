@@ -30,7 +30,7 @@
   "description": "7 automatisations CRM rentables : tâches par étape, relances, transactions bloquées, alertes d’équipe, bilan hebdomadaire. Activez-les en une phrase dans Kai."
  },
  "guides/fr/bitrix24-ai-assistant.html": {
-  "title": "Bitrix24 et assistant IA : configurer sans développeur (bêta) | Kai",
+  "title": "Bitrix24 et assistant IA : configurer sans développeur | Kai",
   "description": "Connecter Bitrix24 à Kai par webhook entrant : ce que l’assistant IA configure (pipelines, champs, transactions, tâches) et quand un intégrateur reste utile."
  },
  "guides/fr/ai-agent-for-custom-crm.html": {

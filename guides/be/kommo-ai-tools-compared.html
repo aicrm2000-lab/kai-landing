@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Kommo AI agent, Copilot, Salesbot ці Kai: параўнанне 2026</title>
 <meta name="description" content="Kommo AI agent і Copilot супраць Salesbot, Albato/Make/n8n, Wazzup/Umnico і Kai: які інструмент для якой задачы, шляхі ў інтэрфейсе, кошт і тэрміны.">
 <meta name="keywords" content="Kommo AI agent, Copilot ці Salesbot: што патрэбна, каб наладзіць варонку і аўтаматызацыі ў CRM?, Колькі каштуе наладка Kommo: інтэгратар або ШІ-асістэнт накшталт Kai, і колькі гэта займае часу?">
@@ -141,7 +144,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Колькі каштуе Kai і ці ёсць пробны перыяд?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Start — €29/мес (каля 100 запытаў, 1 акаўнт CRM), Pro — €59/мес (каля 500 запытаў, да 3 акаўнтаў, аўтаматызацыі, стандартныя інтэграцыі), Max — €119/мес (fair use, да 10 акаўнтаў, дапрацоўкі па фіксаваныя €30 кожная). Першыя 3 дні бясплатна, без карткі. Аплата карткай, Apple Pay, Google Pay, Telegram Stars або USDT."
+            "text": "Start — €29/мес (каля 100 запытаў, 1 акаўнт CRM), Pro — €59/мес (каля 500 запытаў, да 3 акаўнтаў, аўтаматызацыі, стандартныя інтэграцыі), Max — €119/мес (fair use, да 10 акаўнтаў, дапрацоўкі па фіксаваныя €30 кожная). 3 дні пробнага перыяду, без карткі. Аплата карткай, Apple Pay, Google Pay, Telegram Stars або USDT."
           }
         },
         {
@@ -216,7 +219,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   <li><strong>Kommo AI agent</strong> даступны пачынаючы з тарыфу Advanced і спісвае ШІ-крэдыты за кожны адказ; ён размаўляе з кліентамі, а не наладжвае CRM.</li>
   <li><strong>Copilot</strong> ёсць на ўсіх тарыфах, уключна з Base: адказвае на пытанні пра Kommo, прапануе значэнні для пустых палёў, робіць рэзюмэ чатаў.</li>
   <li><strong>Salesbot і 12 трыгераў Digital Pipeline</strong> (задача, тэг, змена этапу, вэбхук, змена поля…) уваходзяць у Kommo — раздзел Leads → Automate.</li>
-  <li><strong>Інтэгратар:</strong> звычайна 3–5 тыдняў (у Расіі тыповы кошт — 150–400 тыс. ₽). <strong>Kai:</strong> ад €29/мес, 3 дні бясплатна, без карткі, поўная варонка за адну размову.</li>
+  <li><strong>Інтэгратар:</strong> звычайна 3–5 тыдняў (у Расіі тыповы кошт — 150–400 тыс. ₽). <strong>Kai:</strong> ад €29/мес, 3 дні пробнага перыяду, без карткі, поўная варонка за адну размову.</li>
   <li>Kai выконвае 60+ дзеянняў праз API Kommo і amoCRM: варонкі, палі, аўтаматызацыі, інтэграцыі, аўдыт з аўталячэннем, лід-скорынг, ТЗ у PDF.</li>
 </ul>
 </section>
@@ -277,7 +280,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <thead><tr><th>Крытэрый</th><th>Уручную</th><th>Інтэгратар</th><th>Kai</th></tr></thead>
 <tbody>
 <tr><td>Час да рабочай варонкі</td><td>Ад вечара да тыдня</td><td>Звычайна 3–5 тыдняў</td><td>Адна размова: план, потым змены праз API за хвіліны</td></tr>
-<tr><td>Кошт</td><td>Тарыф Kommo плюс твой час</td><td>Залежыць ад рэгіёна; у Расіі тыпова 150–400 тыс. ₽</td><td>Start €29, Pro €59, Max €119/мес; 3 дні бясплатна, без карткі</td></tr>
+<tr><td>Кошт</td><td>Тарыф Kommo плюс твой час</td><td>Залежыць ад рэгіёна; у Расіі тыпова 150–400 тыс. ₽</td><td>Start €29, Pro €59, Max €119/мес; 3 дні пробнага перыяду, без карткі</td></tr>
 <tr><td>Хто разбіраецца ў тваім бізнесе</td><td>Ты</td><td>Аналітык на званках</td><td>Kai задае пытанні і ўзгадняе план да змен</td></tr>
 <tr><td>Што атрымліваеш</td><td>Тое, на што хапіла часу</td><td>Варонка, палі, боты, навучанне, дакументацыя</td><td>Варонка, палі, аўтаматызацыі, інтэграцыі, ТЗ у PDF, аўдыт 24/7</td></tr>
 <tr><td>Каму падыходзіць</td><td>1–3 менеджары, просты працэс</td><td>Нестандартныя працэсы, звязкі з бухгалтэрыяй і тэлефаніяй, чалавек на сувязі</td><td>Малы і сярэдні бізнес са стандартнымі або ўмерана складанымі працэсамі</td></tr>
@@ -294,7 +297,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <h3>Што патрэбна, каб падключыць Kai да Kommo?</h3>
 <p>Віджэт Kai ёсць у Kommo Marketplace: адзін клік праз OAuth, без API-ключоў. Далей пішаш Kai у Telegram-боце <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> або ў вэб-чаце; у абодвух адзін акаўнт і адна гісторыя.</p>
 <h3>Колькі каштуе Kai і ці ёсць пробны перыяд?</h3>
-<p>Start — €29/мес (каля 100 запытаў, 1 акаўнт CRM), Pro — €59/мес (каля 500 запытаў, да 3 акаўнтаў, аўтаматызацыі, стандартныя інтэграцыі), Max — €119/мес (fair use, да 10 акаўнтаў, дапрацоўкі па фіксаваныя €30 кожная). Першыя 3 дні бясплатна, без карткі. Аплата карткай, Apple Pay, Google Pay, Telegram Stars або USDT.</p>
+<p>Start — €29/мес (каля 100 запытаў, 1 акаўнт CRM), Pro — €59/мес (каля 500 запытаў, да 3 акаўнтаў, аўтаматызацыі, стандартныя інтэграцыі), Max — €119/мес (fair use, да 10 акаўнтаў, дапрацоўкі па фіксаваныя €30 кожная). 3 дні пробнага перыяду, без карткі. Аплата карткай, Apple Pay, Google Pay, Telegram Stars або USDT.</p>
 <h3>Ці бяспечна даваць асістэнту доступ да CRM?</h3>
 <p>Доступ выдаецца праз OAuth, токены захоўваюцца ў зашыфраваным выглядзе, а даныя лідаў Kai не захоўвае. Кампанія зарэгістраваная ў Польшчы (ЕС). Адклікаць доступ можна ў любы момант у наладах інтэграцый Kommo.</p>
 <h3>А калі ў мяне amoCRM, а не Kommo?</h3>
@@ -302,7 +305,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 </section>
 
 <h2>Што далей</h2>
-<p>Апішы свой працэс адным паведамленнем: Kai задасць 3–5 пытанняў, пакажа план і наладзіць Kommo або amoCRM. Першыя 3 дні бясплатна, без карткі.</p>
+<p>Апішы свой працэс адным паведамленнем: Kai задасць 3–5 пытанняў, пакажа план і наладзіць Kommo або amoCRM. 3 дні пробнага перыяду, без карткі.</p>
 <div class="cta">
   <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Паспрабаваць у Telegram</a>
   <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Адкрыць вэб-чат</a>

@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Kommo AI Agent vs Copilot vs Salesbot vs Kai: 2026 Comparison</title>
 <meta name="description" content="Kommo AI agent and Copilot vs Salesbot, Albato/Make/n8n, Wazzup/Umnico and the Kai assistant in 2026: which tool fits which job, UI paths, cost and time.">
 <meta name="keywords" content="Kommo AI agent vs Copilot vs Salesbot: which one do I need to set up my CRM pipeline and automations?, How much does it cost to set up Kommo: implementation partner vs an AI assistant like Kai, and how long does it take?">
@@ -140,7 +143,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "How much does Kai cost and is there a trial?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Start €29/month (about 100 requests, 1 CRM account), Pro €59/month (about 500 requests, up to 3 accounts, automations, standard integrations), Max €119/month (fair-use requests, up to 10 accounts, custom work at a fixed €30 each). First 3 days free, no card. Pay by card, Apple Pay, Google Pay, Telegram Stars or USDT."
+            "text": "Start €29/month (about 100 requests, 1 CRM account), Pro €59/month (about 500 requests, up to 3 accounts, automations, standard integrations), Max €119/month (fair-use requests, up to 10 accounts, custom work at a fixed €30 each). 3-day trial, no card. Pay by card, Apple Pay, Google Pay, Telegram Stars or USDT."
           }
         },
         {
@@ -215,7 +218,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   <li><strong>Kommo AI agent</strong> needs Advanced or higher and spends AI credits per reply; it talks to customers, it does not configure the CRM.</li>
   <li><strong>Copilot</strong> is on every plan, including Base: answers Kommo questions, suggests values for empty fields, summarises chats.</li>
   <li><strong>Salesbot and 12 Digital Pipeline triggers</strong> (task, tag, stage change, webhook, field change…) are included under Leads → Automate.</li>
-  <li><strong>Partner:</strong> typically 3–5 weeks (in Russia, 150–400k RUB is a common quote). <strong>Kai:</strong> from €29/month, 3 free days, no card, a full pipeline in one conversation.</li>
+  <li><strong>Partner:</strong> typically 3–5 weeks (in Russia, 150–400k RUB is a common quote). <strong>Kai:</strong> from €29/month, 3-day trial, no card, a full pipeline in one conversation.</li>
   <li>Kai runs 60+ actions via the Kommo and amoCRM APIs: pipelines, fields, automations, integrations, self-healing audit, lead scoring, PDF spec.</li>
 </ul>
 </section>
@@ -276,7 +279,7 @@ When a lead moves to Contract, post to the sales team's Telegram chat.</pre>
 <thead><tr><th>Criterion</th><th>Manual</th><th>Implementation partner</th><th>Kai</th></tr></thead>
 <tbody>
 <tr><td>Time to a working pipeline</td><td>An evening to a week</td><td>Typically 3–5 weeks</td><td>One conversation: plan, then API changes in minutes</td></tr>
-<tr><td>Cost</td><td>Kommo plan plus your time</td><td>Region-dependent; in Russia 150–400k RUB is common</td><td>Start €29, Pro €59, Max €119/month; 3 free days, no card</td></tr>
+<tr><td>Cost</td><td>Kommo plan plus your time</td><td>Region-dependent; in Russia 150–400k RUB is common</td><td>Start €29, Pro €59, Max €119/month; 3-day trial, no card</td></tr>
 <tr><td>Who learns your business</td><td>You</td><td>An analyst on calls</td><td>Kai asks questions and agrees a plan before changes</td></tr>
 <tr><td>What you get</td><td>What you had time for</td><td>Pipeline, fields, bots, training, documentation</td><td>Pipeline, fields, automations, integrations, PDF spec, 24/7 audit</td></tr>
 <tr><td>Best fit</td><td>1–3 managers, simple process</td><td>Unusual processes, accounting/telephony links, a human on call</td><td>SMBs with standard or moderately complex processes</td></tr>
@@ -293,7 +296,7 @@ When a lead moves to Contract, post to the sales team's Telegram chat.</pre>
 <h3>What do I need to connect Kai to Kommo?</h3>
 <p>The Kai widget is in the Kommo Marketplace: one click via OAuth, no API keys. Then you talk to Kai in the Telegram bot <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> or the web chat; both share one account and history.</p>
 <h3>How much does Kai cost and is there a trial?</h3>
-<p>Start €29/month (about 100 requests, 1 CRM account), Pro €59/month (about 500 requests, up to 3 accounts, automations, standard integrations), Max €119/month (fair-use requests, up to 10 accounts, custom work at a fixed €30 each). First 3 days free, no card. Pay by card, Apple Pay, Google Pay, Telegram Stars or USDT.</p>
+<p>Start €29/month (about 100 requests, 1 CRM account), Pro €59/month (about 500 requests, up to 3 accounts, automations, standard integrations), Max €119/month (fair-use requests, up to 10 accounts, custom work at a fixed €30 each). 3-day trial, no card. Pay by card, Apple Pay, Google Pay, Telegram Stars or USDT.</p>
 <h3>Is it safe to give an assistant access to my CRM?</h3>
 <p>Access goes through OAuth, tokens are stored encrypted, and Kai does not keep your lead data. The company is registered in Poland (EU). Revoke access any time in Kommo's integration settings.</p>
 <h3>What if I use amoCRM instead of Kommo?</h3>
@@ -301,7 +304,7 @@ When a lead moves to Contract, post to the sales team's Telegram chat.</pre>
 </section>
 
 <h2>What next</h2>
-<p>Describe your process in one message: Kai asks 3–5 questions, shows the plan and configures Kommo or amoCRM. First 3 days free, no card.</p>
+<p>Describe your process in one message: Kai asks 3–5 questions, shows the plan and configures Kommo or amoCRM. 3-day trial, no card.</p>
 <div class="cta">
   <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Try it in Telegram</a>
   <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Open the web chat</a>

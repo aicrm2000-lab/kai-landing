@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>7 automatyzacji CRM, które zwracają się w pierwszym miesiącu | Kai</title>
 <meta name="description" content="7 automatyzacji CRM, które się zwracają: zadania na etapach, przypomnienia, utknięte transakcje, alerty, podsumowania. Każdą włączysz jednym zdaniem w Kai.">
 <meta name="keywords" content="Pomysły na automatyzację CRM dla małego działu sprzedaży">
@@ -182,7 +185,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 
 <h2>Gdzie żyją reguły: w CRM czy w Kai</h2>
 <p>Digital Pipeline i roboty żyją w samym CRM: konfiguruje się je tam i działają tak długo, jak płacisz za CRM, ale wymagają planu z automatyzacjami i czasu na klikanie. Reguły Kai żyją po stronie Kai: Kai nasłuchuje zdarzeń CRM przez webhook i działa przez API, więc włączasz je i zmieniasz jednym zdaniem, ale nie widać ich w Digital Pipeline i działają, dopóki twoja subskrypcja jest aktywna. Wszystko, co zdążyły utworzyć w CRM, zostaje na zawsze.</p>
-<div class="note warn">W przypadku Bitrix24 Kai jest w becie: bez robotów wewnątrz Bitrix24, tylko powiadomienia o głównych zdarzeniach przez webhook wychodzący. Jeśli automatyzacje w samym Bitrix24 to twoja główna potrzeba, ustaw roboty ręcznie albo z integratorem.</div>
+<div class="note warn">W Bitrix24 Kai nie tworzy jeszcze robotów, tylko powiadomienia o głównych zdarzeniach przez webhook wychodzący. Jeśli automatyzacje w samym Bitrix24 to twoja główna potrzeba, ustaw roboty ręcznie albo z integratorem.</div>
 
 <h2>Z Kai to jedna wiadomość</h2>
 <p>Kai to asystent AI, który konfiguruje amoCRM i Kommo na podstawie wiadomości na czacie, w bocie w Telegramie <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> lub w <a href="https://app.aii-crm.com/chat?lang=en">czacie webowym</a>, a podłącza się przez OAuth 2.0 jednym kliknięciem. Każde zdanie powyżej to gotowa reguła, a kilka możesz wysłać w jednej wiadomości:</p>

@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Воронка продаж в amoCRM без программиста: гайд 2026 | Kai</title>
 <meta name="description" content="Пошагово: этапы воронки, поля и обязательные поля в amoCRM через «Сделки → Настроить», типичные ошибки, и как сделать то же самое одним сообщением Kai.">
 <meta name="keywords" content="как настроить воронку продаж в amoCRM самому без программиста, какие этапы воронки сделать в amoCRM для малого бизнеса и как сделать поле обязательным на этапе, сколько стоит настройка amoCRM у интегратора и можно ли настроить самому">
@@ -132,7 +135,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
     <li>Два системных этапа — «Успешно реализовано» и «Закрыто и не реализовано» — удалить нельзя, только переименовать.</li>
     <li>Тип поля после создания изменить нельзя, удаление поля стирает данные. Продумайте поля до появления сделок.</li>
     <li>Обязательные поля на этапах доступны в amoCRM начиная с тарифа «Расширенный»; настраивать поля может только администратор аккаунта.</li>
-    <li>Вручную — 1–2 часа. Интегратор — обычно 3–5 недель и 150–400 тыс. ₽. Kai — один диалог в чате, от €29/мес, 3 дня бесплатно.</li>
+    <li>Вручную — 1–2 часа. Интегратор — обычно 3–5 недель и 150–400 тыс. ₽. Kai — один диалог в чате, от €29/мес, 3 дня триала.</li>
   </ul>
 </section>
 
@@ -201,7 +204,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   <thead><tr><th>Критерий</th><th>Вручную</th><th>Интегратор</th><th>Kai</th></tr></thead>
   <tbody>
     <tr><td>Время</td><td>1–2 часа на простую воронку</td><td>Обычно 3–5 недель на внедрение</td><td>Один диалог: вопросы → план → настройка</td></tr>
-    <tr><td>Стоимость</td><td>0 ₽, ваше время</td><td>Типично 150–400 тыс. ₽</td><td>От €29/мес, 3 дня бесплатно без карты</td></tr>
+    <tr><td>Стоимость</td><td>0 ₽, ваше время</td><td>Типично 150–400 тыс. ₽</td><td>От €29/мес, 3 дня триала без карты</td></tr>
     <tr><td>Кто нужен</td><td>Администратор amoCRM</td><td>Ответственный с вашей стороны + ТЗ</td><td>Администратор amoCRM для OAuth-подключения</td></tr>
     <tr><td>Изменения потом</td><td>Снова кликать вручную</td><td>Новое ТЗ и новый счёт</td><td>Новое сообщение в чате</td></tr>
     <tr><td>Когда подходит</td><td>Одна воронка, до десятка полей</td><td>Нестандартные интеграции: 1С, телефония, склад</td><td>Воронки, поля, автоматизации, интеграции по API без кода</td></tr>
@@ -234,7 +237,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   </div>
   <div class="faq-item">
     <h3>Сколько стоит Kai и есть ли бесплатный период?</h3>
-    <p>Три тарифа: Start — €29/мес (~100 запросов), Pro — €59/мес (~500 запросов), Max — €119/мес (fair-use, приоритет и доработки под бизнес). Первые 3 дня бесплатно, карта не нужна. Оплата картой, Apple Pay, Google Pay, Telegram Stars или USDT.</p>
+    <p>Три тарифа: Start — €29/мес (~100 запросов), Pro — €59/мес (~500 запросов), Max — €119/мес (fair-use, приоритет и доработки под бизнес). Первые 3 дня — триал, карта не нужна. Оплата картой, Apple Pay, Google Pay, Telegram Stars или USDT.</p>
   </div>
 </div>
 
@@ -278,7 +281,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
         {"@type": "Question", "name": "Что будет со сделками, если удалить этап или воронку?", "acceptedAnswer": {"@type": "Answer", "text": "Этап удаляется перетаскиванием в корзину — сначала перенесите из него сделки. Воронку можно удалить только после того, как из неё убраны все сделки, включая закрытые; восстановить её потом нельзя."}},
         {"@type": "Question", "name": "Нужен ли программист, чтобы настроить amoCRM?", "acceptedAnswer": {"@type": "Answer", "text": "Для воронки, полей, обязательных полей и базовых автоматизаций — нет, всё делается в интерфейсе или через ассистента вроде Kai. Программист или интегратор нужен для нестандартных связок: 1С, самописный сайт, телефония с нетипичным API."}},
         {"@type": "Question", "name": "Как Kai получает доступ к amoCRM и безопасно ли это?", "acceptedAnswer": {"@type": "Answer", "text": "Через официальный OAuth amoCRM/Kommo: вы подтверждаете доступ в один клик, паролей и API-ключей никому не передаёте. Токены хранятся в зашифрованном виде, данные сделок Kai не хранит, доступ отзывается в настройках CRM в любой момент. Компания зарегистрирована в Польше (ЕС)."}},
-        {"@type": "Question", "name": "Сколько стоит Kai и есть ли бесплатный период?", "acceptedAnswer": {"@type": "Answer", "text": "Три тарифа: Start — €29/мес (~100 запросов), Pro — €59/мес (~500 запросов), Max — €119/мес (fair-use, приоритет и доработки под бизнес). Первые 3 дня бесплатно, карта не нужна. Оплата картой, Apple Pay, Google Pay, Telegram Stars или USDT."}}
+        {"@type": "Question", "name": "Сколько стоит Kai и есть ли бесплатный период?", "acceptedAnswer": {"@type": "Answer", "text": "Три тарифа: Start — €29/мес (~100 запросов), Pro — €59/мес (~500 запросов), Max — €119/мес (fair-use, приоритет и доработки под бизнес). Первые 3 дня — триал, карта не нужна. Оплата картой, Apple Pay, Google Pay, Telegram Stars или USDT."}}
       ]
     },
     {

@@ -28,7 +28,7 @@
   "description": "7 automatizări CRM care se amortizează: sarcini pe etape, reamintiri, tranzacții blocate, alerte în echipă, rezumat săptămânal. Le activezi cu o frază în Kai."
  },
  "guides/ro/bitrix24-ai-assistant.html": {
-  "title": "Bitrix24 cu asistent AI: configurare fără programator (beta) | Kai",
+  "title": "Bitrix24 cu asistent AI: configurare fără programator | Kai",
   "description": "Cum conectezi Bitrix24 la Kai prin webhook de intrare, ce configurează (pipeline-uri, câmpuri, tranzacții, sarcini, analiză) și când ai nevoie de integrator."
  },
  "guides/ro/ai-agent-for-custom-crm.html": {

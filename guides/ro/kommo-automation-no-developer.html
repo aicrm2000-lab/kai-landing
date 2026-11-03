@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Automatizări în Kommo fără programator: ghid 2026</title>
 <meta name="description" content="Digital Pipeline și Salesbot în Kommo: ce poți configura singur, 3 scenarii pas cu pas, limitele și cum face Kai același lucru dintr-un singur mesaj în chat.">
 <meta name="keywords" content="Kommo Digital Pipeline vs Salesbot: care e diferența și în ce plan e inclus, Cum trimit o notificare în Telegram când un lead e câștigat în Kommo fără programator">
@@ -219,7 +222,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <li>Digital Pipeline se află în <span class="path">Leads → Automate</span>; fiecare etapă oferă 12 tipuri de declanșatoare și 5 întârzieri: Immediately, End of the day, In 1 day, In 3 days, End of the week.</li>
 <li>Salesbot: constructor de fluxuri, fără limită de pași, temporizator Pause de până la 8.760 de ore; pornește la un mesaj nou, la intrarea unui lead într-o etapă, la schimbarea responsabilului sau după un program. Nu e inclus în planul Base.</li>
 <li>Nu există o acțiune nativă „postează într-un grup de Telegram”: ai la dispoziție un mesaj intern către un coleg, un webhook sau un widget din Marketplace.</li>
-<li>Un integrator are nevoie de obicei de 3–5 săptămâni. Kai: un singur mesaj în chat, de la €29/lună, 3 zile gratuit, fără card.</li>
+<li>Un integrator are nevoie de obicei de 3–5 săptămâni. Kai: un singur mesaj în chat, de la €29/lună, 3 zile de probă, fără card.</li>
 </ul>
 </div>
 
@@ -306,7 +309,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 </section>
 
 <h2>Ce urmează</h2>
-<p>Conectează Kommo la Kai cu un singur clic prin OAuth (widgetul e listat în Kommo Marketplace, fără chei API) și descrie-ți prima regulă în cuvintele tale. Trei zile gratuit, fără card.</p>
+<p>Conectează Kommo la Kai cu un singur clic prin OAuth (widgetul e listat în Kommo Marketplace, fără chei API) și descrie-ți prima regulă în cuvintele tale. Trei zile de probă, fără card.</p>
 <div class="cta">
 <a class="btn btn-p" href="https://t.me/aiicrm_bot">Încearcă în Telegram</a>
 <a class="btn btn-s" href="https://app.aii-crm.com/chat?lang=en">Deschide chatul web</a>

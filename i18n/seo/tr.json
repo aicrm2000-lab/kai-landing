@@ -21,7 +21,7 @@
   "description": "Kendini amorti eden 7 CRM otomasyonu: aşama görevleri, yanıt hatırlatmaları, takılan lead'ler, ekip bildirimleri, haftalık özet. Kai'de tek cümleyle açılır."
  },
  "guides/tr/bitrix24-ai-assistant.html": {
-  "title": "Bitrix24 yapay zeka asistanı: geliştirici olmadan kurulum (beta) | Kai",
+  "title": "Bitrix24 yapay zeka asistanı: geliştirici olmadan kurulum | Kai",
   "description": "Bitrix24 gelen webhook ile Kai'ye nasıl bağlanır, neleri kurar (huniler, alanlar, fırsatlar, görevler, analitik) ve ne zaman yine de entegratör gerekir."
  },
  "guides/tr/ai-agent-for-custom-crm.html": {

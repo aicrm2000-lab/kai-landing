@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Configurare CRM fără integrator: checklist în 12 puncte | Kai</title>
 <meta name="description" content="12 lucruri pentru un CRM funcțional: etape, câmpuri obligatorii, motive de pierdere, sarcini, duplicate, import, automatizări și când ai nevoie de integrator.">
 <meta name="keywords" content="configurare CRM fără consultant, configurare CRM fără integrator, checklist configurare CRM, implementare CRM pas cu pas, cum configurez un CRM, etape pipeline CRM, câmpuri obligatorii CRM, motive de pierdere, surse de lead-uri, import contacte în CRM, automatizări CRM, configurare amoCRM, configurare Kommo, CRM pentru firme mici">
@@ -199,11 +202,11 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <p>Vino cu o specificație: etapele, câmpurile, sursele, motivele de pierdere și regulile din punctele 1–9. Kai o poate produce în PDF din planul aprobat, ceea ce te scutește de primele întâlniri.</p>
 
 <h2>Cu Kai e un singur mesaj</h2>
-<p>Kai este un asistent AI care configurează amoCRM și Kommo (Bitrix24 în beta) dintr-un mesaj în chat, în botul de Telegram <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> sau în <a href="https://app.aii-crm.com/chat?lang=en">chatul web</a>, conectat prin OAuth 2.0 cu un singur clic. Punctele 1–9 se rezolvă într-o singură conversație: întrebări de clarificare cu variante de răspuns, un plan, apoi totul e creat prin API-ul oficial și primești un raport.</p>
+<p>Kai este un asistent AI care configurează amoCRM, Kommo și Bitrix24 dintr-un mesaj în chat, în botul de Telegram <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> sau în <a href="https://app.aii-crm.com/chat?lang=en">chatul web</a>, conectat prin OAuth 2.0 cu un singur clic. Punctele 1–9 se rezolvă într-o singură conversație: întrebări de clarificare cu variante de răspuns, un plan, apoi totul e creat prin API-ul oficial și primești un raport.</p>
 <pre>Am un atelier de mobilă la comandă, 3 manageri, solicitări de pe site și din Instagram. Configurează amoCRM după checklist: etape pentru proces, câmpuri cu reguli de obligativitate, surse, motive de pierdere, o sarcină pe fiecare tranzacție deschisă.</pre>
 <pre>Verifică-mi pipeline-ul: câte tranzacții nu au sarcină, sursă sau responsabil, și spune-mi ce să repar mai întâi.</pre>
 <pre>Pregătește din planul aprobat o specificație în PDF pentru integratorul care face legătura cu contabilitatea.</pre>
-<p>Limite sincere. Kai îți arată găurile din proces, dar cum vinzi rămâne decizia ta. Instruirea și disciplina analizelor (punctele 10–11) nu pot fi automatizate. Automatizările pe evenimente sunt în Pro (€59/lună); Start, la €29/lună, acoperă structura, câmpurile, sarcinile și importul; primele 3 zile sunt gratuite, fără card, cu aproximativ 25 de cereri. În Bitrix24, roboții și widgeturile nu se configurează încă.</p>
+<p>Limite sincere. Kai îți arată găurile din proces, dar cum vinzi rămâne decizia ta. Instruirea și disciplina analizelor (punctele 10–11) nu pot fi automatizate. Automatizările pe evenimente sunt în Pro (€59/lună); Start, la €29/lună, acoperă structura, câmpurile, sarcinile și importul; primele 3 zile sunt o perioadă de probă, fără card, cu aproximativ 25 de cereri. În Bitrix24, roboții și widgeturile nu se configurează încă.</p>
 
 <h2>FAQ</h2>
 <div class="faq">
@@ -221,7 +224,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   </div>
   <div class="faq-item">
     <h3>Prin ce diferă checklistul pentru amoCRM, Kommo și Bitrix24?</h3>
-    <p>Logica e aceeași; interfața și planurile diferă: câmpurile obligatorii pe etape nu există pe toate planurile amoCRM, dar există pe toate planurile Kommo, iar automatizările din CRM înseamnă Digital Pipeline sau roboții Bitrix24. Kai suportă complet amoCRM și Kommo; Bitrix24 e în beta, fără roboți și widgeturi.</p>
+    <p>Logica e aceeași; interfața și planurile diferă: câmpurile obligatorii pe etape nu există pe toate planurile amoCRM, dar există pe toate planurile Kommo, iar automatizările din CRM înseamnă Digital Pipeline sau roboții Bitrix24. Kai suportă amoCRM, Kommo și Bitrix24; în Bitrix24, fără roboți și widgeturi.</p>
   </div>
 </div>
 
@@ -297,7 +300,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Prin ce diferă checklistul pentru amoCRM, Kommo și Bitrix24?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Logica e aceeași; interfața și planurile diferă: câmpurile obligatorii pe etape nu există pe toate planurile amoCRM, dar există pe toate planurile Kommo, iar automatizările din CRM înseamnă Digital Pipeline sau roboții Bitrix24. Kai suportă complet amoCRM și Kommo; Bitrix24 e în beta, fără roboți și widgeturi."
+            "text": "Logica e aceeași; interfața și planurile diferă: câmpurile obligatorii pe etape nu există pe toate planurile amoCRM, dar există pe toate planurile Kommo, iar automatizările din CRM înseamnă Digital Pipeline sau roboții Bitrix24. Kai suportă amoCRM, Kommo și Bitrix24; în Bitrix24, fără roboți și widgeturi."
           }
         }
       ]

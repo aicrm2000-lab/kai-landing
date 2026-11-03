@@ -72,7 +72,7 @@
     "Works in your browser and Telegram — no install, no assembly required": "Merge în browser și în Telegram — fără instalare, fără asamblare",
     "Set up your <span class='a'>CRM</span><br>without developers": "Configurare <span class='a'>CRM</span><br>fără programatori",
     "Kai is an AI assistant that sets up your CRM from a&nbsp;plain-language message in Telegram or right in your&nbsp;browser. It asks the right questions, builds a&nbsp;plan for your business and configures the CRM automatically.": "Kai este un asistent AI care îți configurează CRM-ul dintr-un&nbsp;mesaj în limbaj obișnuit, în Telegram sau direct în&nbsp;browser. Pune întrebările potrivite, construiește un&nbsp;plan pentru afacerea ta și configurează CRM-ul automat.",
-    "Try for free": "Încearcă gratuit",
+    "Start your trial": "Începe perioada de probă",
     "Try in browser": "Încearcă în browser",
     "You need an account in your CRM — most systems offer a free trial. Supported CRMs are listed <a href='#crm'>below</a>.": "Ai nevoie de un cont în CRM-ul tău — majoritatea sistemelor oferă o perioadă de probă gratuită. CRM-urile acceptate sunt listate <a href='#crm'>mai jos</a>.",
     "Close": "Închide",
@@ -86,8 +86,8 @@
     "Connect your CRM in 1 click before dark — OAuth, no keys": "Conectează-ți CRM-ul cu 1 clic până se întunecă — OAuth, fără chei",
     "Connect your CRM in 1 click while everyone’s on holiday — OAuth, no keys": "Conectează-ți CRM-ul cu 1 clic cât toți sunt în vacanță — OAuth, fără chei",
     "We integrate with": "Ne integrăm cu",
-    "Bitrix24 — beta: connect it with a webhook in the bot": "Bitrix24 — beta: conectare prin webhook în bot",
-    "Beta": "Beta",
+    "Bitrix24: connect it with a webhook in the bot": "Bitrix24: conectare prin webhook în bot",
+    "via webhook": "prin webhook",
     "Your own CRM: custom, in-house or any other with a REST API — via a connector spec": "CRM-ul tău propriu: personalizat, intern sau orice altul cu REST API — printr-o specificație de conector",
     "Your own CRM": "CRM propriu",
     "via API": "prin API",
@@ -468,17 +468,17 @@
     "Your time": "Timpul tău",
     "Project from hundreds of euros, changes billed separately": "Proiect de la sute de euro, modificările se facturează separat",
     "Included in the CRM plan": "Inclus în abonamentul CRM",
-    "From €29/mo (automations from €59), 3 days free": "De la €29/lună (automatizări de la €59), 3 zile gratuit",
+    "From €29/mo (automations from €59), 3-day trial": "De la €29/lună (automatizări de la €59), 3 zile de probă",
     "Integrator and built-in assistant timings and prices are typical benchmarks, not promises — check with a specific vendor.": "Termenele și prețurile integratorilor și ale asistenților integrați sunt repere tipice, nu promisiuni — verifică la un furnizor concret.",
     "Pick the plan for your stage": "Alege planul pentru etapa ta",
     "Pick a plan: no tricks, only treats": "Alege un plan: fără farse, doar dulciuri",
     "Pick a plan — a gift to your future self": "Alege un plan — un cadou pentru tine de mâine",
-    "First 3 days free — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).": "Primele 3 zile gratuit — numărătoarea începe când îți conectezi CRM-ul. Plătești cu cardul, Telegram Stars sau crypto (USDT).",
+    "3-day trial — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).": "3 zile de probă — numărătoarea începe când îți conectezi CRM-ul. Plătești cu cardul, Telegram Stars sau crypto (USDT).",
     "/mo": "/lună",
     "Set up your CRM by talking": "Configurează CRM-ul vorbind",
-    "3 days free": "3 zile gratuit",
-    "3 days free, no sacrifices": "3 zile gratuit, fără sacrificii",
-    "3 days free — our gift": "3 zile gratuit — cadoul nostru",
+    "3-day trial": "3 zile de probă",
+    "3-day trial, no sacrifices": "3 zile de probă, fără sacrificii",
+    "3-day trial — our gift": "3 zile de probă — cadoul nostru",
     "Consultation & spec (PDF)": "Consultanță & specificație (PDF)",
     "Pipelines, stages, custom fields": "Pipeline-uri, etape, câmpuri personalizate",
     "Leads, contacts, companies": "Tranzacții, contacte, companii",
@@ -542,7 +542,7 @@
     "What is a 'request'?": "Ce e o „cerere”?",
     "One message to the bot — 'create pipeline', 'add field', 'import contacts'.": "Un mesaj către bot — „creează pipeline”, „adaugă câmp”, „importă contactele”.",
     "What if it's not for me?": "Și dacă nu mi se potrivește?",
-    "First 3 days free, no card; the clock starts when you connect the CRM. The trial includes ~25 requests and Start-plan features. Try risk-free.": "Primele 3 zile gratuit, fără card; numărătoarea începe când conectezi CRM-ul. Perioada de probă include ~25 de cereri și funcțiile planului Start. Încearcă fără riscuri.",
+    "3-day trial, no card; the clock starts when you connect the CRM. The trial includes ~25 requests and Start-plan features. Try risk-free.": "3 zile de probă, fără card; numărătoarea începe când conectezi CRM-ul. Perioada de probă include ~25 de cereri și funcțiile planului Start. Încearcă fără riscuri.",
     "Who makes Kai and where is my data?": "Cine face Kai și unde sunt datele mele?",
     "Kai is built by a small team from Poland (EU). CRM access is OAuth 2.0 only: we never see passwords, tokens are encrypted at rest. AI providers (OpenAI, Anthropic) receive only the text of your request — never tokens or your database. You can revoke access in the CRM settings anytime; /disconnect unlinks the CRM, and full data deletion is done on request via @aiicrm_support_bot. Details are in the privacy policy at the bottom of the page.": "Kai e construit de o echipă mică din Polonia (UE). Accesul la CRM e doar prin OAuth 2.0: nu vedem niciodată parolele, tokenurile sunt criptate la stocare. Furnizorii AI (OpenAI, Anthropic) primesc doar textul cererii tale — niciodată tokenuri sau baza ta de date. Poți revoca accesul oricând din setările CRM-ului; /disconnect deconectează CRM-ul, iar ștergerea completă a datelor se face la cerere prin @aiicrm_support_bot. Detaliile sunt în politica de confidențialitate din josul paginii.",
     "Need a contract or a company invoice?": "Ai nevoie de contract sau de factură pe firmă?",
@@ -550,7 +550,7 @@
     "Where do Kai's automations run?": "Unde rulează automatizările Kai?",
     "Rules («deal moved — task», «no reply — notify me») live on Kai's side: it listens to CRM events via a webhook and performs the action through the CRM API. They don't appear in the CRM's own Digital Pipeline and run while your subscription is active. Everything already created in the CRM — pipelines, fields, tasks, contacts — stays forever.": "Regulile („tranzacția a trecut — sarcină”, „niciun răspuns — anunță-mă”) trăiesc pe partea lui Kai: ascultă evenimentele CRM-ului prin webhook și execută acțiunea prin API-ul CRM-ului. Nu apar în Digital Pipeline-ul propriu al CRM-ului și rulează cât timp abonamentul e activ. Tot ce a fost deja creat în CRM — pipeline-uri, câmpuri, sarcini, contacte — rămâne pentru totdeauna.",
     "What does Kai do in Bitrix24?": "Ce face Kai în Bitrix24?",
-    "Beta: pipelines and stages, fields, deals, contacts, companies, tasks, analytics and specs. In-Bitrix24 automations (robots) and widgets are not there yet — if those are your main need, it's fairer to wait or use amoCRM/Kommo, where everything works.": "Beta: pipeline-uri și etape, câmpuri, tranzacții, contacte, companii, sarcini, analiză și specificații. Automatizările din interiorul Bitrix24 (roboții) și widgeturile nu există încă — dacă ele sunt nevoia ta principală, e mai corect să aștepți sau să folosești amoCRM/Kommo, unde totul funcționează.",
+    "Pipelines and stages, fields, deals, contacts, companies, tasks, analytics and specs. In-Bitrix24 automations (robots) and widgets are not there yet — if those are your main need, it's fairer to use amoCRM/Kommo, where the rules already work.": "Pipeline-uri și etape, câmpuri, tranzacții, contacte, companii, sarcini, analiză și specificații. Automatizările din interiorul Bitrix24 (roboții) și widgeturile nu există încă — dacă ele sunt nevoia ta principală, e mai corect să folosești amoCRM/Kommo, unde regulile funcționează deja.",
     "Does Kai work with a custom or in-house CRM?": "Kai funcționează cu un CRM personalizat sau intern?",
     "Yes, via its API. Your own CRM — custom, in-house or any other with a REST API — connects through a connector spec: the API address, the auth method (OAuth 2.0, API key, bearer or basic) and which endpoints do what. Kai drafts the spec from your docs or asks step by step, then works with it like with amoCRM: pipelines, deals, contacts, tasks, automations. Only the pipelines list is mandatory. Try it first on Kai Sandbox CRM. Connecting is on the Max plan; discussing and drafting the spec is free.": "Da, prin API-ul ei. CRM-ul tău propriu — personalizat, intern sau orice altul cu REST API — se conectează printr-o specificație de conector: adresa API-ului, metoda de autentificare (OAuth 2.0, cheie API, bearer sau basic) și ce face fiecare endpoint. Kai schițează specificația din documentația ta sau întreabă pas cu pas, apoi lucrează cu ea ca și cu amoCRM: pipeline-uri, tranzacții, contacte, sarcini, automatizări. Obligatorie e doar lista de pipeline-uri. Încearcă mai întâi pe Kai Sandbox CRM. Conectarea e pe planul Max; discuția și schițarea specificației sunt gratuite.",
     "Connect your CRM in 1 click": "Conectează-ți CRM-ul cu 1 clic",
@@ -585,11 +585,12 @@
     "I can set up your CRM in minutes — tell me what you do?": "Îți configurez CRM-ul în câteva minute — îmi spui cu ce te ocupi?",
     "Boo! I can set up your CRM in minutes — tell me what you do?": "Bau! Îți configurez CRM-ul în câteva minute — îmi spui cu ce te ocupi?",
     "Happy holidays! I can set up your CRM in minutes — tell me what you do?": "Sărbători fericite! Îți configurez CRM-ul în câteva minute — îmi spui cu ce te ocupi?",
-    "Close chat": "Închide chatul"
+    "Close chat": "Închide chatul",
+    "Language": "Limbă"
   },
   "meta": {
     "title": "Asistent AI care configurează amoCRM, Kommo, Bitrix24 și CRM-uri personalizate | Kai",
-    "description": "Kai îți configurează CRM-ul dintr-un mesaj în limbaj obișnuit, în Telegram sau în browser — amoCRM, Kommo, Bitrix24 sau propriul tău CRM prin API: pipeline-uri, câmpuri, sarcini, automatizări, analiză. 65 de acțiuni. 3 zile gratuit, fără card.",
+    "description": "Kai îți configurează CRM-ul dintr-un mesaj în limbaj obișnuit, în Telegram sau în browser — amoCRM, Kommo, Bitrix24 sau propriul tău CRM prin API: pipeline-uri, câmpuri, sarcini, automatizări, analiză. 65 de acțiuni. 3 zile de probă, fără card.",
     "og_title": "Kai — asistentul AI care îți configurează CRM-ul",
     "og_description": "Un asistent AI care îți configurează CRM-ul dintr-un mesaj în chat — în Telegram sau în browser.",
     "keywords": "configurare CRM, configurare amoCRM, configurare Kommo, configurare Bitrix24, asistent AI pentru amoCRM, asistent AI pentru Kommo, asistent AI pentru Bitrix24, inteligență artificială pentru CRM, automatizare CRM, bot Telegram pentru CRM, pipeline de vânzări, pâlnie de vânzări, conectare AI la propriul CRM prin API, CRM fără programator, CRM personalizat, CRM propriu, CRM intern, CRM la comandă, agent AI pentru CRM personalizat, integrare AI CRM REST API, consultant CRM AI, implementare CRM, amoCRM, Kommo, Bitrix24, CRM setup, AI assistant, CRM automation, amoCRM API, Kommo API, custom CRM, in-house CRM"
@@ -617,7 +618,7 @@
       ],
       [
         "Cât costă Kai?",
-        "Trei planuri: Start — €29/lună (1 CRM), Pro — €59/lună (3 CRM-uri), Max — €119/lună (10 CRM-uri). Primele 3 zile sunt gratuite."
+        "Trei planuri: Start — €29/lună (1 CRM), Pro — €59/lună (3 CRM-uri), Max — €119/lună (10 CRM-uri). Primele 3 zile sunt o perioadă de probă."
       ],
       [
         "Kai funcționează cu Kommo?",
@@ -625,15 +626,15 @@
       ],
       [
         "Kai funcționează cu Bitrix24?",
-        "Da, în beta: Bitrix24 se conectează printr-un webhook de intrare, Kai configurează pipeline-uri, etape, câmpuri, tranzacții, contacte și sarcini și rulează analiza. Automatizările din interiorul Bitrix24 și widgeturile nu sunt disponibile încă. amoCRM și Kommo sunt acceptate complet."
+        "Da: Bitrix24 se conectează printr-un webhook de intrare, Kai configurează pipeline-uri, etape, câmpuri, tranzacții, contacte și sarcini și rulează analiza. Automatizările din interiorul Bitrix24 și widgeturile nu sunt disponibile încă. amoCRM și Kommo sunt acceptate complet."
       ],
       [
         "Kai funcționează cu un CRM personalizat sau intern?",
         "Da, prin API-ul ei. CRM-ul tău propriu — personalizat, intern sau orice altul cu REST API — se conectează printr-o specificație de conector: adresa API-ului, metoda de autentificare (OAuth 2.0, cheie API, bearer sau basic) și ce face fiecare endpoint. Kai schițează specificația din documentația ta sau întreabă pas cu pas, apoi lucrează cu ea ca și cu amoCRM: pipeline-uri, tranzacții, contacte, sarcini, automatizări. Obligatorie e doar lista de pipeline-uri. Încearcă mai întâi pe Kai Sandbox CRM. Conectarea e pe planul Max; discuția și schițarea specificației sunt gratuite."
       ],
       [
-        "Pot să încerc gratuit?",
-        "Da: 3 zile gratuit, fără card, începând de când îți conectezi CRM-ul. Perioada de probă include ~25 de cereri și funcțiile planului Start."
+        "Există o perioadă de probă?",
+        "Da: 3 zile de probă, fără card, începând de când îți conectezi CRM-ul. Perioada de probă include ~25 de cereri și funcțiile planului Start."
       ]
     ]
   },

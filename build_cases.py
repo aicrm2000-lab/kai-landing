@@ -192,7 +192,7 @@ def page(lang: str, d=None) -> str:
 <meta property="og:type" content="article"><meta property="og:site_name" content="Kai"><meta property="og:url" content="{self_url}"><meta property="og:locale" content="{i18n_pages.LOCALES[lang]}">
 <meta property="og:title" content="{e(L['h1'])}"><meta property="og:description" content="{e(L['desc'])}"><meta property="og:image" content="{BASE}og-image-v5.png">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{e(L['h1'])}"><meta name="twitter:description" content="{e(L['desc'])}"><meta name="twitter:image" content="{BASE}og-image-v5.png">
-<link rel="icon" href="{FAVICON}">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>{CSS}/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */

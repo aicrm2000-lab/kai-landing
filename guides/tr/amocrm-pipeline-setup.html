@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>amoCRM'de Yazılımcı Olmadan Satış Hunisi Kurulumu (2026) | Kai</title>
 <meta name="description" content="Adım adım: amoCRM'de Leads → Setup üzerinden huni aşamaları, özel alanlar ve zorunlu alanlar, sık yapılan hatalar ve aynısını Kai'ye tek mesajla yaptırmak.">
 <meta name="keywords" content="amoCRM veya Kommo'da yazılımcı olmadan satış hunisi ve zorunlu alanlar nasıl kurulur, amoCRM / Kommo hunilerini sohbet mesajından kuran bir yapay zeka asistanı var mı">
@@ -133,7 +136,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
     <li>Sistem aşamaları “Başarılı” ve “Başarısız” silinemez, yalnızca yeniden adlandırılabilir.</li>
     <li>Bir alanın tipi sonradan değiştirilemez, alanı silmek de içindeki verileri siler. Alanları gerçek lead'ler gelmeden önce planla.</li>
     <li>Aşamaya göre zorunlu alanlar amoCRM'in “Advanced” planı ve üstünde var; alanları yalnızca yönetici düzenleyebilir.</li>
-    <li>Elle: 1–2 saat. Entegratör: genelde 3–5 hafta ve yaklaşık 1.500–4.000 €. Kai: tek sohbet, aylık 29 €'dan başlayan fiyatla, 3 gün ücretsiz.</li>
+    <li>Elle: 1–2 saat. Entegratör: genelde 3–5 hafta ve yaklaşık 1.500–4.000 €. Kai: tek sohbet, aylık 29 €'dan başlayan fiyatla, 3 günlük deneme.</li>
   </ul>
 </section>
 
@@ -201,7 +204,7 @@ Lead “Keşif planlandı” aşamasına gelince keşiften bir gün önce keşif
   <thead><tr><th>Kriter</th><th>Elle</th><th>Entegratör</th><th>Kai</th></tr></thead>
   <tbody>
     <tr><td>Süre</td><td>Basit bir huni için 1–2 saat</td><td>Genelde 3–5 hafta</td><td>Tek sohbet: sorular → plan → kurulum</td></tr>
-    <tr><td>Maliyet</td><td>Ücretsiz, kendi zamanın</td><td>Genelde 1.500–4.000 €</td><td>Aylık 29 €'dan başlar, 3 gün ücretsiz, kart gerekmez</td></tr>
+    <tr><td>Maliyet</td><td>Ücretsiz, kendi zamanın</td><td>Genelde 1.500–4.000 €</td><td>Aylık 29 €'dan başlar, 3 günlük deneme, kart gerekmez</td></tr>
     <tr><td>Kim gerekli</td><td>amoCRM yöneticisi</td><td>Senin tarafında bir sorumlu ve bir şartname</td><td>OAuth için amoCRM yöneticisi</td></tr>
     <tr><td>Sonraki değişiklikler</td><td>Yine tek tek tıklarsın</td><td>Yeni şartname, yeni fatura</td><td>Bir sohbet mesajı daha</td></tr>
     <tr><td>En uygun olduğu durum</td><td>Tek huni, bir düzine alan</td><td>Özel entegrasyonlar: muhasebe, telefon santrali, stok</td><td>Huniler, alanlar, otomasyonlar, kodsuz API entegrasyonları</td></tr>
@@ -233,8 +236,8 @@ Lead “Keşif planlandı” aşamasına gelince keşiften bir gün önce keşif
     <p>Resmi amoCRM/Kommo OAuth ile: tek tıkla onay, şifre ya da API anahtarı paylaşılmaz. Token'lar şifreli saklanır, Kai lead verilerini saklamaz ve erişim CRM ayarlarından her an iptal edilebilir. Şirket Polonya'da (AB) kayıtlıdır.</p>
   </div>
   <div class="faq-item">
-    <h3>Kai ne kadar, ücretsiz deneme var mı?</h3>
-    <p>Start aylık 29 € (~100 istek), Pro aylık 59 € (~500), Max aylık 119 € (adil kullanım, öncelik ve özel işler). İlk 3 gün ücretsiz, kart gerekmez. Kart, Apple Pay, Google Pay, Telegram Stars ya da USDT ile öde.</p>
+    <h3>Kai ne kadar, deneme süresi var mı?</h3>
+    <p>Start aylık 29 € (~100 istek), Pro aylık 59 € (~500), Max aylık 119 € (adil kullanım, öncelik ve özel işler). 3 günlük deneme, kart gerekmez. Kart, Apple Pay, Google Pay, Telegram Stars ya da USDT ile öde.</p>
   </div>
 </div>
 
@@ -323,10 +326,10 @@ Lead “Keşif planlandı” aşamasına gelince keşiften bir gün önce keşif
         },
         {
           "@type": "Question",
-          "name": "Kai ne kadar, ücretsiz deneme var mı?",
+          "name": "Kai ne kadar, deneme süresi var mı?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Start aylık 29 € (~100 istek), Pro aylık 59 € (~500), Max aylık 119 € (adil kullanım, öncelik ve özel işler). İlk 3 gün ücretsiz, kart gerekmez. Kart, Apple Pay, Google Pay, Telegram Stars ya da USDT ile öde."
+            "text": "Start aylık 29 € (~100 istek), Pro aylık 59 € (~500), Max aylık 119 € (adil kullanım, öncelik ve özel işler). 3 günlük deneme, kart gerekmez. Kart, Apple Pay, Google Pay, Telegram Stars ya da USDT ile öde."
           }
         }
       ]

@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>amoCRM Sales Pipeline Setup Without a Developer (2026) | Kai</title>
 <meta name="description" content="Step by step: pipeline stages, custom fields and required fields in amoCRM via Leads → Setup, common mistakes, and how to do the same with one message to Kai.">
 <meta name="keywords" content="how to set up a sales pipeline and required fields in amoCRM or Kommo without a developer, is there an AI assistant that configures amoCRM / Kommo pipelines from a chat message">
@@ -132,7 +135,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
     <li>The system stages "Won" and "Lost" cannot be deleted, only renamed.</li>
     <li>A field's type cannot be changed later, and deleting a field erases its data. Plan fields before real deals arrive.</li>
     <li>Required fields per stage are available from amoCRM's "Advanced" plan upwards; only an administrator can edit fields.</li>
-    <li>Manual: 1–2 hours. Integrator: typically 3–5 weeks and roughly €1,500–4,000. Kai: one chat conversation, from €29/month, 3 days free.</li>
+    <li>Manual: 1–2 hours. Integrator: typically 3–5 weeks and roughly €1,500–4,000. Kai: one chat conversation, from €29/month, 3-day trial.</li>
   </ul>
 </section>
 
@@ -200,7 +203,7 @@ When a deal reaches "Site visit booked", create a task for the surveyor one day 
   <thead><tr><th>Criterion</th><th>Manual</th><th>Integrator</th><th>Kai</th></tr></thead>
   <tbody>
     <tr><td>Time</td><td>1–2 hours for a simple pipeline</td><td>Typically 3–5 weeks</td><td>One conversation: questions → plan → setup</td></tr>
-    <tr><td>Cost</td><td>Free, your own time</td><td>Typically €1,500–4,000</td><td>From €29/month, 3 days free, no card</td></tr>
+    <tr><td>Cost</td><td>Free, your own time</td><td>Typically €1,500–4,000</td><td>From €29/month, 3-day trial, no card</td></tr>
     <tr><td>Who is needed</td><td>amoCRM administrator</td><td>An owner on your side plus a spec</td><td>amoCRM administrator for OAuth</td></tr>
     <tr><td>Changes later</td><td>Click through again</td><td>New spec, new invoice</td><td>Another chat message</td></tr>
     <tr><td>Best for</td><td>One pipeline, a dozen fields</td><td>Custom integrations: accounting, telephony, inventory</td><td>Pipelines, fields, automations, API integrations without code</td></tr>
@@ -232,8 +235,8 @@ When a deal reaches "Site visit booked", create a task for the surveyor one day 
     <p>Through official amoCRM/Kommo OAuth: one-click approval, no passwords or API keys shared. Tokens are stored encrypted, Kai doesn't store deal data, and access can be revoked in the CRM settings any time. The company is registered in Poland (EU).</p>
   </div>
   <div class="faq-item">
-    <h3>How much does Kai cost, and is there a free trial?</h3>
-    <p>Start €29/month (~100 requests), Pro €59/month (~500), Max €119/month (fair use, priority and custom work). First 3 days free, no card. Pay by card, Apple Pay, Google Pay, Telegram Stars or USDT.</p>
+    <h3>How much does Kai cost, and is there a trial?</h3>
+    <p>Start €29/month (~100 requests), Pro €59/month (~500), Max €119/month (fair use, priority and custom work). 3-day trial, no card. Pay by card, Apple Pay, Google Pay, Telegram Stars or USDT.</p>
   </div>
 </div>
 
@@ -277,7 +280,7 @@ When a deal reaches "Site visit booked", create a task for the surveyor one day 
         {"@type": "Question", "name": "What happens to deals if I delete a stage or a pipeline?", "acceptedAnswer": {"@type": "Answer", "text": "Move the deals first. A stage is deleted by dragging it to the bin; a pipeline only once every deal, including closed ones, is out, and it cannot be restored."}},
         {"@type": "Question", "name": "Do I need a developer to set up amoCRM?", "acceptedAnswer": {"@type": "Answer", "text": "Not for pipelines, fields, required fields and basic automations. A developer or integrator is needed for non-standard links: accounting software, a custom website, unusual telephony APIs."}},
         {"@type": "Question", "name": "How does Kai access amoCRM, and is it safe?", "acceptedAnswer": {"@type": "Answer", "text": "Through official amoCRM/Kommo OAuth: one-click approval, no passwords or API keys shared. Tokens are stored encrypted, Kai doesn't store deal data, and access can be revoked in the CRM settings any time. The company is registered in Poland (EU)."}},
-        {"@type": "Question", "name": "How much does Kai cost, and is there a free trial?", "acceptedAnswer": {"@type": "Answer", "text": "Start €29/month (~100 requests), Pro €59/month (~500), Max €119/month (fair use, priority and custom work). First 3 days free, no card. Pay by card, Apple Pay, Google Pay, Telegram Stars or USDT."}}
+        {"@type": "Question", "name": "How much does Kai cost, and is there a trial?", "acceptedAnswer": {"@type": "Answer", "text": "Start €29/month (~100 requests), Pro €59/month (~500), Max €119/month (fair use, priority and custom work). 3-day trial, no card. Pay by card, Apple Pay, Google Pay, Telegram Stars or USDT."}}
       ]
     },
     {

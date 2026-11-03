@@ -14,6 +14,7 @@
     "Sign in": "Entrar",
     "Sign up": "Registro",
     "My account": "Mi cuenta",
+    "Language": "Idioma",
     "“I’ll call back” — loss reason #1": "«Te llamo luego»: motivo de pérdida n.º 1",
     "loss reasons live in the CRM — you see where deals die": "los motivos de pérdida viven en el CRM: ves dónde mueren los leads",
     "“I’ll log it later” = never": "«Luego lo anoto en el CRM» = nunca",
@@ -72,7 +73,7 @@
     "Works in your browser and Telegram — no install, no assembly required": "Funciona en tu navegador y en Telegram, sin instalar nada: un regalo que no hay que armar",
     "Set up your <span class='a'>CRM</span><br>without developers": "Configura tu <span class='a'>CRM</span><br>sin programadores",
     "Kai is an AI assistant that sets up your CRM from a&nbsp;plain-language message in Telegram or right in your&nbsp;browser. It asks the right questions, builds a&nbsp;plan for your business and configures the CRM automatically.": "Kai es un asistente de IA que configura tu CRM a partir de un&nbsp;mensaje en lenguaje natural, en Telegram o directamente en tu&nbsp;navegador. Hace las preguntas correctas, crea un&nbsp;plan para tu negocio y configura el CRM automáticamente.",
-    "Try for free": "Probar gratis",
+    "Start your trial": "Empieza tu prueba",
     "Try in browser": "Probar en navegador",
     "You need an account in your CRM — most systems offer a free trial. Supported CRMs are listed <a href='#crm'>below</a>.": "Necesitas una cuenta en tu CRM; la mayoría ofrece un periodo de prueba gratis. Los CRM compatibles están <a href='#crm'>más abajo</a>.",
     "Close": "Cerrar",
@@ -86,8 +87,8 @@
     "Connect your CRM in 1 click before dark — OAuth, no keys": "Conecta tu CRM en 1 clic antes de que oscurezca: OAuth, sin claves",
     "Connect your CRM in 1 click while everyone’s on holiday — OAuth, no keys": "Conecta tu CRM en 1 clic mientras todos están de vacaciones: OAuth, sin claves",
     "We integrate with": "Trabajamos con",
-    "Bitrix24 — beta: connect it with a webhook in the bot": "Bitrix24, beta: se conecta con un webhook en el bot",
-    "Beta": "Beta",
+    "Bitrix24: connect it with a webhook in the bot": "Bitrix24: se conecta con un webhook en el bot",
+    "via webhook": "por webhook",
     "Your own CRM: custom, in-house or any other with a REST API — via a connector spec": "Tu propio CRM: a medida, interno o cualquier otro con API REST, mediante una especificación de conector",
     "Your own CRM": "Tu propio CRM",
     "via API": "por API",
@@ -468,17 +469,17 @@
     "Your time": "Tu tiempo",
     "Project from hundreds of euros, changes billed separately": "Proyecto desde cientos de euros, cambios facturados aparte",
     "Included in the CRM plan": "Incluida en el plan del CRM",
-    "From €29/mo (automations from €59), 3 days free": "Desde €29/mes (automatizaciones desde €59), 3 días gratis",
+    "From €29/mo (automations from €59), 3-day trial": "Desde €29/mes (automatizaciones desde €59), 3 días de prueba",
     "Integrator and built-in assistant timings and prices are typical benchmarks, not promises — check with a specific vendor.": "Los plazos y precios de integradores y asistentes integrados son referencias típicas, no promesas: confírmalos con el proveedor concreto.",
     "Pick the plan for your stage": "Elige el plan para tu etapa",
     "Pick a plan: no tricks, only treats": "Elige un plan: sin truco, solo trato",
     "Pick a plan — a gift to your future self": "Elige un plan: un regalo para tu yo del futuro",
-    "First 3 days free — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).": "Los primeros 3 días son gratis; el plazo empieza a contar cuando conectas tu CRM. Paga con tarjeta, Telegram Stars o cripto (USDT).",
+    "3-day trial — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).": "Los primeros 3 días son de prueba; el plazo empieza a contar cuando conectas tu CRM. Paga con tarjeta, Telegram Stars o cripto (USDT).",
     "/mo": "/mes",
     "Set up your CRM by talking": "Configura tu CRM conversando",
-    "3 days free": "3 días gratis",
-    "3 days free, no sacrifices": "3 días gratis, sin sacrificios",
-    "3 days free — our gift": "3 días gratis: nuestro regalo",
+    "3-day trial": "3 días de prueba",
+    "3-day trial, no sacrifices": "3 días de prueba, sin sacrificios",
+    "3-day trial — our gift": "3 días de prueba: nuestro regalo",
     "Consultation & spec (PDF)": "Consultoría y especificación (PDF)",
     "Pipelines, stages, custom fields": "Embudos, etapas, campos personalizados",
     "Leads, contacts, companies": "Leads, contactos, empresas",
@@ -542,7 +543,7 @@
     "What is a 'request'?": "¿Qué es una «consulta»?",
     "One message to the bot — 'create pipeline', 'add field', 'import contacts'.": "Un mensaje al bot: «crea un embudo», «agrega un campo», «importa los contactos».",
     "What if it's not for me?": "¿Y si no es para mí?",
-    "First 3 days free, no card; the clock starts when you connect the CRM. The trial includes ~25 requests and Start-plan features. Try risk-free.": "Los primeros 3 días son gratis, sin tarjeta; el plazo empieza a contar cuando conectas el CRM. La prueba incluye ~25 consultas y las funciones del plan Start. Pruébalo sin riesgo.",
+    "3-day trial, no card; the clock starts when you connect the CRM. The trial includes ~25 requests and Start-plan features. Try risk-free.": "3 días de prueba, sin tarjeta; el plazo empieza a contar cuando conectas el CRM. La prueba incluye ~25 consultas y las funciones del plan Start. Pruébalo sin riesgo.",
     "Who makes Kai and where is my data?": "¿Quién hace Kai y dónde están mis datos?",
     "Kai is built by a small team from Poland (EU). CRM access is OAuth 2.0 only: we never see passwords, tokens are encrypted at rest. AI providers (OpenAI, Anthropic) receive only the text of your request — never tokens or your database. You can revoke access in the CRM settings anytime; /disconnect unlinks the CRM, and full data deletion is done on request via @aiicrm_support_bot. Details are in the privacy policy at the bottom of the page.": "Kai lo desarrolla un equipo pequeño de Polonia (UE). El acceso al CRM es solo por OAuth 2.0: nunca vemos contraseñas y los tokens se guardan cifrados. Los proveedores de IA (OpenAI, Anthropic) reciben solo el texto de tu consulta, nunca tokens ni tu base de datos. Puedes revocar el acceso en la configuración del CRM en cualquier momento; /disconnect desvincula el CRM y la eliminación completa de datos se hace a petición a través de @aiicrm_support_bot. Los detalles están en la política de privacidad al final de la página.",
     "Need a contract or a company invoice?": "¿Necesitas un contrato o una factura a nombre de empresa?",
@@ -550,7 +551,7 @@
     "Where do Kai's automations run?": "¿Dónde se ejecutan las automatizaciones de Kai?",
     "Rules («deal moved — task», «no reply — notify me») live on Kai's side: it listens to CRM events via a webhook and performs the action through the CRM API. They don't appear in the CRM's own Digital Pipeline and run while your subscription is active. Everything already created in the CRM — pipelines, fields, tasks, contacts — stays forever.": "Las reglas («lead movido — tarea», «sin respuesta — avísame») viven del lado de Kai: escucha los eventos del CRM por webhook y ejecuta la acción a través de la API del CRM. No aparecen en el Digital Pipeline del propio CRM y funcionan mientras tu suscripción esté activa. Todo lo que ya se creó en el CRM (embudos, campos, tareas, contactos) se queda para siempre.",
     "What does Kai do in Bitrix24?": "¿Qué hace Kai en Bitrix24?",
-    "Beta: pipelines and stages, fields, deals, contacts, companies, tasks, analytics and specs. In-Bitrix24 automations (robots) and widgets are not there yet — if those are your main need, it's fairer to wait or use amoCRM/Kommo, where everything works.": "Beta: embudos y etapas, campos, leads, contactos, empresas, tareas, analítica y especificaciones. Las automatizaciones dentro de Bitrix24 (robots) y los widgets aún no están; si eso es lo principal para ti, es más honesto esperar o usar amoCRM/Kommo, donde todo funciona.",
+    "Pipelines and stages, fields, deals, contacts, companies, tasks, analytics and specs. In-Bitrix24 automations (robots) and widgets are not there yet — if those are your main need, it's fairer to use amoCRM/Kommo, where the rules already work.": "Embudos y etapas, campos, leads, contactos, empresas, tareas, analítica y especificaciones. Las automatizaciones dentro de Bitrix24 (robots) y los widgets aún no están; si eso es lo principal para ti, es más honesto usar amoCRM/Kommo, donde las reglas ya funcionan.",
     "Does Kai work with a custom or in-house CRM?": "¿Kai funciona con un CRM propio o a medida?",
     "Yes, via its API. Your own CRM — custom, in-house or any other with a REST API — connects through a connector spec: the API address, the auth method (OAuth 2.0, API key, bearer or basic) and which endpoints do what. Kai drafts the spec from your docs or asks step by step, then works with it like with amoCRM: pipelines, deals, contacts, tasks, automations. Only the pipelines list is mandatory. Try it first on Kai Sandbox CRM. Connecting is on the Max plan; discussing and drafting the spec is free.": "Sí, a través de su API. Tu propio CRM (a medida, interno o cualquier otro con API REST) se conecta mediante una especificación de conector: la dirección de la API, el método de autenticación (OAuth 2.0, clave API, bearer o basic) y qué hace cada endpoint. Kai redacta la especificación a partir de tu documentación o te pregunta paso a paso, y después trabaja con él igual que con amoCRM: embudos, leads, contactos, tareas, automatizaciones. Solo la lista de embudos es obligatoria. Pruébalo primero en Kai Sandbox CRM. La conexión está en el plan Max; discutir y redactar la especificación es gratis.",
     "Connect your CRM in 1 click": "Conecta tu CRM en 1 clic",
@@ -589,7 +590,7 @@
   },
   "meta": {
     "title": "Asistente de IA que configura amoCRM, Kommo, Bitrix24 y CRM a medida | Kai",
-    "description": "Kai configura tu CRM a partir de un mensaje en lenguaje natural, en Telegram o en tu navegador. amoCRM, Kommo, Bitrix24 o tu propio CRM a medida a través de su API: embudos, campos, tareas, automatizaciones, analítica. 65 acciones. 3 días gratis, sin tarjeta.",
+    "description": "Kai configura tu CRM a partir de un mensaje en lenguaje natural, en Telegram o en tu navegador. amoCRM, Kommo, Bitrix24 o tu propio CRM a medida a través de su API: embudos, campos, tareas, automatizaciones, analítica. 65 acciones. 3 días de prueba, sin tarjeta.",
     "og_title": "Kai: el asistente de IA que configura tu CRM",
     "og_description": "Un asistente de IA que configura tu CRM desde un mensaje de chat, en Telegram o en tu navegador.",
     "keywords": "configurar CRM, configuración de CRM, asistente de IA para amoCRM, asistente de IA para Kommo, asistente de IA para Bitrix24, conectar IA a mi CRM por API, CRM sin programadores, automatización de CRM, bot de Telegram para CRM, embudos de ventas, agente IA para CRM propio, CRM a medida, CRM personalizado, CRM propio por API, integración de IA con API REST de CRM, inteligencia artificial para CRM, amoCRM, Kommo, Bitrix24, amoCRM API, Kommo API, CRM setup, AI assistant, custom CRM"
@@ -617,7 +618,7 @@
       ],
       [
         "¿Cuánto cuesta Kai?",
-        "Tres planes: Start, €29/mes (1 CRM); Pro, €59/mes (3 CRM); Max, €119/mes (10 CRM). Los primeros 3 días son gratis."
+        "Tres planes: Start, €29/mes (1 CRM); Pro, €59/mes (3 CRM); Max, €119/mes (10 CRM). Los primeros 3 días son de prueba."
       ],
       [
         "¿Kai funciona con Kommo?",
@@ -625,15 +626,15 @@
       ],
       [
         "¿Kai funciona con Bitrix24?",
-        "Sí, en beta: Bitrix24 se conecta mediante un webhook entrante; Kai configura embudos, etapas, campos, leads, contactos y tareas, y ejecuta la analítica. Las automatizaciones dentro de Bitrix24 y los widgets aún no están disponibles. amoCRM y Kommo tienen soporte completo."
+        "Sí: Bitrix24 se conecta mediante un webhook entrante; Kai configura embudos, etapas, campos, leads, contactos y tareas, y ejecuta la analítica. Las automatizaciones dentro de Bitrix24 y los widgets aún no están disponibles. amoCRM y Kommo tienen soporte completo."
       ],
       [
         "¿Kai funciona con un CRM propio o a medida?",
         "Sí, a través de su API. Tu propio CRM (a medida, interno o cualquier otro con API REST) se conecta mediante una especificación de conector: la dirección de la API, el método de autenticación (OAuth 2.0, clave API, bearer o basic) y qué hace cada endpoint. Kai redacta la especificación a partir de tu documentación o te pregunta paso a paso, y después trabaja con él igual que con amoCRM: embudos, leads, contactos, tareas, automatizaciones. Solo la lista de embudos es obligatoria. Pruébalo primero en Kai Sandbox CRM. La conexión está en el plan Max; discutir y redactar la especificación es gratis."
       ],
       [
-        "¿Puedo probarlo gratis?",
-        "Sí: 3 días gratis, sin tarjeta, desde que conectas tu CRM. La prueba incluye ~25 consultas y las funciones del plan Start."
+        "¿Hay periodo de prueba?",
+        "Sí: 3 días de prueba, sin tarjeta, desde que conectas tu CRM. La prueba incluye ~25 consultas y las funciones del plan Start."
       ]
     ]
   },

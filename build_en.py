@@ -19,7 +19,7 @@ BASE = "https://aii-crm.com/"
 EN_META = {
     "title": "AI assistant that sets up amoCRM, Kommo, Bitrix24 and custom CRMs | Kai",
     "description": ("Kai sets up your CRM from a plain-language message in Telegram or your browser — amoCRM, Kommo, Bitrix24 "
-                    "or your own custom CRM via its API: pipelines, fields, tasks, automations, analytics. 65 actions. 3 days free, no card."),
+                    "or your own custom CRM via its API: pipelines, fields, tasks, automations, analytics. 65 actions. 3-day trial, no card."),
     "og_title": "Kai — AI assistant that sets up your CRM",
     "og_description": "An AI assistant that configures your CRM from a chat message — in Telegram or in your browser.",
     "keywords": ("amoCRM, Kommo, Bitrix24, CRM setup, AI assistant, CRM automation, Telegram CRM bot, sales pipelines, "
@@ -39,13 +39,13 @@ EN_LD = {
         ("Is it safe? Will you get access to my data?", "Kai works through the official amoCRM/Kommo OAuth 2.0. We never see your password. "
                                                         "You can revoke access at any time in your CRM settings."),
         ("How much does Kai cost?", "Three plans: Start — €29/month (1 CRM), Pro — €59/month (3 CRMs), Max — €119/month (10 CRMs). "
-                                    "The first 3 days are free."),
+                                    "The first 3 days are a trial."),
         ("Does Kai work with Kommo?", "Yes, Kai supports both amoCRM and Kommo. The API is compatible, the connection goes through OAuth."),
-        ("Does Kai work with Bitrix24?", "Yes, in beta: Bitrix24 connects through an inbound webhook, Kai sets up pipelines, "
+        ("Does Kai work with Bitrix24?", "Yes: Bitrix24 connects through an inbound webhook, Kai sets up pipelines, "
                                          "stages, fields, deals, contacts and tasks and runs the analytics. Automations inside "
                                          "Bitrix24 and widgets are not available yet. amoCRM and Kommo are fully supported."),
         ("Does Kai work with a custom or in-house CRM?", "Yes, via its API. Your own CRM — custom, in-house or any other with a REST API — connects through a connector spec: the API address, the auth method (OAuth 2.0, API key, bearer or basic) and which endpoints do what. Kai drafts the spec from your docs or asks step by step, then works with it like with amoCRM: pipelines, deals, contacts, tasks, automations. Only the pipelines list is mandatory. Try it first on Kai Sandbox CRM. Connecting is on the Max plan; discussing and drafting the spec is free."),
-        ("Can I try it for free?", "Yes: 3 days free, no card, starting when you connect your CRM. The trial includes ~25 requests and Start-plan features."),
+        ("Is there a trial?", "Yes: a 3-day trial, no card, starting when you connect your CRM. The trial includes ~25 requests and Start-plan features."),
     ],
 }
 

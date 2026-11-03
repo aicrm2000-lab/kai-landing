@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Konfiguracja CRM bez integratora: checklista w 12 punktach | Kai</title>
 <meta name="description" content="Checklista CRM w 12 punktach: etapy, pola wymagane, źródła, powody przegranej, zadania, duplikaty, import, automatyzacje, szkolenie i kiedy wziąć integratora.">
 <meta name="keywords" content="Konfiguracja CRM bez konsultanta">
@@ -199,11 +202,11 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <p>Przyjdź ze specyfikacją: etapami, polami, źródłami, powodami przegranej i regułami z punktów 1–9. Kai może przygotować ją w PDF na podstawie uzgodnionego planu, co oszczędza pierwsze spotkania.</p>
 
 <h2>Z Kai to jedna wiadomość</h2>
-<p>Kai to asystent AI, który konfiguruje amoCRM i Kommo (Bitrix24 w becie) na podstawie wiadomości na czacie, w bocie w Telegramie <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> lub w <a href="https://app.aii-crm.com/chat?lang=en">czacie webowym</a>, a podłącza się przez OAuth 2.0 jednym kliknięciem. Punkty 1–9 zajmują jedną rozmowę: pytania doprecyzowujące z opcjami odpowiedzi, plan, a potem wszystko jest tworzone przez oficjalne API i Kai wysyła raport.</p>
+<p>Kai to asystent AI, który konfiguruje amoCRM, Kommo i Bitrix24 na podstawie wiadomości na czacie, w bocie w Telegramie <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> lub w <a href="https://app.aii-crm.com/chat?lang=en">czacie webowym</a>, a podłącza się przez OAuth 2.0 jednym kliknięciem. Punkty 1–9 zajmują jedną rozmowę: pytania doprecyzowujące z opcjami odpowiedzi, plan, a potem wszystko jest tworzone przez oficjalne API i Kai wysyła raport.</p>
 <pre>Mam pracownię mebli na zamówienie, 3 handlowców, zgłoszenia ze strony i z Instagrama. Skonfiguruj amoCRM według checklisty: etapy pod proces, pola z regułami wymagalności, źródła, powody przegranej, zadanie w każdej otwartej transakcji.</pre>
 <pre>Sprawdź mój lejek: ile transakcji nie ma zadania, źródła i odpowiedzialnego, i zaproponuj, co naprawić najpierw.</pre>
 <pre>Przygotuj specyfikację w PDF na podstawie uzgodnionego planu dla integratora, który robi połączenie z księgowością.</pre>
-<p>Uczciwe ograniczenia. Kai wskazuje dziury w procesie, ale to, jak sprzedajesz, pozostaje twoją decyzją. Dyscypliny wdrożenia i przeglądów (punkty 10–11) nie da się zautomatyzować. Automatyzacje zdarzeń są w planie Pro (€59/mies.); Start za €29/mies. obejmuje strukturę, pola, zadania i import; pierwsze 3 dni są darmowe, bez karty, około 25 zapytań. W Bitrix24 roboty i widżety nie są jeszcze konfigurowane.</p>
+<p>Uczciwe ograniczenia. Kai wskazuje dziury w procesie, ale to, jak sprzedajesz, pozostaje twoją decyzją. Dyscypliny wdrożenia i przeglądów (punkty 10–11) nie da się zautomatyzować. Automatyzacje zdarzeń są w planie Pro (€59/mies.); Start za €29/mies. obejmuje strukturę, pola, zadania i import; pierwsze 3 dni to okres próbny, bez karty, około 25 zapytań. W Bitrix24 roboty i widżety nie są jeszcze konfigurowane.</p>
 
 <h2>FAQ</h2>
 <div class="faq">
@@ -221,7 +224,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   </div>
   <div class="faq-item">
     <h3>Czym różni się checklista dla amoCRM, Kommo i Bitrix24?</h3>
-    <p>Logika jest ta sama; różnią się interfejs i plany: pola wymagane na etapach nie są dostępne w każdym planie amoCRM, ale są w każdym planie Kommo, a automatyzacje w samym CRM to Digital Pipeline albo roboty Bitrix24. Kai w pełni obsługuje amoCRM i Kommo; Bitrix24 jest w becie, bez robotów i widżetów.</p>
+    <p>Logika jest ta sama; różnią się interfejs i plany: pola wymagane na etapach nie są dostępne w każdym planie amoCRM, ale są w każdym planie Kommo, a automatyzacje w samym CRM to Digital Pipeline albo roboty Bitrix24. Kai obsługuje amoCRM, Kommo i Bitrix24; w Bitrix24 bez robotów i widżetów.</p>
   </div>
 </div>
 
@@ -297,7 +300,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Czym różni się checklista dla amoCRM, Kommo i Bitrix24?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Logika jest ta sama; różnią się interfejs i plany: pola wymagane na etapach nie są dostępne w każdym planie amoCRM, ale są w każdym planie Kommo, a automatyzacje w samym CRM to Digital Pipeline albo roboty Bitrix24. Kai w pełni obsługuje amoCRM i Kommo; Bitrix24 jest w becie, bez robotów i widżetów."
+            "text": "Logika jest ta sama; różnią się interfejs i plany: pola wymagane na etapach nie są dostępne w każdym planie amoCRM, ale są w każdym planie Kommo, a automatyzacje w samym CRM to Digital Pipeline albo roboty Bitrix24. Kai obsługuje amoCRM, Kommo i Bitrix24; w Bitrix24 bez robotów i widżetów."
           }
         }
       ]

@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Configurare la pipeline di vendita in amoCRM senza sviluppatore | Kai</title>
 <meta name="description" content="Passo per passo: fasi della pipeline, campi personalizzati e obbligatori in amoCRM (Leads → Setup), errori comuni e come farlo con un solo messaggio a Kai.">
 <meta name="keywords" content="come configurare una pipeline di vendita e i campi obbligatori in amoCRM o Kommo senza sviluppatore, esiste un assistente IA che configura le pipeline di amoCRM / Kommo da un messaggio in chat">
@@ -133,7 +136,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
     <li>Le fasi di sistema «Vinta» e «Persa» non si possono eliminare, solo rinominare.</li>
     <li>Il tipo di un campo non si può cambiare in seguito, ed eliminare un campo ne cancella i dati. Pianifica i campi prima che arrivino le trattative reali.</li>
     <li>I campi obbligatori per fase sono disponibili dal piano «Advanced» di amoCRM in su; solo un amministratore può modificare i campi.</li>
-    <li>A mano: 1–2 ore. Integratore: di solito 3–5 settimane e circa €1.500–4.000. Kai: una conversazione in chat, da €29/mese, 3 giorni gratis.</li>
+    <li>A mano: 1–2 ore. Integratore: di solito 3–5 settimane e circa €1.500–4.000. Kai: una conversazione in chat, da €29/mese, 3 giorni di prova.</li>
   </ul>
 </section>
 
@@ -201,7 +204,7 @@ Quando una trattativa arriva a «Sopralluogo fissato», crea un'attività per il
   <thead><tr><th>Criterio</th><th>A mano</th><th>Integratore</th><th>Kai</th></tr></thead>
   <tbody>
     <tr><td>Tempo</td><td>1–2 ore per una pipeline semplice</td><td>Di solito 3–5 settimane</td><td>Una conversazione: domande → piano → configurazione</td></tr>
-    <tr><td>Costo</td><td>Gratis, con il tuo tempo</td><td>Di solito €1.500–4.000</td><td>Da €29/mese, 3 giorni gratis, senza carta</td></tr>
+    <tr><td>Costo</td><td>Gratis, con il tuo tempo</td><td>Di solito €1.500–4.000</td><td>Da €29/mese, 3 giorni di prova, senza carta</td></tr>
     <tr><td>Chi serve</td><td>Amministratore di amoCRM</td><td>Un referente dalla tua parte più una specifica</td><td>Amministratore di amoCRM per l'OAuth</td></tr>
     <tr><td>Modifiche successive</td><td>Rifare tutto a clic</td><td>Nuova specifica, nuova fattura</td><td>Un altro messaggio in chat</td></tr>
     <tr><td>Ideale per</td><td>Una pipeline, una dozzina di campi</td><td>Integrazioni su misura: contabilità, telefonia, magazzino</td><td>Pipeline, campi, automazioni, integrazioni API senza codice</td></tr>
@@ -233,8 +236,8 @@ Quando una trattativa arriva a «Sopralluogo fissato», crea un'attività per il
     <p>Tramite l'OAuth ufficiale di amoCRM/Kommo: un'approvazione in un clic, nessuna password o chiave API condivisa. I token sono conservati cifrati, Kai non memorizza i dati delle trattative e l'accesso si può revocare in qualsiasi momento dalle impostazioni del CRM. L'azienda è registrata in Polonia (UE).</p>
   </div>
   <div class="faq-item">
-    <h3>Quanto costa Kai, e c'è una prova gratuita?</h3>
-    <p>Start €29/mese (~100 richieste), Pro €59/mese (~500), Max €119/mese (uso equo, priorità e lavori su misura). I primi 3 giorni sono gratis, senza carta. Paghi con carta, Apple Pay, Google Pay, Telegram Stars o USDT.</p>
+    <h3>Quanto costa Kai, e c'è un periodo di prova?</h3>
+    <p>Start €29/mese (~100 richieste), Pro €59/mese (~500), Max €119/mese (uso equo, priorità e lavori su misura). 3 giorni di prova, senza carta. Paghi con carta, Apple Pay, Google Pay, Telegram Stars o USDT.</p>
   </div>
 </div>
 
@@ -323,10 +326,10 @@ Quando una trattativa arriva a «Sopralluogo fissato», crea un'attività per il
         },
         {
           "@type": "Question",
-          "name": "Quanto costa Kai, e c'è una prova gratuita?",
+          "name": "Quanto costa Kai, e c'è un periodo di prova?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Start €29/mese (~100 richieste), Pro €59/mese (~500), Max €119/mese (uso equo, priorità e lavori su misura). I primi 3 giorni sono gratis, senza carta. Paghi con carta, Apple Pay, Google Pay, Telegram Stars o USDT."
+            "text": "Start €29/mese (~100 richieste), Pro €59/mese (~500), Max €119/mese (uso equo, priorità e lavori su misura). 3 giorni di prova, senza carta. Paghi con carta, Apple Pay, Google Pay, Telegram Stars o USDT."
           }
         }
       ]

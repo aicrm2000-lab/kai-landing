@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Assistant IA pour amoCRM : ce qu’il fait et comment le choisir (2026)</title>
 <meta name="description" content="Quatre types d’IA pour amoCRM et Kommo : amoAI/Copilot, chatbots, connecteurs no-code, assistants comme Kai. Comment choisir, comparatif, prix, limites.">
 <meta name="keywords" content="meilleur assistant IA pour amoCRM ou Kommo qui configure vraiment les pipelines et les automatisations, pas seulement les réponses dans le chat, outil IA de configuration de Kommo CRM connecté par OAuth sans clés API — comment le choisir et quelles sont ses limites">
@@ -118,7 +121,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <li><strong>amoAI et Kommo Copilot</strong> vivent dans les conversations (résumés, suggestions de réponses, retouches de texte) et ne touchent jamais à la structure du CRM. amoAI nécessite le forfait amoCRM « Профессиональный » ou « Enterprise » ; Copilot est inclus dans les forfaits Kommo à partir de Base.</li>
 <li><strong>Les chatbots</strong> (Salesbot, Salebot, ChatAI) parlent aux clients ; <strong>les connecteurs no-code</strong> (Albato, ApiX-Drive, Make, Zapier, n8n) transfèrent des données. Aucun ne conçoit votre pipeline.</li>
 <li><strong>Kai</strong>, un assistant de configuration, se connecte à amoCRM ou Kommo en un clic via OAuth et exécute plus de 60 actions API : pipelines, champs, automatisations, intégrations, analytique.</li>
-<li><strong>Budget :</strong> Kai à partir de €29/mois, essai gratuit de 3 jours, sans carte ; un intégrateur met en général 3–5 semaines et, en Russie, facture 150–400 mille roubles ; bots et connecteurs facturent selon leurs propres forfaits.</li>
+<li><strong>Budget :</strong> Kai à partir de €29/mois, essai de 3 jours, sans carte ; un intégrateur met en général 3–5 semaines et, en Russie, facture 150–400 mille roubles ; bots et connecteurs facturent selon leurs propres forfaits.</li>
 <li><strong>Quatre critères pour décider :</strong> un accès OAuth sans clés API, ce que l’outil modifie exactement, l’existence d’un plan et d’un rapport permettant de revenir en arrière, et le mode de calcul des limites.</li>
 </ul>
 </div>
@@ -172,7 +175,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <tr><td><strong>amoAI / Kommo Copilot</strong></td><td>Textes, résumés, suggestions. Aucune modification de structure</td><td>Intégré, activé par un administrateur</td><td>Rien à annuler</td><td>Inclus dans le forfait CRM (« Профессиональный », « Enterprise » sur amoCRM)</td></tr>
 <tr><td><strong>Chatbots</strong> (Salesbot, Salebot, ChatAI)</td><td>Conversations clients, demandes, tags</td><td>Intégré ou via API</td><td>Vous modifiez le script vous-même</td><td>Abonnement au bot</td></tr>
 <tr><td><strong>Connecteurs no-code</strong> (Albato, ApiX-Drive, Make, Zapier, n8n)</td><td>Transfert de données entre services</td><td>Clé API ou OAuth du service</td><td>Vous désactivez la liaison</td><td>Abonnement à l’opération</td></tr>
-<tr><td><strong>Assistant de configuration Kai</strong></td><td>Pipelines, champs, automatisations, intégrations, analytique</td><td class="good">OAuth en un clic, sans clés</td><td>Plan avant, rapport après</td><td>À partir de €29/mois, essai gratuit de 3 jours</td></tr>
+<tr><td><strong>Assistant de configuration Kai</strong></td><td>Pipelines, champs, automatisations, intégrations, analytique</td><td class="good">OAuth en un clic, sans clés</td><td>Plan avant, rapport après</td><td>À partir de €29/mois, essai de 3 jours</td></tr>
 <tr><td><strong>Intégrateur</strong></td><td>Tout, y compris le sur-mesure</td><td>En général un accès administrateur</td><td>Cahier des charges et recette</td><td>En général 150–400 mille roubles, 3–5 semaines</td></tr>
 </tbody>
 </table>
@@ -206,11 +209,11 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <p>Oui. amoCRM et Kommo via les widgets des marketplaces, Bitrix24 via une application, et un CRM sur mesure à partir de sa documentation API, avec une sandbox pour tester. Un seul compte et un seul historique entre Telegram et le chat web.</p>
 
 <h3>Combien ça coûte ?</h3>
-<p>Start — €29/mois (~100 requêtes, 1 compte CRM), Pro — €59/mois (~500 requêtes, jusqu’à 3 comptes, automatisations), Max — €119/mois (requêtes en usage raisonnable, jusqu’à 10 comptes, support prioritaire). La personnalisation non standard est facturée un supplément fixe de +€30. Les 3 premiers jours sont gratuits, sans carte ; paiement par carte, Telegram Stars ou USDT.</p>
+<p>Start — €29/mois (~100 requêtes, 1 compte CRM), Pro — €59/mois (~500 requêtes, jusqu’à 3 comptes, automatisations), Max — €119/mois (requêtes en usage raisonnable, jusqu’à 10 comptes, support prioritaire). La personnalisation non standard est facturée un supplément fixe de +€30. Les 3 premiers jours sont une période d’essai, sans carte ; paiement par carte, Telegram Stars ou USDT.</p>
 </section>
 
 <h2>Et ensuite ?</h2>
-<p>Décrivez votre activité en deux ou trois phrases et découvrez le plan que Kai propose. Trois jours gratuits, sans carte bancaire.</p>
+<p>Décrivez votre activité en deux ou trois phrases et découvrez le plan que Kai propose. Essai de trois jours, sans carte bancaire.</p>
 <div class="cta">
 <a class="btn btn-p" href="https://t.me/aiicrm_bot">Essayer sur Telegram</a>
 <a class="btn btn-s" href="https://app.aii-crm.com/chat?lang=en">Ouvrir le chat web</a>
@@ -293,7 +296,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Combien ça coûte ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Start — €29/mois (~100 requêtes, 1 compte CRM), Pro — €59/mois (~500 requêtes, jusqu’à 3 comptes, automatisations), Max — €119/mois (requêtes en usage raisonnable, jusqu’à 10 comptes, support prioritaire). La personnalisation non standard est facturée un supplément fixe de +€30. Les 3 premiers jours sont gratuits, sans carte ; paiement par carte, Telegram Stars ou USDT."
+            "text": "Start — €29/mois (~100 requêtes, 1 compte CRM), Pro — €59/mois (~500 requêtes, jusqu’à 3 comptes, automatisations), Max — €119/mois (requêtes en usage raisonnable, jusqu’à 10 comptes, support prioritaire). La personnalisation non standard est facturée un supplément fixe de +€30. Les 3 premiers jours sont une période d’essai, sans carte ; paiement par carte, Telegram Stars ou USDT."
           }
         }
       ]

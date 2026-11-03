@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Pipeline de vânzări în amoCRM: configurare fără programator | Kai</title>
 <meta name="description" content="Pas cu pas: etapele pipeline-ului, câmpuri personalizate și obligatorii în amoCRM (Leads → Setup), greșeli frecvente și cum faci totul cu un mesaj către Kai.">
 <meta name="keywords" content="cum configurez o pâlnie de vânzări (pipeline) și câmpuri obligatorii în amoCRM sau Kommo fără programator, există un asistent AI care configurează pipeline-urile amoCRM / Kommo dintr-un mesaj în chat">
@@ -133,7 +136,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
     <li>Etapele de sistem „Câștigat” și „Pierdut” nu pot fi șterse, doar redenumite.</li>
     <li>Tipul unui câmp nu mai poate fi schimbat ulterior, iar ștergerea câmpului îi șterge și datele. Gândește-ți câmpurile înainte să apară tranzacțiile reale.</li>
     <li>Câmpurile obligatorii pe etape sunt disponibile în amoCRM începând cu planul „Advanced”; doar un administrator poate edita câmpurile.</li>
-    <li>Manual: 1–2 ore. Integrator: de obicei 3–5 săptămâni și aproximativ €1.500–4.000. Kai: o singură conversație în chat, de la €29/lună, 3 zile gratuit.</li>
+    <li>Manual: 1–2 ore. Integrator: de obicei 3–5 săptămâni și aproximativ €1.500–4.000. Kai: o singură conversație în chat, de la €29/lună, 3 zile de probă.</li>
   </ul>
 </section>
 
@@ -201,7 +204,7 @@ Când o tranzacție ajunge la „Măsurători programate”, creează o sarcină
   <thead><tr><th>Criteriu</th><th>Manual</th><th>Integrator</th><th>Kai</th></tr></thead>
   <tbody>
     <tr><td>Timp</td><td>1–2 ore pentru un pipeline simplu</td><td>De obicei 3–5 săptămâni</td><td>O singură conversație: întrebări → plan → configurare</td></tr>
-    <tr><td>Cost</td><td>Gratuit, din timpul tău</td><td>De obicei €1.500–4.000</td><td>De la €29/lună, 3 zile gratuit, fără card</td></tr>
+    <tr><td>Cost</td><td>Gratuit, din timpul tău</td><td>De obicei €1.500–4.000</td><td>De la €29/lună, 3 zile de probă, fără card</td></tr>
     <tr><td>De cine e nevoie</td><td>Administrator amoCRM</td><td>Un responsabil din partea ta plus o specificație</td><td>Administrator amoCRM pentru OAuth</td></tr>
     <tr><td>Modificări ulterioare</td><td>Treci din nou prin setări</td><td>Specificație nouă, factură nouă</td><td>Încă un mesaj în chat</td></tr>
     <tr><td>Potrivit pentru</td><td>Un pipeline, vreo duzină de câmpuri</td><td>Integrări personalizate: contabilitate, telefonie, stocuri</td><td>Pipeline-uri, câmpuri, automatizări, integrări API fără cod</td></tr>
@@ -233,8 +236,8 @@ Când o tranzacție ajunge la „Măsurători programate”, creează o sarcină
     <p>Prin OAuth-ul oficial amoCRM/Kommo: aprobare cu un singur clic, fără să dai parole sau chei API. Tokenurile sunt stocate criptat, Kai nu stochează datele tranzacțiilor, iar accesul poate fi revocat oricând din setările CRM-ului. Compania este înregistrată în Polonia (UE).</p>
   </div>
   <div class="faq-item">
-    <h3>Cât costă Kai și există o perioadă de probă gratuită?</h3>
-    <p>Start €29/lună (~100 de cereri), Pro €59/lună (~500), Max €119/lună (utilizare rezonabilă, prioritate și personalizări). Primele 3 zile sunt gratuite, fără card. Plătești cu cardul, Apple Pay, Google Pay, Telegram Stars sau USDT.</p>
+    <h3>Cât costă Kai și există o perioadă de probă?</h3>
+    <p>Start €29/lună (~100 de cereri), Pro €59/lună (~500), Max €119/lună (utilizare rezonabilă, prioritate și personalizări). 3 zile de probă, fără card. Plătești cu cardul, Apple Pay, Google Pay, Telegram Stars sau USDT.</p>
   </div>
 </div>
 
@@ -323,10 +326,10 @@ Când o tranzacție ajunge la „Măsurători programate”, creează o sarcină
         },
         {
           "@type": "Question",
-          "name": "Cât costă Kai și există o perioadă de probă gratuită?",
+          "name": "Cât costă Kai și există o perioadă de probă?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Start €29/lună (~100 de cereri), Pro €59/lună (~500), Max €119/lună (utilizare rezonabilă, prioritate și personalizări). Primele 3 zile sunt gratuite, fără card. Plătești cu cardul, Apple Pay, Google Pay, Telegram Stars sau USDT."
+            "text": "Start €29/lună (~100 de cereri), Pro €59/lună (~500), Max €119/lună (utilizare rezonabilă, prioritate și personalizări). 3 zile de probă, fără card. Plătești cu cardul, Apple Pay, Google Pay, Telegram Stars sau USDT."
           }
         }
       ]

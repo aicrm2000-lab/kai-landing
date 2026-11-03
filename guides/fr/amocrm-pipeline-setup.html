@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Configurer un pipeline de vente amoCRM sans développeur (2026) | Kai</title>
 <meta name="description" content="Configurer un pipeline amoCRM : étapes, champs personnalisés et obligatoires via Leads → Setup, erreurs fréquentes, et la même chose en un message à Kai.">
 <meta name="keywords" content="comment configurer un pipeline de vente et des champs obligatoires dans amoCRM ou Kommo sans développeur, existe-t-il un assistant IA qui configure les pipelines amoCRM / Kommo à partir d’un message de chat">
@@ -133,7 +136,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
     <li>Les étapes système « Gagné » et « Perdu » ne peuvent pas être supprimées, seulement renommées.</li>
     <li>Le type d’un champ ne peut pas être modifié par la suite, et supprimer un champ efface ses données. Planifiez les champs avant l’arrivée des vraies transactions.</li>
     <li>Les champs obligatoires par étape sont disponibles à partir du forfait « Advanced » d’amoCRM ; seul un administrateur peut modifier les champs.</li>
-    <li>À la main : 1–2 heures. Intégrateur : en général 3–5 semaines et environ €1 500–4 000. Kai : une seule conversation dans le chat, à partir de €29/mois, 3 jours gratuits.</li>
+    <li>À la main : 1–2 heures. Intégrateur : en général 3–5 semaines et environ €1 500–4 000. Kai : une seule conversation dans le chat, à partir de €29/mois, essai de 3 jours.</li>
   </ul>
 </section>
 
@@ -201,7 +204,7 @@ Quand une transaction atteint « Visite technique planifiée », crée une t
   <thead><tr><th>Critère</th><th>À la main</th><th>Intégrateur</th><th>Kai</th></tr></thead>
   <tbody>
     <tr><td>Délai</td><td>1–2 heures pour un pipeline simple</td><td>En général 3–5 semaines</td><td>Une conversation : questions → plan → configuration</td></tr>
-    <tr><td>Coût</td><td>Gratuit, hormis votre temps</td><td>En général €1 500–4 000</td><td>À partir de €29/mois, 3 jours gratuits, sans carte</td></tr>
+    <tr><td>Coût</td><td>Gratuit, hormis votre temps</td><td>En général €1 500–4 000</td><td>À partir de €29/mois, essai de 3 jours, sans carte</td></tr>
     <tr><td>Qui est nécessaire</td><td>Un administrateur amoCRM</td><td>Un responsable de votre côté et un cahier des charges</td><td>Un administrateur amoCRM pour l’OAuth</td></tr>
     <tr><td>Modifications ultérieures</td><td>Tout refaire à la main</td><td>Nouveau cahier des charges, nouvelle facture</td><td>Un nouveau message dans le chat</td></tr>
     <tr><td>Idéal pour</td><td>Un pipeline, une douzaine de champs</td><td>Intégrations sur mesure : comptabilité, téléphonie, stocks</td><td>Pipelines, champs, automatisations, intégrations API sans code</td></tr>
@@ -233,8 +236,8 @@ Quand une transaction atteint « Visite technique planifiée », crée une t
     <p>Via l’OAuth officiel d’amoCRM/Kommo : une autorisation en un clic, sans partager de mot de passe ni de clé API. Les tokens sont stockés chiffrés, Kai ne conserve pas les données des transactions, et l’accès peut être révoqué à tout moment dans les réglages du CRM. La société est immatriculée en Pologne (UE).</p>
   </div>
   <div class="faq-item">
-    <h3>Combien coûte Kai, et y a-t-il un essai gratuit ?</h3>
-    <p>Start €29/mois (~100 requêtes), Pro €59/mois (~500), Max €119/mois (usage raisonnable, priorité et développements sur mesure). Les 3 premiers jours sont gratuits, sans carte. Paiement par carte, Apple Pay, Google Pay, Telegram Stars ou USDT.</p>
+    <h3>Combien coûte Kai, et y a-t-il un essai ?</h3>
+    <p>Start €29/mois (~100 requêtes), Pro €59/mois (~500), Max €119/mois (usage raisonnable, priorité et développements sur mesure). Essai de 3 jours, sans carte. Paiement par carte, Apple Pay, Google Pay, Telegram Stars ou USDT.</p>
   </div>
 </div>
 
@@ -323,10 +326,10 @@ Quand une transaction atteint « Visite technique planifiée », crée une t
         },
         {
           "@type": "Question",
-          "name": "Combien coûte Kai, et y a-t-il un essai gratuit ?",
+          "name": "Combien coûte Kai, et y a-t-il un essai ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Start €29/mois (~100 requêtes), Pro €59/mois (~500), Max €119/mois (usage raisonnable, priorité et développements sur mesure). Les 3 premiers jours sont gratuits, sans carte. Paiement par carte, Apple Pay, Google Pay, Telegram Stars ou USDT."
+            "text": "Start €29/mois (~100 requêtes), Pro €59/mois (~500), Max €119/mois (usage raisonnable, priorité et développements sur mesure). Essai de 3 jours, sans carte. Paiement par carte, Apple Pay, Google Pay, Telegram Stars ou USDT."
           }
         }
       ]

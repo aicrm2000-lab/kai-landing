@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Automatizaciones en Kommo sin programador: guía 2026</title>
 <meta name="description" content="Pipeline Digital y Salesbot en Kommo: qué puedes configurar tú mismo, 3 escenarios paso a paso, los límites y cómo Kai hace lo mismo desde un mensaje de chat.">
 <meta name="keywords" content="Pipeline Digital vs Salesbot en Kommo: cuál es la diferencia y qué plan lo incluye, Cómo enviar un aviso a Telegram cuando se gana un lead en Kommo sin programador">
@@ -219,7 +222,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <li>El Pipeline Digital está en <span class="path">Leads → Automate</span>; cada etapa ofrece 12 tipos de disparador y 5 retrasos: Immediately, End of the day, In 1 day, In 3 days, End of the week.</li>
 <li>Salesbot: constructor de flujos sin límite de pasos, temporizador Pause de hasta 8.760 horas; se inicia con un mensaje nuevo, la entrada de un lead en una etapa, un cambio de responsable o según un horario. No está en el plan Base.</li>
 <li>No hay una acción nativa «publicar en un grupo de Telegram»: mensaje interno a un compañero, un webhook o un widget del Marketplace.</li>
-<li>Un integrador suele tardar 3–5 semanas. Kai: un mensaje de chat, desde €29/mes, 3 días gratis, sin tarjeta.</li>
+<li>Un integrador suele tardar 3–5 semanas. Kai: un mensaje de chat, desde €29/mes, 3 días de prueba, sin tarjeta.</li>
 </ul>
 </div>
 
@@ -306,7 +309,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 </section>
 
 <h2>Qué hacer ahora</h2>
-<p>Conecta Kommo a Kai en un clic por OAuth (widget publicado en el Marketplace de Kommo, sin claves de API) y describe tu primera regla con tus propias palabras. Tres días gratis, sin tarjeta.</p>
+<p>Conecta Kommo a Kai en un clic por OAuth (widget publicado en el Marketplace de Kommo, sin claves de API) y describe tu primera regla con tus propias palabras. Tres días de prueba, sin tarjeta.</p>
 <div class="cta">
 <a class="btn btn-p" href="https://t.me/aiicrm_bot">Pruébalo en Telegram</a>
 <a class="btn btn-s" href="https://app.aii-crm.com/chat?lang=en">Abrir el chat web</a>

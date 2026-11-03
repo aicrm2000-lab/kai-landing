@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>7 автоматизаций CRM, которые окупаются в первый месяц | Kai</title>
 <meta name="description" content="7 автоматизаций CRM, которые окупаются: задачи по этапам, напоминания, зависшие сделки, уведомления, сводки. Как включить каждую одной фразой в Kai.">
 <meta name="keywords" content="какие автоматизации настроить в CRM, автозадачи amoCRM, автоматизация отдела продаж">
@@ -181,7 +184,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 
 <h2>Где живут правила: в CRM или у Kai</h2>
 <p>Digital Pipeline и роботы живут внутри CRM: настраиваются в её интерфейсе и работают, пока оплачена сама CRM, но требуют тарифа с автоматизациями и времени на клики. Правила Kai живут на его стороне: он слушает события CRM по вебхуку и выполняет действие через API. Поэтому они включаются и правятся одной фразой, но не появляются в Digital Pipeline и работают, пока активна подписка. Всё созданное ими в CRM остаётся навсегда.</p>
-<div class="note warn">Для Битрикс24 Kai пока в бете: роботов он не создаёт, есть только уведомления о главных событиях через исходящий вебхук. Если автоматизации в Битрикс24 — главное, настрой роботов руками или с интегратором.</div>
+<div class="note warn">В Битрикс24 Kai пока не создаёт роботов, есть только уведомления о главных событиях через исходящий вебхук. Если автоматизации в Битрикс24 — главное, настрой роботов руками или с интегратором.</div>
 
 <h2>С Kai это одно сообщение</h2>
 <p>Kai — ИИ-ассистент, который настраивает amoCRM и Kommo по сообщению в чате: в Telegram-боте <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> или в <a href="https://app.aii-crm.com/chat?lang=ru">веб-чате</a>. CRM подключается по OAuth 2.0 в один клик. Каждая фраза из списка выше — готовое правило, но можно включить сразу несколько:</p>

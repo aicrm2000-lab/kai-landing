@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Импорт клиентов из Excel в amoCRM и Kommo за 10 минут | Kai</title>
 <meta name="description" content="Как подготовить таблицу, загрузить её мастером импорта amoCRM и Kommo, избежать дублей и ошибок — или просто отправить файл Kai в чат.">
 <meta name="keywords" content="импорт контактов amoCRM excel, как загрузить базу в Kommo, перенести клиентов из таблицы в CRM">
@@ -184,7 +187,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
     <tr><td>Когда подходит</td><td>Чистая таблица, один тип записей</td><td>Переезд из другой CRM с историей, данные в 1С</td><td>Таблица любой чистоты, контакты + компании + сделки из одного файла</td></tr>
     <tr><td>Что делаешь сам</td><td>Готовишь файл, сопоставляешь колонки, проверяешь</td><td>Пишешь ТЗ, принимаешь результат</td><td>Отправляешь файл, проверяешь маппинг, подтверждаешь</td></tr>
     <tr><td>Время</td><td>10 минут на чистую базу, час на грязную</td><td>Дни или недели</td><td>Один диалог</td></tr>
-    <tr><td>Стоимость</td><td>Входит в подписку CRM</td><td>По смете подрядчика</td><td>От €29/мес, 3 дня бесплатно</td></tr>
+    <tr><td>Стоимость</td><td>Входит в подписку CRM</td><td>По смете подрядчика</td><td>От €29/мес, 3 дня триала</td></tr>
   </tbody>
 </table>
 </div>

@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>İlk ayda kendini amorti eden 7 CRM otomasyonu | Kai</title>
 <meta name="description" content="Kendini amorti eden 7 CRM otomasyonu: aşama görevleri, yanıt hatırlatmaları, takılan lead&#x27;ler, ekip bildirimleri, haftalık özet. Kai&#x27;de tek cümleyle açılır.">
 <meta name="keywords" content="Küçük satış ekipleri için CRM otomasyonu fikirleri">
@@ -182,7 +185,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 
 <h2>Kurallar nerede yaşar: CRM'de mi, Kai'de mi</h2>
 <p>Digital Pipeline ve robotlar CRM'in içinde yaşar: orada yapılandırılır, CRM'in ücreti ödendiği sürece çalışır, ama otomasyon içeren bir plan ve tıklamaya harcanan zaman ister. Kai'nin kuralları Kai tarafında yaşar: CRM olaylarını webhook ile dinler ve API üzerinden işlem yapar; bu yüzden tek cümleyle açılır ve değişir, ama Digital Pipeline'da görünmez ve aboneliğin aktif olduğu sürece çalışır. CRM'de oluşturdukları ise kalıcıdır.</p>
-<div class="note warn">Bitrix24 için Kai beta aşamasında: Bitrix24 içinde robot yok, giden webhook üzerinden yalnızca ana olaylarla ilgili bildirimler var. Ana ihtiyacın Bitrix24 içindeki otomasyonlarsa robotları elle ya da bir entegratörle kur.</div>
+<div class="note warn">Kai, Bitrix24'te henüz robot oluşturmuyor; giden webhook üzerinden yalnızca ana olaylarla ilgili bildirimler gönderiyor. Ana ihtiyacın Bitrix24 içindeki otomasyonlarsa robotları elle ya da bir entegratörle kur.</div>
 
 <h2>Kai ile tek mesaj yeter</h2>
 <p>Kai, amoCRM ve Kommo'yu bir sohbet mesajıyla kuran yapay zeka asistanıdır: Telegram botu <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> ya da <a href="https://app.aii-crm.com/chat?lang=en">web sohbeti</a> üzerinden çalışır, tek tıkla OAuth 2.0 ile bağlanır. Yukarıdaki her cümle hazır bir kuraldır ve birkaçı tek mesajda gönderilebilir:</p>

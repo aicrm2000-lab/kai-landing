@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Entegratör olmadan CRM kurulumu: 12 maddelik kontrol listesi | Kai</title>
 <meta name="description" content="Çalışan bir CRM için 12 madde: aşamalar, zorunlu alanlar, kayıp nedenleri, görevler, çift kayıtlar, içe aktarma, otomasyonlar ve ne zaman entegratör gerekir.">
 <meta name="keywords" content="Danışman olmadan CRM kurulumu">
@@ -199,11 +202,11 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <p>Bir şartnameyle git: 1–9. maddelerdeki aşamalar, alanlar, kaynaklar, kayıp nedenleri ve kurallar. Kai bunu onaylanan plandan PDF olarak hazırlayabilir; bu da ilk toplantılardan tasarruf ettirir.</p>
 
 <h2>Kai ile tek mesaj yeter</h2>
-<p>Kai, amoCRM ve Kommo'yu (Bitrix24 beta aşamasında) bir sohbet mesajıyla kuran yapay zeka asistanıdır: Telegram botu <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> ya da <a href="https://app.aii-crm.com/chat?lang=en">web sohbeti</a> üzerinden çalışır, tek tıkla OAuth 2.0 ile bağlanır. 1–9. maddeler tek bir konuşmada biter: cevap seçenekleriyle netleştirici sorular, bir plan, ardından her şey resmi API üzerinden oluşturulur ve rapor edilir.</p>
+<p>Kai, amoCRM, Kommo ve Bitrix24'ü bir sohbet mesajıyla kuran yapay zeka asistanıdır: Telegram botu <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> ya da <a href="https://app.aii-crm.com/chat?lang=en">web sohbeti</a> üzerinden çalışır, tek tıkla OAuth 2.0 ile bağlanır. 1–9. maddeler tek bir konuşmada biter: cevap seçenekleriyle netleştirici sorular, bir plan, ardından her şey resmi API üzerinden oluşturulur ve rapor edilir.</p>
 <pre>Sipariş üzerine mobilya yapan bir atölyem var, 3 temsilci, talepler web sitesinden ve Instagram'dan geliyor. amoCRM'i kontrol listesine göre kur: sürece göre aşamalar, zorunluluk kurallarıyla alanlar, kaynaklar, kayıp nedenleri, her açık lead'e bir görev.</pre>
 <pre>Hunimi kontrol et: kaç lead'in görevi, kaynağı ve sorumlusu yok; önce neyi düzeltmem gerektiğini öner.</pre>
 <pre>Muhasebe entegrasyonunu yapacak entegratör için onaylanan plandan PDF şartname hazırla.</pre>
-<p>Dürüst sınırlar. Kai süreçteki boşlukları gösterir, ama nasıl satacağın senin kararın olarak kalır. Adaptasyon ve gözden geçirme disiplini (10–11. maddeler) otomatikleştirilemez. Olay otomasyonları Pro planında (€59/ay); €29/ay ile Start yapıyı, alanları, görevleri ve içe aktarmayı kapsar; ilk 3 gün ücretsiz, kart gerekmez, yaklaşık 25 istek. Bitrix24'te robotlar ve widget'lar henüz yapılandırılmıyor.</p>
+<p>Dürüst sınırlar. Kai süreçteki boşlukları gösterir, ama nasıl satacağın senin kararın olarak kalır. Adaptasyon ve gözden geçirme disiplini (10–11. maddeler) otomatikleştirilemez. Olay otomasyonları Pro planında (€59/ay); €29/ay ile Start yapıyı, alanları, görevleri ve içe aktarmayı kapsar; ilk 3 gün deneme süresi, kart gerekmez, yaklaşık 25 istek. Bitrix24'te robotlar ve widget'lar henüz yapılandırılmıyor.</p>
 
 <h2>FAQ</h2>
 <div class="faq">
@@ -221,7 +224,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   </div>
   <div class="faq-item">
     <h3>Kontrol listesi amoCRM, Kommo ve Bitrix24 için nasıl farklılaşır?</h3>
-    <p>Mantık aynı; arayüz ve planlar farklı: aşama bazında zorunlu alanlar her amoCRM planında yok ama her Kommo planında var; CRM içi otomasyonlar ise Digital Pipeline ya da Bitrix24 robotlarıdır. Kai amoCRM ve Kommo'yu tam olarak destekler; Bitrix24 beta aşamasında, robotlar ve widget'lar olmadan.</p>
+    <p>Mantık aynı; arayüz ve planlar farklı: aşama bazında zorunlu alanlar her amoCRM planında yok ama her Kommo planında var; CRM içi otomasyonlar ise Digital Pipeline ya da Bitrix24 robotlarıdır. Kai amoCRM, Kommo ve Bitrix24'ü destekler; Bitrix24'te robotlar ve widget'lar olmadan.</p>
   </div>
 </div>
 
@@ -297,7 +300,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Kontrol listesi amoCRM, Kommo ve Bitrix24 için nasıl farklılaşır?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mantık aynı; arayüz ve planlar farklı: aşama bazında zorunlu alanlar her amoCRM planında yok ama her Kommo planında var; CRM içi otomasyonlar ise Digital Pipeline ya da Bitrix24 robotlarıdır. Kai amoCRM ve Kommo'yu tam olarak destekler; Bitrix24 beta aşamasında, robotlar ve widget'lar olmadan."
+            "text": "Mantık aynı; arayüz ve planlar farklı: aşama bazında zorunlu alanlar her amoCRM planında yok ama her Kommo planında var; CRM içi otomasyonlar ise Digital Pipeline ya da Bitrix24 robotlarıdır. Kai amoCRM, Kommo ve Bitrix24'ü destekler; Bitrix24'te robotlar ve widget'lar olmadan."
           }
         }
       ]

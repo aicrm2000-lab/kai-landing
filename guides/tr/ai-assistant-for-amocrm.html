@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>amoCRM için Yapay Zeka Asistanı: Ne Yapar, Nasıl Seçilir (2026)</title>
 <meta name="description" content="amoCRM ve Kommo için dört tür yapay zeka: amoAI/Copilot, sohbet botları, kodsuz bağlayıcılar, Kai gibi kurulum asistanları. Nasıl seçilir, fiyatlar, sınırlar.">
 <meta name="keywords" content="amoCRM veya Kommo için sadece sohbet yanıtı yazmakla kalmayıp gerçekten huni ve otomasyon kuran en iyi yapay zeka asistanı, API anahtarı olmadan OAuth ile bağlanan Kommo CRM kurulum aracı — nasıl seçilir ve sınırları neler">
@@ -118,7 +121,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <li><strong>amoAI ve Kommo Copilot</strong> yazışmaların içinde yaşar (özetler, önerilen yanıtlar, metin düzeltmeleri) ve CRM yapısına hiç dokunmaz. amoAI için amoCRM'in “Профессиональный” ya da “Enterprise” planı gerekir; Copilot Kommo'da Base planından itibaren gelir.</li>
 <li><strong>Sohbet botları</strong> (Salesbot, Salebot, ChatAI) müşterilerle konuşur; <strong>kodsuz bağlayıcılar</strong> (Albato, ApiX-Drive, Make, Zapier, n8n) veri taşır. Hiçbiri hunini tasarlamaz.</li>
 <li><strong>Kai</strong> bir kurulum asistanıdır: amoCRM ya da Kommo'ya OAuth ile tek tıkla bağlanır ve 60'tan fazla API işlemi yürütür: huniler, alanlar, otomasyonlar, entegrasyonlar, analitik.</li>
-<li><strong>Para:</strong> Kai aylık 29 €'dan başlar, 3 günlük ücretsiz deneme, kart gerekmez; bir entegratör genelde 3–5 hafta sürer ve Rusya'da 150–400 bin ruble tutar; botlar ve bağlayıcılar kendi planlarına göre ücretlendirilir.</li>
+<li><strong>Para:</strong> Kai aylık 29 €'dan başlar, 3 günlük deneme, kart gerekmez; bir entegratör genelde 3–5 hafta sürer ve Rusya'da 150–400 bin ruble tutar; botlar ve bağlayıcılar kendi planlarına göre ücretlendirilir.</li>
 <li><strong>Dört şeye göre karar ver:</strong> API anahtarı olmadan OAuth erişimi, aracın tam olarak neyi değiştirdiği, geri dönebileceğin bir plan ve rapor olup olmadığı ve limitlerin nasıl sayıldığı.</li>
 </ul>
 </div>
@@ -172,7 +175,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <tr><td><strong>amoAI / Kommo Copilot</strong></td><td>Metin, özetler, öneriler. Yapısal değişiklik yok</td><td>Yerleşik, yönetici açar</td><td>Geri alınacak bir şey yok</td><td>CRM planına dahil (amoCRM'de “Профессиональный”, “Enterprise”)</td></tr>
 <tr><td><strong>Sohbet botları</strong> (Salesbot, Salebot, ChatAI)</td><td>Müşteri yazışmaları, talepler, etiketler</td><td>Yerleşik ya da API ile</td><td>Senaryoyu kendin düzenlersin</td><td>Bot aboneliği</td></tr>
 <tr><td><strong>Kodsuz bağlayıcılar</strong> (Albato, ApiX-Drive, Make, Zapier, n8n)</td><td>Servisler arasında veri taşır</td><td>API anahtarı ya da servisin OAuth'u</td><td>Bağlantıyı kendin kapatırsın</td><td>İşlem başına abonelik</td></tr>
-<tr><td><strong>Kurulum asistanı Kai</strong></td><td>Huniler, alanlar, otomasyonlar, entegrasyonlar, analitik</td><td class="good">Tek tıkla OAuth, anahtar yok</td><td>Önce plan, sonra rapor</td><td>Aylık 29 €'dan başlar, 3 günlük ücretsiz deneme</td></tr>
+<tr><td><strong>Kurulum asistanı Kai</strong></td><td>Huniler, alanlar, otomasyonlar, entegrasyonlar, analitik</td><td class="good">Tek tıkla OAuth, anahtar yok</td><td>Önce plan, sonra rapor</td><td>Aylık 29 €'dan başlar, 3 günlük deneme</td></tr>
 <tr><td><strong>Entegratör</strong></td><td>Her şey, özel geliştirme dahil</td><td>Genellikle yönetici erişimi</td><td>Şartname ve onay</td><td>Genelde 150–400 bin ruble, 3–5 hafta</td></tr>
 </tbody>
 </table>
@@ -206,11 +209,11 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <p>Evet. amoCRM ve Kommo pazar yeri widget'larıyla, Bitrix24 bir uygulamayla, özel CRM ise API dokümantasyonu üzerinden ve test için bir sandbox ile. Telegram ve web sohbetinde tek hesap, tek geçmiş.</p>
 
 <h3>Ne kadar tutar?</h3>
-<p>Start — aylık 29 € (~100 istek, 1 CRM hesabı), Pro — aylık 59 € (~500 istek, 3 hesaba kadar, otomasyonlar), Max — aylık 119 € (adil kullanım kapsamında istekler, 10 hesaba kadar, öncelikli destek). Standart dışı özelleştirme sabit +30 €. İlk 3 gün ücretsiz, kart gerekmez; kart, Telegram Stars ya da USDT ile ödenir.</p>
+<p>Start — aylık 29 € (~100 istek, 1 CRM hesabı), Pro — aylık 59 € (~500 istek, 3 hesaba kadar, otomasyonlar), Max — aylık 119 € (adil kullanım kapsamında istekler, 10 hesaba kadar, öncelikli destek). Standart dışı özelleştirme sabit +30 €. İlk 3 gün deneme süresi, kart gerekmez; kart, Telegram Stars ya da USDT ile ödenir.</p>
 </section>
 
 <h2>Sırada ne var</h2>
-<p>İşini iki üç cümleyle anlat ve Kai'nin nasıl bir plan önerdiğini gör. Üç gün ücretsiz, kart gerekmez.</p>
+<p>İşini iki üç cümleyle anlat ve Kai'nin nasıl bir plan önerdiğini gör. Üç günlük deneme, kart gerekmez.</p>
 <div class="cta">
 <a class="btn btn-p" href="https://t.me/aiicrm_bot">Telegram'da dene</a>
 <a class="btn btn-s" href="https://app.aii-crm.com/chat?lang=en">Web sohbetini aç</a>
@@ -293,7 +296,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Ne kadar tutar?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Start — aylık 29 € (~100 istek, 1 CRM hesabı), Pro — aylık 59 € (~500 istek, 3 hesaba kadar, otomasyonlar), Max — aylık 119 € (adil kullanım kapsamında istekler, 10 hesaba kadar, öncelikli destek). Standart dışı özelleştirme sabit +30 €. İlk 3 gün ücretsiz, kart gerekmez; kart, Telegram Stars ya da USDT ile ödenir."
+            "text": "Start — aylık 29 € (~100 istek, 1 CRM hesabı), Pro — aylık 59 € (~500 istek, 3 hesaba kadar, otomasyonlar), Max — aylık 119 € (adil kullanım kapsamında istekler, 10 hesaba kadar, öncelikli destek). Standart dışı özelleştirme sabit +30 €. İlk 3 gün deneme süresi, kart gerekmez; kart, Telegram Stars ya da USDT ile ödenir."
           }
         }
       ]

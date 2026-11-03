@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Налаштування CRM без інтегратора: чек-лист із 12 пунктів | Kai</title>
 <meta name="description" content="Чек-лист налаштування CRM: етапи, обов’язкові поля, джерела, причини відмови, задачі, дублі, імпорт, автоматизації, навчання і коли потрібен інтегратор.">
 <meta name="keywords" content="налаштування CRM без консультанта, налаштування CRM самостійно, як налаштувати CRM без інтегратора, чек-лист налаштування CRM, впровадження CRM для малого бізнесу, налаштування amoCRM самому, налаштування Kommo, воронка продажів у CRM, етапи воронки продажів, обов’язкові поля в CRM, причини відмови в CRM, імпорт клієнтів у CRM, ШІ-асистент для CRM">
@@ -199,11 +202,11 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <p>Приходь до інтегратора з ТЗ: етапи, поля, джерела, причини відмови і правила з пунктів 1–9. Kai може підготувати його в PDF з погодженого плану — це заощадить перші зустрічі.</p>
 
 <h2>З Kai це одне повідомлення</h2>
-<p>Kai — ШІ-асистент, який налаштовує amoCRM і Kommo (Bitrix24 — у беті) за повідомленням у чаті — у Telegram-боті <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> або у <a href="https://app.aii-crm.com/chat?lang=en">веб-чаті</a>; підключення — через OAuth 2.0 в один клік. Пункти 1–9 — це одна розмова: уточнювальні запитання з варіантами відповідей, план, а потім усе створюється через офіційний API, і ти отримуєш звіт.</p>
+<p>Kai — ШІ-асистент, який налаштовує amoCRM, Kommo і Bitrix24 за повідомленням у чаті — у Telegram-боті <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> або у <a href="https://app.aii-crm.com/chat?lang=en">веб-чаті</a>; підключення — через OAuth 2.0 в один клік. Пункти 1–9 — це одна розмова: уточнювальні запитання з варіантами відповідей, план, а потім усе створюється через офіційний API, і ти отримуєш звіт.</p>
 <pre>У мене студія меблів на замовлення, 3 менеджери, заявки із сайту та Instagram. Налаштуй amoCRM за чек-листом: етапи під процес, поля з правилами обов’язковості, джерела, причини відмови, задача на кожній відкритій угоді.</pre>
 <pre>Перевір мою воронку: скільки угод без задачі, без джерела і без відповідального, і підкажи, що виправити насамперед.</pre>
 <pre>Підготуй ТЗ у PDF з погодженого плану для інтегратора, який робитиме зв’язку з обліковою програмою.</pre>
-<p>Чесні обмеження. Kai вказує на дірки в процесі, але як продавати — вирішуєш ти. Навчання й дисципліну розборів (пункти 10–11) автоматизувати не можна. Автоматизації за подіями — це Pro (€59/міс); Start за €29/міс покриває структуру, поля, задачі й імпорт; перші 3 дні — безкоштовно, без картки, близько 25 запитів. У Bitrix24 роботи й віджети поки не налаштовуються.</p>
+<p>Чесні обмеження. Kai вказує на дірки в процесі, але як продавати — вирішуєш ти. Навчання й дисципліну розборів (пункти 10–11) автоматизувати не можна. Автоматизації за подіями — це Pro (€59/міс); Start за €29/міс покриває структуру, поля, задачі й імпорт; перші 3 дні — пробний період, без картки, близько 25 запитів. У Bitrix24 роботи й віджети поки не налаштовуються.</p>
 
 <h2>FAQ</h2>
 <div class="faq">
@@ -221,7 +224,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   </div>
   <div class="faq-item">
     <h3>Чим відрізняється чек-лист для amoCRM, Kommo і Bitrix24?</h3>
-    <p>Логіка та сама; відрізняються інтерфейс і тарифи: обов’язкові поля за етапами є не на всіх тарифах amoCRM, зате на всіх тарифах Kommo, а автоматизації всередині CRM — це Digital Pipeline або роботи Bitrix24. Kai повністю підтримує amoCRM і Kommo; Bitrix24 — у беті, без роботів і віджетів.</p>
+    <p>Логіка та сама; відрізняються інтерфейс і тарифи: обов’язкові поля за етапами є не на всіх тарифах amoCRM, зате на всіх тарифах Kommo, а автоматизації всередині CRM — це Digital Pipeline або роботи Bitrix24. Kai підтримує amoCRM, Kommo і Bitrix24; у Bitrix24 — без роботів і віджетів.</p>
   </div>
 </div>
 
@@ -297,7 +300,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Чим відрізняється чек-лист для amoCRM, Kommo і Bitrix24?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Логіка та сама; відрізняються інтерфейс і тарифи: обов’язкові поля за етапами є не на всіх тарифах amoCRM, зате на всіх тарифах Kommo, а автоматизації всередині CRM — це Digital Pipeline або роботи Bitrix24. Kai повністю підтримує amoCRM і Kommo; Bitrix24 — у беті, без роботів і віджетів."
+            "text": "Логіка та сама; відрізняються інтерфейс і тарифи: обов’язкові поля за етапами є не на всіх тарифах amoCRM, зате на всіх тарифах Kommo, а автоматизації всередині CRM — це Digital Pipeline або роботи Bitrix24. Kai підтримує amoCRM, Kommo і Bitrix24; у Bitrix24 — без роботів і віджетів."
           }
         }
       ]

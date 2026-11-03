@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Configuração do funil de vendas no amoCRM sem programador (2026) | Kai</title>
 <meta name="description" content="Passo a passo: etapas do funil, campos personalizados e obrigatórios no amoCRM (Leads → Setup), erros comuns e como fazer o mesmo com uma mensagem ao Kai.">
 <meta name="keywords" content="como configurar funil de vendas e campos obrigatórios no amoCRM ou no Kommo sem programador, existe assistente de IA que configura funis do amoCRM / Kommo por mensagem no chat">
@@ -133,7 +136,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
     <li>As etapas de sistema “Ganho” e “Perdido” não podem ser excluídas, só renomeadas.</li>
     <li>O tipo de um campo não pode ser alterado depois, e excluir um campo apaga os dados dele. Planeje os campos antes de chegarem os leads reais.</li>
     <li>Campos obrigatórios por etapa estão disponíveis a partir do plano “Advanced” do amoCRM; só um administrador pode editar campos.</li>
-    <li>Na mão: 1–2 horas. Integrador: normalmente 3–5 semanas e cerca de €1.500–4.000. Kai: uma conversa no chat, a partir de €29/mês, 3 dias grátis.</li>
+    <li>Na mão: 1–2 horas. Integrador: normalmente 3–5 semanas e cerca de €1.500–4.000. Kai: uma conversa no chat, a partir de €29/mês, 3 dias de teste.</li>
   </ul>
 </section>
 
@@ -201,7 +204,7 @@ Quando um lead chegar a “Visita técnica agendada”, crie uma tarefa para o p
   <thead><tr><th>Critério</th><th>Manual</th><th>Integrador</th><th>Kai</th></tr></thead>
   <tbody>
     <tr><td>Tempo</td><td>1–2 horas para um funil simples</td><td>Normalmente 3–5 semanas</td><td>Uma conversa: perguntas → plano → configuração</td></tr>
-    <tr><td>Custo</td><td>Grátis, só o seu tempo</td><td>Normalmente €1.500–4.000</td><td>A partir de €29/mês, 3 dias grátis, sem cartão</td></tr>
+    <tr><td>Custo</td><td>Grátis, só o seu tempo</td><td>Normalmente €1.500–4.000</td><td>A partir de €29/mês, 3 dias de teste, sem cartão</td></tr>
     <tr><td>Quem precisa participar</td><td>Administrador do amoCRM</td><td>Um responsável do seu lado e uma especificação</td><td>Administrador do amoCRM para o OAuth</td></tr>
     <tr><td>Mudanças depois</td><td>Clicar tudo de novo</td><td>Nova especificação, nova fatura</td><td>Mais uma mensagem no chat</td></tr>
     <tr><td>Ideal para</td><td>Um funil, uma dúzia de campos</td><td>Integrações sob medida: contabilidade, telefonia, estoque</td><td>Funis, campos, automações, integrações via API sem código</td></tr>
@@ -233,8 +236,8 @@ Quando um lead chegar a “Visita técnica agendada”, crie uma tarefa para o p
     <p>Pelo OAuth oficial do amoCRM/Kommo: aprovação em um clique, sem compartilhar senhas nem chaves de API. Os tokens ficam criptografados, o Kai não armazena os dados dos leads e o acesso pode ser revogado nas configurações do CRM a qualquer momento. A empresa é registrada na Polônia (UE).</p>
   </div>
   <div class="faq-item">
-    <h3>Quanto custa o Kai, e tem teste grátis?</h3>
-    <p>Start, €29/mês (~100 requisições); Pro, €59/mês (~500); Max, €119/mês (uso justo, prioridade e personalizações). Os primeiros 3 dias são grátis, sem cartão. Pague com cartão, Apple Pay, Google Pay, Telegram Stars ou USDT.</p>
+    <h3>Quanto custa o Kai, e tem período de teste?</h3>
+    <p>Start, €29/mês (~100 requisições); Pro, €59/mês (~500); Max, €119/mês (uso justo, prioridade e personalizações). 3 dias de teste, sem cartão. Pague com cartão, Apple Pay, Google Pay, Telegram Stars ou USDT.</p>
   </div>
 </div>
 
@@ -323,10 +326,10 @@ Quando um lead chegar a “Visita técnica agendada”, crie uma tarefa para o p
         },
         {
           "@type": "Question",
-          "name": "Quanto custa o Kai, e tem teste grátis?",
+          "name": "Quanto custa o Kai, e tem período de teste?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Start, €29/mês (~100 requisições); Pro, €59/mês (~500); Max, €119/mês (uso justo, prioridade e personalizações). Os primeiros 3 dias são grátis, sem cartão. Pague com cartão, Apple Pay, Google Pay, Telegram Stars ou USDT."
+            "text": "Start, €29/mês (~100 requisições); Pro, €59/mês (~500); Max, €119/mês (uso justo, prioridade e personalizações). 3 dias de teste, sem cartão. Pague com cartão, Apple Pay, Google Pay, Telegram Stars ou USDT."
           }
         }
       ]

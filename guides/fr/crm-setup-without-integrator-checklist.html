@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Configurer un CRM sans intégrateur : la check-list en 12 points | Kai</title>
 <meta name="description" content="Check-list CRM en 12 points : étapes, champs obligatoires, motifs de perte, tâches, doublons, import, automatisations, et quand faire appel à un intégrateur.">
 <meta name="keywords" content="Configurer un CRM sans consultant">
@@ -199,11 +202,11 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <p>Venez avec un cahier des charges : les étapes, les champs, les sources, les motifs de perte et les règles des points 1–9. Kai peut le produire en PDF à partir du plan validé, ce qui fait l’économie des premiers rendez-vous.</p>
 
 <h2>Avec Kai, un seul message suffit</h2>
-<p>Kai est un assistant IA qui configure amoCRM et Kommo (Bitrix24 en bêta) à partir d’un simple message, dans le bot Telegram <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> ou dans le <a href="https://app.aii-crm.com/chat?lang=en">chat web</a>, et se connecte via OAuth 2.0 en un clic. Les points 1–9 tiennent en une seule conversation : des questions de précision avec des options de réponse, un plan, puis tout est créé via l’API officielle et vous recevez un rapport.</p>
+<p>Kai est un assistant IA qui configure amoCRM, Kommo et Bitrix24 à partir d’un simple message, dans le bot Telegram <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> ou dans le <a href="https://app.aii-crm.com/chat?lang=en">chat web</a>, et se connecte via OAuth 2.0 en un clic. Les points 1–9 tiennent en une seule conversation : des questions de précision avec des options de réponse, un plan, puis tout est créé via l’API officielle et vous recevez un rapport.</p>
 <pre>Je dirige un atelier de meubles sur mesure, 3 commerciaux, des demandes depuis le site et Instagram. Configure amoCRM selon la check-list : étapes adaptées au processus, champs avec règles d’obligation, sources, motifs de perte, une tâche sur chaque transaction ouverte.</pre>
 <pre>Vérifie mon pipeline : combien de transactions n’ont ni tâche, ni source, ni responsable, et propose ce qu’il faut corriger en premier.</pre>
 <pre>Prépare un cahier des charges en PDF à partir du plan validé, pour l’intégrateur qui s’occupe de la liaison avec la comptabilité.</pre>
-<p>Les limites, en toute franchise. Kai signale les failles du processus, mais votre façon de vendre reste votre décision. La prise en main et la discipline des revues (points 10–11) ne s’automatisent pas. Les automatisations événementielles relèvent du forfait Pro (€59/mois) ; Start à €29/mois couvre la structure, les champs, les tâches et l’import ; les 3 premiers jours sont gratuits, sans carte, avec environ 25 requêtes. Dans Bitrix24, les robots et les widgets ne sont pas encore configurés.</p>
+<p>Les limites, en toute franchise. Kai signale les failles du processus, mais votre façon de vendre reste votre décision. La prise en main et la discipline des revues (points 10–11) ne s’automatisent pas. Les automatisations événementielles relèvent du forfait Pro (€59/mois) ; Start à €29/mois couvre la structure, les champs, les tâches et l’import ; les 3 premiers jours sont une période d’essai, sans carte, avec environ 25 requêtes. Dans Bitrix24, les robots et les widgets ne sont pas encore configurés.</p>
 
 <h2>FAQ</h2>
 <div class="faq">
@@ -221,7 +224,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   </div>
   <div class="faq-item">
     <h3>En quoi la check-list diffère-t-elle pour amoCRM, Kommo et Bitrix24 ?</h3>
-    <p>La logique est la même ; l’interface et les forfaits diffèrent : les champs obligatoires par étape ne sont pas proposés sur tous les forfaits amoCRM, mais le sont sur tous les forfaits Kommo, et les automatisations internes au CRM passent par Digital Pipeline ou les robots Bitrix24. Kai prend entièrement en charge amoCRM et Kommo ; Bitrix24 est en bêta, sans robots ni widgets.</p>
+    <p>La logique est la même ; l’interface et les forfaits diffèrent : les champs obligatoires par étape ne sont pas proposés sur tous les forfaits amoCRM, mais le sont sur tous les forfaits Kommo, et les automatisations internes au CRM passent par Digital Pipeline ou les robots Bitrix24. Kai prend en charge amoCRM, Kommo et Bitrix24 ; dans Bitrix24, sans robots ni widgets.</p>
   </div>
 </div>
 
@@ -297,7 +300,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "En quoi la check-list diffère-t-elle pour amoCRM, Kommo et Bitrix24 ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "La logique est la même ; l’interface et les forfaits diffèrent : les champs obligatoires par étape ne sont pas proposés sur tous les forfaits amoCRM, mais le sont sur tous les forfaits Kommo, et les automatisations internes au CRM passent par Digital Pipeline ou les robots Bitrix24. Kai prend entièrement en charge amoCRM et Kommo ; Bitrix24 est en bêta, sans robots ni widgets."
+            "text": "La logique est la même ; l’interface et les forfaits diffèrent : les champs obligatoires par étape ne sont pas proposés sur tous les forfaits amoCRM, mais le sont sur tous les forfaits Kommo, et les automatisations internes au CRM passent par Digital Pipeline ou les robots Bitrix24. Kai prend en charge amoCRM, Kommo et Bitrix24 ; dans Bitrix24, sans robots ni widgets."
           }
         }
       ]

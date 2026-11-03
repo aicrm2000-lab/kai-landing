@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>amoCRM Sales-Pipeline einrichten ohne Entwickler (2026) | Kai</title>
 <meta name="description" content="amoCRM-Pipeline einrichten: Phasen, eigene Felder und Pflichtfelder über Leads → Setup, typische Fehler und wie es mit einer Nachricht an Kai geht.">
 <meta name="keywords" content="amoCRM Pipeline einrichten, Kommo Pipeline einrichten, amoCRM Pflichtfelder, Kommo Pflichtfelder pro Phase, amoCRM Sales-Pipeline ohne Entwickler, amoCRM eigene Felder anlegen, amoCRM Phasen einrichten, Kommo Phasen einrichten, KI-Assistent amoCRM, KI-Assistent Kommo, CRM ohne Integrator einrichten, amoCRM Pipeline Anleitung, Kommo Pipeline Anleitung, Kai CRM">
@@ -133,7 +136,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
     <li>Die Systemphasen „Gewonnen“ und „Verloren“ lassen sich nicht löschen, nur umbenennen.</li>
     <li>Der Typ eines Feldes lässt sich später nicht ändern, und beim Löschen eines Feldes gehen seine Daten verloren. Plane die Felder, bevor echte Deals hereinkommen.</li>
     <li>Pflichtfelder pro Phase gibt es ab dem amoCRM-Tarif „Advanced“; Felder bearbeiten darf nur ein Administrator.</li>
-    <li>Manuell: 1–2 Stunden. Integrator: meist 3–5 Wochen und etwa €1.500–4.000. Kai: ein Chat-Gespräch, ab €29/Monat, 3 Tage kostenlos.</li>
+    <li>Manuell: 1–2 Stunden. Integrator: meist 3–5 Wochen und etwa €1.500–4.000. Kai: ein Chat-Gespräch, ab €29/Monat, 3 Tage Testphase.</li>
   </ul>
 </section>
 
@@ -201,7 +204,7 @@ Wenn ein Deal „Aufmaß vereinbart“ erreicht, erstelle eine Aufgabe für den 
   <thead><tr><th>Kriterium</th><th>Manuell</th><th>Integrator</th><th>Kai</th></tr></thead>
   <tbody>
     <tr><td>Zeit</td><td>1–2 Stunden für eine einfache Pipeline</td><td>Meist 3–5 Wochen</td><td>Ein Gespräch: Fragen → Plan → Einrichtung</td></tr>
-    <tr><td>Kosten</td><td>Kostenlos, deine eigene Zeit</td><td>Meist €1.500–4.000</td><td>Ab €29/Monat, 3 Tage kostenlos, keine Karte</td></tr>
+    <tr><td>Kosten</td><td>Kostenlos, deine eigene Zeit</td><td>Meist €1.500–4.000</td><td>Ab €29/Monat, 3 Tage Testphase, keine Karte</td></tr>
     <tr><td>Wer wird gebraucht</td><td>amoCRM-Administrator</td><td>Ein Verantwortlicher auf deiner Seite plus eine Spezifikation</td><td>amoCRM-Administrator für OAuth</td></tr>
     <tr><td>Spätere Änderungen</td><td>Nochmal durchklicken</td><td>Neue Spezifikation, neue Rechnung</td><td>Eine weitere Chat-Nachricht</td></tr>
     <tr><td>Am besten für</td><td>Eine Pipeline, ein Dutzend Felder</td><td>Individuelle Integrationen: Buchhaltung, Telefonie, Lager</td><td>Pipelines, Felder, Automatisierungen, API-Integrationen ohne Code</td></tr>
@@ -233,8 +236,8 @@ Wenn ein Deal „Aufmaß vereinbart“ erreicht, erstelle eine Aufgabe für den 
     <p>Über das offizielle OAuth von amoCRM/Kommo: Freigabe mit einem Klick, keine Passwörter oder API-Schlüssel werden weitergegeben. Tokens werden verschlüsselt gespeichert, Kai speichert keine Deal-Daten, und der Zugriff lässt sich jederzeit in den CRM-Einstellungen widerrufen. Das Unternehmen ist in Polen (EU) registriert.</p>
   </div>
   <div class="faq-item">
-    <h3>Was kostet Kai, und gibt es eine kostenlose Testphase?</h3>
-    <p>Start €29/Monat (~100 Anfragen), Pro €59/Monat (~500), Max €119/Monat (Fair Use, Priorität und individuelle Anpassungen). Die ersten 3 Tage kostenlos, keine Karte. Zahlung per Karte, Apple Pay, Google Pay, Telegram Stars oder USDT.</p>
+    <h3>Was kostet Kai, und gibt es eine Testphase?</h3>
+    <p>Start €29/Monat (~100 Anfragen), Pro €59/Monat (~500), Max €119/Monat (Fair Use, Priorität und individuelle Anpassungen). 3 Tage Testphase, keine Karte. Zahlung per Karte, Apple Pay, Google Pay, Telegram Stars oder USDT.</p>
   </div>
 </div>
 
@@ -323,10 +326,10 @@ Wenn ein Deal „Aufmaß vereinbart“ erreicht, erstelle eine Aufgabe für den 
         },
         {
           "@type": "Question",
-          "name": "Was kostet Kai, und gibt es eine kostenlose Testphase?",
+          "name": "Was kostet Kai, und gibt es eine Testphase?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Start €29/Monat (~100 Anfragen), Pro €59/Monat (~500), Max €119/Monat (Fair Use, Priorität und individuelle Anpassungen). Die ersten 3 Tage kostenlos, keine Karte. Zahlung per Karte, Apple Pay, Google Pay, Telegram Stars oder USDT."
+            "text": "Start €29/Monat (~100 Anfragen), Pro €59/Monat (~500), Max €119/Monat (Fair Use, Priorität und individuelle Anpassungen). 3 Tage Testphase, keine Karte. Zahlung per Karte, Apple Pay, Google Pay, Telegram Stars oder USDT."
           }
         }
       ]

@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Варонка продажаў у amoCRM без праграміста: гайд 2026 | Kai</title>
 <meta name="description" content="Варонка ў amoCRM пакрокава: этапы, кастамныя і абавязковыя палі праз «Сделки → Настроить», тыповыя памылкі і як зрабіць тое ж адным паведамленнем Kai.">
 <meta name="keywords" content="як наладзіць варонку продажаў і абавязковыя палі ў amoCRM або Kommo без праграміста, ці ёсць ШІ-асістэнт, які наладжвае варонкі amoCRM / Kommo па паведамленні ў чаце">
@@ -133,7 +136,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
     <li>Сістэмныя этапы «Паспяхова рэалізавана» і «Закрыта і не рэалізавана» выдаліць нельга, толькі перайменаваць.</li>
     <li>Тып поля пасля стварэння змяніць нельга, а выдаленне поля сцірае яго даныя. Прадумай палі да таго, як з'явяцца рэальныя здзелкі.</li>
     <li>Абавязковыя палі на этапах даступныя ў amoCRM пачынаючы з тарыфу «Расширенный»; рэдагаваць палі можа толькі адміністратар.</li>
-    <li>Уручную — 1–2 гадзіны. Інтэгратар — звычайна 3–5 тыдняў і прыкладна €1 500–4 000. Kai — адна размова ў чаце, ад €29/мес, 3 дні бясплатна.</li>
+    <li>Уручную — 1–2 гадзіны. Інтэгратар — звычайна 3–5 тыдняў і прыкладна €1 500–4 000. Kai — адна размова ў чаце, ад €29/мес, 3 дні пробнага перыяду.</li>
   </ul>
 </section>
 
@@ -201,7 +204,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   <thead><tr><th>Крытэрый</th><th>Уручную</th><th>Інтэгратар</th><th>Kai</th></tr></thead>
   <tbody>
     <tr><td>Час</td><td>1–2 гадзіны на простую варонку</td><td>Звычайна 3–5 тыдняў</td><td>Адна размова: пытанні → план → наладка</td></tr>
-    <tr><td>Кошт</td><td>Бясплатна, твой час</td><td>Звычайна €1 500–4 000</td><td>Ад €29/мес, 3 дні бясплатна, без карткі</td></tr>
+    <tr><td>Кошт</td><td>Бясплатна, твой час</td><td>Звычайна €1 500–4 000</td><td>Ад €29/мес, 3 дні пробнага перыяду, без карткі</td></tr>
     <tr><td>Хто патрэбны</td><td>Адміністратар amoCRM</td><td>Адказны з твайго боку + ТЗ</td><td>Адміністратар amoCRM для OAuth</td></tr>
     <tr><td>Змены потым</td><td>Зноў клікаць уручную</td><td>Новае ТЗ, новы рахунак</td><td>Яшчэ адно паведамленне ў чаце</td></tr>
     <tr><td>Калі падыходзіць</td><td>Адна варонка, дзясятак палёў</td><td>Нестандартныя інтэграцыі: бухгалтэрыя, тэлефанія, склад</td><td>Варонкі, палі, аўтаматызацыі, інтэграцыі па API без кода</td></tr>
@@ -233,8 +236,8 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
     <p>Праз афіцыйны OAuth amoCRM/Kommo: ты падцвярджаеш доступ у адзін клік, паролі і API-ключы нікому не перадаюцца. Токены захоўваюцца ў зашыфраваным выглядзе, даныя здзелак Kai не захоўвае, а доступ можна адклікаць у наладах CRM у любы момант. Кампанія зарэгістраваная ў Польшчы (ЕС).</p>
   </div>
   <div class="faq-item">
-    <h3>Колькі каштуе Kai і ці ёсць бясплатны пробны перыяд?</h3>
-    <p>Start — €29/мес (~100 запытаў), Pro — €59/мес (~500), Max — €119/мес (fair use, прыярытэт і дапрацоўкі пад бізнес). Першыя 3 дні бясплатна, без карткі. Аплата карткай, Apple Pay, Google Pay, Telegram Stars або USDT.</p>
+    <h3>Колькі каштуе Kai і ці ёсць пробны перыяд?</h3>
+    <p>Start — €29/мес (~100 запытаў), Pro — €59/мес (~500), Max — €119/мес (fair use, прыярытэт і дапрацоўкі пад бізнес). 3 дні пробнага перыяду, без карткі. Аплата карткай, Apple Pay, Google Pay, Telegram Stars або USDT.</p>
   </div>
 </div>
 
@@ -323,10 +326,10 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
         },
         {
           "@type": "Question",
-          "name": "Колькі каштуе Kai і ці ёсць бясплатны пробны перыяд?",
+          "name": "Колькі каштуе Kai і ці ёсць пробны перыяд?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Start — €29/мес (~100 запытаў), Pro — €59/мес (~500), Max — €119/мес (fair use, прыярытэт і дапрацоўкі пад бізнес). Першыя 3 дні бясплатна, без карткі. Аплата карткай, Apple Pay, Google Pay, Telegram Stars або USDT."
+            "text": "Start — €29/мес (~100 запытаў), Pro — €59/мес (~500), Max — €119/мес (fair use, прыярытэт і дапрацоўкі пад бізнес). 3 дні пробнага перыяду, без карткі. Аплата карткай, Apple Pay, Google Pay, Telegram Stars або USDT."
           }
         }
       ]

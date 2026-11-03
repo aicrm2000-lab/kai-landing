@@ -53,6 +53,35 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Kai",
+  "alternateName": [
+    "Kai AI",
+    "aii-crm.com"
+  ],
+  "url": "https://aii-crm.com/",
+  "inLanguage": "it",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kai",
+    "url": "https://aii-crm.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aii-crm.com/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "sameAs": [
+      "https://t.me/aiicrm_bot",
+      "https://x.com/kai_crm",
+      "https://www.threads.com/@kai_crm"
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "inLanguage": "it",
   "name": "Kai",
@@ -120,7 +149,7 @@
       "name": "Quanto costa Kai?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tre piani: Start — €29/mese (1 CRM), Pro — €59/mese (3 CRM), Max — €119/mese (10 CRM). I primi 3 giorni sono gratis."
+        "text": "Tre piani: Start — €29/mese (1 CRM), Pro — €59/mese (3 CRM), Max — €119/mese (10 CRM). I primi 3 giorni sono di prova."
       }
     },
     {
@@ -136,7 +165,7 @@
       "name": "Kai funziona con Bitrix24?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sì, in beta: Bitrix24 si collega tramite un webhook in entrata; Kai configura pipeline, fasi, campi, trattative, contatti e attività e si occupa delle analisi. Le automazioni interne a Bitrix24 e i widget non sono ancora disponibili. amoCRM e Kommo sono pienamente supportati."
+        "text": "Sì: Bitrix24 si collega tramite un webhook in entrata; Kai configura pipeline, fasi, campi, trattative, contatti e attività e si occupa delle analisi. Le automazioni interne a Bitrix24 e i widget non sono ancora disponibili. amoCRM e Kommo sono pienamente supportati."
       }
     },
     {
@@ -149,17 +178,19 @@
     },
     {
       "@type": "Question",
-      "name": "Posso provarlo gratis?",
+      "name": "C'è un periodo di prova?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sì: 3 giorni gratis, senza carta, a partire da quando colleghi il tuo CRM. La prova include ~25 richieste e le funzionalità del piano Start."
+        "text": "Sì: 3 giorni di prova, senza carta, a partire da quando colleghi il tuo CRM. La prova include ~25 richieste e le funzionalità del piano Start."
       }
     }
   ]
 }
 </script>
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B0A14'/><path d='M16 6.5a9.5 9.5 0 1 0 9.5 9.5' stroke='%237C5CFF' stroke-width='4' stroke-linecap='round' fill='none'/><circle cx='23.4' cy='8.6' r='2.6' fill='%23A78BFA'/></svg>">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -1459,7 +1490,7 @@ footer {
   letter-spacing: -0.02em;
 }
 
-/* Bitrix24 — beta (webhook connection), the mark behaves like its neighbours */
+/* Bitrix24 — webhook connection, the mark behaves like its neighbours */
 .int-logo.soon { position: relative; cursor: pointer; }
 .int-logo.soon .soon-badge {           /* out of flow: keeps all three marks on one baseline */
   position: absolute; top: calc(100% + 8px); left: 50%;
@@ -2766,7 +2797,7 @@ html.ny .chat-launcher::before {
 </style>
 <script>(function(){try{if(new URLSearchParams(location.search).get('me')==='1')localStorage.setItem('kai_no_track','1');}catch(e){}})();</script>
 <script>(function(){try{if(/(?:^|;\s*)kai_in=1(?:;|$)/.test(document.cookie))document.documentElement.classList.add('signed-in');}catch(e){}})();</script>
-<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',S=[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]],act=null,apr=-1;S.forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});S.forEach(function(s){if(s[1]||act===s[0])h.setAttribute('data-'+s[0]+'-season','1');});if(!act)return;h.classList.add(act);var ICO={hw:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230C0A0E'/><path d='M15.5 7.2c-.2-1.6.6-3 2.3-3.6' stroke='%2375B04A' stroke-width='2.2' fill='none' stroke-linecap='round'/><ellipse cx='10' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='22' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='16' cy='18' rx='7' ry='9.6' fill='%23FF7A1A'/><path d='M10 15l3 3.6-3.8 1.3zM22 15l-3 3.6 3.8 1.3z' fill='%230C0A0E'/><path d='M9.2 22.6c2 2.6 4.3 3.9 6.8 3.9s4.8-1.3 6.8-3.9c-2.2.9-4.5 1.4-6.8 1.4s-4.6-.5-6.8-1.4z' fill='%230C0A0E'/></svg>",ny:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23070B19'/><path d='M16 7l5 7H11zM16 11l7 9H9zM16 16l9 10H7z' fill='%2321A66D'/><rect x='14.5' y='26' width='3' height='3' fill='%238A5A2B'/><path d='M16 2.5l1 2.3 2.3 1-2.3 1-1 2.3-1-2.3-2.3-1 2.3-1z' fill='%23F5C451'/></svg>"},i=document.querySelector('link[rel="icon"]');if(i&&ICO[act])i.setAttribute('href',ICO[act]);}catch(e){}})();</script>
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',S=[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]],act=null,apr=-1;S.forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});S.forEach(function(s){if(s[1]||act===s[0])h.setAttribute('data-'+s[0]+'-season','1');});if(!act)return;h.classList.add(act);var ICO={hw:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230C0A0E'/><path d='M15.5 7.2c-.2-1.6.6-3 2.3-3.6' stroke='%2375B04A' stroke-width='2.2' fill='none' stroke-linecap='round'/><ellipse cx='10' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='22' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='16' cy='18' rx='7' ry='9.6' fill='%23FF7A1A'/><path d='M10 15l3 3.6-3.8 1.3zM22 15l-3 3.6 3.8 1.3z' fill='%230C0A0E'/><path d='M9.2 22.6c2 2.6 4.3 3.9 6.8 3.9s4.8-1.3 6.8-3.9c-2.2.9-4.5 1.4-6.8 1.4s-4.6-.5-6.8-1.4z' fill='%230C0A0E'/></svg>",ny:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23070B19'/><path d='M16 7l5 7H11zM16 11l7 9H9zM16 16l9 10H7z' fill='%2321A66D'/><rect x='14.5' y='26' width='3' height='3' fill='%238A5A2B'/><path d='M16 2.5l1 2.3 2.3 1-2.3 1-1 2.3-1-2.3-2.3-1 2.3-1z' fill='%23F5C451'/></svg>"},ii=document.querySelectorAll('link[rel="icon"]');if(ICO[act])ii.forEach(function(i){i.removeAttribute('sizes');i.setAttribute('type','image/svg+xml');i.setAttribute('href',ICO[act]);});}catch(e){}})();</script>
 <script>/* языковые страницы статические: с главной без сохранённого выбора ведём по языку браузера; сохранённый выбор главнее; ?lang= и ru/en не трогаем */
 (function(){try{if(/googlebot|google-inspectiontool|storebot-google|adsbot-google|mediapartners-google|bingbot|bingpreview|msnbot|adidxbot|yandex|duckduckbot|baiduspider|applebot|gptbot|oai-searchbot|chatgpt-user|claudebot|claude-user|claude-searchbot|perplexitybot|perplexity-user|petalbot|seznambot|facebookexternalhit|twitterbot|linkedinbot|slurp|crawler|spider/i.test(navigator.userAgent||''))return;var L=['de','fr','es','pl','pt','it','tr','be','uk','ro'],h=document.documentElement;if((h.getAttribute('data-page-lang')||'ru')!=='ru')return;if(new URLSearchParams(location.search).get('lang'))return;var st=null;try{st=localStorage.getItem('kai_lang');}catch(e){}var want=st&&L.indexOf(st)!==-1?st:null;if(!st){var list=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];for(var i=0;i<list.length&&!want;i++){var c=String(list[i]).toLowerCase().split('-')[0];if(c==='ru'||c==='en')break;if(L.indexOf(c)!==-1)want=c;}}if(want)location.replace('/'+want+'/'+location.search+location.hash);}catch(e){}})();</script>
 </head>
@@ -2793,7 +2824,7 @@ html.ny .chat-launcher::before {
 <a href="https://app.aii-crm.com/login?lang=en" class="nav-login acct-link login-link">Accedi</a>
 <a href="https://app.aii-crm.com/signup?lang=en" class="nav-cta acct-link signup-link">Registrati</a>
 <a href="https://app.aii-crm.com/account?lang=en" class="nav-cta nav-acct acct-link">Il mio account</a>
-    <div class="lang-menu"><button type="button" class="lang-cur" aria-haspopup="listbox" aria-expanded="false" aria-label="Language" title="Language"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-ru"/></svg></span><span class="lang-code">RU</span><svg class="lang-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><ul class="lang-list" role="listbox" hidden><li><a role="option" href="/" lang="ru" hreflang="ru" data-lang="ru"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-ru"/></svg></span><span>Русский</span></a></li><li><a role="option" href="/en/" lang="en" hreflang="en" data-lang="en"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-en"/></svg></span><span>English</span></a></li><li><a role="option" href="/de/" lang="de" hreflang="de" data-lang="de"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-de"/></svg></span><span>Deutsch</span></a></li><li><a role="option" href="/fr/" lang="fr" hreflang="fr" data-lang="fr"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-fr"/></svg></span><span>Français</span></a></li><li><a role="option" href="/es/" lang="es" hreflang="es" data-lang="es"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-es"/></svg></span><span>Español</span></a></li><li><a role="option" href="/pl/" lang="pl" hreflang="pl" data-lang="pl"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-pl"/></svg></span><span>Polski</span></a></li><li><a role="option" href="/pt/" lang="pt" hreflang="pt" data-lang="pt"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-pt"/></svg></span><span>Português</span></a></li><li><a role="option" href="/it/" lang="it" hreflang="it" data-lang="it"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-it"/></svg></span><span>Italiano</span></a></li><li><a role="option" href="/tr/" lang="tr" hreflang="tr" data-lang="tr"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-tr"/></svg></span><span>Türkçe</span></a></li><li><a role="option" href="/be/" lang="be" hreflang="be" data-lang="be"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-be"/></svg></span><span>Беларуская</span></a></li><li><a role="option" href="/uk/" lang="uk" hreflang="uk" data-lang="uk"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-uk"/></svg></span><span>Українська</span></a></li><li><a role="option" href="/ro/" lang="ro" hreflang="ro" data-lang="ro"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-ro"/></svg></span><span>Română</span></a></li></ul></div>
+    <div class="lang-menu"><button type="button" class="lang-cur" aria-haspopup="listbox" aria-expanded="false" aria-label="Lingua" title="Lingua"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-ru"/></svg></span><span class="lang-code">RU</span><svg class="lang-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><ul class="lang-list" role="listbox" hidden><li><a role="option" href="/" lang="ru" hreflang="ru" data-lang="ru"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-ru"/></svg></span><span>Русский</span></a></li><li><a role="option" href="/en/" lang="en" hreflang="en" data-lang="en"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-en"/></svg></span><span>English</span></a></li><li><a role="option" href="/de/" lang="de" hreflang="de" data-lang="de"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-de"/></svg></span><span>Deutsch</span></a></li><li><a role="option" href="/fr/" lang="fr" hreflang="fr" data-lang="fr"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-fr"/></svg></span><span>Français</span></a></li><li><a role="option" href="/es/" lang="es" hreflang="es" data-lang="es"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-es"/></svg></span><span>Español</span></a></li><li><a role="option" href="/pl/" lang="pl" hreflang="pl" data-lang="pl"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-pl"/></svg></span><span>Polski</span></a></li><li><a role="option" href="/pt/" lang="pt" hreflang="pt" data-lang="pt"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-pt"/></svg></span><span>Português</span></a></li><li><a role="option" href="/it/" lang="it" hreflang="it" data-lang="it"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-it"/></svg></span><span>Italiano</span></a></li><li><a role="option" href="/tr/" lang="tr" hreflang="tr" data-lang="tr"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-tr"/></svg></span><span>Türkçe</span></a></li><li><a role="option" href="/be/" lang="be" hreflang="be" data-lang="be"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-be"/></svg></span><span>Беларуская</span></a></li><li><a role="option" href="/uk/" lang="uk" hreflang="uk" data-lang="uk"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-uk"/></svg></span><span>Українська</span></a></li><li><a role="option" href="/ro/" lang="ro" hreflang="ro" data-lang="ro"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-ro"/></svg></span><span>Română</span></a></li></ul></div>
     <button type="button" class="hw-toggle" aria-pressed="true" title="Хеллоуин-режим: выключить"></button>
     <button type="button" class="ny-toggle" aria-pressed="false" title="Новогодний режим: включить"></button>
     <button class="burger" id="burger" aria-label="Menu">
@@ -2811,7 +2842,7 @@ html.ny .chat-launcher::before {
   <button type="button" class="mm-call" data-call-kai="menu" aria-haspopup="dialog"><span class="bc-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.6 4-2 1.3a11 11 0 005.1 5.1l1.3-2 4 1.6v3a2 2 0 01-2.2 2A17 17 0 013 6.2 2 2 0 015 4z"/></svg></span><span>Chiama Kai</span> <span class="bc-soon">soon</span></button>
   <a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener">Collega il CRM</a>
   <div class="mobile-menu-footer">
-    <div class="lang-menu"><button type="button" class="lang-cur" aria-haspopup="listbox" aria-expanded="false" aria-label="Language" title="Language"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-ru"/></svg></span><span class="lang-code">RU</span><svg class="lang-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><ul class="lang-list" role="listbox" hidden><li><a role="option" href="/" lang="ru" hreflang="ru" data-lang="ru"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-ru"/></svg></span><span>Русский</span></a></li><li><a role="option" href="/en/" lang="en" hreflang="en" data-lang="en"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-en"/></svg></span><span>English</span></a></li><li><a role="option" href="/de/" lang="de" hreflang="de" data-lang="de"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-de"/></svg></span><span>Deutsch</span></a></li><li><a role="option" href="/fr/" lang="fr" hreflang="fr" data-lang="fr"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-fr"/></svg></span><span>Français</span></a></li><li><a role="option" href="/es/" lang="es" hreflang="es" data-lang="es"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-es"/></svg></span><span>Español</span></a></li><li><a role="option" href="/pl/" lang="pl" hreflang="pl" data-lang="pl"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-pl"/></svg></span><span>Polski</span></a></li><li><a role="option" href="/pt/" lang="pt" hreflang="pt" data-lang="pt"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-pt"/></svg></span><span>Português</span></a></li><li><a role="option" href="/it/" lang="it" hreflang="it" data-lang="it"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-it"/></svg></span><span>Italiano</span></a></li><li><a role="option" href="/tr/" lang="tr" hreflang="tr" data-lang="tr"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-tr"/></svg></span><span>Türkçe</span></a></li><li><a role="option" href="/be/" lang="be" hreflang="be" data-lang="be"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-be"/></svg></span><span>Беларуская</span></a></li><li><a role="option" href="/uk/" lang="uk" hreflang="uk" data-lang="uk"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-uk"/></svg></span><span>Українська</span></a></li><li><a role="option" href="/ro/" lang="ro" hreflang="ro" data-lang="ro"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-ro"/></svg></span><span>Română</span></a></li></ul></div>
+    <div class="lang-menu"><button type="button" class="lang-cur" aria-haspopup="listbox" aria-expanded="false" aria-label="Lingua" title="Lingua"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-ru"/></svg></span><span class="lang-code">RU</span><svg class="lang-chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><ul class="lang-list" role="listbox" hidden><li><a role="option" href="/" lang="ru" hreflang="ru" data-lang="ru"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-ru"/></svg></span><span>Русский</span></a></li><li><a role="option" href="/en/" lang="en" hreflang="en" data-lang="en"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-en"/></svg></span><span>English</span></a></li><li><a role="option" href="/de/" lang="de" hreflang="de" data-lang="de"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-de"/></svg></span><span>Deutsch</span></a></li><li><a role="option" href="/fr/" lang="fr" hreflang="fr" data-lang="fr"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-fr"/></svg></span><span>Français</span></a></li><li><a role="option" href="/es/" lang="es" hreflang="es" data-lang="es"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-es"/></svg></span><span>Español</span></a></li><li><a role="option" href="/pl/" lang="pl" hreflang="pl" data-lang="pl"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-pl"/></svg></span><span>Polski</span></a></li><li><a role="option" href="/pt/" lang="pt" hreflang="pt" data-lang="pt"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-pt"/></svg></span><span>Português</span></a></li><li><a role="option" href="/it/" lang="it" hreflang="it" data-lang="it"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-it"/></svg></span><span>Italiano</span></a></li><li><a role="option" href="/tr/" lang="tr" hreflang="tr" data-lang="tr"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-tr"/></svg></span><span>Türkçe</span></a></li><li><a role="option" href="/be/" lang="be" hreflang="be" data-lang="be"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-be"/></svg></span><span>Беларуская</span></a></li><li><a role="option" href="/uk/" lang="uk" hreflang="uk" data-lang="uk"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-uk"/></svg></span><span>Українська</span></a></li><li><a role="option" href="/ro/" lang="ro" hreflang="ro" data-lang="ro"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 40"><use href="#flag-ro"/></svg></span><span>Română</span></a></li></ul></div>
     <button type="button" class="hw-toggle" aria-pressed="true" title="Хеллоуин-режим: выключить"></button>
     <button type="button" class="ny-toggle" aria-pressed="false" title="Новогодний режим: включить"></button>
     <a href="https://app.aii-crm.com/login?lang=en" class="mobile-menu-login acct-link login-link">Accedi</a>
@@ -2876,7 +2907,7 @@ html.ny .chat-launcher::before {
     <div class="hero-actions">
       <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="btn-primary">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.4 2L1.6 6.5c-.6.2-.5 1 .1 1.2l3.3 1.1 1.1 3.7c.2.6 1 .7 1.2.1L11.9 3.4c.3-.7-.4-1.4-1.1-1.1z" fill="currentColor"/></svg>
-        <span>Prova gratis</span>
+        <span>Inizia la prova</span>
       </a>
       <a href="https://app.aii-crm.com/chat?lang=en" target="_blank" rel="noopener" class="btn-browser chat-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg>
@@ -2942,7 +2973,7 @@ html.ny .chat-launcher::before {
         </div>
       </a>
       <a href="https://www.bitrix24.ru/" target="_blank" rel="noopener" class="int-logo soon bx-link"
-         title="Bitrix24 — beta: collegalo con un webhook nel bot"
+         title="Bitrix24: collegalo con un webhook nel bot"
         
         
         >
@@ -2954,7 +2985,7 @@ html.ny .chat-launcher::before {
           </span>
           <span class="bx-wordmark">Bitrix24</span>
         </span>
-        <span class="soon-badge">Beta</span>
+        <span class="soon-badge">tramite webhook</span>
       </a>
       <a href="https://app.aii-crm.com/docs/custom-crm?lang=en" target="_blank" rel="noopener" class="int-logo soon own-link"
          title="Il tuo CRM: personalizzato, interno o qualsiasi altro con una REST API — tramite una specifica del connettore"
@@ -3704,7 +3735,7 @@ html.ny .chat-launcher::before {
             <td style="padding:14px 16px">Il tuo tempo</td>
             <td style="padding:14px 16px">Progetto da centinaia di euro, modifiche fatturate a parte</td>
             <td style="padding:14px 16px">Incluso nel piano del CRM</td>
-            <td style="padding:14px 16px;color:var(--paper)">Da €29/mese (automazioni da €59), 3 giorni gratis</td>
+            <td style="padding:14px 16px;color:var(--paper)">Da €29/mese (automazioni da €59), 3 giorni di prova</td>
           </tr>
         </tbody>
       </table>
@@ -3718,7 +3749,7 @@ html.ny .chat-launcher::before {
   <div class="container">
     <p class="section-label reveal">Piani</p>
     <h2 class="section-heading reveal reveal-delay-1" data-ny-en="Scegli un piano — un regalo al te del futuro" data-hw-en="Scegli un piano: niente scherzetti, solo dolcetti">Scegli il piano per la tua fase</h2>
-    <p class="section-sub reveal reveal-delay-2">I primi 3 giorni sono gratis — il conteggio parte quando colleghi il CRM. Paga con carta, Telegram Stars o crypto (USDT).</p>
+    <p class="section-sub reveal reveal-delay-2">3 giorni di prova — il conteggio parte quando colleghi il CRM. Paga con carta, Telegram Stars o crypto (USDT).</p>
 
     <div class="pricing-grid reveal reveal-delay-2 stagger-in">
 
@@ -3726,7 +3757,7 @@ html.ny .chat-launcher::before {
         <div class="plan-name">Start</div>
         <div class="plan-price">€29 <span>/mese</span></div>
         <p class="plan-pitch">Configura il CRM parlando</p>
-        <div class="plan-trial" data-ny-en="3 giorni gratis — il nostro regalo" data-hw-en="3 giorni gratis, nessun sacrificio">3 giorni gratis</div>
+        <div class="plan-trial" data-ny-en="3 giorni di prova — il nostro regalo" data-hw-en="3 giorni di prova, nessun sacrificio">3 giorni di prova</div>
         <ul class="plan-features">
           <li>Consulenza e specifica (PDF)</li>
           <li>Pipeline, fasi, campi personalizzati</li>
@@ -3844,7 +3875,7 @@ html.ny .chat-launcher::before {
       </div>
       <div class="faq-item">
         <button class="faq-q">E se non fa per me?</button>
-        <div class="faq-a"><div class="faq-a-inner">I primi 3 giorni sono gratis, senza carta; il conteggio parte quando colleghi il CRM. La prova include ~25 richieste e le funzionalità del piano Start. Prova senza rischi.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">3 giorni di prova, senza carta; il conteggio parte quando colleghi il CRM. La prova include ~25 richieste e le funzionalità del piano Start. Provalo senza rischi.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Chi fa Kai e dove sono i miei dati?</button>
@@ -3860,7 +3891,7 @@ html.ny .chat-launcher::before {
       </div>
       <div class="faq-item">
         <button class="faq-q">Cosa fa Kai in Bitrix24?</button>
-        <div class="faq-a"><div class="faq-a-inner">Beta: pipeline e fasi, campi, trattative, contatti, aziende, attività, analisi e specifiche. Le automazioni interne a Bitrix24 (robot) e i widget non ci sono ancora — se sono la tua esigenza principale, è più onesto aspettare o usare amoCRM/Kommo, dove funziona tutto.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Pipeline e fasi, campi, trattative, contatti, aziende, attività, analisi e specifiche. Le automazioni interne a Bitrix24 (robot) e i widget non ci sono ancora — se sono la tua esigenza principale, è più onesto usare amoCRM/Kommo, dove le regole funzionano già.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Kai funziona con un CRM personalizzato o sviluppato internamente?</button>

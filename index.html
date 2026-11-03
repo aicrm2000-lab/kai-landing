@@ -51,6 +51,35 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Kai",
+  "alternateName": [
+    "Kai AI",
+    "aii-crm.com"
+  ],
+  "url": "https://aii-crm.com/",
+  "inLanguage": "ru",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kai",
+    "url": "https://aii-crm.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aii-crm.com/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "sameAs": [
+      "https://t.me/aiicrm_bot",
+      "https://x.com/kai_crm",
+      "https://www.threads.com/@kai_crm"
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "inLanguage": "ru",
   "name": "Kai",
@@ -118,7 +147,7 @@
       "name": "Сколько стоит Kai?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Три тарифа: Start — €29/мес (1 CRM), Pro — €59/мес (3 CRM), Max — €119/мес (10 CRM). Первые 3 дня бесплатно."
+        "text": "Три тарифа: Start — €29/мес (1 CRM), Pro — €59/мес (3 CRM), Max — €119/мес (10 CRM). Первые 3 дня — триал."
       }
     },
     {
@@ -134,7 +163,7 @@
       "name": "Kai работает с Битрикс24?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Да, в бете: Битрикс24 подключается по входящему вебхуку, Kai настраивает воронки, этапы, поля, сделки, контакты и задачи и считает аналитику. Автоматизаций внутри Битрикс24 и виджетов пока нет. Полностью поддерживаются amoCRM и Kommo."
+        "text": "Да: Битрикс24 подключается по входящему вебхуку, Kai настраивает воронки, этапы, поля, сделки, контакты и задачи и считает аналитику. Автоматизаций внутри Битрикс24 и виджетов пока нет. Полностью поддерживаются amoCRM и Kommo."
       }
     },
     {
@@ -147,17 +176,19 @@
     },
     {
       "@type": "Question",
-      "name": "Можно ли попробовать бесплатно?",
+      "name": "Есть ли триал?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Да: 3 дня бесплатно и без карты, отсчёт — с подключения CRM. В пробном периоде ~25 запросов и возможности тарифа Start."
+        "text": "Да: 3 дня триала без карты, отсчёт — с подключения CRM. В пробном периоде ~25 запросов и возможности тарифа Start."
       }
     }
   ]
 }
 </script>
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B0A14'/><path d='M16 6.5a9.5 9.5 0 1 0 9.5 9.5' stroke='%237C5CFF' stroke-width='4' stroke-linecap='round' fill='none'/><circle cx='23.4' cy='8.6' r='2.6' fill='%23A78BFA'/></svg>">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -1457,7 +1488,7 @@ footer {
   letter-spacing: -0.02em;
 }
 
-/* Bitrix24 — beta (webhook connection), the mark behaves like its neighbours */
+/* Bitrix24 — webhook connection, the mark behaves like its neighbours */
 .int-logo.soon { position: relative; cursor: pointer; }
 .int-logo.soon .soon-badge {           /* out of flow: keeps all three marks on one baseline */
   position: absolute; top: calc(100% + 8px); left: 50%;
@@ -2764,7 +2795,7 @@ html.ny .chat-launcher::before {
 </style>
 <script>(function(){try{if(new URLSearchParams(location.search).get('me')==='1')localStorage.setItem('kai_no_track','1');}catch(e){}})();</script>
 <script>(function(){try{if(/(?:^|;\s*)kai_in=1(?:;|$)/.test(document.cookie))document.documentElement.classList.add('signed-in');}catch(e){}})();</script>
-<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',S=[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]],act=null,apr=-1;S.forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});S.forEach(function(s){if(s[1]||act===s[0])h.setAttribute('data-'+s[0]+'-season','1');});if(!act)return;h.classList.add(act);var ICO={hw:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230C0A0E'/><path d='M15.5 7.2c-.2-1.6.6-3 2.3-3.6' stroke='%2375B04A' stroke-width='2.2' fill='none' stroke-linecap='round'/><ellipse cx='10' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='22' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='16' cy='18' rx='7' ry='9.6' fill='%23FF7A1A'/><path d='M10 15l3 3.6-3.8 1.3zM22 15l-3 3.6 3.8 1.3z' fill='%230C0A0E'/><path d='M9.2 22.6c2 2.6 4.3 3.9 6.8 3.9s4.8-1.3 6.8-3.9c-2.2.9-4.5 1.4-6.8 1.4s-4.6-.5-6.8-1.4z' fill='%230C0A0E'/></svg>",ny:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23070B19'/><path d='M16 7l5 7H11zM16 11l7 9H9zM16 16l9 10H7z' fill='%2321A66D'/><rect x='14.5' y='26' width='3' height='3' fill='%238A5A2B'/><path d='M16 2.5l1 2.3 2.3 1-2.3 1-1 2.3-1-2.3-2.3-1 2.3-1z' fill='%23F5C451'/></svg>"},i=document.querySelector('link[rel="icon"]');if(i&&ICO[act])i.setAttribute('href',ICO[act]);}catch(e){}})();</script>
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',S=[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]],act=null,apr=-1;S.forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});S.forEach(function(s){if(s[1]||act===s[0])h.setAttribute('data-'+s[0]+'-season','1');});if(!act)return;h.classList.add(act);var ICO={hw:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230C0A0E'/><path d='M15.5 7.2c-.2-1.6.6-3 2.3-3.6' stroke='%2375B04A' stroke-width='2.2' fill='none' stroke-linecap='round'/><ellipse cx='10' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='22' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='16' cy='18' rx='7' ry='9.6' fill='%23FF7A1A'/><path d='M10 15l3 3.6-3.8 1.3zM22 15l-3 3.6 3.8 1.3z' fill='%230C0A0E'/><path d='M9.2 22.6c2 2.6 4.3 3.9 6.8 3.9s4.8-1.3 6.8-3.9c-2.2.9-4.5 1.4-6.8 1.4s-4.6-.5-6.8-1.4z' fill='%230C0A0E'/></svg>",ny:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23070B19'/><path d='M16 7l5 7H11zM16 11l7 9H9zM16 16l9 10H7z' fill='%2321A66D'/><rect x='14.5' y='26' width='3' height='3' fill='%238A5A2B'/><path d='M16 2.5l1 2.3 2.3 1-2.3 1-1 2.3-1-2.3-2.3-1 2.3-1z' fill='%23F5C451'/></svg>"},ii=document.querySelectorAll('link[rel="icon"]');if(ICO[act])ii.forEach(function(i){i.removeAttribute('sizes');i.setAttribute('type','image/svg+xml');i.setAttribute('href',ICO[act]);});}catch(e){}})();</script>
 <script>/* языковые страницы статические: с главной без сохранённого выбора ведём по языку браузера; сохранённый выбор главнее; ?lang= и ru/en не трогаем */
 (function(){try{if(/googlebot|google-inspectiontool|storebot-google|adsbot-google|mediapartners-google|bingbot|bingpreview|msnbot|adidxbot|yandex|duckduckbot|baiduspider|applebot|gptbot|oai-searchbot|chatgpt-user|claudebot|claude-user|claude-searchbot|perplexitybot|perplexity-user|petalbot|seznambot|facebookexternalhit|twitterbot|linkedinbot|slurp|crawler|spider/i.test(navigator.userAgent||''))return;var L=['de','fr','es','pl','pt','it','tr','be','uk','ro'],h=document.documentElement;if((h.getAttribute('data-page-lang')||'ru')!=='ru')return;if(new URLSearchParams(location.search).get('lang'))return;var st=null;try{st=localStorage.getItem('kai_lang');}catch(e){}var want=st&&L.indexOf(st)!==-1?st:null;if(!st){var list=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];for(var i=0;i<list.length&&!want;i++){var c=String(list[i]).toLowerCase().split('-')[0];if(c==='ru'||c==='en')break;if(L.indexOf(c)!==-1)want=c;}}if(want)location.replace('/'+want+'/'+location.search+location.hash);}catch(e){}})();</script>
 </head>
@@ -2874,7 +2905,7 @@ html.ny .chat-launcher::before {
     <div class="hero-actions">
       <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="btn-primary">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.4 2L1.6 6.5c-.6.2-.5 1 .1 1.2l3.3 1.1 1.1 3.7c.2.6 1 .7 1.2.1L11.9 3.4c.3-.7-.4-1.4-1.1-1.1z" fill="currentColor"/></svg>
-        <span data-ru="Попробовать бесплатно" data-en="Try for free">Попробовать бесплатно</span>
+        <span data-ru="Начать триал" data-en="Start your trial">Начать триал</span>
       </a>
       <a href="https://app.aii-crm.com/chat?lang=ru" target="_blank" rel="noopener" class="btn-browser chat-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg>
@@ -2940,9 +2971,9 @@ html.ny .chat-launcher::before {
         </div>
       </a>
       <a href="https://www.bitrix24.ru/" target="_blank" rel="noopener" class="int-logo soon bx-link"
-         title="Bitrix24 — бета: подключение по вебхуку в боте"
-         data-ru-title="Bitrix24 — бета: подключение по вебхуку в боте"
-         data-en-title="Bitrix24 — beta: connect it with a webhook in the bot"
+         title="Bitrix24: подключение по вебхуку в боте"
+         data-ru-title="Bitrix24: подключение по вебхуку в боте"
+         data-en-title="Bitrix24: connect it with a webhook in the bot"
          data-ru-href="https://www.bitrix24.ru/" data-en-href="https://www.bitrix24.com/">
         <span class="bx-row">
           <span class="int-logo-icon">
@@ -2952,7 +2983,7 @@ html.ny .chat-launcher::before {
           </span>
           <span class="bx-wordmark">Bitrix24</span>
         </span>
-        <span class="soon-badge" data-ru="Бета" data-en="Beta">Бета</span>
+        <span class="soon-badge" data-ru="по вебхуку" data-en="via webhook">по вебхуку</span>
       </a>
       <a href="https://app.aii-crm.com/docs/custom-crm?lang=ru" target="_blank" rel="noopener" class="int-logo soon own-link"
          title="Своя CRM: самописная, кастомная или любая с REST API — по спецификации коннектора"
@@ -3702,7 +3733,7 @@ html.ny .chat-launcher::before {
             <td style="padding:14px 16px" data-ru="Ваше время" data-en="Your time">Ваше время</td>
             <td style="padding:14px 16px" data-ru="Проект от сотен евро, правки отдельно" data-en="Project from hundreds of euros, changes billed separately">Проект от сотен евро, правки отдельно</td>
             <td style="padding:14px 16px" data-ru="В подписке CRM" data-en="Included in the CRM plan">В подписке CRM</td>
-            <td style="padding:14px 16px;color:var(--paper)" data-ru="От €29/мес (автоматизации — от €59), 3 дня бесплатно" data-en="From €29/mo (automations from €59), 3 days free">От €29/мес (автоматизации — от €59), 3 дня бесплатно</td>
+            <td style="padding:14px 16px;color:var(--paper)" data-ru="От €29/мес (автоматизации — от €59), 3 дня триала" data-en="From €29/mo (automations from €59), 3-day trial">От €29/мес (автоматизации — от €59), 3 дня триала</td>
           </tr>
         </tbody>
       </table>
@@ -3716,7 +3747,7 @@ html.ny .chat-launcher::before {
   <div class="container">
     <p class="section-label reveal" data-ru="Тарифы" data-en="Plans">Тарифы</p>
     <h2 class="section-heading reveal reveal-delay-1" data-ny-ru="Выбери план — подарок себе на год вперёд" data-ny-en="Pick a plan — a gift to your future self" data-hw-ru="Выбери план: без гадостей, только сладости" data-hw-en="Pick a plan: no tricks, only treats" data-ru="Выбери план под свой этап" data-en="Pick the plan for your stage">Выбери план под свой этап</h2>
-    <p class="section-sub reveal reveal-delay-2" data-ru="Первые 3 дня — бесплатно, отсчёт идёт с подключения CRM. Оплата картой, Telegram Stars или криптой (USDT)." data-en="First 3 days free — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).">Первые 3 дня — бесплатно, отсчёт идёт с подключения CRM. Оплата картой, Telegram Stars или криптой (USDT).</p>
+    <p class="section-sub reveal reveal-delay-2" data-ru="Первые 3 дня — триал, отсчёт идёт с подключения CRM. Оплата картой, Telegram Stars или криптой (USDT)." data-en="3-day trial — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).">Первые 3 дня — триал, отсчёт идёт с подключения CRM. Оплата картой, Telegram Stars или криптой (USDT).</p>
 
     <div class="pricing-grid reveal reveal-delay-2 stagger-in">
 
@@ -3724,7 +3755,7 @@ html.ny .chat-launcher::before {
         <div class="plan-name">Start</div>
         <div class="plan-price">€29 <span data-ru="/мес" data-en="/mo">/мес</span></div>
         <p class="plan-pitch" data-ru="Настройка CRM разговором" data-en="Set up your CRM by talking">Настройка CRM разговором</p>
-        <div class="plan-trial" data-ny-ru="3 дня бесплатно — наш подарок" data-ny-en="3 days free — our gift" data-hw-ru="3 дня бесплатно, без жертвоприношений" data-hw-en="3 days free, no sacrifices" data-ru="3 дня бесплатно" data-en="3 days free">3 дня бесплатно</div>
+        <div class="plan-trial" data-ny-ru="3 дня триала — наш подарок" data-ny-en="3-day trial — our gift" data-hw-ru="3 дня триала, без жертвоприношений" data-hw-en="3-day trial, no sacrifices" data-ru="3 дня триала" data-en="3-day trial">3 дня триала</div>
         <ul class="plan-features">
           <li data-ru="Консультация и ТЗ в PDF" data-en="Consultation & spec (PDF)">Консультация и ТЗ в PDF</li>
           <li data-ru="Воронки, этапы, кастомные поля" data-en="Pipelines, stages, custom fields">Воронки, этапы, кастомные поля</li>
@@ -3842,7 +3873,7 @@ html.ny .chat-launcher::before {
       </div>
       <div class="faq-item">
         <button class="faq-q" data-ru="А если не подойдёт?" data-en="What if it's not for me?">А если не подойдёт?</button>
-        <div class="faq-a"><div class="faq-a-inner" data-ru="Первые 3 дня — бесплатно, без карты; отсчёт — с подключения CRM. В пробном периоде ~25 запросов и возможности тарифа Start. Попробуй без риска." data-en="First 3 days free, no card; the clock starts when you connect the CRM. The trial includes ~25 requests and Start-plan features. Try risk-free.">Первые 3 дня — бесплатно, без карты; отсчёт — с подключения CRM. В пробном периоде ~25 запросов и возможности тарифа Start. Попробуй без риска.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-ru="Первые 3 дня — триал, без карты; отсчёт — с подключения CRM. В пробном периоде ~25 запросов и возможности тарифа Start. Попробуй без риска." data-en="3-day trial, no card; the clock starts when you connect the CRM. The trial includes ~25 requests and Start-plan features. Try risk-free.">Первые 3 дня — триал, без карты; отсчёт — с подключения CRM. В пробном периоде ~25 запросов и возможности тарифа Start. Попробуй без риска.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" data-ru="Кто делает Kai и где мои данные?" data-en="Who makes Kai and where is my data?">Кто делает Kai и где мои данные?</button>
@@ -3858,7 +3889,7 @@ html.ny .chat-launcher::before {
       </div>
       <div class="faq-item">
         <button class="faq-q" data-ru="Что Kai умеет в Bitrix24?" data-en="What does Kai do in Bitrix24?">Что Kai умеет в Bitrix24?</button>
-        <div class="faq-a"><div class="faq-a-inner" data-ru="Бета: воронки и этапы, поля, сделки, контакты, компании, задачи, аналитика и ТЗ. Автоматизаций внутри Bitrix24 (роботов) и виджетов пока нет — если они для тебя главное, честнее подождать или остаться на amoCRM/Kommo, где всё работает." data-en="Beta: pipelines and stages, fields, deals, contacts, companies, tasks, analytics and specs. In-Bitrix24 automations (robots) and widgets are not there yet — if those are your main need, it's fairer to wait or use amoCRM/Kommo, where everything works.">Бета: воронки и этапы, поля, сделки, контакты, компании, задачи, аналитика и ТЗ. Автоматизаций внутри Bitrix24 (роботов) и виджетов пока нет — если они для тебя главное, честнее подождать или остаться на amoCRM/Kommo, где всё работает.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-ru="Воронки и этапы, поля, сделки, контакты, компании, задачи, аналитика и ТЗ. Автоматизаций внутри Bitrix24 (роботов) и виджетов пока нет — если они для тебя главное, честнее остаться на amoCRM/Kommo, где правила уже работают." data-en="Pipelines and stages, fields, deals, contacts, companies, tasks, analytics and specs. In-Bitrix24 automations (robots) and widgets are not there yet — if those are your main need, it's fairer to use amoCRM/Kommo, where the rules already work.">Воронки и этапы, поля, сделки, контакты, компании, задачи, аналитика и ТЗ. Автоматизаций внутри Bitrix24 (роботов) и виджетов пока нет — если они для тебя главное, честнее остаться на amoCRM/Kommo, где правила уже работают.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" data-ru="Kai работает с самописной или кастомной CRM?" data-en="Does Kai work with a custom or in-house CRM?">Kai работает с самописной или кастомной CRM?</button>
