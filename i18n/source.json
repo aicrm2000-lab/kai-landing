@@ -437,6 +437,16 @@
    "where": "data-en-title"
   },
   {
+   "en": "HubSpot: connect via API today, one-click connection in development",
+   "ru": "HubSpot: подключение по API уже сейчас, по кнопке — в разработке",
+   "where": "data-en-title"
+  },
+  {
+   "en": "in development",
+   "ru": "в разработке",
+   "where": "data-en"
+  },
+  {
    "en": "Your own CRM: custom, in-house or any other with a REST API — via a connector spec",
    "ru": "Своя CRM: самописная, кастомная или любая с REST API — по спецификации коннектора",
    "where": "data-en-title"
@@ -2762,6 +2772,16 @@
    "where": "data-en"
   },
   {
+   "en": "Does Kai work with HubSpot?",
+   "ru": "Kai работает с HubSpot?",
+   "where": "data-en"
+  },
+  {
+   "en": "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes.",
+   "ru": "Подключение по кнопке — в разработке. Уже сейчас HubSpot подключается по API как своя CRM: ключ service key в HubSpot и готовая спецификация Kai, на тарифе Max. Kai видит воронки и сделки, создаёт сделки, контакты, задачи и заметки.",
+   "where": "data-en"
+  },
+  {
    "en": "Does Kai work with a custom or in-house CRM?",
    "ru": "Kai работает с самописной или кастомной CRM?",
    "where": "data-en"
@@ -2942,7 +2962,7 @@
   "description": "Kai sets up your CRM from a plain-language message in Telegram or your browser — amoCRM, Kommo, Bitrix24 or your own custom CRM via its API: pipelines, fields, tasks, automations, analytics. 65 actions. 3-day trial, no card.",
   "og_title": "Kai — AI assistant that sets up your CRM",
   "og_description": "An AI assistant that configures your CRM from a chat message — in Telegram or in your browser.",
-  "keywords": "amoCRM, Kommo, Bitrix24, CRM setup, AI assistant, CRM automation, Telegram CRM bot, sales pipelines, amoCRM API, Kommo API, CRM without developers, custom CRM, in-house CRM, homegrown CRM, your own CRM via API, connect AI agent to custom CRM, AI assistant for in-house CRM, CRM REST API AI integration, bespoke CRM AI agent, Pipedrive, Pipedrive AI assistant, AI for Pipedrive, Pipedrive setup"
+  "keywords": "amoCRM, Kommo, Bitrix24, CRM setup, AI assistant, CRM automation, Telegram CRM bot, sales pipelines, amoCRM API, Kommo API, CRM without developers, custom CRM, in-house CRM, homegrown CRM, your own CRM via API, connect AI agent to custom CRM, AI assistant for in-house CRM, CRM REST API AI integration, bespoke CRM AI agent, Pipedrive, Pipedrive AI assistant, AI for Pipedrive, Pipedrive setup, HubSpot, HubSpot AI assistant, AI for HubSpot"
  },
  "ld": {
   "description": "AI assistant that sets up your CRM from a chat message — in Telegram or in your browser: amoCRM, Kommo, Bitrix24, Pipedrive or your own custom CRM via its API. 65 actions: pipelines, fields, stages, deals, contacts, automations, analytics.",
@@ -2955,7 +2975,8 @@
    "Voice message recognition",
    "One-click OAuth connection",
    "Your own (custom, in-house) CRM via REST API: OAuth 2.0, API key, bearer",
-   "Pipedrive connection (beta): pipelines, deals, activities, analytics"
+   "Pipedrive connection (beta): pipelines, deals, activities, analytics",
+   "HubSpot via API (one-click connection in development)"
   ],
   "faq": [
    [
@@ -2981,6 +3002,10 @@
    [
     "Does Kai work with Pipedrive?",
     "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Event automations for Pipedrive are not there yet — they come after the beta."
+   ],
+   [
+    "Does Kai work with HubSpot?",
+    "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes."
    ],
    [
     "Does Kai work with a custom or in-house CRM?",

@@ -590,14 +590,18 @@
   "Happy holidays! I can set up your CRM in minutes — tell me what you do?": "Frohe Feiertage! Ich richte dein CRM in wenigen Minuten ein — erzählst du mir, was du machst?",
   "Close chat": "Chat schließen",
   "beta": "Beta",
-  "Pipedrive: install Kai into your Pipedrive in one click": "Pipedrive: Kai mit einem Klick in dein Pipedrive installieren"
+  "Pipedrive: install Kai into your Pipedrive in one click": "Pipedrive: Kai mit einem Klick in dein Pipedrive installieren",
+  "HubSpot: connect via API today, one-click connection in development": "HubSpot: heute per API verbinden, Verbindung mit einem Klick in Entwicklung",
+  "in development": "in Entwicklung",
+  "Does Kai work with HubSpot?": "Funktioniert Kai mit HubSpot?",
+  "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes.": "Die Verbindung mit einem Klick ist in Entwicklung. Schon heute wird HubSpot per API als eigenes CRM angebunden: ein Service Key aus HubSpot plus die fertige Spezifikation von Kai, im Tarif Max. Kai sieht Pipelines und Deals und legt Deals, Kontakte, Aufgaben und Notizen an."
  },
  "meta": {
   "title": "KI-Assistent, der amoCRM, Kommo, Bitrix24 und eigene CRMs einrichtet | Kai",
   "description": "Kai richtet dein CRM per Nachricht in normaler Sprache ein — in Telegram oder im Browser: amoCRM, Kommo, Bitrix24, Pipedrive oder dein eigenes CRM über dessen API. Pipelines, Felder, Aufgaben, Automatisierungen, Analysen. 65 Aktionen. 3 Tage Testphase, ohne Karte.",
   "og_title": "Kai — der KI-Assistent, der dein CRM einrichtet",
   "og_description": "Ein KI-Assistent, der dein CRM per Chat-Nachricht konfiguriert — in Telegram oder im Browser.",
-  "keywords": "amoCRM, Kommo, Bitrix24, CRM einrichten, CRM Einrichtung, CRM einrichten lassen, KI-Assistent für amoCRM, KI-Assistent für Kommo, KI-Assistent für Bitrix24, KI CRM Assistent, CRM Automatisierung, Telegram CRM Bot, Vertriebspipeline einrichten, Sales Pipeline, amoCRM API, Kommo API, CRM ohne Programmierer, CRM ohne Entwickler, CRM ohne Integrator, eigene CRM, selbst entwickelte CRM, Inhouse CRM, Custom CRM, eigene CRM per API an KI anbinden, KI-Agent für eigene CRM, CRM REST API KI-Integration, AI assistant, CRM setup, custom CRM, AI agent for custom CRM, Pipedrive, KI-Assistent für Pipedrive, Pipedrive einrichten, Pipedrive ohne Entwickler"
+  "keywords": "amoCRM, Kommo, Bitrix24, CRM einrichten, CRM Einrichtung, CRM einrichten lassen, KI-Assistent für amoCRM, KI-Assistent für Kommo, KI-Assistent für Bitrix24, KI CRM Assistent, CRM Automatisierung, Telegram CRM Bot, Vertriebspipeline einrichten, Sales Pipeline, amoCRM API, Kommo API, CRM ohne Programmierer, CRM ohne Entwickler, CRM ohne Integrator, eigene CRM, selbst entwickelte CRM, Inhouse CRM, Custom CRM, eigene CRM per API an KI anbinden, KI-Agent für eigene CRM, CRM REST API KI-Integration, AI assistant, CRM setup, custom CRM, AI agent for custom CRM, Pipedrive, KI-Assistent für Pipedrive, Pipedrive einrichten, Pipedrive ohne Entwickler, HubSpot, KI-Assistent für HubSpot, HubSpot einrichten"
  },
  "ld": {
   "description": "KI-Assistent, der dein CRM per Chat-Nachricht einrichtet — in Telegram oder im Browser: amoCRM, Kommo, Bitrix24, Pipedrive oder dein eigenes CRM über dessen API. 65 Aktionen: Pipelines, Felder, Phasen, Deals, Kontakte, Automatisierungen, Analysen.",
@@ -610,7 +614,8 @@
    "Erkennung von Sprachnachrichten",
    "OAuth-Verbindung mit einem Klick",
    "Dein eigenes (Custom-, Inhouse-) CRM per REST API: OAuth 2.0, API-Key, Bearer",
-   "Pipedrive-Anbindung (Beta): Pipelines, Deals, Aktivitäten, Analysen"
+   "Pipedrive-Anbindung (Beta): Pipelines, Deals, Aktivitäten, Analysen",
+   "HubSpot per API (Verbindung mit einem Klick in Entwicklung)"
   ],
   "faq": [
    [
@@ -636,6 +641,10 @@
    [
     "Funktioniert Kai mit Pipedrive?",
     "Ja, in der Beta und ab dem Tarif Start. Verbunden wird über den Installationslink aus Pipedrive, den Button „Sign in with Pipedrive“ im Bot oder ein persönliches API-Token. Kai richtet Pipelines, Phasen und Felder ein, verwaltet Deals, Personen, Organisationen, Aktivitäten und Notizen und wertet den Funnel aus. Automatisierungen auf Pipedrive-Ereignisse gibt es noch nicht — sie kommen nach der Beta."
+   ],
+   [
+    "Funktioniert Kai mit HubSpot?",
+    "Die Verbindung mit einem Klick ist in Entwicklung. Schon heute wird HubSpot per API als eigenes CRM angebunden: ein Service Key aus HubSpot plus die fertige Spezifikation von Kai, im Tarif Max. Kai sieht Pipelines und Deals und legt Deals, Kontakte, Aufgaben und Notizen an."
    ],
    [
     "Funktioniert Kai mit einem eigenen oder selbst entwickelten CRM?",

@@ -50,5 +50,9 @@
  },
  "refund-it.html": {
   "description": "Politica di rimborso e disdetta di Kai: fatturazione, rinnovo, disdetta, condizioni di rimborso, diritti dei consumatori UE e come richiedere il rimborso."
+ },
+ "guides/it/hubspot-ai-assistant.html": {
+  "title": "Assistente IA per HubSpot: configura il CRM con un messaggio | Kai",
+  "description": "Kai lavora con HubSpot via API: pipeline, trattative, contatti, attività. Oggi ti colleghi con una service key; il collegamento con un clic è in sviluppo."
  }
 }

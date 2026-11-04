@@ -37,5 +37,9 @@
  "guides/en/pipedrive-ai-assistant.html": {
   "title": "Pipedrive AI assistant: set up your CRM from a chat message | Kai",
   "description": "Kai sets up Pipedrive from a chat message: pipelines, fields, deals, activities, analytics. Install link, what works in the beta, what does not yet."
+ },
+ "guides/en/hubspot-ai-assistant.html": {
+  "title": "HubSpot AI assistant: set up your CRM from a chat message | Kai",
+  "description": "Kai works with HubSpot via API: pipelines, deals, contacts, tasks. Connect with a service key today; one-click connection is in development."
  }
 }

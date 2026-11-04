@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Assistant IA pour HubSpot : configurer son CRM par chat | Kai</title>
+<meta name="description" content="Kai travaille avec HubSpot via l’API : pipelines, transactions, contacts, tâches. Aujourd’hui via une service key, connexion en un clic en développement.">
+<meta name="keywords" content="assistant IA pour HubSpot, IA pour HubSpot, HubSpot IA, configurer HubSpot sans développeur, connecter HubSpot via API, paramétrage HubSpot">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/fr/hubspot-ai-assistant.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/hubspot-ai-assistant.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/hubspot-ai-assistant.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/hubspot-ai-assistant.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/hubspot-ai-assistant.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/hubspot-ai-assistant.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/hubspot-ai-assistant.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/hubspot-ai-assistant.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/guides/it/hubspot-ai-assistant.html">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/guides/tr/hubspot-ai-assistant.html">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/guides/be/hubspot-ai-assistant.html">
+<link rel="alternate" hreflang="uk" href="https://aii-crm.com/guides/uk/hubspot-ai-assistant.html">
+<link rel="alternate" hreflang="ro" href="https://aii-crm.com/guides/ro/hubspot-ai-assistant.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/hubspot-ai-assistant.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/fr/hubspot-ai-assistant.html">
+<meta property="og:title" content="Assistant IA pour HubSpot : configurer votre CRM par message de chat">
+<meta property="og:description" content="Kai travaille avec HubSpot via l’API : pipelines, transactions, contacts, tâches et notes à partir d’un message dans Telegram ou le navigateur. Comment se connecter dès aujourd’hui et ce qui est en développement.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-11-04">
+<meta property="article:modified_time" content="2026-11-04">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Assistant IA pour HubSpot : configurer votre CRM par message de chat">
+<meta name="twitter:description" content="Kai travaille avec HubSpot via l’API : pipelines, transactions, contacts, tâches et notes à partir d’un message dans Telegram ou le navigateur. Comment se connecter dès aujourd’hui et ce qui est en développement.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/fr/" aria-label="Kai — accueil">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Navigation">
+      <a href="https://aii-crm.com/fr/">Site web</a>
+      <a href="https://t.me/aiicrm_bot">Bot Telegram</a>
+      <a href="https://aii-crm.com/guides/en/hubspot-ai-assistant.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Fil d’Ariane">
+  <a href="https://aii-crm.com/fr/">Kai</a> › <a href="https://aii-crm.com/guides/fr/">Guides</a> › Assistant IA pour HubSpot
+</nav>
+
+<h1>Assistant IA pour HubSpot : configurer votre CRM par message de chat</h1>
+<p class="meta">Mis à jour le 4 novembre 2026 · Équipe Kai · 5 min de lecture</p>
+
+<p class="lead">Un assistant IA pour HubSpot, c’est un chat dans lequel vous décrivez votre processus de vente avec vos propres mots, et qui travaille avec HubSpot via l’API officielle : il affiche les pipelines et les transactions, crée transactions, contacts, tâches et notes et analyse le pipeline. Kai le fait dans Telegram ou dans le navigateur. Aujourd’hui, HubSpot se connecte via l’API comme un CRM sur mesure ; la connexion en un clic est en développement.</p>
+
+<section class="tldr" aria-label="En bref">
+  <h2>En bref</h2>
+  <ul>
+    <li>Aujourd’hui : une service key HubSpot (clé de service) et la spécification prête à l’emploi de Kai, soit la connexion d’un CRM sur mesure via l’API, sur le forfait Max.</li>
+    <li>Ce qui fonctionne : pipelines et étapes, transactions (liste, recherche, création, changement d’étape et de montant), contacts, tâches et notes sur une transaction, analytique du pipeline.</li>
+    <li>En développement : une application Kai pour HubSpot avec un bouton « Sign in with HubSpot » et un lien d’installation, sans clé ni JSON.</li>
+    <li>Pas encore : création de pipelines et de champs, entreprises, automatisations sur les événements HubSpot.</li>
+  </ul>
+</section>
+
+<h2>Comment connecter HubSpot à Kai dès aujourd’hui</h2>
+<ol>
+  <li>Dans HubSpot, ouvrez <kbd>Development → Keys → Service keys</kbd> et cliquez sur <kbd>Create service key</kbd>. Un super administrateur ou un utilisateur disposant de l’autorisation « Developer tools » peut la créer.</li>
+  <li>Nommez la clé « Kai » et ajoutez les scopes <code>crm.objects.deals.read</code>, <code>crm.objects.deals.write</code>, <code>crm.schemas.deals.read</code>, <code>crm.objects.contacts.read</code>, <code>crm.objects.contacts.write</code>. Cliquez sur <kbd>Create</kbd> et copiez la clé.</li>
+  <li>Ouvrez la <a href="https://app.aii-crm.com/docs/custom-crm?lang=en">page de connexion d’un CRM sur mesure</a>, section « Ready-made specs: HubSpot », copiez le JSON et collez la clé dans le champ <code>token</code>.</li>
+  <li>Dans le bot <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> ou le <a href="https://app.aii-crm.com/chat?lang=en">chat web</a> : <kbd>/connect</kbd> → « My own CRM via API » → collez le JSON. Kai vérifie l’accès et affiche vos pipelines de transactions.</li>
+</ol>
+<div class="note warn">Une service key agit au nom du compte HubSpot, ne la publiez donc pas. Vous pouvez la renouveler ou la supprimer dans HubSpot, et l’ancienne clé cesse de fonctionner.</div>
+
+<h2>Ce que Kai fait dans HubSpot</h2>
+<ul>
+  <li><strong>Pipelines et étapes.</strong> Affiche les pipelines de transactions et leurs étapes et compte les transactions par étape.</li>
+  <li><strong>Transactions.</strong> Trouve une transaction par son nom, en crée une nouvelle dans le bon pipeline et à la bonne étape, change l’étape et le montant.</li>
+  <li><strong>Contacts.</strong> Crée un contact avec un téléphone et un e-mail.</li>
+  <li><strong>Tâches et notes.</strong> Crée une tâche avec une échéance et ajoute une note à une transaction.</li>
+  <li><strong>Analytique.</strong> Combien de transactions se trouvent à chaque étape d’un pipeline.</li>
+</ul>
+<p>Chaque action passe par l’API officielle de HubSpot. Tout ce qui est créé reste dans votre compte HubSpot, que vous continuiez ou non à utiliser l’assistant.</p>
+
+<h2>Ce qui est en développement et ce qui n’existe pas encore</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Besoin</th><th>Statut dans Kai</th><th>Que faire aujourd’hui</th></tr></thead>
+  <tbody>
+    <tr><td>« Sign in with HubSpot » en un clic</td><td>En développement</td><td>Connectez-vous via l’API avec une service key.</td></tr>
+    <tr><td>Création de pipelines, d’étapes et de champs depuis le chat</td><td>Pas encore</td><td>Configurez-les à la main dans HubSpot ; Kai propose la structure et rédige le cahier des charges.</td></tr>
+    <tr><td>Entreprises</td><td>Pas encore</td><td>Gérez les entreprises directement dans HubSpot.</td></tr>
+    <tr><td>Automatisations sur les événements HubSpot</td><td>Pas encore</td><td>Les workflows intégrés de HubSpot, si votre forfait HubSpot les inclut.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Avec Kai, un seul message suffit</h2>
+<p>Une fois la connexion établie, vous demandez à Kai la même chose qu’avec n’importe quel CRM. Exemples :</p>
+<pre>Montre les pipelines et combien de transactions il y a à chaque étape.</pre>
+<pre>Crée une transaction « Alpha, 20 licences » de 12000 dans le Sales Pipeline.</pre>
+<pre>Crée une tâche « rappeler » pour demain sur la transaction « Alpha, 20 licences » et ajoute une note : ils ont demandé une facture annuelle.</pre>
+<p>La connexion d’un CRM sur mesure via l’API, HubSpot compris, fait partie du forfait Max, €119 par mois ; discuter de la connexion et rédiger la spécification est gratuit. Kai parle anglais et russe.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>Existe-t-il un assistant IA qui travaille avec HubSpot à partir d’un message de chat ?</h3>
+    <p>Oui, Kai. Aujourd’hui, il se connecte à HubSpot via l’API comme un CRM sur mesure : il voit les pipelines et les transactions, crée transactions, contacts, tâches et notes, déplace les transactions d’une étape à l’autre et analyse le pipeline. La connexion en un clic est en développement.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Comment connecter HubSpot à Kai dès aujourd’hui ?</h3>
+    <p>Créez une clé dans HubSpot : Development → Keys → Service keys, avec accès aux transactions et aux contacts. Prenez la spécification HubSpot prête à l’emploi sur la page des CRM sur mesure, collez-y la clé et envoyez-la à Kai : /connect → « My own CRM via API ». La connexion d’un CRM sur mesure fait partie du forfait Max.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Quand la connexion HubSpot en un clic sera-t-elle disponible ?</h3>
+    <p>Elle est en développement : une application Kai pour HubSpot avec un bouton « Sign in with HubSpot » et un lien d’installation, sans clé ni JSON. Dès son lancement, Kai vous préviendra dans le chat.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Que ne fait pas encore Kai dans HubSpot ?</h3>
+    <p>Il ne crée ni pipelines ni champs, ne gère pas les entreprises et n’exécute pas d’automatisations sur les événements HubSpot. Tout cela est prévu en même temps que la connexion en un clic.</p>
+  </div>
+</div>
+
+<h2>Et ensuite ?</h2>
+<p>Si vous avez besoin de HubSpot maintenant, créez une service key et connectez-vous en suivant les étapes ci-dessus. Si vous préférez une connexion en un clic, attendez l’application Kai pour HubSpot : elle est en développement.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://app.aii-crm.com/docs/custom-crm?lang=en">Guide de connexion</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Ouvrir le chat web</a>
+</div>
+
+<p class="author">Auteur : Équipe Kai · Mis à jour le <time datetime="2026-11-04">4 novembre 2026</time> · Les fonctions sont décrites à la date de publication ; Kai indique le statut actuel dans le chat.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/fr/">Accueil</a> · <a href="https://aii-crm.com/privacy-fr.html">Confidentialité</a> · <a href="https://aii-crm.com/terms-fr.html">CGU</a> · <a href="https://aii-crm.com/guides/en/hubspot-ai-assistant.html">Version anglaise</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/fr/hubspot-ai-assistant.html#article",
+      "headline": "Assistant IA pour HubSpot : configurer votre CRM par message de chat",
+      "description": "Comment connecter dès aujourd’hui HubSpot à l’assistant IA Kai, via l’API avec une service key, et ce qu’il fait dans HubSpot : pipelines, transactions, contacts, tâches, notes. La connexion en un clic est en développement.",
+      "inLanguage": "fr",
+      "datePublished": "2026-11-04",
+      "dateModified": "2026-11-04",
+      "mainEntityOfPage": "https://aii-crm.com/guides/fr/hubspot-ai-assistant.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/fr/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/fr/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Existe-t-il un assistant IA qui travaille avec HubSpot à partir d’un message de chat ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, Kai. Aujourd’hui, il se connecte à HubSpot via l’API comme un CRM sur mesure : il voit les pipelines et les transactions, crée transactions, contacts, tâches et notes, déplace les transactions d’une étape à l’autre et analyse le pipeline. La connexion en un clic est en développement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment connecter HubSpot à Kai dès aujourd’hui ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Créez une clé dans HubSpot : Development → Keys → Service keys, avec accès aux transactions et aux contacts. Prenez la spécification HubSpot prête à l’emploi sur la page des CRM sur mesure, collez-y la clé et envoyez-la à Kai : /connect → « My own CRM via API ». La connexion d’un CRM sur mesure fait partie du forfait Max."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quand la connexion HubSpot en un clic sera-t-elle disponible ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Elle est en développement : une application Kai pour HubSpot avec un bouton « Sign in with HubSpot » et un lien d’installation, sans clé ni JSON. Dès son lancement, Kai vous préviendra dans le chat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que ne fait pas encore Kai dans HubSpot ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il ne crée ni pipelines ni champs, ne gère pas les entreprises et n’exécute pas d’automatisations sur les événements HubSpot. Tout cela est prévu en même temps que la connexion en un clic."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://aii-crm.com/guides/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Assistant IA pour HubSpot : configurer votre CRM par message de chat",
+          "item": "https://aii-crm.com/guides/fr/hubspot-ai-assistant.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

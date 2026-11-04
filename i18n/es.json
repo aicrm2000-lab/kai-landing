@@ -590,14 +590,18 @@
   "beta": "beta",
   "Pipedrive: install Kai into your Pipedrive in one click": "Pipedrive: instala Kai en tu Pipedrive con un clic",
   "Does Kai work with Pipedrive?": "¿Kai funciona con Pipedrive?",
-  "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Event automations for Pipedrive are not there yet — they come after the beta.": "Sí, en beta, desde el plan Start. Se conecta con el enlace de instalación desde Pipedrive, con el botón «Sign in with Pipedrive» en el bot o con un token de API personal. Kai configura embudos, etapas y campos, gestiona tratos, personas, organizaciones, actividades y notas y analiza el embudo. Las automatizaciones por eventos para Pipedrive todavía no están disponibles: llegarán después de la beta."
+  "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Event automations for Pipedrive are not there yet — they come after the beta.": "Sí, en beta, desde el plan Start. Se conecta con el enlace de instalación desde Pipedrive, con el botón «Sign in with Pipedrive» en el bot o con un token de API personal. Kai configura embudos, etapas y campos, gestiona tratos, personas, organizaciones, actividades y notas y analiza el embudo. Las automatizaciones por eventos para Pipedrive todavía no están disponibles: llegarán después de la beta.",
+  "HubSpot: connect via API today, one-click connection in development": "HubSpot: conéctalo ya por API; la conexión con un clic está en desarrollo",
+  "in development": "en desarrollo",
+  "Does Kai work with HubSpot?": "¿Kai funciona con HubSpot?",
+  "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes.": "La conexión con un clic está en desarrollo. Hoy HubSpot ya se conecta por API como un CRM a medida: una service key (clave de servicio) de HubSpot más la especificación ya lista de Kai, en el plan Max. Kai ve los embudos y los negocios y crea negocios, contactos, tareas y notas."
  },
  "meta": {
   "title": "Asistente de IA que configura amoCRM, Kommo, Bitrix24 y CRM a medida | Kai",
   "description": "Kai configura tu CRM a partir de un mensaje en lenguaje natural, en Telegram o en tu navegador. amoCRM, Kommo, Bitrix24, Pipedrive o tu propio CRM a medida a través de su API: embudos, campos, tareas, automatizaciones, analítica. 65 acciones. 3 días de prueba, sin tarjeta.",
   "og_title": "Kai: el asistente de IA que configura tu CRM",
   "og_description": "Un asistente de IA que configura tu CRM desde un mensaje de chat, en Telegram o en tu navegador.",
-  "keywords": "configurar CRM, configuración de CRM, asistente de IA para amoCRM, asistente de IA para Kommo, asistente de IA para Bitrix24, conectar IA a mi CRM por API, CRM sin programadores, automatización de CRM, bot de Telegram para CRM, embudos de ventas, agente IA para CRM propio, CRM a medida, CRM personalizado, CRM propio por API, integración de IA con API REST de CRM, inteligencia artificial para CRM, amoCRM, Kommo, Bitrix24, amoCRM API, Kommo API, CRM setup, AI assistant, custom CRM, Pipedrive, asistente de IA para Pipedrive, configurar Pipedrive, Pipedrive sin programador"
+  "keywords": "configurar CRM, configuración de CRM, asistente de IA para amoCRM, asistente de IA para Kommo, asistente de IA para Bitrix24, conectar IA a mi CRM por API, CRM sin programadores, automatización de CRM, bot de Telegram para CRM, embudos de ventas, agente IA para CRM propio, CRM a medida, CRM personalizado, CRM propio por API, integración de IA con API REST de CRM, inteligencia artificial para CRM, amoCRM, Kommo, Bitrix24, amoCRM API, Kommo API, CRM setup, AI assistant, custom CRM, Pipedrive, asistente de IA para Pipedrive, configurar Pipedrive, Pipedrive sin programador, HubSpot, asistente de IA para HubSpot, configurar HubSpot"
  },
  "ld": {
   "description": "Asistente de IA que configura tu CRM desde un mensaje de chat, en Telegram o en tu navegador: amoCRM, Kommo, Bitrix24, Pipedrive o tu propio CRM a medida a través de su API. 65 acciones: embudos, campos, etapas, leads, contactos, automatizaciones, analítica.",
@@ -610,7 +614,8 @@
    "Reconocimiento de mensajes de voz",
    "Conexión por OAuth en un clic",
    "Tu propio CRM (a medida, interno) vía API REST: OAuth 2.0, clave API, bearer",
-   "Conexión con Pipedrive (beta): embudos, tratos, actividades, analítica"
+   "Conexión con Pipedrive (beta): embudos, tratos, actividades, analítica",
+   "HubSpot vía API (conexión con un clic en desarrollo)"
   ],
   "faq": [
    [
@@ -636,6 +641,10 @@
    [
     "¿Kai funciona con Pipedrive?",
     "Sí, en beta, desde el plan Start. Se conecta con el enlace de instalación desde Pipedrive, con el botón «Sign in with Pipedrive» en el bot o con un token de API personal. Kai configura embudos, etapas y campos, gestiona tratos, personas, organizaciones, actividades y notas y analiza el embudo. Las automatizaciones por eventos para Pipedrive todavía no están disponibles: llegarán después de la beta."
+   ],
+   [
+    "¿Kai funciona con HubSpot?",
+    "La conexión con un clic está en desarrollo. Hoy HubSpot ya se conecta por API como un CRM a medida: una service key (clave de servicio) de HubSpot más la especificación ya lista de Kai, en el plan Max. Kai ve los embudos y los negocios y crea negocios, contactos, tareas y notas."
    ],
    [
     "¿Kai funciona con un CRM propio o a medida?",

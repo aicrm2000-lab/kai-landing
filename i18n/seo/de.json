@@ -52,5 +52,9 @@
  "guides/de/pipedrive-ai-assistant.html": {
   "title": "KI-Assistent für Pipedrive: CRM per Chat-Nachricht einrichten | Kai",
   "description": "Kai richtet Pipedrive per Chat ein: Pipelines, Felder, Deals, Aktivitäten, Analysen. Installation per Link, was in der Beta funktioniert und was noch nicht."
+ },
+ "guides/de/hubspot-ai-assistant.html": {
+  "title": "KI-Assistent für HubSpot: CRM per Chat-Nachricht einrichten | Kai",
+  "description": "Kai arbeitet per API mit HubSpot: Pipelines, Deals, Kontakte, Aufgaben. Heute per Service Key verbinden, die Verbindung mit einem Klick ist in Entwicklung."
  }
 }

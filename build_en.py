@@ -25,7 +25,7 @@ EN_META = {
     "keywords": ("amoCRM, Kommo, Bitrix24, CRM setup, AI assistant, CRM automation, Telegram CRM bot, sales pipelines, "
                  "amoCRM API, Kommo API, CRM without developers, custom CRM, in-house CRM, homegrown CRM, your own CRM via API, "
                  "connect AI agent to custom CRM, AI assistant for in-house CRM, CRM REST API AI integration, bespoke CRM AI agent, "
-                 "Pipedrive, Pipedrive AI assistant, AI for Pipedrive, Pipedrive setup"),
+                 "Pipedrive, Pipedrive AI assistant, AI for Pipedrive, Pipedrive setup, HubSpot, HubSpot AI assistant, AI for HubSpot"),
 }
 EN_LD = {
     "description": ("AI assistant that sets up your CRM from a chat message — in Telegram or in your browser: amoCRM, Kommo, "
@@ -34,7 +34,8 @@ EN_LD = {
                     "Event-based CRM automations", "Technical specification as a PDF",
                     "Voice message recognition", "One-click OAuth connection",
                     "Your own (custom, in-house) CRM via REST API: OAuth 2.0, API key, bearer",
-                    "Pipedrive connection (beta): pipelines, deals, activities, analytics"],
+                    "Pipedrive connection (beta): pipelines, deals, activities, analytics",
+                    "HubSpot via API (one-click connection in development)"],
     "faq": [
         ("What can Kai do?", "Kai is an AI assistant that sets up your CRM from a chat message — in Telegram or in your browser: it creates "
                              "pipelines, fields, stages, deals, contacts, tasks and automations. 65 actions without developers."),
@@ -47,6 +48,7 @@ EN_LD = {
                                          "stages, fields, deals, contacts and tasks and runs the analytics. Automations inside "
                                          "Bitrix24 and widgets are not available yet. amoCRM and Kommo are fully supported."),
         ("Does Kai work with Pipedrive?", "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Event automations for Pipedrive are not there yet — they come after the beta."),
+        ("Does Kai work with HubSpot?", "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes."),
         ("Does Kai work with a custom or in-house CRM?", "Yes, via its API. Your own CRM — custom, in-house or any other with a REST API — connects through a connector spec: the API address, the auth method (OAuth 2.0, API key, bearer or basic) and which endpoints do what. Kai drafts the spec from your docs or asks step by step, then works with it like with amoCRM: pipelines, deals, contacts, tasks, automations. Only the pipelines list is mandatory. Try it first on Kai Sandbox CRM. Connecting is on the Max plan; discussing and drafting the spec is free."),
         ("Is there a trial?", "Yes: a 3-day trial, no card, starting when you connect your CRM. The trial includes ~25 requests and Start-plan features."),
     ],
@@ -169,6 +171,7 @@ def main() -> None:
         html = html.replace(f"'{p}-en.html' : '{p}.html'", f"'../{p}-en.html' : '../{p}.html'")
         html = html.replace(f"href='{p}-en.html'", f"href='../{p}-en.html'").replace(f"href='{p}.html'", f"href='../{p}-en.html'")
     html = html.replace('href="../guides/"', 'href="../guides/en/"')
+    html = re.sub(r'href="\.\./guides/([a-z0-9-]+\.html)"', r'href="../guides/en/\1"', html)   # гайд — английский
     for _p in ("account", "login", "signup", "chat", "docs/custom-crm"):   # кабинет, вход, регистрация, чат: язык и без JS
         html = html.replace(f'app.aii-crm.com/{_p}?lang=ru"', f'app.aii-crm.com/{_p}?lang=en"')
     # атрибуты title/aria-label с английскими вариантами

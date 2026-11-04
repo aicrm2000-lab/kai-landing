@@ -590,14 +590,18 @@
   "beta": "beta",
   "Pipedrive: install Kai into your Pipedrive in one click": "Pipedrive: Kai'yi tek tıkla Pipedrive'ına kur",
   "Does Kai work with Pipedrive?": "Kai Pipedrive ile çalışıyor mu?",
-  "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Event automations for Pipedrive are not there yet — they come after the beta.": "Evet, beta aşamasında ve Start planından itibaren. Pipedrive kurulum bağlantısıyla, botta “Sign in with Pipedrive” düğmesiyle ya da kişisel API token'ıyla bağlanır. Kai satış hunilerini, aşamaları ve alanları kurar; fırsatları, kişileri, kuruluşları, aktiviteleri ve notları yönetir ve huniyi inceler. Pipedrive için olay bazlı otomasyonlar henüz yok — betadan sonra gelecek."
+  "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Event automations for Pipedrive are not there yet — they come after the beta.": "Evet, beta aşamasında ve Start planından itibaren. Pipedrive kurulum bağlantısıyla, botta “Sign in with Pipedrive” düğmesiyle ya da kişisel API token'ıyla bağlanır. Kai satış hunilerini, aşamaları ve alanları kurar; fırsatları, kişileri, kuruluşları, aktiviteleri ve notları yönetir ve huniyi inceler. Pipedrive için olay bazlı otomasyonlar henüz yok — betadan sonra gelecek.",
+  "HubSpot: connect via API today, one-click connection in development": "HubSpot: API ile bugün bağlan, tek tıkla bağlantı geliştiriliyor",
+  "in development": "geliştiriliyor",
+  "Does Kai work with HubSpot?": "Kai HubSpot ile çalışıyor mu?",
+  "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes.": "Tek tıkla bağlantı geliştiriliyor. Bugün HubSpot, API üzerinden özel CRM olarak bağlanır: HubSpot'ta oluşturulan bir service key ve Kai'nin hazır spesifikasyonu, Max planında. Kai satış hunilerini ve fırsatları görür; fırsatlar, kişiler, görevler ve notlar oluşturur."
  },
  "meta": {
   "title": "amoCRM, Kommo, Bitrix24 ve özel CRM'leri kuran yapay zeka asistanı | Kai",
   "description": "Kai, CRM'ini Telegram'da veya tarayıcında yazdığın sade bir mesajla kurar — amoCRM, Kommo, Bitrix24, Pipedrive ya da API'si üzerinden kendi özel CRM'in: satış hunileri, alanlar, görevler, otomasyonlar, analitik. 65 işlem. 3 günlük deneme, kart gerekmez.",
   "og_title": "Kai — CRM'ini kuran yapay zeka asistanı",
   "og_description": "CRM'ini bir sohbet mesajıyla yapılandıran yapay zeka asistanı — Telegram'da veya tarayıcında.",
-  "keywords": "amoCRM, Kommo, Bitrix24, CRM kurulumu, CRM kurma, CRM kurulum hizmeti, amoCRM için yapay zeka asistanı, Kommo için yapay zeka asistanı, Bitrix24 için yapay zeka asistanı, yapay zeka CRM asistanı, CRM otomasyonu, Telegram CRM botu, satış hunisi kurulumu, satış pipeline kurulumu, amoCRM API, Kommo API, yazılımcısız CRM, geliştiricisiz CRM, entegratörsüz CRM kurulumu, kendi CRM'im, şirket içi CRM, özel CRM, kendi CRM'ime yapay zeka bağlamak API, özel CRM için yapay zeka ajanı, CRM REST API yapay zeka entegrasyonu, AI assistant, CRM setup, custom CRM, AI agent for custom CRM, Pipedrive, Pipedrive için yapay zeka asistanı, Pipedrive kurulumu, geliştiricisiz Pipedrive"
+  "keywords": "amoCRM, Kommo, Bitrix24, CRM kurulumu, CRM kurma, CRM kurulum hizmeti, amoCRM için yapay zeka asistanı, Kommo için yapay zeka asistanı, Bitrix24 için yapay zeka asistanı, yapay zeka CRM asistanı, CRM otomasyonu, Telegram CRM botu, satış hunisi kurulumu, satış pipeline kurulumu, amoCRM API, Kommo API, yazılımcısız CRM, geliştiricisiz CRM, entegratörsüz CRM kurulumu, kendi CRM'im, şirket içi CRM, özel CRM, kendi CRM'ime yapay zeka bağlamak API, özel CRM için yapay zeka ajanı, CRM REST API yapay zeka entegrasyonu, AI assistant, CRM setup, custom CRM, AI agent for custom CRM, Pipedrive, Pipedrive için yapay zeka asistanı, Pipedrive kurulumu, geliştiricisiz Pipedrive, HubSpot, HubSpot için yapay zeka asistanı, HubSpot kurulumu"
  },
  "ld": {
   "description": "CRM'ini bir sohbet mesajıyla kuran yapay zeka asistanı — Telegram'da veya tarayıcında: amoCRM, Kommo, Bitrix24, Pipedrive ya da API'si üzerinden kendi özel CRM'in. 65 işlem: satış hunileri, alanlar, aşamalar, lead'ler, kişiler, otomasyonlar, analitik.",
@@ -610,7 +614,8 @@
    "Sesli mesaj tanıma",
    "Tek tıkla OAuth bağlantısı",
    "REST API ile kendi (özel, şirket içi) CRM'in: OAuth 2.0, API anahtarı, bearer",
-   "Pipedrive bağlantısı (beta): satış hunileri, fırsatlar, aktiviteler, analitik"
+   "Pipedrive bağlantısı (beta): satış hunileri, fırsatlar, aktiviteler, analitik",
+   "API ile HubSpot (tek tıkla bağlantı geliştiriliyor)"
   ],
   "faq": [
    [
@@ -636,6 +641,10 @@
    [
     "Kai Pipedrive ile çalışıyor mu?",
     "Evet, beta aşamasında ve Start planından itibaren. Pipedrive kurulum bağlantısıyla, botta “Sign in with Pipedrive” düğmesiyle ya da kişisel API token'ıyla bağlanır. Kai satış hunilerini, aşamaları ve alanları kurar; fırsatları, kişileri, kuruluşları, aktiviteleri ve notları yönetir ve huniyi inceler. Pipedrive için olay bazlı otomasyonlar henüz yok — betadan sonra gelecek."
+   ],
+   [
+    "Kai HubSpot ile çalışıyor mu?",
+    "Tek tıkla bağlantı geliştiriliyor. Bugün HubSpot, API üzerinden özel CRM olarak bağlanır: HubSpot'ta oluşturulan bir service key ve Kai'nin hazır spesifikasyonu, Max planında. Kai satış hunilerini ve fırsatları görür; fırsatlar, kişiler, görevler ve notlar oluşturur."
    ],
    [
     "Kai özel ya da şirket içi bir CRM ile çalışır mı?",

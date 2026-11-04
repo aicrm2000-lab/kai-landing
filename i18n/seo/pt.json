@@ -44,6 +44,10 @@
   "title": "Assistente de IA para Pipedrive: configure seu CRM pelo chat | Kai",
   "description": "O Kai configura o Pipedrive pelo chat: funis, campos, negócios, atividades, análises. Link de instalação, o que funciona na beta e o que ainda não."
  },
+ "guides/pt/hubspot-ai-assistant.html": {
+  "title": "Assistente de IA para HubSpot: configure seu CRM pelo chat | Kai",
+  "description": "O Kai trabalha com o HubSpot via API: funis, negócios, contatos, tarefas. Conecte hoje com uma service key; a conexão com um clique está em desenvolvimento."
+ },
  "privacy-pt.html": {
   "description": "Política de Privacidade do Kai, o assistente de IA que configura o seu CRM: quais dados coletamos, para quê, por quanto tempo os guardamos e como excluí-los."
  },

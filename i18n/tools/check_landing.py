@@ -30,8 +30,8 @@ for code in codes:
             if not d.get(sec, {}).get(k):
                 problems.append(f"{sec}.{k} missing")
     ld = d.get("ld", {})
-    if len(ld.get("featureList", [])) != 9: problems.append("ld.featureList != 9")   # +Pipedrive 03.11
-    if len(ld.get("faq", [])) != 8 or any(len(x) != 2 for x in ld.get("faq", [])): problems.append("ld.faq != 8 pairs")
+    if len(ld.get("featureList", [])) != 10: problems.append("ld.featureList != 10")   # +Pipedrive 03.11, +HubSpot 04.11
+    if len(ld.get("faq", [])) != 9 or any(len(x) != 2 for x in ld.get("faq", [])): problems.append("ld.faq != 9 pairs")
     if not ld.get("description"): problems.append("ld.description missing")
     for wk in ("words", "words_ny"):
         for w in d.get("ui", {}).get(wk, []):

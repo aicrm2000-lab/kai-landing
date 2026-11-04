@@ -2,1153 +2,1225 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aii-crm.com/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/en/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/de/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/fr/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/es/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/pl/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/pt/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/it/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/tr/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/be/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/uk/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/ro/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/en/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/cases/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/cases/en/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/amocrm-pipeline-setup.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/kommo-automation-no-developer.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/ai-assistant-for-amocrm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/kommo-ai-tools-compared.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/import-contacts-excel-amocrm-kommo.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/crm-automations-that-pay-off.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/bitrix24-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/ai-agent-for-custom-crm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/crm-setup-without-integrator-checklist.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pipedrive-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aii-crm.com/guides/hubspot-ai-assistant.html</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/en/amocrm-pipeline-setup.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/en/kommo-automation-no-developer.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/en/ai-assistant-for-amocrm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/en/kommo-ai-tools-compared.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/en/import-contacts-excel-amocrm-kommo.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/en/crm-automations-that-pay-off.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/en/bitrix24-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/en/ai-agent-for-custom-crm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/en/crm-setup-without-integrator-checklist.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/en/pipedrive-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aii-crm.com/guides/en/hubspot-ai-assistant.html</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/privacy.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/privacy-en.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/terms.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/terms-en.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/refund.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/refund-en.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/de/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/cases/de/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/de/amocrm-pipeline-setup.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/de/kommo-automation-no-developer.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/de/ai-assistant-for-amocrm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/de/kommo-ai-tools-compared.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/de/import-contacts-excel-amocrm-kommo.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/de/crm-automations-that-pay-off.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/de/bitrix24-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/de/ai-agent-for-custom-crm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/de/crm-setup-without-integrator-checklist.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/de/pipedrive-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aii-crm.com/guides/de/hubspot-ai-assistant.html</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/privacy-de.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/terms-de.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/refund-de.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/fr/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/cases/fr/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/fr/amocrm-pipeline-setup.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/fr/kommo-automation-no-developer.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/fr/ai-assistant-for-amocrm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/fr/kommo-ai-tools-compared.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/fr/import-contacts-excel-amocrm-kommo.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/fr/crm-automations-that-pay-off.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/fr/bitrix24-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/fr/ai-agent-for-custom-crm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/fr/crm-setup-without-integrator-checklist.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/fr/pipedrive-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aii-crm.com/guides/fr/hubspot-ai-assistant.html</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/privacy-fr.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/terms-fr.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/refund-fr.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/es/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/cases/es/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/es/amocrm-pipeline-setup.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/es/kommo-automation-no-developer.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/es/ai-assistant-for-amocrm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/es/kommo-ai-tools-compared.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/es/import-contacts-excel-amocrm-kommo.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/es/crm-automations-that-pay-off.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/es/bitrix24-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/es/ai-agent-for-custom-crm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/es/crm-setup-without-integrator-checklist.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/es/pipedrive-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aii-crm.com/guides/es/hubspot-ai-assistant.html</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/privacy-es.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/terms-es.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/refund-es.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pl/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/cases/pl/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pl/amocrm-pipeline-setup.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pl/kommo-automation-no-developer.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pl/ai-assistant-for-amocrm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pl/kommo-ai-tools-compared.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pl/import-contacts-excel-amocrm-kommo.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pl/crm-automations-that-pay-off.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pl/bitrix24-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pl/ai-agent-for-custom-crm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pl/crm-setup-without-integrator-checklist.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pl/pipedrive-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aii-crm.com/guides/pl/hubspot-ai-assistant.html</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/privacy-pl.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/terms-pl.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/refund-pl.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pt/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/cases/pt/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pt/amocrm-pipeline-setup.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pt/kommo-automation-no-developer.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pt/ai-assistant-for-amocrm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pt/kommo-ai-tools-compared.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pt/import-contacts-excel-amocrm-kommo.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pt/crm-automations-that-pay-off.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pt/bitrix24-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pt/ai-agent-for-custom-crm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pt/crm-setup-without-integrator-checklist.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/pt/pipedrive-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aii-crm.com/guides/pt/hubspot-ai-assistant.html</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/privacy-pt.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/terms-pt.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/refund-pt.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/it/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/cases/it/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/it/amocrm-pipeline-setup.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/it/kommo-automation-no-developer.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/it/ai-assistant-for-amocrm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/it/kommo-ai-tools-compared.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/it/import-contacts-excel-amocrm-kommo.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/it/crm-automations-that-pay-off.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/it/bitrix24-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/it/ai-agent-for-custom-crm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/it/crm-setup-without-integrator-checklist.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/it/pipedrive-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aii-crm.com/guides/it/hubspot-ai-assistant.html</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/privacy-it.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/terms-it.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/refund-it.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/tr/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/cases/tr/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/tr/amocrm-pipeline-setup.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/tr/kommo-automation-no-developer.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/tr/ai-assistant-for-amocrm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/tr/kommo-ai-tools-compared.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/tr/import-contacts-excel-amocrm-kommo.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/tr/crm-automations-that-pay-off.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/tr/bitrix24-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/tr/ai-agent-for-custom-crm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/tr/crm-setup-without-integrator-checklist.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/tr/pipedrive-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aii-crm.com/guides/tr/hubspot-ai-assistant.html</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/privacy-tr.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/terms-tr.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/refund-tr.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/be/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/cases/be/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/be/amocrm-pipeline-setup.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/be/kommo-automation-no-developer.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/be/ai-assistant-for-amocrm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/be/kommo-ai-tools-compared.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/be/import-contacts-excel-amocrm-kommo.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/be/crm-automations-that-pay-off.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/be/bitrix24-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/be/ai-agent-for-custom-crm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/be/crm-setup-without-integrator-checklist.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/be/pipedrive-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aii-crm.com/guides/be/hubspot-ai-assistant.html</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/privacy-be.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/terms-be.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/refund-be.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/uk/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/cases/uk/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/uk/amocrm-pipeline-setup.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/uk/kommo-automation-no-developer.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/uk/ai-assistant-for-amocrm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/uk/kommo-ai-tools-compared.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/uk/import-contacts-excel-amocrm-kommo.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/uk/crm-automations-that-pay-off.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/uk/bitrix24-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/uk/ai-agent-for-custom-crm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/uk/crm-setup-without-integrator-checklist.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/uk/pipedrive-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aii-crm.com/guides/uk/hubspot-ai-assistant.html</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/privacy-uk.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/terms-uk.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/refund-uk.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/ro/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/cases/ro/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/ro/amocrm-pipeline-setup.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/ro/kommo-automation-no-developer.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/ro/ai-assistant-for-amocrm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/ro/kommo-ai-tools-compared.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/ro/import-contacts-excel-amocrm-kommo.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/ro/crm-automations-that-pay-off.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/ro/bitrix24-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/ro/ai-agent-for-custom-crm.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/ro/crm-setup-without-integrator-checklist.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/guides/ro/pipedrive-ai-assistant.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aii-crm.com/guides/ro/hubspot-ai-assistant.html</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/privacy-ro.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/terms-ro.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aii-crm.com/refund-ro.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

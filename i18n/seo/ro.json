@@ -50,5 +50,9 @@
  "guides/ro/pipedrive-ai-assistant.html": {
   "title": "Asistent AI pentru Pipedrive: configurare CRM dintr-un mesaj | Kai",
   "description": "Kai configurează Pipedrive dintr-un mesaj în chat: pipeline-uri, câmpuri, tranzacții, activități, analiză. Link de instalare, ce merge în beta și ce nu încă."
+ },
+ "guides/ro/hubspot-ai-assistant.html": {
+  "title": "Asistent AI pentru HubSpot: configurare CRM dintr-un mesaj | Kai",
+  "description": "Kai lucrează cu HubSpot prin API: pipeline-uri, tranzacții, contacte, sarcini. Azi te conectezi cu un service key; conectarea cu un clic e în dezvoltare."
  }
 }

@@ -35,6 +35,10 @@
   "title": "Asystent AI do Pipedrive: skonfiguruj CRM jedną wiadomością | Kai",
   "description": "Kai konfiguruje Pipedrive z wiadomości na czacie: lejki, pola, transakcje, działania, analityka. Link instalacyjny, co działa w becie, a czego jeszcze nie."
  },
+ "guides/pl/hubspot-ai-assistant.html": {
+  "title": "Asystent AI do HubSpot: skonfiguruj CRM jedną wiadomością | Kai",
+  "description": "Kai pracuje z HubSpot przez API: lejki, transakcje, kontakty, zadania. Podłącz już dziś kluczem service key; podłączenie jednym kliknięciem — w przygotowaniu."
+ },
  "privacy-pl.html": {
   "description": "Polityka prywatności Kai — asystenta AI, który konfiguruje CRM Użytkownika: jakie dane zbieramy, w jakim celu, jak długo je przechowujemy i jak je usunąć."
  },

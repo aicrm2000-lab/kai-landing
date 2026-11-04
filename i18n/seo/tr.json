@@ -40,5 +40,9 @@
  "guides/tr/pipedrive-ai-assistant.html": {
   "title": "Pipedrive yapay zeka asistanı: CRM'ini sohbet mesajıyla kur | Kai",
   "description": "Kai, Pipedrive'ı bir sohbet mesajıyla kurar: huniler, alanlar, fırsatlar, aktiviteler, analitik. Kurulum bağlantısı, betada neler çalışıyor, neler henüz yok."
+ },
+ "guides/tr/hubspot-ai-assistant.html": {
+  "title": "HubSpot yapay zeka asistanı: CRM'ini sohbet mesajıyla kur | Kai",
+  "description": "Kai, HubSpot ile API üzerinden çalışır: huniler, fırsatlar, kişiler, görevler. Bugün service key ile bağlan; tek tıkla bağlantı geliştiriliyor."
  }
 }
