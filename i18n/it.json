@@ -601,7 +601,20 @@
   "/yr": "/anno",
   "≈ €24/mo": "≈ €24/mese",
   "≈ €49/mo": "≈ €49/mese",
-  "≈ €99/mo": "≈ €99/mese"
+  "≈ €99/mo": "≈ €99/mese",
+  "Yearly −40%, first month −50%. Applied automatically when you pay by card.": "Annuale −40%, primo mese −50%. Applicato in automatico pagando con carta.",
+  "See plans": "Vedi i piani",
+  "Hide": "Nascondi",
+  "Black Week: yearly −40%, first month −50%": "Black Week: annuale −40%, primo mese −50%",
+  "−40%": "−40%",
+  "Black Week": "Black Week",
+  "Black Week prices apply 23–30 November to card payments (Polar): −40% on yearly plans, −50% on the first month of monthly plans. Telegram Stars and crypto stay at the regular price.": "I prezzi Black Week valgono dal 23 al 30 novembre per i pagamenti con carta (Polar): −40% sui piani annuali, −50% sul primo mese dei piani mensili. Telegram Stars e crypto restano al prezzo normale.",
+  "First month €14.50 (−50%)": "Primo mese €14,50 (−50%)",
+  "≈ €14.50/mo · −40%": "≈ €14,50/mese · −40%",
+  "First month €29.50 (−50%)": "Primo mese €29,50 (−50%)",
+  "≈ €29.50/mo · −40%": "≈ €29,50/mese · −40%",
+  "First month €59.50 (−50%)": "Primo mese €59,50 (−50%)",
+  "≈ €59.50/mo · −40%": "≈ €59,50/mese · −40%"
  },
  "meta": {
   "title": "Assistente IA che configura amoCRM, Kommo, Bitrix24 e CRM personalizzati | Kai",

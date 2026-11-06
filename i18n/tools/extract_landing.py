@@ -14,7 +14,7 @@ IDENT = re.compile(r"^(?:<span class='dot'></span>)?[a-z0-9_]+(?:\s*×\d+)?$")
 
 items, seen = [], {}
 PAIRS = [("data-ru", "data-en"), ("data-ru-title", "data-en-title"), ("data-ru-label", "data-en-label"),
-         ("data-hw-ru", "data-hw-en"), ("data-ny-ru", "data-ny-en")]
+         ("data-hw-ru", "data-hw-en"), ("data-ny-ru", "data-ny-en"), ("data-bf-ru", "data-bf-en")]
 for m in TAG.finditer(s):
     tag = m.group(0)
     for ru_a, en_a in PAIRS:

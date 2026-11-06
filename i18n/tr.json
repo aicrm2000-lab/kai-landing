@@ -601,7 +601,20 @@
   "/yr": "/yıl",
   "≈ €24/mo": "≈ €24/ay",
   "≈ €49/mo": "≈ €49/ay",
-  "≈ €99/mo": "≈ €99/ay"
+  "≈ €99/mo": "≈ €99/ay",
+  "Yearly −40%, first month −50%. Applied automatically when you pay by card.": "Yıllıkta %40, ilk ayda %50 indirim. Kartla ödemede otomatik uygulanır.",
+  "See plans": "Planlara git",
+  "Hide": "Gizle",
+  "Black Week: yearly −40%, first month −50%": "Black Week: yıllıkta %40, ilk ayda %50 indirim",
+  "−40%": "%40 indirim",
+  "Black Week": "Black Week",
+  "Black Week prices apply 23–30 November to card payments (Polar): −40% on yearly plans, −50% on the first month of monthly plans. Telegram Stars and crypto stay at the regular price.": "Black Week fiyatları 23–30 Kasım arasında kartla ödemelerde (Polar) geçerlidir: yıllık planlarda %40, aylık planların ilk ayında %50 indirim. Telegram Stars ve kripto normal fiyattan devam eder.",
+  "First month €14.50 (−50%)": "İlk ay €14,50 (%50 indirim)",
+  "≈ €14.50/mo · −40%": "≈ €14,50/ay · %40 indirim",
+  "First month €29.50 (−50%)": "İlk ay €29,50 (%50 indirim)",
+  "≈ €29.50/mo · −40%": "≈ €29,50/ay · %40 indirim",
+  "First month €59.50 (−50%)": "İlk ay €59,50 (%50 indirim)",
+  "≈ €59.50/mo · −40%": "≈ €59,50/ay · %40 indirim"
  },
  "meta": {
   "title": "amoCRM, Kommo, Bitrix24 ve özel CRM'leri kuran yapay zeka asistanı | Kai",

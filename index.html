@@ -1923,6 +1923,26 @@ footer {
 .plan-price b { display: block; font-weight: inherit; }
 .plan-price b[hidden] { display: none; }
 .plan-price small { display: block; margin-top: 4px; font: 400 14px var(--font); color: var(--fog); letter-spacing: 0; }
+/* ─── BLACK WEEK 23–30.11.2026 (html.bf): strip in the hero, deal prices in #pricing; .pp-reg = regular, .pp-bf = deal ─── */
+.bf-strip, .pp-bf, .bf-only { display: none; }
+html.bf .pp-reg { display: none; }
+html.bf .pp-bf { display: inline; }
+html.bf .plan-price small.pp-bf, html.bf .bf-only { display: block; }
+html.bf:not(.bf-hide) .bf-strip { display: flex; }
+.bf-strip { position: relative; z-index: 2; width: min(100%, 720px); margin: 0 auto 26px; padding: 10px 10px 10px 14px; gap: 8px 14px;
+  align-items: center; flex-wrap: wrap; text-align: left; background: var(--carbon); border: 1px solid var(--graphite); border-radius: 14px;
+  font-size: 14px; line-height: 1.45; color: var(--mist); }
+.bf-tag { flex: none; font: 600 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--void); background: var(--paper);
+  padding: 5px 8px; border-radius: 6px; }
+.bf-text { flex: 1 1 240px; }
+.bf-go { flex: none; font-weight: 600; color: var(--accent-light); white-space: nowrap; text-decoration: none; }
+.bf-go:hover, .bf-go:focus-visible { color: var(--paper); text-decoration: underline; }
+.bf-x { all: unset; flex: none; cursor: pointer; display: inline-flex; width: 28px; height: 28px; align-items: center; justify-content: center;
+  border-radius: 8px; color: var(--fog); }
+.bf-x:hover, .bf-x:focus-visible { color: var(--paper); background: rgba(255,255,255,.06); }
+.plan-price span.pp-reg, .plan-price span.pp-bf { font-size: inherit; font-weight: inherit; color: inherit; letter-spacing: inherit; }   /* не «единица» (/год) — сама цена */
+.pp-old { font-size: .55em; font-weight: 500; color: var(--fog); text-decoration: line-through; margin-right: 8px; vertical-align: .45em; letter-spacing: 0; }
+html.bf .bill-btn[data-bill="year"] em { color: var(--void); background: var(--paper); border-color: var(--paper); }
 .pricing-note {
   margin-top: 32px;
   padding: 20px 24px;
@@ -2829,6 +2849,8 @@ html.ny .chat-launcher::before {
 </style>
 <script>(function(){try{if(new URLSearchParams(location.search).get('me')==='1')localStorage.setItem('kai_no_track','1');}catch(e){}})();</script>
 <script>(function(){try{if(/(?:^|;\s*)kai_in=1(?:;|$)/.test(document.cookie))document.documentElement.classList.add('signed-in');}catch(e){}})();</script>
+<!-- Black Week 23–30.11.2026 (html.bf; ?bf=1 / ?bf=0 to force): the bot applies the same discount in card checkout (POLAR_PROMO) -->
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),on=d.getFullYear()===2026&&d.getMonth()===10&&d.getDate()>=23&&d.getDate()<=30,p=q.get('bf');if(p==='1')on=true;else if(p==='0')on=false;if(!on)return;h.classList.add('bf');if(localStorage.getItem('kai_bf_hide')==='1')h.classList.add('bf-hide');}catch(e){}})();</script>
 <script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',S=[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]],act=null,apr=-1;S.forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});S.forEach(function(s){if(s[1]||act===s[0])h.setAttribute('data-'+s[0]+'-season','1');});if(!act)return;h.classList.add(act);var ICO={hw:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230C0A0E'/><path d='M15.5 7.2c-.2-1.6.6-3 2.3-3.6' stroke='%2375B04A' stroke-width='2.2' fill='none' stroke-linecap='round'/><ellipse cx='10' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='22' cy='18' rx='6.5' ry='9' fill='%23E0640C'/><ellipse cx='16' cy='18' rx='7' ry='9.6' fill='%23FF7A1A'/><path d='M10 15l3 3.6-3.8 1.3zM22 15l-3 3.6 3.8 1.3z' fill='%230C0A0E'/><path d='M9.2 22.6c2 2.6 4.3 3.9 6.8 3.9s4.8-1.3 6.8-3.9c-2.2.9-4.5 1.4-6.8 1.4s-4.6-.5-6.8-1.4z' fill='%230C0A0E'/></svg>",ny:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23070B19'/><path d='M16 7l5 7H11zM16 11l7 9H9zM16 16l9 10H7z' fill='%2321A66D'/><rect x='14.5' y='26' width='3' height='3' fill='%238A5A2B'/><path d='M16 2.5l1 2.3 2.3 1-2.3 1-1 2.3-1-2.3-2.3-1 2.3-1z' fill='%23F5C451'/></svg>"},ii=document.querySelectorAll('link[rel="icon"]');if(ICO[act]&&!/bot|crawl|spider|slurp|google|bing|yandex|duckduck|baidu|facebookexternal|preview|inspection/i.test(navigator.userAgent))ii.forEach(function(i){i.removeAttribute('sizes');i.setAttribute('type','image/svg+xml');i.setAttribute('href',ICO[act]);});}catch(e){}})();</script>
 <script>/* языковые страницы статические: с главной без сохранённого выбора ведём по языку браузера; сохранённый выбор главнее; ?lang= и ru/en не трогаем.
    Адреса — по окончаниям стран: be → /by/, uk → /ua/ (то же в i18n_pages.SLUGS; подпись у флажка в меню — отсюда же) */
@@ -2928,6 +2950,13 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
     <li><span data-ru="CRM без автоматизаций — просто блокнот" data-en="a CRM without automations is just a notebook">CRM без автоматизаций — просто блокнот</span><span data-ru="правила по событиям и уведомления в Telegram" data-en="event rules and Telegram alerts">правила по событиям и уведомления в Telegram</span></li>
   </ul>
 
+  <div class="bf-strip" role="note">
+    <span class="bf-tag">Black Week · 23–30.11</span>
+    <span class="bf-text" data-ru="Год −40%, первый месяц −50%. Скидка применится сама при оплате картой." data-en="Yearly −40%, first month −50%. Applied automatically when you pay by card.">Год −40%, первый месяц −50%. Скидка применится сама при оплате картой.</span>
+    <a href="#pricing" class="bf-go" data-ru="К тарифам" data-en="See plans">К тарифам</a>
+    <button type="button" class="bf-x" aria-label="Скрыть" data-ru-label="Скрыть" data-en-label="Hide"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <script>(function(){var b=document.querySelector('.bf-x');if(!b)return;b.addEventListener('click',function(){document.documentElement.classList.add('bf-hide');try{localStorage.setItem('kai_bf_hide','1');}catch(e){}});})();</script>
   <div class="hero-plate">
     <div class="hero-badge">
       <span class="badge-dot"></span>
@@ -3797,19 +3826,19 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
   <div class="ny-deco" aria-hidden="true"><span class="ny-gifts r"><i class="ny-gift g3"></i><i class="ny-gift g1"></i></span></div>
   <div class="container">
     <p class="section-label reveal" data-ru="Тарифы" data-en="Plans">Тарифы</p>
-    <h2 class="section-heading reveal reveal-delay-1" data-ny-ru="Выбери план — подарок себе на год вперёд" data-ny-en="Pick a plan — a gift to your future self" data-hw-ru="Выбери план: без гадостей, только сладости" data-hw-en="Pick a plan: no tricks, only treats" data-ru="Выбери план под свой этап" data-en="Pick the plan for your stage">Выбери план под свой этап</h2>
+    <h2 class="section-heading reveal reveal-delay-1" data-bf-ru="Чёрная неделя: год −40%, первый месяц −50%" data-bf-en="Black Week: yearly −40%, first month −50%" data-ny-ru="Выбери план — подарок себе на год вперёд" data-ny-en="Pick a plan — a gift to your future self" data-hw-ru="Выбери план: без гадостей, только сладости" data-hw-en="Pick a plan: no tricks, only treats" data-ru="Выбери план под свой этап" data-en="Pick the plan for your stage">Выбери план под свой этап</h2>
     <p class="section-sub reveal reveal-delay-2" data-ru="Первые 3 дня — триал, отсчёт идёт с подключения CRM. Оплата картой, Telegram Stars или криптой (USDT)." data-en="3-day trial — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).">Первые 3 дня — триал, отсчёт идёт с подключения CRM. Оплата картой, Telegram Stars или криптой (USDT).</p>
 
     <div class="bill-toggle reveal reveal-delay-2" role="group" aria-label="Период оплаты">
       <button type="button" class="bill-btn" data-bill="month" aria-pressed="true" data-ru="Помесячно" data-en="Monthly">Помесячно</button>
-      <button type="button" class="bill-btn" data-bill="year" aria-pressed="false"><span data-ru="На год" data-en="Yearly">На год</span><em data-ru="2 месяца в подарок" data-en="2 months free">2 месяца в подарок</em></button>
+      <button type="button" class="bill-btn" data-bill="year" aria-pressed="false"><span data-ru="На год" data-en="Yearly">На год</span><em data-bf-ru="−40%" data-bf-en="−40%" data-ru="2 месяца в подарок" data-en="2 months free">2 месяца в подарок</em></button>
     </div>
 
     <div class="pricing-grid reveal reveal-delay-2 stagger-in">
 
       <div class="plan-card">
         <div class="plan-name">Start</div>
-        <div class="plan-price"><b class="pp-m">€29 <span data-ru="/мес" data-en="/mo">/мес</span></b><b class="pp-y" hidden>€290 <span data-ru="/год" data-en="/yr">/год</span><small data-ru="≈ €24/мес" data-en="≈ €24/mo">≈ €24/мес</small></b></div>
+        <div class="plan-price"><b class="pp-m">€29 <span data-ru="/мес" data-en="/mo">/мес</span><small class="pp-bf" data-ru="Первый месяц €14,50 (−50%)" data-en="First month €14.50 (−50%)">Первый месяц €14,50 (−50%)</small></b><b class="pp-y" hidden><span class="pp-reg">€290</span><span class="pp-bf"><s class="pp-old">€290</s>€174</span> <span data-ru="/год" data-en="/yr">/год</span><small class="pp-reg" data-ru="≈ €24/мес" data-en="≈ €24/mo">≈ €24/мес</small><small class="pp-bf" data-ru="≈ €14,50/мес · −40%" data-en="≈ €14.50/mo · −40%">≈ €14,50/мес · −40%</small></b></div>
         <p class="plan-pitch" data-ru="Настройка CRM разговором" data-en="Set up your CRM by talking">Настройка CRM разговором</p>
         <div class="plan-trial" data-ny-ru="3 дня триала — наш подарок" data-ny-en="3-day trial — our gift" data-hw-ru="3 дня триала, без жертвоприношений" data-hw-en="3-day trial, no sacrifices" data-ru="3 дня триала" data-en="3-day trial">3 дня триала</div>
         <ul class="plan-features">
@@ -3830,9 +3859,9 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
       </div>
 
       <div class="plan-card featured">
-        <div class="plan-badge" data-ny-ru="Хит сезона" data-ny-en="Season’s pick" data-hw-ru="Жуть как популярно" data-hw-en="Scary popular" data-ru="Хит" data-en="Popular">Хит</div>
+        <div class="plan-badge" data-bf-ru="Чёрная неделя" data-bf-en="Black Week" data-ny-ru="Хит сезона" data-ny-en="Season’s pick" data-hw-ru="Жуть как популярно" data-hw-en="Scary popular" data-ru="Хит" data-en="Popular">Хит</div>
         <div class="plan-name">Pro</div>
-        <div class="plan-price"><b class="pp-m">€59 <span data-ru="/мес" data-en="/mo">/мес</span></b><b class="pp-y" hidden>€590 <span data-ru="/год" data-en="/yr">/год</span><small data-ru="≈ €49/мес" data-en="≈ €49/mo">≈ €49/мес</small></b></div>
+        <div class="plan-price"><b class="pp-m">€59 <span data-ru="/мес" data-en="/mo">/мес</span><small class="pp-bf" data-ru="Первый месяц €29,50 (−50%)" data-en="First month €29.50 (−50%)">Первый месяц €29,50 (−50%)</small></b><b class="pp-y" hidden><span class="pp-reg">€590</span><span class="pp-bf"><s class="pp-old">€590</s>€354</span> <span data-ru="/год" data-en="/yr">/год</span><small class="pp-reg" data-ru="≈ €49/мес" data-en="≈ €49/mo">≈ €49/мес</small><small class="pp-bf" data-ru="≈ €29,50/мес · −40%" data-en="≈ €29.50/mo · −40%">≈ €29,50/мес · −40%</small></b></div>
         <p class="plan-pitch" data-ru="+ автоматизации и управление" data-en="+ automation & management">+ автоматизации и управление</p>
         <div class="plan-trial" data-ru="Пробный период — на функциях Start" data-en="Trial runs on Start features">Пробный период — на функциях Start</div>
         <div class="plan-includes" data-ru="Всё из Start, плюс:" data-en="Everything in Start, plus:">Всё из Start, плюс:</div>
@@ -3851,7 +3880,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
 
       <div class="plan-card">
         <div class="plan-name">Max</div>
-        <div class="plan-price"><b class="pp-m">€119 <span data-ru="/мес" data-en="/mo">/мес</span></b><b class="pp-y" hidden>€1190 <span data-ru="/год" data-en="/yr">/год</span><small data-ru="≈ €99/мес" data-en="≈ €99/mo">≈ €99/мес</small></b></div>
+        <div class="plan-price"><b class="pp-m">€119 <span data-ru="/мес" data-en="/mo">/мес</span><small class="pp-bf" data-ru="Первый месяц €59,50 (−50%)" data-en="First month €59.50 (−50%)">Первый месяц €59,50 (−50%)</small></b><b class="pp-y" hidden><span class="pp-reg">€1190</span><span class="pp-bf"><s class="pp-old">€1190</s>€714</span> <span data-ru="/год" data-en="/yr">/год</span><small class="pp-reg" data-ru="≈ €99/мес" data-en="≈ €99/mo">≈ €99/мес</small><small class="pp-bf" data-ru="≈ €59,50/мес · −40%" data-en="≈ €59.50/mo · −40%">≈ €59,50/мес · −40%</small></b></div>
         <p class="plan-pitch" data-ru="+ приоритет и доработки" data-en="+ priority & custom work">+ приоритет и доработки</p>
         <div class="plan-trial" data-ru="Пробный период — на функциях Start" data-en="Trial runs on Start features">Пробный период — на функциях Start</div>
         <div class="plan-includes" data-ru="Всё из Pro, плюс:" data-en="Everything in Pro, plus:">Всё из Pro, плюс:</div>
@@ -3976,8 +4005,9 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
     </div>
 
     <p class="pricing-footer reveal" data-ru="Оплата международной картой (Visa/Mastercard через Polar; карты «Мир» не проходят), Telegram Stars или криптой (USDT). Цены указаны за пользователя-владельца бота; лицензия самой CRM оплачивается отдельно." data-en="Pay by international card (Visa/Mastercard via Polar), Telegram Stars, or crypto (USDT). Prices are per bot owner; the CRM licence itself is billed separately.">Оплата международной картой (Visa/Mastercard через Polar; карты «Мир» не проходят), Telegram Stars или криптой (USDT). Цены указаны за пользователя-владельца бота; лицензия самой CRM оплачивается отдельно.</p>
+    <p class="pricing-footer bf-only" data-ru="Цены Чёрной недели действуют 23–30 ноября при оплате картой (Polar): −40% на годовые тарифы, −50% на первый месяц помесячных. Telegram Stars и крипта — по обычной цене." data-en="Black Week prices apply 23–30 November to card payments (Polar): −40% on yearly plans, −50% on the first month of monthly plans. Telegram Stars and crypto stay at the regular price.">Цены Чёрной недели действуют 23–30 ноября при оплате картой (Polar): −40% на годовые тарифы, −50% на первый месяц помесячных. Telegram Stars и крипта — по обычной цене.</p>
   </div>
-<script>(function(){var bs=document.querySelectorAll('.bill-btn');if(!bs.length)return;function set(iv){bs.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-bill')===iv?'true':'false');});document.querySelectorAll('.plan-price').forEach(function(p){var m=p.querySelector('.pp-m'),y=p.querySelector('.pp-y');if(m)m.hidden=iv==='year';if(y)y.hidden=iv!=='year';});document.querySelectorAll('.plan-cta[href*="start=pay_"]').forEach(function(a){a.setAttribute('href',a.getAttribute('href').replace(/(start=pay_[a-z]+?)(_year)?$/,'$1'+(iv==='year'?'_year':'')));});try{localStorage.setItem('kai_bill',iv);}catch(e){}}bs.forEach(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-bill'));});});var st=null;try{st=localStorage.getItem('kai_bill');}catch(e){}if(st==='year')set('year');})();</script>
+<script>(function(){var bs=document.querySelectorAll('.bill-btn');if(!bs.length)return;function set(iv,keep){bs.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-bill')===iv?'true':'false');});document.querySelectorAll('.plan-price').forEach(function(p){var m=p.querySelector('.pp-m'),y=p.querySelector('.pp-y');if(m)m.hidden=iv==='year';if(y)y.hidden=iv!=='year';});document.querySelectorAll('.plan-cta[href*="start=pay_"]').forEach(function(a){a.setAttribute('href',a.getAttribute('href').replace(/(start=pay_[a-z]+?)(_year)?$/,'$1'+(iv==='year'?'_year':'')));});if(!keep)try{localStorage.setItem('kai_bill',iv);}catch(e){}}bs.forEach(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-bill'));});});var st=null;try{st=localStorage.getItem('kai_bill');}catch(e){}if(st==='year')set('year');else if(st===null&&document.documentElement.classList.contains('bf'))set('year',true);})();</script>
 </section>
 
 <hr class="sep">
@@ -4075,7 +4105,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
 <script>
 /* ─── SEASONS (Halloween html.hw, New Year html.ny): copy variants + toggles ─── */
 (function(){
-  var h=document.documentElement,k=h.classList.contains('hw')?'hw':h.classList.contains('ny')?'ny':'',L=h.lang||'ru',en=L!=='ru',U=(window.KAI_L10N&&window.KAI_L10N.ui)||null;
+  var h=document.documentElement,k=h.classList.contains('hw')?'hw':h.classList.contains('ny')?'ny':h.classList.contains('bf')?'bf':'',L=h.lang||'ru',en=L!=='ru',U=(window.KAI_L10N&&window.KAI_L10N.ui)||null;   /* bf = Black Week copy variants (data-bf-*) */
   function swap(){document.querySelectorAll('[data-'+k+'-en]').forEach(function(el){   /* -en is on every page; language pages drop the -ru attributes */
     if(el.getAttribute('data-'+k+'-done')==='1')return;el.setAttribute('data-'+k+'-done','1');
     var v=el.getAttribute('data-'+k+'-'+L)||el.getAttribute('data-'+k+'-'+(en?'en':'ru'))||el.getAttribute('data-'+k+'-ru');

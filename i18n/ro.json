@@ -601,7 +601,20 @@
   "/yr": "/an",
   "≈ €24/mo": "≈ €24/lună",
   "≈ €49/mo": "≈ €49/lună",
-  "≈ €99/mo": "≈ €99/lună"
+  "≈ €99/mo": "≈ €99/lună",
+  "Yearly −40%, first month −50%. Applied automatically when you pay by card.": "Anual −40%, prima lună −50%. Se aplică automat la plata cu cardul.",
+  "See plans": "Vezi planurile",
+  "Hide": "Ascunde",
+  "Black Week: yearly −40%, first month −50%": "Black Week: anual −40%, prima lună −50%",
+  "−40%": "−40%",
+  "Black Week": "Black Week",
+  "Black Week prices apply 23–30 November to card payments (Polar): −40% on yearly plans, −50% on the first month of monthly plans. Telegram Stars and crypto stay at the regular price.": "Prețurile Black Week se aplică între 23 și 30 noiembrie la plata cu cardul (Polar): −40% la planurile anuale, −50% la prima lună a planurilor lunare. Telegram Stars și crypto rămân la prețul obișnuit.",
+  "First month €14.50 (−50%)": "Prima lună €14,50 (−50%)",
+  "≈ €14.50/mo · −40%": "≈ €14,50/lună · −40%",
+  "First month €29.50 (−50%)": "Prima lună €29,50 (−50%)",
+  "≈ €29.50/mo · −40%": "≈ €29,50/lună · −40%",
+  "First month €59.50 (−50%)": "Prima lună €59,50 (−50%)",
+  "≈ €59.50/mo · −40%": "≈ €59,50/lună · −40%"
  },
  "meta": {
   "title": "Asistent AI care configurează amoCRM, Kommo, Bitrix24 și CRM-uri personalizate | Kai",

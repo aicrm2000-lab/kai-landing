@@ -93,14 +93,14 @@ def burn_attrs(html: str, d: Dict) -> str:
                     tag = re.sub(rf'\s{a}="[^"]*"', f' {a}="{val}"', tag, count=1)
                 else:
                     tag = tag[:-1] + f' {a}="{val}">'
-        tag = re.sub(r'\s(data-act-en|data-hw-en|data-ny-en)="([^"]*)"', lambda v: f' {v.group(1)}="{attr(d.t(v.group(2)))}"', tag)
+        tag = re.sub(r'\s(data-act-en|data-hw-en|data-ny-en|data-bf-en)="([^"]*)"', lambda v: f' {v.group(1)}="{attr(d.t(v.group(2)))}"', tag)
         return tag
     return ANY_TAG.sub(one, html)
 
 
 def strip_switch_attrs(html: str) -> str:
     """без переключателя RU/EN на странице эти атрибуты не нужны (минус ~60 КБ); праздничные варианты остаются"""
-    return re.sub(r'\s(?:data-ru|data-en|data-ru-title|data-en-title|data-ru-label|data-en-label|data-ru-href|data-en-href|data-hw-ru|data-ny-ru|data-act-ru)="[^"]*"', "", html)
+    return re.sub(r'\s(?:data-ru|data-en|data-ru-title|data-en-title|data-ru-label|data-en-label|data-ru-href|data-en-href|data-hw-ru|data-ny-ru|data-bf-ru|data-act-ru)="[^"]*"', "", html)
 
 
 def localized_jsonld(html: str, d: Dict, code: str) -> str:

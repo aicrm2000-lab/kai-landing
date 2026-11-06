@@ -601,7 +601,20 @@
   "/yr": "/рік",
   "≈ €24/mo": "≈ €24/міс",
   "≈ €49/mo": "≈ €49/міс",
-  "≈ €99/mo": "≈ €99/міс"
+  "≈ €99/mo": "≈ €99/міс",
+  "Yearly −40%, first month −50%. Applied automatically when you pay by card.": "Рік −40%, перший місяць −50%. Знижка застосується сама при оплаті карткою.",
+  "See plans": "До тарифів",
+  "Hide": "Сховати",
+  "Black Week: yearly −40%, first month −50%": "Чорний тиждень: рік −40%, перший місяць −50%",
+  "−40%": "−40%",
+  "Black Week": "Чорний тиждень",
+  "Black Week prices apply 23–30 November to card payments (Polar): −40% on yearly plans, −50% on the first month of monthly plans. Telegram Stars and crypto stay at the regular price.": "Ціни Чорного тижня діють 23–30 листопада при оплаті карткою (Polar): −40% на річні тарифи, −50% на перший місяць помісячних. Telegram Stars і крипта — за звичайною ціною.",
+  "First month €14.50 (−50%)": "Перший місяць €14,50 (−50%)",
+  "≈ €14.50/mo · −40%": "≈ €14,50/міс · −40%",
+  "First month €29.50 (−50%)": "Перший місяць €29,50 (−50%)",
+  "≈ €29.50/mo · −40%": "≈ €29,50/міс · −40%",
+  "First month €59.50 (−50%)": "Перший місяць €59,50 (−50%)",
+  "≈ €59.50/mo · −40%": "≈ €59,50/міс · −40%"
  },
  "meta": {
   "title": "ШІ-асистент, який налаштовує amoCRM, Kommo, Bitrix24 і власні CRM | Kai",
