@@ -3,7 +3,8 @@
 
 Длинные исходные тексты остаются в гайдах, словарях и JSON-LD (это ключи переводов — их не трогаем), а для выдачи
 поверх собранных страниц накладываются короткие версии из i18n/seo/<lang>.json:
-    {"<путь от корня>": {"title": "...", "description": "..."}}   (путь: "" — главная, "de/", "guides/de/x.html", …)
+    {"<путь от корня>": {"title": "...", "description": "..."}}   (путь: "" — главная, "de/", "guides/de/x.html", …;
+    у белорусского и украинского в путях окончания стран: i18n/seo/be.json → "by/", "guides/by/…", uk.json → "ua/", …)
 og:title/og:description не трогаются (соцсети показывают длинные), меняются только <title> и meta description.
 
 Команды:  py -3.12 seo_meta.py audit [lang …]   → нарушения по собранным страницам (с учётом наложения)
@@ -37,12 +38,15 @@ def local(path: str) -> str:
 
 
 def lang_of(path: str) -> str:
+    """язык страницы по её пути; в путях — окончания стран (by/, ua/), ответ — код языка (be, uk)"""
+    from i18n_pages import lang_slug, slug_lang
+    slugs = {lang_slug(c) for c in LANGS}
     m = re.match(r"(?:guides/|cases/)?([a-z]{2})/", path)
-    if m and m.group(1) in LANGS:
-        return m.group(1)
+    if m and m.group(1) in slugs:
+        return slug_lang(m.group(1))
     m = re.search(r"-([a-z]{2})\.html$", path)
-    if m and m.group(1) in LANGS:
-        return m.group(1)
+    if m and m.group(1) in slugs:
+        return slug_lang(m.group(1))
     return "ru"
 
 

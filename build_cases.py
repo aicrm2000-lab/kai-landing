@@ -168,7 +168,7 @@ def page(lang: str, d=None) -> str:
     ok = "Готово." if ru else "Done." if en else d.t("Done.")
     self_url = BASE + i18n_pages.cases_path(lang)
     up = "../" if ru else "../../"
-    home = up if ru else f"{up}{lang}/"
+    home = up + i18n_pages.home_path(lang)
     guides = up + i18n_pages.guides_index_path(lang)
     privacy = up + i18n_pages.policy_path("privacy")(lang)
     switch = f'<a href="{BASE}cases/en/">EN</a>' if ru else f'<a href="{BASE}cases/">RU</a>' if en else f'<a href="{BASE}cases/en/" hreflang="en">EN</a>'

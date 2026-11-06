@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-"""Статические версии лендинга на других языках: <lang>/index.html из index.html + i18n/<lang>.json.
+"""Статические версии лендинга на других языках: <slug>/index.html из index.html + i18n/<lang>.json (slug — окончание
+страны: be → by/, uk → ua/, остальные = код языка, см. i18n_pages.SLUGS; по старому /be/, /uk/ — переадресация).
 
 Русский исходник index.html двуязычный через data-ru/data-en (JS-переключатель), английскую версию en/ собирает
 build_en.py. Для остальных языков словарь i18n/<lang>.json (ключ — английская строка из data-en, значение — перевод;
@@ -126,6 +127,8 @@ def localized_jsonld(html: str, d: Dict, code: str) -> str:
 def build(code: str) -> str:
     d = Dict(json.load(io.open(os.path.join(HERE, "i18n", f"{code}.json"), encoding="utf-8")))
     meta, ui, locale = d.data["meta"], d.data["ui"], d.data.get("locale", f"{code}_{code.upper()}")
+    import i18n_pages
+    slug = i18n_pages.lang_slug(code)   # окончание адреса (be → by, uk → ua); code остаётся языком страницы
     html = io.open(SRC, encoding="utf-8").read()
     n_actions = check_action_count(html)
     html = apply_data(html, d)
@@ -143,8 +146,8 @@ def build(code: str) -> str:
     html = html.replace('<meta property="og:locale" content="ru_RU">', f'<meta property="og:locale" content="{locale}">')
     html = html.replace('<meta property="og:locale:alternate" content="en_US">',
                         '<meta property="og:locale:alternate" content="en_US">\n<meta property="og:locale:alternate" content="ru_RU">')
-    html = html.replace(f'<link rel="canonical" href="{BASE}">', f'<link rel="canonical" href="{BASE}{code}/">')
-    html = html.replace(f'<meta property="og:url" content="{BASE}">', f'<meta property="og:url" content="{BASE}{code}/">')
+    html = html.replace(f'<link rel="canonical" href="{BASE}">', f'<link rel="canonical" href="{BASE}{slug}/">')
+    html = html.replace(f'<meta property="og:url" content="{BASE}">', f'<meta property="og:url" content="{BASE}{slug}/">')
     # относительные пути → на уровень выше; якоря и абсолютные не трогаем (как в build_en)
     html = re.sub(r'\b(src|href)="(?!https?:|//|#|mailto:|tel:|data:|\.\./|/|javascript:)([\w][^"]*)"',
                   lambda m: f'{m.group(1)}="../{m.group(2)}"', html)
@@ -153,8 +156,7 @@ def build(code: str) -> str:
         html = re.sub(rf'(<meta (?:property|name)="{prop}" content=")(?!https?:)([^"]+)"',
                       lambda m: f'{m.group(1)}{BASE}{m.group(2)}"', html)
     # политики, гайды и кейсы — на языке страницы, если для него собраны страницы второго уровня (i18n/pages/<lang>.json), иначе английские
-    import i18n_pages
-    pg = code if i18n_pages.is_ready(code) else "en"
+    pg = slug if i18n_pages.is_ready(code) else "en"   # окончание в адресах страниц второго уровня
     for p in ("privacy", "terms", "refund"):
         html = html.replace(f'href="../{p}.html"', f'href="../{p}-{pg}.html"')
         html = html.replace(f"'{p}-en.html' : '{p}.html'", f"'../{p}-{pg}.html' : '../{p}-{pg}.html'")
@@ -175,14 +177,16 @@ def build(code: str) -> str:
     note = ui.get("kai_note")
     if note:
         html = re.sub(r'(<p class="hero-note"[^>]*>)(.*?)(</p>)', lambda m: m.group(1) + m.group(2) + f'<span class="hero-note-lang">{note}</span>' + m.group(3), html, count=1, flags=re.S)
-    out_dir = os.path.join(HERE, code)
+    out_dir = os.path.join(HERE, slug)
     os.makedirs(out_dir, exist_ok=True)
     io.open(os.path.join(out_dir, "index.html"), "w", encoding="utf-8", newline="\n").write(html)
+    if slug != code:   # старый адрес /be/, /uk/ — переадресация на /by/, /ua/
+        i18n_pages.write_redirect(f"{code}/", f"{slug}/", code)
     body = re.sub(r"<(script|style)\b[\s\S]*?</\1>", " ", html[html.find("<body"):])
     body = re.sub(r'<ul class="lang-list"[\s\S]*?</ul>', " ", body)   # «Русский» в меню языков — не забытый русский
     text = re.sub(r'<(?:[^>"]|"[^"]*")*>', "\x00", body)
     left_ru = [] if code in ("uk", "be") else [t.strip() for t in text.split("\x00") if re.search(r"[А-Яа-яЁё]", t)]   # кириллица у uk/be своя
-    print(f"{code}/index.html: {len(html) // 1024} KB, missing: {len(set(d.missing))}, rejected: {len(set(d.rejected))}, "
+    print(f"{slug}/index.html: {len(html) // 1024} KB, missing: {len(set(d.missing))}, rejected: {len(set(d.rejected))}, "
           f"Russian text nodes left: {len(left_ru)}, actions: {n_actions}")
     for t in sorted(set(d.rejected))[:6]:
         print("   rejected:", t[:80])
@@ -192,6 +196,10 @@ def build(code: str) -> str:
 
 
 def main() -> None:
+    import i18n_pages   # окончания адресов (be → by, uk → ua) продублированы в JS исходника — меню языков и переадресация
+    js = "window.KAI_LANG_SLUG={" + ",".join(f"{c}:'{s}'" for c, s in i18n_pages.SLUGS.items()) + "};"
+    if js not in io.open(SRC, encoding="utf-8").read():
+        raise SystemExit(f"index.html: нет «{js}» — поправь его по i18n_pages.SLUGS, иначе меню языков разойдётся с адресами")
     codes = sys.argv[1:] or sorted(f[:-5] for f in os.listdir(os.path.join(HERE, "i18n")) if f.endswith(".json") and f != "source.json")
     for code in codes:
         build(code)

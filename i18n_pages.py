@@ -30,6 +30,22 @@ LOCALES = {"ru": "ru_RU", "en": "en_US", "de": "de_DE", "fr": "fr_FR", "es": "es
            "tr": "tr_TR", "be": "be_BY", "uk": "uk_UA", "ro": "ro_RO"}
 POLICIES = ("privacy", "terms", "refund")
 
+# Адреса страниц — по доменным окончаниям стран, а не по кодам языков (06.11.2026, Тихон): белорусский /by/, украинский /ua/.
+# Код языка остаётся везде, где это язык (html lang, hreflang, inLanguage, og:locale, имена словарей i18n/<code>.json);
+# slug — только в путях и ссылках. Подпись у флажка в меню языков — тот же slug заглавными (зеркало в index.html: KAI_LANG_SLUG).
+# По старым адресам (be/, guides/be/…, privacy-be.html) сборка кладёт страницы-переадресации (write_redirect).
+SLUGS = {"be": "by", "uk": "ua"}
+
+
+def lang_slug(code: str) -> str:
+    """код языка → окончание в адресе (be → by, uk → ua, остальные — как есть)"""
+    return SLUGS.get(code, code)
+
+
+def slug_lang(slug: str) -> str:
+    """окончание в адресе → код языка (by → be, ua → uk)"""
+    return next((c for c, s in SLUGS.items() if s == slug), slug)
+
 INLINE = {"a", "b", "strong", "em", "i", "code", "span", "br", "kbd", "mark", "small", "sup", "sub", "abbr", "u", "s", "time", "wbr", "img"}
 OPAQUE = {"script", "style", "svg", "noscript", "template"}
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
@@ -312,20 +328,53 @@ def set_hreflang(s: str, path_for) -> str:
     return re.sub(r'(<link rel="canonical" href="[^"]+">\n?)', lambda m: m.group(1) + block + "\n", s, count=1)
 
 
+def home_path(c: str) -> str:
+    return "" if c == "ru" else f"{lang_slug(c)}/"
+
+
 def guide_path(slug: str):
-    return lambda c: f"guides/{slug}.html" if c == "ru" else f"guides/{c}/{slug}.html"
+    return lambda c: f"guides/{slug}.html" if c == "ru" else f"guides/{lang_slug(c)}/{slug}.html"
 
 
 def guides_index_path(c: str) -> str:
-    return "guides/" if c == "ru" else f"guides/{c}/"
+    return "guides/" if c == "ru" else f"guides/{lang_slug(c)}/"
 
 
 def cases_path(c: str) -> str:
-    return "cases/" if c == "ru" else f"cases/{c}/"
+    return "cases/" if c == "ru" else f"cases/{lang_slug(c)}/"
 
 
 def policy_path(kind: str):
-    return lambda c: f"{kind}.html" if c == "ru" else f"{kind}-{c}.html"
+    return lambda c: f"{kind}.html" if c == "ru" else f"{kind}-{lang_slug(c)}.html"
+
+
+# ---------------------------------------------------------------- переадресация со старых адресов (be → by, uk → ua)
+def redirect_html(new_path: str, code: str) -> str:
+    """страница-переадресация: meta refresh 0 + canonical на новый адрес + noindex + location.replace (с ?query и #якорем)"""
+    url = BASE + new_path
+    return f"""<!doctype html>
+<html lang="{code}">
+<head>
+<meta charset="utf-8">
+<title>Kai</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{url}">
+<meta http-equiv="refresh" content="0; url={url}">
+<script>location.replace("/{new_path}" + location.search + location.hash);</script>
+</head>
+<body><a href="{url}">{url}</a></body>
+</html>
+"""
+
+
+def write_redirect(old_path: str, new_path: str, code: str) -> None:
+    """old_path, new_path — пути от корня ("be/", "guides/be/x.html"); каталог → index.html. Полная страница по старому
+    адресу заменяется переадресацией; в sitemap и hreflang старые адреса не попадают (их строят path-функции выше)"""
+    fp = os.path.join(HERE, *old_path.split("/"))
+    if old_path.endswith("/"):
+        fp = os.path.join(fp, "index.html")
+    os.makedirs(os.path.dirname(fp), exist_ok=True)
+    io.open(fp, "w", encoding="utf-8", newline="\n").write(redirect_html(new_path, code))
 
 
 # ---------------------------------------------------------------- гайды
@@ -339,6 +388,7 @@ def prep_guide_en(h: str, slug: str) -> str:
 
 def relink_guide(h: str, slug: str, code: str) -> str:
     h = h.replace('<html lang="en">', f'<html lang="{code}">', 1)
+    s = lang_slug(code)   # окончание в адресах (by, ua); code — язык (lang, og:locale)
     h = re.sub(r'<link rel="alternate" hreflang="[^"]+" href="[^"]+">\n?', "", h)
     keep = {}
 
@@ -346,22 +396,22 @@ def relink_guide(h: str, slug: str, code: str) -> str:
         keep[f"\x00{len(keep)}\x00"] = m.group(0)
         return f"\x00{len(keep) - 1}\x00"
     h = re.sub(rf'href="{re.escape(BASE)}guides/[a-z0-9-]+\.html" hreflang="ru"', _keep, h)
-    h = h.replace(f"{BASE}guides/en/", f"{BASE}guides/{code}/")
-    h = re.sub(rf'{re.escape(BASE)}guides/([a-z0-9-]+)\.html', rf"{BASE}guides/{code}/\1.html", h)   # русские кросс-ссылки
+    h = h.replace(f"{BASE}guides/en/", f"{BASE}guides/{s}/")
+    h = re.sub(rf'{re.escape(BASE)}guides/([a-z0-9-]+)\.html', rf"{BASE}guides/{s}/\1.html", h)   # русские кросс-ссылки
     for k, v in keep.items():
         h = h.replace(k, v)
-    h = h.replace(f'{BASE}guides/"', f'{BASE}guides/{code}/"')
-    h = h.replace(f'{BASE}en/"', f'{BASE}{code}/"').replace(f'{BASE}"', f'{BASE}{code}/"')
-    h = h.replace(f"{BASE}cases/en/", f"{BASE}cases/{code}/").replace(f'{BASE}cases/"', f'{BASE}cases/{code}/"')
+    h = h.replace(f'{BASE}guides/"', f'{BASE}guides/{s}/"')
+    h = h.replace(f'{BASE}en/"', f'{BASE}{s}/"').replace(f'{BASE}"', f'{BASE}{s}/"')
+    h = h.replace(f"{BASE}cases/en/", f"{BASE}cases/{s}/").replace(f'{BASE}cases/"', f'{BASE}cases/{s}/"')
     for p in POLICIES:
-        h = h.replace(f"{BASE}{p}-en.html", f"{BASE}{p}-{code}.html").replace(f'{BASE}{p}.html', f"{BASE}{p}-{code}.html")
+        h = h.replace(f"{BASE}{p}-en.html", f"{BASE}{p}-{s}.html").replace(f'{BASE}{p}.html', f"{BASE}{p}-{s}.html")
     h = h.replace('<meta property="og:locale" content="en_US">', f'<meta property="og:locale" content="{LOCALES[code]}">')
     h = h.replace('<meta property="og:locale:alternate" content="ru_RU">',
                   '<meta property="og:locale:alternate" content="en_US">\n<meta property="og:locale:alternate" content="ru_RU">')
     h = re.sub(r'(<link rel="canonical" href="[^"]+">\n?)', lambda m: m.group(1) + hreflang_block(guide_path(slug)) + "\n", h, count=1)
     # переключатель EN в шапке и «English version» в подвале — на английскую версию, а не на себя
-    h = h.replace(f'<a href="{BASE}guides/{code}/{slug}.html" hreflang="en">EN</a>', f'<a href="{BASE}guides/en/{slug}.html" hreflang="en">EN</a>')
-    h = re.sub(r"(<footer>(?:(?!</footer>).)*?)" + re.escape(f"{BASE}guides/{code}/{slug}.html"),
+    h = h.replace(f'<a href="{BASE}guides/{s}/{slug}.html" hreflang="en">EN</a>', f'<a href="{BASE}guides/en/{slug}.html" hreflang="en">EN</a>')
+    h = re.sub(r"(<footer>(?:(?!</footer>).)*?)" + re.escape(f"{BASE}guides/{s}/{slug}.html"),
                lambda m: m.group(1) + f"{BASE}guides/en/{slug}.html", h, count=1, flags=re.S)
     return h
 
@@ -400,12 +450,13 @@ def attr_q(v: str) -> str:
 
 def relink_policy(h: str, kind: str, code: str) -> str:
     h = h.replace('<html lang="en">', f'<html lang="{code}">', 1)
-    h = h.replace('href="index.html#pricing"', f'href="{code}/#pricing"').replace('href="index.html"', f'href="{code}/"')
+    s = lang_slug(code)
+    h = h.replace('href="index.html#pricing"', f'href="{s}/#pricing"').replace('href="index.html"', f'href="{s}/"')
     for p in POLICIES:
-        h = h.replace(f'href="{p}-en.html"', f'href="{p}-{code}.html"')
-    h = h.replace(f'<link rel="canonical" href="{BASE}{kind}-en.html">', f'<link rel="canonical" href="{BASE}{kind}-{code}.html">')
+        h = h.replace(f'href="{p}-en.html"', f'href="{p}-{s}.html"')
+    h = h.replace(f'<link rel="canonical" href="{BASE}{kind}-en.html">', f'<link rel="canonical" href="{BASE}{kind}-{s}.html">')
     if "<link rel=\"canonical\"" not in h:
-        h = h.replace('<meta name="robots"', f'<link rel="canonical" href="{BASE}{kind}-{code}.html">\n<meta name="robots"', 1)
+        h = h.replace('<meta name="robots"', f'<link rel="canonical" href="{BASE}{kind}-{s}.html">\n<meta name="robots"', 1)
     h = re.sub(r'<link rel="alternate" hreflang="[^"]+" href="[^"]+">\n?', "", h)
     h = re.sub(r'(<link rel="canonical" href="[^"]+">\n?)', lambda m: m.group(1) + hreflang_block(policy_path(kind)) + "\n", h, count=1)
     h = h.replace("var LANG=document.documentElement.lang||'ru';", f"var LANG='{code}';")
@@ -568,21 +619,31 @@ def build(code: str) -> None:
         print(f"{code}: no dictionary, skipped")
         return
     guides = _guides()
-    out_dir = os.path.join(HERE, "guides", code)
+    s = lang_slug(code)
+    out_dir = os.path.join(HERE, "guides", s)
     os.makedirs(out_dir, exist_ok=True)
     for g in guides:
         h = translate_html(prep_guide_en(g["html_en"], g["slug"]), d, code)
         h = relink_guide(h, g["slug"], code)
         io.open(os.path.join(out_dir, f"{g['slug']}.html"), "w", encoding="utf-8", newline="\n").write(h)
     io.open(os.path.join(out_dir, "index.html"), "w", encoding="utf-8", newline="\n").write(build_guides.index_page(code, guides, d))
-    os.makedirs(os.path.join(HERE, "cases", code), exist_ok=True)
-    io.open(os.path.join(HERE, "cases", code, "index.html"), "w", encoding="utf-8", newline="\n").write(build_cases.page(code, d))
+    os.makedirs(os.path.join(HERE, "cases", s), exist_ok=True)
+    io.open(os.path.join(HERE, "cases", s, "index.html"), "w", encoding="utf-8", newline="\n").write(build_cases.page(code, d))
     dp = load_dict(code, policies=True)
     for kind in POLICIES:
         h = translate_html(prep_policy_en(policy_en(kind), kind), dp, code)
         h = relink_policy(h, kind, code)
-        io.open(os.path.join(HERE, f"{kind}-{code}.html"), "w", encoding="utf-8", newline="\n").write(h)
-    print(f"{code}: {len(guides)} guides + index, cases, {len(POLICIES)} policies; missing {len(set(d.missing))}, rejected {len(set(d.rejected))}")
+        io.open(os.path.join(HERE, policy_path(kind)(code)), "w", encoding="utf-8", newline="\n").write(h)
+    n_redirects = 0
+    if s != code:   # старые адреса с кодом языка (guides/be/…, cases/be/, privacy-be.html) → переадресация на новые
+        pairs = [(f"guides/{code}/{g['slug']}.html", guide_path(g["slug"])(code)) for g in guides]
+        pairs += [(f"guides/{code}/", guides_index_path(code)), (f"cases/{code}/", cases_path(code))]
+        pairs += [(f"{kind}-{code}.html", policy_path(kind)(code)) for kind in POLICIES]
+        for old, new in pairs:
+            write_redirect(old, new, code)
+        n_redirects = len(pairs)
+    print(f"{s}: {len(guides)} guides + index, cases, {len(POLICIES)} policies; missing {len(set(d.missing))}, rejected {len(set(d.rejected))}"
+          + (f"; {n_redirects} redirects from old /{code}/ paths" if n_redirects else ""))
     for k in sorted(set(d.rejected))[:5]:
         print("   rejected:", k[:80])
 

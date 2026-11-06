@@ -1,50 +1,50 @@
 {
- "uk/": {
+ "ua/": {
   "title": "ШІ-асистент для amoCRM, Kommo, Bitrix24, Pipedrive і власної CRM | Kai",
   "description": "Kai налаштовує CRM через чат: amoCRM, Kommo, Bitrix24, Pipedrive або власну CRM через API. Воронки, поля, задачі, автоматизації. 3 дні пробного періоду."
  },
- "guides/uk/": {
+ "guides/ua/": {
   "title": "Гайди з налаштування amoCRM, Kommo, Bitrix24 і власної CRM | Kai",
   "description": "Покрокові гайди про воронки, поля, автоматизації та ШІ-інструменти в amoCRM, Kommo, Bitrix24 і власній CRM: вручну, через інтегратора або з Kai."
  },
- "guides/uk/kommo-automation-no-developer.html": {
+ "guides/ua/kommo-automation-no-developer.html": {
   "description": "Digital Pipeline і Salesbot у Kommo: що налаштувати самому, 3 сценарії крок за кроком, обмеження і як Kai робить те саме одним повідомленням у чаті."
  },
- "guides/uk/kommo-ai-tools-compared.html": {
+ "guides/ua/kommo-ai-tools-compared.html": {
   "description": "ШІ-агент і Copilot у Kommo проти Salesbot, Albato/Make/n8n, Wazzup/Umnico і Kai: який інструмент для якої задачі, де він в інтерфейсі, вартість і терміни."
  },
- "guides/uk/import-contacts-excel-amocrm-kommo.html": {
+ "guides/ua/import-contacts-excel-amocrm-kommo.html": {
   "title": "Імпорт бази клієнтів з Excel в amoCRM або Kommo за 10 хвилин | Kai",
   "description": "Як підготувати таблицю (колонки, дублі, формати телефонів), завантажити її майстром імпорту amoCRM і Kommo, уникнути помилок — або просто надіслати файл Kai."
  },
- "guides/uk/crm-automations-that-pay-off.html": {
+ "guides/ua/crm-automations-that-pay-off.html": {
   "description": "7 автоматизацій CRM, які окупаються: задачі за етапами, нагадування, завислі угоди, сповіщення, звіти по воронці. Як увімкнути кожну однією фразою в Kai."
  },
- "guides/uk/bitrix24-ai-assistant.html": {
+ "guides/ua/bitrix24-ai-assistant.html": {
   "title": "Bitrix24 з ШІ-асистентом: налаштування без програміста | Kai",
   "description": "Як підключити Bitrix24 до Kai через вхідний вебхук, що асистент налаштовує (воронки, поля, угоди, задачі, аналітику) і коли без інтегратора не обійтися."
  },
- "guides/uk/ai-agent-for-custom-crm.html": {
+ "guides/ua/ai-agent-for-custom-crm.html": {
   "title": "ШІ-агент для власної (самописної) CRM: підключення через API | Kai",
   "description": "Що потрібно ШІ-агенту для роботи з твоєю CRM: REST API, авторизація і специфікація конектора. Три способи підключення, можливості, обмеження, безпека."
  },
- "guides/uk/crm-setup-without-integrator-checklist.html": {
+ "guides/ua/crm-setup-without-integrator-checklist.html": {
   "description": "Чек-лист налаштування CRM: етапи, обов’язкові поля, джерела, причини відмови, задачі, дублі, імпорт, автоматизації, навчання і коли потрібен інтегратор."
  },
- "guides/uk/pipedrive-ai-assistant.html": {
+ "guides/ua/pipedrive-ai-assistant.html": {
   "title": "ШІ-асистент для Pipedrive: налаштування CRM у чаті | Kai",
   "description": "Kai налаштовує Pipedrive за повідомленням у чаті: воронки, поля, угоди, задачі, аналітика. Встановлення за посиланням, що працює в беті і чого поки немає."
  },
- "privacy-uk.html": {
+ "privacy-ua.html": {
   "description": "Політика конфіденційності Kai — ШІ-асистента для налаштування CRM: які дані ми збираємо, з якою метою, скільки зберігаємо і як їх видалити."
  },
- "terms-uk.html": {
+ "terms-ua.html": {
   "description": "Умови використання Kai — ШІ-асистента, який налаштовує акаунт користувача в CRM і керує ним через офіційний API платформи."
  },
- "refund-uk.html": {
+ "refund-ua.html": {
   "description": "Політика повернення коштів і скасування Kai: модель оплати, продовження, умови повернення, права споживачів у ЄС і як подати запит на повернення."
  },
- "guides/uk/hubspot-ai-assistant.html": {
+ "guides/ua/hubspot-ai-assistant.html": {
   "title": "ШІ-асистент для HubSpot: налаштування CRM у чаті | Kai",
   "description": "Kai працює з HubSpot через API: воронки, угоди, контакти, задачі. Підключення через service key — вже сьогодні, в один клік — у розробці."
  }

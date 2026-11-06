@@ -62,7 +62,7 @@ def index_page(lang: str, guides: list, d=None) -> str:
     t, dsc = L["title"], L["desc"]
     self_url = BASE + i18n_pages.guides_index_path(lang)
     up = "../" if ru else "../../"
-    home = up if ru else f"{up}{lang}/"
+    home = up + i18n_pages.home_path(lang)
     chat = "https://app.aii-crm.com/chat?lang=" + ("ru" if ru else "en")
     switch = f'<a href="{BASE}guides/en/">EN</a>' if ru else f'<a href="{BASE}guides/">RU</a>' if en else f'<a href="{BASE}guides/en/" hreflang="en">EN</a>'
     cases = up + i18n_pages.cases_path(lang)
@@ -117,13 +117,14 @@ def main() -> None:
     io.open(os.path.join(HERE, "guides", "en", "index.html"), "w", encoding="utf-8", newline="\n").write(index_page("en", guides))
     langs = i18n_pages.build_all()   # guides/<lang>/, cases/<lang>/, политики -<lang> для языков со словарём i18n/pages/<lang>.json
     # sitemap: главная, /en/, политики, гайды
-    urls = [("", "1.0", "weekly"), ("en/", "0.9", "weekly"), ("de/", "0.9", "weekly"), ("fr/", "0.9", "weekly"), ("es/", "0.9", "weekly"), ("pl/", "0.9", "weekly"), ("pt/", "0.9", "weekly"), ("it/", "0.9", "weekly"), ("tr/", "0.9", "weekly"), ("be/", "0.9", "weekly"), ("uk/", "0.9", "weekly"), ("ro/", "0.9", "weekly"), ("guides/", "0.8", "weekly"), ("guides/en/", "0.8", "weekly"), ("cases/", "0.9", "monthly"), ("cases/en/", "0.9", "monthly")]
+    urls = [("", "1.0", "weekly"), ("en/", "0.9", "weekly")] + [(i18n_pages.home_path(c), "0.9", "weekly") for c in i18n_pages.LANGS]   # by/, ua/ — окончания стран
+    urls += [("guides/", "0.8", "weekly"), ("guides/en/", "0.8", "weekly"), ("cases/", "0.9", "monthly"), ("cases/en/", "0.9", "monthly")]
     urls += [(f"guides/{g['slug']}.html", "0.8", "monthly") for g in guides] + [(f"guides/en/{g['slug']}.html", "0.8", "monthly") for g in guides]
     urls += [(p, "0.3", "monthly") for p in ("privacy.html", "privacy-en.html", "terms.html", "terms-en.html", "refund.html", "refund-en.html")]
-    for c in langs:
-        urls += [(f"guides/{c}/", "0.8", "weekly"), (f"cases/{c}/", "0.9", "monthly")]
-        urls += [(f"guides/{c}/{g['slug']}.html", "0.8", "monthly") for g in guides]
-        urls += [(f"{p}-{c}.html", "0.3", "monthly") for p in ("privacy", "terms", "refund")]
+    for c in langs:   # пути — через i18n_pages (окончания by/ua вместо кодов be/uk); старые адреса-переадресации в sitemap не идут
+        urls += [(i18n_pages.guides_index_path(c), "0.8", "weekly"), (i18n_pages.cases_path(c), "0.9", "monthly")]
+        urls += [(i18n_pages.guide_path(g["slug"])(c), "0.8", "monthly") for g in guides]
+        urls += [(i18n_pages.policy_path(p)(c), "0.3", "monthly") for p in i18n_pages.POLICIES]
     body = "".join(f"  <url>\n    <loc>{BASE}{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n    <changefreq>{c}</changefreq>\n    <priority>{p}</priority>\n  </url>\n" for u, p, c in urls)
     io.open(os.path.join(HERE, "sitemap.xml"), "w", encoding="utf-8", newline="\n").write(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + "</urlset>\n")

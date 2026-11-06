@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="be">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var h=document.documentElement,q=new URLSearchParams(location.search),d=new Date(),m=d.getMonth(),n=d.getDate(),dm=/(^|[.])aii-crm[.]com$/.test(location.hostname)?';domain=aii-crm.com':'',act=null,apr=-1;[['hw',(m===9&&n>=25)||(m===10&&n<=2)],['ny',(m===11&&n>=20)||(m===0&&n<=10)]].forEach(function(s){var k=s[0],season=s[1],on=season,st=null,p=q.get(k),pr=season?1:0;try{st=localStorage.getItem('kai_'+k);}catch(e){}try{var ck=document.cookie.match(new RegExp('(?:^|; )kai_'+k+'=([01])'));if(ck)st=ck[1];if(st==='0'||st==='1'){document.cookie='kai_'+k+'='+st+';max-age=31536000;path=/;SameSite=Lax'+dm;if(ck)localStorage.setItem('kai_'+k,st);}}catch(e){}if(st==='0')on=false;else if(st==='1')on=true;if(p==='1'){on=true;pr=2;}else if(p==='0')on=false;if(on&&(!act||pr>apr)){act=k;apr=pr;}});if(act)h.classList.add(act);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Варонка продажаў у amoCRM без праграміста: гайд 2026 | Kai</title>
+<meta name="description" content="Варонка ў amoCRM пакрокава: этапы, кастамныя і абавязковыя палі праз «Сделки → Настроить», тыповыя памылкі і як зрабіць тое ж адным паведамленнем Kai.">
+<meta name="keywords" content="як наладзіць варонку продажаў і абавязковыя палі ў amoCRM або Kommo без праграміста, ці ёсць ШІ-асістэнт, які наладжвае варонкі amoCRM / Kommo па паведамленні ў чаце">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Kai Team">
+<link rel="canonical" href="https://aii-crm.com/guides/by/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="ru" href="https://aii-crm.com/guides/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="en" href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="de" href="https://aii-crm.com/guides/de/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="fr" href="https://aii-crm.com/guides/fr/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="es" href="https://aii-crm.com/guides/es/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="pl" href="https://aii-crm.com/guides/pl/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="pt" href="https://aii-crm.com/guides/pt/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="it" href="https://aii-crm.com/guides/it/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="tr" href="https://aii-crm.com/guides/tr/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="be" href="https://aii-crm.com/guides/by/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="uk" href="https://aii-crm.com/guides/ua/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="ro" href="https://aii-crm.com/guides/ro/amocrm-pipeline-setup.html">
+<link rel="alternate" hreflang="x-default" href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="be_BY">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Kai">
+<meta property="og:url" content="https://aii-crm.com/guides/by/amocrm-pipeline-setup.html">
+<meta property="og:title" content="Як наладзіць варонку продажаў у amoCRM без праграміста (2026)">
+<meta property="og:description" content="Этапы, палі, абавязковыя палі, тыповыя памылкі. Ручны шлях праз інтэрфейс amoCRM і шлях праз Kai адным паведамленнем.">
+<meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
+<meta property="article:published_time" content="2026-09-24">
+<meta property="article:modified_time" content="2026-09-24">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Як наладзіць варонку продажаў у amoCRM без праграміста (2026)">
+<meta name="twitter:description" content="Этапы, палі, абавязковыя палі, тыповыя памылкі. Уручную ў інтэрфейсе amoCRM або адным паведамленнем Kai.">
+<meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A14;--bg-1:#100E20;--bg-2:#171332;--border:#241D45;--ink:#F4F2FF;--text:#CBC5E4;--muted:#8B83AC;--accent:#7C5CFF;--accent-2:#A78BFA;--good:#43E0A0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17.5px;line-height:1.65;overflow-x:hidden}
+a{color:var(--accent-2)}
+.header{border-bottom:1px solid var(--border);background:var(--bg-1)}
+.header-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:18px}
+.brand svg{width:28px;height:28px;display:block}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.nav a:hover{color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:32px 16px 56px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:20px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+h1{color:var(--ink);font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:800;margin:0 0 14px;letter-spacing:-.01em;overflow-wrap:anywhere}
+h2{color:var(--ink);font-size:24px;font-weight:700;margin:44px 0 12px;line-height:1.25}
+h3{color:var(--ink);font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--ink)}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tldr{background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:24px 0}
+.tldr h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2)}
+.tldr ul{margin:0;padding-left:20px}
+ul,ol{padding-left:22px;margin:0 0 16px}
+li{margin:6px 0}
+li::marker{color:var(--accent-2)}
+kbd{font-family:'JetBrains Mono',monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:var(--ink)}
+pre{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:var(--ink);white-space:pre-wrap;word-break:break-word;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--bg-2);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+.note{border-left:3px solid var(--good);background:var(--bg-1);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0;font-size:16px}
+.warn{border-left-color:var(--accent-2)}
+.faq-item{border:1px solid var(--border);border-radius:12px;background:var(--bg-1);padding:14px 18px;margin:10px 0}
+.faq-item h3{margin:0 0 8px;font-size:17px}
+.faq-item p{margin:0;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-secondary{border:1px solid var(--accent-2);color:var(--accent-2)}
+.author{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+footer{max-width:760px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h2{font-size:21px}.lead{font-size:18px}body{font-size:17px}}
+/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
+html.hw{--bg:#0C0A0E;--bg-1:#140F13;--bg-2:#1C1518;--border:#2E201C;--ink:#FBF5EE;--text:#D9CFC8;--muted:#9A8A86;--dim:#6E5B58;--accent:#FF7A1A;--accent-2:#FFB347}
+/* New Year (html.ny): та же палитра, что на главной, чате и в кабинете */
+html.ny{--bg:#070B19;--bg-1:#0C1226;--bg-2:#121A33;--border:#223055;--ink:#F4F7FF;--text:#C9D3EC;--muted:#8D98BD;--dim:#5F6B92;--accent:#21A66D;--accent-2:#F5C451}
+html.ny .badge.crm{border-color:rgba(33,166,109,.45)}html.ny .msg.me{background:rgba(33,166,109,.18);border-color:rgba(33,166,109,.45)}
+html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:rgba(255,122,26,.18);border-color:rgba(255,122,26,.45)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="https://aii-crm.com/by/" aria-label="Kai — на галоўную">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M39.21 19.58A15.84 15.84 0 1 1 23.5 8.17" fill="none" stroke="var(--accent)" stroke-width="6.72" stroke-linecap="round"/><circle cx="33.12" cy="11.44" r="3.36" fill="var(--accent-2)"/></svg>
+      Kai
+    </a>
+    <nav class="nav" aria-label="Навігацыя">
+      <a href="https://aii-crm.com/by/">Сайт</a>
+      <a href="https://t.me/aiicrm_bot">Telegram-бот</a>
+      <a href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+<nav class="crumbs" aria-label="Навігацыйны ланцужок">
+  <a href="https://aii-crm.com/by/">Kai</a> › <a href="https://aii-crm.com/guides/by/">Гайды</a> › Варонка ў amoCRM
+</nav>
+
+<h1>Як наладзіць варонку продажаў у amoCRM без праграміста</h1>
+<p class="meta">Абноўлена 24 верасня 2026 · Каманда Kai · 6 хв чытання</p>
+
+<p class="lead">Варонку ў amoCRM можна наладзіць самому за 1–2 гадзіны: этапы рэдагуюцца ў раздзеле <kbd>Leads → Setup</kbd> (у рускамоўным інтэрфейсе — <kbd>Сделки → Настроить</kbd>), палі дадаюцца з карткі здзелкі праз <kbd>Setup → Add field</kbd>, і там жа поле робіцца абавязковым на патрэбных этапах. Праграміст не патрэбны: дастаткова правоў адміністратара і прадуманай схемы этапаў. Або дашлі тую ж схему адным паведамленнем ШІ-асістэнту накшталт Kai — ён збярэ ўсё праз афіцыйны API.</p>
+
+<section class="tldr" aria-label="Коратка">
+  <h2>Коратка</h2>
+  <ul>
+    <li>5–7 рабочых этапаў звычайна дастаткова. Кожны этап — адно дзеянне менеджара, якое можна праверыць, а не стан кліента.</li>
+    <li>Сістэмныя этапы «Паспяхова рэалізавана» і «Закрыта і не рэалізавана» выдаліць нельга, толькі перайменаваць.</li>
+    <li>Тып поля пасля стварэння змяніць нельга, а выдаленне поля сцірае яго даныя. Прадумай палі да таго, як з'явяцца рэальныя здзелкі.</li>
+    <li>Абавязковыя палі на этапах даступныя ў amoCRM пачынаючы з тарыфу «Расширенный»; рэдагаваць палі можа толькі адміністратар.</li>
+    <li>Уручную — 1–2 гадзіны. Інтэгратар — звычайна 3–5 тыдняў і прыкладна €1 500–4 000. Kai — адна размова ў чаце, ад €29/мес, 3 дні пробнага перыяду.</li>
+  </ul>
+</section>
+
+<h2>Крок 0. Намалюй варонку да таго, як адкрыць amoCRM</h2>
+<p>У большасці «зламаных» CRM этапы прыдуманыя на хаду. Выпішы шлях кліента ад заяўкі да грошай і пакінь толькі пункты, дзе менеджар робіць нешта, што можна праверыць. Прыклад для студыі кухняў на заказ:</p>
+<pre>Новая заяўка → Кваліфікацыя → Замер прызначаны → КП адпраўлена → Дагавор і перадаплата → Вытворчасць → Усталявана</pre>
+<p>Насупраць кожнага этапу запішы, што менеджар павінен ведаць, каб перавесці здзелку далей. Гэта і ёсць твае палі: «Крыніца» — на ўваходзе, «Бюджэт» — перад КП, «Прычына адмовы» — пры закрыцці.</p>
+
+<h2>Крок 1. Ствары варонку і этапы ў інтэрфейсе amoCRM</h2>
+<ol>
+  <li>Адкрый раздзел <kbd>Leads</kbd> (<kbd>Сделки</kbd>) і націсні <kbd>Setup</kbd> (<kbd>Настроить</kbd>) у правым верхнім куце.</li>
+  <li>Новы этап дадаецца кнопкай <kbd>+</kbd>. Націсні на этап, каб перайменаваць яго або змяніць колер; парадак мяняецца перацягваннем.</li>
+  <li>Каб выдаліць этап, перанясі з яго здзелкі і перацягні яго ў кошык у правым ніжнім куце.</li>
+  <li>Сістэмныя этапы «Паспяхова рэалізавана» і «Закрыта і не рэалізавана» выдаліць нельга — толькі перайменаваць, напрыклад у «Аплачана» і «Адмова».</li>
+  <li>Патрэбна другая варонка (паўторныя заказы, партнёры)? Націсні на назву бягучай варонкі ў левым верхнім куце і дадай новую. Калі змяшаць першасныя і паўторныя продажы, канверсія па этапах губляе сэнс.</li>
+</ol>
+<div class="note warn">Выдаліць варонку можна толькі пасля таго, як з яе перанесены або выдалены ўсе здзелкі, уключна з закрытымі, і аднавіць яе потым нельга.</div>
+
+<h2>Крок 2. Дадай палі ў картку здзелкі</h2>
+<ol>
+  <li>Адкрый любую здзелку. У кантактаў і кампаній свае палі — яны наладжваюцца з іх картак гэтак жа.</li>
+  <li>Націсні <kbd>Setup</kbd>, потым <kbd>Add field</kbd>; выберы тып і назву.</li>
+  <li>Асноўныя тыпы: спіс, мультыспіс, тэкст, тэкставая вобласць, лік, дата, сцяжок, дзень нараджэння. Для «Крыніцы» і «Прычыны адмовы» бяры спіс: па свабодным тэксце справаздачу не пабудуеш.</li>
+  <li>Групы-ўкладкі ствараюцца кнопкай <kbd>+</kbd> побач з укладкай «Файлы».</li>
+</ol>
+<p>Мінімальны набор: «Крыніца» (спіс), «Бюджэт» (лік), «Дата наступнага кантакту» (дата), «Прычына адмовы» (спіс). Не дублюй тое, што ў amoCRM ужо ёсць: суму здзелкі, адказнага, кантакты кліента.</p>
+<div class="note warn">Тып ужо створанага поля змяніць нельга, а пры выдаленні поля ўсе яго даныя сціраюцца без магчымасці аднаўлення.</div>
+
+<h2>Крок 3. Зрабі ключавыя палі абавязковымі на патрэбных этапах</h2>
+<p>У наладах поля выберы этапы адной або некалькіх варонак, на якіх яно абавязковае: пакуль поле не запоўнена, здзелка далей не пойдзе. Па схеме з кроку 0:</p>
+<ul>
+  <li>«Крыніца» — каб выйсці з «Новай заяўкі»;</li>
+  <li>«Бюджэт» — перад «КП адпраўлена»;</li>
+  <li>«Прычына адмовы» — пры пераводзе ў «Закрыта і не рэалізавана».</li>
+</ul>
+<p>Абмяжуйся адным-двума абавязковымі палямі на этап: калі больш, менеджары пачынаюць ставіць прочыркі. Даступна пачынаючы з тарыфу «Расширенный», рэдагуюць толькі адміністратары.</p>
+
+<h2>Крок 4. Правядзі праз варонку тры тэставыя здзелкі</h2>
+<p>Ствары тры здзелкі — «купіў», «адмовіўся», «завіс на замеры» — і правядзі кожную па этапах. Пераканайся, што абавязковыя палі не даюць перавесці здзелку, аналітыка паказвае канверсію паміж этапамі, а на здзелцы, якая завісла, стаіць задача. Потым выдалі іх.</p>
+
+<h2>Шлях праз Kai: тая ж схема адным паведамленнем</h2>
+<p>Kai — ШІ-асістэнт, які наладжвае amoCRM і Kommo па паведамленні ў чаце. Падключы CRM праз OAuth у адзін клік з віджэта ў маркетплейсе amoCRM, а потым пішы ў Telegram-бот <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> або ў <a href="https://app.aii-crm.com/chat?lang=en">вэб-чат</a> (адзін акаўнт, адна гісторыя). Схема з кроку 0 у выглядзе паведамлення:</p>
+<pre>Наладзь варонку для студыі кухняў на заказ.
+Этапы: Новая заяўка → Кваліфікацыя → Замер прызначаны → КП адпраўлена → Дагавор і перадаплата → Вытворчасць → Усталявана.
+Палі здзелкі: Крыніца (спіс: сайт, маркетплейс, рэкамендацыя, Instagram), Бюджэт (лік), Дата замеру (дата), Прычына адмовы (спіс).
+Крыніца абавязковая пры выхадзе з «Новай заяўкі», Бюджэт — перад «КП адпраўлена», Прычына адмовы — пры закрыцці.
+Калі здзелка трапляе ў «Замер прызначаны», стаў задачу замершчыку за дзень да замеру.</pre>
+<p>Kai задасць некалькі ўдакладняльных пытанняў (напрыклад, ці патрэбна асобная варонка для паўторных заказаў), пакажа план і пасля твайго падцвярджэння створыць усё праз афіцыйны API і дашле справаздачу. Далейшыя змены — яшчэ адно паведамленне, тэкстам або голасам. Сумленныя абмежаванні: абавязковым палям патрэбны тарыф amoCRM, дзе яны ёсць, а Kai правярае твой працэс, а не прыдумвае яго за цябе.</p>
+
+<h2>Тыповыя памылкі пры наладцы варонкі</h2>
+<ul>
+  <li><strong>Станы замест дзеянняў.</strong> «У рабоце», «Думае» — на такіх этапах здзелкі жывуць месяцамі. Этап адказвае на пытанне «што менеджар ужо зрабіў».</li>
+  <li><strong>Занадта шмат этапаў.</strong> Калі іх больш за дзесяць, канверсія не чытаецца, а здзелкі рухаюць «на вока».</li>
+  <li><strong>Адна варонка на ўсё.</strong> У першасных, паўторных і партнёрскіх продажаў розныя цыклы.</li>
+  <li><strong>Толькі неабавязковыя палі.</strong> Неабавязковая «Крыніца» праз пару тыдняў пустая — і ты так і не даведаешся, якая рэклама акупаецца.</li>
+  <li><strong>Няма «Прычыны адмовы».</strong> Справаздача па страчаных здзелках ператвараецца ў лічбу без высноў.</li>
+</ul>
+
+<h2>А калі ў цябе Kommo?</h2>
+<p>Логіка тая ж, інтэрфейс на англійскай. Варонка: <kbd>Pipelines → Add pipeline</kbd>; этапы: <kbd>… → Edit Pipeline → Add stage</kbd>, перайменаванне клікам, парадак — перацягваннем. Выдаліць можна толькі пустыя этапы і варонкі, а першую варонку — ніколі. «Incoming Leads» можна адключыць, але не выдаліць; «Closed-Won» і «Closed-Lost» можна перайменаваць. Палі: адкрый лід, укладка <kbd>Setup</kbd>, <kbd>+ Add field</kbd>, там жа абавязковасць на этапах. Наладжвае толькі роля Admin, затое на любым тарыфе Kommo. Kai падключаецца гэтак жа.</p>
+
+<h2>Параўнанне: уручную, інтэгратар або Kai</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Крытэрый</th><th>Уручную</th><th>Інтэгратар</th><th>Kai</th></tr></thead>
+  <tbody>
+    <tr><td>Час</td><td>1–2 гадзіны на простую варонку</td><td>Звычайна 3–5 тыдняў</td><td>Адна размова: пытанні → план → наладка</td></tr>
+    <tr><td>Кошт</td><td>Бясплатна, твой час</td><td>Звычайна €1 500–4 000</td><td>Ад €29/мес, 3 дні пробнага перыяду, без карткі</td></tr>
+    <tr><td>Хто патрэбны</td><td>Адміністратар amoCRM</td><td>Адказны з твайго боку + ТЗ</td><td>Адміністратар amoCRM для OAuth</td></tr>
+    <tr><td>Змены потым</td><td>Зноў клікаць уручную</td><td>Новае ТЗ, новы рахунак</td><td>Яшчэ адно паведамленне ў чаце</td></tr>
+    <tr><td>Калі падыходзіць</td><td>Адна варонка, дзясятак палёў</td><td>Нестандартныя інтэграцыі: бухгалтэрыя, тэлефанія, склад</td><td>Варонкі, палі, аўтаматызацыі, інтэграцыі па API без кода</td></tr>
+  </tbody>
+</table>
+</div>
+<p>amoAI, Kommo AI agent, no-code канектары (Albato, ApiX-Drive, Make, Zapier, n8n) і чат-боты накшталт Salebot вырашаюць сумежныя задачы: зносіны з кліентамі і абмен данымі. Этапы і палі за цябе ніводзін з іх не спраектуе — крок 0 застаецца за табой.</p>
+
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h3>Колькі этапаў павінна быць у варонцы amoCRM?</h3>
+    <p>Звычайна 5–7 рабочых этапаў плюс два сістэмныя, кожны — дзеянне менеджара, якое можна праверыць. Калі этапаў больш за дзесяць, хутчэй за ўсё, у адну варонку трапілі два розныя працэсы.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Ці можна зрабіць поле абавязковым толькі на адным этапе?</h3>
+    <p>Так: у наладах поля выбіраюцца этапы адной або некалькіх варонак. Даступна пачынаючы з тарыфу «Расширенный»; наладжвае адміністратар.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Што будзе са здзелкамі, калі выдаліць этап або варонку?</h3>
+    <p>Спачатку перанясі здзелкі. Этап выдаляецца перацягваннем у кошык; варонка — толькі калі з яе прыбраны ўсе здзелкі, уключна з закрытымі, і аднавіць яе нельга.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Ці патрэбны праграміст, каб наладзіць amoCRM?</h3>
+    <p>Для варонак, палёў, абавязковых палёў і базавых аўтаматызацый — не. Праграміст або інтэгратар патрэбны для нестандартных звязак: бухгалтарская праграма, самапісны сайт, тэлефанія з нетыповым API.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Як Kai атрымлівае доступ да amoCRM і ці бяспечна гэта?</h3>
+    <p>Праз афіцыйны OAuth amoCRM/Kommo: ты падцвярджаеш доступ у адзін клік, паролі і API-ключы нікому не перадаюцца. Токены захоўваюцца ў зашыфраваным выглядзе, даныя здзелак Kai не захоўвае, а доступ можна адклікаць у наладах CRM у любы момант. Кампанія зарэгістраваная ў Польшчы (ЕС).</p>
+  </div>
+  <div class="faq-item">
+    <h3>Колькі каштуе Kai і ці ёсць пробны перыяд?</h3>
+    <p>Start — €29/мес (~100 запытаў), Pro — €59/мес (~500), Max — €119/мес (fair use, прыярытэт і дапрацоўкі пад бізнес). 3 дні пробнага перыяду, без карткі. Аплата карткай, Apple Pay, Google Pay, Telegram Stars або USDT.</p>
+  </div>
+</div>
+
+<h2>Што далей</h2>
+<p>Схема этапаў ужо на паперы? Адкрый <kbd>Leads → Setup</kbd> і збяры варонку за вечар. Хочаш, каб нехта задаў правільныя пытанні і зрабіў усё праз API? Апішы свой бізнес Kai адным паведамленнем.</p>
+<div class="cta">
+  <a class="btn btn-primary" href="https://t.me/aiicrm_bot">Паспрабаваць у Telegram</a>
+  <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Адкрыць вэб-чат</a>
+</div>
+
+<p class="author">Аўтар: Каманда Kai · Абноўлена <time datetime="2026-09-24">24 верасня 2026</time> · Шляхі ў інтэрфейсе зверены з афіцыйнай даведкай amoCRM і Kommo.</p>
+</article>
+</main>
+
+<footer>
+  © 2026 Kai · <a href="https://aii-crm.com/by/">Галоўная</a> · <a href="https://aii-crm.com/privacy-by.html">Прыватнасць</a> · <a href="https://aii-crm.com/terms-by.html">Умовы</a> · <a href="https://aii-crm.com/guides/en/amocrm-pipeline-setup.html">Англійская версія</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aii-crm.com/guides/by/amocrm-pipeline-setup.html#article",
+      "headline": "Як наладзіць варонку продажаў у amoCRM без праграміста",
+      "description": "Пакрокава: этапы варонкі, кастамныя і абавязковыя палі ў amoCRM праз Leads → Setup («Сделки → Настроить»), тыповыя памылкі і як зрабіць тое ж самае адным паведамленнем Kai.",
+      "inLanguage": "be",
+      "datePublished": "2026-09-24",
+      "dateModified": "2026-09-24",
+      "mainEntityOfPage": "https://aii-crm.com/guides/by/amocrm-pipeline-setup.html",
+      "image": "https://aii-crm.com/og-image-v5.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/by/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kai",
+        "url": "https://aii-crm.com/by/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Колькі этапаў павінна быць у варонцы amoCRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Звычайна 5–7 рабочых этапаў плюс два сістэмныя, кожны — дзеянне менеджара, якое можна праверыць. Калі этапаў больш за дзесяць, хутчэй за ўсё, у адну варонку трапілі два розныя працэсы."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ці можна зрабіць поле абавязковым толькі на адным этапе?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Так: у наладах поля выбіраюцца этапы адной або некалькіх варонак. Даступна пачынаючы з тарыфу «Расширенный»; наладжвае адміністратар."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Што будзе са здзелкамі, калі выдаліць этап або варонку?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Спачатку перанясі здзелкі. Этап выдаляецца перацягваннем у кошык; варонка — толькі калі з яе прыбраны ўсе здзелкі, уключна з закрытымі, і аднавіць яе нельга."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ці патрэбны праграміст, каб наладзіць amoCRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Для варонак, палёў, абавязковых палёў і базавых аўтаматызацый — не. Праграміст або інтэгратар патрэбны для нестандартных звязак: бухгалтарская праграма, самапісны сайт, тэлефанія з нетыповым API."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Як Kai атрымлівае доступ да amoCRM і ці бяспечна гэта?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Праз афіцыйны OAuth amoCRM/Kommo: ты падцвярджаеш доступ у адзін клік, паролі і API-ключы нікому не перадаюцца. Токены захоўваюцца ў зашыфраваным выглядзе, даныя здзелак Kai не захоўвае, а доступ можна адклікаць у наладах CRM у любы момант. Кампанія зарэгістраваная ў Польшчы (ЕС)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Колькі каштуе Kai і ці ёсць пробны перыяд?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start — €29/мес (~100 запытаў), Pro — €59/мес (~500), Max — €119/мес (fair use, прыярытэт і дапрацоўкі пад бізнес). 3 дні пробнага перыяду, без карткі. Аплата карткай, Apple Pay, Google Pay, Telegram Stars або USDT."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kai",
+          "item": "https://aii-crm.com/by/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Гайды",
+          "item": "https://aii-crm.com/guides/by/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Наладка варонкі продажаў у amoCRM без праграміста",
+          "item": "https://aii-crm.com/guides/by/amocrm-pipeline-setup.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

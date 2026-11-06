@@ -1,47 +1,47 @@
 {
- "be/": {
+ "by/": {
   "title": "AI-асістэнт для amoCRM, Kommo, Bitrix24, Pipedrive і сваёй CRM | Kai",
   "description": "Kai наладжвае CRM праз чат: amoCRM, Kommo, Bitrix24, Pipedrive або ўласную CRM праз API. Варонкі, палі, задачы, аўтаматызацыі. 3 дні пробнага перыяду."
  },
- "guides/be/": {
+ "guides/by/": {
   "title": "Гайды па наладцы amoCRM, Kommo, Bitrix24 і сваёй CRM | Kai",
   "description": "Пакрокавыя гайды па варонках, палях, аўтаматызацыях і ШІ-інструментах для amoCRM, Kommo, Bitrix24 і сваёй CRM: уручную, праз інтэгратара або з Kai."
  },
- "cases/be/": {
+ "cases/by/": {
   "description": "Чатыры прыклады з amoCRM і Kommo: якой была варонка, адно паведамленне Kai, што ён зрабіў і як CRM выглядае пасля. Без інтэгратара."
  },
- "guides/be/amocrm-pipeline-setup.html": {
+ "guides/by/amocrm-pipeline-setup.html": {
   "description": "Варонка ў amoCRM пакрокава: этапы, кастамныя і абавязковыя палі праз «Сделки → Настроить», тыповыя памылкі і як зрабіць тое ж адным паведамленнем Kai."
  },
- "guides/be/kommo-ai-tools-compared.html": {
+ "guides/by/kommo-ai-tools-compared.html": {
   "description": "Kommo AI agent і Copilot супраць Salesbot, Albato/Make/n8n, Wazzup/Umnico і Kai: які інструмент для якой задачы, шляхі ў інтэрфейсе, кошт і тэрміны."
  },
- "guides/be/import-contacts-excel-amocrm-kommo.html": {
+ "guides/by/import-contacts-excel-amocrm-kommo.html": {
   "title": "Імпарт базы кліентаў з Excel у amoCRM або Kommo за 10 хвілін | Kai",
   "description": "Як падрыхтаваць табліцу (калонкі, дублі, фарматы тэлефонаў), загрузіць майстрам імпарту amoCRM і Kommo, пазбегнуць памылак — або адправіць файл у чат Kai."
  },
- "guides/be/crm-automations-that-pay-off.html": {
+ "guides/by/crm-automations-that-pay-off.html": {
   "description": "7 аўтаматызацый CRM, якія акупляюцца: задачы па этапах, напаміны, завіслыя здзелкі, апавяшчэнні, зводкі па варонцы. Як уключыць кожную адной фразай у Kai."
  },
- "guides/be/bitrix24-ai-assistant.html": {
+ "guides/by/bitrix24-ai-assistant.html": {
   "title": "Bitrix24 з AI-асістэнтам: наладка без праграміста | Kai",
   "description": "Як падключыць Bitrix24 да Kai праз уваходны вэбхук, што асістэнт наладжвае (варонкі, палі, здзелкі, задачы, аналітыку) і калі патрэбны інтэгратар."
  },
- "guides/be/ai-agent-for-custom-crm.html": {
+ "guides/by/ai-agent-for-custom-crm.html": {
   "title": "AI-агент для самапіснай CRM: падключэнне па API | Kai",
   "description": "Што трэба AI-агенту для працы з тваёй CRM: REST API, аўтарызацыя і спецыфікацыя канектара. Тры спосабы падключэння, магчымасці, межы, бяспека."
  },
- "guides/be/crm-setup-without-integrator-checklist.html": {
+ "guides/by/crm-setup-without-integrator-checklist.html": {
   "description": "Чэк-ліст наладкі CRM: этапы, абавязковыя палі, крыніцы, прычыны адмовы, задачы, дублі, імпарт, аўтаматызацыі, навучанне і калі патрэбны інтэгратар."
  },
- "guides/be/pipedrive-ai-assistant.html": {
+ "guides/by/pipedrive-ai-assistant.html": {
   "title": "AI-асістэнт для Pipedrive: наладка CRM праз чат | Kai",
   "description": "Kai наладжвае Pipedrive па паведамленні ў чаце: варонкі, палі, здзелкі, задачы, аналітыка. Устаноўка па спасылцы, што працуе ў бэце і чаго пакуль няма."
  },
- "privacy-be.html": {
+ "privacy-by.html": {
   "description": "Палітыка прыватнасці Kai — AI-асістэнта, які наладжвае ваш CRM-акаўнт: якія даныя мы збіраем, навошта, як доўга іх захоўваем і як іх выдаліць."
  },
- "guides/be/hubspot-ai-assistant.html": {
+ "guides/by/hubspot-ai-assistant.html": {
   "title": "AI-асістэнт для HubSpot: наладка CRM праз чат | Kai",
   "description": "Kai працуе з HubSpot па API: варонкі, здзелкі, кантакты, задачы. Ужо сёння — падключэнне праз service key, у адзін клік — у распрацоўцы."
  }
