@@ -1985,6 +1985,20 @@ html.bf .bf-tapes { display: block; }
 @media (prefers-reduced-motion: reduce) { .bf-tape > div { animation: none; } }
 .bf-chip { display: none; font: 800 10px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; padding: 3px 6px; border-radius: 5px; margin-left: 8px; vertical-align: 1px; font-style: normal; }
 html.bf .bf-chip { display: inline-block; }
+.nav-links .bf-chip, .mobile-menu .bf-chip { margin-left: 6px; }
+/* липкая строка SALE под шапкой: выезжает, когда лента в hero ушла под шапку (html.bf-on ставит скрипт шапки; Тихон: «при скроле вниз всё равно должна быть видна») */
+.bf-bar { display: none; position: absolute; left: 0; right: 0; top: 100%; height: 0; overflow: hidden; background: var(--sale); color: #0A0A0A;
+  font: 800 11px/26px var(--mono); letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; transition: height .25s ease; }
+html.bf .bf-bar { display: block; }
+html.bf-on .bf-bar { height: 26px; box-shadow: 0 6px 20px rgba(0,0,0,.45); }
+.bf-bar > div { display: inline-flex; animation: bfTape 36s linear infinite; }
+.bf-bar span { padding: 0 20px; }
+html.bf-on .mobile-menu { top: 74px; }
+@media (prefers-reduced-motion: reduce) { .bf-bar > div { animation: none; } .bf-bar { transition: none; } }
+/* кнопки чата и «наверх» в ч/б: белая иконка на белом круге сливалась → чёрный штрих и чёрный контур */
+html.bf .chat-launcher svg, html.bf .scroll-top svg { stroke: var(--void); }
+html.bf .chat-launcher, html.bf .scroll-top { box-shadow: inset 0 0 0 2px var(--void), 0 8px 30px rgba(0,0,0,.5); }
+html.bf .chat-launcher:hover, html.bf .scroll-top:hover { box-shadow: inset 0 0 0 2px var(--void), 0 12px 38px rgba(0,0,0,.6); }
 /* сноска под тарифами в Чёрную неделю — жёлтая панель с меткой SALE (Тихон: «в футере тарифов тоже акцент») */
 html.bf .pricing-footer.bf-only { margin-top: 14px; padding: 14px 18px 14px 56px; position: relative; border: 1px solid var(--sale); border-radius: 12px;
   background: rgba(var(--sale-rgb), .07); color: var(--mist); }
@@ -2922,7 +2936,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
       <li><a href="#features">Funcionalidades</a></li>
       <li><a href="#how">Como funciona</a></li>
       <li><a href="#api">API</a></li>
-      <li><a href="#pricing">Planos</a></li>
+      <li><a href="#pricing"><span>Planos</span><em class="bf-chip">−40%</em></a></li>
       <li><a href="https://app.aii-crm.com/chat?lang=en" target="_blank" rel="noopener" class="chat-link">Chat web</a></li>
       <li><a href="https://t.me/aiicrm_support_bot" target="_blank" rel="noopener">Suporte</a></li>
     </ul>
@@ -2938,12 +2952,13 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
       <span></span><span></span><span></span>
     </button>
   </div>
+  <a class="bf-bar" href="#pricing" aria-hidden="true" tabindex="-1"><div><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span></div></a>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#features">Funcionalidades</a>
   <a href="#how">Como funciona</a>
   <a href="#api">API</a>
-  <a href="#pricing">Planos</a>
+  <a href="#pricing"><span>Planos</span><em class="bf-chip">−40%</em></a>
   <a href="https://app.aii-crm.com/chat?lang=en" target="_blank" rel="noopener" class="chat-link">Chat web</a>
   <a href="https://t.me/aiicrm_support_bot" target="_blank" rel="noopener">Suporte</a>
   <button type="button" class="mm-call" data-call-kai="menu" aria-haspopup="dialog"><span class="bc-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.6 4-2 1.3a11 11 0 005.1 5.1l1.3-2 4 1.6v3a2 2 0 01-2.2 2A17 17 0 013 6.2 2 2 0 015 4z"/></svg></span><span>Ligar para o Kai</span> <span class="bc-soon">soon</span></button>
@@ -2964,7 +2979,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
   <div class="hero-gridlines"></div>
   <canvas id="kai" aria-hidden="true"></canvas>
   <div class="hero-frame"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
-  <div class="bf-tapes" aria-hidden="true"><div class="bf-tape t1"><div><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span></div></div><div class="bf-tape t2"><div><span>Sale · −50%</span><span>First month</span><span>Sale · −40%</span><span>Yearly</span><span>Black Week</span><span>Sale · −50%</span><span>First month</span><span>Sale · −40%</span><span>Yearly</span><span>Black Week</span><span>Sale · −50%</span><span>First month</span><span>Sale · −40%</span><span>Yearly</span><span>Black Week</span><span>Sale · −50%</span><span>First month</span><span>Sale · −40%</span><span>Yearly</span><span>Black Week</span></div></div></div>
+  <div class="bf-tapes" aria-hidden="true"><div class="bf-tape t1"><div><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span></div></div><div class="bf-tape t2"><div><span>Sale · −50%</span><span>First month</span><span>Sale · −40%</span><span>Yearly</span><span>Black Week</span><span>Sale · −50%</span><span>First month</span><span>Sale · −40%</span><span>Yearly</span><span>Black Week</span><span>Sale · −50%</span><span>First month</span><span>Sale · −40%</span><span>Yearly</span><span>Black Week</span><span>Sale · −50%</span><span>First month</span><span>Sale · −40%</span><span>Yearly</span><span>Black Week</span><span>Sale · −50%</span><span>First month</span><span>Sale · −40%</span><span>Yearly</span><span>Black Week</span><span>Sale · −50%</span><span>First month</span><span>Sale · −40%</span><span>Yearly</span><span>Black Week</span></div></div></div>
   <div class="hw-deco" aria-hidden="true"><span class="hw-web l"></span><span class="hw-web r"></span><span class="hw-fog"></span><span class="hw-spider"><i></i></span><div class="hw-bats"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div></div>
   <div class="ny-deco" aria-hidden="true"><span class="ny-garland"><i></i><i></i></span><span class="ny-drift"></span><span class="ny-gifts"><i class="ny-gift g1"></i><i class="ny-gift g2"></i><i class="ny-gift g3"></i></span></div>
 
@@ -4994,7 +5009,8 @@ document.querySelectorAll('.tilt-card').forEach(card => {
 
 /* ─── NAV SHRINK ON SCROLL ─── */
 const nav = document.querySelector('nav');
-window.addEventListener('scroll', () => {
+const bfT1 = document.querySelector('.bf-tape.t1');
+function navOnScroll() {
   if (window.scrollY > 60) {
     nav.style.padding = '0 24px';
     nav.querySelector('.nav-inner').style.height = '48px';
@@ -5002,7 +5018,13 @@ window.addEventListener('scroll', () => {
     nav.style.padding = '0 24px';
     nav.querySelector('.nav-inner').style.height = '60px';
   }
-}, { passive: true });
+  /* Black Week: липкая строка SALE под шапкой, когда лента в hero скрылась за ней */
+  if (bfT1 && document.documentElement.classList.contains('bf')) {
+    document.documentElement.classList.toggle('bf-on', bfT1.getBoundingClientRect().bottom < 48);
+  }
+}
+window.addEventListener('scroll', navOnScroll, { passive: true });
+navOnScroll();
 </script>
 
 <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
