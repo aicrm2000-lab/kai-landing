@@ -163,7 +163,9 @@ def build(code: str) -> str:
         html = html.replace(f"href='{p}-en.html'", f"href='../{p}-{pg}.html'").replace(f"href='{p}.html'", f"href='../{p}-{pg}.html'")
     html = html.replace('href="../guides/"', f'href="../guides/{pg}/"').replace('href="../cases/"', f'href="../cases/{pg}/"')
     html = re.sub(r'href="\.\./guides/([a-z0-9-]+\.html)"', lambda m: f'href="../guides/{pg}/{m.group(1)}"', html)
-    for _p in ("account", "login", "signup", "chat", "docs/custom-crm"):   # Kai говорит по-английски и по-русски
+    for _p in ("account", "login", "signup"):   # кабинет и вход — на языке страницы (services/cabinet_i18n, 06.11)
+        html = html.replace(f'app.aii-crm.com/{_p}?lang=ru"', f'app.aii-crm.com/{_p}?lang={code}"')
+    for _p in ("chat", "docs/custom-crm"):   # веб-чат и документация пока только RU/EN
         html = html.replace(f'app.aii-crm.com/{_p}?lang=ru"', f'app.aii-crm.com/{_p}?lang=en"')
     html = localized_jsonld(html, d, code)
     html = html.replace("let currentLang = 'en';\ntry { currentLang = localStorage.getItem('kai_lang') || detectLang(); } catch (e) { currentLang = detectLang(); }",

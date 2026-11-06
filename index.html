@@ -4811,7 +4811,9 @@ function applyLang(lang) {
   document.querySelectorAll('.chat-link').forEach(function(cl) {
     cl.href = 'https://app.aii-crm.com/chat?lang=' + (lang === 'en' ? 'en' : 'ru');
   });
-  document.querySelectorAll('.acct-link').forEach(function(a) { a.href = 'https://app.aii-crm.com/' + (a.classList.contains('signup-link') ? 'signup' : a.classList.contains('login-link') ? 'login' : 'account') + '?lang=' + (lang === 'en' ? 'en' : 'ru'); });
+  /* кабинет говорит на всех 12 языках сайта: на языковой странице (window.KAI_L10N) передаём её язык, здесь — ru/en */
+  var cabLang = (window.KAI_L10N && window.KAI_L10N.lang) || (lang === 'en' ? 'en' : 'ru');
+  document.querySelectorAll('.acct-link').forEach(function(a) { a.href = 'https://app.aii-crm.com/' + (a.classList.contains('signup-link') ? 'signup' : a.classList.contains('login-link') ? 'login' : 'account') + '?lang=' + cabLang; });
   if (window.kaiChatRelang) window.kaiChatRelang(lang);
   if (window.kaiHeroRelang) window.kaiHeroRelang();
   if (window.kaiConsoleRelang) window.kaiConsoleRelang();
