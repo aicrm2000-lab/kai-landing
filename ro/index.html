@@ -1927,6 +1927,7 @@ footer {
 .plan-price small { display: block; margin-top: 4px; font: 400 14px var(--font); color: var(--fog); letter-spacing: 0; }
 /* ─── BLACK WEEK 23–30.11.2026 (html.bf): strip in the hero, deal prices in #pricing; .pp-reg = regular, .pp-bf = deal ─── */
 .bf-strip, .pp-bf, .bf-only { display: none; }
+.plan-price small.pp-bf { display: none; }   /* иначе «.plan-price small{display:block}» побеждает по специфичности и подпись акции видна вне окна (Тихон 06.11) */
 html.bf .pp-reg { display: none; }
 html.bf .pp-bf { display: inline; }
 html.bf .plan-price small.pp-bf, html.bf .bf-only { display: block; }
