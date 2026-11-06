@@ -1913,6 +1913,18 @@ footer {
   background: transparent;
 }
 .plan-cta-ghost:hover { border-color: var(--fog); background: rgba(255,255,255,.03); }
+/* помесячно / за год (06.11.2026): 12 месяцев по цене 10; второй блок цены скрыт до переключения */
+.bill-toggle { display: flex; justify-content: center; gap: 8px; margin: 28px 0 0; flex-wrap: wrap; }
+.bill-btn { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 16px; border-radius: 12px;
+  border: 1px solid var(--graphite); background: transparent; color: var(--fog); font: 600 14px var(--font); cursor: pointer;
+  transition: border-color .15s, color .15s, background .15s; }
+.bill-btn em { font: 600 11px var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--accent-light); font-style: normal;
+  padding: 3px 8px; border: 1px solid rgba(var(--accent-rgb), .35); border-radius: 999px; }
+.bill-btn[aria-pressed="true"] { border-color: var(--accent); color: var(--paper); background: rgba(var(--accent-rgb), .12); }
+.bill-btn:hover, .bill-btn:focus-visible { color: var(--paper); border-color: var(--accent); outline: none; }
+.plan-price b { display: block; font-weight: inherit; }
+.plan-price b[hidden] { display: none; }
+.plan-price small { display: block; margin-top: 4px; font: 400 14px var(--font); color: var(--fog); letter-spacing: 0; }
 .pricing-note {
   margin-top: 32px;
   padding: 20px 24px;
@@ -3790,11 +3802,16 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
     <h2 class="section-heading reveal reveal-delay-1" data-ny-en="Выберы план — падарунак сабе на год наперад" data-hw-en="Выберы план: без гадасцяў, толькі прысмакі">Выберы план пад свой этап</h2>
     <p class="section-sub reveal reveal-delay-2">Першыя 3 дні — пробны перыяд, адлік ідзе з падключэння CRM. Аплата карткай, Telegram Stars або крыптай (USDT).</p>
 
+    <div class="bill-toggle reveal reveal-delay-2" role="group" aria-label="Период оплаты">
+      <button type="button" class="bill-btn" data-bill="month" aria-pressed="true">Штомесяц</button>
+      <button type="button" class="bill-btn" data-bill="year" aria-pressed="false"><span>Штогод</span><em>2 месяцы ў падарунак</em></button>
+    </div>
+
     <div class="pricing-grid reveal reveal-delay-2 stagger-in">
 
       <div class="plan-card">
         <div class="plan-name">Start</div>
-        <div class="plan-price">€29 <span>/мес</span></div>
+        <div class="plan-price"><b class="pp-m">€29 <span>/мес</span></b><b class="pp-y" hidden>€290 <span>/год</span><small>≈ €24/мес</small></b></div>
         <p class="plan-pitch">Наладка CRM размовай</p>
         <div class="plan-trial" data-ny-en="3 дні пробнага перыяду — наш падарунак" data-hw-en="3 дні пробнага перыяду, без ахвярапрынашэнняў">3 дні пробнага перыяду</div>
         <ul class="plan-features">
@@ -3817,7 +3834,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
       <div class="plan-card featured">
         <div class="plan-badge" data-ny-en="Хіт сезона" data-hw-en="Жах як папулярна">Папулярны</div>
         <div class="plan-name">Pro</div>
-        <div class="plan-price">€59 <span>/мес</span></div>
+        <div class="plan-price"><b class="pp-m">€59 <span>/мес</span></b><b class="pp-y" hidden>€590 <span>/год</span><small>≈ €49/мес</small></b></div>
         <p class="plan-pitch">+ аўтаматызацыі і кіраванне</p>
         <div class="plan-trial">Пробны перыяд — на функцыях Start</div>
         <div class="plan-includes">Усё са Start, плюс:</div>
@@ -3836,7 +3853,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
 
       <div class="plan-card">
         <div class="plan-name">Max</div>
-        <div class="plan-price">€119 <span>/мес</span></div>
+        <div class="plan-price"><b class="pp-m">€119 <span>/мес</span></b><b class="pp-y" hidden>€1190 <span>/год</span><small>≈ €99/мес</small></b></div>
         <p class="plan-pitch">+ прыярытэт і дапрацоўкі</p>
         <div class="plan-trial">Пробны перыяд — на функцыях Start</div>
         <div class="plan-includes">Усё з Pro, плюс:</div>
@@ -3962,6 +3979,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
 
     <p class="pricing-footer reveal">Аплата міжнароднай карткай (Visa/Mastercard праз Polar), Telegram Stars або крыптай (USDT). Цэны ўказаны за карыстальніка-ўладальніка бота; ліцэнзія самой CRM аплачваецца асобна.</p>
   </div>
+<script>(function(){var bs=document.querySelectorAll('.bill-btn');if(!bs.length)return;function set(iv){bs.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-bill')===iv?'true':'false');});document.querySelectorAll('.plan-price').forEach(function(p){var m=p.querySelector('.pp-m'),y=p.querySelector('.pp-y');if(m)m.hidden=iv==='year';if(y)y.hidden=iv!=='year';});document.querySelectorAll('.plan-cta[href*="start=pay_"]').forEach(function(a){a.setAttribute('href',a.getAttribute('href').replace(/(start=pay_[a-z]+?)(_year)?$/,'$1'+(iv==='year'?'_year':'')));});try{localStorage.setItem('kai_bill',iv);}catch(e){}}bs.forEach(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-bill'));});});var st=null;try{st=localStorage.getItem('kai_bill');}catch(e){}if(st==='year')set('year');})();</script>
 </section>
 
 <hr class="sep">

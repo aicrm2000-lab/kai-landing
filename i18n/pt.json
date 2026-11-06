@@ -594,7 +594,14 @@
   "HubSpot: connect via API today, one-click connection in development": "HubSpot: conecte já pela API; a conexão com um clique está em desenvolvimento",
   "in development": "em desenvolvimento",
   "Does Kai work with HubSpot?": "O Kai funciona com o HubSpot?",
-  "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes.": "A conexão com um clique está em desenvolvimento. Hoje o HubSpot já se conecta pela API como um CRM próprio: uma service key (chave de serviço) do HubSpot mais a especificação pronta do Kai, no plano Max. O Kai vê funis e negócios e cria negócios, contatos, tarefas e notas."
+  "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes.": "A conexão com um clique está em desenvolvimento. Hoje o HubSpot já se conecta pela API como um CRM próprio: uma service key (chave de serviço) do HubSpot mais a especificação pronta do Kai, no plano Max. O Kai vê funis e negócios e cria negócios, contatos, tarefas e notas.",
+  "Monthly": "Mensal",
+  "Yearly": "Anual",
+  "2 months free": "2 meses grátis",
+  "/yr": "/ano",
+  "≈ €24/mo": "≈ €24/mês",
+  "≈ €49/mo": "≈ €49/mês",
+  "≈ €99/mo": "≈ €99/mês"
  },
  "meta": {
   "title": "Assistente de IA que configura amoCRM, Kommo, Bitrix24 e CRMs próprios | Kai",

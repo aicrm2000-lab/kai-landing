@@ -594,7 +594,14 @@
   "HubSpot: connect via API today, one-click connection in development": "HubSpot: API ile bugün bağlan, tek tıkla bağlantı geliştiriliyor",
   "in development": "geliştiriliyor",
   "Does Kai work with HubSpot?": "Kai HubSpot ile çalışıyor mu?",
-  "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes.": "Tek tıkla bağlantı geliştiriliyor. Bugün HubSpot, API üzerinden özel CRM olarak bağlanır: HubSpot'ta oluşturulan bir service key ve Kai'nin hazır spesifikasyonu, Max planında. Kai satış hunilerini ve fırsatları görür; fırsatlar, kişiler, görevler ve notlar oluşturur."
+  "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes.": "Tek tıkla bağlantı geliştiriliyor. Bugün HubSpot, API üzerinden özel CRM olarak bağlanır: HubSpot'ta oluşturulan bir service key ve Kai'nin hazır spesifikasyonu, Max planında. Kai satış hunilerini ve fırsatları görür; fırsatlar, kişiler, görevler ve notlar oluşturur.",
+  "Monthly": "Aylık",
+  "Yearly": "Yıllık",
+  "2 months free": "2 ay hediye",
+  "/yr": "/yıl",
+  "≈ €24/mo": "≈ €24/ay",
+  "≈ €49/mo": "≈ €49/ay",
+  "≈ €99/mo": "≈ €99/ay"
  },
  "meta": {
   "title": "amoCRM, Kommo, Bitrix24 ve özel CRM'leri kuran yapay zeka asistanı | Kai",

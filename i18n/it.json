@@ -594,7 +594,14 @@
   "Does Kai work with Pipedrive?": "Kai funziona con Pipedrive?",
   "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Event automations for Pipedrive are not there yet — they come after the beta.": "Sì, in beta, dal piano Start. Ti colleghi con il link di installazione da Pipedrive, con il pulsante «Sign in with Pipedrive» nel bot o con un token API personale. Kai configura pipeline, fasi e campi, gestisce trattative, persone, organizzazioni, attività e note e analizza il funnel. Le automazioni sugli eventi per Pipedrive non ci sono ancora — arriveranno dopo la beta.",
   "Does Kai work with HubSpot?": "Kai funziona con HubSpot?",
-  "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes.": "Il collegamento con un clic è in sviluppo. Già oggi HubSpot si collega tramite l'API come CRM personalizzato: una service key di HubSpot più la specifica pronta di Kai, nel piano Max. Kai vede pipeline e trattative e crea trattative, contatti, attività e note."
+  "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes.": "Il collegamento con un clic è in sviluppo. Già oggi HubSpot si collega tramite l'API come CRM personalizzato: una service key di HubSpot più la specifica pronta di Kai, nel piano Max. Kai vede pipeline e trattative e crea trattative, contatti, attività e note.",
+  "Monthly": "Mensile",
+  "Yearly": "Annuale",
+  "2 months free": "2 mesi in regalo",
+  "/yr": "/anno",
+  "≈ €24/mo": "≈ €24/mese",
+  "≈ €49/mo": "≈ €49/mese",
+  "≈ €99/mo": "≈ €99/mese"
  },
  "meta": {
   "title": "Assistente IA che configura amoCRM, Kommo, Bitrix24 e CRM personalizzati | Kai",

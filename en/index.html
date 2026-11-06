@@ -1911,6 +1911,18 @@ footer {
   background: transparent;
 }
 .plan-cta-ghost:hover { border-color: var(--fog); background: rgba(255,255,255,.03); }
+/* помесячно / за год (06.11.2026): 12 месяцев по цене 10; второй блок цены скрыт до переключения */
+.bill-toggle { display: flex; justify-content: center; gap: 8px; margin: 28px 0 0; flex-wrap: wrap; }
+.bill-btn { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 16px; border-radius: 12px;
+  border: 1px solid var(--graphite); background: transparent; color: var(--fog); font: 600 14px var(--font); cursor: pointer;
+  transition: border-color .15s, color .15s, background .15s; }
+.bill-btn em { font: 600 11px var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--accent-light); font-style: normal;
+  padding: 3px 8px; border: 1px solid rgba(var(--accent-rgb), .35); border-radius: 999px; }
+.bill-btn[aria-pressed="true"] { border-color: var(--accent); color: var(--paper); background: rgba(var(--accent-rgb), .12); }
+.bill-btn:hover, .bill-btn:focus-visible { color: var(--paper); border-color: var(--accent); outline: none; }
+.plan-price b { display: block; font-weight: inherit; }
+.plan-price b[hidden] { display: none; }
+.plan-price small { display: block; margin-top: 4px; font: 400 14px var(--font); color: var(--fog); letter-spacing: 0; }
 .pricing-note {
   margin-top: 32px;
   padding: 20px 24px;
@@ -3788,11 +3800,16 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
     <h2 class="section-heading reveal reveal-delay-1" data-ny-ru="Выбери план — подарок себе на год вперёд" data-ny-en="Pick a plan — a gift to your future self" data-hw-ru="Выбери план: без гадостей, только сладости" data-hw-en="Pick a plan: no tricks, only treats" data-ru="Выбери план под свой этап" data-en="Pick the plan for your stage">Pick the plan for your stage</h2>
     <p class="section-sub reveal reveal-delay-2" data-ru="Первые 3 дня — триал, отсчёт идёт с подключения CRM. Оплата картой, Telegram Stars или криптой (USDT)." data-en="3-day trial — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).">3-day trial — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).</p>
 
+    <div class="bill-toggle reveal reveal-delay-2" role="group" aria-label="Период оплаты">
+      <button type="button" class="bill-btn" data-bill="month" aria-pressed="true" data-ru="Помесячно" data-en="Monthly">Monthly</button>
+      <button type="button" class="bill-btn" data-bill="year" aria-pressed="false"><span data-ru="На год" data-en="Yearly">Yearly</span><em data-ru="2 месяца в подарок" data-en="2 months free">2 months free</em></button>
+    </div>
+
     <div class="pricing-grid reveal reveal-delay-2 stagger-in">
 
       <div class="plan-card">
         <div class="plan-name">Start</div>
-        <div class="plan-price">€29 <span data-ru="/мес" data-en="/mo">/mo</span></div>
+        <div class="plan-price"><b class="pp-m">€29 <span data-ru="/мес" data-en="/mo">/mo</span></b><b class="pp-y" hidden>€290 <span data-ru="/год" data-en="/yr">/yr</span><small data-ru="≈ €24/мес" data-en="≈ €24/mo">≈ €24/mo</small></b></div>
         <p class="plan-pitch" data-ru="Настройка CRM разговором" data-en="Set up your CRM by talking">Set up your CRM by talking</p>
         <div class="plan-trial" data-ny-ru="3 дня триала — наш подарок" data-ny-en="3-day trial — our gift" data-hw-ru="3 дня триала, без жертвоприношений" data-hw-en="3-day trial, no sacrifices" data-ru="3 дня триала" data-en="3-day trial">3-day trial</div>
         <ul class="plan-features">
@@ -3815,7 +3832,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
       <div class="plan-card featured">
         <div class="plan-badge" data-ny-ru="Хит сезона" data-ny-en="Season’s pick" data-hw-ru="Жуть как популярно" data-hw-en="Scary popular" data-ru="Хит" data-en="Popular">Popular</div>
         <div class="plan-name">Pro</div>
-        <div class="plan-price">€59 <span data-ru="/мес" data-en="/mo">/mo</span></div>
+        <div class="plan-price"><b class="pp-m">€59 <span data-ru="/мес" data-en="/mo">/mo</span></b><b class="pp-y" hidden>€590 <span data-ru="/год" data-en="/yr">/yr</span><small data-ru="≈ €49/мес" data-en="≈ €49/mo">≈ €49/mo</small></b></div>
         <p class="plan-pitch" data-ru="+ автоматизации и управление" data-en="+ automation & management">+ automation & management</p>
         <div class="plan-trial" data-ru="Пробный период — на функциях Start" data-en="Trial runs on Start features">Trial runs on Start features</div>
         <div class="plan-includes" data-ru="Всё из Start, плюс:" data-en="Everything in Start, plus:">Everything in Start, plus:</div>
@@ -3834,7 +3851,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
 
       <div class="plan-card">
         <div class="plan-name">Max</div>
-        <div class="plan-price">€119 <span data-ru="/мес" data-en="/mo">/mo</span></div>
+        <div class="plan-price"><b class="pp-m">€119 <span data-ru="/мес" data-en="/mo">/mo</span></b><b class="pp-y" hidden>€1190 <span data-ru="/год" data-en="/yr">/yr</span><small data-ru="≈ €99/мес" data-en="≈ €99/mo">≈ €99/mo</small></b></div>
         <p class="plan-pitch" data-ru="+ приоритет и доработки" data-en="+ priority & custom work">+ priority & custom work</p>
         <div class="plan-trial" data-ru="Пробный период — на функциях Start" data-en="Trial runs on Start features">Trial runs on Start features</div>
         <div class="plan-includes" data-ru="Всё из Pro, плюс:" data-en="Everything in Pro, plus:">Everything in Pro, plus:</div>
@@ -3960,6 +3977,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
 
     <p class="pricing-footer reveal" data-ru="Оплата международной картой (Visa/Mastercard через Polar; карты «Мир» не проходят), Telegram Stars или криптой (USDT). Цены указаны за пользователя-владельца бота; лицензия самой CRM оплачивается отдельно." data-en="Pay by international card (Visa/Mastercard via Polar), Telegram Stars, or crypto (USDT). Prices are per bot owner; the CRM licence itself is billed separately.">Pay by international card (Visa/Mastercard via Polar), Telegram Stars, or crypto (USDT). Prices are per bot owner; the CRM licence itself is billed separately.</p>
   </div>
+<script>(function(){var bs=document.querySelectorAll('.bill-btn');if(!bs.length)return;function set(iv){bs.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-bill')===iv?'true':'false');});document.querySelectorAll('.plan-price').forEach(function(p){var m=p.querySelector('.pp-m'),y=p.querySelector('.pp-y');if(m)m.hidden=iv==='year';if(y)y.hidden=iv!=='year';});document.querySelectorAll('.plan-cta[href*="start=pay_"]').forEach(function(a){a.setAttribute('href',a.getAttribute('href').replace(/(start=pay_[a-z]+?)(_year)?$/,'$1'+(iv==='year'?'_year':'')));});try{localStorage.setItem('kai_bill',iv);}catch(e){}}bs.forEach(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-bill'));});});var st=null;try{st=localStorage.getItem('kai_bill');}catch(e){}if(st==='year')set('year');})();</script>
 </section>
 
 <hr class="sep">

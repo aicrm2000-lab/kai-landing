@@ -594,7 +594,14 @@
   "HubSpot: connect via API today, one-click connection in development": "HubSpot: підключення через API — вже зараз, в один клік — у розробці",
   "in development": "у розробці",
   "Does Kai work with HubSpot?": "Kai працює з HubSpot?",
-  "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes.": "Підключення в один клік — у розробці. Уже сьогодні HubSpot підключається через API як власна CRM: ключ service key з HubSpot плюс готова специфікація Kai, на тарифі Max. Kai бачить воронки й угоди, створює угоди, контакти, задачі й нотатки."
+  "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes.": "Підключення в один клік — у розробці. Уже сьогодні HubSpot підключається через API як власна CRM: ключ service key з HubSpot плюс готова специфікація Kai, на тарифі Max. Kai бачить воронки й угоди, створює угоди, контакти, задачі й нотатки.",
+  "Monthly": "Щомісяця",
+  "Yearly": "Щороку",
+  "2 months free": "2 місяці в подарунок",
+  "/yr": "/рік",
+  "≈ €24/mo": "≈ €24/міс",
+  "≈ €49/mo": "≈ €49/міс",
+  "≈ €99/mo": "≈ €99/міс"
  },
  "meta": {
   "title": "ШІ-асистент, який налаштовує amoCRM, Kommo, Bitrix24 і власні CRM | Kai",

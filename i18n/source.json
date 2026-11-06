@@ -2377,8 +2377,33 @@
    "where": "data-en"
   },
   {
+   "en": "Monthly",
+   "ru": "Помесячно",
+   "where": "data-en"
+  },
+  {
+   "en": "Yearly",
+   "ru": "На год",
+   "where": "data-en"
+  },
+  {
+   "en": "2 months free",
+   "ru": "2 месяца в подарок",
+   "where": "data-en"
+  },
+  {
    "en": "/mo",
    "ru": "/мес",
+   "where": "data-en"
+  },
+  {
+   "en": "/yr",
+   "ru": "/год",
+   "where": "data-en"
+  },
+  {
+   "en": "≈ €24/mo",
+   "ru": "≈ €24/мес",
    "where": "data-en"
   },
   {
@@ -2482,6 +2507,11 @@
    "where": "data-ny-en"
   },
   {
+   "en": "≈ €49/mo",
+   "ru": "≈ €49/мес",
+   "where": "data-en"
+  },
+  {
    "en": "+ automation & management",
    "ru": "+ автоматизации и управление",
    "where": "data-en"
@@ -2529,6 +2559,11 @@
   {
    "en": "Up to 3 CRM accounts",
    "ru": "До 3 CRM-аккаунтов",
+   "where": "data-en"
+  },
+  {
+   "en": "≈ €99/mo",
+   "ru": "≈ €99/мес",
    "where": "data-en"
   },
   {

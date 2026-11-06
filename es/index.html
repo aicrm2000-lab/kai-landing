@@ -1913,6 +1913,18 @@ footer {
   background: transparent;
 }
 .plan-cta-ghost:hover { border-color: var(--fog); background: rgba(255,255,255,.03); }
+/* помесячно / за год (06.11.2026): 12 месяцев по цене 10; второй блок цены скрыт до переключения */
+.bill-toggle { display: flex; justify-content: center; gap: 8px; margin: 28px 0 0; flex-wrap: wrap; }
+.bill-btn { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 16px; border-radius: 12px;
+  border: 1px solid var(--graphite); background: transparent; color: var(--fog); font: 600 14px var(--font); cursor: pointer;
+  transition: border-color .15s, color .15s, background .15s; }
+.bill-btn em { font: 600 11px var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--accent-light); font-style: normal;
+  padding: 3px 8px; border: 1px solid rgba(var(--accent-rgb), .35); border-radius: 999px; }
+.bill-btn[aria-pressed="true"] { border-color: var(--accent); color: var(--paper); background: rgba(var(--accent-rgb), .12); }
+.bill-btn:hover, .bill-btn:focus-visible { color: var(--paper); border-color: var(--accent); outline: none; }
+.plan-price b { display: block; font-weight: inherit; }
+.plan-price b[hidden] { display: none; }
+.plan-price small { display: block; margin-top: 4px; font: 400 14px var(--font); color: var(--fog); letter-spacing: 0; }
 .pricing-note {
   margin-top: 32px;
   padding: 20px 24px;
@@ -3790,11 +3802,16 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
     <h2 class="section-heading reveal reveal-delay-1" data-ny-en="Elige un plan: un regalo para tu yo del futuro" data-hw-en="Elige un plan: sin truco, solo trato">Elige el plan para tu etapa</h2>
     <p class="section-sub reveal reveal-delay-2">Los primeros 3 días son de prueba; el plazo empieza a contar cuando conectas tu CRM. Paga con tarjeta, Telegram Stars o cripto (USDT).</p>
 
+    <div class="bill-toggle reveal reveal-delay-2" role="group" aria-label="Период оплаты">
+      <button type="button" class="bill-btn" data-bill="month" aria-pressed="true">Mensual</button>
+      <button type="button" class="bill-btn" data-bill="year" aria-pressed="false"><span>Anual</span><em>2 meses de regalo</em></button>
+    </div>
+
     <div class="pricing-grid reveal reveal-delay-2 stagger-in">
 
       <div class="plan-card">
         <div class="plan-name">Start</div>
-        <div class="plan-price">€29 <span>/mes</span></div>
+        <div class="plan-price"><b class="pp-m">€29 <span>/mes</span></b><b class="pp-y" hidden>€290 <span>/año</span><small>≈ €24/mes</small></b></div>
         <p class="plan-pitch">Configura tu CRM conversando</p>
         <div class="plan-trial" data-ny-en="3 días de prueba: nuestro regalo" data-hw-en="3 días de prueba, sin sacrificios">3 días de prueba</div>
         <ul class="plan-features">
@@ -3817,7 +3834,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
       <div class="plan-card featured">
         <div class="plan-badge" data-ny-en="Hit de temporada" data-hw-en="Popular de miedo">Popular</div>
         <div class="plan-name">Pro</div>
-        <div class="plan-price">€59 <span>/mes</span></div>
+        <div class="plan-price"><b class="pp-m">€59 <span>/mes</span></b><b class="pp-y" hidden>€590 <span>/año</span><small>≈ €49/mes</small></b></div>
         <p class="plan-pitch">+ automatización y gestión</p>
         <div class="plan-trial">La prueba usa las funciones de Start</div>
         <div class="plan-includes">Todo lo de Start, más:</div>
@@ -3836,7 +3853,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
 
       <div class="plan-card">
         <div class="plan-name">Max</div>
-        <div class="plan-price">€119 <span>/mes</span></div>
+        <div class="plan-price"><b class="pp-m">€119 <span>/mes</span></b><b class="pp-y" hidden>€1190 <span>/año</span><small>≈ €99/mes</small></b></div>
         <p class="plan-pitch">+ prioridad y desarrollos a medida</p>
         <div class="plan-trial">La prueba usa las funciones de Start</div>
         <div class="plan-includes">Todo lo de Pro, más:</div>
@@ -3962,6 +3979,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
 
     <p class="pricing-footer reveal">Paga con tarjeta internacional (Visa/Mastercard vía Polar), Telegram Stars o cripto (USDT). Los precios son por propietario del bot; la licencia del CRM se paga por separado.</p>
   </div>
+<script>(function(){var bs=document.querySelectorAll('.bill-btn');if(!bs.length)return;function set(iv){bs.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-bill')===iv?'true':'false');});document.querySelectorAll('.plan-price').forEach(function(p){var m=p.querySelector('.pp-m'),y=p.querySelector('.pp-y');if(m)m.hidden=iv==='year';if(y)y.hidden=iv!=='year';});document.querySelectorAll('.plan-cta[href*="start=pay_"]').forEach(function(a){a.setAttribute('href',a.getAttribute('href').replace(/(start=pay_[a-z]+?)(_year)?$/,'$1'+(iv==='year'?'_year':'')));});try{localStorage.setItem('kai_bill',iv);}catch(e){}}bs.forEach(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-bill'));});});var st=null;try{st=localStorage.getItem('kai_bill');}catch(e){}if(st==='year')set('year');})();</script>
 </section>
 
 <hr class="sep">
