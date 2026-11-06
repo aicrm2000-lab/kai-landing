@@ -173,7 +173,7 @@ def build(code: str) -> str:
     html = html.replace("  document.documentElement.lang = lang;\n", "  /* html lang — язык страницы, скрипты считают её английской */\n")
     html = html.replace('"inLanguage": "ru"', f'"inLanguage": "{code}"').replace('"inLanguage":"ru"', f'"inLanguage":"{code}"')
     # словарь для скриптов (слова частиц, подписи праздничных кнопок) и фраза про языки Kai под подзаголовком
-    l10n = {"lang": code, "words": ui.get("words"), "words_ny": ui.get("words_ny"),
+    l10n = {"lang": code, "words": ui.get("words"), "words_ny": ui.get("words_ny"), "words_bf": ui.get("words_bf"),
             "ui": {k: ui.get(k) for k in ("theme_hw", "theme_ny", "turn_on", "turn_off", "lang_label")}}
     html = html.replace("<head>\n", "<head>\n<script>window.KAI_L10N=" + json.dumps(l10n, ensure_ascii=False) + ";</script>\n", 1)
     note = ui.get("kai_note")

@@ -609,12 +609,27 @@
   "−40%": "−40%",
   "Black Week": "Black Week",
   "Black Week prices apply 23–30 November to card payments (Polar): −40% on yearly plans, −50% on the first month of monthly plans. Telegram Stars and crypto stay at the regular price.": "Les prix Black Week s’appliquent du 23 au 30 novembre aux paiements par carte (Polar) : −40 % sur les offres annuelles, −50 % sur le premier mois des offres mensuelles. Telegram Stars et crypto restent au tarif habituel.",
-  "First month €14.50 (−50%)": "Premier mois €14,50 (−50 %)",
-  "≈ €14.50/mo · −40%": "≈ €14,50/mois · −40 %",
-  "First month €29.50 (−50%)": "Premier mois €29,50 (−50 %)",
-  "≈ €29.50/mo · −40%": "≈ €29,50/mois · −40 %",
-  "First month €59.50 (−50%)": "Premier mois €59,50 (−50 %)",
-  "≈ €59.50/mo · −40%": "≈ €59,50/mois · −40 %"
+  "<b class='bf-pct'>−50%</b> first month, then €29/mo": "<b class='bf-pct'>−50%</b> le premier mois, puis €29/mois",
+  "<b class='bf-pct'>−50%</b> first month, then €59/mo": "<b class='bf-pct'>−50%</b> le premier mois, puis €59/mois",
+  "<b class='bf-pct'>−50%</b> first month, then €119/mo": "<b class='bf-pct'>−50%</b> le premier mois, puis €119/mois",
+  "<b class='bf-pct'>−40%</b> instead of <s>€290</s> · ≈ €14.50/mo": "<b class='bf-pct'>−40%</b> au lieu de <s>€290</s> · ≈ €14,50/mois",
+  "<b class='bf-pct'>−40%</b> instead of <s>€590</s> · ≈ €29.50/mo": "<b class='bf-pct'>−40%</b> au lieu de <s>€590</s> · ≈ €29,50/mois",
+  "<b class='bf-pct'>−40%</b> instead of <s>€1190</s> · ≈ €59.50/mo": "<b class='bf-pct'>−40%</b> au lieu de <s>€1190</s> · ≈ €59,50/mois",
+  "Works in your browser and Telegram — no install, no queue for the deal": "Fonctionne dans le navigateur et Telegram — sans installation, sans file d’attente pour la promo",
+  "Connect your CRM in 1 click — OAuth, no keys; the deal needs no promo code": "Connectez votre CRM en 1 clic — OAuth sans clés ; la promo ne demande aucun code",
+  "3-day trial — and that’s before the discount": "3 jours d’essai — et c’est avant la remise",
+  "Black Week. Setup.<br><em>Done.</em>": "Black Week. Configuration.<br><em>Terminé.</em>",
+  "© 2026 Kai. CRM setup without developers or small print.": "© 2026 Kai. Configuration CRM sans développeurs ni petites lignes.",
+  "Black Week: yearly −40%, first month −50%. I can set up your CRM in minutes — tell me what you do?": "Black Week : annuel −40 %, premier mois −50 %. Je configure votre CRM en quelques minutes — que faites-vous ?",
+  "“we’ll buy after Black Friday” — the stage where deals hibernate": "« On achète après le Black Friday » — l’étape où les affaires hibernent",
+  "the rule “no movement for 14 days → task for the rep” doesn’t wait for a season": "la règle « aucun mouvement pendant 14 jours → tâche pour le commercial » n’attend pas la saison",
+  "the sale is over, the leads are still in phone notes": "La promo est finie, les leads sont encore dans les notes du téléphone",
+  "the discount went out, the loss reason didn’t get logged": "La remise est partie, le motif de perte n’a jamais été noté",
+  "every deal gets a source and a loss reason": "chaque affaire a une source et un motif de perte",
+  "the sale report takes until New Year": "Le bilan de la promo sera prêt pour le Nouvel An",
+  "a pipeline report in one chat message": "un rapport de pipeline en un seul message",
+  "the one discount that doesn’t hurt your margin": "la seule remise qui ne rogne pas votre marge",
+  "Kai: yearly −40%, first month −50% — until 30.11": "Kai : annuel −40 %, premier mois −50 % — jusqu’au 30.11"
  },
  "meta": {
   "title": "Assistant IA qui configure amoCRM, Kommo, Bitrix24 et les CRM sur mesure | Kai",
@@ -706,6 +721,14 @@
   "theme_ny": "Mode fêtes",
   "turn_on": " : activer",
   "turn_off": " : désactiver",
-  "actions_word": "actions"
+  "actions_word": "actions",
+  "words_bf": [
+   "SALE",
+   "−40%",
+   "KAI",
+   "PROMO",
+   "−50%",
+   "SEMAINE"
+  ]
  }
 }

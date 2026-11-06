@@ -609,12 +609,27 @@
   "−40%": "−40%",
   "Black Week": "Чорний тиждень",
   "Black Week prices apply 23–30 November to card payments (Polar): −40% on yearly plans, −50% on the first month of monthly plans. Telegram Stars and crypto stay at the regular price.": "Ціни Чорного тижня діють 23–30 листопада при оплаті карткою (Polar): −40% на річні тарифи, −50% на перший місяць помісячних. Telegram Stars і крипта — за звичайною ціною.",
-  "First month €14.50 (−50%)": "Перший місяць €14,50 (−50%)",
-  "≈ €14.50/mo · −40%": "≈ €14,50/міс · −40%",
-  "First month €29.50 (−50%)": "Перший місяць €29,50 (−50%)",
-  "≈ €29.50/mo · −40%": "≈ €29,50/міс · −40%",
-  "First month €59.50 (−50%)": "Перший місяць €59,50 (−50%)",
-  "≈ €59.50/mo · −40%": "≈ €59,50/міс · −40%"
+  "<b class='bf-pct'>−50%</b> first month, then €29/mo": "<b class='bf-pct'>−50%</b> перший місяць, далі €29/міс",
+  "<b class='bf-pct'>−50%</b> first month, then €59/mo": "<b class='bf-pct'>−50%</b> перший місяць, далі €59/міс",
+  "<b class='bf-pct'>−50%</b> first month, then €119/mo": "<b class='bf-pct'>−50%</b> перший місяць, далі €119/міс",
+  "<b class='bf-pct'>−40%</b> instead of <s>€290</s> · ≈ €14.50/mo": "<b class='bf-pct'>−40%</b> замість <s>€290</s> · ≈ €14,50/міс",
+  "<b class='bf-pct'>−40%</b> instead of <s>€590</s> · ≈ €29.50/mo": "<b class='bf-pct'>−40%</b> замість <s>€590</s> · ≈ €29,50/міс",
+  "<b class='bf-pct'>−40%</b> instead of <s>€1190</s> · ≈ €59.50/mo": "<b class='bf-pct'>−40%</b> замість <s>€1190</s> · ≈ €59,50/міс",
+  "Works in your browser and Telegram — no install, no queue for the deal": "Працює в браузері та Telegram — без встановлення і без черги за знижкою",
+  "Connect your CRM in 1 click — OAuth, no keys; the deal needs no promo code": "Підключи CRM за 1 клік — OAuth без ключів; знижка без промокоду",
+  "3-day trial — and that’s before the discount": "3 дні тріалу — і це ще до знижки",
+  "Black Week. Setup.<br><em>Done.</em>": "Чорний тиждень. Налаштування.<br><em>Готово.</em>",
+  "© 2026 Kai. CRM setup without developers or small print.": "© 2026 Kai. Налаштування CRM без програмістів і без дрібного шрифту.",
+  "Black Week: yearly −40%, first month −50%. I can set up your CRM in minutes — tell me what you do?": "Чорний тиждень: рік −40%, перший місяць −50%. Налаштую CRM за кілька хвилин — розкажеш, чим займаєшся?",
+  "“we’ll buy after Black Friday” — the stage where deals hibernate": "«купимо після Black Friday» — етап, де угоди зимують",
+  "the rule “no movement for 14 days → task for the rep” doesn’t wait for a season": "правило «немає руху 14 днів → задача менеджеру» не чекає сезону",
+  "the sale is over, the leads are still in phone notes": "розпродаж минув, ліди лишилися в нотатках телефону",
+  "the discount went out, the loss reason didn’t get logged": "знижку дали, причину відмови не записали",
+  "every deal gets a source and a loss reason": "у кожної угоди джерело і причина відмови",
+  "the sale report takes until New Year": "звіт із розпродажу збирають до Нового року",
+  "a pipeline report in one chat message": "звіт по воронці — однією фразою в чаті",
+  "the one discount that doesn’t hurt your margin": "єдина знижка, після якої не треба рахувати маржу",
+  "Kai: yearly −40%, first month −50% — until 30.11": "Kai: рік −40%, перший місяць −50% — до 30.11"
  },
  "meta": {
   "title": "ШІ-асистент, який налаштовує amoCRM, Kommo, Bitrix24 і власні CRM | Kai",
@@ -706,6 +721,14 @@
   "theme_ny": "Святковий режим",
   "turn_on": ": увімкнути",
   "turn_off": ": вимкнути",
-  "actions_word": "дій"
+  "actions_word": "дій",
+  "words_bf": [
+   "SALE",
+   "−40%",
+   "KAI",
+   "ЗНИЖКА",
+   "−50%",
+   "ТИЖДЕНЬ"
+  ]
  }
 }

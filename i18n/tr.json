@@ -609,12 +609,27 @@
   "−40%": "%40 indirim",
   "Black Week": "Black Week",
   "Black Week prices apply 23–30 November to card payments (Polar): −40% on yearly plans, −50% on the first month of monthly plans. Telegram Stars and crypto stay at the regular price.": "Black Week fiyatları 23–30 Kasım arasında kartla ödemelerde (Polar) geçerlidir: yıllık planlarda %40, aylık planların ilk ayında %50 indirim. Telegram Stars ve kripto normal fiyattan devam eder.",
-  "First month €14.50 (−50%)": "İlk ay €14,50 (%50 indirim)",
-  "≈ €14.50/mo · −40%": "≈ €14,50/ay · %40 indirim",
-  "First month €29.50 (−50%)": "İlk ay €29,50 (%50 indirim)",
-  "≈ €29.50/mo · −40%": "≈ €29,50/ay · %40 indirim",
-  "First month €59.50 (−50%)": "İlk ay €59,50 (%50 indirim)",
-  "≈ €59.50/mo · −40%": "≈ €59,50/ay · %40 indirim"
+  "<b class='bf-pct'>−50%</b> first month, then €29/mo": "<b class='bf-pct'>%50</b> ilk ay indirimli, sonra €29/ay",
+  "<b class='bf-pct'>−50%</b> first month, then €59/mo": "<b class='bf-pct'>%50</b> ilk ay indirimli, sonra €59/ay",
+  "<b class='bf-pct'>−50%</b> first month, then €119/mo": "<b class='bf-pct'>%50</b> ilk ay indirimli, sonra €119/ay",
+  "<b class='bf-pct'>−40%</b> instead of <s>€290</s> · ≈ €14.50/mo": "<b class='bf-pct'>%40</b> indirim, <s>€290</s> yerine · ≈ €14,50/ay",
+  "<b class='bf-pct'>−40%</b> instead of <s>€590</s> · ≈ €29.50/mo": "<b class='bf-pct'>%40</b> indirim, <s>€590</s> yerine · ≈ €29,50/ay",
+  "<b class='bf-pct'>−40%</b> instead of <s>€1190</s> · ≈ €59.50/mo": "<b class='bf-pct'>%40</b> indirim, <s>€1190</s> yerine · ≈ €59,50/ay",
+  "Works in your browser and Telegram — no install, no queue for the deal": "Tarayıcıda ve Telegram’da çalışır — kurulum yok, indirim kuyruğu yok",
+  "Connect your CRM in 1 click — OAuth, no keys; the deal needs no promo code": "CRM’ini 1 tıkla bağla — anahtarsız OAuth; indirim için promosyon kodu gerekmez",
+  "3-day trial — and that’s before the discount": "3 gün deneme — üstelik indirimden önce",
+  "Black Week. Setup.<br><em>Done.</em>": "Black Week. Kurulum.<br><em>Tamam.</em>",
+  "© 2026 Kai. CRM setup without developers or small print.": "© 2026 Kai. Geliştirici ve küçük yazı olmadan CRM kurulumu.",
+  "Black Week: yearly −40%, first month −50%. I can set up your CRM in minutes — tell me what you do?": "Black Week: yıllıkta %40, ilk ayda %50 indirim. CRM’ini birkaç dakikada kurarım — ne iş yapıyorsun?",
+  "“we’ll buy after Black Friday” — the stage where deals hibernate": "“Black Friday’den sonra alırız” — anlaşmaların kış uykusuna yattığı aşama",
+  "the rule “no movement for 14 days → task for the rep” doesn’t wait for a season": "“14 gün hareket yok → satışçıya görev” kuralı sezon beklemez",
+  "the sale is over, the leads are still in phone notes": "İndirim bitti, lead’ler hâlâ telefon notlarında",
+  "the discount went out, the loss reason didn’t get logged": "İndirim verildi, kayıp nedeni hiç kaydedilmedi",
+  "every deal gets a source and a loss reason": "her anlaşmanın bir kaynağı ve kayıp nedeni olur",
+  "the sale report takes until New Year": "İndirim raporu ancak yılbaşına yetişir",
+  "a pipeline report in one chat message": "tek bir sohbet mesajıyla pipeline raporu",
+  "the one discount that doesn’t hurt your margin": "marjını zedelemeyen tek indirim",
+  "Kai: yearly −40%, first month −50% — until 30.11": "Kai: yıllıkta %40, ilk ayda %50 indirim — 30.11’e kadar"
  },
  "meta": {
   "title": "amoCRM, Kommo, Bitrix24 ve özel CRM'leri kuran yapay zeka asistanı | Kai",
@@ -706,6 +721,14 @@
   "theme_ny": "Yılbaşı modu",
   "turn_on": ": aç",
   "turn_off": ": kapat",
-  "actions_word": "işlem"
+  "actions_word": "işlem",
+  "words_bf": [
+   "SALE",
+   "−40%",
+   "KAI",
+   "İNDİRİM",
+   "−50%",
+   "HAFTA"
+  ]
  }
 }

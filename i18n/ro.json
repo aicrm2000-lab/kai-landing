@@ -609,12 +609,27 @@
   "−40%": "−40%",
   "Black Week": "Black Week",
   "Black Week prices apply 23–30 November to card payments (Polar): −40% on yearly plans, −50% on the first month of monthly plans. Telegram Stars and crypto stay at the regular price.": "Prețurile Black Week se aplică între 23 și 30 noiembrie la plata cu cardul (Polar): −40% la planurile anuale, −50% la prima lună a planurilor lunare. Telegram Stars și crypto rămân la prețul obișnuit.",
-  "First month €14.50 (−50%)": "Prima lună €14,50 (−50%)",
-  "≈ €14.50/mo · −40%": "≈ €14,50/lună · −40%",
-  "First month €29.50 (−50%)": "Prima lună €29,50 (−50%)",
-  "≈ €29.50/mo · −40%": "≈ €29,50/lună · −40%",
-  "First month €59.50 (−50%)": "Prima lună €59,50 (−50%)",
-  "≈ €59.50/mo · −40%": "≈ €59,50/lună · −40%"
+  "<b class='bf-pct'>−50%</b> first month, then €29/mo": "<b class='bf-pct'>−50%</b> în prima lună, apoi €29/lună",
+  "<b class='bf-pct'>−50%</b> first month, then €59/mo": "<b class='bf-pct'>−50%</b> în prima lună, apoi €59/lună",
+  "<b class='bf-pct'>−50%</b> first month, then €119/mo": "<b class='bf-pct'>−50%</b> în prima lună, apoi €119/lună",
+  "<b class='bf-pct'>−40%</b> instead of <s>€290</s> · ≈ €14.50/mo": "<b class='bf-pct'>−40%</b> în loc de <s>€290</s> · ≈ €14,50/lună",
+  "<b class='bf-pct'>−40%</b> instead of <s>€590</s> · ≈ €29.50/mo": "<b class='bf-pct'>−40%</b> în loc de <s>€590</s> · ≈ €29,50/lună",
+  "<b class='bf-pct'>−40%</b> instead of <s>€1190</s> · ≈ €59.50/mo": "<b class='bf-pct'>−40%</b> în loc de <s>€1190</s> · ≈ €59,50/lună",
+  "Works in your browser and Telegram — no install, no queue for the deal": "Merge în browser și în Telegram — fără instalare, fără coadă la reduceri",
+  "Connect your CRM in 1 click — OAuth, no keys; the deal needs no promo code": "Conectează CRM-ul cu 1 clic — OAuth fără chei; reducerea nu cere cod promo",
+  "3-day trial — and that’s before the discount": "3 zile de probă — și asta înainte de reducere",
+  "Black Week. Setup.<br><em>Done.</em>": "Black Week. Configurare.<br><em>Gata.</em>",
+  "© 2026 Kai. CRM setup without developers or small print.": "© 2026 Kai. Configurare CRM fără programatori și fără scris mărunt.",
+  "Black Week: yearly −40%, first month −50%. I can set up your CRM in minutes — tell me what you do?": "Black Week: anual −40%, prima lună −50%. Îți configurez CRM-ul în câteva minute — cu ce te ocupi?",
+  "“we’ll buy after Black Friday” — the stage where deals hibernate": "„Cumpărăm după Black Friday” — etapa în care tranzacțiile hibernează",
+  "the rule “no movement for 14 days → task for the rep” doesn’t wait for a season": "regula „fără mișcare 14 zile → sarcină pentru vânzător” nu așteaptă sezonul",
+  "the sale is over, the leads are still in phone notes": "Promoția s-a terminat, lead-urile sunt tot în notițele din telefon",
+  "the discount went out, the loss reason didn’t get logged": "Reducerea a plecat, motivul pierderii n-a fost notat",
+  "every deal gets a source and a loss reason": "fiecare tranzacție are sursă și motiv de pierdere",
+  "the sale report takes until New Year": "Raportul promoției e gata de Anul Nou",
+  "a pipeline report in one chat message": "un raport al pipeline-ului într-un singur mesaj",
+  "the one discount that doesn’t hurt your margin": "singura reducere care nu-ți taie marja",
+  "Kai: yearly −40%, first month −50% — until 30.11": "Kai: anual −40%, prima lună −50% — până pe 30.11"
  },
  "meta": {
   "title": "Asistent AI care configurează amoCRM, Kommo, Bitrix24 și CRM-uri personalizate | Kai",
@@ -706,6 +721,14 @@
   "theme_ny": "Mod de sărbători",
   "turn_on": ": pornește",
   "turn_off": ": oprește",
-  "actions_word": "de acțiuni"
+  "actions_word": "de acțiuni",
+  "words_bf": [
+   "SALE",
+   "−40%",
+   "KAI",
+   "OFERTĂ",
+   "−50%",
+   "SĂPTĂMÂNĂ"
+  ]
  }
 }

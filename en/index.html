@@ -1941,8 +1941,34 @@ html.bf:not(.bf-hide) .bf-strip { display: flex; }
   border-radius: 8px; color: var(--fog); }
 .bf-x:hover, .bf-x:focus-visible { color: var(--paper); background: rgba(255,255,255,.06); }
 .plan-price span.pp-reg, .plan-price span.pp-bf { font-size: inherit; font-weight: inherit; color: inherit; letter-spacing: inherit; }   /* не «единица» (/год) — сама цена */
-.pp-old { font-size: .55em; font-weight: 500; color: var(--fog); text-decoration: line-through; margin-right: 8px; vertical-align: .45em; letter-spacing: 0; }
-html.bf .bill-btn[data-bill="year"] em { color: var(--void); background: var(--paper); border-color: var(--paper); }
+.plan-price small s { color: var(--fog); }
+.bf-pct, .plan-price small b.bf-pct { display: inline-block; font: 800 12px/1 var(--mono); letter-spacing: .04em; padding: 4px 7px; border-radius: 6px; background: var(--paper); color: var(--void); margin-right: 6px; vertical-align: 1px; }
+.bill-btn em.bf-em { display: none; }
+html.bf .bill-btn em.bf-em { display: inline-block; }
+html.bf .bill-btn em { color: var(--void); background: var(--paper); border-color: var(--paper); }
+/* «ленты» SALE на карточках: в помесячном виде −50% (первый месяц), в годовом −40% */
+.bf-ribbon { display: none; position: absolute; top: -1px; right: -1px; width: 118px; height: 118px; overflow: hidden; pointer-events: none; border-top-right-radius: 16px; }
+html.bf .bf-ribbon { display: block; }
+.bf-ribbon i { position: absolute; top: 24px; right: -40px; width: 176px; padding: 7px 0; transform: rotate(45deg); background: var(--paper); color: var(--void);
+  text-align: center; font: 700 11px/1.2 var(--mono); letter-spacing: .12em; text-transform: uppercase; font-style: normal; box-shadow: 0 2px 10px rgba(0,0,0,.45); }
+.bf-ribbon i b { font-weight: 800; }
+.pricing[data-bill="year"] .bf-ribbon .rb-m, .pricing:not([data-bill="year"]) .bf-ribbon .rb-y { display: none; }
+/* чёрно-белая палитра всей страницы в Чёрную неделю (Тихон: «оформить в чёрно-белом»): акцент, зелёный и жёлтый → бумага */
+html.bf {
+  --accent: #F2F2F4; --accent-2: #C9C9CF;
+  --accent-rgb: 242,242,244; --accent-2-rgb: 201,201,207; --accent-hi-rgb: 255,255,255;
+  --accent-deep: #D6D6DC; --accent-mid: #E6E6EA; --accent-light: #FFFFFF; --mark-dot-rgb: 242,242,244;
+  --accent-dim: rgba(242,242,244,.10); --accent-glow: rgba(242,242,244,.22);
+  --accent-gradient: linear-gradient(135deg, #F7F7F9 0%, #C9C9CF 100%);
+  --bg: #050506; --bg-rgb: 5,5,6; --bg-1: #0C0C0E; --bg-2: #131316; --border: #27272C; --border-soft: rgba(255,255,255,.12);
+  --void: #050506; --carbon: #0C0C0E; --obsidian: #131316; --graphite: #27272C; --smoke: #35353B;
+  --ink: #F7F7F9; --paper: #F7F7F9; --text: #CDCDD3; --mist: #CDCDD3; --muted: #8C8C95; --fog: #8C8C95; --dim: #5C5C64; --ash: #5C5C64;
+  --good: #F7F7F9; --green: #F7F7F9; --warn: #F7F7F9; --orange: #F7F7F9;
+}
+html.bf .nav-cta, html.bf .btn-primary, html.bf .ka-cta, html.bf .kd-u, html.bf .kd-opt.pick, html.bf .kd-go, html.bf .kd-cta, html.bf .ba-knob,
+html.bf .ko-ok, html.bf .ko-cta, html.bf .mobile-menu .mobile-menu-cta, html.bf .mobile-menu .mobile-menu-cta:hover, html.bf .plan-cta-primary,
+html.bf .plan-badge, html.bf .bc-ico, html.bf .kc-go, html.bf .chat-badge, html.bf .cookie-btn-accept, html.bf .install-cta, html.bf .footer-cta,
+html.bf .install-icon { color: var(--void); }   /* белый текст на белом акценте → чёрный */
 .pricing-note {
   margin-top: 32px;
   padding: 20px 24px;
@@ -2937,6 +2963,11 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
     <li data-season="ny"><span data-ru="лиды с корпоративов — в заметках телефона" data-en="leads from the office party live in phone notes">leads from the office party live in phone notes</span><span data-ru="контакт и сделка создаются из сообщения или голосового" data-en="a contact and a deal created from a message or a voice note">a contact and a deal created from a message or a voice note</span></li>
     <li data-season="ny"><span data-ru="менеджеры на каникулах, CRM настраивать некому" data-en="the team’s on holiday, nobody’s left to set up the CRM">the team’s on holiday, nobody’s left to set up the CRM</span><span data-ru="Kai на связи и 31-го, и 1-го — в браузере и Telegram" data-en="Kai is around on the 31st and the 1st — in browser and Telegram">Kai is around on the 31st and the 1st — in browser and Telegram</span></li>
     <li data-season="ny"><span data-ru="поля в CRM как гирлянда: половина не горит" data-en="CRM fields like a string of lights: half of them dead">CRM fields like a string of lights: half of them dead</span><span data-ru="Kai находит пустые поля и убирает лишнее" data-en="Kai finds the empty fields and clears the clutter">Kai finds the empty fields and clears the clutter</span></li>
+    <li data-season="bf"><span data-ru="«купим после Black Friday» — этап, где сделки зимуют" data-en="“we’ll buy after Black Friday” — the stage where deals hibernate">“we’ll buy after Black Friday” — the stage where deals hibernate</span><span data-ru="правило «нет движения 14 дней → задача менеджеру» не ждёт сезона" data-en="the rule “no movement for 14 days → task for the rep” doesn’t wait for a season">the rule “no movement for 14 days → task for the rep” doesn’t wait for a season</span></li>
+    <li data-season="bf"><span data-ru="распродажа прошла, лиды остались в заметках телефона" data-en="the sale is over, the leads are still in phone notes">the sale is over, the leads are still in phone notes</span><span data-ru="контакт и сделка создаются из сообщения или голосового" data-en="a contact and a deal created from a message or a voice note">a contact and a deal created from a message or a voice note</span></li>
+    <li data-season="bf"><span data-ru="скидку дали, причину отказа не записали" data-en="the discount went out, the loss reason didn’t get logged">the discount went out, the loss reason didn’t get logged</span><span data-ru="у каждой сделки источник и причина отказа" data-en="every deal gets a source and a loss reason">every deal gets a source and a loss reason</span></li>
+    <li data-season="bf"><span data-ru="отчёт по распродаже собирают до Нового года" data-en="the sale report takes until New Year">the sale report takes until New Year</span><span data-ru="отчёт по воронке — одной фразой в чате" data-en="a pipeline report in one chat message">a pipeline report in one chat message</span></li>
+    <li data-season="bf"><span data-ru="единственная скидка, после которой не надо считать маржу" data-en="the one discount that doesn’t hurt your margin">the one discount that doesn’t hurt your margin</span><span data-ru="Kai: год −40%, первый месяц −50% — до 30.11" data-en="Kai: yearly −40%, first month −50% — until 30.11">Kai: yearly −40%, first month −50% — until 30.11</span></li>
     <li><span data-ru="лид без источника — как чек без суммы" data-en="a lead with no source — a receipt with no total">a lead with no source — a receipt with no total</span><span data-ru="источники лидов заведу за тебя" data-en="lead sources set up for you">lead sources set up for you</span></li>
     <li><span data-ru="сделка без задачи — сделка без будущего" data-en="a deal with no task — a deal with no future">a deal with no task — a deal with no future</span><span data-ru="автозадача на каждом этапе воронки" data-en="an auto-task at every pipeline stage">an auto-task at every pipeline stage</span></li>
     <li><span data-ru="менеджер ушёл — база осталась" data-en="the rep quit — the data stayed">the rep quit — the data stayed</span><span data-ru="здоровье сделки: что брошено и что дальше" data-en="deal health: what was dropped, what is next">deal health: what was dropped, what is next</span></li>
@@ -2960,7 +2991,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
   <div class="hero-plate">
     <div class="hero-badge">
       <span class="badge-dot"></span>
-      <span data-ny-ru="Работает в браузере и Telegram — без установки, подарок без сборки" data-ny-en="Works in your browser and Telegram — no install, no assembly required" data-hw-ru="Работает в браузере и Telegram — без установки и без заклинаний" data-hw-en="Works in your browser and Telegram — no install, no spells" data-ru="Работает в браузере и Telegram — без установки" data-en="Works in your browser and Telegram — no install">Works in your browser and Telegram — no install</span>
+      <span data-bf-ru="Работает в браузере и Telegram — без установки и без очереди за скидкой" data-bf-en="Works in your browser and Telegram — no install, no queue for the deal" data-ny-ru="Работает в браузере и Telegram — без установки, подарок без сборки" data-ny-en="Works in your browser and Telegram — no install, no assembly required" data-hw-ru="Работает в браузере и Telegram — без установки и без заклинаний" data-hw-en="Works in your browser and Telegram — no install, no spells" data-ru="Работает в браузере и Telegram — без установки" data-en="Works in your browser and Telegram — no install">Works in your browser and Telegram — no install</span>
     </div>
 
     <h1 data-ru="Настройка <span class='a'>CRM</span><br>без программистов" data-en="Set up your <span class='a'>CRM</span><br>without developers">Set up your <span class='a'>CRM</span><br>without developers</h1>
@@ -3015,7 +3046,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
 <!-- CONNECT STRIP -->
 <a href="https://t.me/aiicrm_bot?start=connect" target="_blank" rel="noopener" class="connect-strip reveal">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-  <span data-ny-ru="Подключи CRM за 1 клик, пока все на каникулах — OAuth без ключей" data-ny-en="Connect your CRM in 1 click while everyone’s on holiday — OAuth, no keys" data-hw-ru="Подключи CRM за 1 клик, пока не стемнело — OAuth без ключей" data-hw-en="Connect your CRM in 1 click before dark — OAuth, no keys" data-ru="Подключи CRM за 1 клик — OAuth без ключей" data-en="Connect your CRM in 1 click — OAuth, no keys">Connect your CRM in 1 click — OAuth, no keys</span>
+  <span data-bf-ru="Подключи CRM за 1 клик — OAuth без ключей, скидка без промокода" data-bf-en="Connect your CRM in 1 click — OAuth, no keys; the deal needs no promo code" data-ny-ru="Подключи CRM за 1 клик, пока все на каникулах — OAuth без ключей" data-ny-en="Connect your CRM in 1 click while everyone’s on holiday — OAuth, no keys" data-hw-ru="Подключи CRM за 1 клик, пока не стемнело — OAuth без ключей" data-hw-en="Connect your CRM in 1 click before dark — OAuth, no keys" data-ru="Подключи CRM за 1 клик — OAuth без ключей" data-en="Connect your CRM in 1 click — OAuth, no keys">Connect your CRM in 1 click — OAuth, no keys</span>
   <svg class="connect-strip-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
 </a>
 <!-- INTEGRATIONS -->
@@ -3830,17 +3861,18 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
     <p class="section-sub reveal reveal-delay-2" data-ru="Первые 3 дня — триал, отсчёт идёт с подключения CRM. Оплата картой, Telegram Stars или криптой (USDT)." data-en="3-day trial — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).">3-day trial — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).</p>
 
     <div class="bill-toggle reveal reveal-delay-2" role="group" aria-label="Период оплаты">
-      <button type="button" class="bill-btn" data-bill="month" aria-pressed="true" data-ru="Помесячно" data-en="Monthly">Monthly</button>
+      <button type="button" class="bill-btn" data-bill="month" aria-pressed="true"><span data-ru="Помесячно" data-en="Monthly">Monthly</span><em class="bf-em">−50%</em></button>
       <button type="button" class="bill-btn" data-bill="year" aria-pressed="false"><span data-ru="На год" data-en="Yearly">Yearly</span><em data-bf-ru="−40%" data-bf-en="−40%" data-ru="2 месяца в подарок" data-en="2 months free">2 months free</em></button>
     </div>
 
     <div class="pricing-grid reveal reveal-delay-2 stagger-in">
 
       <div class="plan-card">
+        <span class="bf-ribbon" aria-hidden="true"><i class="rb-m"><b>Sale</b> −50%</i><i class="rb-y"><b>Sale</b> −40%</i></span>
         <div class="plan-name">Start</div>
-        <div class="plan-price"><b class="pp-m">€29 <span data-ru="/мес" data-en="/mo">/mo</span><small class="pp-bf" data-ru="Первый месяц €14,50 (−50%)" data-en="First month €14.50 (−50%)">First month €14.50 (−50%)</small></b><b class="pp-y" hidden><span class="pp-reg">€290</span><span class="pp-bf"><s class="pp-old">€290</s>€174</span> <span data-ru="/год" data-en="/yr">/yr</span><small class="pp-reg" data-ru="≈ €24/мес" data-en="≈ €24/mo">≈ €24/mo</small><small class="pp-bf" data-ru="≈ €14,50/мес · −40%" data-en="≈ €14.50/mo · −40%">≈ €14.50/mo · −40%</small></b></div>
+        <div class="plan-price"><b class="pp-m"><span class="pp-reg">€29</span><span class="pp-bf">€14,50</span> <span data-ru="/мес" data-en="/mo">/mo</span><small class="pp-bf" data-ru="<b class='bf-pct'>−50%</b> первый месяц, дальше €29/мес" data-en="<b class='bf-pct'>−50%</b> first month, then €29/mo"><b class='bf-pct'>−50%</b> first month, then €29/mo</small></b><b class="pp-y" hidden><span class="pp-reg">€290</span><span class="pp-bf">€174</span> <span data-ru="/год" data-en="/yr">/yr</span><small class="pp-reg" data-ru="≈ €24/мес" data-en="≈ €24/mo">≈ €24/mo</small><small class="pp-bf" data-ru="<b class='bf-pct'>−40%</b> вместо <s>€290</s> · ≈ €14,50/мес" data-en="<b class='bf-pct'>−40%</b> instead of <s>€290</s> · ≈ €14.50/mo"><b class='bf-pct'>−40%</b> instead of <s>€290</s> · ≈ €14.50/mo</small></b></div>
         <p class="plan-pitch" data-ru="Настройка CRM разговором" data-en="Set up your CRM by talking">Set up your CRM by talking</p>
-        <div class="plan-trial" data-ny-ru="3 дня триала — наш подарок" data-ny-en="3-day trial — our gift" data-hw-ru="3 дня триала, без жертвоприношений" data-hw-en="3-day trial, no sacrifices" data-ru="3 дня триала" data-en="3-day trial">3-day trial</div>
+        <div class="plan-trial" data-bf-ru="3 дня триала — и это ещё до скидки" data-bf-en="3-day trial — and that’s before the discount" data-ny-ru="3 дня триала — наш подарок" data-ny-en="3-day trial — our gift" data-hw-ru="3 дня триала, без жертвоприношений" data-hw-en="3-day trial, no sacrifices" data-ru="3 дня триала" data-en="3-day trial">3-day trial</div>
         <ul class="plan-features">
           <li data-ru="Консультация и ТЗ в PDF" data-en="Consultation & spec (PDF)">Consultation & spec (PDF)</li>
           <li data-ru="Воронки, этапы, кастомные поля" data-en="Pipelines, stages, custom fields">Pipelines, stages, custom fields</li>
@@ -3859,9 +3891,10 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
       </div>
 
       <div class="plan-card featured">
+        <span class="bf-ribbon" aria-hidden="true"><i class="rb-m"><b>Sale</b> −50%</i><i class="rb-y"><b>Sale</b> −40%</i></span>
         <div class="plan-badge" data-bf-ru="Чёрная неделя" data-bf-en="Black Week" data-ny-ru="Хит сезона" data-ny-en="Season’s pick" data-hw-ru="Жуть как популярно" data-hw-en="Scary popular" data-ru="Хит" data-en="Popular">Popular</div>
         <div class="plan-name">Pro</div>
-        <div class="plan-price"><b class="pp-m">€59 <span data-ru="/мес" data-en="/mo">/mo</span><small class="pp-bf" data-ru="Первый месяц €29,50 (−50%)" data-en="First month €29.50 (−50%)">First month €29.50 (−50%)</small></b><b class="pp-y" hidden><span class="pp-reg">€590</span><span class="pp-bf"><s class="pp-old">€590</s>€354</span> <span data-ru="/год" data-en="/yr">/yr</span><small class="pp-reg" data-ru="≈ €49/мес" data-en="≈ €49/mo">≈ €49/mo</small><small class="pp-bf" data-ru="≈ €29,50/мес · −40%" data-en="≈ €29.50/mo · −40%">≈ €29.50/mo · −40%</small></b></div>
+        <div class="plan-price"><b class="pp-m"><span class="pp-reg">€59</span><span class="pp-bf">€29,50</span> <span data-ru="/мес" data-en="/mo">/mo</span><small class="pp-bf" data-ru="<b class='bf-pct'>−50%</b> первый месяц, дальше €59/мес" data-en="<b class='bf-pct'>−50%</b> first month, then €59/mo"><b class='bf-pct'>−50%</b> first month, then €59/mo</small></b><b class="pp-y" hidden><span class="pp-reg">€590</span><span class="pp-bf">€354</span> <span data-ru="/год" data-en="/yr">/yr</span><small class="pp-reg" data-ru="≈ €49/мес" data-en="≈ €49/mo">≈ €49/mo</small><small class="pp-bf" data-ru="<b class='bf-pct'>−40%</b> вместо <s>€590</s> · ≈ €29,50/мес" data-en="<b class='bf-pct'>−40%</b> instead of <s>€590</s> · ≈ €29.50/mo"><b class='bf-pct'>−40%</b> instead of <s>€590</s> · ≈ €29.50/mo</small></b></div>
         <p class="plan-pitch" data-ru="+ автоматизации и управление" data-en="+ automation & management">+ automation & management</p>
         <div class="plan-trial" data-ru="Пробный период — на функциях Start" data-en="Trial runs on Start features">Trial runs on Start features</div>
         <div class="plan-includes" data-ru="Всё из Start, плюс:" data-en="Everything in Start, plus:">Everything in Start, plus:</div>
@@ -3879,8 +3912,9 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
       </div>
 
       <div class="plan-card">
+        <span class="bf-ribbon" aria-hidden="true"><i class="rb-m"><b>Sale</b> −50%</i><i class="rb-y"><b>Sale</b> −40%</i></span>
         <div class="plan-name">Max</div>
-        <div class="plan-price"><b class="pp-m">€119 <span data-ru="/мес" data-en="/mo">/mo</span><small class="pp-bf" data-ru="Первый месяц €59,50 (−50%)" data-en="First month €59.50 (−50%)">First month €59.50 (−50%)</small></b><b class="pp-y" hidden><span class="pp-reg">€1190</span><span class="pp-bf"><s class="pp-old">€1190</s>€714</span> <span data-ru="/год" data-en="/yr">/yr</span><small class="pp-reg" data-ru="≈ €99/мес" data-en="≈ €99/mo">≈ €99/mo</small><small class="pp-bf" data-ru="≈ €59,50/мес · −40%" data-en="≈ €59.50/mo · −40%">≈ €59.50/mo · −40%</small></b></div>
+        <div class="plan-price"><b class="pp-m"><span class="pp-reg">€119</span><span class="pp-bf">€59,50</span> <span data-ru="/мес" data-en="/mo">/mo</span><small class="pp-bf" data-ru="<b class='bf-pct'>−50%</b> первый месяц, дальше €119/мес" data-en="<b class='bf-pct'>−50%</b> first month, then €119/mo"><b class='bf-pct'>−50%</b> first month, then €119/mo</small></b><b class="pp-y" hidden><span class="pp-reg">€1190</span><span class="pp-bf">€714</span> <span data-ru="/год" data-en="/yr">/yr</span><small class="pp-reg" data-ru="≈ €99/мес" data-en="≈ €99/mo">≈ €99/mo</small><small class="pp-bf" data-ru="<b class='bf-pct'>−40%</b> вместо <s>€1190</s> · ≈ €59,50/мес" data-en="<b class='bf-pct'>−40%</b> instead of <s>€1190</s> · ≈ €59.50/mo"><b class='bf-pct'>−40%</b> instead of <s>€1190</s> · ≈ €59.50/mo</small></b></div>
         <p class="plan-pitch" data-ru="+ приоритет и доработки" data-en="+ priority & custom work">+ priority & custom work</p>
         <div class="plan-trial" data-ru="Пробный период — на функциях Start" data-en="Trial runs on Start features">Trial runs on Start features</div>
         <div class="plan-includes" data-ru="Всё из Pro, плюс:" data-en="Everything in Pro, plus:">Everything in Pro, plus:</div>
@@ -4007,7 +4041,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
     <p class="pricing-footer reveal" data-ru="Оплата международной картой (Visa/Mastercard через Polar; карты «Мир» не проходят), Telegram Stars или криптой (USDT). Цены указаны за пользователя-владельца бота; лицензия самой CRM оплачивается отдельно." data-en="Pay by international card (Visa/Mastercard via Polar), Telegram Stars, or crypto (USDT). Prices are per bot owner; the CRM licence itself is billed separately.">Pay by international card (Visa/Mastercard via Polar), Telegram Stars, or crypto (USDT). Prices are per bot owner; the CRM licence itself is billed separately.</p>
     <p class="pricing-footer bf-only" data-ru="Цены Чёрной недели действуют 23–30 ноября при оплате картой (Polar): −40% на годовые тарифы, −50% на первый месяц помесячных. Telegram Stars и крипта — по обычной цене." data-en="Black Week prices apply 23–30 November to card payments (Polar): −40% on yearly plans, −50% on the first month of monthly plans. Telegram Stars and crypto stay at the regular price.">Black Week prices apply 23–30 November to card payments (Polar): −40% on yearly plans, −50% on the first month of monthly plans. Telegram Stars and crypto stay at the regular price.</p>
   </div>
-<script>(function(){var bs=document.querySelectorAll('.bill-btn');if(!bs.length)return;function set(iv,keep){bs.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-bill')===iv?'true':'false');});document.querySelectorAll('.plan-price').forEach(function(p){var m=p.querySelector('.pp-m'),y=p.querySelector('.pp-y');if(m)m.hidden=iv==='year';if(y)y.hidden=iv!=='year';});document.querySelectorAll('.plan-cta[href*="start=pay_"]').forEach(function(a){a.setAttribute('href',a.getAttribute('href').replace(/(start=pay_[a-z]+?)(_year)?$/,'$1'+(iv==='year'?'_year':'')));});if(!keep)try{localStorage.setItem('kai_bill',iv);}catch(e){}}bs.forEach(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-bill'));});});var st=null;try{st=localStorage.getItem('kai_bill');}catch(e){}if(st==='year')set('year');else if(st===null&&document.documentElement.classList.contains('bf'))set('year',true);})();</script>
+<script>(function(){var bs=document.querySelectorAll('.bill-btn');if(!bs.length)return;function set(iv,keep){var pc=document.querySelector('.pricing');if(pc)pc.setAttribute('data-bill',iv);bs.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-bill')===iv?'true':'false');});document.querySelectorAll('.plan-price').forEach(function(p){var m=p.querySelector('.pp-m'),y=p.querySelector('.pp-y');if(m)m.hidden=iv==='year';if(y)y.hidden=iv!=='year';});document.querySelectorAll('.plan-cta[href*="start=pay_"]').forEach(function(a){a.setAttribute('href',a.getAttribute('href').replace(/(start=pay_[a-z]+?)(_year)?$/,'$1'+(iv==='year'?'_year':'')));});if(!keep)try{localStorage.setItem('kai_bill',iv);}catch(e){}}bs.forEach(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-bill'));});});var st=null;try{st=localStorage.getItem('kai_bill');}catch(e){}if(st==='year')set('year');else if(st===null&&document.documentElement.classList.contains('bf'))set('year',true);})();</script>
 </section>
 
 <hr class="sep">
@@ -4018,7 +4052,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
   <div class="ny-deco" aria-hidden="true"><span class="ny-garland"><i></i><i></i></span><span class="ny-gifts r"><i class="ny-gift g2"></i><i class="ny-gift g1"></i></span></div>
   <div class="cta-inner">
     <p class="section-label" style="justify-content:center;display:flex" data-ru="Начать сейчас" data-en="Start now">Start now</p>
-    <h2 class="reveal" data-ny-ru="Загадать. Настроить.<br><em>Готово.</em>" data-ny-en="Make a wish. Set it up.<br><em>Done.</em>" data-hw-ru="Без страха. Без программистов.<br><em>Готово.</em>" data-hw-en="No fear. No developers.<br><em>Done.</em>" data-ru="Консультация. Настройка.<br><em>Готово.</em>" data-en="Consultation. Setup.<br><em>Done.</em>">Consultation. Setup.<br><em>Done.</em></h2>
+    <h2 class="reveal" data-bf-ru="Чёрная неделя. Настройка.<br><em>Готово.</em>" data-bf-en="Black Week. Setup.<br><em>Done.</em>" data-ny-ru="Загадать. Настроить.<br><em>Готово.</em>" data-ny-en="Make a wish. Set it up.<br><em>Done.</em>" data-hw-ru="Без страха. Без программистов.<br><em>Готово.</em>" data-hw-en="No fear. No developers.<br><em>Done.</em>" data-ru="Консультация. Настройка.<br><em>Готово.</em>" data-en="Consultation. Setup.<br><em>Done.</em>">Consultation. Setup.<br><em>Done.</em></h2>
     <div class="hero-actions reveal reveal-delay-1">
       <a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener" class="btn-primary">
         <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M13.4 2L1.6 6.5c-.6.2-.5 1 .1 1.2l3.3 1.1 1.1 3.7c.2.6 1 .7 1.2.1L11.9 3.4c.3-.7-.4-1.4-1.1-1.1z" fill="currentColor"/></svg>
@@ -4080,7 +4114,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
   </div>
   <div class="container">
     <div class="footer-bottom">
-      <span data-ny-ru="© 2026 Kai. Настройка CRM без программистов и без мишуры." data-ny-en="© 2026 Kai. CRM setup without developers or tinsel." data-hw-ru="© 2026 Kai. Настройка CRM без программистов и без нечисти." data-hw-en="© 2026 Kai. CRM setup without developers or ghouls." data-ru="© 2026 Kai. Настройка CRM без программистов." data-en="© 2026 Kai. CRM setup without developers.">© 2026 Kai. CRM setup without developers.</span>
+      <span data-bf-ru="© 2026 Kai. Настройка CRM без программистов и без мелкого шрифта в акциях." data-bf-en="© 2026 Kai. CRM setup without developers or small print." data-ny-ru="© 2026 Kai. Настройка CRM без программистов и без мишуры." data-ny-en="© 2026 Kai. CRM setup without developers or tinsel." data-hw-ru="© 2026 Kai. Настройка CRM без программистов и без нечисти." data-hw-en="© 2026 Kai. CRM setup without developers or ghouls." data-ru="© 2026 Kai. Настройка CRM без программистов." data-en="© 2026 Kai. CRM setup without developers.">© 2026 Kai. CRM setup without developers.</span>
       <div style="display:flex;flex-wrap:wrap;gap:8px 20px;">
         <a href="../privacy-en.html" class="privacy-link" data-ru="Политика конфиденциальности" data-en="Privacy policy">Privacy policy</a>
         <a href="../terms-en.html" data-ru="Условия использования" data-en="Terms of service">Terms of service</a>
@@ -4948,7 +4982,7 @@ window.addEventListener('scroll', () => {
 
 <!-- CHAT LAUNCHER -->
 <div class="chat-tip" id="chatTip">
-  <span id="chatTipText" data-ny-ru="С праздниками! Настрою CRM за пару минут — расскажешь, чем занимаешься?" data-ny-en="Happy holidays! I can set up your CRM in minutes — tell me what you do?" data-hw-ru="Бу! Настрою CRM за пару минут — расскажешь, чем занимаешься?" data-hw-en="Boo! I can set up your CRM in minutes — tell me what you do?" data-ru="Настрою CRM за пару минут — расскажешь, чем занимаешься?" data-en="I can set up your CRM in minutes — tell me what you do?">I can set up your CRM in minutes — tell me what you do?</span>
+  <span id="chatTipText" data-bf-ru="Чёрная неделя: год −40%, первый месяц −50%. Настрою CRM за пару минут — расскажешь, чем занимаешься?" data-bf-en="Black Week: yearly −40%, first month −50%. I can set up your CRM in minutes — tell me what you do?" data-ny-ru="С праздниками! Настрою CRM за пару минут — расскажешь, чем занимаешься?" data-ny-en="Happy holidays! I can set up your CRM in minutes — tell me what you do?" data-hw-ru="Бу! Настрою CRM за пару минут — расскажешь, чем занимаешься?" data-hw-en="Boo! I can set up your CRM in minutes — tell me what you do?" data-ru="Настрою CRM за пару минут — расскажешь, чем занимаешься?" data-en="I can set up your CRM in minutes — tell me what you do?">I can set up your CRM in minutes — tell me what you do?</span>
   <button class="chat-tip-x" id="chatTipX" aria-label="Close">✕</button>
 </div>
 <span class="chat-badge" id="chatBadge" aria-hidden="true">1</span>
@@ -4993,7 +5027,7 @@ window.addEventListener('scroll', () => {
     markNudged();
     if (!loaded) {
       var f = document.createElement('iframe');
-      f.src = CHAT_URL + (document.documentElement.lang === 'ru' ? '?lang=ru' : '?lang=en') + (handoffCode ? '&h=' + encodeURIComponent(handoffCode) : '') + (document.documentElement.classList.contains('hw') ? '&hw=1' : '&hw=0') + (document.documentElement.classList.contains('ny') ? '&ny=1' : '&ny=0') + (window.kaiVid && window.kaiVid() ? '&v=' + encodeURIComponent(window.kaiVid()) : '');
+      f.src = CHAT_URL + (document.documentElement.lang === 'ru' ? '?lang=ru' : '?lang=en') + (handoffCode ? '&h=' + encodeURIComponent(handoffCode) : '') + (document.documentElement.classList.contains('hw') ? '&hw=1' : '&hw=0') + (document.documentElement.classList.contains('ny') ? '&ny=1' : '&ny=0') + (document.documentElement.classList.contains('bf') ? '&bf=1' : '') + (window.kaiVid && window.kaiVid() ? '&v=' + encodeURIComponent(window.kaiVid()) : '');
       handoffCode = null;
       f.title = 'Kai chat';
       f.setAttribute('allow', 'microphone; autoplay; clipboard-write');   /* voice notes and calls inside the chat */
@@ -5147,10 +5181,10 @@ window.addEventListener('scroll', () => {
   const MONO = '800 %px "JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace';
   const rgba = (c,a) => 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + a + ')';
   const lang = () => (document.documentElement.lang === 'ru' ? 'ru' : 'en');
-  const SEASON=document.documentElement.classList.contains('hw')?'hw':document.documentElement.classList.contains('ny')?'ny':'';
-  const HW=SEASON==='hw',NY=SEASON==='ny';
+  const SEASON=document.documentElement.classList.contains('hw')?'hw':document.documentElement.classList.contains('ny')?'ny':document.documentElement.classList.contains('bf')?'bf':'';
+  const HW=SEASON==='hw',NY=SEASON==='ny',BF=SEASON==='bf';   /* bf: Black Week 23–30.11 — the mark is a price tag, the words are the deal */
   const NYY=(()=>{const d=new Date();return String(d.getFullYear()+(d.getMonth()===11?1:0));})();   /* the coming year in December, the current one in January */
-  const getWords = () => { const Lw=window.KAI_L10N; if(Lw&&!HW&&NY&&Lw.words_ny)return Lw.words_ny.map(w=>w==='{year}'?NYY:w); if(Lw&&!HW&&!NY&&Lw.words)return Lw.words; return lang() === 'en'
+  const getWords = () => { const Lw=window.KAI_L10N; if(BF)return (Lw&&Lw.words_bf)||(lang()==='en'?['SALE','−40%','KAI','BLACK','−50%','WEEK']:['SALE','−40%','KAI','СКИДКА','−50%','НЕДЕЛЯ']); if(Lw&&!HW&&NY&&Lw.words_ny)return Lw.words_ny.map(w=>w==='{year}'?NYY:w); if(Lw&&!HW&&!NY&&Lw.words)return Lw.words; return lang() === 'en'
     ? (HW ? ['BOO','KAI','SPOOKY','GHOST','PUMPKIN','31.10'] : NY ? ['KAI',NYY,'SNOW','MERRY','CHEERS','JOY','NOEL','FROST','GIFTS','JINGLE','COZY','SANTA'] : ['KAI','CRM','Sales','Flow','Growth','Focus'])
     : (HW ? ['BOO','KAI','ЖУТЬ','ПРИЗРАК','ТЫКВА','31.10'] : NY ? ['KAI',NYY,'СНЕГ','ЁЛКА','ЧУДО','ПОДАРКИ','МОРОЗ','ИНЕЙ','КУРАНТЫ','ОЛИВЬЕ','СНЕЖОК','ЗИМА'] : ['KAI','CRM','Продажи','Воронка','Процесс','Рост']); };
   let W=0,H=0,DPR=1,t=0,cx=0,cy=0,baseCell=8;
@@ -5192,7 +5226,16 @@ window.addEventListener('scroll', () => {
     g.clearRect(0,0,R,R);
     g.beginPath();g.moveTo(24,1);g.lineTo(25.6,4.4);g.lineTo(29,6);g.lineTo(25.6,7.6);g.lineTo(24,11);g.lineTo(22.4,7.6);g.lineTo(19,6);g.lineTo(22.4,4.4);g.closePath();g.fill();
     return {ring,dot:readCells(g,R,c),baubles,R};}
-  const M=HW?pumpkinCells():NY?treeCells():markCells();
+  /* Black Week (html.bf): the mark is a price tag — body → «ring» particles, the «%» → «dot» particles */
+  function tagCells(){const R=48,o=document.createElement('canvas');o.width=o.height=R;const g=o.getContext('2d'),c=R/2;
+    g.fillStyle='#fff';g.beginPath();g.moveTo(5,24);g.lineTo(18,8);g.lineTo(42,8);g.lineTo(42,40);g.lineTo(18,40);g.closePath();g.fill();
+    g.font='800 20px "JetBrains Mono",ui-monospace,Menlo,Consolas,monospace';g.textAlign='center';g.textBaseline='middle';
+    g.globalCompositeOperation='destination-out';g.beginPath();g.arc(15,24,2.6,0,Math.PI*2);g.fill();g.fillText('%',30.5,24.5);
+    g.globalCompositeOperation='source-over';
+    const ring=readCells(g,R,c);g.clearRect(0,0,R,R);
+    g.fillText('%',30.5,24.5);
+    return {ring,dot:readCells(g,R,c),R};}
+  const M=HW?pumpkinCells():NY?treeCells():BF?tagCells():markCells();
   const DOTC=_cssRGB('--mark-dot-rgb', HI);
   const particles=M.ring.map(c=>({dot:0,gx:c.gx,gy:c.gy,x:0,y:0,vx:0,vy:0,ph:Math.random()*6.28,wx:0,wy:0,init:0}))
     .concat(M.dot.map(c=>({dot:1,gx:c.gx,gy:c.gy,x:0,y:0,vx:0,vy:0,ph:Math.random()*6.28,wx:0,wy:0,init:0})))
@@ -5282,7 +5325,7 @@ window.addEventListener('scroll', () => {
   const esc=v=>v.replace(/&/g,'&amp;').replace(/</g,'&lt;');
   const touch=matchMedia('(hover: none)').matches;
   /* pains and what Kai does about them live in the markup (#heroPains), already in the page language */
-  function getPairs(){const o=[];const h=document.documentElement,act=h.classList.contains('hw')?'hw':h.classList.contains('ny')?'ny':'';document.querySelectorAll('#heroPains li').forEach(li=>{
+  function getPairs(){const o=[];const h=document.documentElement,act=h.classList.contains('hw')?'hw':h.classList.contains('ny')?'ny':h.classList.contains('bf')?'bf':'';document.querySelectorAll('#heroPains li').forEach(li=>{
     if((li.getAttribute('data-season')||'')!==act)return;
     const sp=li.querySelectorAll('span'),h=li.getAttribute('data-hint')||'';
     if(sp.length>1&&(!h||(!reduce&&h===(touch?'t':'k'))))o.push([sp[0].textContent,sp[1].textContent]);});return o;}
