@@ -629,7 +629,11 @@
   "the sale report takes until New Year": "Le bilan de la promo sera prêt pour le Nouvel An",
   "a pipeline report in one chat message": "un rapport de pipeline en un seul message",
   "the one discount that doesn’t hurt your margin": "la seule remise qui ne rogne pas votre marge",
-  "Kai: yearly −40%, first month −50% — until 30.11": "Kai : annuel −40 %, premier mois −50 % — jusqu’au 30.11"
+  "Kai: yearly −40%, first month −50% — until 30.11": "Kai : annuel −40 %, premier mois −50 % — jusqu’au 30.11",
+  "yearly −40% = 12 months for the price of 6": "annuel −40 % = 12 mois au prix de 6",
+  "subscribe by 30.11 — the discount applies by itself": "abonnez-vous avant le 30.11 — la remise s’applique toute seule",
+  "first month −50%: Pro for €29.50": "premier mois −50 % : Pro pour €29,50",
+  "then €59/mo, cancel any time": "puis €59/mois, résiliable à tout moment"
  },
  "meta": {
   "title": "Assistant IA qui configure amoCRM, Kommo, Bitrix24 et les CRM sur mesure | Kai",

@@ -629,7 +629,11 @@
   "the sale report takes until New Year": "İndirim raporu ancak yılbaşına yetişir",
   "a pipeline report in one chat message": "tek bir sohbet mesajıyla pipeline raporu",
   "the one discount that doesn’t hurt your margin": "marjını zedelemeyen tek indirim",
-  "Kai: yearly −40%, first month −50% — until 30.11": "Kai: yıllıkta %40, ilk ayda %50 indirim — 30.11’e kadar"
+  "Kai: yearly −40%, first month −50% — until 30.11": "Kai: yıllıkta %40, ilk ayda %50 indirim — 30.11’e kadar",
+  "yearly −40% = 12 months for the price of 6": "yıllıkta %40 indirim = 6 ay fiyatına 12 ay",
+  "subscribe by 30.11 — the discount applies by itself": "30.11’e kadar abone ol — indirim kendiliğinden uygulanır",
+  "first month −50%: Pro for €29.50": "ilk ay %50 indirim: Pro €29,50",
+  "then €59/mo, cancel any time": "sonra €59/ay, istediğin zaman iptal"
  },
  "meta": {
   "title": "amoCRM, Kommo, Bitrix24 ve özel CRM'leri kuran yapay zeka asistanı | Kai",

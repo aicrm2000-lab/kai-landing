@@ -629,7 +629,11 @@
   "the sale report takes until New Year": "звіт із розпродажу збирають до Нового року",
   "a pipeline report in one chat message": "звіт по воронці — однією фразою в чаті",
   "the one discount that doesn’t hurt your margin": "єдина знижка, після якої не треба рахувати маржу",
-  "Kai: yearly −40%, first month −50% — until 30.11": "Kai: рік −40%, перший місяць −50% — до 30.11"
+  "Kai: yearly −40%, first month −50% — until 30.11": "Kai: рік −40%, перший місяць −50% — до 30.11",
+  "yearly −40% = 12 months for the price of 6": "рік −40% = 12 місяців за ціною 6",
+  "subscribe by 30.11 — the discount applies by itself": "оформи до 30.11 — знижка застосується сама",
+  "first month −50%: Pro for €29.50": "перший місяць −50%: Pro за €29,50",
+  "then €59/mo, cancel any time": "далі €59/міс, скасувати можна будь-коли"
  },
  "meta": {
   "title": "ШІ-асистент, який налаштовує amoCRM, Kommo, Bitrix24 і власні CRM | Kai",

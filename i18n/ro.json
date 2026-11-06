@@ -629,7 +629,11 @@
   "the sale report takes until New Year": "Raportul promoției e gata de Anul Nou",
   "a pipeline report in one chat message": "un raport al pipeline-ului într-un singur mesaj",
   "the one discount that doesn’t hurt your margin": "singura reducere care nu-ți taie marja",
-  "Kai: yearly −40%, first month −50% — until 30.11": "Kai: anual −40%, prima lună −50% — până pe 30.11"
+  "Kai: yearly −40%, first month −50% — until 30.11": "Kai: anual −40%, prima lună −50% — până pe 30.11",
+  "yearly −40% = 12 months for the price of 6": "anual −40% = 12 luni la prețul a 6",
+  "subscribe by 30.11 — the discount applies by itself": "abonează-te până pe 30.11 — reducerea se aplică singură",
+  "first month −50%: Pro for €29.50": "prima lună −50%: Pro la €29,50",
+  "then €59/mo, cancel any time": "apoi €59/lună, anulezi oricând"
  },
  "meta": {
   "title": "Asistent AI care configurează amoCRM, Kommo, Bitrix24 și CRM-uri personalizate | Kai",

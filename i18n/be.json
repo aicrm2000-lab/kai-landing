@@ -629,7 +629,11 @@
   "the sale report takes until New Year": "справаздачу па распродажы збіраюць да Новага года",
   "a pipeline report in one chat message": "справаздача па варонцы — адной фразай у чаце",
   "the one discount that doesn’t hurt your margin": "адзіная зніжка, пасля якой не трэба лічыць маржу",
-  "Kai: yearly −40%, first month −50% — until 30.11": "Kai: год −40%, першы месяц −50% — да 30.11"
+  "Kai: yearly −40%, first month −50% — until 30.11": "Kai: год −40%, першы месяц −50% — да 30.11",
+  "yearly −40% = 12 months for the price of 6": "год −40% = 12 месяцаў па цане 6",
+  "subscribe by 30.11 — the discount applies by itself": "аформі да 30.11 — зніжка прымяняецца сама",
+  "first month −50%: Pro for €29.50": "першы месяц −50%: Pro за €29,50",
+  "then €59/mo, cancel any time": "далей €59/мес, адмяніць можна ў любы момант"
  },
  "meta": {
   "title": "AI-асістэнт, які наладжвае amoCRM, Kommo, Bitrix24 і кастамныя CRM | Kai",

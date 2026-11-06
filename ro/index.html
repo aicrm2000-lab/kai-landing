@@ -1966,7 +1966,30 @@ html.bf {
   --void: #050506; --carbon: #0C0C0E; --obsidian: #131316; --graphite: #27272C; --smoke: #35353B;
   --ink: #F7F7F9; --paper: #F7F7F9; --text: #CDCDD3; --mist: #CDCDD3; --muted: #8C8C95; --fog: #8C8C95; --dim: #5C5C64; --ash: #5C5C64;
   --good: #F7F7F9; --green: #F7F7F9; --warn: #F7F7F9; --orange: #F7F7F9;
+  /* жёлтый — только для скидок (Тихон 06.11: ленты SALE и значок жёлтые) и для логотипа-частиц */
+  --sale: #FFD60A; --sale-rgb: 255,214,10; --mark-rgb: 255,214,10; --mark-hi-rgb: 255,238,140; --mark-dot-rgb: 255,214,10;
 }
+html.bf .bf-ribbon i, html.bf .bf-pct, html.bf .plan-price small b.bf-pct, html.bf .bill-btn em, html.bf .bf-tag, html.bf .bf-chip { background: var(--sale); border-color: var(--sale); color: #0A0A0A; }
+html.bf .hero-tag .br, html.bf .hero-tag .k, html.bf .hero-tag .cur { color: var(--sale); }
+/* ленты SALE через всю страницу над и под логотипом (бегущая строка; при reduced-motion — стоят) */
+.bf-tapes { display: none; position: absolute; left: 0; right: 0; top: 0; height: calc(clamp(300px,50vh,600px) + 120px); z-index: 1; pointer-events: none; overflow: hidden; }
+html.bf .bf-tapes { display: block; }
+.bf-tape { position: absolute; left: -6%; width: 112%; padding: 9px 0; background: var(--sale); color: #0A0A0A; font: 800 13px/1 var(--mono);
+  letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,.5); }
+.bf-tape.t1 { top: 9%; transform: rotate(-3deg); }
+.bf-tape.t2 { bottom: 5%; transform: rotate(2.5deg); background: #0A0A0A; color: var(--sale); border-top: 1px solid var(--sale); border-bottom: 1px solid var(--sale); }
+.bf-tape > div { display: inline-flex; animation: bfTape 32s linear infinite; }
+.bf-tape.t2 > div { animation-direction: reverse; }
+.bf-tape span { padding: 0 20px; }
+@keyframes bfTape { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .bf-tape > div { animation: none; } }
+.bf-chip { display: none; font: 800 10px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; padding: 3px 6px; border-radius: 5px; margin-left: 8px; vertical-align: 1px; font-style: normal; }
+html.bf .bf-chip { display: inline-block; }
+/* сноска под тарифами в Чёрную неделю — жёлтая панель с меткой SALE (Тихон: «в футере тарифов тоже акцент») */
+html.bf .pricing-footer.bf-only { margin-top: 14px; padding: 14px 18px 14px 56px; position: relative; border: 1px solid var(--sale); border-radius: 12px;
+  background: rgba(var(--sale-rgb), .07); color: var(--mist); }
+html.bf .pricing-footer.bf-only::before { content: 'SALE'; position: absolute; left: 14px; top: 14px; font: 800 10px/1 var(--mono); letter-spacing: .12em;
+  padding: 4px 6px; border-radius: 5px; background: var(--sale); color: #0A0A0A; }
 html.bf .nav-cta, html.bf .btn-primary, html.bf .ka-cta, html.bf .kd-u, html.bf .kd-opt.pick, html.bf .kd-go, html.bf .kd-cta, html.bf .ba-knob,
 html.bf .ko-ok, html.bf .ko-cta, html.bf .mobile-menu .mobile-menu-cta, html.bf .mobile-menu .mobile-menu-cta:hover, html.bf .plan-cta-primary,
 html.bf .plan-badge, html.bf .bc-ico, html.bf .kc-go, html.bf .chat-badge, html.bf .cookie-btn-accept, html.bf .install-cta, html.bf .footer-cta,
@@ -2941,6 +2964,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
   <div class="hero-gridlines"></div>
   <canvas id="kai" aria-hidden="true"></canvas>
   <div class="hero-frame"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+  <div class="bf-tapes" aria-hidden="true"><div class="bf-tape t1"><div><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span><span>Sale · −40%</span><span>Black Week · 23–30.11</span><span>Sale · −50%</span><span>Kai · AI CRM</span></div></div><div class="bf-tape t2"><div><span>Sale · −50%</span><span>First month</span><span>Sale · −40%</span><span>Yearly</span><span>Black Week</span><span>Sale · −50%</span><span>First month</span><span>Sale · −40%</span><span>Yearly</span><span>Black Week</span><span>Sale · −50%</span><span>First month</span><span>Sale · −40%</span><span>Yearly</span><span>Black Week</span><span>Sale · −50%</span><span>First month</span><span>Sale · −40%</span><span>Yearly</span><span>Black Week</span></div></div></div>
   <div class="hw-deco" aria-hidden="true"><span class="hw-web l"></span><span class="hw-web r"></span><span class="hw-fog"></span><span class="hw-spider"><i></i></span><div class="hw-bats"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div></div>
   <div class="ny-deco" aria-hidden="true"><span class="ny-garland"><i></i><i></i></span><span class="ny-drift"></span><span class="ny-gifts"><i class="ny-gift g1"></i><i class="ny-gift g2"></i><i class="ny-gift g3"></i></span></div>
 
@@ -2969,6 +2993,8 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
     <li data-season="bf"><span>Promoția s-a terminat, lead-urile sunt tot în notițele din telefon</span><span>un contact și o tranzacție create dintr-un mesaj text sau vocal</span></li>
     <li data-season="bf"><span>Reducerea a plecat, motivul pierderii n-a fost notat</span><span>fiecare tranzacție are sursă și motiv de pierdere</span></li>
     <li data-season="bf"><span>Raportul promoției e gata de Anul Nou</span><span>un raport al pipeline-ului într-un singur mesaj</span></li>
+    <li data-season="bf"><span>anual −40% = 12 luni la prețul a 6</span><span>abonează-te până pe 30.11 — reducerea se aplică singură</span></li>
+    <li data-season="bf"><span>prima lună −50%: Pro la €29,50</span><span>apoi €59/lună, anulezi oricând</span></li>
     <li data-season="bf"><span>singura reducere care nu-ți taie marja</span><span>Kai: anual −40%, prima lună −50% — până pe 30.11</span></li>
     <li><span>un lead fără sursă — un bon fără total</span><span>sursele de lead-uri, configurate pentru tine</span></li>
     <li><span>o tranzacție fără sarcină — o tranzacție fără viitor</span><span>o sarcină automată la fiecare etapă din pipeline</span></li>
@@ -4099,6 +4125,7 @@ window.KAI_LANG_SLUG={be:'by',uk:'ua'};
         <li><a href="#api">Acțiuni API</a></li>
         <li><a href="https://app.aii-crm.com/chat?lang=en" target="_blank" rel="noopener" class="chat-link">Chat web</a></li>
         <li><a href="https://t.me/aiicrm_bot" target="_blank" rel="noopener">Încearcă</a></li>
+        <li><a href="#pricing">Planuri</a><em class="bf-chip">Sale −40%</em></li>
         <li><a href="https://app.aii-crm.com/account?lang=ro" class="acct-link">Cont</a></li>
         <li><a href="https://app.aii-crm.com/signup?lang=ro" class="acct-link signup-link">Creează cont</a></li>
       </ul>
@@ -5179,7 +5206,7 @@ window.addEventListener('scroll', () => {
   const cv = document.getElementById('kai'); if (!cv) return;
   const ctx = cv.getContext('2d', { alpha: true });
   const _cssRGB = (n, d) => { const v = getComputedStyle(document.documentElement).getPropertyValue(n).trim().split(',').map(Number); return v.length === 3 && v.every(x => x >= 0) ? v : d; };
-  const ACC = _cssRGB('--accent-rgb', [124,92,255]), HI = _cssRGB('--accent-hi-rgb', [178,150,255]);
+  const ACC = _cssRGB('--mark-rgb', _cssRGB('--accent-rgb', [124,92,255])), HI = _cssRGB('--mark-hi-rgb', _cssRGB('--accent-hi-rgb', [178,150,255]));   /* --mark-rgb: own colour for the particles (Black Week: yellow) */
   const MONO = '800 %px "JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace';
   const rgba = (c,a) => 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + a + ')';
   const lang = () => (document.documentElement.lang === 'ru' ? 'ru' : 'en');
@@ -5228,16 +5255,32 @@ window.addEventListener('scroll', () => {
     g.clearRect(0,0,R,R);
     g.beginPath();g.moveTo(24,1);g.lineTo(25.6,4.4);g.lineTo(29,6);g.lineTo(25.6,7.6);g.lineTo(24,11);g.lineTo(22.4,7.6);g.lineTo(19,6);g.lineTo(22.4,4.4);g.closePath();g.fill();
     return {ring,dot:readCells(g,R,c),baubles,R};}
-  /* Black Week (html.bf): the mark is a price tag — body → «ring» particles, the «%» → «dot» particles */
-  function tagCells(){const R=48,o=document.createElement('canvas');o.width=o.height=R;const g=o.getContext('2d'),c=R/2;
-    g.fillStyle='#fff';g.beginPath();g.moveTo(5,24);g.lineTo(18,8);g.lineTo(42,8);g.lineTo(42,40);g.lineTo(18,40);g.closePath();g.fill();
-    g.font='800 20px "JetBrains Mono",ui-monospace,Menlo,Consolas,monospace';g.textAlign='center';g.textBaseline='middle';
-    g.globalCompositeOperation='destination-out';g.beginPath();g.arc(15,24,2.6,0,Math.PI*2);g.fill();g.fillText('%',30.5,24.5);
-    g.globalCompositeOperation='source-over';
-    const ring=readCells(g,R,c);g.clearRect(0,0,R,R);
-    g.fillText('%',30.5,24.5);
+  /* Black Week (html.bf): the mark — one of several shapes (?mark=pct|tag|bag|burst|euro to preview; BF_MARK is the chosen one).
+     At 48 cells fine glyphs turn to noise, so every shape is a bold silhouette; «dot» particles = the second colour. */
+  const BF_MARK=(new URLSearchParams(location.search).get('mark')||'pct').toLowerCase();
+  function bfCells(kind){const R=48,o=document.createElement('canvas');o.width=o.height=R;const g=o.getContext('2d'),c=R/2;
+    g.fillStyle='#fff';g.strokeStyle='#fff';g.lineCap='round';g.lineJoin='round';
+    const cut=()=>{g.globalCompositeOperation='destination-out';},keep=()=>{g.globalCompositeOperation='source-over';};
+    const circle=(x,y,r)=>{g.beginPath();g.arc(x,y,r,0,Math.PI*2);g.fill();};
+    let dot=[];
+    if(kind==='tag'){g.beginPath();g.moveTo(4,24);g.lineTo(17,9);g.lineTo(43,9);g.lineTo(43,39);g.lineTo(17,39);g.closePath();g.fill();
+      cut();circle(15,24,3);keep();const ring=readCells(g,R,c);g.clearRect(0,0,R,R);circle(15,24,1.6);return {ring,dot:readCells(g,R,c),R};}
+    if(kind==='bag'){g.beginPath();g.roundRect(9,17,30,27,4);g.fill();g.lineWidth=3.2;g.beginPath();g.arc(24,17,7,Math.PI,0);g.stroke();
+      cut();g.lineWidth=4;g.beginPath();g.moveTo(17,37);g.lineTo(31,23);g.stroke();circle(18,25,2.6);circle(30,35,2.6);keep();
+      const ring=readCells(g,R,c);g.clearRect(0,0,R,R);g.lineWidth=2.2;g.beginPath();g.moveTo(17,37);g.lineTo(31,23);g.stroke();circle(18,25,1.3);circle(30,35,1.3);
+      return {ring,dot:readCells(g,R,c),R};}
+    if(kind==='burst'){g.beginPath();for(let i=0;i<24;i++){const a=i*Math.PI/12,r=i%2?16:22;g.lineTo(24+Math.cos(a)*r,24+Math.sin(a)*r);}g.closePath();g.fill();
+      cut();g.lineWidth=3.6;g.beginPath();g.moveTo(17,32);g.lineTo(31,16);g.stroke();circle(18,18,2.8);circle(30,30,2.8);keep();
+      const ring=readCells(g,R,c);g.clearRect(0,0,R,R);g.lineWidth=1.8;g.beginPath();g.moveTo(17,32);g.lineTo(31,16);g.stroke();circle(18,18,1.4);circle(30,30,1.4);
+      return {ring,dot:readCells(g,R,c),R};}
+    if(kind==='euro'){g.font='900 46px "JetBrains Mono",ui-monospace,Menlo,Consolas,monospace';g.textAlign='center';g.textBaseline='middle';g.fillText('€',24,26);
+      const ring=readCells(g,R,c);return {ring,dot,R};}
+    /* pct (default): a bold percent sign — two rings and a thick bar */
+    g.lineWidth=5;g.beginPath();g.moveTo(11,38);g.lineTo(37,10);g.stroke();
+    g.lineWidth=4.6;g.beginPath();g.arc(13.5,13.5,7.2,0,Math.PI*2);g.stroke();g.beginPath();g.arc(34.5,34.5,7.2,0,Math.PI*2);g.stroke();
+    const ring=readCells(g,R,c);g.clearRect(0,0,R,R);circle(13.5,13.5,2.2);circle(34.5,34.5,2.2);
     return {ring,dot:readCells(g,R,c),R};}
-  const M=HW?pumpkinCells():NY?treeCells():BF?tagCells():markCells();
+  const M=HW?pumpkinCells():NY?treeCells():BF?bfCells(BF_MARK):markCells();
   const DOTC=_cssRGB('--mark-dot-rgb', HI);
   const particles=M.ring.map(c=>({dot:0,gx:c.gx,gy:c.gy,x:0,y:0,vx:0,vy:0,ph:Math.random()*6.28,wx:0,wy:0,init:0}))
     .concat(M.dot.map(c=>({dot:1,gx:c.gx,gy:c.gy,x:0,y:0,vx:0,vy:0,ph:Math.random()*6.28,wx:0,wy:0,init:0})))
