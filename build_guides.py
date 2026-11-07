@@ -78,7 +78,7 @@ def index_page(lang: str, guides: list, d=None) -> str:
 <link rel="canonical" href="{self_url}">
 {i18n_pages.hreflang_block(i18n_pages.guides_index_path)}
 <meta property="og:type" content="website"><meta property="og:site_name" content="Kai"><meta property="og:locale" content="{i18n_pages.LOCALES[lang]}">
-<meta property="og:title" content="{html.escape(t)}"><meta property="og:description" content="{html.escape(dsc)}"><meta property="og:image" content="{BASE}og-image.png"><meta property="og:url" content="{self_url}">
+<meta property="og:title" content="{html.escape(t)}"><meta property="og:description" content="{html.escape(dsc)}"><meta property="og:image" content="{BASE}og-image-v5.png"><meta property="og:url" content="{self_url}">
 <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap">
 <style>{INDEX_CSS}/* Halloween (html.hw): та же палитра, что на главной, чате и в кабинете */
