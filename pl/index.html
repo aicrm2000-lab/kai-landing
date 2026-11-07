@@ -4,7 +4,7 @@
 <script>window.KAI_L10N={"lang": "pl", "words": ["KAI", "CRM", "SPRZEDAŻ", "PRZEPŁYW", "WZROST", "FOKUS"], "words_ny": ["KAI", "{year}", "ŚNIEG", "ŚWIĘTA", "TOAST", "RADOŚĆ", "KOLĘDA", "MRÓZ", "PREZENTY", "DZWONKI", "CIEPŁO", "MIKOŁAJ"], "words_bf": ["SALE", "−40%", "KAI", "RABAT", "−50%", "TYDZIEŃ"], "ui": {"theme_hw": "Tryb Halloween", "theme_ny": "Tryb świąteczny", "turn_on": ": włącz", "turn_off": ": wyłącz", "lang_label": "Język"}};</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://app.aii-crm.com https://ai-crm-bot-production.up.railway.app; connect-src 'self' https://app.aii-crm.com https://ai-crm-bot-production.up.railway.app; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://mc.yandex.ru https://mc.yandex.com; frame-src https://app.aii-crm.com https://ai-crm-bot-production.up.railway.app; connect-src 'self' https://app.aii-crm.com https://ai-crm-bot-production.up.railway.app https://mc.yandex.ru https://mc.yandex.com; base-uri 'self'; form-action 'self'">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Asystent AI do amoCRM, Kommo, Bitrix24, Pipedrive i własnego CRM | Kai</title>
@@ -5495,6 +5495,14 @@ navOnScroll();
   };
   window.kaiAnalyticsStart=function(){ if(on) return; V=vid(); on=true; kaiTrack('pageview'); };
   window.kaiAnalyticsStop=function(){ on=false; V=''; forget(); };
+  /* Яндекс.Метрика (07.11): только после согласия на cookie, тем же хуком; KAI_YM = номер счётчика, 0 — выключено;
+     ?me=1 (kai_no_track) глушит и её. Вебвизор выключен — без записи экранов посетителей. */
+  var KAI_YM=0;
+  function ymStart(){ if(!KAI_YM||window.ym) return; try{ if(localStorage.getItem('kai_no_track')==='1') return; }catch(e){}
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
+      k=e.createElement(t);a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a);})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+    ym(KAI_YM,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:false}); }
+  var _kaiStart=window.kaiAnalyticsStart; window.kaiAnalyticsStart=function(){ _kaiStart(); ymStart(); };
   window.kaiVid=function(){ return on?V:''; };
   /* ?me=1 (владелец, команда): один раз сказать серверу, что этот IP и cookie — внутренние; дальше бикон молчит */
   try{ if(localStorage.getItem('kai_no_track')==='1'&&!localStorage.getItem('kai_me_sent')){ localStorage.setItem('kai_me_sent','1');
