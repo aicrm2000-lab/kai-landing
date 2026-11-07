@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<title>Страницы нет | Kai</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+  :root { --bg:#0B0A14; --void:#0B0A14; --paper:#F4F2FF; --mist:#CBC5E4; --fog:#8B83AC; --accent:#7C5CFF; --line:rgba(255,255,255,.1);
+          --font:'Manrope',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace; }
+  * { box-sizing:border-box }
+  html, body { height:100% }
+  body { margin:0; background:var(--bg); color:var(--mist); font:16px/1.55 var(--font); display:flex; align-items:center; justify-content:center; padding:24px 16px; }
+  main { max-width:560px; width:100%; text-align:center }
+  .mark { width:64px; height:64px; margin:0 auto 22px; display:block }
+  .code { font:600 12px/1 var(--mono); letter-spacing:.22em; color:var(--fog); text-transform:uppercase; margin:0 0 10px }
+  h1 { font:800 clamp(28px,6vw,40px)/1.15 var(--font); color:var(--paper); letter-spacing:-.02em; margin:0 0 12px; text-wrap:balance }
+  p { margin:0 0 8px; color:var(--mist) }
+  p.sub { color:var(--fog); font-size:15px }
+  .path { font:500 13px var(--mono); color:var(--fog); word-break:break-all; margin:14px 0 24px }
+  .btns { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:0 0 26px }
+  a.btn { display:inline-flex; align-items:center; min-height:42px; padding:0 18px; border-radius:11px; border:1px solid var(--line); color:var(--paper); text-decoration:none; font-weight:600; font-size:15px }
+  a.btn.pri { background:var(--accent); border-color:var(--accent); color:#fff }
+  a.btn:hover { border-color:var(--accent) }
+  .langs { display:none; border-top:1px solid var(--line); padding-top:18px }
+  .langs.on { display:block }
+  .langs b { display:block; font-weight:600; color:var(--mist); margin-bottom:10px; font-size:14px }
+  .langs a { display:inline-block; margin:3px 4px; padding:5px 10px; border-radius:8px; border:1px solid var(--line); color:var(--mist); text-decoration:none; font-size:13px }
+  .langs a:hover { border-color:var(--accent); color:var(--paper) }
+  .en, .ru { display:none } html[data-l="en"] .en, html[data-l="ru"] .ru { display:block } html:not([data-l]) .ru, html:not([data-l]) .en { display:block }
+  html:not([data-l]) .en { margin-top:18px; border-top:1px solid var(--line); padding-top:18px }
+  @media (prefers-reduced-motion:no-preference) { .mark { animation:spin 14s linear infinite } @keyframes spin { to { transform:rotate(360deg) } } }
+</style>
+<script>
+  /* язык по браузеру: иначе показываем оба блока; русская страница — для ru/be/uk, остальным — английская */
+  (function(){try{var l=(navigator.language||'').slice(0,2).toLowerCase();document.documentElement.setAttribute('data-l',/^(ru|be|uk)$/.test(l)?'ru':'en');
+    if(!/^(ru|be|uk)$/.test(l)){document.documentElement.lang='en';document.title='Page not found | Kai';}}catch(e){}})();
+</script>
+</head>
+<body>
+<main>
+  <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M24.32 16.87A8.36 8.36 0 1 1 16.00 7.64" stroke="#F4F2FF" stroke-width="3.81" stroke-linecap="round" fill="none"/><circle cx="21.55" cy="9.75" r="2.38" fill="#7C5CFF"/></svg>
+  <p class="code">404</p>
+  <div class="ru">
+    <h1>Такой страницы нет</h1>
+    <p>Адрес устарел или набран с опечаткой. Kai посмотрел в CRM: сделки с таким названием тоже нет.</p>
+    <p class="path" id="pathRu"></p>
+    <div class="btns"><a class="btn pri" href="/">На главную</a><a class="btn" href="/guides/">Гайды</a><a class="btn" href="https://app.aii-crm.com/chat?lang=ru">Веб-чат</a></div>
+  </div>
+  <div class="en">
+    <h1>There is no such page</h1>
+    <p>The link is outdated or has a typo. Kai checked the CRM: no deal by that name either.</p>
+    <p class="path" id="pathEn"></p>
+    <div class="btns"><a class="btn pri" href="/en/">Home</a><a class="btn" href="/guides/en/">Guides</a><a class="btn" href="https://app.aii-crm.com/chat?lang=en">Web chat</a></div>
+  </div>
+  <div class="langs" id="langs">
+    <b class="ru">Может быть, нужна другая языковая версия?</b><b class="en">Looking for another language?</b>
+    <a href="/">Русский</a><a href="/en/">English</a><a href="/de/">Deutsch</a><a href="/fr/">Français</a><a href="/es/">Español</a><a href="/it/">Italiano</a>
+    <a href="/pl/">Polski</a><a href="/pt/">Português</a><a href="/ro/">Română</a><a href="/tr/">Türkçe</a><a href="/by/">Беларуская</a><a href="/ua/">Українська</a>
+  </div>
+</main>
+<script>
+  (function(){try{
+    var p=location.pathname; var t=document.createTextNode(p); document.getElementById('pathRu').appendChild(t); document.getElementById('pathEn').appendChild(t.cloneNode());
+    /* короткий первый сегмент (/ue/, /eng/) — скорее всего искали языковую версию */
+    var seg=(p.split('/')[1]||''); if(/^[a-z]{2,3}$/i.test(seg)) document.getElementById('langs').classList.add('on');
+  }catch(e){}})();
+</script>
+</body>
+</html>
