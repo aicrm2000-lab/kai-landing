@@ -14,6 +14,10 @@
   * { box-sizing:border-box }
   html, body { height:100%; margin:0; background:var(--bg); color:var(--mist); font:16px/1.5 var(--font); overflow:hidden }
   canvas { position:fixed; inset:0; width:100%; height:100%; display:block }
+  /* затемнение под текстом и шапкой — дождь не мешает читать */
+  .shade { position:fixed; inset:0; z-index:1; pointer-events:none;
+    background: linear-gradient(180deg, rgba(11,10,20,.85) 0, rgba(11,10,20,0) 110px),
+                radial-gradient(70% 78% at 14% 100%, rgba(11,10,20,.96) 0, rgba(11,10,20,.9) 38%, rgba(11,10,20,0) 72%); }
   .top { position:fixed; top:0; left:0; right:0; display:flex; align-items:center; justify-content:space-between; padding:18px 24px; z-index:2 }
   .top a { color:var(--paper); text-decoration:none; font-weight:600; font-size:17px; letter-spacing:-.01em; display:inline-flex; align-items:center; gap:9px }
   .top svg { width:22px; height:22px }
@@ -24,26 +28,33 @@
   p { margin:0 0 18px; color:var(--mist); max-width:46ch }
   .path { font:500 12px var(--mono); color:var(--fog); word-break:break-all; margin:-6px 0 18px }
   .btns { display:flex; gap:10px; flex-wrap:wrap }
-  a.btn { display:inline-flex; align-items:center; gap:8px; min-height:42px; padding:0 18px; border-radius:11px; border:1px solid var(--line); color:var(--paper); text-decoration:none; font-weight:600; font-size:15px; background:rgba(11,10,20,.55); backdrop-filter:blur(6px) }
+  a.btn { display:inline-flex; align-items:center; gap:8px; min-height:42px; padding:0 18px; border-radius:11px; border:1px solid var(--line); color:var(--paper); text-decoration:none; font-weight:600; font-size:15px; background:rgba(11,10,20,.7) }
   a.btn.pri { background:var(--paper); border-color:var(--paper); color:var(--bg) }
   a.btn:hover { border-color:var(--accent) }
   .langs { display:none; margin-top:16px; max-width:520px }
   .langs.on { display:block }
-  .langs a { display:inline-block; margin:0 6px 6px 0; padding:4px 9px; border-radius:8px; border:1px solid var(--line); color:var(--mist); text-decoration:none; font-size:12.5px; background:rgba(11,10,20,.55) }
+  .langs a { display:inline-block; margin:0 6px 6px 0; padding:4px 9px; border-radius:8px; border:1px solid var(--line); color:var(--mist); text-decoration:none; font-size:12.5px; background:rgba(11,10,20,.7) }
   .langs a:hover { border-color:var(--accent); color:var(--paper) }
-  .en, .ru { display:none } html[data-l="en"] .en, html[data-l="ru"] .ru { display:block } html:not([data-l]) .ru { display:block }
-  .top .en, .top .ru { display:none } html[data-l="en"] .top .en, html[data-l="ru"] .top .ru, html:not([data-l]) .top .ru { display:inline-flex }
+  .en, .ru { display:none } html[data-l="en"] .en, html[data-l="ru"] .ru { display:block } html:not([data-l]) .en { display:block }
+  .top .en, .top .ru { display:none } html[data-l="en"] .top .en, html[data-l="ru"] .top .ru, html:not([data-l]) .top .en { display:inline-flex }
   @media (max-width:560px) { .top { padding:14px 16px } .copy { left:16px; right:16px } }
 </style>
 <script>
-  (function(){try{var l=(navigator.language||'').slice(0,2).toLowerCase(),ru=/^(ru|be|uk)$/.test(l);
-    document.documentElement.setAttribute('data-l',ru?'ru':'en'); if(!ru){document.documentElement.lang='en';document.title='Page not found | Kai';}}catch(e){}})();
+  /* Язык страницы: 1) языковой сегмент в адресе (/en/…, /de/… → английская версия 404; /by/, /ua/ → русская);
+     2) иначе язык браузера: ru/be/uk → русская, остальные → английская (так же выбирает язык главная). */
+  (function(){try{
+    var seg=(location.pathname.split('/')[1]||'').toLowerCase(),ru;
+    if(/^(en|de|fr|es|it|pl|pt|ro|tr)$/.test(seg))ru=false;else if(/^(by|ua|be|uk)$/.test(seg))ru=true;
+    else ru=/^(ru|be|uk)$/.test((navigator.language||'').slice(0,2).toLowerCase());
+    document.documentElement.setAttribute('data-l',ru?'ru':'en');if(!ru){document.documentElement.lang='en';document.title='Page not found | Kai';}
+  }catch(e){}})();
 </script>
 </head>
 <body>
 <canvas id="rain" aria-hidden="true"></canvas>
+<div class="shade" aria-hidden="true"></div>
 <div class="top">
-  <a href="/" aria-label="Kai"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M24.32 16.87A8.36 8.36 0 1 1 16.00 7.64" stroke="#F4F2FF" stroke-width="3.81" stroke-linecap="round" fill="none"/><circle cx="21.55" cy="9.75" r="2.38" fill="#7C5CFF"/></svg>Kai</a>
+  <a href="/" aria-label="Kai"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M24.32 16.87A8.36 8.36 0 1 1 16.00 7.64" stroke="#F4F2FF" stroke-width="3.81" stroke-linecap="round" fill="none"/><circle cx="21.55" cy="9.75" r="2.38" fill="#F4F2FF"/></svg>Kai</a>
   <a class="chat ru" href="https://app.aii-crm.com/chat?lang=ru">Веб-чат ↗</a><a class="chat en" href="https://app.aii-crm.com/chat?lang=en">Web chat ↗</a>
 </div>
 <div class="copy">
@@ -70,57 +81,60 @@
 (function(){
   try{
     var p=location.pathname,t=document.createTextNode(p);document.getElementById('pathRu').appendChild(t);document.getElementById('pathEn').appendChild(t.cloneNode());
-    var seg=(p.split('/')[1]||'');if(/^[a-z]{2,3}$/i.test(seg))document.getElementById('langs').classList.add('on');   /* /ue/ — искали язык */
+    var seg=(p.split('/')[1]||'');if(/^[a-z]{2,3}$/i.test(seg)&&!/^(en|de|fr|es|it|pl|pt|ro|tr|by|ua)$/i.test(seg))document.getElementById('langs').classList.add('on');   /* /ue/ — искали язык */
   }catch(e){}
 
-  /* Цифровой дождь: нули и единицы падают тусклыми, а в клетках маски «404» горят ярко — цифра проступает из потока
-     (как знак Kai из частиц на главной). При reduced-motion — один статичный кадр. */
+  /* Цифровой дождь. В каждой клетке живёт ровно один символ: при смене клетка сначала закрашивается фоном (иначе новый
+     знак ложится поверх ещё не погасшего старого — «двоение»). Фигура «404» — отдельный слой с непрозрачными клетками,
+     он перекрывает дождь, а не смешивается с ним. ?still=1 или reduced-motion — один статичный кадр. */
   var cv=document.getElementById('rain'),g=cv.getContext('2d'),mk=document.createElement('canvas'),mg=mk.getContext('2d');
-  var CELL=14,W,H,cols,rows,heads,speeds,mask,maskLayer,mctx,last=0,dpr=Math.min(2,devicePixelRatio||1),
-      still=matchMedia('(prefers-reduced-motion: reduce)').matches||/[?&]still=1/.test(location.search);   /* ?still=1 — статичный кадр (превью) */
+  var BG='#0B0A14',CELL=16,W,H,cols,rows,heads,speeds,grid,mask,maskLayer,mctx,last=0,dpr=Math.min(2,devicePixelRatio||1),
+      still=matchMedia('(prefers-reduced-motion: reduce)').matches||/[?&]still=1/.test(location.search);
+  function ch(){return Math.random()<.5?'0':'1';}
   function buildMask(){
     mask=[];mk.width=cols;mk.height=rows;mg.clearRect(0,0,cols,rows);
-    var fs=Math.min(cols*.46,rows*.62);   /* высота «404» в клетках */
+    var fs=Math.min(cols*.46,rows*.62);
     mg.fillStyle='#fff';mg.textAlign='center';mg.textBaseline='middle';mg.font='800 '+fs+'px Manrope, system-ui, sans-serif';
     mg.fillText('404',cols/2,rows*.44);
     var d=mg.getImageData(0,0,cols,rows).data;
-    for(var y=0;y<rows;y++)for(var x=0;x<cols;x++)if(d[(y*cols+x)*4+3]>110)mask.push([x,y]);
+    for(var y=0;y<rows;y++)for(var x=0;x<cols;x++)if(d[(y*cols+x)*4+3]>110)mask.push({x:x,y:y,c:ch(),a:.55+Math.random()*.45,acc:Math.random()<.07});
   }
+  function cell(ctx,x,y){ctx.fillStyle=BG;ctx.fillRect(x*CELL,y*CELL,CELL,CELL);}
+  function glyph(ctx,x,y,c,style){ctx.fillStyle=style;ctx.fillText(c,x*CELL+CELL/2,y*CELL+CELL/2);}
+  function mono(ctx){ctx.font='700 '+(CELL-2)+'px JetBrains Mono, ui-monospace, monospace';ctx.textAlign='center';ctx.textBaseline='middle';}
+  function paintMaskAll(){mctx.clearRect(0,0,W,H);mono(mctx);for(var i=0;i<mask.length;i++)paintMaskCell(mask[i]);}
+  function paintMaskCell(m){cell(mctx,m.x,m.y);glyph(mctx,m.x,m.y,m.c,m.acc?'rgba(124,92,255,'+m.a+')':'rgba(244,242,255,'+m.a+')');}
+  function twinkle(){mono(mctx);var n=Math.max(1,Math.round(mask.length*.06));for(var k=0;k<n;k++){var m=mask[(Math.random()*mask.length)|0];m.c=ch();m.a=.55+Math.random()*.45;paintMaskCell(m);}}
   function size(){
-    W=innerWidth;H=innerHeight;if(W<CELL*4||H<CELL*4)return;   /* скрытая вкладка: размер 0 — дождёмся resize */
+    W=innerWidth;H=innerHeight;if(W<CELL*4||H<CELL*4)return;
     cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';g.setTransform(dpr,0,0,dpr,0,0);
-    cols=Math.ceil(W/CELL);rows=Math.ceil(H/CELL);heads=[];speeds=[];
-    for(var i=0;i<cols;i++){heads.push(still?Math.random()*rows:-Math.random()*rows);speeds.push(.35+Math.random()*.9);}
+    cols=Math.ceil(W/CELL);rows=Math.ceil(H/CELL);heads=[];speeds=[];grid=[];
+    for(var i=0;i<cols;i++){heads.push(still?Math.random()*rows:-Math.random()*rows);speeds.push(.3+Math.random()*.7);grid.push([]);}
     buildMask();maskLayer=document.createElement('canvas');maskLayer.width=W*dpr;maskLayer.height=H*dpr;mctx=maskLayer.getContext('2d');mctx.setTransform(dpr,0,0,dpr,0,0);
-    g.fillStyle='#0B0A14';g.fillRect(0,0,W,H);paintMask();
-  }
-  function ch(){return Math.random()<.5?'0':'1';}
-  function paintMask(){
-    mctx.clearRect(0,0,W,H);mctx.font='700 '+(CELL-1)+'px JetBrains Mono, ui-monospace, monospace';mctx.textBaseline='top';
-    for(var i=0;i<mask.length;i++){var x=mask[i][0],y=mask[i][1],a=.55+Math.random()*.45;
-      mctx.fillStyle=Math.random()<.08?'rgba(124,92,255,'+a+')':'rgba(244,242,255,'+a+')';mctx.fillText(ch(),x*CELL+2,y*CELL+1);}
+    g.fillStyle=BG;g.fillRect(0,0,W,H);paintMaskAll();
   }
   function frame(ts){
-    if(ts-last>42){last=ts;
-      g.fillStyle='rgba(11,10,20,.16)';g.fillRect(0,0,W,H);   /* шлейфы гаснут */
-      g.font='500 '+(CELL-1)+'px JetBrains Mono, ui-monospace, monospace';g.textBaseline='top';
-      for(var i=0;i<cols;i++){var y=Math.floor(heads[i]);
-        if(y>=0&&y<rows){g.fillStyle='rgba(244,242,255,.9)';g.fillText(ch(),i*CELL+2,y*CELL+1);}          /* голова капли */
-        if(y-1>=0&&y-1<rows){g.fillStyle='rgba(124,92,255,.45)';g.fillText(ch(),i*CELL+2,(y-1)*CELL+1);}  /* тело — акцент */
-        heads[i]+=speeds[i];if(heads[i]>rows+Math.random()*40){heads[i]=-Math.random()*30;speeds[i]=.35+Math.random()*.9;}
+    if(ts-last>48){last=ts;
+      g.fillStyle='rgba(11,10,20,.14)';g.fillRect(0,0,W,H);   /* шлейф гаснет */
+      mono(g);
+      for(var i=0;i<cols;i++){var y=Math.floor(heads[i]),py=Math.floor(heads[i]-speeds[i]);
+        if(y!==py){   /* голова перешла в новую клетку: ей — новый символ, предыдущей — её же символ, но тусклее */
+          if(y>=0&&y<rows){grid[i][y]=ch();cell(g,i,y);glyph(g,i,y,grid[i][y],'rgba(244,242,255,.92)');}
+          if(py>=0&&py<rows&&grid[i][py]){cell(g,i,py);glyph(g,i,py,grid[i][py],'rgba(124,92,255,.55)');}
+        }
+        heads[i]+=speeds[i];if(heads[i]>rows+Math.random()*60){heads[i]=-Math.random()*40;speeds[i]=.3+Math.random()*.7;}
       }
-      if(Math.random()<.35)paintMask();
+      if(Math.random()<.5)twinkle();
       g.drawImage(maskLayer,0,0,W,H);
     }
     if(!still)requestAnimationFrame(frame);
   }
   function ready(){return !!(cols&&rows&&maskLayer);}
+  function burst(){for(var k=0;k<90;k++){last=-100;frame(k*50);}}
   var started=false;
-  function kick(){if(started)return;size();if(!ready())return;started=true;
-    if(still){for(var k=0;k<80;k++){last=-100;frame(k*50);}}else requestAnimationFrame(frame);}
-  function burst(){for(var k=0;k<80;k++){last=-100;frame(k*50);}}
-  kick();addEventListener('resize',function(){if(!started)kick();else{size();if(still&&ready())burst();}},{passive:true});
-  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){if(ready()){buildMask();paintMask();}});
+  function kick(){if(started)return;size();if(!ready())return;started=true;if(still)burst();else requestAnimationFrame(frame);}
+  kick();addEventListener('resize',function(){if(!started)kick();else{size();if(still)burst();}},{passive:true});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){if(ready()){buildMask();paintMaskAll();}});
 })();
 </script>
 </body>
