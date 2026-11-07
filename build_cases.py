@@ -175,7 +175,7 @@ def page(lang: str, d=None) -> str:
     chat = "https://app.aii-crm.com/chat?lang=" + ("ru" if ru else "en")
     toc = '<div class="toc">' + "".join(f'<a href="#{c["id"]}">{e(c["crm"])} · {e(c["kind"][lang])}</a>' for c in cases) + "</div>"
     ld = {"@context": "https://schema.org", "@type": "Article", "headline": L["h1"], "description": L["desc"], "url": self_url, "inLanguage": lang,
-          "datePublished": "2026-10-27", "dateModified": TODAY, "author": {"@type": "Organization", "name": "Kai"}, "publisher": {"@type": "Organization", "name": "Kai", "url": BASE},
+          "datePublished": "2026-10-27", "dateModified": __import__("site_dates").date_of("cases_data.py", f"i18n/pages/{lang}.json"), "author": {"@type": "Organization", "name": "Kai"}, "publisher": {"@type": "Organization", "name": "Kai", "url": BASE},
           "isPartOf": {"@type": "WebSite", "name": "Kai", "url": BASE},
           "hasPart": [{"@type": "HowTo", "name": c["title"][lang], "url": self_url + "#" + c["id"], "step": [{"@type": "HowToStep", "text": c["message"][lang]}]} for c in cases]}
     return f"""<!doctype html>

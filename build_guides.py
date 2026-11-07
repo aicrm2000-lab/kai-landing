@@ -106,6 +106,8 @@ html.hw .badge.crm{{border-color:rgba(255,122,26,.45)}}html.hw .msg.me{{backgrou
 
 
 def main() -> None:
+    import site_dates
+    site_dates.lastmods()   # даты правок — до пересборки, иначе свежесгенерированные файлы выглядят изменёнными
     guides = json.load(io.open(os.path.join(HERE, "guides.json"), encoding="utf-8"))
     os.makedirs(os.path.join(HERE, "guides", "en"), exist_ok=True)
     import i18n_pages
@@ -125,7 +127,7 @@ def main() -> None:
         urls += [(i18n_pages.guides_index_path(c), "0.8", "weekly"), (i18n_pages.cases_path(c), "0.9", "monthly")]
         urls += [(i18n_pages.guide_path(g["slug"])(c), "0.8", "monthly") for g in guides]
         urls += [(i18n_pages.policy_path(p)(c), "0.3", "monthly") for p in i18n_pages.POLICIES]
-    body = "".join(f"  <url>\n    <loc>{BASE}{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n    <changefreq>{c}</changefreq>\n    <priority>{p}</priority>\n  </url>\n" for u, p, c in urls)
+    body = "".join(f"  <url>\n    <loc>{BASE}{u}</loc>\n    <lastmod>{site_dates.page_lastmod(u)}</lastmod>\n    <changefreq>{c}</changefreq>\n    <priority>{p}</priority>\n  </url>\n" for u, p, c in urls)   # настоящие даты, не дата сборки (Bing)
     io.open(os.path.join(HERE, "sitemap.xml"), "w", encoding="utf-8", newline="\n").write(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + "</urlset>\n")
     print(f"guides: {len(guides)} × {2 + len(langs)} языков, sitemap: {len(urls)} URL")
