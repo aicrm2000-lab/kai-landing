@@ -5480,13 +5480,25 @@ navOnScroll();
     }catch(e){return '';}
   }
   function forget(){
-    try{localStorage.removeItem('kai_vid');}catch(e){}
+    try{localStorage.removeItem('kai_vid');localStorage.removeItem('kai_utm');localStorage.removeItem('kai_utm_ts');}catch(e){}
     try{document.cookie='kai_vid=; max-age=0; path=/; SameSite=Lax';}catch(e){}
   }
   var LANG=document.documentElement.lang||'ru';
+  /* UTM: utm_* или короткое ?s=threads (= threads/bio). Первая метка живёт 30 дней в браузере (first-touch, только после
+     согласия), чтобы возврат «напрямую» и клик в Telegram приписывались каналу, с которого человек пришёл (09.11) */
+  function utm(){
+    try{
+      const p=new URLSearchParams(location.search);let v=['utm_source','utm_medium','utm_campaign'].map(k=>(p.get(k)||'').slice(0,40));
+      if(!v[0]&&p.get('s')) v=[p.get('s').slice(0,40),'bio',''];
+      if(v.some(Boolean)){ const j=v.join('/'); if(on){ localStorage.setItem('kai_utm',j); localStorage.setItem('kai_utm_ts',String(Date.now())); } return j; }
+      const ts=+localStorage.getItem('kai_utm_ts')||0; return (ts&&Date.now()-ts<30*864e5)?(localStorage.getItem('kai_utm')||''):'';
+    }catch(e){return '';}
+  }
+  /* источник для диплинка в бота: utm_source[-utm_campaign], только [a-z0-9-], ≤24 (services/attribution.py в боте) */
+  function src(){ const u=utm().split('/'); const n=x=>(x||'').toLowerCase().replace(/[^a-z0-9-]+/g,'-').replace(/^-+|-+$/g,''); const a=n(u[0]); if(!a) return ''; const c=n(u[2]); return (c?a+'-'+c:a).slice(0,24).replace(/-+$/,''); }
   window.kaiTrack=function(ev,val){
     if(!on) return;
-    const UTM=(()=>{try{const p=new URLSearchParams(location.search);const v=['utm_source','utm_medium','utm_campaign'].map(k=>(p.get(k)||'').slice(0,40));return v.some(Boolean)?v.join('/'):'';}catch(e){return '';}})();
+    const UTM=utm();
     try{if(localStorage.getItem('kai_no_track')==='1')return;}catch(e){}   /* владелец и команда: ?me=1 один раз в браузере */
     const DEV=matchMedia('(hover: none)').matches?'mobile':'desktop', TZ=(()=>{try{return Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){return '';}})();
     try{navigator.sendBeacon('https://app.aii-crm.com/track',
@@ -5522,6 +5534,9 @@ navOnScroll();
     /* ссылки в app.aii-crm.com несут id посетителя — сквозная воронка лендинг → чат → регистрация */
     document.addEventListener('click',function(e){ var a=e.target&&e.target.closest&&e.target.closest('a[href^="https://app.aii-crm.com/"]'); if(!a||!on||!V) return;
       try{ var u=new URL(a.href); if(!u.searchParams.has('v')) u.searchParams.set('v',V); a.href=u.toString(); }catch(x){} },true);
+    /* диплинки в Telegram несут источник: ?start=s_<src> или <payload>__s_<src> → бот пишет users.source (first-touch) */
+    document.addEventListener('click',function(e){ var a=e.target&&e.target.closest&&e.target.closest('a[href*="t.me/aiicrm_bot"]'); if(!a) return; var s=src(); if(!s) return;
+      try{ var u=new URL(a.href); var st=u.searchParams.get('start')||''; if(/(^|__)s_[a-z0-9-]+$/.test(st)) return; var nx=st?st+'__s_'+s:'s_'+s; if(nx.length<=64){ u.searchParams.set('start',nx); a.href=u.toString(); } }catch(x){} },true);
   })();
 
   if(window.kaiConsent==='accepted') window.kaiAnalyticsStart();
