@@ -217,6 +217,71 @@
    "where": "data-en"
   },
   {
+   "en": "“we’ll buy after Black Friday” — the stage where deals hibernate",
+   "ru": "«купим после Black Friday» — этап, где сделки зимуют",
+   "where": "data-en"
+  },
+  {
+   "en": "the rule “no movement for 14 days → task for the rep” doesn’t wait for a season",
+   "ru": "правило «нет движения 14 дней → задача менеджеру» не ждёт сезона",
+   "where": "data-en"
+  },
+  {
+   "en": "the sale is over, the leads are still in phone notes",
+   "ru": "распродажа прошла, лиды остались в заметках телефона",
+   "where": "data-en"
+  },
+  {
+   "en": "the discount went out, the loss reason didn’t get logged",
+   "ru": "скидку дали, причину отказа не записали",
+   "where": "data-en"
+  },
+  {
+   "en": "every deal gets a source and a loss reason",
+   "ru": "у каждой сделки источник и причина отказа",
+   "where": "data-en"
+  },
+  {
+   "en": "the sale report takes until New Year",
+   "ru": "отчёт по распродаже собирают до Нового года",
+   "where": "data-en"
+  },
+  {
+   "en": "a pipeline report in one chat message",
+   "ru": "отчёт по воронке — одной фразой в чате",
+   "where": "data-en"
+  },
+  {
+   "en": "yearly −40% = 12 months for the price of 6",
+   "ru": "год −40% = 12 месяцев по цене 6",
+   "where": "data-en"
+  },
+  {
+   "en": "subscribe by 30.11 — the discount applies by itself",
+   "ru": "оформи до 30.11 — скидка применится сама",
+   "where": "data-en"
+  },
+  {
+   "en": "first month −50%: Pro for €29.50",
+   "ru": "первый месяц −50%: Pro за 29,50€",
+   "where": "data-en"
+  },
+  {
+   "en": "then €59/mo, cancel any time",
+   "ru": "дальше 59€/мес, отменить можно в любой момент",
+   "where": "data-en"
+  },
+  {
+   "en": "the one discount that doesn’t hurt your margin",
+   "ru": "единственная скидка, после которой не надо считать маржу",
+   "where": "data-en"
+  },
+  {
+   "en": "Kai: yearly −40%, first month −50% — until 30.11",
+   "ru": "Kai: год −40%, первый месяц −50% — до 30.11",
+   "where": "data-en"
+  },
+  {
    "en": "a lead with no source — a receipt with no total",
    "ru": "лид без источника — как чек без суммы",
    "where": "data-en"
@@ -327,6 +392,21 @@
    "where": "data-en"
   },
   {
+   "en": "Yearly −40%, first month −50%. Applied automatically when you pay by card.",
+   "ru": "Год −40%, первый месяц −50%. Скидка применится сама при оплате картой.",
+   "where": "data-en"
+  },
+  {
+   "en": "See plans",
+   "ru": "К тарифам",
+   "where": "data-en"
+  },
+  {
+   "en": "Hide",
+   "ru": "Скрыть",
+   "where": "data-en-label"
+  },
+  {
    "en": "Works in your browser and Telegram — no install",
    "ru": "Работает в браузере и Telegram — без установки",
    "where": "data-en"
@@ -340,6 +420,11 @@
    "en": "Works in your browser and Telegram — no install, no assembly required",
    "ru": "Работает в браузере и Telegram — без установки, подарок без сборки",
    "where": "data-ny-en"
+  },
+  {
+   "en": "Works in your browser and Telegram — no install, no queue for the deal",
+   "ru": "Работает в браузере и Telegram — без установки и без очереди за скидкой",
+   "where": "data-bf-en"
   },
   {
    "en": "Set up your <span class='a'>CRM</span><br>without developers",
@@ -417,6 +502,11 @@
    "where": "data-ny-en"
   },
   {
+   "en": "Connect your CRM in 1 click — OAuth, no keys; the deal needs no promo code",
+   "ru": "Подключи CRM за 1 клик — OAuth без ключей, скидка без промокода",
+   "where": "data-bf-en"
+  },
+  {
    "en": "We integrate with",
    "ru": "Работаем с",
    "where": "data-en"
@@ -437,14 +527,9 @@
    "where": "data-en-title"
   },
   {
-   "en": "HubSpot: connect via API today, one-click connection in development",
-   "ru": "HubSpot: подключение по API уже сейчас, по кнопке — в разработке",
+   "en": "HubSpot: install Kai into your HubSpot in one click",
+   "ru": "HubSpot: установить Kai в свой HubSpot в один клик",
    "where": "data-en-title"
-  },
-  {
-   "en": "in development",
-   "ru": "в разработке",
-   "where": "data-en"
   },
   {
    "en": "Your own CRM: custom, in-house or any other with a REST API — via a connector spec",
@@ -2372,6 +2457,11 @@
    "where": "data-ny-en"
   },
   {
+   "en": "Black Week: yearly −40%, first month −50%",
+   "ru": "Чёрная неделя: год −40%, первый месяц −50%",
+   "where": "data-bf-en"
+  },
+  {
    "en": "3-day trial — the clock starts when you connect your CRM. Pay by card, Telegram Stars, or crypto (USDT).",
    "ru": "Первые 3 дня — триал, отсчёт идёт с подключения CRM. Оплата картой, Telegram Stars или криптой (USDT).",
    "where": "data-en"
@@ -2397,6 +2487,11 @@
    "where": "data-en"
   },
   {
+   "en": "<b class='bf-pct'>−50%</b> first month, then €29/mo",
+   "ru": "<b class='bf-pct'>−50%</b> первый месяц, дальше €29/мес",
+   "where": "data-en"
+  },
+  {
    "en": "/yr",
    "ru": "/год",
    "where": "data-en"
@@ -2404,6 +2499,11 @@
   {
    "en": "≈ €24/mo",
    "ru": "≈ €24/мес",
+   "where": "data-en"
+  },
+  {
+   "en": "<b class='bf-pct'>−40%</b> instead of <s>€290</s> · ≈ €14.50/mo",
+   "ru": "<b class='bf-pct'>−40%</b> вместо <s>€290</s> · ≈ €14,50/мес",
    "where": "data-en"
   },
   {
@@ -2425,6 +2525,11 @@
    "en": "3-day trial — our gift",
    "ru": "3 дня триала — наш подарок",
    "where": "data-ny-en"
+  },
+  {
+   "en": "3-day trial — and that’s before the discount",
+   "ru": "3 дня триала — и это ещё до скидки",
+   "where": "data-bf-en"
   },
   {
    "en": "Consultation & spec (PDF)",
@@ -2507,8 +2612,23 @@
    "where": "data-ny-en"
   },
   {
+   "en": "Black Week",
+   "ru": "Чёрная неделя",
+   "where": "data-bf-en"
+  },
+  {
+   "en": "<b class='bf-pct'>−50%</b> first month, then €59/mo",
+   "ru": "<b class='bf-pct'>−50%</b> первый месяц, дальше €59/мес",
+   "where": "data-en"
+  },
+  {
    "en": "≈ €49/mo",
    "ru": "≈ €49/мес",
+   "where": "data-en"
+  },
+  {
+   "en": "<b class='bf-pct'>−40%</b> instead of <s>€590</s> · ≈ €29.50/mo",
+   "ru": "<b class='bf-pct'>−40%</b> вместо <s>€590</s> · ≈ €29,50/мес",
    "where": "data-en"
   },
   {
@@ -2562,8 +2682,18 @@
    "where": "data-en"
   },
   {
+   "en": "<b class='bf-pct'>−50%</b> first month, then €119/mo",
+   "ru": "<b class='bf-pct'>−50%</b> первый месяц, дальше €119/мес",
+   "where": "data-en"
+  },
+  {
    "en": "≈ €99/mo",
    "ru": "≈ €99/мес",
+   "where": "data-en"
+  },
+  {
+   "en": "<b class='bf-pct'>−40%</b> instead of <s>€1190</s> · ≈ €59.50/mo",
+   "ru": "<b class='bf-pct'>−40%</b> вместо <s>€1190</s> · ≈ €59,50/мес",
    "where": "data-en"
   },
   {
@@ -2802,8 +2932,8 @@
    "where": "data-en"
   },
   {
-   "en": "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Event automations for Pipedrive are not there yet — they come after the beta.",
-   "ru": "Да, в бете и с тарифа Start. Подключение — ссылкой установки из Pipedrive, кнопкой «Войти через Pipedrive» в боте или личным API-токеном. Kai настраивает воронки, этапы и поля, ведёт сделки, контакты, организации, задачи и заметки и разбирает воронку. Автоматизаций по событиям для Pipedrive пока нет — они появятся после беты.",
+   "en": "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Automations on Pipedrive events work from the Pro plan.",
+   "ru": "Да, в бете и с тарифа Start. Подключение — ссылкой установки из Pipedrive, кнопкой «Войти через Pipedrive» в боте или личным API-токеном. Kai настраивает воронки, этапы и поля, ведёт сделки, контакты, организации, задачи и заметки и разбирает воронку. Автоматизации по событиям Pipedrive работают с тарифа Pro.",
    "where": "data-en"
   },
   {
@@ -2812,8 +2942,8 @@
    "where": "data-en"
   },
   {
-   "en": "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes.",
-   "ru": "Подключение по кнопке — в разработке. Уже сейчас HubSpot подключается по API как своя CRM: ключ service key в HubSpot и готовая спецификация Kai, на тарифе Max. Kai видит воронки и сделки, создаёт сделки, контакты, задачи и заметки.",
+   "en": "Yes, in beta, from the Start plan. Connect with the “Sign in with HubSpot” button in the bot or the install link, with no keys or JSON. Kai sets up pipelines, stages and properties, manages deals, contacts, companies, tasks and notes and reviews the funnel. Automations on HubSpot events work from the Pro plan.",
+   "ru": "Да, в бете и с тарифа Start. Подключение — кнопкой «Войти через HubSpot» в боте или ссылкой установки, без ключей и JSON. Kai настраивает воронки, этапы и поля, ведёт сделки, контакты, компании, задачи и заметки и разбирает воронку. Автоматизации по событиям HubSpot работают с тарифа Pro.",
    "where": "data-en"
   },
   {
@@ -2847,6 +2977,11 @@
    "where": "data-en"
   },
   {
+   "en": "Black Week prices apply 23–30 November to card payments (Polar): −40% on yearly plans, −50% on the first month of monthly plans. Telegram Stars and crypto stay at the regular price.",
+   "ru": "Цены Чёрной недели действуют 23–30 ноября при оплате картой (Polar): −40% на годовые тарифы, −50% на первый месяц помесячных. Telegram Stars и крипта — по обычной цене.",
+   "where": "data-en"
+  },
+  {
    "en": "Start now",
    "ru": "Начать сейчас",
    "where": "data-en"
@@ -2865,6 +3000,11 @@
    "en": "Make a wish. Set it up.<br><em>Done.</em>",
    "ru": "Загадать. Настроить.<br><em>Готово.</em>",
    "where": "data-ny-en"
+  },
+  {
+   "en": "Black Week. Setup.<br><em>Done.</em>",
+   "ru": "Чёрная неделя. Настройка.<br><em>Готово.</em>",
+   "where": "data-bf-en"
   },
   {
    "en": "Open Kai in Telegram",
@@ -2927,6 +3067,11 @@
    "where": "data-ny-en"
   },
   {
+   "en": "© 2026 Kai. CRM setup without developers or small print.",
+   "ru": "© 2026 Kai. Настройка CRM без программистов и без мелкого шрифта в акциях.",
+   "where": "data-bf-en"
+  },
+  {
    "en": "Privacy policy",
    "ru": "Политика конфиденциальности",
    "where": "data-en"
@@ -2987,6 +3132,11 @@
    "where": "data-ny-en"
   },
   {
+   "en": "Black Week: yearly −40%, first month −50%. I can set up your CRM in minutes — tell me what you do?",
+   "ru": "Чёрная неделя: год −40%, первый месяц −50%. Настрою CRM за пару минут — расскажешь, чем занимаешься?",
+   "where": "data-bf-en"
+  },
+  {
    "en": "Close chat",
    "ru": "Закрыть чат",
    "where": "data-en-label"
@@ -3011,7 +3161,7 @@
    "One-click OAuth connection",
    "Your own (custom, in-house) CRM via REST API: OAuth 2.0, API key, bearer",
    "Pipedrive connection (beta): pipelines, deals, activities, analytics",
-   "HubSpot via API (one-click connection in development)"
+   "HubSpot connection (beta): pipelines, deals, companies, tasks, analytics"
   ],
   "faq": [
    [
@@ -3036,11 +3186,11 @@
    ],
    [
     "Does Kai work with Pipedrive?",
-    "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Event automations for Pipedrive are not there yet — they come after the beta."
+    "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Automations on Pipedrive events work from the Pro plan."
    ],
    [
     "Does Kai work with HubSpot?",
-    "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes."
+    "Yes, in beta, from the Start plan. Connect with the “Sign in with HubSpot” button in the bot or the install link, with no keys or JSON. Kai sets up pipelines, stages and properties, manages deals, contacts, companies, tasks and notes and reviews the funnel. Automations on HubSpot events work from the Pro plan."
    ],
    [
     "Does Kai work with a custom or in-house CRM?",

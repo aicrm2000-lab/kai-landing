@@ -40,7 +40,7 @@
  },
  "guides/it/pipedrive-ai-assistant.html": {
   "title": "Assistente IA per Pipedrive: configura il CRM con un messaggio | Kai",
-  "description": "Kai configura Pipedrive da un messaggio in chat: pipeline, campi, trattative, attività, analisi. Link di installazione, cosa funziona in beta e cosa manca."
+  "description": "Kai configura Pipedrive da un messaggio in chat: pipeline, campi, trattative, attività, automazioni. Link di installazione, cosa funziona in beta e cosa manca."
  },
  "privacy-it.html": {
   "description": "Informativa sulla privacy di Kai, assistente IA per il CRM: quali dati raccogliamo, per quali finalità, per quanto tempo li conserviamo e come cancellarli."
@@ -53,6 +53,6 @@
  },
  "guides/it/hubspot-ai-assistant.html": {
   "title": "Assistente IA per HubSpot: configura il CRM con un messaggio | Kai",
-  "description": "Kai lavora con HubSpot via API: pipeline, trattative, contatti, attività. Oggi ti colleghi con una service key; il collegamento con un clic è in sviluppo."
+  "description": "Kai configura HubSpot da un messaggio in chat: pipeline, proprietà, trattative, attività, automazioni. Collegamento in un clic, cosa funziona in beta e cosa no."
  }
 }

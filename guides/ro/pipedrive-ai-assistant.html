@@ -8,7 +8,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Asistent AI pentru Pipedrive: configurare CRM dintr-un mesaj | Kai</title>
-<meta name="description" content="Kai configurează Pipedrive dintr-un mesaj în chat: pipeline-uri, câmpuri, tranzacții, activități, analiză. Link de instalare, ce merge în beta și ce nu încă.">
+<meta name="description" content="Kai configurează Pipedrive dintr-un mesaj în chat: pipeline-uri, câmpuri, tranzacții, activități, automatizări. Link de instalare, ce merge în beta și ce nu.">
 <meta name="keywords" content="asistent AI pentru Pipedrive, AI pentru Pipedrive, configurare Pipedrive, configurare Pipedrive fără programator, cum configurez Pipedrive, pipeline Pipedrive, etape Pipedrive, câmpuri personalizate Pipedrive, tranzacții Pipedrive, activități Pipedrive, analiza pâlniei Pipedrive, Pipedrive API, bot Telegram pentru Pipedrive, integrare AI cu Pipedrive, configurare CRM cu AI">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Kai Team">
@@ -36,7 +36,7 @@
 <meta property="og:description" content="Kai se instalează în Pipedrive printr-un link și configurează pipeline-uri, câmpuri, tranzacții și activități dintr-un mesaj în Telegram sau în browser. Ce funcționează în beta, ce nu încă, prețuri.">
 <meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
 <meta property="article:published_time" content="2026-11-03">
-<meta property="article:modified_time" content="2026-11-03">
+<meta property="article:modified_time" content="2026-11-16">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Asistent AI pentru Pipedrive: configurează-ți CRM-ul dintr-un mesaj în chat">
 <meta name="twitter:description" content="Kai se instalează în Pipedrive printr-un link și configurează pipeline-uri, câmpuri, tranzacții și activități dintr-un mesaj în Telegram sau în browser. Ce funcționează în beta, ce nu încă, prețuri.">
@@ -125,17 +125,17 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 </nav>
 
 <h1>Asistent AI pentru Pipedrive: configurează-ți CRM-ul dintr-un mesaj în chat</h1>
-<p class="meta">Actualizat pe 3 noiembrie 2026 · Echipa Kai · 5 min de citit</p>
+<p class="meta">Actualizat pe 16 noiembrie 2026 · Echipa Kai · 5 min de citit</p>
 
-<p class="lead">Un asistent AI pentru Pipedrive este un chat în care îți descrii procesul de vânzări în cuvinte simple, iar el îl construiește în Pipedrive prin API-ul oficial: pipeline-uri și etape, câmpuri, tranzacții, persoane, organizații, activități și notițe. Kai face asta în Telegram sau în browser. Suportul pentru Pipedrive e în beta: structura, datele, activitățile și analiza funcționează; automatizările pe evenimente din Pipedrive urmează.</p>
+<p class="lead">Un asistent AI pentru Pipedrive este un chat în care îți descrii procesul de vânzări în cuvinte simple, iar el îl construiește în Pipedrive prin API-ul oficial: pipeline-uri și etape, câmpuri, tranzacții, persoane, organizații, activități și notițe. Kai face asta în Telegram sau în browser. Suportul pentru Pipedrive e în beta: structura, datele, activitățile, analiza și automatizările pe evenimente funcționează deja.</p>
 
 <section class="tldr" aria-label="Pe scurt">
   <h2>Pe scurt</h2>
   <ul>
     <li>Instalarea se face din linkul <a href="https://app.aii-crm.com/install/pipedrive">app.aii-crm.com/install/pipedrive</a>: Pipedrive îți cere permisiunea, apoi Kai leagă compania de contul tău din Telegram sau din chatul web.</li>
-    <li>Funcționează: pipeline-uri și etape, câmpuri pentru tranzacții, persoane și organizații, cu liste de opțiuni, tranzacții, persoane, organizații, activități, notițe, utilizatori, analiza pâlniei cu tranzacțiile câștigate și pierdute.</li>
-    <li>Încă nu: reguli pe evenimente din Pipedrive (automatizările și integrările Kai) și butoane sau panouri în interiorul Pipedrive.</li>
-    <li>Disponibil de la planul Start, €29 pe lună. Primele 3 zile sunt o perioadă de probă.</li>
+    <li>Funcționează: pipeline-uri și etape, câmpuri pentru tranzacții, persoane și organizații, cu liste de opțiuni, tranzacții, persoane, organizații, activități, notițe, etichete, utilizatori, analiza pâlniei cu tranzacțiile câștigate și pierdute, automatizări pe evenimente.</li>
+    <li>Încă nu: butoane și panouri Kai în interiorul Pipedrive și regula „clientul nu a răspuns de N minute”.</li>
+    <li>Disponibil de la planul Start, €29 pe lună; automatizările încep de la planul Pro. Primele 3 zile sunt o perioadă de probă.</li>
   </ul>
 </section>
 
@@ -157,6 +157,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   <li><strong>Persoane și organizații.</strong> Le creează și le leagă de o tranzacție.</li>
   <li><strong>Activități și notițe.</strong> O activitate cu termen pe o tranzacție și o notiță, direct din chat.</li>
   <li><strong>Analiza pâlniei de vânzări.</strong> Tranzacții pe etape, tranzacții câștigate și pierdute, „sănătatea” unei anumite tranzacții.</li>
+  <li><strong>Automatizări pe evenimente.</strong> O tranzacție este creată sau trece într-o etapă, iar Kai creează o activitate sau trimite o notificare.</li>
 </ul>
 <p>Fiecare acțiune trece prin API-ul oficial Pipedrive. Tot ce s-a creat rămâne în compania ta din Pipedrive, indiferent dacă mai folosești sau nu asistentul.</p>
 
@@ -165,13 +166,13 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <table>
   <thead><tr><th>Ce trebuie făcut</th><th>Status în Kai</th><th>Ce faci acum</th></tr></thead>
   <tbody>
-    <tr><td>Reguli pe evenimente: o tranzacție trece într-o etapă → o activitate, o notificare</td><td>După beta</td><td>Automatizările integrate din Pipedrive, dacă planul tău Pipedrive le include.</td></tr>
-    <tr><td>Integrări cu alte servicii declanșate de evenimente</td><td>După beta</td><td>Aplicații din Pipedrive Marketplace sau un programator.</td></tr>
+    <tr><td>O regulă „clientul nu a răspuns de N minute”</td><td>Încă nu</td><td>O regulă pentru o tranzacție nouă sau pentru schimbarea etapei.</td></tr>
+    <tr><td>Un câmp obligatoriu pe o etapă</td><td>Nu există în API-ul Pipedrive</td><td>Setările Pipedrive → Data fields (câmpuri de date) → câmpul → Important sau Required (obligatoriu).</td></tr>
     <tr><td>Butoane și panouri Kai în interiorul Pipedrive</td><td>Încă nu</td><td>Lucrează cu Kai în chat: în Telegram sau în browser.</td></tr>
   </tbody>
 </table>
 </div>
-<p>Concluzia sinceră: azi, Kai pentru Pipedrive configurează structura, ține datele în ordine, se ocupă de activități și analizează pâlnia. Automatizările pe evenimente funcționează deja pentru amoCRM și Kommo și vin în Pipedrive după beta.</p>
+<p>Concluzia sinceră: azi, Kai pentru Pipedrive configurează structura, ține datele în ordine, se ocupă de activități, analizează pâlnia și rulează reguli pe evenimente. Suportul pentru Pipedrive e în beta: dacă ceva nu merge cum trebuie, scrie echipei de suport direct în chat.</p>
 
 <h2>Cu Kai e un singur mesaj</h2>
 <p>Descrii afacerea, Kai pune întrebări de clarificare, îți arată un plan, creează totul prin API după ce confirmi și îți trimite un raport. Exemple:</p>
@@ -184,7 +185,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <div class="faq">
   <div class="faq-item">
     <h3>Există un asistent AI care configurează Pipedrive dintr-un mesaj în chat?</h3>
-    <p>Da, Kai. Îți descrii procesul de vânzări în cuvinte simple, în Telegram sau în browser, iar Kai creează în Pipedrive, prin API-ul oficial, pipeline-uri și etape, câmpuri, tranzacții, persoane, organizații, activități și notițe și analizează pâlnia. Suportul pentru Pipedrive e în beta.</p>
+    <p>Da, Kai. Îți descrii procesul de vânzări în cuvinte simple, în Telegram sau în browser, iar Kai creează în Pipedrive, prin API-ul oficial, pipeline-uri și etape, câmpuri, tranzacții, persoane, organizații, activități și notițe, analizează pâlnia și rulează reguli pe evenimente. Suportul pentru Pipedrive e în beta.</p>
   </div>
   <div class="faq-item">
     <h3>Cum conectez Pipedrive la Kai?</h3>
@@ -192,11 +193,11 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   </div>
   <div class="faq-item">
     <h3>Poate Kai să creeze automatizări în Pipedrive?</h3>
-    <p>Încă nu. Regulile pe evenimente din Pipedrive (o tranzacție trece într-o etapă → o sarcină sau o notificare) și integrările declanșate de evenimente vin după beta. Azi Kai configurează structura, gestionează datele și activitățile și analizează pâlnia.</p>
+    <p>Da, începând cu planul Pro. O regulă pe un eveniment din Pipedrive (o tranzacție este creată sau trece într-o etapă) creează o activitate sau trimite o notificare. Descrii regula în cuvinte, iar Kai ți-o arată înainte să o activeze.</p>
   </div>
   <div class="faq-item">
     <h3>Ce plan îmi trebuie pentru Pipedrive?</h3>
-    <p>Orice plan începând cu Start, €29 pe lună pentru un CRM. Primele 3 zile sunt o perioadă de probă fără card, suficientă ca să testezi Kai pe propria ta companie din Pipedrive.</p>
+    <p>Orice plan începând cu Start, €29 pe lună pentru un CRM; automatizările pe evenimente încep de la Pro, €59. Primele 3 zile sunt o perioadă de probă fără card, suficientă ca să testezi Kai pe propria ta companie din Pipedrive.</p>
   </div>
 </div>
 
@@ -207,7 +208,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Deschide chatul web</a>
 </div>
 
-<p class="author">Autor: Echipa Kai · Actualizat pe <time datetime="2026-11-03">3 noiembrie 2026</time> · Capacitățile și limitele sunt descrise la data publicării; statusul actual ți-l spune Kai în chat.</p>
+<p class="author">Autor: Echipa Kai · Actualizat pe <time datetime="2026-11-16">16 noiembrie 2026</time> · Capacitățile și limitele sunt descrise la data publicării; statusul actual ți-l spune Kai în chat.</p>
 </article>
 </main>
 
@@ -226,7 +227,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
       "description": "Cum configurează asistentul AI Kai Pipedrive-ul dintr-un mesaj în chat: pipeline-uri, etape, câmpuri, tranzacții, persoane, activități și analiză. Linkul de instalare, ce funcționează în beta și ce nu încă.",
       "inLanguage": "ro",
       "datePublished": "2026-11-03",
-      "dateModified": "2026-11-03",
+      "dateModified": "2026-11-16",
       "mainEntityOfPage": "https://aii-crm.com/guides/ro/pipedrive-ai-assistant.html",
       "image": "https://aii-crm.com/og-image-v5.png",
       "author": {
@@ -248,7 +249,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Există un asistent AI care configurează Pipedrive dintr-un mesaj în chat?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Da, Kai. Îți descrii procesul de vânzări în cuvinte simple, în Telegram sau în browser, iar Kai creează în Pipedrive, prin API-ul oficial, pipeline-uri și etape, câmpuri, tranzacții, persoane, organizații, activități și notițe și analizează pâlnia. Suportul pentru Pipedrive e în beta."
+            "text": "Da, Kai. Îți descrii procesul de vânzări în cuvinte simple, în Telegram sau în browser, iar Kai creează în Pipedrive, prin API-ul oficial, pipeline-uri și etape, câmpuri, tranzacții, persoane, organizații, activități și notițe, analizează pâlnia și rulează reguli pe evenimente. Suportul pentru Pipedrive e în beta."
           }
         },
         {
@@ -264,7 +265,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Poate Kai să creeze automatizări în Pipedrive?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Încă nu. Regulile pe evenimente din Pipedrive (o tranzacție trece într-o etapă → o sarcină sau o notificare) și integrările declanșate de evenimente vin după beta. Azi Kai configurează structura, gestionează datele și activitățile și analizează pâlnia."
+            "text": "Da, începând cu planul Pro. O regulă pe un eveniment din Pipedrive (o tranzacție este creată sau trece într-o etapă) creează o activitate sau trimite o notificare. Descrii regula în cuvinte, iar Kai ți-o arată înainte să o activeze."
           }
         },
         {
@@ -272,7 +273,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Ce plan îmi trebuie pentru Pipedrive?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Orice plan începând cu Start, €29 pe lună pentru un CRM. Primele 3 zile sunt o perioadă de probă fără card, suficientă ca să testezi Kai pe propria ta companie din Pipedrive."
+            "text": "Orice plan începând cu Start, €29 pe lună pentru un CRM; automatizările pe evenimente încep de la Pro, €59. Primele 3 zile sunt o perioadă de probă fără card, suficientă ca să testezi Kai pe propria ta companie din Pipedrive."
           }
         }
       ]

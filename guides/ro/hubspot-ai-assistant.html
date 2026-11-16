@@ -8,7 +8,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Asistent AI pentru HubSpot: configurare CRM dintr-un mesaj | Kai</title>
-<meta name="description" content="Kai lucrează cu HubSpot prin API: pipeline-uri, tranzacții, contacte, sarcini. Azi te conectezi cu un service key; conectarea cu un clic e în dezvoltare.">
+<meta name="description" content="Kai configurează HubSpot dintr-un mesaj în chat: pipeline-uri, proprietăți, tranzacții, sarcini, automatizări. Conectare cu un clic, ce merge în beta și ce nu.">
 <meta name="keywords" content="asistent AI pentru HubSpot, AI pentru HubSpot, configurare HubSpot, configurare HubSpot fără programator, cum configurez HubSpot, conectare HubSpot prin API, HubSpot API, service key HubSpot, pipeline HubSpot, tranzacții HubSpot, contacte HubSpot, bot Telegram pentru HubSpot, integrare AI cu HubSpot, configurare CRM cu AI">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Kai Team">
@@ -33,13 +33,13 @@
 <meta property="og:site_name" content="Kai">
 <meta property="og:url" content="https://aii-crm.com/guides/ro/hubspot-ai-assistant.html">
 <meta property="og:title" content="Asistent AI pentru HubSpot: configurează-ți CRM-ul dintr-un mesaj în chat">
-<meta property="og:description" content="Kai lucrează cu HubSpot prin API: pipeline-uri, tranzacții, contacte, sarcini și notițe dintr-un mesaj în Telegram sau în browser. Cum te conectezi azi și ce e în dezvoltare.">
+<meta property="og:description" content="Kai lucrează cu HubSpot: pipeline-uri, proprietăți, tranzacții, contacte, companii, sarcini și automatizări dintr-un mesaj în Telegram sau în browser. Conectare cu un clic, suport în beta.">
 <meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
 <meta property="article:published_time" content="2026-11-04">
-<meta property="article:modified_time" content="2026-11-04">
+<meta property="article:modified_time" content="2026-11-16">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Asistent AI pentru HubSpot: configurează-ți CRM-ul dintr-un mesaj în chat">
-<meta name="twitter:description" content="Kai lucrează cu HubSpot prin API: pipeline-uri, tranzacții, contacte, sarcini și notițe dintr-un mesaj în Telegram sau în browser. Cum te conectezi azi și ce e în dezvoltare.">
+<meta name="twitter:description" content="Kai lucrează cu HubSpot: pipeline-uri, proprietăți, tranzacții, contacte, companii, sarcini și automatizări dintr-un mesaj în Telegram sau în browser. Conectare cu un clic, suport în beta.">
 <meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -125,87 +125,91 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 </nav>
 
 <h1>Asistent AI pentru HubSpot: configurează-ți CRM-ul dintr-un mesaj în chat</h1>
-<p class="meta">Actualizat pe 4 noiembrie 2026 · Echipa Kai · 5 min de citit</p>
+<p class="meta">Actualizat pe 16 noiembrie 2026 · Echipa Kai · 5 min de citit</p>
 
-<p class="lead">Un asistent AI pentru HubSpot este un chat în care îți descrii procesul de vânzări în cuvinte simple, iar el lucrează cu HubSpot prin API-ul oficial: îți arată pipeline-urile și tranzacțiile, creează tranzacții, contacte, sarcini și notițe și analizează pâlnia. Kai face asta în Telegram sau în browser. Azi HubSpot se conectează prin API ca un CRM personalizat; conectarea cu un clic e în dezvoltare.</p>
+<p class="lead">Un asistent AI pentru HubSpot este un chat în care îți descrii procesul de vânzări în cuvinte simple, iar el îl construiește în HubSpot prin API-ul oficial: pipeline-uri și etape, proprietăți, tranzacții, contacte, companii, sarcini și notițe. Kai face asta în Telegram sau în browser. Suportul pentru HubSpot e în beta: conectarea cu un clic, structura, datele, analiza și automatizările pe evenimente funcționează deja.</p>
 
 <section class="tldr" aria-label="Pe scurt">
   <h2>Pe scurt</h2>
   <ul>
-    <li>Azi: un service key HubSpot (cheie de serviciu) plus specificația gata făcută a lui Kai, adică conectarea unui CRM personalizat prin API, pe planul Max.</li>
-    <li>Funcționează: pipeline-uri și etape, tranzacții (listă, căutare, creare, schimbarea etapei și a sumei), contacte, sarcini și notițe pe o tranzacție, analiza pâlniei.</li>
-    <li>În dezvoltare: o aplicație Kai pentru HubSpot cu butonul „Sign in with HubSpot” și un link de instalare, fără chei și fără JSON.</li>
-    <li>Încă nu: crearea de pipeline-uri și câmpuri, companiile, automatizările pe evenimente din HubSpot.</li>
+    <li>Instalarea se face din linkul <a href="https://app.aii-crm.com/install/hubspot">app.aii-crm.com/install/hubspot</a>: HubSpot îți cere permisiunea, apoi Kai leagă contul HubSpot de contul tău din Telegram sau din chatul web. Fără chei, fără JSON.</li>
+    <li>Funcționează: pipeline-uri și etape, proprietăți ale tranzacțiilor, cu liste de opțiuni, tranzacții, contacte, companii, sarcini, notițe, motive de pierdere și surse de lead-uri, analiza pâlniei, automatizări pe evenimente.</li>
+    <li>Încă nu: etichete (HubSpot însuși nu are așa ceva), invitarea utilizatorilor și configurarea rolurilor, butoane sau panouri în interiorul HubSpot.</li>
+    <li>Disponibil de la planul Start, €29 pe lună; automatizările încep de la planul Pro. Primele 3 zile sunt o perioadă de probă.</li>
   </ul>
 </section>
 
-<h2>Cum conectezi azi HubSpot la Kai</h2>
+<h2>Cum conectezi HubSpot la Kai</h2>
 <ol>
-  <li>În HubSpot deschide <kbd>Development → Keys → Service keys</kbd> și apasă <kbd>Create service key</kbd>. Cheia o poate crea un super admin sau un utilizator cu permisiunea Developer tools.</li>
-  <li>Numește cheia „Kai” și adaugă scope-urile (drepturile de acces) <code>crm.objects.deals.read</code>, <code>crm.objects.deals.write</code>, <code>crm.schemas.deals.read</code>, <code>crm.objects.contacts.read</code>, <code>crm.objects.contacts.write</code>. Apasă <kbd>Create</kbd> și copiază cheia.</li>
-  <li>Deschide <a href="https://app.aii-crm.com/docs/custom-crm?lang=en">pagina de conectare a CRM-ului personalizat</a>, secțiunea „Ready-made specs: HubSpot”, copiază JSON-ul și lipește cheia în câmpul <code>token</code>.</li>
-  <li>În botul <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> sau în <a href="https://app.aii-crm.com/chat?lang=en">chatul web</a>: <kbd>/connect</kbd> → „My own CRM via API” → lipește JSON-ul. Kai verifică accesul și îți arată pipeline-urile de tranzacții.</li>
+  <li>Deschide <a href="https://app.aii-crm.com/install/hubspot">linkul de instalare</a> și autentifică-te în HubSpot, dacă ți se cere.</li>
+  <li>Alege contul HubSpot și verifică la ce date cere Kai acces. Lasă bifate permisiunile pentru companii și proprietăți: fără ele, Kai nu poate gestiona companiile și proprietățile. Apoi permite accesul.</li>
+  <li>Pe pagina „Kai is installed in HubSpot” apasă „Open Kai in Telegram” (deschide Kai în Telegram) sau „Continue in the browser” (continuă în browser). Linkul funcționează o singură dată, timp de 30 de minute: leagă acest cont HubSpot de contul tău Kai.</li>
+  <li>Kai confirmă conectarea și te întreabă ce să configureze.</li>
 </ol>
-<div class="note warn">Un service key acționează în numele contului HubSpot, așa că nu-l publica. Îl poți regenera sau șterge în HubSpot, iar cheia veche nu mai funcționează.</div>
+<p>Încă o variantă, direct în botul <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> sau în <a href="https://app.aii-crm.com/chat?lang=en">chatul web</a>: comanda <kbd>/connect</kbd> → „HubSpot (beta)” → „Sign in with HubSpot”.</p>
+<div class="note warn">Conectarea cu HubSpot folosește OAuth: Kai nu îți vede niciodată parola de HubSpot. Poți deconecta Kai din HubSpot, din lista aplicațiilor conectate, iar accesul dispare pe loc.</div>
 
-<h2>Ce face Kai în HubSpot</h2>
+<h2>Ce configurează Kai în HubSpot</h2>
 <ul>
-  <li><strong>Pipeline-uri și etape.</strong> Îți arată pipeline-urile și etapele tranzacțiilor și numără tranzacțiile din fiecare etapă.</li>
-  <li><strong>Tranzacții.</strong> Găsește o tranzacție după nume, creează una nouă în pipeline-ul și etapa potrivite, schimbă etapa și suma.</li>
-  <li><strong>Contacte.</strong> Creează un contact cu telefon și e-mail.</li>
-  <li><strong>Sarcini și notițe.</strong> Creează o sarcină cu termen și adaugă o notiță la o tranzacție.</li>
-  <li><strong>Analiză.</strong> Câte tranzacții sunt în fiecare etapă a unui pipeline.</li>
+  <li><strong>Pipeline-uri și etape.</strong> Un pipeline nou cu etape dintr-un singur mesaj; adaugi, redenumești sau ștergi o etapă. Câte pipeline-uri poți avea depinde de planul tău HubSpot.</li>
+  <li><strong>Proprietăți.</strong> Proprietăți personalizate ale tranzacțiilor, inclusiv liste de opțiuni, plus valorile lor într-o tranzacție.</li>
+  <li><strong>Tranzacții.</strong> Creare în pipeline-ul și etapa potrivite, mutare între etape, schimbarea sumei, căutare; un link către fișa tranzacției în HubSpot.</li>
+  <li><strong>Contacte și companii.</strong> Le creează și le leagă de o tranzacție.</li>
+  <li><strong>Sarcini și notițe.</strong> O sarcină cu termen pe o tranzacție și o notiță, direct din chat.</li>
+  <li><strong>Analiza pâlniei de vânzări.</strong> Tranzacții pe etape, motive de pierdere, „sănătatea” unei anumite tranzacții.</li>
+  <li><strong>Automatizări pe evenimente.</strong> O tranzacție este creată sau trece într-o etapă, iar Kai creează o sarcină sau trimite o notificare.</li>
 </ul>
 <p>Fiecare acțiune trece prin API-ul oficial HubSpot. Tot ce s-a creat rămâne în contul tău HubSpot, indiferent dacă mai folosești sau nu asistentul.</p>
 
-<h2>Ce e în dezvoltare și ce nu există încă</h2>
+<h2>Ce nu face încă Kai în HubSpot</h2>
 <div class="table-wrap">
 <table>
   <thead><tr><th>Ce trebuie făcut</th><th>Status în Kai</th><th>Ce faci acum</th></tr></thead>
   <tbody>
-    <tr><td>„Sign in with HubSpot” cu un clic</td><td>În dezvoltare</td><td>Conectează-te prin API cu un service key.</td></tr>
-    <tr><td>Crearea de pipeline-uri, etape și câmpuri din chat</td><td>Încă nu</td><td>Configurează-le manual în HubSpot; Kai propune structura și scrie specificația.</td></tr>
-    <tr><td>Companii</td><td>Încă nu</td><td>Lucrează cu companiile direct în HubSpot.</td></tr>
-    <tr><td>Automatizări pe evenimente din HubSpot</td><td>Încă nu</td><td>Workflow-urile integrate din HubSpot, dacă planul tău HubSpot le include.</td></tr>
+    <tr><td>Etichete pe tranzacții și contacte</td><td>Nu există în HubSpot</td><td>O proprietate de tip listă pe tranzacție: Kai o creează împreună cu opțiunile.</td></tr>
+    <tr><td>Invitarea unui utilizator, configurarea rolurilor</td><td>Încă nu</td><td>Setările HubSpot → Users &amp; Teams (utilizatori și echipe).</td></tr>
+    <tr><td>O regulă „clientul nu a răspuns de N minute”</td><td>Încă nu</td><td>O regulă pentru o tranzacție nouă sau pentru schimbarea etapei.</td></tr>
+    <tr><td>Butoane și panouri Kai în interiorul HubSpot</td><td>Încă nu</td><td>Lucrează cu Kai în chat: în Telegram sau în browser.</td></tr>
   </tbody>
 </table>
 </div>
+<p>Concluzia sinceră: azi, Kai pentru HubSpot configurează structura, ține datele în ordine, se ocupă de sarcini, analizează pâlnia și rulează reguli pe evenimente. Suportul pentru HubSpot e în beta: dacă ceva nu merge cum trebuie, scrie echipei de suport direct în chat.</p>
 
 <h2>Cu Kai e un singur mesaj</h2>
-<p>După conectare, îi ceri lui Kai aceleași lucruri ca în orice CRM. Exemple:</p>
-<pre>Arată-mi pipeline-urile și câte tranzacții sunt în fiecare etapă.</pre>
-<pre>Creează o tranzacție „Alpha, 20 de licențe” de 12000 în Sales Pipeline.</pre>
-<pre>Creează o sarcină „de sunat înapoi” pentru tranzacția „Alpha, 20 de licențe” pe mâine și adaugă o notiță: au cerut factură anuală.</pre>
-<p>Conectarea unui CRM personalizat prin API, inclusiv HubSpot, face parte din planul Max, €119 pe lună; discutarea conectării și scrierea specificației sunt gratuite. Kai vorbește engleză și rusă.</p>
+<p>Descrii afacerea, Kai pune întrebări de clarificare, îți arată un plan, creează totul prin API după ce confirmi și îți trimite un raport. Exemple:</p>
+<pre>Creează în HubSpot un pipeline pentru vânzări B2B: Lead nou → Calificat → Demo → Ofertă → Contract. Adaugă la tranzacții o proprietate numerică Buget.</pre>
+<pre>Creează o tranzacție „Alpha, 20 de licențe” de 12000 în Sales Pipeline, adaugă contactul Anna Smith și compania Alpha.</pre>
+<pre>Când o tranzacție trece la etapa Contract, creează o sarcină „trimite factura” pentru mâine.</pre>
+<p>Planurile sunt aceleași ca pentru celelalte CRM-uri: Start €29 pe lună pentru un CRM, Pro €59 pentru până la trei CRM-uri, Max €119 pentru până la zece. Primele 3 zile sunt o perioadă de probă, fără card, cu aproximativ 25 de cereri pe funcțiile Start. Kai vorbește engleză și rusă.</p>
 
 <h2>FAQ</h2>
 <div class="faq">
   <div class="faq-item">
-    <h3>Există un asistent AI care lucrează cu HubSpot dintr-un mesaj în chat?</h3>
-    <p>Da, Kai. Azi se conectează la HubSpot prin API ca un CRM personalizat: vede pipeline-urile și tranzacțiile, creează tranzacții, contacte, sarcini și notițe, mută tranzacțiile între etape și analizează pâlnia. Conectarea cu un clic e în dezvoltare.</p>
+    <h3>Există un asistent AI care configurează HubSpot dintr-un mesaj în chat?</h3>
+    <p>Da, Kai. Îți descrii procesul de vânzări în cuvinte simple, în Telegram sau în browser, iar Kai creează în HubSpot, prin API-ul oficial, pipeline-uri și etape, proprietăți, tranzacții, contacte, companii, sarcini și notițe, analizează pâlnia și rulează reguli pe evenimente. Suportul pentru HubSpot e în beta.</p>
   </div>
   <div class="faq-item">
-    <h3>Cum conectez azi HubSpot la Kai?</h3>
-    <p>Creează o cheie în HubSpot: Development → Keys → Service keys, cu acces la tranzacții și contacte. Ia specificația gata făcută pentru HubSpot de pe pagina CRM-ului personalizat, lipește cheia în ea și trimite-o lui Kai: /connect → „My own CRM via API”. Conectarea unui CRM personalizat face parte din planul Max.</p>
+    <h3>Cum conectez HubSpot la Kai?</h3>
+    <p>Deschide linkul de instalare app.aii-crm.com/install/hubspot, permite accesul în HubSpot, iar pe pagina „Kai is installed” apasă „Open Kai in Telegram” sau „Continue in the browser”. Încă o variantă în bot: /connect → HubSpot (beta) → „Sign in with HubSpot”. Fără chei, fără JSON.</p>
   </div>
   <div class="faq-item">
-    <h3>Când va fi disponibilă conectarea HubSpot cu un clic?</h3>
-    <p>E în dezvoltare: o aplicație Kai pentru HubSpot cu butonul „Sign in with HubSpot” și un link de instalare, fără chei și fără JSON. Imediat ce se lansează, Kai îți spune în chat.</p>
+    <h3>Poate Kai să creeze automatizări în HubSpot?</h3>
+    <p>Da, începând cu planul Pro. O regulă pe un eveniment din HubSpot (o tranzacție este creată sau trece într-o etapă) creează o sarcină sau trimite o notificare. Descrii regula în cuvinte, iar Kai ți-o arată înainte să o activeze.</p>
   </div>
   <div class="faq-item">
-    <h3>Ce nu face încă Kai în HubSpot?</h3>
-    <p>Nu creează pipeline-uri sau câmpuri, nu lucrează cu companiile și nu rulează automatizări pe evenimente din HubSpot. Toate acestea sunt planificate împreună cu conectarea cu un clic.</p>
+    <h3>Ce plan îmi trebuie pentru HubSpot?</h3>
+    <p>Orice plan începând cu Start, €29 pe lună pentru un CRM; automatizările pe evenimente încep de la Pro, €59. Primele 3 zile sunt o perioadă de probă fără card, suficientă ca să testezi Kai pe propriul tău cont HubSpot.</p>
   </div>
 </div>
 
 <h2>Ce urmează</h2>
-<p>Dacă ai nevoie de HubSpot acum, creează un service key și conectează-te după pașii de mai sus. Dacă preferi conectarea cu un clic, așteaptă aplicația Kai pentru HubSpot: e în dezvoltare.</p>
+<p>Deschide linkul de instalare, permite accesul și cere-i lui Kai să-ți arate pipeline-urile: într-un minut vezi asistentul lucrând cu contul tău.</p>
 <div class="cta">
-  <a class="btn btn-primary" href="https://app.aii-crm.com/docs/custom-crm?lang=en">Ghid de conectare</a>
+  <a class="btn btn-primary" href="https://app.aii-crm.com/install/hubspot">Instalează Kai în HubSpot</a>
   <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Deschide chatul web</a>
 </div>
 
-<p class="author">Autor: Echipa Kai · Actualizat pe <time datetime="2026-11-04">4 noiembrie 2026</time> · Capacitățile sunt descrise la data publicării; statusul actual ți-l spune Kai în chat.</p>
+<p class="author">Autor: Echipa Kai · Actualizat pe <time datetime="2026-11-16">16 noiembrie 2026</time> · Capacitățile și limitele sunt descrise la data publicării; statusul actual ți-l spune Kai în chat.</p>
 </article>
 </main>
 
@@ -221,10 +225,10 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
       "@type": "Article",
       "@id": "https://aii-crm.com/guides/ro/hubspot-ai-assistant.html#article",
       "headline": "Asistent AI pentru HubSpot: configurează-ți CRM-ul dintr-un mesaj în chat",
-      "description": "Cum conectezi azi HubSpot la asistentul AI Kai, prin API cu un service key, și ce face în HubSpot: pipeline-uri, tranzacții, contacte, sarcini, notițe. Conectarea cu un clic e în dezvoltare.",
+      "description": "Cum conectezi HubSpot la asistentul AI Kai cu un clic, fără chei, și ce face în HubSpot: pipeline-uri, proprietăți, tranzacții, contacte, companii, sarcini, automatizări. Suportul e în beta.",
       "inLanguage": "ro",
       "datePublished": "2026-11-04",
-      "dateModified": "2026-11-04",
+      "dateModified": "2026-11-16",
       "mainEntityOfPage": "https://aii-crm.com/guides/ro/hubspot-ai-assistant.html",
       "image": "https://aii-crm.com/og-image-v5.png",
       "author": {
@@ -243,34 +247,34 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Există un asistent AI care lucrează cu HubSpot dintr-un mesaj în chat?",
+          "name": "Există un asistent AI care configurează HubSpot dintr-un mesaj în chat?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Da, Kai. Azi se conectează la HubSpot prin API ca un CRM personalizat: vede pipeline-urile și tranzacțiile, creează tranzacții, contacte, sarcini și notițe, mută tranzacțiile între etape și analizează pâlnia. Conectarea cu un clic e în dezvoltare."
+            "text": "Da, Kai. Îți descrii procesul de vânzări în cuvinte simple, în Telegram sau în browser, iar Kai creează în HubSpot, prin API-ul oficial, pipeline-uri și etape, proprietăți, tranzacții, contacte, companii, sarcini și notițe, analizează pâlnia și rulează reguli pe evenimente. Suportul pentru HubSpot e în beta."
           }
         },
         {
           "@type": "Question",
-          "name": "Cum conectez azi HubSpot la Kai?",
+          "name": "Cum conectez HubSpot la Kai?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Creează o cheie în HubSpot: Development → Keys → Service keys, cu acces la tranzacții și contacte. Ia specificația gata făcută pentru HubSpot de pe pagina CRM-ului personalizat, lipește cheia în ea și trimite-o lui Kai: /connect → „My own CRM via API”. Conectarea unui CRM personalizat face parte din planul Max."
+            "text": "Deschide linkul de instalare app.aii-crm.com/install/hubspot, permite accesul în HubSpot, iar pe pagina „Kai is installed” apasă „Open Kai in Telegram” sau „Continue in the browser”. Încă o variantă în bot: /connect → HubSpot (beta) → „Sign in with HubSpot”. Fără chei, fără JSON."
           }
         },
         {
           "@type": "Question",
-          "name": "Când va fi disponibilă conectarea HubSpot cu un clic?",
+          "name": "Poate Kai să creeze automatizări în HubSpot?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "E în dezvoltare: o aplicație Kai pentru HubSpot cu butonul „Sign in with HubSpot” și un link de instalare, fără chei și fără JSON. Imediat ce se lansează, Kai îți spune în chat."
+            "text": "Da, începând cu planul Pro. O regulă pe un eveniment din HubSpot (o tranzacție este creată sau trece într-o etapă) creează o sarcină sau trimite o notificare. Descrii regula în cuvinte, iar Kai ți-o arată înainte să o activeze."
           }
         },
         {
           "@type": "Question",
-          "name": "Ce nu face încă Kai în HubSpot?",
+          "name": "Ce plan îmi trebuie pentru HubSpot?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nu creează pipeline-uri sau câmpuri, nu lucrează cu companiile și nu rulează automatizări pe evenimente din HubSpot. Toate acestea sunt planificate împreună cu conectarea cu un clic."
+            "text": "Orice plan începând cu Start, €29 pe lună pentru un CRM; automatizările pe evenimente încep de la Pro, €59. Primele 3 zile sunt o perioadă de probă fără card, suficientă ca să testezi Kai pe propriul tău cont HubSpot."
           }
         }
       ]

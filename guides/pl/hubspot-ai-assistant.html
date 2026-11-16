@@ -8,7 +8,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Asystent AI do HubSpot: skonfiguruj CRM jedną wiadomością | Kai</title>
-<meta name="description" content="Kai pracuje z HubSpot przez API: lejki, transakcje, kontakty, zadania. Podłącz już dziś kluczem service key; podłączenie jednym kliknięciem — w przygotowaniu.">
+<meta name="description" content="Kai konfiguruje HubSpot z wiadomości na czacie: lejki, właściwości, transakcje, zadania, automatyzacje. Podłączenie 1 kliknięciem, co działa w becie, a co nie.">
 <meta name="keywords" content="asystent AI do HubSpot, AI do HubSpot, HubSpot AI, konfiguracja HubSpot, wdrożenie HubSpot, jak skonfigurować HubSpot, HubSpot bez programisty, HubSpot API, integracja HubSpot przez API, HubSpot service key, lejek sprzedaży w HubSpot, transakcje w HubSpot, HubSpot CRM, HubSpot Telegram">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Kai Team">
@@ -33,13 +33,13 @@
 <meta property="og:site_name" content="Kai">
 <meta property="og:url" content="https://aii-crm.com/guides/pl/hubspot-ai-assistant.html">
 <meta property="og:title" content="Asystent AI do HubSpot: skonfiguruj CRM jedną wiadomością na czacie">
-<meta property="og:description" content="Kai pracuje z HubSpot przez API: lejki, transakcje, kontakty, zadania i notatki na podstawie wiadomości w Telegramie lub w przeglądarce. Jak podłączyć HubSpot już dziś i co jest w przygotowaniu.">
+<meta property="og:description" content="Kai pracuje z HubSpot: lejki, właściwości, transakcje, kontakty, firmy, zadania i automatyzacje na podstawie wiadomości w Telegramie lub w przeglądarce. Podłączenie jednym kliknięciem, obsługa w becie.">
 <meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
 <meta property="article:published_time" content="2026-11-04">
-<meta property="article:modified_time" content="2026-11-04">
+<meta property="article:modified_time" content="2026-11-16">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Asystent AI do HubSpot: skonfiguruj CRM jedną wiadomością na czacie">
-<meta name="twitter:description" content="Kai pracuje z HubSpot przez API: lejki, transakcje, kontakty, zadania i notatki na podstawie wiadomości w Telegramie lub w przeglądarce. Jak podłączyć HubSpot już dziś i co jest w przygotowaniu.">
+<meta name="twitter:description" content="Kai pracuje z HubSpot: lejki, właściwości, transakcje, kontakty, firmy, zadania i automatyzacje na podstawie wiadomości w Telegramie lub w przeglądarce. Podłączenie jednym kliknięciem, obsługa w becie.">
 <meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -125,87 +125,91 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 </nav>
 
 <h1>Asystent AI do HubSpot: skonfiguruj CRM jedną wiadomością na czacie</h1>
-<p class="meta">Aktualizacja: 4 listopada 2026 · Zespół Kai · 5 min czytania</p>
+<p class="meta">Aktualizacja: 16 listopada 2026 · Zespół Kai · 5 min czytania</p>
 
-<p class="lead">Asystent AI do HubSpot to czat, w którym zwykłymi słowami opisujesz swój proces sprzedaży, a on pracuje z HubSpot przez oficjalne API: pokazuje lejki i transakcje, tworzy transakcje, kontakty, zadania i notatki oraz analizuje lejek. Kai robi to w Telegramie lub w przeglądarce. Dziś HubSpot podłącza się przez API jako własny CRM; podłączenie jednym kliknięciem jest w przygotowaniu.</p>
+<p class="lead">Asystent AI do HubSpot to czat, w którym zwykłymi słowami opisujesz swój proces sprzedaży, a on buduje go w HubSpot przez oficjalne API: lejki i etapy, właściwości, transakcje, kontakty, firmy, zadania i notatki. Kai robi to w Telegramie lub w przeglądarce. Obsługa HubSpot jest w becie: podłączenie jednym kliknięciem, struktura, dane, analityka i automatyzacje na zdarzenia już działają.</p>
 
 <section class="tldr" aria-label="W skrócie">
   <h2>W skrócie</h2>
   <ul>
-    <li>Dziś: klucz service key z HubSpot (klucz dostępu do API) i gotowa specyfikacja Kai, czyli podłączenie jako własny CRM przez API, w planie Max.</li>
-    <li>Działa: lejki i etapy, transakcje (lista, wyszukiwanie, tworzenie, zmiana etapu i kwoty), kontakty, zadania i notatki w transakcji, analityka lejka.</li>
-    <li>W przygotowaniu: aplikacja Kai dla HubSpot z przyciskiem „Sign in with HubSpot” i linkiem instalacyjnym, bez kluczy i JSON.</li>
-    <li>Jeszcze nie: tworzenie lejków i pól, firmy, automatyzacje na zdarzenia w HubSpot.</li>
+    <li>Instalacja z linku <a href="https://app.aii-crm.com/install/hubspot">app.aii-crm.com/install/hubspot</a>: HubSpot prosi o zgodę, a potem Kai wiąże konto HubSpot z twoim kontem w Telegramie lub w czacie webowym. Bez kluczy i bez JSON.</li>
+    <li>Działa: lejki i etapy, właściwości transakcji z listami opcji, transakcje, kontakty, firmy, zadania, notatki, powody przegranej i źródła leadów, analityka lejka, automatyzacje na zdarzenia.</li>
+    <li>Jeszcze nie: tagi (sam HubSpot ich nie ma), zapraszanie użytkowników i role, przyciski i panele wewnątrz HubSpot.</li>
+    <li>Dostępne od planu Start, €29 miesięcznie; automatyzacje — od planu Pro. Pierwsze 3 dni to okres próbny.</li>
   </ul>
 </section>
 
-<h2>Jak podłączyć HubSpot do Kai już dziś</h2>
+<h2>Jak podłączyć HubSpot do Kai</h2>
 <ol>
-  <li>W HubSpot otwórz <kbd>Development → Keys → Service keys</kbd> i kliknij <kbd>Create service key</kbd>. Klucz może utworzyć Super Admin albo użytkownik z uprawnieniem Developer tools.</li>
-  <li>Nazwij klucz „Kai” i dodaj zakresy (scopes) <code>crm.objects.deals.read</code>, <code>crm.objects.deals.write</code>, <code>crm.schemas.deals.read</code>, <code>crm.objects.contacts.read</code>, <code>crm.objects.contacts.write</code>. Kliknij <kbd>Create</kbd> i skopiuj klucz.</li>
-  <li>Otwórz <a href="https://app.aii-crm.com/docs/custom-crm?lang=en">stronę podłączenia własnego CRM</a>, sekcję „Ready-made specs: HubSpot”, skopiuj JSON i wklej klucz w pole <code>token</code>.</li>
-  <li>W bocie <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> lub w <a href="https://app.aii-crm.com/chat?lang=en">czacie webowym</a>: <kbd>/connect</kbd> → „My own CRM via API” → wklej JSON. Kai sprawdzi dostęp i pokaże twoje lejki sprzedaży.</li>
+  <li>Otwórz <a href="https://app.aii-crm.com/install/hubspot">link instalacyjny</a> i zaloguj się do HubSpot, jeśli pojawi się taka prośba.</li>
+  <li>Wybierz konto HubSpot i sprawdź, do jakich danych Kai prosi o dostęp. Zostaw zaznaczone uprawnienia do firm i właściwości: bez nich Kai nie będzie mógł zarządzać firmami ani właściwościami. Zezwól na dostęp.</li>
+  <li>Na stronie „Kai is installed in HubSpot” kliknij „Open Kai in Telegram” albo „Continue in the browser”. Link działa jednorazowo, przez 30 minut: wiąże to konto HubSpot z twoim kontem Kai.</li>
+  <li>Kai potwierdza połączenie i pyta, co skonfigurować.</li>
 </ol>
-<div class="note warn">Klucz service key działa w imieniu konta HubSpot, więc go nie publikuj. W HubSpot możesz wymienić go na nowy albo usunąć — stary klucz przestanie wtedy działać.</div>
+<p>Jeszcze jeden sposób, bezpośrednio w bocie <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> lub w <a href="https://app.aii-crm.com/chat?lang=en">czacie webowym</a>: polecenie <kbd>/connect</kbd> → „HubSpot (beta)” → „Sign in with HubSpot”.</p>
+<div class="note warn">Logowanie przez HubSpot korzysta z OAuth: Kai nigdy nie widzi twojego hasła do HubSpot. Możesz odłączyć Kai w HubSpot, na liście połączonych aplikacji, a dostęp zniknie od razu.</div>
 
-<h2>Co Kai robi w HubSpot</h2>
+<h2>Co Kai konfiguruje w HubSpot</h2>
 <ul>
-  <li><strong>Lejki i etapy.</strong> Pokazuje lejki sprzedaży i ich etapy oraz liczy transakcje na każdym etapie.</li>
-  <li><strong>Transakcje.</strong> Znajduje transakcję po nazwie, tworzy nową we właściwym lejku i na właściwym etapie, zmienia etap i kwotę.</li>
-  <li><strong>Kontakty.</strong> Tworzy kontakt z numerem telefonu i adresem e-mail.</li>
-  <li><strong>Zadania i notatki.</strong> Tworzy zadanie z terminem i dodaje notatkę do transakcji.</li>
-  <li><strong>Analityka.</strong> Ile transakcji jest na każdym etapie lejka.</li>
+  <li><strong>Lejki i etapy.</strong> Nowy lejek z etapami z jednej wiadomości; dodawanie, zmiana nazwy lub usuwanie etapu. O tym, ile lejków możesz mieć, decyduje twój plan HubSpot.</li>
+  <li><strong>Właściwości.</strong> Własne właściwości transakcji, w tym listy opcji, oraz ich wartości w transakcji.</li>
+  <li><strong>Transakcje.</strong> Tworzenie w odpowiednim lejku i na odpowiednim etapie, przenoszenie między etapami, zmiana kwoty, wyszukiwanie; link do rekordu transakcji w HubSpot.</li>
+  <li><strong>Kontakty i firmy.</strong> Tworzenie i powiązanie z transakcją.</li>
+  <li><strong>Zadania i notatki.</strong> Zadanie z terminem w transakcji i notatka, prosto z czatu.</li>
+  <li><strong>Analityka lejka.</strong> Transakcje na etapach, powody przegranej, „kondycja” konkretnej transakcji.</li>
+  <li><strong>Automatyzacje na zdarzenia.</strong> Transakcja zostaje utworzona albo przechodzi na etap, a Kai tworzy zadanie lub wysyła powiadomienie.</li>
 </ul>
 <p>Każda akcja idzie przez oficjalne API HubSpot. Wszystko, co zostało utworzone, zostaje na twoim koncie HubSpot niezależnie od tego, czy dalej korzystasz z asystenta.</p>
 
-<h2>Co jest w przygotowaniu, a czego jeszcze nie ma</h2>
+<h2>Czego Kai jeszcze nie robi w HubSpot</h2>
 <div class="table-wrap">
 <table>
   <thead><tr><th>Potrzeba</th><th>Status w Kai</th><th>Co zrobić teraz</th></tr></thead>
   <tbody>
-    <tr><td>„Sign in with HubSpot” jednym kliknięciem</td><td>W przygotowaniu</td><td>Podłącz przez API z kluczem service key.</td></tr>
-    <tr><td>Tworzenie lejków, etapów i pól z czatu</td><td>Jeszcze nie</td><td>Skonfiguruj je ręcznie w HubSpot; Kai zaproponuje strukturę i napisze specyfikację.</td></tr>
-    <tr><td>Firmy</td><td>Jeszcze nie</td><td>Pracuj z firmami bezpośrednio w HubSpot.</td></tr>
-    <tr><td>Automatyzacje na zdarzenia w HubSpot</td><td>Jeszcze nie</td><td>Wbudowane przepływy pracy (workflows) HubSpot, jeśli twój plan HubSpot je obejmuje.</td></tr>
+    <tr><td>Tagi w transakcjach i kontaktach</td><td>Brak w HubSpot</td><td>Właściwość typu lista w transakcji: Kai utworzy ją razem z opcjami.</td></tr>
+    <tr><td>Zaproszenie użytkownika, ustawienie ról</td><td>Jeszcze nie</td><td>Ustawienia HubSpot → Users &amp; Teams.</td></tr>
+    <tr><td>Reguła „klient nie odpowiada przez N minut”</td><td>Jeszcze nie</td><td>Reguła na nową transakcję lub zmianę etapu.</td></tr>
+    <tr><td>Przyciski i panele Kai wewnątrz HubSpot</td><td>Jeszcze nie</td><td>Pracuj z Kai na czacie: w Telegramie lub w przeglądarce.</td></tr>
   </tbody>
 </table>
 </div>
+<p>Uczciwe podsumowanie: dziś Kai dla HubSpot konfiguruje strukturę, utrzymuje porządek w danych, obsługuje zadania, analizuje lejek i uruchamia reguły na zdarzenia. Obsługa jest w becie: jeśli coś pójdzie nie tak, napisz do wsparcia bezpośrednio na czacie.</p>
 
 <h2>Z Kai to jedna wiadomość</h2>
-<p>Po podłączeniu prosisz Kai o to samo, o co prosiłbyś w każdym innym CRM. Przykłady:</p>
-<pre>Pokaż lejki i ile transakcji jest na każdym etapie.</pre>
-<pre>Utwórz transakcję „Alpha, 20 stanowisk” na 12000 w lejku Sales Pipeline.</pre>
-<pre>Utwórz zadanie „oddzwonić” do transakcji „Alpha, 20 stanowisk” na jutro i dodaj notatkę: poprosili o fakturę roczną.</pre>
-<p>Podłączenie własnego CRM przez API, w tym HubSpot, jest w planie Max, €119 miesięcznie; omówienie podłączenia i przygotowanie specyfikacji są bezpłatne. Kai mówi po angielsku i rosyjsku.</p>
+<p>Opisujesz biznes, Kai dopytuje o szczegóły, pokazuje plan, po twoim potwierdzeniu tworzy wszystko przez API i wysyła raport. Przykłady:</p>
+<pre>Utwórz w HubSpot lejek sprzedaży B2B: Nowy lead → Zakwalifikowany → Demo → Oferta → Umowa. Dodaj do transakcji właściwość liczbową Budżet.</pre>
+<pre>Utwórz transakcję „Alpha, 20 stanowisk” na 12000 w lejku Sales Pipeline, dodaj kontakt Anna Smith i firmę Alpha.</pre>
+<pre>Gdy transakcja przejdzie na etap Umowa, utwórz zadanie „wysłać fakturę” na jutro.</pre>
+<p>Plany są takie same jak dla pozostałych CRM: Start €29 miesięcznie za jeden CRM, Pro €59 do trzech CRM, Max €119 do dziesięciu. Pierwsze 3 dni to okres próbny, bez karty, około 25 zapytań na funkcjach Start. Kai mówi po angielsku i rosyjsku.</p>
 
 <h2>FAQ</h2>
 <div class="faq">
   <div class="faq-item">
-    <h3>Czy jest asystent AI, który pracuje z HubSpot na podstawie wiadomości na czacie?</h3>
-    <p>Tak, Kai. Dziś łączy się z HubSpot przez API jako własny CRM: widzi lejki i transakcje, tworzy transakcje, kontakty, zadania i notatki, przenosi transakcje między etapami i analizuje lejek. Podłączenie jednym kliknięciem jest w przygotowaniu.</p>
+    <h3>Czy jest asystent AI, który skonfiguruje HubSpot na podstawie wiadomości na czacie?</h3>
+    <p>Tak, Kai. Zwykłymi słowami opisujesz swój proces sprzedaży w Telegramie lub w przeglądarce, a Kai tworzy w HubSpot przez oficjalne API lejki i etapy, właściwości, transakcje, kontakty, firmy, zadania i notatki, analizuje lejek i uruchamia reguły na zdarzenia. Obsługa HubSpot jest w becie.</p>
   </div>
   <div class="faq-item">
-    <h3>Jak już dziś podłączyć HubSpot do Kai?</h3>
-    <p>Utwórz klucz w HubSpot: Development → Keys → Service keys, z dostępem do transakcji i kontaktów. Weź gotową specyfikację HubSpot ze strony o podłączeniu własnego CRM, wklej do niej klucz i wyślij ją do Kai: /connect → „My own CRM via API”. Podłączenie własnego CRM jest w planie Max.</p>
+    <h3>Jak podłączyć HubSpot do Kai?</h3>
+    <p>Otwórz link instalacyjny app.aii-crm.com/install/hubspot, zezwól na dostęp w HubSpot, a na stronie „Kai is installed” kliknij „Open Kai in Telegram” albo „Continue in the browser”. Jeszcze jeden sposób w bocie: /connect → HubSpot (beta) → „Sign in with HubSpot”. Bez kluczy i bez JSON.</p>
   </div>
   <div class="faq-item">
-    <h3>Kiedy będzie dostępne podłączenie HubSpot jednym kliknięciem?</h3>
-    <p>Jest w przygotowaniu: aplikacja Kai dla HubSpot z przyciskiem „Sign in with HubSpot” i linkiem instalacyjnym, bez kluczy i JSON. Gdy tylko wystartuje, Kai da ci znać na czacie.</p>
+    <h3>Czy Kai potrafi budować automatyzacje w HubSpot?</h3>
+    <p>Tak, od planu Pro. Reguła na zdarzenie w HubSpot (transakcja zostaje utworzona albo przechodzi na etap) tworzy zadanie lub wysyła powiadomienie. Opisujesz regułę słowami, a Kai pokazuje ją przed włączeniem.</p>
   </div>
   <div class="faq-item">
-    <h3>Czego Kai jeszcze nie robi w HubSpot?</h3>
-    <p>Nie tworzy lejków ani pól, nie pracuje z firmami i nie uruchamia automatyzacji na zdarzenia w HubSpot. Wszystko to planujemy razem z podłączeniem jednym kliknięciem.</p>
+    <h3>Jakiego planu potrzebuję do HubSpot?</h3>
+    <p>Dowolny plan od Start, €29 miesięcznie za jeden CRM; automatyzacje na zdarzenia — od planu Pro, €59. Pierwsze 3 dni to okres próbny bez karty: wystarczy, żeby przetestować Kai na własnym koncie HubSpot.</p>
   </div>
 </div>
 
 <h2>Co dalej</h2>
-<p>Jeśli potrzebujesz HubSpot już teraz, utwórz klucz service key i podłącz się według kroków powyżej. Jeśli wolisz podłączenie jednym kliknięciem, poczekaj na aplikację Kai dla HubSpot: jest w przygotowaniu.</p>
+<p>Otwórz link instalacyjny, zezwól na dostęp i poproś Kai, żeby pokazał twoje lejki: po minucie zobaczysz, jak asystent pracuje z twoim kontem.</p>
 <div class="cta">
-  <a class="btn btn-primary" href="https://app.aii-crm.com/docs/custom-crm?lang=en">Instrukcja podłączenia</a>
+  <a class="btn btn-primary" href="https://app.aii-crm.com/install/hubspot">Zainstaluj Kai w HubSpot</a>
   <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Otwórz czat webowy</a>
 </div>
 
-<p class="author">Autor: Zespół Kai · Aktualizacja: <time datetime="2026-11-04">4 listopada 2026</time> · Możliwości opisano według stanu na dzień publikacji; aktualny status Kai podaje na czacie.</p>
+<p class="author">Autor: Zespół Kai · Aktualizacja: <time datetime="2026-11-16">16 listopada 2026</time> · Możliwości i ograniczenia opisano według stanu na dzień publikacji; aktualny status Kai podaje na czacie.</p>
 </article>
 </main>
 
@@ -221,10 +225,10 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
       "@type": "Article",
       "@id": "https://aii-crm.com/guides/pl/hubspot-ai-assistant.html#article",
       "headline": "Asystent AI do HubSpot: skonfiguruj CRM jedną wiadomością na czacie",
-      "description": "Jak już dziś podłączyć HubSpot do asystenta AI Kai — przez API z kluczem service key — i co Kai robi w HubSpot: lejki, transakcje, kontakty, zadania, notatki. Podłączenie jednym kliknięciem jest w przygotowaniu.",
+      "description": "Jak podłączyć HubSpot do asystenta AI Kai jednym kliknięciem, bez kluczy, i co Kai robi w HubSpot: lejki, właściwości, transakcje, kontakty, firmy, zadania, automatyzacje. Obsługa jest w becie.",
       "inLanguage": "pl",
       "datePublished": "2026-11-04",
-      "dateModified": "2026-11-04",
+      "dateModified": "2026-11-16",
       "mainEntityOfPage": "https://aii-crm.com/guides/pl/hubspot-ai-assistant.html",
       "image": "https://aii-crm.com/og-image-v5.png",
       "author": {
@@ -243,34 +247,34 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Czy jest asystent AI, który pracuje z HubSpot na podstawie wiadomości na czacie?",
+          "name": "Czy jest asystent AI, który skonfiguruje HubSpot na podstawie wiadomości na czacie?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tak, Kai. Dziś łączy się z HubSpot przez API jako własny CRM: widzi lejki i transakcje, tworzy transakcje, kontakty, zadania i notatki, przenosi transakcje między etapami i analizuje lejek. Podłączenie jednym kliknięciem jest w przygotowaniu."
+            "text": "Tak, Kai. Zwykłymi słowami opisujesz swój proces sprzedaży w Telegramie lub w przeglądarce, a Kai tworzy w HubSpot przez oficjalne API lejki i etapy, właściwości, transakcje, kontakty, firmy, zadania i notatki, analizuje lejek i uruchamia reguły na zdarzenia. Obsługa HubSpot jest w becie."
           }
         },
         {
           "@type": "Question",
-          "name": "Jak już dziś podłączyć HubSpot do Kai?",
+          "name": "Jak podłączyć HubSpot do Kai?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Utwórz klucz w HubSpot: Development → Keys → Service keys, z dostępem do transakcji i kontaktów. Weź gotową specyfikację HubSpot ze strony o podłączeniu własnego CRM, wklej do niej klucz i wyślij ją do Kai: /connect → „My own CRM via API”. Podłączenie własnego CRM jest w planie Max."
+            "text": "Otwórz link instalacyjny app.aii-crm.com/install/hubspot, zezwól na dostęp w HubSpot, a na stronie „Kai is installed” kliknij „Open Kai in Telegram” albo „Continue in the browser”. Jeszcze jeden sposób w bocie: /connect → HubSpot (beta) → „Sign in with HubSpot”. Bez kluczy i bez JSON."
           }
         },
         {
           "@type": "Question",
-          "name": "Kiedy będzie dostępne podłączenie HubSpot jednym kliknięciem?",
+          "name": "Czy Kai potrafi budować automatyzacje w HubSpot?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Jest w przygotowaniu: aplikacja Kai dla HubSpot z przyciskiem „Sign in with HubSpot” i linkiem instalacyjnym, bez kluczy i JSON. Gdy tylko wystartuje, Kai da ci znać na czacie."
+            "text": "Tak, od planu Pro. Reguła na zdarzenie w HubSpot (transakcja zostaje utworzona albo przechodzi na etap) tworzy zadanie lub wysyła powiadomienie. Opisujesz regułę słowami, a Kai pokazuje ją przed włączeniem."
           }
         },
         {
           "@type": "Question",
-          "name": "Czego Kai jeszcze nie robi w HubSpot?",
+          "name": "Jakiego planu potrzebuję do HubSpot?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nie tworzy lejków ani pól, nie pracuje z firmami i nie uruchamia automatyzacji na zdarzenia w HubSpot. Wszystko to planujemy razem z podłączeniem jednym kliknięciem."
+            "text": "Dowolny plan od Start, €29 miesięcznie za jeden CRM; automatyzacje na zdarzenia — od planu Pro, €59. Pierwsze 3 dni to okres próbny bez karty: wystarczy, żeby przetestować Kai na własnym koncie HubSpot."
           }
         }
       ]

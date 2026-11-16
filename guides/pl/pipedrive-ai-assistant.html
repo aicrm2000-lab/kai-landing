@@ -8,7 +8,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Asystent AI do Pipedrive: skonfiguruj CRM jedną wiadomością | Kai</title>
-<meta name="description" content="Kai konfiguruje Pipedrive z wiadomości na czacie: lejki, pola, transakcje, działania, analityka. Link instalacyjny, co działa w becie, a czego jeszcze nie.">
+<meta name="description" content="Kai konfiguruje Pipedrive z wiadomości na czacie: lejki, pola, transakcje, działania, automatyzacje. Link instalacyjny, co działa w becie, a czego jeszcze nie.">
 <meta name="keywords" content="asystent AI do Pipedrive, AI do Pipedrive, konfiguracja Pipedrive, wdrożenie Pipedrive, jak skonfigurować Pipedrive, Pipedrive bez programisty, lejek sprzedaży w Pipedrive, pola w Pipedrive, Pipedrive API, Pipedrive Telegram, CRM Pipedrive">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Kai Team">
@@ -36,7 +36,7 @@
 <meta property="og:description" content="Kai instaluje się w Pipedrive z linku i konfiguruje lejki, pola, transakcje i działania na podstawie wiadomości w Telegramie lub w przeglądarce. Co działa w becie, czego jeszcze nie ma, ceny.">
 <meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
 <meta property="article:published_time" content="2026-11-03">
-<meta property="article:modified_time" content="2026-11-03">
+<meta property="article:modified_time" content="2026-11-16">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Asystent AI do Pipedrive: skonfiguruj CRM jedną wiadomością na czacie">
 <meta name="twitter:description" content="Kai instaluje się w Pipedrive z linku i konfiguruje lejki, pola, transakcje i działania na podstawie wiadomości w Telegramie lub w przeglądarce. Co działa w becie, czego jeszcze nie ma, ceny.">
@@ -125,17 +125,17 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 </nav>
 
 <h1>Asystent AI do Pipedrive: skonfiguruj CRM jedną wiadomością na czacie</h1>
-<p class="meta">Aktualizacja: 3 listopada 2026 · Zespół Kai · 5 min czytania</p>
+<p class="meta">Aktualizacja: 16 listopada 2026 · Zespół Kai · 5 min czytania</p>
 
-<p class="lead">Asystent AI do Pipedrive to czat, w którym zwykłymi słowami opisujesz swój proces sprzedaży, a on buduje go w Pipedrive przez oficjalne API: lejki i etapy, pola, transakcje, osoby, organizacje, działania i notatki. Kai robi to w Telegramie lub w przeglądarce. Obsługa Pipedrive jest w becie: struktura, dane, działania i analityka są już dostępne; automatyzacje na zdarzenia w Pipedrive pojawią się w następnej kolejności.</p>
+<p class="lead">Asystent AI do Pipedrive to czat, w którym zwykłymi słowami opisujesz swój proces sprzedaży, a on buduje go w Pipedrive przez oficjalne API: lejki i etapy, pola, transakcje, osoby, organizacje, działania i notatki. Kai robi to w Telegramie lub w przeglądarce. Obsługa Pipedrive jest w becie: struktura, dane, działania, analityka i automatyzacje na zdarzenia już działają.</p>
 
 <section class="tldr" aria-label="W skrócie">
   <h2>W skrócie</h2>
   <ul>
     <li>Instalacja z linku <a href="https://app.aii-crm.com/install/pipedrive">app.aii-crm.com/install/pipedrive</a>: Pipedrive prosi o zgodę, a potem Kai wiąże firmę z twoim kontem w Telegramie lub w czacie webowym.</li>
-    <li>Działa: lejki i etapy, pola transakcji, osób i organizacji z listami opcji, transakcje, osoby, organizacje, działania, notatki, użytkownicy, analityka lejka z wygranymi i przegranymi transakcjami.</li>
-    <li>Jeszcze nie: reguły na zdarzenia w Pipedrive (automatyzacje i integracje Kai) oraz przyciski i panele wewnątrz Pipedrive.</li>
-    <li>Dostępne od planu Start, €29 miesięcznie. Pierwsze 3 dni to okres próbny.</li>
+    <li>Działa: lejki i etapy, pola transakcji, osób i organizacji z listami opcji, transakcje, osoby, organizacje, działania, notatki, etykiety, użytkownicy, analityka lejka z wygranymi i przegranymi transakcjami, automatyzacje na zdarzenia.</li>
+    <li>Jeszcze nie: przyciski i panele Kai wewnątrz Pipedrive oraz reguła „klient nie odpowiada przez N minut”.</li>
+    <li>Dostępne od planu Start, €29 miesięcznie; automatyzacje — od planu Pro. Pierwsze 3 dni to okres próbny.</li>
   </ul>
 </section>
 
@@ -157,6 +157,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   <li><strong>Osoby i organizacje.</strong> Tworzenie i powiązanie z transakcją.</li>
   <li><strong>Działania i notatki.</strong> Działanie z terminem w transakcji i notatka, prosto z czatu.</li>
   <li><strong>Analityka lejka.</strong> Transakcje na etapach, wygrane i przegrane transakcje, „kondycja” konkretnej transakcji.</li>
+  <li><strong>Automatyzacje na zdarzenia.</strong> Transakcja zostaje utworzona albo przechodzi na etap, a Kai tworzy działanie lub wysyła powiadomienie.</li>
 </ul>
 <p>Każda akcja idzie przez oficjalne API Pipedrive. Wszystko, co zostało utworzone, zostaje w twojej firmie w Pipedrive niezależnie od tego, czy dalej korzystasz z asystenta.</p>
 
@@ -165,13 +166,13 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <table>
   <thead><tr><th>Potrzeba</th><th>Status w Kai</th><th>Co zrobić teraz</th></tr></thead>
   <tbody>
-    <tr><td>Reguły na zdarzenia: transakcja przechodzi na etap → działanie, powiadomienie</td><td>Po becie</td><td>Wbudowane automatyzacje Pipedrive, jeśli twój plan Pipedrive je obejmuje.</td></tr>
-    <tr><td>Integracje z innymi serwisami wyzwalane zdarzeniami</td><td>Po becie</td><td>Aplikacje z Pipedrive Marketplace albo programista.</td></tr>
+    <tr><td>Reguła „klient nie odpowiada przez N minut”</td><td>Jeszcze nie</td><td>Reguła na nową transakcję lub zmianę etapu.</td></tr>
+    <tr><td>Pole wymagane na etapie</td><td>Brak w API Pipedrive</td><td>Ustawienia Pipedrive → Data fields → pole → Important lub Required.</td></tr>
     <tr><td>Przyciski i panele Kai wewnątrz Pipedrive</td><td>Jeszcze nie</td><td>Pracuj z Kai na czacie: w Telegramie lub w przeglądarce.</td></tr>
   </tbody>
 </table>
 </div>
-<p>Uczciwe podsumowanie: dziś Kai dla Pipedrive konfiguruje strukturę, utrzymuje porządek w danych, obsługuje działania i analizuje lejek. Automatyzacje na zdarzenia już działają dla amoCRM i Kommo, a do Pipedrive trafią po becie.</p>
+<p>Uczciwe podsumowanie: dziś Kai dla Pipedrive konfiguruje strukturę, utrzymuje porządek w danych, obsługuje działania, analizuje lejek i uruchamia reguły na zdarzenia. Obsługa jest w becie: jeśli coś pójdzie nie tak, napisz do wsparcia bezpośrednio na czacie.</p>
 
 <h2>Z Kai to jedna wiadomość</h2>
 <p>Opisujesz biznes, Kai dopytuje o szczegóły, pokazuje plan, po twoim potwierdzeniu tworzy wszystko przez API i wysyła raport. Przykłady:</p>
@@ -184,7 +185,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <div class="faq">
   <div class="faq-item">
     <h3>Czy jest asystent AI, który skonfiguruje Pipedrive na podstawie wiadomości na czacie?</h3>
-    <p>Tak, Kai. Zwykłymi słowami opisujesz swój proces sprzedaży w Telegramie lub w przeglądarce, a Kai tworzy w Pipedrive przez oficjalne API lejki i etapy, pola, transakcje, osoby, organizacje, działania i notatki oraz analizuje lejek. Obsługa Pipedrive jest w becie.</p>
+    <p>Tak, Kai. Zwykłymi słowami opisujesz swój proces sprzedaży w Telegramie lub w przeglądarce, a Kai tworzy w Pipedrive przez oficjalne API lejki i etapy, pola, transakcje, osoby, organizacje, działania i notatki, analizuje lejek i uruchamia reguły na zdarzenia. Obsługa Pipedrive jest w becie.</p>
   </div>
   <div class="faq-item">
     <h3>Jak podłączyć Pipedrive do Kai?</h3>
@@ -192,11 +193,11 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   </div>
   <div class="faq-item">
     <h3>Czy Kai potrafi budować automatyzacje w Pipedrive?</h3>
-    <p>Jeszcze nie. Reguły na zdarzenia w Pipedrive (transakcja przechodzi na etap → zadanie lub powiadomienie) i integracje wyzwalane zdarzeniami pojawią się po becie. Dziś Kai konfiguruje strukturę, zarządza danymi i działaniami oraz analizuje lejek.</p>
+    <p>Tak, od planu Pro. Reguła na zdarzenie w Pipedrive (transakcja zostaje utworzona albo przechodzi na etap) tworzy działanie lub wysyła powiadomienie. Opisujesz regułę słowami, a Kai pokazuje ją przed włączeniem.</p>
   </div>
   <div class="faq-item">
     <h3>Jakiego planu potrzebuję do Pipedrive?</h3>
-    <p>Dowolny plan od Start, €29 miesięcznie za jeden CRM. Pierwsze 3 dni to okres próbny bez karty: wystarczy, żeby przetestować Kai na własnej firmie w Pipedrive.</p>
+    <p>Dowolny plan od Start, €29 miesięcznie za jeden CRM; automatyzacje na zdarzenia — od planu Pro, €59. Pierwsze 3 dni to okres próbny bez karty: wystarczy, żeby przetestować Kai na własnej firmie w Pipedrive.</p>
   </div>
 </div>
 
@@ -207,7 +208,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Otwórz czat webowy</a>
 </div>
 
-<p class="author">Autor: Zespół Kai · Aktualizacja: <time datetime="2026-11-03">3 listopada 2026</time> · Możliwości i ograniczenia opisano według stanu na dzień publikacji; aktualny status Kai podaje na czacie.</p>
+<p class="author">Autor: Zespół Kai · Aktualizacja: <time datetime="2026-11-16">16 listopada 2026</time> · Możliwości i ograniczenia opisano według stanu na dzień publikacji; aktualny status Kai podaje na czacie.</p>
 </article>
 </main>
 
@@ -226,7 +227,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
       "description": "Jak asystent AI Kai konfiguruje Pipedrive na podstawie wiadomości na czacie: lejki, etapy, pola, transakcje, osoby, działania i analityka. Link instalacyjny, co działa w becie, a czego jeszcze nie ma.",
       "inLanguage": "pl",
       "datePublished": "2026-11-03",
-      "dateModified": "2026-11-03",
+      "dateModified": "2026-11-16",
       "mainEntityOfPage": "https://aii-crm.com/guides/pl/pipedrive-ai-assistant.html",
       "image": "https://aii-crm.com/og-image-v5.png",
       "author": {
@@ -248,7 +249,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Czy jest asystent AI, który skonfiguruje Pipedrive na podstawie wiadomości na czacie?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tak, Kai. Zwykłymi słowami opisujesz swój proces sprzedaży w Telegramie lub w przeglądarce, a Kai tworzy w Pipedrive przez oficjalne API lejki i etapy, pola, transakcje, osoby, organizacje, działania i notatki oraz analizuje lejek. Obsługa Pipedrive jest w becie."
+            "text": "Tak, Kai. Zwykłymi słowami opisujesz swój proces sprzedaży w Telegramie lub w przeglądarce, a Kai tworzy w Pipedrive przez oficjalne API lejki i etapy, pola, transakcje, osoby, organizacje, działania i notatki, analizuje lejek i uruchamia reguły na zdarzenia. Obsługa Pipedrive jest w becie."
           }
         },
         {
@@ -264,7 +265,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Czy Kai potrafi budować automatyzacje w Pipedrive?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Jeszcze nie. Reguły na zdarzenia w Pipedrive (transakcja przechodzi na etap → zadanie lub powiadomienie) i integracje wyzwalane zdarzeniami pojawią się po becie. Dziś Kai konfiguruje strukturę, zarządza danymi i działaniami oraz analizuje lejek."
+            "text": "Tak, od planu Pro. Reguła na zdarzenie w Pipedrive (transakcja zostaje utworzona albo przechodzi na etap) tworzy działanie lub wysyła powiadomienie. Opisujesz regułę słowami, a Kai pokazuje ją przed włączeniem."
           }
         },
         {
@@ -272,7 +273,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "Jakiego planu potrzebuję do Pipedrive?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Dowolny plan od Start, €29 miesięcznie za jeden CRM. Pierwsze 3 dni to okres próbny bez karty: wystarczy, żeby przetestować Kai na własnej firmie w Pipedrive."
+            "text": "Dowolny plan od Start, €29 miesięcznie za jeden CRM; automatyzacje na zdarzenia — od planu Pro, €59. Pierwsze 3 dni to okres próbny bez karty: wystarczy, żeby przetestować Kai na własnej firmie w Pipedrive."
           }
         }
       ]

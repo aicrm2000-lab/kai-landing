@@ -553,7 +553,6 @@
   "What does Kai do in Bitrix24?": "Que fait Kai dans Bitrix24 ?",
   "Pipelines and stages, fields, deals, contacts, companies, tasks, analytics and specs. In-Bitrix24 automations (robots) and widgets are not there yet — if those are your main need, it's fairer to use amoCRM/Kommo, where the rules already work.": "Pipelines et étapes, champs, transactions, contacts, entreprises, tâches, analytique et cahiers des charges. Les automatisations internes à Bitrix24 (robots) et les widgets ne sont pas encore là — si c’est votre besoin principal, il est plus honnête d’utiliser amoCRM/Kommo, où les règles fonctionnent déjà.",
   "Does Kai work with Pipedrive?": "Kai fonctionne-t-il avec Pipedrive ?",
-  "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Event automations for Pipedrive are not there yet — they come after the beta.": "Oui, en bêta, dès le forfait Start. Connexion via le lien d’installation depuis Pipedrive, le bouton « Sign in with Pipedrive » dans le bot ou un token API personnel. Kai configure pipelines, étapes et champs, gère transactions, personnes, organisations, activités et notes et analyse le pipeline. Les automatisations sur les événements Pipedrive ne sont pas encore là — elles arriveront après la bêta.",
   "Does Kai work with a custom or in-house CRM?": "Kai fonctionne-t-il avec un CRM sur mesure ou maison ?",
   "Yes, via its API. Your own CRM — custom, in-house or any other with a REST API — connects through a connector spec: the API address, the auth method (OAuth 2.0, API key, bearer or basic) and which endpoints do what. Kai drafts the spec from your docs or asks step by step, then works with it like with amoCRM: pipelines, deals, contacts, tasks, automations. Only the pipelines list is mandatory. Try it first on Kai Sandbox CRM. Connecting is on the Max plan; discussing and drafting the spec is free.": "Oui, via son API. Votre propre CRM — sur mesure, maison ou tout autre doté d’une API REST — se connecte via une spécification de connecteur : l’adresse de l’API, la méthode d’authentification (OAuth 2.0, clé API, bearer ou basic) et le rôle de chaque endpoint. Kai rédige la spécification à partir de votre documentation ou vous interroge étape par étape, puis travaille avec votre CRM comme avec amoCRM : pipelines, transactions, contacts, tâches, automatisations. Seule la liste des pipelines est obligatoire. Testez d’abord sur Kai Sandbox CRM. La connexion est incluse dans le forfait Max ; discuter et rédiger la spécification est gratuit.",
   "Connect your CRM in 1 click": "Connectez votre CRM en 1 clic",
@@ -591,10 +590,7 @@
   "Close chat": "Fermer le chat",
   "beta": "bêta",
   "Pipedrive: install Kai into your Pipedrive in one click": "Pipedrive : installez Kai dans votre Pipedrive en un clic",
-  "HubSpot: connect via API today, one-click connection in development": "HubSpot : via l’API dès aujourd’hui, connexion en un clic en développement",
-  "in development": "en développement",
   "Does Kai work with HubSpot?": "Kai fonctionne-t-il avec HubSpot ?",
-  "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes.": "La connexion en un clic est en développement. Dès aujourd’hui, HubSpot se connecte via l’API comme un CRM sur mesure : une service key HubSpot et la spécification prête à l’emploi de Kai, sur le forfait Max. Kai voit les pipelines et les transactions et crée transactions, contacts, tâches et notes.",
   "Monthly": "Mensuel",
   "Yearly": "Annuel",
   "2 months free": "2 mois offerts",
@@ -633,17 +629,20 @@
   "yearly −40% = 12 months for the price of 6": "annuel −40 % = 12 mois au prix de 6",
   "subscribe by 30.11 — the discount applies by itself": "abonnez-vous avant le 30.11 — la remise s’applique toute seule",
   "first month −50%: Pro for €29.50": "premier mois −50 % : Pro pour €29,50",
-  "then €59/mo, cancel any time": "puis €59/mois, résiliable à tout moment"
+  "then €59/mo, cancel any time": "puis €59/mois, résiliable à tout moment",
+  "HubSpot: install Kai into your HubSpot in one click": "HubSpot : installez Kai dans votre HubSpot en un clic",
+  "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Automations on Pipedrive events work from the Pro plan.": "Oui, en bêta, dès le forfait Start. Connexion via le lien d’installation depuis Pipedrive, le bouton « Sign in with Pipedrive » dans le bot ou un token API personnel. Kai configure pipelines, étapes et champs, gère transactions, personnes, organisations, activités et notes et analyse le pipeline. Les automatisations sur les événements Pipedrive fonctionnent à partir du forfait Pro.",
+  "Yes, in beta, from the Start plan. Connect with the “Sign in with HubSpot” button in the bot or the install link, with no keys or JSON. Kai sets up pipelines, stages and properties, manages deals, contacts, companies, tasks and notes and reviews the funnel. Automations on HubSpot events work from the Pro plan.": "Oui, en bêta, dès le forfait Start. Connexion via le bouton « Sign in with HubSpot » dans le bot ou le lien d’installation, sans clé ni JSON. Kai configure pipelines, étapes et propriétés, gère transactions, contacts, entreprises, tâches et notes et analyse le pipeline. Les automatisations sur les événements HubSpot fonctionnent à partir du forfait Pro."
  },
  "meta": {
   "title": "Assistant IA qui configure amoCRM, Kommo, Bitrix24 et les CRM sur mesure | Kai",
-  "description": "Kai configure votre CRM à partir d’un simple message dans Telegram ou votre navigateur — amoCRM, Kommo, Bitrix24, Pipedrive ou votre propre CRM via son API : pipelines, champs, tâches, automatisations, analytique. 65 actions. Essai de 3 jours, sans carte.",
+  "description": "Kai configure votre CRM à partir d’un simple message dans Telegram ou votre navigateur — amoCRM, Kommo, Bitrix24, Pipedrive, HubSpot ou votre propre CRM via son API : pipelines, champs, tâches, automatisations, analytique. 65 actions. Essai de 3 jours, sans carte.",
   "og_title": "Kai — l’assistant IA qui configure votre CRM",
   "og_description": "Un assistant IA qui configure votre CRM à partir d’un message de chat — dans Telegram ou dans votre navigateur.",
   "keywords": "amoCRM, Kommo, Bitrix24, configurer un CRM, paramétrage CRM, configuration CRM, assistant IA CRM, assistant IA pour amoCRM, assistant IA pour Kommo, assistant IA pour Bitrix24, automatisation CRM, bot Telegram CRM, pipeline de vente, API amoCRM, API Kommo, CRM sans développeur, CRM sans intégrateur, CRM sur mesure, CRM maison, CRM développé en interne, connecter une IA à son CRM par API, agent IA pour CRM personnalisé, intégration IA API REST CRM, custom CRM, in-house CRM, AI assistant, CRM setup, Pipedrive, assistant IA pour Pipedrive, configurer Pipedrive, Pipedrive sans développeur, HubSpot, assistant IA pour HubSpot, configurer HubSpot"
  },
  "ld": {
-  "description": "Assistant IA qui configure votre CRM à partir d’un message de chat — dans Telegram ou dans votre navigateur : amoCRM, Kommo, Bitrix24, Pipedrive ou votre propre CRM via son API. 65 actions : pipelines, champs, étapes, transactions, contacts, automatisations, analytique.",
+  "description": "Assistant IA qui configure votre CRM à partir d’un message de chat — dans Telegram ou dans votre navigateur : amoCRM, Kommo, Bitrix24, Pipedrive, HubSpot ou votre propre CRM via son API. 65 actions : pipelines, champs, étapes, transactions, contacts, automatisations, analytique.",
   "featureList": [
    "Conseil IA sur la structure de votre CRM",
    "Pipelines de vente et étapes",
@@ -654,7 +653,7 @@
    "Connexion OAuth en un clic",
    "Votre propre CRM (sur mesure, maison) via API REST : OAuth 2.0, clé API, bearer",
    "Connexion Pipedrive (bêta) : pipelines, transactions, activités, analytique",
-   "HubSpot via API (connexion en un clic en développement)"
+   "Connexion HubSpot (bêta) : pipelines, transactions, entreprises, tâches, analytique"
   ],
   "faq": [
    [
@@ -679,11 +678,11 @@
    ],
    [
     "Kai fonctionne-t-il avec Pipedrive ?",
-    "Oui, en bêta, dès le forfait Start. Connexion via le lien d’installation depuis Pipedrive, le bouton « Sign in with Pipedrive » dans le bot ou un token API personnel. Kai configure pipelines, étapes et champs, gère transactions, personnes, organisations, activités et notes et analyse le pipeline. Les automatisations sur les événements Pipedrive ne sont pas encore là — elles arriveront après la bêta."
+    "Oui, en bêta, dès le forfait Start. Connexion via le lien d’installation depuis Pipedrive, le bouton « Sign in with Pipedrive » dans le bot ou un token API personnel. Kai configure pipelines, étapes et champs, gère transactions, personnes, organisations, activités et notes et analyse le pipeline. Les automatisations sur les événements Pipedrive fonctionnent à partir du forfait Pro."
    ],
    [
     "Kai fonctionne-t-il avec HubSpot ?",
-    "La connexion en un clic est en développement. Dès aujourd’hui, HubSpot se connecte via l’API comme un CRM sur mesure : une service key HubSpot et la spécification prête à l’emploi de Kai, sur le forfait Max. Kai voit les pipelines et les transactions et crée transactions, contacts, tâches et notes."
+    "Oui, en bêta, dès le forfait Start. Connexion via le bouton « Sign in with HubSpot » dans le bot ou le lien d’installation, sans clé ni JSON. Kai configure pipelines, étapes et propriétés, gère transactions, contacts, entreprises, tâches et notes et analyse le pipeline. Les automatisations sur les événements HubSpot fonctionnent à partir du forfait Pro."
    ],
    [
     "Kai fonctionne-t-il avec un CRM sur mesure ou maison ?",

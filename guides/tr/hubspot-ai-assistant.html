@@ -8,7 +8,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>HubSpot yapay zeka asistanı: CRM&#x27;ini sohbet mesajıyla kur | Kai</title>
-<meta name="description" content="Kai, HubSpot ile API üzerinden çalışır: huniler, fırsatlar, kişiler, görevler. Bugün service key ile bağlan; tek tıkla bağlantı geliştiriliyor.">
+<meta name="description" content="Kai, HubSpot&#x27;u sohbet mesajıyla kurar: huniler, özellikler, fırsatlar, görevler, otomasyonlar. Tek tıkla bağlantı, betada neler çalışıyor, neler henüz yok.">
 <meta name="keywords" content="HubSpot yapay zeka asistanı, HubSpot için yapay zeka, HubSpot AI, HubSpot kurulumu, HubSpot nasıl kurulur, geliştirici olmadan HubSpot kurulumu, yazılımcısız HubSpot, HubSpot satış hunisi, HubSpot fırsat yönetimi, HubSpot API, HubSpot API entegrasyonu, HubSpot service key, HubSpot Telegram botu, HubSpot yapay zeka entegrasyonu, yapay zeka ile CRM yönetimi">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Kai Team">
@@ -33,13 +33,13 @@
 <meta property="og:site_name" content="Kai">
 <meta property="og:url" content="https://aii-crm.com/guides/tr/hubspot-ai-assistant.html">
 <meta property="og:title" content="HubSpot yapay zeka asistanı: CRM'ini bir sohbet mesajıyla kur">
-<meta property="og:description" content="Kai, HubSpot ile API üzerinden çalışır: Telegram'da ya da tarayıcıda yazdığın bir mesajla satış hunileri, fırsatlar, kişiler, görevler ve notlar. Bugün nasıl bağlanır ve neler geliştiriliyor.">
+<meta property="og:description" content="Kai, HubSpot ile çalışır: Telegram'da ya da tarayıcıda yazdığın bir mesajla satış hunileri, özellikler, fırsatlar, kişiler, şirketler, görevler ve otomasyonlar. Tek tıkla bağlantı, destek beta aşamasında.">
 <meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
 <meta property="article:published_time" content="2026-11-04">
-<meta property="article:modified_time" content="2026-11-04">
+<meta property="article:modified_time" content="2026-11-16">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="HubSpot yapay zeka asistanı: CRM'ini bir sohbet mesajıyla kur">
-<meta name="twitter:description" content="Kai, HubSpot ile API üzerinden çalışır: Telegram'da ya da tarayıcıda yazdığın bir mesajla satış hunileri, fırsatlar, kişiler, görevler ve notlar. Bugün nasıl bağlanır ve neler geliştiriliyor.">
+<meta name="twitter:description" content="Kai, HubSpot ile çalışır: Telegram'da ya da tarayıcıda yazdığın bir mesajla satış hunileri, özellikler, fırsatlar, kişiler, şirketler, görevler ve otomasyonlar. Tek tıkla bağlantı, destek beta aşamasında.">
 <meta name="twitter:image" content="https://aii-crm.com/og-image-v5.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -125,87 +125,91 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 </nav>
 
 <h1>HubSpot yapay zeka asistanı: CRM'ini bir sohbet mesajıyla kur</h1>
-<p class="meta">Güncellendi: 4 Kasım 2026 · Kai Ekibi · 5 dk okuma</p>
+<p class="meta">Güncellendi: 16 Kasım 2026 · Kai Ekibi · 5 dk okuma</p>
 
-<p class="lead">HubSpot için yapay zeka asistanı, satış sürecini sade kelimelerle anlattığın ve onun da resmi API üzerinden HubSpot ile çalıştığı bir sohbettir: satış hunilerini ve fırsatları gösterir; fırsatlar, kişiler, görevler ve notlar oluşturur ve huniyi inceler. Kai bunu Telegram'da ya da tarayıcıda yapar. Bugün HubSpot, API üzerinden özel CRM olarak bağlanır; tek tıkla bağlantı geliştiriliyor.</p>
+<p class="lead">HubSpot için yapay zeka asistanı, satış sürecini sade kelimelerle anlattığın ve onun da bunu resmi API üzerinden HubSpot'ta kurduğu bir sohbettir: satış hunileri ve aşamalar, özellikler (properties), fırsatlar, kişiler, şirketler, görevler ve notlar. Kai bunu Telegram'da ya da tarayıcıda yapar. HubSpot desteği beta aşamasında: tek tıkla bağlantı, yapı, veriler, analitik ve olay otomasyonları şimdiden çalışıyor.</p>
 
 <section class="tldr" aria-label="Kısaca">
   <h2>Kısaca</h2>
   <ul>
-    <li>Bugün: HubSpot'ta oluşturulan bir service key (servis anahtarı) ve Kai'nin hazır spesifikasyonu; yani API üzerinden özel CRM bağlantısı, Max planında.</li>
-    <li>Çalışanlar: satış hunileri ve aşamalar, fırsatlar (listeleme, arama, oluşturma, aşamayı ve tutarı değiştirme), kişiler, fırsata bağlı görevler ve notlar, huni analitiği.</li>
-    <li>Geliştiriliyor: HubSpot için "Sign in with HubSpot" düğmesi ve kurulum bağlantısı olan bir Kai uygulaması — anahtar ya da JSON gerekmeden.</li>
-    <li>Henüz yok: satış hunisi ve alan oluşturma, şirketler, HubSpot olaylarına bağlı otomasyonlar.</li>
+    <li>Kurulum şu bağlantıdan yapılır: <a href="https://app.aii-crm.com/install/hubspot">app.aii-crm.com/install/hubspot</a>. HubSpot izin ister, ardından Kai HubSpot hesabını Telegram'daki ya da web sohbetindeki hesabına bağlar. Anahtar yok, JSON yok.</li>
+    <li>Çalışanlar: satış hunileri ve aşamalar, seçenek listeleri dahil fırsat özellikleri, fırsatlar, kişiler, şirketler, görevler, notlar, kayıp nedenleri ve lead kaynakları, huni analitiği, olay otomasyonları.</li>
+    <li>Henüz yok: etiketler (HubSpot'un kendisinde de yok), kullanıcı davet etme ve roller, HubSpot içinde düğmeler ya da paneller.</li>
+    <li>Start planından itibaren kullanılabilir, ayda €29; otomasyonlar Pro planından itibaren. İlk 3 gün deneme süresidir.</li>
   </ul>
 </section>
 
-<h2>HubSpot'u Kai'ye bugün nasıl bağlarsın</h2>
+<h2>HubSpot'u Kai'ye nasıl bağlarsın</h2>
 <ol>
-  <li>HubSpot'ta <kbd>Development → Keys → Service keys</kbd> bölümünü aç ve <kbd>Create service key</kbd> düğmesine tıkla. Anahtarı bir süper yönetici (super admin) ya da Developer tools iznine sahip bir kullanıcı oluşturabilir.</li>
-  <li>Anahtara "Kai" adını ver ve şu kapsamları (scopes) ekle: <code>crm.objects.deals.read</code>, <code>crm.objects.deals.write</code>, <code>crm.schemas.deals.read</code>, <code>crm.objects.contacts.read</code>, <code>crm.objects.contacts.write</code>. <kbd>Create</kbd> düğmesine tıkla ve anahtarı kopyala.</li>
-  <li><a href="https://app.aii-crm.com/docs/custom-crm?lang=en">Özel CRM bağlantı sayfasını</a> aç, "Ready-made specs: HubSpot" bölümünden JSON'u kopyala ve anahtarı <code>token</code> alanına yapıştır.</li>
-  <li><a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> botunda ya da <a href="https://app.aii-crm.com/chat?lang=en">web sohbetinde</a>: <kbd>/connect</kbd> → "My own CRM via API" → JSON'u yapıştır. Kai erişimi kontrol eder ve satış hunilerini gösterir.</li>
+  <li><a href="https://app.aii-crm.com/install/hubspot">Kurulum bağlantısını</a> aç ve HubSpot isterse giriş yap.</li>
+  <li>HubSpot hesabını seç ve Kai'nin hangi verilere erişim istediğini kontrol et. Şirketler ve özellikler için izinleri işaretli bırak: bunlar olmadan Kai şirketleri ve özellikleri yönetemez. Erişime izin ver.</li>
+  <li>"Kai is installed in HubSpot" sayfasında "Open Kai in Telegram" (Kai'yi Telegram'da aç) ya da "Continue in the browser" (tarayıcıda devam et) düğmesine bas. Bağlantı yalnızca bir kez ve 30 dakika boyunca çalışır: bu HubSpot hesabını Kai hesabına bağlar.</li>
+  <li>Kai bağlantıyı onaylar ve neyi kurmak istediğini sorar.</li>
 </ol>
-<div class="note warn">Service key, HubSpot hesabı adına işlem yapar, bu yüzden onu paylaşma. HubSpot'ta onu yenileyebilir ya da silebilirsin; eski anahtar çalışmayı bırakır.</div>
+<p>Doğrudan <a href="https://t.me/aiicrm_bot">@aiicrm_bot</a> botunda ya da <a href="https://app.aii-crm.com/chat?lang=en">web sohbetinde</a> bir yol daha var: <kbd>/connect</kbd> komutu → "HubSpot (beta)" → "Sign in with HubSpot".</p>
+<div class="note warn">HubSpot ile giriş OAuth kullanır: Kai HubSpot şifreni asla görmez. Kai'nin bağlantısını HubSpot'ta, bağlı uygulamalar listesinden kesebilirsin; erişim anında sona erer.</div>
 
-<h2>Kai HubSpot'ta neler yapar</h2>
+<h2>Kai HubSpot'ta neleri kurar</h2>
 <ul>
-  <li><strong>Satış hunileri ve aşamalar.</strong> Fırsat hunilerini ve aşamalarını gösterir, her aşamadaki fırsatları sayar.</li>
-  <li><strong>Fırsatlar.</strong> Bir fırsatı adıyla bulur, doğru huni ve aşamada yenisini oluşturur, aşamayı ve tutarı değiştirir.</li>
-  <li><strong>Kişiler.</strong> Telefon numarası ve e-posta adresiyle bir kişi oluşturur.</li>
-  <li><strong>Görevler ve notlar.</strong> Son tarihli bir görev oluşturur ve fırsata not ekler.</li>
-  <li><strong>Analitik.</strong> Bir huninin her aşamasında kaç fırsat olduğu.</li>
+  <li><strong>Satış hunileri ve aşamalar.</strong> Tek mesajla aşamalarıyla birlikte yeni bir satış hunisi; aşama ekleme, yeniden adlandırma ya da silme. Kaç satış hunin olabileceğini HubSpot planın belirler.</li>
+  <li><strong>Özellikler.</strong> Seçenek listeleri dahil özel fırsat özellikleri (properties) ve bunların fırsattaki değerleri.</li>
+  <li><strong>Fırsatlar.</strong> Doğru satış hunisinde ve aşamada oluşturma, aşamalar arasında taşıma, tutarı değiştirme, arama; HubSpot'taki fırsat kaydına bağlantı.</li>
+  <li><strong>Kişiler ve şirketler.</strong> Oluşturur ve bir fırsata bağlar.</li>
+  <li><strong>Görevler ve notlar.</strong> Doğrudan sohbetten, fırsata son tarihli bir görev ve bir not.</li>
+  <li><strong>Huni analitiği.</strong> Aşama başına fırsatlar, kayıp nedenleri, belirli bir fırsatın "sağlığı".</li>
+  <li><strong>Olay otomasyonları.</strong> Bir fırsat oluşturulur ya da bir aşamaya geçer, Kai de bir görev oluşturur ya da bildirim gönderir.</li>
 </ul>
 <p>Her işlem resmi HubSpot API'si üzerinden yapılır. Oluşturulan her şey, asistanı kullanmaya devam etsen de etmesen de HubSpot hesabında kalır.</p>
 
-<h2>Neler geliştiriliyor, neler henüz yok</h2>
+<h2>Kai'nin HubSpot'ta henüz yapmadıkları</h2>
 <div class="table-wrap">
 <table>
   <thead><tr><th>İş</th><th>Kai'deki durum</th><th>Şimdi ne yapmalı</th></tr></thead>
   <tbody>
-    <tr><td>Tek tıkla "Sign in with HubSpot"</td><td>Geliştiriliyor</td><td>Service key ile API üzerinden bağlan.</td></tr>
-    <tr><td>Sohbetten satış hunisi, aşama ve alan oluşturma</td><td>Henüz yok</td><td>Bunları HubSpot'ta elle kur; Kai yapıyı önerir ve spesifikasyonu yazar.</td></tr>
-    <tr><td>Şirketler</td><td>Henüz yok</td><td>Şirketlerle HubSpot'ta çalış.</td></tr>
-    <tr><td>HubSpot olaylarına bağlı otomasyonlar</td><td>Henüz yok</td><td>HubSpot planında varsa HubSpot'un yerleşik iş akışları (workflows).</td></tr>
+    <tr><td>Fırsatlarda ve kişilerde etiketler</td><td>HubSpot'ta yok</td><td>Fırsatta liste türünde bir özellik: Kai onu seçenekleriyle birlikte oluşturur.</td></tr>
+    <tr><td>Kullanıcı davet etme, rolleri ayarlama</td><td>Henüz yok</td><td>HubSpot ayarları → Users &amp; Teams (kullanıcılar ve ekipler).</td></tr>
+    <tr><td>"Müşteri N dakikadır yanıt vermiyor" kuralı</td><td>Henüz yok</td><td>Yeni fırsata ya da aşama değişikliğine bağlı bir kural.</td></tr>
+    <tr><td>HubSpot içinde Kai düğmeleri ve panelleri</td><td>Henüz yok</td><td>Kai ile sohbette çalış: Telegram'da ya da tarayıcıda.</td></tr>
   </tbody>
 </table>
 </div>
+<p>Dürüst özet: bugün HubSpot için Kai yapıyı kurar, verileri düzenli tutar, görevleri yönetir, huniyi inceler ve olaylara bağlı kuralları çalıştırır. HubSpot desteği beta aşamasında: bir şey ters giderse doğrudan sohbetten destek ekibine yaz.</p>
 
 <h2>Kai ile tek mesaj yeter</h2>
-<p>Bağlandıktan sonra Kai'den her CRM'de isteyeceğin şeylerin aynısını istersin. Örnekler:</p>
-<pre>Satış hunilerini ve her aşamada kaç fırsat olduğunu göster.</pre>
-<pre>Sales Pipeline hunisinde 12000 tutarında "Alpha, 20 lisans" fırsatı oluştur.</pre>
-<pre>"Alpha, 20 lisans" fırsatı için yarına "geri ara" görevi oluştur ve not ekle: yıllık fatura istediler.</pre>
-<p>API üzerinden özel CRM bağlamak — HubSpot da buna dahil — Max planında yer alır: ayda €119; bağlantıyı konuşmak ve spesifikasyonu yazmak ücretsiz. Kai İngilizce ve Rusça konuşur.</p>
+<p>İşini anlatırsın, Kai netleştirici sorular sorar, bir plan gösterir, onayından sonra her şeyi API üzerinden oluşturur ve rapor gönderir. Örnekler:</p>
+<pre>B2B satışlar için bir HubSpot satış hunisi oluştur: Yeni lead → Nitelikli → Demo → Teklif → Sözleşme. Fırsatlara sayı türünde Bütçe özelliği ekle.</pre>
+<pre>Sales Pipeline hunisinde 12000 tutarında "Alpha, 20 lisans" fırsatı oluştur, Anna Smith kişisini ve Alpha şirketini ekle.</pre>
+<pre>Bir fırsat Sözleşme aşamasına geçtiğinde yarın için "faturayı gönder" görevi oluştur.</pre>
+<p>Planlar diğer CRM'lerle aynı: Start, tek CRM için ayda €29; Pro, en fazla üç CRM için €59; Max, en fazla on CRM için €119. İlk 3 gün deneme süresidir, kart gerekmez, Start özellikleriyle yaklaşık 25 istek. Kai İngilizce ve Rusça konuşur.</p>
 
 <h2>FAQ</h2>
 <div class="faq">
   <div class="faq-item">
-    <h3>HubSpot ile bir sohbet mesajıyla çalışan bir yapay zeka asistanı var mı?</h3>
-    <p>Evet, Kai. Bugün HubSpot'a API üzerinden özel CRM olarak bağlanır: satış hunilerini ve fırsatları görür; fırsatlar, kişiler, görevler ve notlar oluşturur, fırsatları aşamalar arasında taşır ve huniyi inceler. Tek tıkla bağlantı geliştiriliyor.</p>
+    <h3>HubSpot'u bir sohbet mesajıyla kuran bir yapay zeka asistanı var mı?</h3>
+    <p>Evet, Kai. Satış sürecini Telegram'da ya da tarayıcıda sade kelimelerle anlatırsın; Kai resmi API üzerinden HubSpot'ta satış hunileri ve aşamalar, özellikler, fırsatlar, kişiler, şirketler, görevler ve notlar oluşturur, huniyi inceler ve olaylara bağlı kuralları çalıştırır. HubSpot desteği beta aşamasında.</p>
   </div>
   <div class="faq-item">
-    <h3>HubSpot'u Kai'ye bugün nasıl bağlarım?</h3>
-    <p>HubSpot'ta fırsatlara ve kişilere erişimi olan bir anahtar oluştur: Development → Keys → Service keys. Özel CRM sayfasından hazır HubSpot spesifikasyonunu al, anahtarı içine yapıştır ve Kai'ye gönder: /connect → "My own CRM via API". Özel CRM bağlamak Max planına dahildir.</p>
+    <h3>HubSpot'u Kai'ye nasıl bağlarım?</h3>
+    <p>app.aii-crm.com/install/hubspot kurulum bağlantısını aç, HubSpot'ta erişime izin ver ve "Kai is installed" sayfasında "Open Kai in Telegram" ya da "Continue in the browser" düğmesine bas. Botta bir yol daha var: /connect → HubSpot (beta) → "Sign in with HubSpot". Anahtar yok, JSON yok.</p>
   </div>
   <div class="faq-item">
-    <h3>Tek tıkla HubSpot bağlantısı ne zaman kullanıma sunulacak?</h3>
-    <p>Geliştiriliyor: HubSpot için "Sign in with HubSpot" düğmesi ve kurulum bağlantısı olan bir Kai uygulaması — anahtar ya da JSON gerekmeden. Kullanıma sunulduğu anda Kai sana sohbette haber verecek.</p>
+    <h3>Kai HubSpot'ta otomasyon kurabilir mi?</h3>
+    <p>Evet, Pro planından itibaren. Bir HubSpot olayına bağlı kural (bir fırsat oluşturulur ya da bir aşamaya geçer) görev oluşturur ya da bildirim gönderir. Kuralı kendi sözlerinle anlatırsın, Kai de devreye almadan önce onu sana gösterir.</p>
   </div>
   <div class="faq-item">
-    <h3>Kai HubSpot'ta henüz neleri yapmıyor?</h3>
-    <p>Satış hunisi ya da alan oluşturmaz, şirketlerle çalışmaz ve HubSpot olaylarına bağlı otomasyonları çalıştırmaz. Bunların hepsi tek tıkla bağlantıyla birlikte planlanıyor.</p>
+    <h3>HubSpot için hangi plan gerekiyor?</h3>
+    <p>Start'tan itibaren her plan: tek CRM için ayda €29; olay otomasyonları Pro'dan itibaren, €59. İlk 3 gün kartsız deneme süresidir; Kai'yi kendi HubSpot hesabında test etmek için yeterli.</p>
   </div>
 </div>
 
 <h2>Sırada ne var</h2>
-<p>HubSpot'a şimdi ihtiyacın varsa bir service key oluştur ve yukarıdaki adımlarla bağlan. Tek tıkla bağlanmayı tercih ediyorsan HubSpot için Kai uygulamasını bekle: geliştiriliyor.</p>
+<p>Kurulum bağlantısını aç, erişime izin ver ve Kai'den satış hunilerini göstermesini iste: bir dakika içinde asistanın hesabınla nasıl çalıştığını görürsün.</p>
 <div class="cta">
-  <a class="btn btn-primary" href="https://app.aii-crm.com/docs/custom-crm?lang=en">Bağlantı rehberi</a>
+  <a class="btn btn-primary" href="https://app.aii-crm.com/install/hubspot">Kai'yi HubSpot'a kur</a>
   <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Web sohbetini aç</a>
 </div>
 
-<p class="author">Yazar: Kai Ekibi · Güncellendi: <time datetime="2026-11-04">4 Kasım 2026</time> · Özellikler yayın tarihi itibarıyla anlatılmıştır; güncel durumu Kai sohbette bildirir.</p>
+<p class="author">Yazar: Kai Ekibi · Güncellendi: <time datetime="2026-11-16">16 Kasım 2026</time> · Özellikler ve sınırlar yayın tarihi itibarıyla anlatılmıştır; güncel durumu Kai sohbette bildirir.</p>
 </article>
 </main>
 
@@ -221,10 +225,10 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
       "@type": "Article",
       "@id": "https://aii-crm.com/guides/tr/hubspot-ai-assistant.html#article",
       "headline": "HubSpot yapay zeka asistanı: CRM'ini bir sohbet mesajıyla kur",
-      "description": "HubSpot'u Kai yapay zeka asistanına bugün nasıl bağlarsın — service key ile API üzerinden — ve Kai HubSpot'ta neler yapar: satış hunileri, fırsatlar, kişiler, görevler, notlar. Tek tıkla bağlantı geliştiriliyor.",
+      "description": "HubSpot'u Kai yapay zeka asistanına anahtar gerekmeden, tek tıkla nasıl bağlarsın ve Kai HubSpot'ta neler yapar: satış hunileri, özellikler, fırsatlar, kişiler, şirketler, görevler, otomasyonlar. Destek beta aşamasında.",
       "inLanguage": "tr",
       "datePublished": "2026-11-04",
-      "dateModified": "2026-11-04",
+      "dateModified": "2026-11-16",
       "mainEntityOfPage": "https://aii-crm.com/guides/tr/hubspot-ai-assistant.html",
       "image": "https://aii-crm.com/og-image-v5.png",
       "author": {
@@ -243,34 +247,34 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "HubSpot ile bir sohbet mesajıyla çalışan bir yapay zeka asistanı var mı?",
+          "name": "HubSpot'u bir sohbet mesajıyla kuran bir yapay zeka asistanı var mı?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Evet, Kai. Bugün HubSpot'a API üzerinden özel CRM olarak bağlanır: satış hunilerini ve fırsatları görür; fırsatlar, kişiler, görevler ve notlar oluşturur, fırsatları aşamalar arasında taşır ve huniyi inceler. Tek tıkla bağlantı geliştiriliyor."
+            "text": "Evet, Kai. Satış sürecini Telegram'da ya da tarayıcıda sade kelimelerle anlatırsın; Kai resmi API üzerinden HubSpot'ta satış hunileri ve aşamalar, özellikler, fırsatlar, kişiler, şirketler, görevler ve notlar oluşturur, huniyi inceler ve olaylara bağlı kuralları çalıştırır. HubSpot desteği beta aşamasında."
           }
         },
         {
           "@type": "Question",
-          "name": "HubSpot'u Kai'ye bugün nasıl bağlarım?",
+          "name": "HubSpot'u Kai'ye nasıl bağlarım?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "HubSpot'ta fırsatlara ve kişilere erişimi olan bir anahtar oluştur: Development → Keys → Service keys. Özel CRM sayfasından hazır HubSpot spesifikasyonunu al, anahtarı içine yapıştır ve Kai'ye gönder: /connect → \"My own CRM via API\". Özel CRM bağlamak Max planına dahildir."
+            "text": "app.aii-crm.com/install/hubspot kurulum bağlantısını aç, HubSpot'ta erişime izin ver ve \"Kai is installed\" sayfasında \"Open Kai in Telegram\" ya da \"Continue in the browser\" düğmesine bas. Botta bir yol daha var: /connect → HubSpot (beta) → \"Sign in with HubSpot\". Anahtar yok, JSON yok."
           }
         },
         {
           "@type": "Question",
-          "name": "Tek tıkla HubSpot bağlantısı ne zaman kullanıma sunulacak?",
+          "name": "Kai HubSpot'ta otomasyon kurabilir mi?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Geliştiriliyor: HubSpot için \"Sign in with HubSpot\" düğmesi ve kurulum bağlantısı olan bir Kai uygulaması — anahtar ya da JSON gerekmeden. Kullanıma sunulduğu anda Kai sana sohbette haber verecek."
+            "text": "Evet, Pro planından itibaren. Bir HubSpot olayına bağlı kural (bir fırsat oluşturulur ya da bir aşamaya geçer) görev oluşturur ya da bildirim gönderir. Kuralı kendi sözlerinle anlatırsın, Kai de devreye almadan önce onu sana gösterir."
           }
         },
         {
           "@type": "Question",
-          "name": "Kai HubSpot'ta henüz neleri yapmıyor?",
+          "name": "HubSpot için hangi plan gerekiyor?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Satış hunisi ya da alan oluşturmaz, şirketlerle çalışmaz ve HubSpot olaylarına bağlı otomasyonları çalıştırmaz. Bunların hepsi tek tıkla bağlantıyla birlikte planlanıyor."
+            "text": "Start'tan itibaren her plan: tek CRM için ayda €29; olay otomasyonları Pro'dan itibaren, €59. İlk 3 gün kartsız deneme süresidir; Kai'yi kendi HubSpot hesabında test etmek için yeterli."
           }
         }
       ]

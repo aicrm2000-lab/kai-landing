@@ -8,7 +8,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Asistente de IA para Pipedrive: configura tu CRM desde el chat | Kai</title>
-<meta name="description" content="Kai configura Pipedrive desde el chat: embudos, campos, tratos, actividades, analítica. Enlace de instalación, qué funciona en la beta y qué todavía no.">
+<meta name="description" content="Kai configura Pipedrive desde el chat: embudos, campos, tratos, actividades, automatizaciones. Enlace de instalación, qué funciona en la beta y qué aún no.">
 <meta name="keywords" content="asistente de IA para Pipedrive, IA para Pipedrive, configurar Pipedrive con IA, configurar Pipedrive sin programador, cómo configurar Pipedrive, embudo de ventas en Pipedrive, Pipedrive API, Pipedrive, bot de Telegram para Pipedrive, inteligencia artificial para CRM">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Kai Team">
@@ -36,7 +36,7 @@
 <meta property="og:description" content="Kai se instala en Pipedrive desde un enlace y configura embudos, campos, tratos y actividades a partir de un mensaje en Telegram o en el navegador. Qué funciona en la beta, qué todavía no y precios.">
 <meta property="og:image" content="https://aii-crm.com/og-image-v5.png">
 <meta property="article:published_time" content="2026-11-03">
-<meta property="article:modified_time" content="2026-11-03">
+<meta property="article:modified_time" content="2026-11-16">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Asistente de IA para Pipedrive: configura tu CRM con un mensaje en el chat">
 <meta name="twitter:description" content="Kai se instala en Pipedrive desde un enlace y configura embudos, campos, tratos y actividades a partir de un mensaje en Telegram o en el navegador. Qué funciona en la beta, qué todavía no y precios.">
@@ -125,17 +125,17 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 </nav>
 
 <h1>Asistente de IA para Pipedrive: configura tu CRM con un mensaje en el chat</h1>
-<p class="meta">Actualizado el 3 de noviembre de 2026 · Equipo Kai · 5 min de lectura</p>
+<p class="meta">Actualizado el 16 de noviembre de 2026 · Equipo Kai · 5 min de lectura</p>
 
-<p class="lead">Un asistente de IA para Pipedrive es un chat donde describes tu proceso de ventas con palabras sencillas y él lo monta en Pipedrive a través de la API oficial: embudos y etapas, campos, tratos, personas, organizaciones, actividades y notas. Kai lo hace en Telegram o en el navegador. La compatibilidad con Pipedrive está en beta: la estructura, los datos, las actividades y la analítica funcionan; las automatizaciones por eventos de Pipedrive llegarán después.</p>
+<p class="lead">Un asistente de IA para Pipedrive es un chat donde describes tu proceso de ventas con palabras sencillas y él lo monta en Pipedrive a través de la API oficial: embudos y etapas, campos, tratos, personas, organizaciones, actividades y notas. Kai lo hace en Telegram o en el navegador. La compatibilidad con Pipedrive está en beta: la estructura, los datos, las actividades, la analítica y las automatizaciones por eventos ya funcionan.</p>
 
 <section class="tldr" aria-label="En resumen">
   <h2>En resumen</h2>
   <ul>
     <li>Instálalo desde el enlace <a href="https://app.aii-crm.com/install/pipedrive">app.aii-crm.com/install/pipedrive</a>: Pipedrive te pide permiso y después Kai vincula la empresa a tu cuenta en Telegram o en el chat web.</li>
-    <li>Funciona: embudos y etapas, campos de tratos, personas y organizaciones con listas de opciones, tratos, personas, organizaciones, actividades, notas, usuarios y analítica del embudo con tratos ganados y perdidos.</li>
-    <li>Todavía no: las reglas por eventos de Pipedrive (las automatizaciones e integraciones de Kai) y los botones o paneles dentro de Pipedrive.</li>
-    <li>Disponible desde el plan Start, €29 al mes. Los primeros 3 días son de prueba.</li>
+    <li>Funciona: embudos y etapas, campos de tratos, personas y organizaciones con listas de opciones, tratos, personas, organizaciones, actividades, notas, etiquetas, usuarios, analítica del embudo con tratos ganados y perdidos y automatizaciones por eventos.</li>
+    <li>Todavía no: los botones y paneles de Kai dentro de Pipedrive y la regla «el cliente lleva N minutos sin responder».</li>
+    <li>Disponible desde el plan Start, €29 al mes; las automatizaciones, desde el plan Pro. Los primeros 3 días son de prueba.</li>
   </ul>
 </section>
 
@@ -157,6 +157,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   <li><strong>Personas y organizaciones.</strong> Crearlas y vincularlas a un trato.</li>
   <li><strong>Actividades y notas.</strong> Una actividad con fecha límite en un trato y una nota, directamente desde el chat.</li>
   <li><strong>Analítica del embudo.</strong> Tratos por etapa, tratos ganados y perdidos, la «salud» de un trato concreto.</li>
+  <li><strong>Automatizaciones por eventos.</strong> Se crea un trato o pasa a una etapa, y Kai crea una actividad o envía una notificación.</li>
 </ul>
 <p>Cada acción pasa por la API oficial de Pipedrive. Todo lo creado se queda en tu empresa de Pipedrive, sigas usando el asistente o no.</p>
 
@@ -165,13 +166,13 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <table>
   <thead><tr><th>Necesidad</th><th>Estado en Kai</th><th>Qué hacer ahora</th></tr></thead>
   <tbody>
-    <tr><td>Reglas por eventos: un trato pasa a una etapa → una actividad, una notificación</td><td>Después de la beta</td><td>Las automatizaciones integradas de Pipedrive, si tu plan de Pipedrive las incluye.</td></tr>
-    <tr><td>Integraciones con otros servicios basadas en eventos</td><td>Después de la beta</td><td>Apps del Marketplace de Pipedrive o un programador.</td></tr>
+    <tr><td>Una regla «el cliente lleva N minutos sin responder»</td><td>Todavía no</td><td>Una regla por nueva entrada en el embudo o por cambio de etapa.</td></tr>
+    <tr><td>Un campo obligatorio en una etapa</td><td>No está en la API de Pipedrive</td><td>Ajustes de Pipedrive → Campos de datos → el campo → Importante u Obligatorio.</td></tr>
     <tr><td>Botones y paneles de Kai dentro de Pipedrive</td><td>Todavía no</td><td>Trabaja con Kai en el chat: en Telegram o en el navegador.</td></tr>
   </tbody>
 </table>
 </div>
-<p>El resumen honesto: hoy Kai para Pipedrive configura la estructura, mantiene los datos en orden, gestiona las actividades y analiza el embudo. Las automatizaciones por eventos ya funcionan en amoCRM y Kommo y llegarán a Pipedrive después de la beta.</p>
+<p>El resumen honesto: hoy Kai para Pipedrive configura la estructura, mantiene los datos en orden, gestiona las actividades, analiza el embudo y ejecuta reglas por eventos. La compatibilidad está en beta: si algo falla, escribe a soporte directamente en el chat.</p>
 
 <h2>Con Kai es un solo mensaje</h2>
 <p>Describes el negocio, Kai hace preguntas aclaratorias, muestra un plan, lo crea todo a través de la API cuando confirmas y envía un informe. Ejemplos:</p>
@@ -184,7 +185,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 <div class="faq">
   <div class="faq-item">
     <h3>¿Hay algún asistente de IA que configure Pipedrive desde un mensaje de chat?</h3>
-    <p>Sí, Kai. Describes tu proceso de ventas con palabras sencillas en Telegram o en el navegador, y Kai crea en Pipedrive embudos y etapas, campos, tratos, personas, organizaciones, actividades y notas a través de la API oficial, y analiza el embudo. La compatibilidad con Pipedrive está en beta.</p>
+    <p>Sí, Kai. Describes tu proceso de ventas con palabras sencillas en Telegram o en el navegador, y Kai crea en Pipedrive embudos y etapas, campos, tratos, personas, organizaciones, actividades y notas a través de la API oficial, analiza el embudo y ejecuta reglas por eventos. La compatibilidad con Pipedrive está en beta.</p>
   </div>
   <div class="faq-item">
     <h3>¿Cómo conecto Pipedrive a Kai?</h3>
@@ -192,11 +193,11 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   </div>
   <div class="faq-item">
     <h3>¿Puede Kai crear automatizaciones en Pipedrive?</h3>
-    <p>Todavía no. Las reglas por eventos de Pipedrive (un trato pasa a una etapa → una tarea o una notificación) y las integraciones basadas en eventos llegarán después de la beta. Hoy Kai configura la estructura, gestiona los datos y las actividades y analiza el embudo.</p>
+    <p>Sí, desde el plan Pro. Una regla por un evento de Pipedrive (se crea un trato o pasa a una etapa) crea una actividad o envía una notificación. Describes la regla con tus palabras y Kai te la muestra antes de activarla.</p>
   </div>
   <div class="faq-item">
     <h3>¿Qué plan necesito para Pipedrive?</h3>
-    <p>Cualquier plan desde Start, €29 al mes para un CRM. Los primeros 3 días son de prueba sin tarjeta, suficiente para probar Kai en tu propia empresa de Pipedrive.</p>
+    <p>Cualquier plan desde Start, €29 al mes para un CRM; las automatizaciones por eventos, desde Pro, €59. Los primeros 3 días son de prueba sin tarjeta, suficiente para probar Kai en tu propia empresa de Pipedrive.</p>
   </div>
 </div>
 
@@ -207,7 +208,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
   <a class="btn btn-secondary" href="https://app.aii-crm.com/chat?lang=en">Abrir el chat web</a>
 </div>
 
-<p class="author">Autor: Equipo Kai · Actualizado el <time datetime="2026-11-03">3 de noviembre de 2026</time> · Las capacidades y los límites se describen a fecha de publicación; Kai informa del estado actual en el chat.</p>
+<p class="author">Autor: Equipo Kai · Actualizado el <time datetime="2026-11-16">16 de noviembre de 2026</time> · Las capacidades y los límites se describen a fecha de publicación; Kai informa del estado actual en el chat.</p>
 </article>
 </main>
 
@@ -226,7 +227,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
       "description": "Cómo el asistente de IA Kai configura Pipedrive desde un mensaje de chat: embudos, etapas, campos, tratos, personas, actividades y analítica. Enlace de instalación, qué funciona en la beta y qué todavía no.",
       "inLanguage": "es",
       "datePublished": "2026-11-03",
-      "dateModified": "2026-11-03",
+      "dateModified": "2026-11-16",
       "mainEntityOfPage": "https://aii-crm.com/guides/es/pipedrive-ai-assistant.html",
       "image": "https://aii-crm.com/og-image-v5.png",
       "author": {
@@ -248,7 +249,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "¿Hay algún asistente de IA que configure Pipedrive desde un mensaje de chat?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí, Kai. Describes tu proceso de ventas con palabras sencillas en Telegram o en el navegador, y Kai crea en Pipedrive embudos y etapas, campos, tratos, personas, organizaciones, actividades y notas a través de la API oficial, y analiza el embudo. La compatibilidad con Pipedrive está en beta."
+            "text": "Sí, Kai. Describes tu proceso de ventas con palabras sencillas en Telegram o en el navegador, y Kai crea en Pipedrive embudos y etapas, campos, tratos, personas, organizaciones, actividades y notas a través de la API oficial, analiza el embudo y ejecuta reglas por eventos. La compatibilidad con Pipedrive está en beta."
           }
         },
         {
@@ -264,7 +265,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "¿Puede Kai crear automatizaciones en Pipedrive?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Todavía no. Las reglas por eventos de Pipedrive (un trato pasa a una etapa → una tarea o una notificación) y las integraciones basadas en eventos llegarán después de la beta. Hoy Kai configura la estructura, gestiona los datos y las actividades y analiza el embudo."
+            "text": "Sí, desde el plan Pro. Una regla por un evento de Pipedrive (se crea un trato o pasa a una etapa) crea una actividad o envía una notificación. Describes la regla con tus palabras y Kai te la muestra antes de activarla."
           }
         },
         {
@@ -272,7 +273,7 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
           "name": "¿Qué plan necesito para Pipedrive?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Cualquier plan desde Start, €29 al mes para un CRM. Los primeros 3 días son de prueba sin tarjeta, suficiente para probar Kai en tu propia empresa de Pipedrive."
+            "text": "Cualquier plan desde Start, €29 al mes para un CRM; las automatizaciones por eventos, desde Pro, €59. Los primeros 3 días son de prueba sin tarjeta, suficiente para probar Kai en tu propia empresa de Pipedrive."
           }
         }
       ]

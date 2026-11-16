@@ -590,11 +590,7 @@
   "beta": "beta",
   "Pipedrive: install Kai into your Pipedrive in one click": "Pipedrive: zainstaluj Kai w swoim Pipedrive jednym kliknięciem",
   "Does Kai work with Pipedrive?": "Czy Kai działa z Pipedrive?",
-  "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Event automations for Pipedrive are not there yet — they come after the beta.": "Tak, w becie, od planu Start. Podłączenie: link instalacyjny z Pipedrive, przycisk „Sign in with Pipedrive” w bocie albo osobisty token API. Kai konfiguruje lejki, etapy i pola, prowadzi transakcje, osoby, organizacje, działania i notatki oraz analizuje lejek. Automatyzacji na zdarzenia dla Pipedrive jeszcze nie ma — pojawią się po becie.",
-  "HubSpot: connect via API today, one-click connection in development": "HubSpot: podłączenie przez API już dziś, jednym kliknięciem — w przygotowaniu",
-  "in development": "w przygotowaniu",
   "Does Kai work with HubSpot?": "Czy Kai działa z HubSpot?",
-  "One-click connection is in development. Today HubSpot connects through the API as a custom CRM: a HubSpot service key plus Kai’s ready-made spec, on the Max plan. Kai sees pipelines and deals and creates deals, contacts, tasks and notes.": "Podłączenie jednym kliknięciem jest w przygotowaniu. Już dziś HubSpot podłącza się przez API jako własny CRM: klucz service key z HubSpot i gotowa specyfikacja Kai, w planie Max. Kai widzi lejki i transakcje oraz tworzy transakcje, kontakty, zadania i notatki.",
   "Monthly": "Miesięcznie",
   "Yearly": "Rocznie",
   "2 months free": "2 miesiące gratis",
@@ -633,17 +629,20 @@
   "yearly −40% = 12 months for the price of 6": "rocznie −40% = 12 miesięcy w cenie 6",
   "subscribe by 30.11 — the discount applies by itself": "wykup do 30.11 — rabat naliczy się sam",
   "first month −50%: Pro for €29.50": "pierwszy miesiąc −50%: Pro za €29,50",
-  "then €59/mo, cancel any time": "potem €59/mc, rezygnacja w każdej chwili"
+  "then €59/mo, cancel any time": "potem €59/mc, rezygnacja w każdej chwili",
+  "HubSpot: install Kai into your HubSpot in one click": "HubSpot: zainstaluj Kai w swoim HubSpot jednym kliknięciem",
+  "Yes, in beta, from the Start plan. Connect with the install link from Pipedrive, the “Sign in with Pipedrive” button in the bot or a personal API token. Kai sets up pipelines, stages and fields, manages deals, people, organizations, activities and notes and reviews the funnel. Automations on Pipedrive events work from the Pro plan.": "Tak, w becie, od planu Start. Podłączenie: link instalacyjny z Pipedrive, przycisk „Sign in with Pipedrive” w bocie albo osobisty token API. Kai konfiguruje lejki, etapy i pola, prowadzi transakcje, osoby, organizacje, działania i notatki oraz analizuje lejek. Automatyzacje na zdarzenia w Pipedrive działają od planu Pro.",
+  "Yes, in beta, from the Start plan. Connect with the “Sign in with HubSpot” button in the bot or the install link, with no keys or JSON. Kai sets up pipelines, stages and properties, manages deals, contacts, companies, tasks and notes and reviews the funnel. Automations on HubSpot events work from the Pro plan.": "Tak, w becie, od planu Start. Podłączenie: przycisk „Sign in with HubSpot” w bocie albo link instalacyjny, bez kluczy i JSON. Kai konfiguruje lejki, etapy i właściwości, prowadzi transakcje, kontakty, firmy, zadania i notatki oraz analizuje lejek. Automatyzacje na zdarzenia w HubSpot działają od planu Pro."
  },
  "meta": {
   "title": "Asystent AI, który konfiguruje amoCRM, Kommo, Bitrix24 i własne CRM-y | Kai",
-  "description": "Kai konfiguruje twój CRM na podstawie zwykłej wiadomości w Telegramie lub w przeglądarce — amoCRM, Kommo, Bitrix24, Pipedrive lub twój własny CRM przez jego API: lejki, pola, zadania, automatyzacje, analityka. 65 akcji. 3-dniowy okres próbny, bez karty.",
+  "description": "Kai konfiguruje twój CRM na podstawie zwykłej wiadomości w Telegramie lub w przeglądarce — amoCRM, Kommo, Bitrix24, Pipedrive, HubSpot lub twój własny CRM przez jego API: lejki, pola, zadania, automatyzacje, analityka. 65 akcji. 3-dniowy okres próbny, bez karty.",
   "og_title": "Kai — asystent AI, który konfiguruje twój CRM",
   "og_description": "Asystent AI, który konfiguruje twój CRM na podstawie wiadomości na czacie — w Telegramie lub w przeglądarce.",
   "keywords": "amoCRM, Kommo, Bitrix24, konfiguracja CRM, wdrożenie CRM, ustawienie CRM, asystent AI do amoCRM, asystent AI do Kommo, asystent AI do Bitrix24, agent AI dla CRM, AI do CRM, sztuczna inteligencja CRM, automatyzacja CRM, bot CRM Telegram, lejek sprzedaży, lejki sprzedażowe, amoCRM API, Kommo API, CRM bez programisty, CRM bez integratora, własny CRM, autorski CRM, wewnętrzny CRM, podłączyć AI do własnego CRM przez API, agent AI do własnego CRM, integracja AI z CRM przez REST API, AI assistant, CRM setup, custom CRM, AI agent for custom CRM, Pipedrive, asystent AI do Pipedrive, konfiguracja Pipedrive, Pipedrive bez programisty, HubSpot, asystent AI do HubSpot, konfiguracja HubSpot"
  },
  "ld": {
-  "description": "Asystent AI, który konfiguruje twój CRM na podstawie wiadomości na czacie — w Telegramie lub w przeglądarce: amoCRM, Kommo, Bitrix24, Pipedrive lub twój własny CRM przez jego API. 65 akcji: lejki, pola, etapy, transakcje, kontakty, automatyzacje, analityka.",
+  "description": "Asystent AI, który konfiguruje twój CRM na podstawie wiadomości na czacie — w Telegramie lub w przeglądarce: amoCRM, Kommo, Bitrix24, Pipedrive, HubSpot lub twój własny CRM przez jego API. 65 akcji: lejki, pola, etapy, transakcje, kontakty, automatyzacje, analityka.",
   "featureList": [
    "Konsultacja AI dotycząca struktury twojego CRM",
    "Lejki sprzedażowe i etapy",
@@ -654,7 +653,7 @@
    "Podłączenie OAuth jednym kliknięciem",
    "Twój własny (autorski, wewnętrzny) CRM przez REST API: OAuth 2.0, klucz API, bearer",
    "Podłączenie Pipedrive (beta): lejki, transakcje, działania, analityka",
-   "HubSpot przez API (podłączenie jednym kliknięciem — w przygotowaniu)"
+   "Podłączenie HubSpot (beta): lejki, transakcje, firmy, zadania, analityka"
   ],
   "faq": [
    [
@@ -679,11 +678,11 @@
    ],
    [
     "Czy Kai działa z Pipedrive?",
-    "Tak, w becie, od planu Start. Podłączenie: link instalacyjny z Pipedrive, przycisk „Sign in with Pipedrive” w bocie albo osobisty token API. Kai konfiguruje lejki, etapy i pola, prowadzi transakcje, osoby, organizacje, działania i notatki oraz analizuje lejek. Automatyzacji na zdarzenia dla Pipedrive jeszcze nie ma — pojawią się po becie."
+    "Tak, w becie, od planu Start. Podłączenie: link instalacyjny z Pipedrive, przycisk „Sign in with Pipedrive” w bocie albo osobisty token API. Kai konfiguruje lejki, etapy i pola, prowadzi transakcje, osoby, organizacje, działania i notatki oraz analizuje lejek. Automatyzacje na zdarzenia w Pipedrive działają od planu Pro."
    ],
    [
     "Czy Kai działa z HubSpot?",
-    "Podłączenie jednym kliknięciem jest w przygotowaniu. Już dziś HubSpot podłącza się przez API jako własny CRM: klucz service key z HubSpot i gotowa specyfikacja Kai, w planie Max. Kai widzi lejki i transakcje oraz tworzy transakcje, kontakty, zadania i notatki."
+    "Tak, w becie, od planu Start. Podłączenie: przycisk „Sign in with HubSpot” w bocie albo link instalacyjny, bez kluczy i JSON. Kai konfiguruje lejki, etapy i właściwości, prowadzi transakcje, kontakty, firmy, zadania i notatki oraz analizuje lejek. Automatyzacje na zdarzenia w HubSpot działają od planu Pro."
    ],
    [
     "Czy Kai działa z własnym lub autorskim CRM?",
