@@ -134,6 +134,8 @@ def main() -> None:
 
     import seo_meta   # короткие title/description для выдачи (i18n/seo/<lang>.json)
     seo_meta.apply()
+    import site_script   # учёт посещений: kai-site.js на всех страницах гайдов и кейсов (баннер cookie, события, заходы)
+    print(f"site_script: kai-site.js подключён к {site_script.apply()} страницам")
 
 
 if __name__ == "__main__":

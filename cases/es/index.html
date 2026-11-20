@@ -190,4 +190,5 @@ html.hw .badge.crm{border-color:rgba(255,122,26,.45)}html.hw .msg.me{background:
 document.querySelectorAll('[data-copy]').forEach(function(b){ b.addEventListener('click', function(){ var t=b.getAttribute('data-copy'), done=function(){ var o=b.textContent; b.textContent="Copiado"; setTimeout(function(){ b.textContent=o; },1500); };
   if(navigator.clipboard) navigator.clipboard.writeText(t).then(done); else { var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} ta.remove(); done(); } }); });
 </script>
+<script src="/kai-site.js" defer></script>
 </body></html>

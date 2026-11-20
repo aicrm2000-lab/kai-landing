@@ -5489,6 +5489,10 @@ navOnScroll();
   function forget(){
     try{localStorage.removeItem('kai_vid');localStorage.removeItem('kai_utm');localStorage.removeItem('kai_utm_ts');}catch(e){}
     try{document.cookie='kai_vid=; max-age=0; path=/; SameSite=Lax';}catch(e){}
+    /* отзыв согласия убирает и то, что успела поставить Метрика: её cookie и записи в памяти браузера (20.11) */
+    try{document.cookie.split(';').forEach(function(c){ var n=c.split('=')[0].trim(); if(n.indexOf('_ym')!==0) return;
+      ['','; domain='+location.hostname,'; domain=.'+location.hostname.replace(/^www\./,'')].forEach(function(dm){ document.cookie=n+'=; max-age=0; path=/'+dm; }); });}catch(e){}
+    try{Object.keys(localStorage).forEach(function(k){ if(k.indexOf('_ym')===0) localStorage.removeItem(k); });}catch(e){}
   }
   var LANG=document.documentElement.lang||'ru';
   /* UTM: utm_* или короткое ?s=threads (= threads/bio). Первая метка живёт 30 дней в браузере (first-touch, только после
@@ -5510,8 +5514,17 @@ navOnScroll();
     const DEV=matchMedia('(hover: none)').matches?'mobile':'desktop', TZ=(()=>{try{return Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){return '';}})();
     try{navigator.sendBeacon('https://app.aii-crm.com/track',
       JSON.stringify({vid:V,event:ev,path:location.pathname+location.hash,
-                      ref:document.referrer,lang:LANG,utm:UTM,dev:DEV,sw:screen.width,tz:TZ,val:(val|0)}));}catch(e){}
+                      ref:document.referrer,lang:LANG,utm:UTM,dev:DEV,sw:screen.width,tz:TZ,val:(val|0),wd:navigator.webdriver?1:0}));}catch(e){}
   };
+  /* обезличенный заход (20.11): без cookie и без идентификатора, до согласия — чтобы видеть весь трафик, а не только тех,
+     кто принял cookie. Ничего не пишет в браузер; чужой реферер режется до адреса сайта. После «Только необходимые»
+     больше не шлётся, ?me=1 глушит. На гайдах и кейсах то же самое делает kai-site.js. */
+  try{ if(localStorage.getItem('kai_no_track')!=='1'&&window.kaiConsent!=='declined'){
+    var R=''; try{ if(document.referrer){ var RU=new URL(document.referrer); R=/(^|\.)aii-crm\.com$/.test(RU.hostname)?RU.origin+RU.pathname:RU.origin+'/'; } }catch(e){}
+    var QP=new URLSearchParams(location.search), UT=['utm_source','utm_medium','utm_campaign'].map(function(k){ return (QP.get(k)||'').slice(0,40); });
+    if(!UT[0]&&QP.get('s')) UT=[QP.get('s').slice(0,40),'bio',''];
+    navigator.sendBeacon('https://app.aii-crm.com/track',JSON.stringify({event:'hit',path:location.pathname,ref:R,lang:LANG,utm:UT.some(Boolean)?UT.join('/'):'',wd:navigator.webdriver?1:0}));
+  } }catch(e){}
   window.kaiAnalyticsStart=function(){ if(on) return; V=vid(); on=true; kaiTrack('pageview'); };
   window.kaiAnalyticsStop=function(){ on=false; V=''; forget(); };
   /* Яндекс.Метрика (07.11): только после согласия на cookie, тем же хуком; KAI_YM = номер счётчика, 0 — выключено;
